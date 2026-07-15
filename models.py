@@ -31,7 +31,29 @@ class SynthesisPathway(TypedDict):
     characterization: List[Dict[str, Any]]  # [{method, purpose}]
     source_paper: Optional[str]
     confidence: Optional[float]
-
+    
+    #Add new
+    source: Dict[str, Any]                    # {"title": "", "doi": "", "authors": [], "journal": "", "year": null}
+    
+    metadata: Dict[str, Any]                  # {"discipline": "chemistry", "type": "", "tags": []}
+    
+    targets: List[Dict[str, Any]]             # [{"formula": "...", "name": "...", ...}]
+    
+    workflow: Dict[str, Any]                  # {"timeline": [{"step_ref": "", "description": ""}], "ambiguities": []}
+    
+    analysis: Dict[str, Any]                  # {"methods": []}
+    
+    final_outcomes: Dict[str, Any]            # {
+    #     "yield": {"value": null, "unit": "%"},
+    #     "capacity": {"value": null, "unit": "mAh g-1"},
+    #     "cycle_life": null
+    # }
+    
+    extraction_metadata: Dict[str, Any]       # {
+    #     "timestamp": "",
+    #     "source_file": "",
+    #     "processing_time": null
+    # }
 
 class SynthesisRecord(TypedDict):
     """
@@ -53,6 +75,9 @@ class SynthesisRecord(TypedDict):
     alternative_pathways: List[SynthesisPathway]
     risk_factors: List[str]
     estimated_difficulty: Literal["low", "medium", "high"]
+    
+    # === new field ===
+    final_extraction_json: Dict[str, Any]
 
 
 class SynthesisState(TypedDict):
@@ -91,3 +116,6 @@ class SynthesisState(TypedDict):
     synthesis_suggestion: Optional[SynthesisRecord]
     synthesis_status: Literal["retrieving", "extracting", "reasoning", "done", "error"]
     synthesis_error: Optional[str]
+    
+    # === new field===
+    final_extraction_json: Optional[Dict[str, Any]]
