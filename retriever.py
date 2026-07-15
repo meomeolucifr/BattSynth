@@ -15,17 +15,84 @@ Environment variables for LLM configuration:
 import os
 import re
 import logging
+import ssl
 import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
+from pathlib import Path
 from typing import List, Dict, Any, Callable, Optional
 
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-from synthesis_agent.state import AgentState
+try:
+    from state import AgentState
+except ModuleNotFoundError:
+    from state import AgentState
 
 logger = logging.getLogger(__name__)
+_dotenv_loaded = False
+
+
+def _openai_supports_temperature(model_name: str) -> bool:
+    """
+    Return False for OpenAI reasoning models that only support default temperature.
+    """
+    m = (model_name or "").strip().lower()
+    unsupported_prefixes = ("o1", "o3", "o4")
+    return not any(m.startswith(prefix) for prefix in unsupported_prefixes)
+
+
+def _parse_dotenv_line(line: str) -> Optional[tuple[str, str]]:
+    """Parse a single .env line. Returns None for comments/invalid lines."""
+    raw = line.strip()
+    if not raw or raw.startswith("#"):
+        return None
+    if raw.startswith("export "):
+        raw = raw[len("export "):].strip()
+    if "=" not in raw:
+        return None
+
+    key, value = raw.split("=", 1)
+    key = key.strip()
+    value = value.strip()
+    if not key:
+        return None
+
+    if len(value) >= 2 and (
+        (value[0] == '"' and value[-1] == '"')
+        or (value[0] == "'" and value[-1] == "'")
+    ):
+        value = value[1:-1]
+
+    return key, value
+
+
+def _load_dotenv_once() -> None:
+    """
+    Load environment variables from .env once, without overriding existing vars.
+    """
+    global _dotenv_loaded
+    if _dotenv_loaded:
+        return
+
+    env_path = Path(__file__).resolve().parent / ".env"
+    if not env_path.exists():
+        _dotenv_loaded = True
+        return
+
+    try:
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            parsed = _parse_dotenv_line(line)
+            if parsed is None:
+                continue
+            key, value = parsed
+            os.environ.setdefault(key, value)
+        logger.info(f"Loaded environment from {env_path}")
+    except Exception as exc:
+        logger.warning(f"Failed to load .env file at {env_path}: {exc}")
+    finally:
+        _dotenv_loaded = True
 
 class _ArxivConfig:
     """ArXiv configuration from environment variables."""
@@ -41,6 +108,10 @@ class _ArxivConfig:
     @property
     def timeout(self) -> int:
         return int(os.environ.get("SYNTH_ARXIV_TIMEOUT", "10"))
+
+    @property
+    def allow_insecure_ssl(self) -> bool:
+        return os.environ.get("SYNTH_ARXIV_ALLOW_INSECURE_SSL", "false").lower() == "true"
 
     @property
     def categories(self) -> List[str]:
@@ -59,6 +130,7 @@ def get_llm(force_new: bool = False):
     Returns None if LLM is disabled or initialization fails.
     """
     global _llm_instance
+    _load_dotenv_once()
 
     if os.environ.get("SYNTH_LLM_ENABLED", "true").lower() != "true":
         logger.info("LLM is disabled")
@@ -68,9 +140,14 @@ def get_llm(force_new: bool = False):
         return _llm_instance
 
     provider = os.environ.get("SYNTH_LLM_PROVIDER", "openai")
-    model = os.environ.get("SYNTH_LLM_MODEL", "gpt-4o-mini")
+    model = os.environ.get("SYNTH_LLM_MODEL", "gpt-5-mini")
     temperature = float(os.environ.get("SYNTH_LLM_TEMPERATURE", "0.7"))
     api_key = os.environ.get("SYNTH_LLM_API_KEY", "")
+    if not api_key:
+        if provider == "anthropic":
+            api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+        else:
+            api_key = os.environ.get("OPENAI_API_KEY", "")
 
     try:
         if provider == "anthropic":
@@ -80,7 +157,9 @@ def get_llm(force_new: bool = False):
             )
         else:
             from langchain_openai import ChatOpenAI
-            kwargs = {"model": model, "temperature": temperature}
+            kwargs = {"model": model}
+            if _openai_supports_temperature(model):
+                kwargs["temperature"] = temperature
             if api_key:
                 kwargs["api_key"] = api_key
             _llm_instance = ChatOpenAI(**kwargs)
@@ -202,6 +281,34 @@ def parse_arxiv_xml(xml_data: str) -> List[Dict]:
     return papers
 
 
+def _arxiv_ssl_context() -> ssl.SSLContext:
+    """
+    Build SSL context for ArXiv calls using certifi CA bundle when available.
+    """
+    if _arxiv_config.allow_insecure_ssl:
+        logger.warning("ArXiv SSL verification is disabled (SYNTH_ARXIV_ALLOW_INSECURE_SSL=true).")
+        return ssl._create_unverified_context()
+
+    try:
+        import certifi
+
+        return ssl.create_default_context(cafile=certifi.where())
+    except Exception as exc:
+        logger.warning(f"Falling back to system CA store for ArXiv SSL: {exc}")
+        return ssl.create_default_context()
+
+
+def _arxiv_urlopen(url: str):
+    """
+    Open ArXiv URL with configured timeout and SSL context.
+    """
+    return urllib.request.urlopen(
+        url,
+        timeout=_arxiv_config.timeout,
+        context=_arxiv_ssl_context(),
+    )
+
+
 def fetch_arxiv_papers(
     search_terms: List[str],
     max_results: Optional[int] = None,
@@ -228,7 +335,7 @@ def fetch_arxiv_papers(
     logger.info(f"Querying ArXiv: {full_query}")
 
     try:
-        with urllib.request.urlopen(url, timeout=_arxiv_config.timeout) as response:
+        with _arxiv_urlopen(url) as response:
             data = response.read().decode("utf-8")
 
         papers = parse_arxiv_xml(data)
@@ -240,7 +347,7 @@ def fetch_arxiv_papers(
             params["search_query"] = search_query
             url = base_url + urllib.parse.urlencode(params)
 
-            with urllib.request.urlopen(url, timeout=_arxiv_config.timeout) as response:
+            with _arxiv_urlopen(url) as response:
                 data = response.read().decode("utf-8")
             papers = parse_arxiv_xml(data)
 
@@ -269,6 +376,43 @@ Authors: {paper.get('authors', 'Unknown')} ({paper.get('year', 'Unknown')})
 Key Findings: {key_findings}
 {values_str}
 """
+
+
+def _tokenize_for_relevance(text: str) -> List[str]:
+    return re.findall(r"[A-Za-z0-9\+\-]+", (text or "").lower())
+
+
+def _rank_papers_by_relevance(papers: List[Dict], query: str) -> List[Dict]:
+    """
+    Lightweight relevance ranking based on token overlap with title+abstract.
+    """
+    q_tokens = set(_tokenize_for_relevance(query))
+    if not q_tokens:
+        return papers
+
+    scored = []
+    for idx, paper in enumerate(papers):
+        title = str(paper.get("title", ""))
+        abstract = str(paper.get("abstract", ""))
+        text_tokens = set(_tokenize_for_relevance(f"{title} {abstract}"))
+        overlap = len(q_tokens.intersection(text_tokens))
+        title_overlap = len(q_tokens.intersection(set(_tokenize_for_relevance(title))))
+        score = (2 * title_overlap) + overlap
+        scored.append((score, idx, paper))
+
+    scored.sort(key=lambda x: (-x[0], x[1]))
+    return [paper for _, _, paper in scored]
+
+
+def _print_top_titles(papers: List[Dict], query: str, top_n: int) -> None:
+    if not papers:
+        print("   Top titles: no ArXiv results")
+        return
+
+    ranked = _rank_papers_by_relevance(papers, query)
+    print(f"   Top {min(top_n, len(ranked))} titles by relevance for: {query}")
+    for i, paper in enumerate(ranked[:top_n], start=1):
+        print(f"   {i}. {paper.get('title', 'Untitled')}")
 
 
 # Fallback papers when ArXiv is unavailable
@@ -513,15 +657,24 @@ def retriever_agent(state: AgentState) -> Dict:
     llm = get_llm()
 
     # Step 1: Generate search terms
-    logger.info("   Generating search strategy with LLM...")
-    search_terms = generate_search_terms_with_llm(
-        search_context, llm, search_prompt=skill["search_prompt"]
-    )
+    # For synthesis, prioritize a formula-only query (e.g., "MoTe2") so ArXiv
+    # search stays general instead of over-constrained phrases like "MoTe2 CVD".
+    if skill_name == "synthesis" and state.get("current_formula"):
+        search_terms = [str(state["current_formula"]).strip()]
+        logger.info("   Using formula-only search strategy for synthesis skill.")
+    else:
+        logger.info("   Generating search strategy with LLM...")
+        search_terms = generate_search_terms_with_llm(
+            search_context, llm, search_prompt=skill["search_prompt"]
+        )
     logger.info(f"   Search terms: {search_terms}")
 
     # Step 2: Fetch papers from ArXiv
     logger.info("   Fetching papers from ArXiv...")
     raw_papers = fetch_arxiv_papers(search_terms, max_results=_arxiv_config.max_results)
+    query_text = " ".join(search_terms)
+    top_n = int(os.environ.get("SYNTH_ARXIV_PRINT_TOP_N", "5"))
+    _print_top_titles(raw_papers, query_text, top_n)
 
     if not raw_papers:
         logger.warning("   ArXiv search returned no results, using fallback papers")
