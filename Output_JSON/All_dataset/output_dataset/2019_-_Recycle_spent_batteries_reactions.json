@@ -1,0 +1,216 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recycle spent batteries",
+    "doi": "10.1038/s41560-019-0376-4",
+    "authors": [],
+    "journal": "Nature Energy",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "editorial",
+    "tags": ["battery recycling", "lithium-ion batteries"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Cobalt",
+      "molecular_formula": "Co",
+      "intended_role": "product",
+      "prov": ["Page 253"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Lithium",
+      "molecular_formula": "Li",
+      "intended_role": "product",
+      "prov": ["Page 253"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "deep eutectic solvent",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "biodegradable precursors; reused over multiple cycles",
+      "prov": ["Page 253"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "lithium cobalt oxide",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "feedstock",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "cathode material",
+      "prov": ["Page 253"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "lithium nickel manganese oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "feedstock",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "cathode material",
+      "prov": ["Page 253"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Cobalt",
+      "molecular_formula": "Co",
+      "ontology": {
+        "role": "product",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 253"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "product",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 253"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dissolution of cathode materials in deep eutectic solvent to recover valuable metals.",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3", "chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "extract",
+            "parameters": {
+              "outputs": ["chem_4", "chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Cobalt and lithium recovered up to 90%."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 253"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Use biodegradable deep eutectic solvent to dissolve and extract metals from spent cathode materials."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No synthesis parameters provided (temperature, time, solvent composition).",
+        "excerpt": "Pulickel Ajayan and team report a method of using deep eutectic solvents to dissolve and extract valuable metals from cathode materials ... with cobalt and lithium recovery rates of up to 90%."
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Recovery rate measurement",
+        "results": [
+          {
+            "metric": "recovery rate",
+            "value": 90,
+            "unit": "%"
+          }
+        ],
+        "prov": ["Page 253"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": 90,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-23T22:35:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,482 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Properties of the Space Charge Layers Formed in Li-Ion Conducting Glass Ceramics",
+    "doi": "10.1021/acsami.0c21304",
+    "authors": [
+      "Leon Katzenmeier",
+      "Simon Helmer",
+      "Stephan Braxmeier",
+      "Edwin Knobbe",
+      "Aliaksandr S. Bandarenka"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid electrolyte",
+      "impedance spectroscopy",
+      "space charge layer",
+      "electrode deposition",
+      "glass ceramic"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Au-coated LICGC glass ceramic sample",
+      "molecular_formula": "Li1+x+yAlx(Ti,Ge)2−xSiyP3−yO12 (substrate) with Au electrode",
+      "intended_role": "device component",
+      "prov": [
+        "Materials and Experimental Section"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ohara LICGC glass ceramic",
+      "molecular_formula": "Li1+x+yAlx(Ti,Ge)2−xSiyP3−yO12",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "150 μm thick, 19 mm diameter substrate",
+      "prov": [
+        "Materials and Experimental Section"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "electrode material",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Electrode Deposition"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Titanium",
+      "molecular_formula": "Ti",
+      "ontology": {
+        "role": "electrode material",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Electrode Deposition"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Chromium",
+      "molecular_formula": "Cr",
+      "ontology": {
+        "role": "electrode material",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Electrode Deposition"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "inert atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glovebox atmosphere: O2 < 2 ppm, H2O < 0.7 ppm",
+      "prov": [
+        "Electrode Deposition"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Provision of electrolyte substrate",
+        "operations": [
+          {
+            "action": "obtain",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "LICGC glass ceramic sheet, 150 μm thick, 19 mm diameter"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Materials and Experimental Section"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "E-beam evaporation of metal electrodes",
+        "operations": [
+          {
+            "action": "e-beam evaporate",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3", "chem_4"],
+              "substrate": "chem_1",
+              "rate": "1 Å s-1",
+              "mask_radius": "7.5 mm"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "High vacuum conditions, L560 evaporator"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "high vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Electrode Deposition"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Transfer of coated samples to inert atmosphere",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {
+              "inputs": ["target_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Moved to argon glovebox (O2 < 2 ppm, H2O < 0.7 ppm)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Electrode Deposition"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Assembly for impedance spectroscopy",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "cell": "PAT-Cell with stainless-steel plungers"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Electrochemical Impedance Spectroscopy"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "LICGC substrate prepared"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Metal electrodes deposited via e-beam evaporation"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Sample transferred into argon glovebox"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Cell assembled for EIS measurements"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified vacuum level during e-beam evaporation",
+        "excerpt": "The electrodes (Au, Ti, Cr) were e-beam evaporated ... under high vacuum conditions"
+      },
+      {
+        "issue": "Deposition time not reported",
+        "excerpt": "The deposition rate of 1 Å/s was controlled..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "mean grain diameter",
+          "value": 151,
+          "unit": "nm"
+        },
+        {
+          "metric": "surface uniformity",
+          "value": "uniform surface observed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1D"
+      ]
+    },
+    {
+      "method": "EDX",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "elemental composition confirmed (O, Al, P, Ge)",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1E"
+      ]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "2θ_range": "10–70 °",
+        "increment": "0.05 °"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "peaks assigned to metal oxides",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1F"
+      ]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface carbon presence",
+          "value": "detected",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1G"
+      ]
+    },
+    {
+      "method": "AFM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface roughness",
+          "value": "relatively small",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1H, I"
+      ]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "5 MHz – 0.5 Hz",
+        "amplitude": "10 mV",
+        "temperature_range": "278–333 K",
+        "waiting_time_after_bias": "15 min"
+      },
+      "results": [
+        {
+          "metric": "bulk ionic conductivity",
+          "value": 1.5e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.35,
+          "unit": "eV"
+        },
+        {
+          "metric": "relative permittivity",
+          "value": 677,
+          "unit": ""
+        },
+        {
+          "metric": "double-layer thickness",
+          "value": 0.7,
+          "unit": "nm"
+        },
+        {
+          "metric": "SCL thickness at 0 V",
+          "value": 7.4,
+          "unit": "nm"
+        },
+        {
+          "metric": "SCL thickness at 1 V",
+          "value": 59.5,
+          "unit": "nm"
+        },
+        {
+          "metric": "SCL capacitance at 0 V",
+          "value": 80,
+          "unit": "µF cm-2"
+        },
+        {
+          "metric": "SCL capacitance at 1 V",
+          "value": 6.42,
+          "unit": "µF cm-2"
+        },
+        {
+          "metric": "SCL resistance at -1 V",
+          "value": 5000,
+          "unit": "Ω"
+        },
+        {
+          "metric": "SCL resistance at +1 V",
+          "value": 9000,
+          "unit": "Ω"
+        }
+      ],
+      "interpretation": "Space charge layer widens and becomes more resistive with increasing bias.",
+      "prov": [
+        "Results and Discussion",
+        "Figure 4"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Thermodynamic modeling (COMSOL)",
+        "results": [
+          {
+            "equation": "model predicts 25% decrease in SCL capacitance from 0 to 1 V",
+            "value": 25,
+            "unit": "%"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

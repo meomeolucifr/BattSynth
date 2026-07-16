@@ -1,0 +1,399 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Three-dimensional atomic-scale observation of structural evolution of cathode material in a working all-solid-state battery",
+    "doi": "10.1038/s41467-018-05833-x",
+    "authors": ["Yue Gong", "Yuyang Chen", "Qinghua Zhang", "Fanqi Meng", "Jin-An Shi", "Xinyu Liu", "Xiaozhi Liu", "Jienan Zhang", "Hao Wang", "Jiangyong Wang", "Qian Yu", "Ze Zhang", "Qiang Xu", "Ruijuan Xiao", "Yong-Sheng Hu", "Lin Gu", "Hong Li", "Xuejie Huang", "Liquan Chen"],
+    "journal": "Nature Communications",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["in situ TEM", "all-solid-state battery", "LiNi0.5Mn1.5O4", "structural evolution"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNi0.5Mn1.5O4 (LNMO) cathode lamella",
+      "molecular_formula": "LiNi0.5Mn1.5O4",
+      "intended_role": "cathode material",
+      "prov": ["Page 2 'LiNi0.5Mn1.5O4 (LNMO) is one of the most promising cathode materials'"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Au/LLZO/LNMO all-solid-state micro-battery",
+      "molecular_formula": "",
+      "intended_role": "assembled device",
+      "prov": ["Methods 'We lifted-out a gold anode, using a LLZO solid electrolyte and LNMO cathode successively. We then connected them with the gold wire in the MEMS chip to form a battery.'"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi0.5Mn1.5O4",
+      "molecular_formula": "LiNi0.5Mn1.5O4",
+      "ontology": {
+        "role": "cathode",
+        "category": "electrode material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LLZO solid electrolyte",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "electrolyte"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "anode / current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used both as anode and connecting wire on MEMS chip.",
+      "prov": ["Methods", "Fig. 1b"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Platinum",
+      "molecular_formula": "Pt",
+      "ontology": {
+        "role": "protective coating",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Pt protection deposition on LNMO prior to FIB milling.",
+      "prov": ["Page 3 'Right side of the image is the Pt deposition on the LNMO.'"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pt protection layer deposition on LNMO prior to focused ion-beam milling.",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_4"],
+              "method": "Pt deposition",
+              "surface": "LNMO"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 3", "Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Focused ion-beam milling to lift-out and thin Au/LLZO/LNMO stack on MEMS chip.",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "technique": "FIB milling"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Optimized beam conditions used to minimize ion-beam damage."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods", "Supplementary Figure 1 (referenced)"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Assembly of all-solid-state micro-battery on MEMS chip by connecting electrodes with gold wire.",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "components": ["chem_3 (anode)", "chem_2 (electrolyte)", "chem_1 (cathode)"],
+              "connection": "gold wire"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Electrochemical delithiation of LNMO within TEM by applying electric field in 0.1 V steps.",
+        "operations": [
+          {
+            "action": "apply_voltage",
+            "parameters": {
+              "step_size": {
+                "value": 0.1,
+                "unit": "V"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Voltage manually tuned during in situ STEM observation."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 2 'The in situ TEM tests were carried out ... by manually tuning the voltage of the power source with step size of 0.1 V.'"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Deposition of protective Pt layer on LNMO."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "FIB milling to prepare thin cross-section containing Au, LLZO, and LNMO."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Assembly of solid-state micro-battery on MEMS chip."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "In-situ electrochemical delithiation under TEM by voltage stepping."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Chemical formula of LLZO not specified",
+        "excerpt": "using a LLZO solid electrolyte"
+      },
+      {
+        "issue": "Amounts and precise conditions (temperature, time) for deposition and milling not provided",
+        "excerpt": "A set of optimized FIB milling procedures and beam conditions was used to minimize ion-beam damage"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "device configuration",
+          "value": "visualization of assembled Au/LLZO/LNMO battery on chip",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 1b"]
+    },
+    {
+      "method": "HAADF-STEM",
+      "parameters": {
+        "accelerating_voltage": {
+          "value": 200,
+          "unit": "kV"
+        },
+        "incident_beam_angle": {
+          "value": 25,
+          "unit": "mrad"
+        },
+        "collection_angle": "90–370 mrad"
+      },
+      "results": [
+        {
+          "metric": "structural evolution",
+          "value": "transition-metal ions migrate into 4a sites; ordered-to-disordered transition; formation of antiphase boundaries and migration fronts",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Migration and disorder correlated with delithiation",
+      "prov": ["Pages 2–4", "Figs. 2 and 4"]
+    },
+    {
+      "method": "ABF-STEM",
+      "parameters": {
+        "collection_angle": "11–23 mrad"
+      },
+      "results": [
+        {
+          "metric": "occupancy of 4a sites",
+          "value": "transition metals observed in 4a sites after charging",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 4"]
+    },
+    {
+      "method": "STEM-EELS",
+      "parameters": {
+        "dwell_time_per_pixel": {
+          "value": 0.05,
+          "unit": "s"
+        }
+      },
+      "results": [
+        {
+          "metric": "Mn L-edge shift",
+          "value": "shift to lower energy (decreased valence state)",
+          "unit": ""
+        },
+        {
+          "metric": "Ni L-edge shift",
+          "value": "shift to higher energy (increased valence state)",
+          "unit": ""
+        },
+        {
+          "metric": "elemental distribution at antiphase boundaries",
+          "value": "loss of O and Mn, enrichment of Ni",
+          "unit": ""
+        },
+        {
+          "metric": "elemental distribution at migration front",
+          "value": "Mn decrease, Ni increase, O unchanged",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Electronic structure changes accompany transition-metal migration",
+      "prov": ["Fig. 3"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "macro-scale structure of pristine LNMO",
+          "value": "confirmed spinel structure",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Supplementary Figure 4 (referenced)"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density Functional Theory (DFT) calculations",
+        "results": [
+          {
+            "equation": "Interface energy vs Li content x (Li_xNi0.5Mn1.5O4)",
+            "value": "Energy decreases from 2.56 J m−2 (x=1) to 1.76 J m−2 (x=0.25); increases to 1.96 J m−2 when x<0.25; oxygen vacancies reduce to 1.49 J m−2",
+            "unit": "J m-2"
+          },
+          {
+            "equation": "Effect of Mg2+ doping",
+            "value": "Mg2+ increases interface energy across all Li contents, indicating suppression of reconstruction",
+            "unit": "J m-2 (qualitative)"
+          }
+        ],
+        "prov": ["Fig. 5", "Pages 5-6"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

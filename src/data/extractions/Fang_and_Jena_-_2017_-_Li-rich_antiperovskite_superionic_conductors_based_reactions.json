@@ -1,0 +1,354 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Li-rich antiperovskite superionic conductors based on cluster ions",
+    "doi": "10.1073/pnas.1704086114",
+    "authors": [
+      "Hong Fang",
+      "Puru Jena"
+    ],
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid electrolyte",
+      "superionic conductor",
+      "antiperovskite"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3SBF4",
+      "molecular_formula": "Li3SBF4",
+      "intended_role": "product",
+      "prov": [
+        "Main text, multiple mentions"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3S(BF4)0.5Cl0.5",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Main text"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiBF4",
+      "molecular_formula": "LiBF4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Reaction equation in text"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Reaction equation in text"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Partial replacement description"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Theoretical formation reaction to create Li3SBF4 from LiBF4 and Li2S.",
+        "operations": [
+          {
+            "action": "formation_reaction",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ],
+              "outputs": [
+                "target_1"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Formation energy calculated as 39.4 meV per atom (prov: Main text)."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Main text (formation energy section)"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Partial replacement of BF4− with Cl− in Li3SBF4 to obtain Li3S(BF4)0.5Cl0.5.",
+        "operations": [
+          {
+            "action": "substitution",
+            "parameters": {
+              "inputs": [
+                "target_1",
+                "chem_3"
+              ],
+              "outputs": [
+                "target_2"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Described as a structural substitution; no specific experimental conditions provided."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Main text (mixed phase section)"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Calculated formation energy for Li3SBF4 via LiBF4 + Li2S."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Modeled partial substitution to generate mixed phase Li3S(BF4)0.5Cl0.5."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Molecular Dynamics Simulation",
+      "parameters": {
+        "supercell_size": "2×2×2",
+        "vacancy": "one Li+ vacancy",
+        "time_span": "130 ps",
+        "temperatures_K": [
+          550,
+          650,
+          750,
+          900,
+          1000
+        ]
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.210,
+          "unit": "eV"
+        },
+        {
+          "metric": "room temperature conductivity",
+          "value": 1.4e-3,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Predicted 3D RT conductivity of ~10^-2 S/cm when scaled to experimental reference.",
+      "prov": [
+        "Figure 3A, main text"
+      ],
+      "material_refs": [
+        "target_1"
+      ]
+    },
+    {
+      "method": "Molecular Dynamics Simulation",
+      "parameters": {
+        "supercell_size": "2×2×2",
+        "vacancy": "one Li+ vacancy",
+        "time_span": "not specified",
+        "temperatures_K": [
+          450,
+          600,
+          700,
+          800,
+          900
+        ]
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.176,
+          "unit": "eV"
+        },
+        {
+          "metric": "room temperature conductivity",
+          "value": 1.9e-2,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Very high predicted conductivity, exceeding 10^-1 S/cm experimentally.",
+      "prov": [
+        "Figure 3B, main text"
+      ],
+      "material_refs": [
+        "target_2"
+      ]
+    },
+    {
+      "method": "Elastic Tensor Analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Young's modulus",
+          "value": 142,
+          "unit": "GPa"
+        },
+        {
+          "metric": "Shear modulus",
+          "value": 46,
+          "unit": "GPa"
+        },
+        {
+          "metric": "Poisson's ratio",
+          "value": 0.1,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Mechanical properties suitable to inhibit Li dendrite growth and enable flexibility.",
+      "prov": [
+        "Table 2"
+      ],
+      "material_refs": [
+        "target_1"
+      ]
+    },
+    {
+      "method": "Density of States (HSE06)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "band gap",
+          "value": 8.5,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Large electronic band gap implying wide electrochemical stability window.",
+      "prov": [
+        "Figure 1C"
+      ],
+      "material_refs": [
+        "target_1"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius Model Fit",
+        "results": [
+          {
+            "equation": "D = D0 * exp(-Ea / kT)",
+            "parameters": {
+              "Ea_target_1": {
+                "value": 0.210,
+                "unit": "eV"
+              },
+              "Ea_target_2": {
+                "value": 0.176,
+                "unit": "eV"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T12:00:00Z",
+    "source_file": "extracted_text.txt",
+    "processing_time": null
+  }
+}

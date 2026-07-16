@@ -1,0 +1,645 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Electrochemical lithium intercalation behavior of pristine and milled hexagonal boron nitride",
+    "doi": "10.1016/j.jelechem.2017.06.017",
+    "authors": [
+      "Jungryang Kim",
+      "Eiji Yamasue",
+      "Tetsu Ichitsubo",
+      "Hideyuki Okumura",
+      "Keiichi N. Ishihara"
+    ],
+    "journal": "Journal of Electroanalytical Chemistry",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "lithium intercalation",
+      "boron nitride",
+      "ball milling",
+      "electrochemistry",
+      "anode materials"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "2.5 h-milled hexagonal boron nitride",
+      "molecular_formula": "BN",
+      "intended_role": "active material",
+      "prov": ["Methods – Ball mill section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "2.5 h-milled graphite",
+      "molecular_formula": "C",
+      "intended_role": "active material",
+      "prov": ["Methods – Ball mill section"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "2.5 h-milled h-BN/graphite mixture (8:1 w/w)",
+      "molecular_formula": "",
+      "intended_role": "active material",
+      "prov": ["Methods – Ball mill section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "g"
+      },
+      "notes": "Used as starting powder for individual ball‐milling (target_2).",
+      "prov": ["Methods – Ball mill"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Hexagonal boron nitride",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "g"
+      },
+      "notes": "Used as starting powder for individual ball‐milling (target_1).",
+      "prov": ["Methods – Ball mill"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Graphite (for mixture)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.333,
+        "unit": "g"
+      },
+      "notes": "Part of 3 g mixture with 1 : 8 graphite : h-BN ratio (target_3).",
+      "prov": ["Methods – Ball mill"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Hexagonal boron nitride (for mixture)",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2.667,
+        "unit": "g"
+      },
+      "notes": "Part of 3 g mixture with 1 : 8 graphite : h-BN ratio (target_3).",
+      "prov": ["Methods – Ball mill"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Protective atmosphere during ball milling and cell assembly.",
+      "prov": ["Methods – Ball mill", "Electrochemical performance"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Polyvinylidene fluoride",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 5.34,
+        "unit": "mass%"
+      },
+      "notes": "Fraction in the slurry for electrode fabrication.",
+      "prov": ["Methods – Working electrode preparation"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "N-Methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Solvent for PVDF binder.",
+      "prov": ["Methods – Working electrode preparation"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Copper foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Substrate for coating electrode slurry.",
+      "prov": ["Methods – Working electrode preparation"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Electrolyte component (EC-DMC 1 : 2 v/v).",
+      "prov": ["Methods – Electrochemical performance"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Electrolyte component (EC-DMC 1 : 2 v/v).",
+      "prov": ["Methods – Electrochemical performance"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Concentration in EC-DMC electrolyte.",
+      "prov": ["Methods – Electrochemical performance"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter/reference electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as both counter and reference electrodes (ribbon form).",
+      "prov": ["Methods – Electrochemical performance"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Ball milling of graphite powder",
+        "operations": [
+          {
+            "action": "ball mill",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "duration": {
+                "value": 150,
+                "unit": "min"
+              },
+              "frequency": {
+                "value": 710,
+                "unit": "",
+                "notes": "Unit of vibrational frequency not specified"
+              },
+              "atmosphere": "Ar"
+            },
+            "notes": "3 g graphite, nine stainless balls (3.58 g each) in AISI 306 vessel.",
+            "prov": ["Methods – Ball mill"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Ball mill"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Ball milling of hexagonal boron nitride powder",
+        "operations": [
+          {
+            "action": "ball mill",
+            "parameters": {
+              "inputs": ["chem_2"],
+              "duration": {
+                "value": 150,
+                "unit": "min"
+              },
+              "frequency": {
+                "value": 710,
+                "unit": "",
+                "notes": "Unit of vibrational frequency not specified"
+              },
+              "atmosphere": "Ar"
+            },
+            "notes": "3 g h-BN, same equipment and conditions as step_1.",
+            "prov": ["Methods – Ball mill"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Ball mill"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Ball milling of graphite/h-BN mixture (8 : 1 w/w)",
+        "operations": [
+          {
+            "action": "ball mill",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4"],
+              "duration": {
+                "value": 150,
+                "unit": "min"
+              },
+              "frequency": {
+                "value": 710,
+                "unit": "",
+                "notes": "Unit of vibrational frequency not specified"
+              },
+              "atmosphere": "Ar"
+            },
+            "notes": "Total mass 3 g; nine stainless balls; produces milled-together sample.",
+            "prov": ["Methods – Ball mill"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Ball mill"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of electrode slurry and coating",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["target_1", "target_2", "chem_6", "chem_7"],
+              "binder_content": "5.34 wt% PVDF in NMP"
+            },
+            "notes": "Active material(s) plus binder solution mixed to form slurry.",
+            "prov": ["Methods – Working electrode preparation"]
+          },
+          {
+            "action": "coat",
+            "parameters": {
+              "substrate": "chem_8"
+            },
+            "notes": "Slurry cast onto Cu foil.",
+            "prov": ["Methods – Working electrode preparation"]
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "temperature": {
+                "value": 393,
+                "unit": "K",
+                "notes": "Original text: 120 °C"
+              },
+              "duration": {
+                "value": 720,
+                "unit": "min"
+              },
+              "pressure": "vacuum"
+            },
+            "prov": ["Methods – Working electrode preparation"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Working electrode preparation"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Production of milled graphite (target_2)"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Production of milled h-BN (target_1)"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Co-milling of h-BN/graphite mixture (target_3)"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Fabrication of working electrodes for electrochemical testing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing unit for vibrational frequency",
+        "excerpt": "“ball milling has been conducted for 2.5 h with a vibrational frequency of 710.”"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu-Kα (λ = 0.154060 nm)"
+      },
+      "results": [
+        {
+          "sample": "pristine graphite",
+          "metric": "Lc",
+          "value": 31,
+          "unit": "nm"
+        },
+        {
+          "sample": "2.5 h-milled graphite",
+          "metric": "Lc",
+          "value": 17,
+          "unit": "nm"
+        },
+        {
+          "sample": "pristine h-BN",
+          "metric": "Lc",
+          "value": 60,
+          "unit": "nm"
+        },
+        {
+          "sample": "2.5 h-milled h-BN",
+          "metric": "Lc",
+          "value": 20,
+          "unit": "nm"
+        },
+        {
+          "sample": "pristine graphite",
+          "metric": "La",
+          "value": 50,
+          "unit": "nm"
+        },
+        {
+          "sample": "pristine h-BN",
+          "metric": "La",
+          "value": 155,
+          "unit": "nm"
+        },
+        {
+          "sample": "2.5 h-milled h-BN",
+          "metric": "La",
+          "value": 70,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Ball milling reduces crystallite size of both graphite and h-BN.",
+      "prov": ["Figure 1", "Table 2"]
+    },
+    {
+      "method": "BET",
+      "parameters": {
+        "degassing_temp": {
+          "value": 453,
+          "unit": "K",
+          "notes": "Original text: 180 °C"
+        },
+        "degassing_time": {
+          "value": 30,
+          "unit": "min"
+        },
+        "adsorbate": "30% N2 / 70% He"
+      },
+      "results": [
+        {
+          "sample": "pristine graphite",
+          "metric": "specific surface area",
+          "value": 9.7,
+          "unit": "m2 g-1"
+        },
+        {
+          "sample": "2.5 h-milled graphite",
+          "metric": "specific surface area",
+          "value": 259.8,
+          "unit": "m2 g-1"
+        },
+        {
+          "sample": "pristine h-BN",
+          "metric": "specific surface area",
+          "value": 1.2,
+          "unit": "m2 g-1"
+        },
+        {
+          "sample": "2.5 h-milled h-BN",
+          "metric": "specific surface area",
+          "value": 258.7,
+          "unit": "m2 g-1"
+        }
+      ],
+      "interpretation": "Surface area increases markedly after milling, especially for h-BN.",
+      "prov": ["Table 2"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size reduction",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Pristine particles much larger than milled counterparts.",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "source": "Al Kα",
+        "voltage": 10,
+        "unit_voltage": "kV",
+        "current": 20,
+        "unit_current": "mA"
+      },
+      "results": [
+        {
+          "sample": "milled-together BN8C1",
+          "metric": "C 1s binding energy",
+          "value": 284.0,
+          "unit": "eV"
+        },
+        {
+          "sample": "milled-together BN8C1",
+          "metric": "B 1s binding energy",
+          "value": 190.5,
+          "unit": "eV"
+        },
+        {
+          "sample": "milled-together BN8C1",
+          "metric": "N 1s binding energy",
+          "value": 398.0,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "No chemical reaction between h-BN and graphite after co-milling.",
+      "prov": ["Figure 3b"]
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "scan_rate": {
+          "value": 1,
+          "unit": "mV s-1"
+        },
+        "potential_window": "0–2 V vs Li/Li+"
+      },
+      "results": [
+        {
+          "sample": "pristine graphite",
+          "metric": "intercalation potential",
+          "value": 0.2,
+          "unit": "V vs Li/Li+"
+        },
+        {
+          "sample": "pristine h-BN",
+          "metric": "intercalation potential",
+          "value": 1.0,
+          "unit": "V vs Li/Li+"
+        }
+      ],
+      "interpretation": "h-BN shows two-phase intercalation reaction at ca. 1 V; graphite at ca. 0.2 V.",
+      "prov": ["Figure 7"]
+    },
+    {
+      "method": "Galvanostatic cycling (GCPL)",
+      "parameters": {},
+      "results": [
+        {
+          "sample": "milled BN8C1-s, 1st discharge",
+          "metric": "capacity contribution from graphite portion",
+          "value": 2.5,
+          "unit": "mAh g-1"
+        },
+        {
+          "sample": "milled BN8C1-t, 1st discharge",
+          "metric": "capacity contribution from graphite portion",
+          "value": 1.0,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Mixtures exhibit combined behavior of h-BN and graphite.",
+      "prov": ["Figure 6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical capacity calculation (Faraday’s law)",
+        "results": [
+          {
+            "equation": "Q = xF / M",
+            "sample": "graphite",
+            "value": 372,
+            "unit": "mAh g-1"
+          },
+          {
+            "equation": "Q = xF / M",
+            "sample": "BN (hypothetical Li(BN)3)",
+            "value": 360,
+            "unit": "mAh g-1"
+          }
+        ],
+        "prov": ["Methods – Theoretical capacities"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-25T18:24:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

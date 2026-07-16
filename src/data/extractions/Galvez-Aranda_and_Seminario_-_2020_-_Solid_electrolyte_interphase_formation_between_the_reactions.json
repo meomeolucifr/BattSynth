@@ -1,0 +1,349 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Solid electrolyte interphase formation between the Li0.29La0.57TiO3 solid-state electrolyte and a Li-metal anode: an ab initio molecular dynamics study",
+    "doi": "10.1039/c9ra10984f",
+    "authors": [
+      "Diego E. Galvez-Aranda",
+      "Jorge M. Seminario"
+    ],
+    "journal": "RSC Advances",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid-state electrolyte",
+      "ab initio molecular dynamics",
+      "solid electrolyte interphase",
+      "Li-metal batteries"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li0.29La0.57TiO3",
+      "molecular_formula": "Li0.29La0.57TiO3",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page 9000"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li metal",
+      "molecular_formula": "Li",
+      "intended_role": "anode",
+      "prov": ["Page 9000"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li2O",
+      "molecular_formula": "Li2O",
+      "intended_role": "SEI product",
+      "prov": ["Pages 9003-9008"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "La2O3",
+      "molecular_formula": "La2O3",
+      "intended_role": "SEI product",
+      "prov": ["Pages 9003-9008"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li0.29La0.57TiO3",
+      "molecular_formula": "Li0.29La0.57TiO3",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 9000"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 9000"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Pages 9003-9008"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "La2O3",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Pages 9003-9008"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Titanium",
+      "molecular_formula": "Ti",
+      "ontology": {
+        "role": "constituent element",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 9000"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Oxygen",
+      "molecular_formula": "O",
+      "ontology": {
+        "role": "constituent element",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 9000"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Construction of computational model: a slab of Li0.29La0.57TiO3 (14.2 Å, 8 layers) deposited on a Li-metal (001) surface with 26 Å of Li metal; initial separation 2.1 Å.",
+        "operations": [
+          {
+            "action": "construct_model",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Model geometry details taken from text (14.2 Å slab, 26 Å Li, separation 2.1 Å).",
+            "prov": ["Page 9001"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 9001"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Ab initio molecular dynamics simulations at 300 K for 20 ps (time step 1 fs) with external electric fields of 0, 0.5, 1.0, and 2.0 V/Å; vacuum layer 14 Å added for field application.",
+        "operations": [
+          {
+            "action": "simulate",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "electric_field": "0–2 V/Å"
+            },
+            "duration": {
+              "value": 3.3e-13,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 300,
+              "unit": "K"
+            },
+            "notes": "Original duration 20 ps; converted to minutes per units_policy.",
+            "prov": ["Pages 9001-9002", "9008"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Pages 9001-9002"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Model construction of Li0.29La0.57TiO3 on Li-metal."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "AIMD simulations under varied external electric fields leading to SEI products."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unit conversion for simulation time",
+        "excerpt": "20 ps simulation duration; units_policy requires minutes."
+      },
+      {
+        "issue": "Electric field units outside units_policy",
+        "excerpt": "External electric fields of 0, 0.5, 1.0 and 2.0 V/Å applied."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Ab initio molecular dynamics",
+      "parameters": {
+        "functional": "PBE",
+        "plane_wave_cutoff": "40 Ry",
+        "charge_density_cutoff": "200 Ry",
+        "k_points": "2×2×7 (27 total)",
+        "time_step": "1 fs",
+        "temperature": "300 K"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Pages 9001-9002"]
+    },
+    {
+      "method": "Bader charge analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ti charge reduction",
+          "value": 3.5,
+          "unit": "",
+          "notes": "Bulk Ti +3.5 to +2.5 at interface"
+        },
+        {
+          "metric": "O charge at interface",
+          "value": -1.6,
+          "unit": ""
+        },
+        {
+          "metric": "Li (metal) charge at interface",
+          "value": 0.8,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Formation of Li2O and La2O3 phases inferred from charges.",
+      "prov": ["Pages 9003-9005", "9009"]
+    },
+    {
+      "method": "Radial distribution function (RDF)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li–O peak distance",
+          "value": 1.95,
+          "unit": "Å"
+        },
+        {
+          "metric": "La–O peak distance",
+          "value": 2.75,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "Distances consistent with Li2O and La2O3 crystal structures.",
+      "prov": ["Page 9004"]
+    },
+    {
+      "method": "Mean square displacement (MSD)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "O displacement rate (0 V/Å)",
+          "value": null,
+          "unit": "",
+          "notes": "Positive slope indicating ongoing diffusion toward Li metal."
+        }
+      ],
+      "interpretation": "O diffusion accelerated by electric field, leading to faster SEI growth.",
+      "prov": ["Page 9010"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Energy comparison under electric fields",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": "",
+            "notes": "Lowest total energy observed at 2 V/Å indicating thermodynamic favorability of SEI formation."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-01T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

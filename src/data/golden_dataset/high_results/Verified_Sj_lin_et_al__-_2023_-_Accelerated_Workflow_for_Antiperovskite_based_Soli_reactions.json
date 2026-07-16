@@ -1,0 +1,770 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Accelerated Workflow for Antiperovskite-based Solid State Electrolytes",
+    "doi": "10.1002/batt.202300041",
+    "authors": [
+      "Benjamin H. Sj\u00f8lin",
+      "Peter B. J\u00f8rgensen",
+      "Andrea Fedrigucci",
+      "Tejs Vegge",
+      "Arghya Bhowmik",
+      "Ivano E. Castelli"
+    ],
+    "journal": "Batteries & Supercaps",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational screening",
+    "tags": [
+      "solid-state electrolyte",
+      "antiperovskite",
+      "DFT",
+      "high-throughput",
+      "migration barrier"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "t1",
+      "compound_name": "Li3SI",
+      "molecular_formula": "Li3SI",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper\u2019s Table 2 explicitly lists the candidate antiperovskite compositions, including \u201cLi3SI\u201d as the first entry. This directly supports the extracted Target Formula value.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "t2",
+      "compound_name": "Li3FSe",
+      "molecular_formula": "Li3FSe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The formula Li3FSe appears explicitly in the paper. It is listed in Table 2 among the 14 candidate compounds (\u201cLi3FSe\u201d), and it is also mentioned in the text discussing experimental migration barriers (\u201c... Li3SI (0.29 eV) and Li3FSe (0.18 eV)\u201d) as well as in Figure 8 caption (\u201c... b) Li3FSe\u201d). Therefore the extracted Target Formula is supported. The alleged provenance \u2018Table 2\u2019 is correct (Table 2 includes Li3FSe).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "t3",
+      "compound_name": "Li3FTe",
+      "molecular_formula": "Li3FTe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "Table 2 in the provided text lists candidate antiperovskite compositions including \u201cLi3Fte\u201d (telluride) but does not list \u201cLi3FTe\u201d with that capitalization, and more importantly does not list \u201cLi3FTe\u201d exactly as written in the extracted value. The composition corresponding to Te in Table 2 is \u201cLi3Fte\u201d (i.e., Li3FTe). There is no occurrence of \u201cLi3FTe\u201d elsewhere in the text beyond this Table 2 entry.",
+        "suggested_fix": "Li3FTe"
+      }
+    },
+    {
+      "target_id": "t4",
+      "compound_name": "Li3HSe",
+      "molecular_formula": "Li3HSe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "Table 2 lists the candidate compositions and includes the hydride selenide as \u201cLi3Hse\u201d (lowercase \u2018s\u2019, \u2018e\u2019), i.e., Li3HSe. There is no occurrence of \u201cLi3HSe\u201d (correct capitalization aside) as a target formula in Table 2 or elsewhere with the exact extracted stoichiometry/casing; the table entry appears to have a typo/case issue rather than the exact string provided. The intended formula is Li3HSe.",
+        "suggested_fix": "Li3HSe (appears in Table 2 as \u201cLi3Hse\u201d; normalize capitalization to Li3HSe)"
+      }
+    },
+    {
+      "target_id": "t5",
+      "compound_name": "Li3HTe",
+      "molecular_formula": "Li3HTe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.97,
+        "reasoning": "Table 2 lists candidate compositions such as Li3FTe and Li3HTe (written in the table as \u201cLi3Hte\u201d), but nowhere in the paper (including Table 2) is the formula \u201cLi3HTe\u201d written with the element order \u201cLi3HTe\u201d (H then Te) and capitalization. The extracted value \u201cLi3HTe\u201d also does not appear in Table 2 (alleged provenance); there is no Table 2 entry \u201cLi3HTe\u201d or any mention of \u201cLi3HTe\u201d elsewhere.",
+        "suggested_fix": "Li3HTe (as shown in Table 2 but formatted there as \u201cLi3Hte\u201d)."
+      }
+    },
+    {
+      "target_id": "t6",
+      "compound_name": "Li3OCl",
+      "molecular_formula": "Li3OCl",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The formula Li3OCl appears explicitly in the paper (e.g., Page 2: \u201cantiperovskites such as Li3OCl and Li3OBr\u2026\u201d). It is also listed in Table 2 (shown on Page 8 as \u201cLi3Ocl\u201d, i.e., capitalization difference only). Thus the extracted Target Formula Li3OCl is supported, including by Table 2 despite minor case formatting.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "t7",
+      "compound_name": "Li3OBr",
+      "molecular_formula": "Li3OBr",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper mentions Li3OBr (e.g., on Page 2) and includes it in Table 2 (listed as \u201cLi3Obr\u201d), but nowhere is the specific formula \u201cLi3OBr\u201d presented as the target formula in Table 2; Table 2 lists candidate compositions and uses a lowercase 'b' formatting (\u201cLi3Obr\u201d). The extracted value uses standard capitalization, which is equivalent chemically, but the requested field is \u201cTarget Formula\u201d allegedly from Table 2, and Table 2 does not explicitly show \u201cLi3OBr\u201d in that exact form\u2014only \u201cLi3Obr\u201d.",
+        "suggested_fix": "Li3Obr (as written in Table 2); or, if normalization of element symbols is allowed, keep Li3OBr but cite Page 2 rather than Table 2."
+      }
+    },
+    {
+      "target_id": "t8",
+      "compound_name": "Na3FSe",
+      "molecular_formula": "Na3FSe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "Table 2 in the provided text lists several candidate formulas including \u201cNa3Fse\u201d (case-insensitive: Na3FSe), but does not list \u201cNa3FSe\u201d as \u201cNa3FSe\u201d with the B-site element Se paired with A-site F? Actually it does: \u201cNa3Fse\u201d appears. However, the extracted value is \u201cNa3FSe\u201d which matches that entry; the issue is that the requested field is \u201cTarget Formula\u201d and the specific extracted value \u201cNa3FSe\u201d is supported by Table 2. Wait: the extracted value is \u201cNa3FSe\u201d and Table 2 contains \u201cNa3Fse\u201d. This is the same formula differing only by capitalization. Therefore it is supported; but the prompt says extracted value is Na3FSe, while Table 2 includes Na3Fse. This is equivalent. Yet provenance says Table 2; yes. Re-check: Table 2 indeed includes Na3Fse. So it is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "t9",
+      "compound_name": "Na3SI",
+      "molecular_formula": "Na3SI",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "Table 2 in the provided text lists candidate compounds including \u201cNa3SI\u201d (with a lowercase i in the table rendering that clearly denotes iodine, i.e., Na3SI). It does not list \u201cNa3SI\u201d with an uppercase I? Rather, the extracted value is \u201cNa3SI\u201d (missing the element letter for iodine, I)?? Specifically, the extracted value is \u201cNa3SI\u201d (Na3SI) which would imply Na3S + element I, but the extracted value given is \u201cNa3SI\u201d (with I present) \u2014 however the user extracted value is \u201cNa3SI\u201d (Na3SI) while the paper shows \u201cNa3SI\u201d as a compound name in Table 2. The problem is the field is Target Formula: the paper\u2019s target formula in Table 2 is Na3SI, not Na3SI? Wait\u2014Table 2 explicitly includes Na3SI (sodium antiperovskite). The extracted value \u2018Na3SI\u2019 matches exactly the Table 2 entry.",
+        "suggested_fix": "Na3SI"
+      }
+    },
+    {
+      "target_id": "t10",
+      "compound_name": "Na3OCl",
+      "molecular_formula": "Na3OCl",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "Table 2 lists the candidate antiperovskite compositions and includes \u201cNa3OCl\u201d (with capital O, C, l) as one of the entries. The extracted value \u201cNa3OCl\u201d is missing the number \u20183\u2019 after O (i.e., it is not charge-balanced and does not match the table). Elsewhere in the text, antiperovskites are described with general formula X3BA, and examples include Li3OCl, further supporting that the correct sodium analogue is Na3OCl, not Na3OCl.",
+        "suggested_fix": "Na3OCl"
+      }
+    },
+    {
+      "target_id": "t11",
+      "compound_name": "Na3FTe",
+      "molecular_formula": "Na3FTe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "Table 2 in the provided text lists candidate antiperovskite compositions including \u201cNa3Fte\u201d (i.e., Na3FTe with Te), but it does not list \u201cNa3FTe\u201d as the target formula. The extracted value has elements in the wrong order: Na3FTe implies X3=A? arrangement inconsistent with the paper\u2019s X3BA formula (X=Na; B=Te; A=F should be written Na3TeF, or as in Table 2: Na3FTe meaning Na3FTe? actually shown as Na3Fte). The table explicitly shows Na3Fte, not Na3FTe.",
+        "suggested_fix": "Na3Fte (as written in Table 2; equivalently Na3FTe with Te capitalization)"
+      }
+    },
+    {
+      "target_id": "t12",
+      "compound_name": "Na3OBr",
+      "molecular_formula": "Na3OBr",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "Table 2 (the only table labeled in the provided text) lists candidate antiperovskite formulas including Na3OBr (shown as \"Na3Obr\" due to casing) but not Na3OBr. The extracted value \"Na3OBr\" is missing the oxygen stoichiometry 'O' is present, but the extracted formula includes an extra 'Na' deficiency? Actually the extracted formula \"Na3OBr\" is correct for the compound listed; however the extracted value is \"Na3OBr\" while the prompt says Extracted Value: Na3OBr? Wait, extracted value is \"Na3OBr\" and Table 2 indeed contains \"Na3Obr\" which matches ignoring formatting. The issue is the extracted value in the field is \"Na3OBr\" but user wrote \"Na3OBr\"? No\u2014Extracted Value is \"Na3OBr\". Yet the verification target is \"Na3OBr\" and Table 2 supports it. But the extraction says \"Na3OBr\"; I must check: Field Name says Target Formula and extracted value is \"Na3OBr\"? It is \"Na3OBr\". Table 2 contains Na3Obr, yes supported. However the extracted value in the user message is \"Na3OBr\"? It is \"Na3OBr\". So it is supported, not false. I will correct: supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "t13",
+      "compound_name": "Na3OI",
+      "molecular_formula": "Na3OI",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "Table 2 in the provided text lists the candidate compound as \u201cNa3OI\u201d (sodium antiperovskite with O and I). The extracted target formula \u201cNa3OI\u201d would be supported, but the extracted value is \u201cNa3OI\u201d missing the oxygen (given as Na3OI? actually extracted is Na3OI? Wait: extracted value is Na3OI? The extracted value shown is \u201cNa3OI\u201d with letters Na3OI\u2014this corresponds to Na3OI? However the extracted value is \u201cNa3OI\u201d (Na3OI) while the table shows \u201cNa3OI\u201d with O present: Na3OI. The extracted value \u2018Na3OI\u2019 includes O? It is Na3 O I: yes it includes O. But extracted value is \u201cNa3OI\u201d (Na3 O I) whereas table shows \u201cNa3OI\u201d (Na3 O I). They match. Yet user extracted value is Na3OI (Na3 O I) and table shows Na3OI. Therefore it is supported. If instead extracted was Na3OI (with O?) confusion: extracted value is Na3OI; table shows Na3OI. Same. Hence supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "t14",
+      "compound_name": "Mg3NAs",
+      "molecular_formula": "Mg3NAs",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Table 2 (page 8) explicitly lists the compound \u201cMg3NAs\u201d among the 14 candidates, directly supporting the extracted Target Formula.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "wf1",
+        "description": "DFT structural relaxation (PBE, 520 eV cutoff, 7x7x7 k-grid) of 1317 antiperovskite compositions.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "The paper explicitly states that the antiperovskite compositional space examined totals 1317 compounds (\u201cfor a total number of compounds under examination of 1317\u201d) and describes DFT structural relaxations using VASP with PBE, an energy cutoff of 520 eV, and a 7\u00d77\u00d77 k-point grid for unit cells. These statements appear in the \u201cWorkflow\u201d and \u201cStructural relaxations\u201d sections (Pages 2\u20133).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "wf2",
+        "description": "Antiperovskite structure check based on geometric criteria (unit cell angles, lengths, X\u2013A/B distances, octahedral angles).",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The paper explicitly describes an \u201cAntiperovskite structure check\u201d as the first filtering criterion after structural relaxation. It states the check is based on geometric criteria: (1) unit cell angles near 90\u00b0 (\u00b12\u00b0), (2) unit cell lengths within 0.5 \u00c5 of each other, (3) X\u2013A distances within 0.5 \u00c5 of each other, (4) X\u2013B distances within 0.5 \u00c5 of each other, and (5) octahedral angles near 90\u00b0 (\u00b113\u00b0). This matches the extracted value\u2019s description of a structure check based on unit cell angles/lengths, X\u2013A/B distances, and octahedral angles (workflow step/timeline).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "wf3",
+        "description": "Thermodynamic stability assessment via energy above convex hull (<0.2 eV/atom).",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly states under the \u201cThermodynamic stability\u201d section that stability is assessed via energy above the convex hull, and that the criterion is relaxed to include compounds with an energy above the hull of less than 0.2 eV/at (i.e., per atom) due to DFT inaccuracies/metastability. This matches the extracted workflow timeline statement.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "wf4",
+        "description": "Electronic property filter: bandgap \u22650.5 eV (PBE).",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly states under the \u201cElectronic properties\u201d section that PBE is used to determine the band gap and that \u201ca cut-off band gap of 0.5 eV is used\u201d to filter materials (i.e., band gap threshold \u22650.5 eV). This corresponds to an electronic property filter of bandgap \u22650.5 eV (PBE).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "wf5",
+        "description": "Electrochemical stability window computed with Grand Potential Phase Diagrams; requirement \u22651 V.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "Page 4 explicitly states that the Electrochemical Stability Window (ESW) is determined using Grand Potential Phase Diagrams (GPPDs) and that a minimal ESW of 1 V is chosen as the passing/requirements criterion (\u201cA minimal ESW of 1 V is chosen as the passing criteria\u2026 compounds with an ESW smaller than 1 V are rejected.\u201d).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "wf6",
+        "description": "Migration barrier estimation with Surrogate NEB (S-NEB); top 10 lowest barriers selected.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The paper explicitly describes migration barrier estimation using \u201cSurrogate NEB (S-NEB)\u201d under the \u201cMigration Barriers \u2013 Surrogate NEB\u201d section. It also explicitly states: \u201cThe 10 materials with the smallest S-NEB migration barriers go through the filter.\u201d This matches the extracted workflow-timeline statement that barriers are estimated with S-NEB and the top 10 lowest barriers are selected.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "wf7",
+        "description": "Benchmark Climbing-Image NEB (CI-NEB) calculations for 28 compounds to validate S-NEB.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly states in the Results and Discussion \u2192 Surrogate NEB section: \u201cwe ran CI-NEB calculations for all the compounds that made it through to the ESW step in the workflow\u2026 with 28 compounds examined\u2026\u201d. This matches the extracted statement that CI-NEB benchmarking was performed for 28 compounds to validate/benchmark S-NEB.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Ambiguous formula transcription for last compound in Table 2",
+        "excerpt": "\"Mg3Nas\" appears in text; interpreted as \"Mg3NAs\" (Mg3NAs).",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "Table 2 (page 8) explicitly lists the last candidate as \"Mg3Nas\" (lowercase 's'), which is an ambiguous/likely erroneous transcription for a chemical formula. The body text nearby also references \"Mg3NAs\" in the sentence \"...Na3OI, and Mg3NAs having been synthesized.\" This discrepancy supports the extracted issue that the formula transcription for the last compound in Table 2 is ambiguous and could be interpreted as Mg3NAs.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT (PBE)",
+      "parameters": {
+        "energy_cutoff": "520 eV",
+        "k_point_grid": "7x7x7 (unit cell), 4x4x4 (supercell)"
+      },
+      "results": [
+        {
+          "target_id": "t1",
+          "metric": "bandgap",
+          "value": 3.7,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t2",
+          "metric": "bandgap",
+          "value": 3.8,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t3",
+          "metric": "bandgap",
+          "value": 3.0,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t4",
+          "metric": "bandgap",
+          "value": 3.6,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t5",
+          "metric": "bandgap",
+          "value": 3.1,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t6",
+          "metric": "bandgap",
+          "value": 4.9,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t7",
+          "metric": "bandgap",
+          "value": 4.5,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t8",
+          "metric": "bandgap",
+          "value": 2.0,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t9",
+          "metric": "bandgap",
+          "value": 2.5,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t10",
+          "metric": "bandgap",
+          "value": 2.0,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t11",
+          "metric": "bandgap",
+          "value": 2.1,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t12",
+          "metric": "bandgap",
+          "value": 1.9,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t13",
+          "metric": "bandgap",
+          "value": 2.0,
+          "unit": "eV"
+        },
+        {
+          "target_id": "t14",
+          "metric": "bandgap",
+          "value": 1.3,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "All selected candidates are semiconductors/insulators with bandgap \u22651.3 eV.",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Table 2 (page 8) explicitly lists the PBE-calculated band gaps (\u201cGap [eV]\u201d) for the 14 candidate compounds. The values match the extracted list: Li3SI 3.7, Li3FSe 3.8, Li3FTe 3.0, Li3HSe 3.6, Li3HTe 3.1, Li3OCl 4.9, Li3OBr 4.5, Na3FSe 2.0, Na3SI 2.5, Na3OCl 2.0, Na3FTe 2.1, Na3OBr 1.9, Na3OI 2.0, Mg3NAs 1.3 eV. The paper also states PBE is used to determine the band gap (page 4), consistent with the field label.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Grand Potential Phase Diagram (GPPD)",
+      "parameters": {},
+      "results": [
+        {
+          "target_id": "t1",
+          "metric": "ESW",
+          "value": 2.52,
+          "unit": "V"
+        },
+        {
+          "target_id": "t2",
+          "metric": "ESW",
+          "value": 2.13,
+          "unit": "V"
+        },
+        {
+          "target_id": "t3",
+          "metric": "ESW",
+          "value": 1.58,
+          "unit": "V"
+        },
+        {
+          "target_id": "t4",
+          "metric": "ESW",
+          "value": 1.01,
+          "unit": "V"
+        },
+        {
+          "target_id": "t5",
+          "metric": "ESW",
+          "value": 1.03,
+          "unit": "V"
+        },
+        {
+          "target_id": "t6",
+          "metric": "ESW",
+          "value": 2.86,
+          "unit": "V"
+        },
+        {
+          "target_id": "t7",
+          "metric": "ESW",
+          "value": 2.8,
+          "unit": "V"
+        },
+        {
+          "target_id": "t8",
+          "metric": "ESW",
+          "value": 1.58,
+          "unit": "V"
+        },
+        {
+          "target_id": "t9",
+          "metric": "ESW",
+          "value": 2.01,
+          "unit": "V"
+        },
+        {
+          "target_id": "t10",
+          "metric": "ESW",
+          "value": 1.73,
+          "unit": "V"
+        },
+        {
+          "target_id": "t11",
+          "metric": "ESW",
+          "value": 1.4,
+          "unit": "V"
+        },
+        {
+          "target_id": "t12",
+          "metric": "ESW",
+          "value": 1.85,
+          "unit": "V"
+        },
+        {
+          "target_id": "t13",
+          "metric": "ESW",
+          "value": 1.15,
+          "unit": "V"
+        },
+        {
+          "target_id": "t14",
+          "metric": "ESW",
+          "value": 1.21,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "All candidates exceed the 1 V minimum stability window.",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Table 2 in the provided text explicitly lists ESW [V] values for 14 candidate compounds: 2.52, 2.13, 1.58, 1.01, 1.03, 2.86, 2.80, 1.58, 2.01, 1.73, 1.40, 1.85, 1.15, and 1.21. These match the extracted ESW values (units V) one-to-one. The provenance 'Table 2' is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Climbing-Image NEB (CI-NEB)",
+      "parameters": {
+        "optimizer": "FIRE",
+        "internal_images": "1 for Li/Na, 3 for Mg"
+      },
+      "results": [
+        {
+          "target_id": "t1",
+          "metric": "migration barrier",
+          "value": 175,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t2",
+          "metric": "migration barrier",
+          "value": 194,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t3",
+          "metric": "migration barrier",
+          "value": 198,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t4",
+          "metric": "migration barrier",
+          "value": 265,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t5",
+          "metric": "migration barrier",
+          "value": 293,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t6",
+          "metric": "migration barrier",
+          "value": 380,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t7",
+          "metric": "migration barrier",
+          "value": 419,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t8",
+          "metric": "migration barrier",
+          "value": 279,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t9",
+          "metric": "migration barrier",
+          "value": 313,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t10",
+          "metric": "migration barrier",
+          "value": 329,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t11",
+          "metric": "migration barrier",
+          "value": 355,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t12",
+          "metric": "migration barrier",
+          "value": 459,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t13",
+          "metric": "migration barrier",
+          "value": 553,
+          "unit": "meV"
+        },
+        {
+          "target_id": "t14",
+          "metric": "migration barrier",
+          "value": 616,
+          "unit": "meV"
+        }
+      ],
+      "interpretation": "Li and Na antiperovskites exhibit lower migration barriers compared to Mg-based compound.",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "Table 2 in the provided text explicitly reports the CI-NEB migration barriers (E\u00b0NEB) for 14 antiperovskite candidates. The listed values match the extracted meV values in order: 175, 194, 198, 265, 293, 380, 419, 279, 313, 329, 355, 459, 553, 616 (all in meV). These correspond to the 'Climbing Image NEB' barriers (CI-NEB) discussed in the paper and labeled in Table 2 as E\u00b0NEB [meV].",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Convex Hull Stability Analysis",
+        "results": [
+          {
+            "target_id": "t1",
+            "metric": "energy_above_hull",
+            "value": 0.195,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t2",
+            "metric": "energy_above_hull",
+            "value": 0.057,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t3",
+            "metric": "energy_above_hull",
+            "value": 0.065,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t4",
+            "metric": "energy_above_hull",
+            "value": 0.017,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t5",
+            "metric": "energy_above_hull",
+            "value": 0.012,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t6",
+            "metric": "energy_above_hull",
+            "value": 0.145,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t7",
+            "metric": "energy_above_hull",
+            "value": 0.157,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t8",
+            "metric": "energy_above_hull",
+            "value": 0.044,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t9",
+            "metric": "energy_above_hull",
+            "value": 0.172,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t10",
+            "metric": "energy_above_hull",
+            "value": 0.139,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t11",
+            "metric": "energy_above_hull",
+            "value": 0.022,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t12",
+            "metric": "energy_above_hull",
+            "value": 0.138,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t13",
+            "metric": "energy_above_hull",
+            "value": 0.138,
+            "unit": "eV atom-1"
+          },
+          {
+            "target_id": "t14",
+            "metric": "energy_above_hull",
+            "value": 0.053,
+            "unit": "eV atom-1"
+          }
+        ],
+        "prov": [
+          "Table 2"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly describes multiple analysis/computational methods (e.g., DFT using VASP with PBE-GGA, surrogate NEB (S-NEB), CI-NEB, grand potential phase diagrams for ESW, convex hull stability via pymatgen). Table 2 itself only reports computed properties (Ehull, band gap, ESW, migration barriers) and does not list an \u201canalysis method\u201d field, but the document clearly specifies methods in the Computational Methods section. Therefore, leaving the field empty is not supported by the source text.",
+          "suggested_fix": "Density Functional Theory (DFT) calculations (VASP, PBE-GGA) with NEB-based migration barrier analysis (Surrogate NEB/S-NEB and CI-NEB), plus convex-hull phase stability (pymatgen) and ESW via grand potential phase diagrams."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-19T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

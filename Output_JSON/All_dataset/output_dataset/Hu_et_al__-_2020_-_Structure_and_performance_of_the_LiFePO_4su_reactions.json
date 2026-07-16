@@ -1,0 +1,293 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Structure and performance of the LiFePO4 cathode material: from the bulk to the surface",
+    "doi": "10.1039/d0nr03776a",
+    "authors": ["Jiangtao Hu", "Weiyuan Huang", "Luyi Yang", "Feng Pan"],
+    "journal": "Nanoscale",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "minireview",
+    "tags": ["LiFePO4", "cathode", "lithium-ion battery", "surface engineering", "bulk structure"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "intended_role": "cathode material",
+      "prov": ["Text"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiMn0.5Fe0.5PO4",
+      "molecular_formula": "LiMn0.5Fe0.5PO4",
+      "intended_role": "cathode material",
+      "prov": ["Text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Carbon",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "coating",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as conductive coating on LiFePO4",
+      "prov": ["Text"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "coating",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "thin layer (~5 nm) via ALD on LiMn0.5Fe0.5PO4",
+      "prov": ["Text"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "aqueous electrolyte component",
+      "prov": ["Text"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "organic electrolyte component",
+      "prov": ["Text"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "LiMn0.5Fe0.5PO4",
+      "molecular_formula": "LiMn0.5Fe0.5PO4",
+      "ontology": {
+        "role": "cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Carbon coating of LiFePO4 nanoparticles to form E-LFP with enhanced capacity",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "thickness": {
+                "value": null,
+                "unit": "nm"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "referred to as special carbon coating; particle sizes 83 nm and 42 nm reported after process"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Text"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Atomic layer deposition (ALD) of Al2O3 (~5 nm) on LiMn0.5Fe0.5PO4 particles",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "thickness": {
+                "value": 5,
+                "unit": "nm"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "homogeneous coating to improve cycling stability"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Text"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of carbon-coated LiFePO4 (E-LFP) nanoparticles"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "ALD coating of Al2O3 on LiMn0.5Fe0.5PO4"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis parameters (temperature, time, carbon amount) for carbon coating step",
+        "excerpt": "Pan et al.63 achieved an excess capacity ... by special carbon coating."
+      },
+      {
+        "issue": "No ALD process parameters (precursor, temperature, cycle count) provided for Al2O3 deposition",
+        "excerpt": "a thin layer (approximately 5 nm) of Al2O3 is homogeneously applied on the cathode material via the atomic layer deposition (ALD) technique."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": 83,
+          "unit": "nm"
+        },
+        {
+          "metric": "particle size",
+          "value": 42,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Sizes correspond to different E-LFP samples",
+      "prov": ["Figure 5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical testing",
+        "results": [
+          {
+            "metric": "capacity",
+            "value": 186,
+            "unit": "mAh g-1",
+            "notes": "LiFePO4 (83 nm) with special carbon coating"
+          },
+          {
+            "metric": "capacity",
+            "value": 207,
+            "unit": "mAh g-1",
+            "notes": "LiFePO4 (42 nm) with special carbon coating"
+          },
+          {
+            "metric": "capacity",
+            "value": 72,
+            "unit": "mAh g-1",
+            "notes": "LiFePO4 in aqueous electrolyte at 600C (6 s charge)"
+          }
+        ],
+        "prov": ["Text"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 207,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

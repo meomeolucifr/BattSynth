@@ -1,0 +1,184 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Strong two-dimensional plasmon in Li-intercalated hexagonal boron-nitride film with low damping",
+    "doi": "10.1038/s41699-018-0078-y",
+    "authors": [
+      "Ivor Lončarić",
+      "Zoran Rukelj",
+      "Vyacheslav M. Silkin",
+      "Vito Despoja"
+    ],
+    "journal": "npj 2D Materials and Applications",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "plasmonics",
+      "2D materials",
+      "DFT"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li-intercalated hexagonal boron nitride monolayer",
+      "molecular_formula": "LiB2N2",
+      "intended_role": "plasmonic material under study",
+      "prov": [
+        "Main text"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "intercalant / plasmon active layer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Hexagonal boron nitride",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "supporting layer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Atomic units used for several parameters (e.g., kF=0.285 a.u., αhBN=12.6 a.u.) which are outside defined units_policy.",
+        "excerpt": "The energy of σ1 band in Γ point is Eσ1Γ = −0.96 eV and thus, the Fermi wave vector is kF = 0.285 a.u."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (plane-wave)",
+      "parameters": {
+        "plane_wave_cutoff_energy": {
+          "value": 820,
+          "unit": "eV"
+        },
+        "k_point_mesh": "10×10×1",
+        "superlattice_constant_L": {
+          "value": 14,
+          "unit": "Å"
+        },
+        "lattice_constant_au": {
+          "value": 5.02,
+          "unit": "Å"
+        },
+        "exchange_correlation_functional": "vdW-DF-cx",
+        "pseudopotentials": "norm-conserving",
+        "geometry_convergence_force": {
+          "value": 0.002,
+          "unit": "eV Å-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "equilibrium interlayer separation (c)",
+          "value": 6.3,
+          "unit": "Å"
+        },
+        {
+          "metric": "band gap of hBN (calculated)",
+          "value": 4.5,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Methods"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "ELF and plasmon analysis (DFT + RPA)",
+        "results": [
+          {
+            "metric": "static polarizability α_hBN",
+            "value": 12.6,
+            "unit": "a.u."
+          },
+          {
+            "metric": "β_hBN (linear coefficient in surface excitation propagator)",
+            "value": -8.4,
+            "unit": "a.u."
+          },
+          {
+            "metric": "Fermi wave vector kF (Li σ1 band)",
+            "value": 0.285,
+            "unit": "a.u."
+          },
+          {
+            "metric": "effective mass m* (σ1 band)",
+            "value": 1.15,
+            "unit": "m_e"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-26T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

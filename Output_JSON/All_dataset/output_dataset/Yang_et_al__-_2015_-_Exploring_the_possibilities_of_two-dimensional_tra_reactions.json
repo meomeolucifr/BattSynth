@@ -1,0 +1,228 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Exploring the possibilities of two-dimensional transition metal carbides as anode materials for sodium batteries",
+    "doi": "10.1039/c4cp05140h",
+    "authors": ["Eunjeong Yang", "Hyunjun Ji", "Jaehoon Kim", "Heejin Kim", "Yousung Jung"],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "MXene", "sodium ion battery", "anode"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ti2CO2",
+      "molecular_formula": "Ti2CO2",
+      "intended_role": "anode material",
+      "prov": ["Page 5001-5003"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "V2CO2",
+      "molecular_formula": "V2CO2",
+      "intended_role": "anode material",
+      "prov": ["Page 5001-5003"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Cr2CO2",
+      "molecular_formula": "Cr2CO2",
+      "intended_role": "anode material",
+      "prov": ["Page 5001-5003"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Mn2CO2",
+      "molecular_formula": "Mn2CO2",
+      "intended_role": "anode material",
+      "prov": ["Page 5001-5003"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Fe2CO2",
+      "molecular_formula": "Fe2CO2",
+      "intended_role": "anode material",
+      "prov": ["Page 5001-5003"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "Co2CO2",
+      "molecular_formula": "Co2CO2",
+      "intended_role": "anode material",
+      "prov": ["Page 5001-5003"]
+    },
+    {
+      "target_id": "target_7",
+      "compound_name": "Ni2CO2",
+      "molecular_formula": "Ni2CO2",
+      "intended_role": "anode material",
+      "prov": ["Page 5001-5003"]
+    },
+    {
+      "target_id": "target_8",
+      "compound_name": "Nb2CO2",
+      "molecular_formula": "Nb2CO2",
+      "intended_role": "anode material",
+      "prov": ["Page 5001-5003"]
+    },
+    {
+      "target_id": "target_9",
+      "compound_name": "Mo2CO2",
+      "molecular_formula": "Mo2CO2",
+      "intended_role": "anode material",
+      "prov": ["Page 5001-5003"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "",
+        "description": "Density functional theory (DFT) calculations, voltage and migration barrier evaluations for nine O-terminated M2C MXenes."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations (VASP, PBE)",
+        "parameters": {
+          "energy_cutoff": {"value": 500, "unit": "eV"},
+          "k_point_mesh": "4×4×2 (Monkhorst–Pack) for 3×3 supercell",
+          "convergence_energy": {"value": 1e-6, "unit": "eV"},
+          "convergence_force": {"value": 0.02, "unit": "eV Å-1"},
+          "dispersion_correction": "DFT-D3"
+        },
+        "results": [
+          {
+            "metric": "average Li insertion voltage (V vs Li/Li+)",
+            "value": {
+              "Ti": 1.10,
+              "V": 1.30,
+              "Cr": 1.00,
+              "Mn": null,
+              "Fe": null,
+              "Co": null,
+              "Ni": null,
+              "Nb": 0.84,
+              "Mo": 0.69
+            },
+            "unit": "V"
+          },
+          {
+            "metric": "average Na insertion voltage (V vs Na/Na+)",
+            "value": {
+              "Ti": 0.40,
+              "V": 0.52,
+              "Cr": 0.26,
+              "Mn": 0.80,
+              "Fe": null,
+              "Co": null,
+              "Ni": null,
+              "Nb": null,
+              "Mo": 0.19
+            },
+            "unit": "V"
+          },
+          {
+            "metric": "theoretical capacity (Li)",
+            "value": "214–349",
+            "unit": "mAh g-1"
+          },
+          {
+            "metric": "theoretical capacity (Na)",
+            "value": "190–288",
+            "unit": "mAh g-1"
+          }
+        ],
+        "interpretation": "Voltage trends correlate with distance between adsorbed ion layer and transition metal layer; Na voltages generally lower than Li.",
+        "prov": ["Pages 5002-5003", "Figure 3", "Table 1"]
+      },
+      {
+        "method_name": "NEB migration barrier calculations",
+        "parameters": {
+          "paths_evaluated": 3,
+          "preferred_path": "nearest-neighbour hollow-to-hollow (pathway 1)"
+        },
+        "results": [
+          {
+            "metric": "Na migration barrier",
+            "value": {
+              "Ti": 0.18,
+              "V": 0.15,
+              "Cr": 0.09,
+              "Mn": 0.15,
+              "Mo": 0.14
+            },
+            "unit": "eV"
+          },
+          {
+            "metric": "Li migration barrier",
+            "value": {
+              "Ti": 0.28,
+              "V": 0.21,
+              "Cr": 0.13,
+              "Mn": 0.22,
+              "Mo": 0.16
+            },
+            "unit": "eV"
+          }
+        ],
+        "interpretation": "Low Na migration barriers (0.09–0.18 eV) indicate high rate capability.",
+        "prov": ["Pages 5003-5004", "Figure 5", "Table 2"]
+      },
+      {
+        "method_name": "Bader charge analysis",
+        "parameters": {},
+        "results": [
+          {
+            "metric": "Relative ionization",
+            "value": "Na atoms exhibit higher positive charge than Li atoms on MXene surfaces",
+            "unit": ""
+          }
+        ],
+        "interpretation": "Higher ionization of Na contributes to stronger electrostatic interaction and voltage shift compared to Li.",
+        "prov": ["Page 5003", "ESI Table S2"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

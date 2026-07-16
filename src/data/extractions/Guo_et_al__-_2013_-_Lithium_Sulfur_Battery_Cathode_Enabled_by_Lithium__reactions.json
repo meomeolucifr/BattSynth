@@ -1,0 +1,478 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium −Sulfur Battery Cathode Enabled by Lithium −Nitrile Interaction",
+    "doi": "10.1021/ja309435f",
+    "authors": [
+      "Juchen Guo",
+      "Zichao Yang",
+      "Yingchao Yu",
+      "Héctor D. Abruña",
+      "Lynden A. Archer"
+    ],
+    "journal": "Journal of the American Chemical Society",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": ["Li2S cathode", "polyacrylonitrile", "lithium-sulfur battery", "carbon composite"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2S-C composite cathode",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Scheme 1", "Results section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text p.764"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium trisulfide",
+      "molecular_formula": "Li2S3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Formed in situ from Li2S and sulfur for DMF solubility",
+      "prov": ["Scheme 1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Polyacrylonitrile",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer precursor",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text p.763-764"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Dimethylformamide",
+      "molecular_formula": "C3H7NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Scheme 1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text p.764"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in half-cell testing",
+      "prov": ["Text p.765"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of Li2S3–PAN solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3", "chem_4"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Co-dissolution of Li2S3 salt and PAN in DMF creates homogeneous solution"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Scheme 1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Vacuum drying of cross-linked polymer",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": []
+            },
+            "temperature": {
+              "value": 373,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "notes": "Removal of DMF under vacuum"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Text p.764"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Pulverization of dried composite",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": []
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Mechanical ball milling to obtain fine powder"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Text p.764"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Dehydrogenation and cyclization heat treatment",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": []
+            },
+            "temperature": {
+              "value": 573,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "Argon atmosphere; converts Li2S3–PAN to Li2S in PAN matrix"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Scheme 1", "Text p.764"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Carbonization of PAN to form Li2S-C composite",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": []
+            },
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 30,
+              "unit": "min"
+            },
+            "notes": "Maintained in argon atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Scheme 1", "Text p.764"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Solution formation and Li–nitrile cross-linking"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Solvent removal by vacuum drying at 100 °C (48 h)"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Mechanical milling to fine powder"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Heat treatment at 300 °C for 2 h under Ar (dehydrogenation/cyclization)"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Carbonization at 600 °C for 30 min under Ar producing Li2S-C composite"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Quantities of reactants not reported",
+        "excerpt": "The specific amounts of Li2S3, PAN, and DMF used for codissolution are not provided."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "Li2S phase confirmed after 300 °C treatment and after carbonization",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates successful conversion to Li2S and retention after carbonization",
+      "prov": ["Figure 1"]
+    },
+    {
+      "method": "TGA",
+      "parameters": {
+        "atmosphere": "oxidative"
+      },
+      "results": [
+        {
+          "metric": "weight gain",
+          "value": 124,
+          "unit": "wt %"
+        },
+        {
+          "metric": "Li2S content in composite",
+          "value": 51.8,
+          "unit": "wt %"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Supporting Information Figure S1"]
+    },
+    {
+      "method": "FTIR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "C≡N stretch absence",
+          "value": "",
+          "unit": ""
+        },
+        {
+          "metric": "C=N shift",
+          "value": "1560 cm-1 → 1430 cm-1",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Shift attributed to interaction between nitrogen atoms and lithium salt",
+      "prov": ["Supporting Information Figure S3"]
+    },
+    {
+      "method": "Raman",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "graphitic content comparison",
+          "value": "Li2S-C shows lower graphitic content than carbonized PAN",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Lithium sulfide association hinders graphitization",
+      "prov": ["Supporting Information Figure S4"]
+    },
+    {
+      "method": "TEM/STEM-EDX/EELS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "element distribution",
+          "value": "C, S, and Li uniformly distributed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Supports uniform Li2S dispersion in carbon matrix",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate": {
+          "value": 0.05,
+          "unit": "mV s-1"
+        },
+        "voltage_window": "1.5–3.5 V vs Li/Li+"
+      },
+      "results": [
+        {
+          "metric": "first cathodic peak potential",
+          "value": 3.1,
+          "unit": "V"
+        },
+        {
+          "metric": "subsequent cathodic peak",
+          "value": 2.55,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "High potential delithiation attributed to Li–N bonding; stabilizes after initial cycles",
+      "prov": ["Figure 3"]
+    },
+    {
+      "method": "Galvanostatic charge/discharge",
+      "parameters": {
+        "current_density": {
+          "value": 10,
+          "unit": "mA g-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "reversible capacity",
+          "value": 900,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Near-theoretical capacity at low rate",
+      "prov": ["Figure 4"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": {
+          "value": 200,
+          "unit": "mA g-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "stable capacity",
+          "value": 500,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "Coulombic efficiency",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Demonstrates effective polysulfide sequestration and cycling stability",
+      "prov": ["Figure 5"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 500,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-05T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

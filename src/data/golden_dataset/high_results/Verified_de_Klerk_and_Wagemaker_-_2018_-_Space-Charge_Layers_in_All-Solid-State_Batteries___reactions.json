@@ -1,0 +1,310 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Space-Charge Layers in All-Solid-State Batteries; Important or Negligible?",
+    "doi": "10.1021/acsaem.8b01141",
+    "authors": [
+      "Niek J. J. de Klerk",
+      "Marnix Wagemaker"
+    ],
+    "journal": "ACS Applied Energy Materials",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "all-solid-state batteries",
+      "space-charge",
+      "modeling"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "electrode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referenced as LCO cathode material.",
+      "prov": [
+        "Table 1",
+        "Main text \u2013 modeling sections"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the chemical as LCO (LiCoO2), e.g., in the abstract (\u201cThe model is applied to LCO (LiCoO2) \u2026\u201d) and in the Results section (\u201c\u2026a high voltage LiCoO2 electrode (LCO)\u2026\u201d). However, the document does not specify an experimental/recipe-like \u201camount\u201d of LiCoO2 (no masses, molarities, wt%, loading, etc.); Li content is discussed only as composition/fractional stoichiometry (e.g., Li0.9CoO2) and as model parameters (cmax, c0). Therefore the extracted statement that the amount is not specified is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "electrode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Anode material in modeling.",
+      "prov": [
+        "Table 1",
+        "Main text \u2013 modeling sections"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.83,
+        "reasoning": "The paper explicitly includes graphite as one of the modeled electrodes (\u201c\u2026LCO (LiCoO2) and graphite electrodes\u2026\u201d). Table 1 lists material properties for graphite, but the paper does not state any explicit \u201camount\u201d of graphite used (it is a modeling study with no masses/quantities given). Therefore, the extractor\u2019s \u2018Graphite | Amount: Not specified in text\u2019 is consistent with the document content.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referred to as LLZO.",
+      "prov": [
+        "Table 1",
+        "Main text \u2013 modeling sections"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the solid electrolyte LLZO as Li7La3Zr2O12 (e.g., Abstract/Page 1: \u201cLLZO (Li7La3Zr2O12)\u201d and Results/Page 4: \u201cLi7La3Zr2O12 (LLZO)\u201d). However, the document does not specify an experimental amount (mass, molar amount, wt%, loading, etc.) of Li7La3Zr2O12 used\u2014this is a modeling paper and Table 1 lists material properties (concentrations, voltage, permittivity, etc.) rather than an amount used. Therefore, \u201cAmount: Not specified in text\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li1.2Al0.2Ti1.8(PO4)3",
+      "molecular_formula": "Li1.2Al0.2Ti1.8(PO4)3",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referred to as LATP.",
+      "prov": [
+        "Table 1",
+        "Main text \u2013 modeling sections"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The chemical identity LATP is explicitly given as Li1.2Al0.2Ti1.8(PO4)3 in the abstract (Page 1) and again in the Results section (Page 4). The paper does not state an experimental or compositional \u201camount\u201d for this chemical (no mass, molarity, wt%, volume, or loading); LATP is only used as a modeled solid electrolyte in the simulations, with parameters listed in Table 1. Therefore, the extracted note \u201cAmount: Not specified in text\u201d is supported by the absence of any stated amount.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Negative resistance values reported",
+        "excerpt": "LLZO interface resistances at 4.0 V and 3.9 V are \u22122\u00d710\u22124 and \u22123\u00d710\u22125 \u03a9 cm2 (Table 2). Physical interpretation unclear.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "Table 2 in the provided full text explicitly reports negative space-charge layer resistance values for LLZO at LCO voltages 4.0 V and 3.9 V: \u22122 \u00d7 10\u22124 and \u22123 \u00d7 10\u22125 \u03a9\u00b7cm2, respectively (Table 2 row entries under LLZO resistance). This directly supports the extracted excerpt about negative resistance values being reported. The paper itself frames some resistance results as model-dependent/uncertain (notably LATP at 4.3 V), but it does not explicitly provide a physical interpretation for negative interface resistance beyond explaining that the additional resistance R is defined as Rsc \u2212 Rbulk (eq 16), which can be negative if the space-charge layer is more conductive than the bulk over the same distance.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Space-charge layer modeling (Table 2)",
+        "results": [
+          {
+            "interface": "LCO/LATP",
+            "voltage": 4.3,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 11,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": 17,
+            "resistance_unit": "\u03a9 cm2"
+          },
+          {
+            "interface": "LCO/LATP",
+            "voltage": 4.0,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 8,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": 0.02,
+            "resistance_unit": "\u03a9 cm2"
+          },
+          {
+            "interface": "LCO/LATP",
+            "voltage": 3.9,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 4,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": 0.0005,
+            "resistance_unit": "\u03a9 cm2"
+          },
+          {
+            "interface": "LCO/LLZO",
+            "voltage": 4.3,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 49,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": 0.003,
+            "resistance_unit": "\u03a9 cm2"
+          },
+          {
+            "interface": "LCO/LLZO",
+            "voltage": 4.0,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 29,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": -0.0002,
+            "resistance_unit": "\u03a9 cm2"
+          },
+          {
+            "interface": "LCO/LLZO",
+            "voltage": 3.9,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 12,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": -3e-05,
+            "resistance_unit": "\u03a9 cm2"
+          }
+        ],
+        "prov": [
+          "Table 2"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.2,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, and the paper does not present a field explicitly named \u201cAnalysis Method\u201d (including in Table 2). Table 2 reports calculated space-charge layer capacitance and resistance values; it does not state an analysis/measurement method. While the paper describes a modeling approach (a space-charge model with Poisson equation, Nernst\u2013Einstein relation, etc.), the extraction being empty is not explicitly supported because the document does contain analysis methodology in the main text.",
+          "suggested_fix": "Space-charge layer modeling (1D thermodynamic/Poisson-based space-charge model including Coulomb interactions; resistance via Nernst\u2013Einstein relation and concentration-dependent diffusivity)."
+        }
+      },
+      {
+        "method_name": "Space-charge layer modeling (Table 3)",
+        "results": [
+          {
+            "interface": "Graphite/LATP",
+            "voltage": 0.2,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 8,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": 0.15,
+            "resistance_unit": "\u03a9 cm2"
+          },
+          {
+            "interface": "Graphite/LATP",
+            "voltage": 0.15,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 11,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": 0.04,
+            "resistance_unit": "\u03a9 cm2"
+          },
+          {
+            "interface": "Graphite/LATP",
+            "voltage": 0.1,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 12,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": 0.02,
+            "resistance_unit": "\u03a9 cm2"
+          },
+          {
+            "interface": "Graphite/LLZO",
+            "voltage": 0.2,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 9,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": 0.29,
+            "resistance_unit": "\u03a9 cm2"
+          },
+          {
+            "interface": "Graphite/LLZO",
+            "voltage": 0.15,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 16,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": 1.0,
+            "resistance_unit": "\u03a9 cm2"
+          },
+          {
+            "interface": "Graphite/LLZO",
+            "voltage": 0.1,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 19,
+            "capacitance_unit": "\u03bcF cm-2",
+            "resistance": 0.06,
+            "resistance_unit": "\u03a9 cm2"
+          }
+        ],
+        "prov": [
+          "Table 3"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.25,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper clearly describes a computational/theoretical approach: a 1D space-charge layer model solving the Poisson equation and related thermodynamic relations, implemented as Matlab code (Supporting Information). Table 3 contains simulated capacitance and resistance values, not an analysis method description. Therefore, leaving the field empty is not supported by the text.",
+          "suggested_fix": "Analysis Method: Computational/theoretical modeling (1D space-charge layer model; numerical solution of Poisson equation with thermodynamic defect model; Matlab code provided as Supporting Information)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-28T10:31:00Z",
+    "source_file": "user_provided_text_chunk",
+    "processing_time": null
+  }
+}

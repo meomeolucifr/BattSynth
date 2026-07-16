@@ -1,0 +1,360 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Grain Boundary Contributions to Li-ion Transport in the Solid Electrolyte Li7La3Zr2O12 (LLZO)",
+    "doi": "",
+    "authors": ["Seungho Yu", "Donald J. Siegel"],
+    "journal": "",
+    "year": null
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "supporting_information",
+    "tags": ["solid electrolyte", "LLZO", "grain boundary", "molecular dynamics", "lithium ion transport"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "electrolyte",
+      "prov": ["Page 1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "element",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Tables S2, S3"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "La",
+      "molecular_formula": "La",
+      "ontology": {
+        "role": "element",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Tables S2"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Zr",
+      "molecular_formula": "Zr",
+      "ontology": {
+        "role": "element",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Tables S2"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "O",
+      "molecular_formula": "O",
+      "ontology": {
+        "role": "element",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Tables S2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Construction of initial (as-built) LLZO supercell containing grain boundaries.",
+        "operations": [
+          {
+            "action": "build_supercell",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure S2 (a)"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Molecular dynamics relaxation of the supercell.",
+        "operations": [
+          {
+            "action": "molecular_dynamics_relaxation",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure S2 (b)"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "NPT heating molecular dynamics to 1000 K.",
+        "operations": [
+          {
+            "action": "heat_MD",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1000,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure S2 (c)"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Monte Carlo equilibration of the heated structure.",
+        "operations": [
+          {
+            "action": "monte_carlo_equilibration",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1000,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure S2 (d)"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Initial supercell construction"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "MD relaxation"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "NPT heating to 1000 K"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Monte Carlo equilibration"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing duration information for MD relaxation and equilibration steps.",
+        "excerpt": "Figure S2 captions do not specify simulation times."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Molecular Dynamics (MD)",
+      "parameters": {
+        "temperature_range_K": [700, 1100],
+        "simulation_time": {
+          "value": 5,
+          "unit": "ns"
+        }
+      },
+      "results": [
+        {"metric": "percentage immobile Li, entire cell, Σ5(310), 700 K", "value": 23.7, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ5(310), 800 K", "value": 11.8, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ5(310), 900 K", "value": 4.2, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ5(310), 1000 K", "value": 3.3, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ5(310), 1100 K", "value": 0.7, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ5(210), 700 K", "value": 26.0, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ5(210), 800 K", "value": 9.5, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ5(210), 900 K", "value": 4.3, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ5(210), 1000 K", "value": 2.7, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ5(210), 1100 K", "value": 1.5, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ3(112), 700 K", "value": 14.3, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ3(112), 800 K", "value": 7.4, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ3(112), 900 K", "value": 5.5, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ3(112), 1000 K", "value": 2.4, "unit": "%"},
+        {"metric": "percentage immobile Li, entire cell, Σ3(112), 1100 K", "value": 0.8, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ5(310), 700 K", "value": 70.8, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ5(310), 800 K", "value": 43.9, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ5(310), 900 K", "value": 16.5, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ5(310), 1000 K", "value": 13.0, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ5(310), 1100 K", "value": 3.2, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ5(210), 700 K", "value": 68.2, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ5(210), 800 K", "value": 39.6, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ5(210), 900 K", "value": 19.7, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ5(210), 1000 K", "value": 13.3, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ5(210), 1100 K", "value": 7.5, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ3(112), 700 K", "value": 44.8, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ3(112), 800 K", "value": 31.3, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ3(112), 900 K", "value": 25.5, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ3(112), 1000 K", "value": 12.1, "unit": "%"},
+        {"metric": "percentage immobile Li, GB region, Σ3(112), 1100 K", "value": 4.0, "unit": "%"}
+      ],
+      "interpretation": "",
+      "prov": ["Table S3"]
+    },
+    {
+      "method": "Element counting in simulation cells",
+      "parameters": {
+        "temperatures_K": [700, 800, 900, 1000, 1100]
+      },
+      "results": [
+        {"metric": "Li atom ratio GB/bulk, Σ5(310), 700 K", "value": 1.53, "unit": ""},
+        {"metric": "La atom ratio GB/bulk, Σ5(310), 700 K", "value": 0.74, "unit": ""},
+        {"metric": "Zr atom ratio GB/bulk, Σ5(310), 700 K", "value": 1.29, "unit": ""},
+        {"metric": "O atom ratio GB/bulk, Σ5(310), 700 K", "value": 1.15, "unit": ""},
+        {"metric": "Li atom ratio GB/bulk, Σ5(210), 700 K", "value": 1.87, "unit": ""},
+        {"metric": "La atom ratio GB/bulk, Σ5(210), 700 K", "value": 2.36, "unit": ""},
+        {"metric": "Zr atom ratio GB/bulk, Σ5(210), 700 K", "value": 1.42, "unit": ""},
+        {"metric": "O atom ratio GB/bulk, Σ5(210), 700 K", "value": 1.32, "unit": ""},
+        {"metric": "Li atom ratio GB/bulk, Σ3(112), 700 K", "value": 2.48, "unit": ""},
+        {"metric": "La atom ratio GB/bulk, Σ3(112), 700 K", "value": 1.24, "unit": ""},
+        {"metric": "Zr atom ratio GB/bulk, Σ3(112), 700 K", "value": 2.54, "unit": ""},
+        {"metric": "O atom ratio GB/bulk, Σ3(112), 700 K", "value": 0.88, "unit": ""}
+        ],
+      "interpretation": "",
+      "prov": ["Table S2"]
+    },
+    {
+      "method": "Structural parameters of GB cells",
+      "parameters": {},
+      "results": [
+        {"metric": "Supercell length x, Σ5(310)", "value": 82.690, "unit": "Å"},
+        {"metric": "Supercell length y, Σ5(310)", "value": 41.051, "unit": "Å"},
+        {"metric": "Supercell length z, Σ5(310)", "value": 12.982, "unit": "Å"},
+        {"metric": "Number of atoms, Σ5(310)", "value": 3840, "unit": ""},
+        {"metric": "Supercell length x, Σ5(210)", "value": 58.698, "unit": "Å"},
+        {"metric": "Supercell length y, Σ5(210)", "value": 29.027, "unit": "Å"},
+        {"metric": "Supercell length z, Σ5(210)", "value": 12.981, "unit": "Å"},
+        {"metric": "Number of atoms, Σ5(210)", "value": 1920, "unit": ""},
+        {"metric": "Supercell length x, Σ3(112)", "value": 63.621, "unit": "Å"},
+        {"metric": "Supercell length y, Σ3(112)", "value": 22.485, "unit": "Å"},
+        {"metric": "Supercell length z, Σ3(112)", "value": 18.359, "unit": "Å"},
+        {"metric": "Number of atoms, Σ3(112)", "value": 2304, "unit": ""}
+      ],
+      "interpretation": "",
+      "prov": ["Table S1"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "supporting_information.pdf",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A review of lithium and non-lithium based solid state batteries",
+    "doi": "10.1016/j.jpowsour.2015.02.054",
+    "authors": [
+      "Joo Gon Kim",
+      "Byungrak Son",
+      "Santanu Mukherjee",
+      "Nicholas Schuppert",
+      "Alex Bates",
+      "Osung Kwon",
+      "Moon Jong Choi",
+      "Hyun Yeol Chung",
+      "Sam Park"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["solid state battery", "solid electrolyte", "thin film", "lithium", "garnet", "glass"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li–Ti–Si–P–O thin-film solid electrolyte",
+      "molecular_formula": "Li_xTi2Si0.32P3.6O7.16N2.52",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page 10 (reference [193])"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li7La3Zr2O12 (LLZO) powder",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page 13 (reference [146])"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {"role": "precursor", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Used in molar ratio 1.3 relative to other solids for target pressing",
+      "prov": ["Page 10, Ref [193]"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Silicon dioxide",
+      "molecular_formula": "SiO2",
+      "ontology": {"role": "precursor", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Molar ratio 0.6 in target mix",
+      "prov": ["Page 10, Ref [193]"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Titanium dioxide",
+      "molecular_formula": "TiO2",
+      "ontology": {"role": "precursor", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Molar ratio 4 in target mix",
+      "prov": ["Page 10, Ref [193]"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Ammonium dihydrogen phosphate",
+      "molecular_formula": "NH4H2PO4",
+      "ontology": {"role": "precursor", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Molar ratio 5.4 in target mix",
+      "prov": ["Page 10, Ref [193]"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Nitric acid",
+      "molecular_formula": "HNO3",
+      "ontology": {"role": "solvent", "category": "acid"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "Used to dissolve LLZO precursors before laser annealing",
+      "prov": ["Page 12, Ref [146]"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lanthanum oxide",
+      "molecular_formula": "La2O3",
+      "ontology": {"role": "precursor", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Page 12, Ref [146]"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Zirconium nitrate hexahydrate",
+      "molecular_formula": "Zr(NO3)2·6H2O",
+      "ontology": {"role": "precursor", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Page 12, Ref [146]"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of Li–Ti–Si–P–O sputtering target",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_1", "chem_2", "chem_3", "chem_4"], "molar_ratio": "1.3:0.6:4:5.4"},
+            "notes": ""
+          },
+          {
+            "action": "cold_press",
+            "parameters": {},
+            "notes": "Powder mixture cold-pressed to form dense sputtering target"
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": "K"}, "atmosphere": "", "pressure": {"value": null, "unit": "bar"}},
+        "prov": ["Page 10, Ref [193]"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Deposition of Li–Ti–Si–P–O thin film",
+        "operations": [
+          {
+            "action": "sputter_deposit",
+            "parameters": {"technique": "RF magnetron sputtering", "target_ref": "step_1"},
+            "notes": "Deposited onto Al substrate; resulting film thickness 2.6 µm"
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": "K"}, "pressure": {"value": null, "unit": "bar"}, "atmosphere": ""},
+        "prov": ["Page 10, Ref [193]"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Solution preparation for LLZO synthesis",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {"inputs": ["chem_1", "chem_6", "chem_7"], "solvent": "chem_5"},
+            "notes": "Precursors immersed in nitric acid to form homogeneous solution"
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "notes": "Solution filtered prior to laser treatment"
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": "K"}, "pressure": {"value": null, "unit": "bar"}, "atmosphere": ""},
+        "prov": ["Page 12, Ref [146]"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Laser annealing to form LLZO powder",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {"method": "intense laser pulses"},
+            "notes": "Laser pulses convert precursor residue to Li7La3Zr2O12 garnet powder"
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": "K"}, "time": {"value": null, "unit": "min"}},
+        "prov": ["Page 12, Ref [146]"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Mixing and pressing precursor powders to create sputtering target."},
+      {"step_ref": "step_2", "description": "RF magnetron sputtering of target to form Li–Ti–Si–P–O thin film electrolyte."},
+      {"step_ref": "step_3", "description": "Preparation of nitrate solution containing Li, La, and Zr for LLZO synthesis."},
+      {"step_ref": "step_4", "description": "Laser annealing of dried precursor to obtain LLZO powder electrolyte."}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Quantities not specified",
+        "excerpt": "The precursors of the target were Li2CO3, SiO2, TiO2, and NH4H2PO4 in the molar ratios of 1.3:0.6:4:5.4"
+      },
+      {
+        "issue": "Laser annealing parameters unspecified",
+        "excerpt": "subjecting to intense laser pulses results in the formation of the required LLZO solid state electrolyte powder"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "EDX",
+      "parameters": {},
+      "results": [
+        {"metric": "film composition", "value": "Li_xTi2Si0.32P3.6O7.16N2.52", "unit": ""}
+      ],
+      "interpretation": "",
+      "prov": ["Page 10, Ref [193]"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {"metric": "crystallinity", "value": "mostly amorphous", "unit": ""}
+      ],
+      "interpretation": "",
+      "prov": ["Page 10, Ref [193]"]
+    },
+    {
+      "method": "Electrical conductivity measurement",
+      "parameters": {"temperature": {"value": 298, "unit": "K"}},
+      "results": [
+        {"metric": "ionic conductivity", "value": 9.2e-6, "unit": "S cm-1"}
+      ],
+      "interpretation": "",
+      "prov": ["Page 10, Ref [193]"]
+    },
+    {
+      "method": "Thickness measurement",
+      "parameters": {},
+      "results": [
+        {"metric": "film thickness", "value": 2.6, "unit": "µm"}
+      ],
+      "interpretation": "",
+      "prov": ["Page 10, Ref [193]"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T18:11:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

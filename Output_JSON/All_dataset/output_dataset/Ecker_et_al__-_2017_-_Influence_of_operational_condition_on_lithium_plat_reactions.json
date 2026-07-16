@@ -1,0 +1,501 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Influence of operational condition on lithium plating for commercial lithium-ion batteries –Electrochemical experiments and post-mortem-analysis",
+    "doi": "10.1016/j.apenergy.2017.08.034",
+    "authors": [
+      "Madeleine Ecker",
+      "Pouyan Shafiei Sabet",
+      "Dirk Uwe Sauer"
+    ],
+    "journal": "Applied Energy",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "electrochemistry study",
+    "tags": [
+      "lithium-ion battery",
+      "lithium plating",
+      "low temperature ageing",
+      "post-mortem analysis",
+      "electrochemical impedance spectroscopy"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Graphite (carbon)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "anode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in all commercial cells investigated.",
+      "prov": ["Page 936, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium nickel manganese cobalt oxide (NMC)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Cathode material in cells from Manufacturer 1.",
+      "prov": ["Page 936, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium iron phosphate",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Cathode material in cells from Manufacturers 2 and 3.",
+      "prov": ["Page 936, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Part of EC/EMC solvent mixture.",
+      "prov": ["Page 936, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethyl methyl carbonate",
+      "molecular_formula": "C4H8O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Part of EC/EMC solvent mixture.",
+      "prov": ["Page 936, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Concentration refers to coin-cell electrolyte.",
+      "prov": ["Page 937, Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Aqua regia",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "digestant",
+        "category": "mixture"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "mL"
+      },
+      "notes": "Electrode samples were dissolved and diluted to 100 mL.",
+      "prov": ["Page 936, Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "N-Methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to remove one side of double-sided electrodes.",
+      "prov": ["Page 937, Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter/reference electrode",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "16 mm diameter piece used in coin cells.",
+      "prov": ["Page 937, Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Mercury",
+      "molecular_formula": "Hg",
+      "ontology": {
+        "role": "porosimetry medium",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in Hg-porosimeter (Pascal 140/440).",
+      "prov": ["Page 936, Section 2.3"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Cell discharge prior to disassembly",
+        "operations": [
+          {
+            "action": "discharge",
+            "parameters": {
+              "inputs": [],
+              "current_rate": "0.1 C"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Cells were discharged to the lower voltage limit before opening.",
+            "prov": ["Page 936, Section 2.3"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 936, Section 2.3"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Cell disassembly under inert atmosphere",
+        "operations": [
+          {
+            "action": "disassemble",
+            "parameters": {
+              "inputs": []
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Performed in argon-filled glove box.",
+            "prov": ["Page 936, Section 2.3"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 936, Section 2.3"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Preparation for ICP-OES",
+        "operations": [
+          {
+            "action": "punch",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "diameter": {
+                "value": 12,
+                "unit": "mm"
+              }
+            },
+            "notes": "Electrode samples radius 6 mm.",
+            "prov": ["Page 936, Section 2.3"]
+          },
+          {
+            "action": "digest",
+            "parameters": {
+              "inputs": ["chem_7"],
+              "volume": {
+                "value": 100,
+                "unit": "mL"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Microwave Mars5 digestion in aqua regia; diluted to 100 mL.",
+            "prov": ["Page 936, Section 2.3"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 936, Section 2.3"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Coin cell assembly for single-electrode tests",
+        "operations": [
+          {
+            "action": "remove_coating",
+            "parameters": {
+              "inputs": ["chem_8"]
+            },
+            "notes": "One side of double-sided electrodes removed with NMP.",
+            "prov": ["Page 937, Section 2.3"]
+          },
+          {
+            "action": "punch",
+            "parameters": {
+              "diameter": {
+                "value": 16,
+                "unit": "mm"
+              }
+            },
+            "notes": "Discs cut for coin cells.",
+            "prov": ["Page 937, Section 2.3"]
+          },
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["chem_9", "chem_6", "chem_4", "chem_5"]
+            },
+            "notes": "Coin cell with Li metal counter electrode, separator and 1 M LiPF6 in EC/EMC (1:1).",
+            "prov": ["Page 937, Section 2.3"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 937, Section 2.3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Controlled discharge of full cells before analysis"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Glove-box disassembly and sample collection"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Preparation of digested solutions for ICP-OES quantification of Li"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Fabrication of coin cells for single-electrode electrochemical testing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing molecular formula for NMC",
+        "excerpt": "lithium nickel manganese cobalt oxide (NMC) on the positive electrode"
+      },
+      {
+        "issue": "Exact composition of aqua regia not specified",
+        "excerpt": "The samples were dissolved in an aqua regia digestion"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Laser microscopy",
+      "parameters": {
+        "instrument": "Keyence VK-9700",
+        "atmosphere": "Ar"
+      },
+      "results": [
+        {
+          "metric": "surface morphology",
+          "value": "needle-like dendrites observed on aged anode",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates metallic lithium deposition near separator surface.",
+      "prov": ["Page 941, Fig. 7"]
+    },
+    {
+      "method": "ICP-OES",
+      "parameters": {
+        "instrument": "Varian 725-ICP-OES",
+        "solution_volume": {
+          "value": 100,
+          "unit": "mL"
+        }
+      },
+      "results": [
+        {
+          "metric": "Li content new anode",
+          "value": 24.8,
+          "unit": "μmol cm^-2"
+        },
+        {
+          "metric": "Li content aged anode",
+          "value": 57.4,
+          "unit": "μmol cm^-2"
+        }
+      ],
+      "interpretation": "Lithium content increase of 32.6 μmol cm-2 due to plating/SEI.",
+      "prov": ["Page 941, Table 4"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "1 mHz–5 kHz",
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "Ohmic resistance increase factor for aged cell",
+          "value": 1.6,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Increase attributed to blocking film from inhomogeneous Li deposition.",
+      "prov": ["Page 940, text & Fig. 5"]
+    },
+    {
+      "method": "Mercury porosimetry",
+      "parameters": {
+        "instrument": "Pascal 140/440",
+        "sample_size": "9×4.2 cm² (double-sided electrode)"
+      },
+      "results": [
+        {
+          "metric": "Anode porosity new",
+          "value": 29.6,
+          "unit": "%"
+        },
+        {
+          "metric": "Anode porosity aged",
+          "value": 28.7,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Minor change implies deposition mainly on separator interface, not inside pores.",
+      "prov": ["Page 941, Table 4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Differential Voltage Analysis",
+        "results": [
+          {
+            "equation": "",
+            "value": "Decrease in peak distance (Peod–Peoc) correlates linearly with capacity fade",
+            "unit": ""
+          }
+        ],
+        "prov": ["Page 939, Fig. 4"]
+      },
+      {
+        "method_name": "Capacity vs lithium calculation",
+        "results": [
+          {
+            "equation": "n_Li = Q / (F)",
+            "value": 1.65,
+            "unit": "mol",
+            "notes": "Cyclable Li in 44.3 Ah cell"
+          },
+          {
+            "equation": "",
+            "value": 0.383,
+            "unit": "mol",
+            "notes": "Li irreversibly bound in deposits equals 23 % of total cyclable Li"
+          }
+        ],
+        "prov": ["Page 941, Equation 4.1 and accompanying text"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 77,
+      "unit": "%"
+    },
+    "cycle_life": 3
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T08:27:00Z",
+    "source_file": "Applied_Energy_2017_Ecker_LithiumPlating.pdf",
+    "processing_time": null
+  }
+}

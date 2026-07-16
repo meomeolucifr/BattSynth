@@ -1,0 +1,387 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Multiscale Simulation Platform Linking Lithium Ion Battery Electrode Fabrication Process with Performance at the Cell Level",
+    "doi": "10.1021/acs.jpclett.7b02647",
+    "authors": [
+      "Alain C. Ngandjong",
+      "Alexis Rucci",
+      "Mariem Maiza",
+      "Garima Shukla",
+      "Jorge Vazquez-Arenas",
+      "Alejandro A. Franco"
+    ],
+    "journal": "The Journal of Physical Chemistry Letters",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational modelling study",
+    "tags": ["lithium-ion battery", "electrode fabrication", "multiscale simulation", "coarse-grained molecular dynamics", "3D continuum model"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNi0.5Co0.2Mn0.3O2 electrode (85:15 AM:CBD)",
+      "molecular_formula": "",
+      "intended_role": "battery electrode",
+      "prov": ["Page 5968-5969"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiNi0.5Co0.2Mn0.3O2 electrode (90:10 AM:CBD)",
+      "molecular_formula": "",
+      "intended_role": "battery electrode",
+      "prov": ["Page 5968-5969"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiNi0.5Co0.2Mn0.3O2 electrode (95:5 AM:CBD)",
+      "molecular_formula": "",
+      "intended_role": "battery electrode",
+      "prov": ["Page 5968-5969"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi0.5Co0.2Mn0.3O2",
+      "molecular_formula": "LiNi0.5Co0.2Mn0.3O2",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used at 85–95 wt % relative to carbon–binder domain",
+      "prov": ["Page 5966-5969"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "carbon particles",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Typical size 50–100 nm; part of carbon–binder domain (CBD)",
+      "prov": ["Page 5966"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "polymer binder",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Organic binder within CBD",
+      "prov": ["Page 5966"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "solvent",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Component of slurry; evaporated during fabrication",
+      "prov": ["Page 5967-5968"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Slurry preparation with active material, carbon particles, polymer binder, and solvent at specified AM:CBD weight ratios (85:15, 90:10, 95:5).",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Slurry composition varied for three cases."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5966-5967"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Slurry casting onto current collector.",
+        "operations": [
+          {
+            "action": "cast",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5966-5967"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Solvent evaporation from cast slurry to form dried electrode; simulated via coarse-grained MD with shrinking CBD particles.",
+        "operations": [
+          {
+            "action": "evaporate",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "CBD particles shrink; interaction potentials modified."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5967-5968"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Calendering of dried electrode (mentioned as part of fabrication sequence, not explicitly simulated).",
+        "operations": [
+          {
+            "action": "calender",
+            "parameters": {
+              "inputs": ["step_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5966"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Battery assembly using fabricated electrode.",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["step_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5966"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare slurry with varied AM:CBD ratios."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Cast slurry onto current collector."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Evaporate solvent to form dried electrode; CGMD used to simulate mesostructure."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Calender electrode to adjust porosity (mentioned)."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Assemble battery cell for performance evaluation."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No explicit temperature, time, or solvent identity provided for slurry preparation, casting, or evaporation.",
+        "excerpt": "\"The most critical aspect of an electrode mesostructure is its fabrication process, which consists of five successive steps...\" (Page 5966)"
+      },
+      {
+        "issue": "Binder and solvent chemical identities not specified.",
+        "excerpt": "\"electronically conductive additives (carbon particles ... ) held together by an organic polymer binder\" (Page 5966)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "coarse-grained molecular dynamics (CGMD)",
+      "parameters": {
+        "software": "LAMMPS",
+        "interaction_potentials": "Lennard-Jones Shifted and granular Hertzian"
+      },
+      "results": [
+        {
+          "metric": "interparticle distance (AM)",
+          "value": 19.87,
+          "unit": "µm",
+          "notes": "85 wt % AM",
+          "prov": ["Page 5969"]
+        },
+        {
+          "metric": "interparticle distance (AM)",
+          "value": 17.70,
+          "unit": "µm",
+          "notes": "90 wt % AM",
+          "prov": ["Page 5969"]
+        },
+        {
+          "metric": "interparticle distance (AM)",
+          "value": 14.97,
+          "unit": "µm",
+          "notes": "95 wt % AM",
+          "prov": ["Page 5969"]
+        }
+      ],
+      "interpretation": "Smaller interparticle distance with higher AM content indicates denser packing.",
+      "prov": ["Page 5968-5969"]
+    },
+    {
+      "method": "3D continuum performance simulation",
+      "parameters": {
+        "C-rate": "1C (2.98 mAh cm-2)"
+      },
+      "results": [
+        {
+          "metric": "discharge profiles",
+          "value": "",
+          "unit": "",
+          "notes": "Distinct voltage profiles for 85:15, 90:10, 95:5 electrodes observed.",
+          "prov": ["Figure 4"]
+        }
+      ],
+      "interpretation": "Higher AM content leads to higher specific capacity, though increase from 90 to 95 wt % AM is small.",
+      "prov": ["Page 5970"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Porosity evaluation from CGMD",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": "",
+            "notes": "Porosity varies non-linearly; decreases 8 % from 85 wt % to 90 wt % AM, then increases 30 % from 90 wt % to 95 wt % AM.",
+            "prov": ["Page 5969"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T14:33:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

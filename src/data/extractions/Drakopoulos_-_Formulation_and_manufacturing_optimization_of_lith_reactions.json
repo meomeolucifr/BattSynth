@@ -1,0 +1,324 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Formulation and manufacturing optimization of lithium-ion graphite-based electrodes via machine learning",
+    "doi": "10.1016/j.xcrp.2021.100683",
+    "authors": ["Stavros X. Drakopoulos", "Azarmidokht Gholamipour-Shirazi", "Paul MacDonald", "Robert C. Parini", "Carl D. Reynolds", "David L. Burnett", "Ben Pye", "Kieran B. O’Regan", "Guanmei Wang", "Thomas M. Whitehead", "Gareth J. Conduit", "Alexandru Cazacu", "Emma Kendrick"],
+    "journal": "Cell Reports Physical Science",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "battery electrode fabrication",
+    "tags": ["graphite anode", "lithium-ion battery", "machine learning optimization"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "graphite-based anode electrode",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 3–4 (main text)", "Supplemental Experimental Procedures"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Graphite (BTR)",
+      "molecular_formula": "",
+      "ontology": {"role": "active material", "category": "inorganic"},
+      "amount": {"value": 28.85, "unit": "g"},
+      "notes": "Example for CMC:SBR 2:3 slurry",
+      "prov": ["Supplemental Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Carbon black (C45)",
+      "molecular_formula": "",
+      "ontology": {"role": "conductive additive", "category": "carbon"},
+      "amount": {"value": 0.60, "unit": "g"},
+      "notes": "",
+      "prov": ["Supplemental Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Carboxymethyl cellulose (CMC) solution (1.5 % w/w in H2O)",
+      "molecular_formula": "",
+      "ontology": {"role": "binder", "category": "polymer"},
+      "amount": {"value": 24.00, "unit": "g"},
+      "notes": "contains 1.5 % solids",
+      "prov": ["Supplemental Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Styrene-butadiene rubber (SBR, 40 % solids)",
+      "molecular_formula": "",
+      "ontology": {"role": "binder", "category": "polymer"},
+      "amount": {"value": 1.35, "unit": "g"},
+      "notes": "",
+      "prov": ["Supplemental Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": 2.00, "unit": "g"},
+      "notes": "added in two equal stages",
+      "prov": ["Supplemental Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Carbon nanotubes (long)",
+      "molecular_formula": "",
+      "ontology": {"role": "additive", "category": "carbon"},
+      "amount": {"value": 0.15, "unit": "g"},
+      "notes": "optional conductive additive (0.5 % w/w)",
+      "prov": ["Supplemental Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Carbon nanotubes (short)",
+      "molecular_formula": "",
+      "ontology": {"role": "additive", "category": "carbon"},
+      "amount": {"value": 0.15, "unit": "g"},
+      "notes": "optional additive (alternative to chem_6)",
+      "prov": ["Supplemental Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Carbon fibre (milled)",
+      "molecular_formula": "",
+      "ontology": {"role": "additive", "category": "carbon"},
+      "amount": {"value": 0.15, "unit": "g"},
+      "notes": "optional additive",
+      "prov": ["Supplemental Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "DSA dispersant",
+      "molecular_formula": "",
+      "ontology": {"role": "dispersant", "category": "organic"},
+      "amount": {"value": 0.15, "unit": "g"},
+      "notes": "optional additive",
+      "prov": ["Supplemental Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Copper current collector",
+      "molecular_formula": "Cu",
+      "ontology": {"role": "substrate", "category": "metal"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "9 µm thick foil, 14.8 mm diameter for electrodes",
+      "prov": ["Supplemental Experimental Procedures"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of graphite slurry",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_6"], "order": 1},
+            "notes": "0.15 g additive (example long CNT) placed in 150 mL Thinky pot"
+          },
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_3"], "order": 2},
+            "notes": "24 g of 1.5 % CMC solution"
+          },
+          {
+            "action": "mix",
+            "parameters": {},
+            "duration": {"value": 3, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "Thinky ARE-250 mixer at 1300 rpm; prov 'Supplemental Experimental Procedures'"
+          },
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_2", "chem_1"], "order": 3},
+            "notes": "0.60 g C45 and 28.85 g graphite"
+          },
+          {
+            "action": "mix",
+            "parameters": {},
+            "duration": {"value": 3, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "1300 rpm"
+          },
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_5"], "order": 4},
+            "notes": "2.00 g water in two equal portions"
+          },
+          {
+            "action": "mix",
+            "parameters": {},
+            "duration": {"value": 3, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "same speed"
+          },
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_4"], "order": 5},
+            "notes": "1.35 g SBR (40 % solids)"
+          },
+          {
+            "action": "mix",
+            "parameters": {},
+            "duration": {"value": 3, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "500 rpm final homogenisation"
+          }
+        ],
+        "conditions": {"atmosphere": "ambient", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Supplemental Experimental Procedures"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Doctor-blade coating of slurry onto copper foil",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "substrate": "chem_10",
+              "gap_size": {"value": 150, "unit": "µm"},
+              "speed": {"value": 0.2, "unit": "m min-1"}
+            },
+            "notes": "gap size varied 70–300 µm; speed 0.1–0.5 m min-1"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 6–7", "Table S2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Drying of coated electrodes",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {"temperature": {"value": 353, "unit": "K"}, "duration": {"value": null, "unit": "min"}},
+            "notes": "Drying temperatures explored 333–393 K (60–120 °C)"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 6–7", "Table S2"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Optional calendering",
+        "operations": [
+          {
+            "action": "calender",
+            "parameters": {"speed": {"value": 4, "unit": "mm s-1"}, "temperature": {"value": 298, "unit": "K"}},
+            "notes": "Twin-roll calender; applied to selected electrodes"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Supplemental Experimental Procedures"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Coin cell assembly (half-cell vs Li)",
+        "operations": [
+          {
+            "action": "assemble_cell",
+            "parameters": {},
+            "notes": "Anode diameter 14.8 mm, separator Celgard 2325 (16 mm), electrolyte 50 µL 1 M LiPF6 EC/EMC (3/7 v/v) +1 % VC"
+          }
+        ],
+        "conditions": {"atmosphere": "argon glovebox", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Supplemental Experimental Procedures"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Slurry preparation"},
+      {"step_ref": "step_2", "description": "Coating onto copper foil"},
+      {"step_ref": "step_3", "description": "Drying of electrodes"},
+      {"step_ref": "step_4", "description": "Calendering (if applied)"},
+      {"step_ref": "step_5", "description": "Coin cell fabrication for testing"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Drying time not specified",
+        "excerpt": "Drying temperature (60 °C–120 °C) before calendering or not."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Rheology (flow curve)",
+      "parameters": {"shear_rate_range": "0.01–1000 s-1", "geometry": "40 mm roughened parallel plate"},
+      "results": [
+        {"metric": "viscosity at 0.1 s-1", "value": null, "unit": "Pa·s"}
+      ],
+      "interpretation": "Higher zero-shear viscosity correlated with higher capacity.",
+      "prov": ["Figure 2B", "Supplemental Figure S4"]
+    },
+    {
+      "method": "180-degree peel test",
+      "parameters": {},
+      "results": [
+        {"metric": "adhesion normal force range", "value": null, "unit": "N m-1"}
+      ],
+      "interpretation": "Higher adhesion correlated with lower IR drop and improved cycle life.",
+      "prov": ["Figure 3C", "Figure 8E"]
+    },
+    {
+      "method": "Electrochemical cycling (half-cell)",
+      "parameters": {"current_rates": "formation C/20 & C/10; cycling discharge C/2, charge 1 C", "voltage_window": "1.5 V–5 mV"},
+      "results": [
+        {"metric": "specific capacity D5", "value": 320, "unit": "mAh g-1"},
+        {"metric": "specific capacity D30", "value": 310, "unit": "mAh g-1"},
+        {"metric": "50 % capacity retention cycle", "value": 44, "unit": ""},
+        {"metric": "IR drop (example case 16)", "value": 7.85, "unit": "mV"}
+      ],
+      "interpretation": "CMC:SBR 2:1 provides best cycle life among tested ratios.",
+      "prov": ["Figure 2A", "Figure 4", "Table S2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Gaussian Process Regression (GPR)",
+        "results": [
+          {"equation": "RBF kernel fit of D10 vs viscosity (0.1 s-1), R2=0.71", "value": null, "unit": ""}
+        ]
+      },
+      {
+        "method_name": "Machine-learning model (Alchemite)",
+        "results": [
+          {"equation": "Predicted D30 for case 16", "value": 319.2, "unit": "mAh g-1"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {"value": null, "unit": "%"},
+    "capacity": {"value": 320, "unit": "mAh g-1"},
+    "cycle_life": 44
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-26T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

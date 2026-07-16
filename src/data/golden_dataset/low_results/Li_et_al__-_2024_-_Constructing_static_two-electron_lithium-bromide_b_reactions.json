@@ -1,0 +1,388 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Constructing static two-electron lithium-bromide battery",
+    "doi": "10.1126/sciadv.adl0587",
+    "authors": ["Xinliang Li", "Yanlei Wang", "Junfeng Lu", "Pei Li", "Zhaodong Huang", "Guojin Liang", "Hongyan He", "Chunyi Zhi"],
+    "journal": "Science Advances",
+    "year": 2024
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium-bromide battery", "two-electron redox", "TBABr3 cathode", "electrolyte tailoring"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "TBABr3 cathode",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": ["Materials and Methods – Fabrication of TBABr3 cathodes"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Cl⁻-saturated electrolyte (CLE2)",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Materials and Methods – Fabrication of Cl-saturated electrolyte"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Tetrabutylammonium tribromide",
+      "molecular_formula": "TBABr3",
+      "ontology": {"role": "active material", "category": "organic salt"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "used in cathode slurry; 7 parts by weight in 7:2:1 mixture",
+      "prov": ["Materials and Methods – Fabrication of TBABr3 cathodes"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Polyvinylidene fluoride",
+      "molecular_formula": "",
+      "ontology": {"role": "binder", "category": "polymer"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "2 parts by weight in 7:2:1 mixture",
+      "prov": ["Materials and Methods – Fabrication of TBABr3 cathodes"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Carbon black (Ketjen black EC-600JD)",
+      "molecular_formula": "",
+      "ontology": {"role": "conductive additive", "category": "carbon"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "1 part by weight in 7:2:1 mixture",
+      "prov": ["Materials and Methods – Fabrication of TBABr3 cathodes"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "N-methylpyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "used as slurry solvent",
+      "prov": ["Materials and Methods – Fabrication of TBABr3 cathodes"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiTFSI",
+      "ontology": {"role": "salt", "category": "inorganic"},
+      "amount": {"value": 1.0, "unit": "M"},
+      "notes": "in DME:DOL 1:1 v/v base electrolyte",
+      "prov": ["Materials and Methods – Fabrication of Cl-saturated electrolyte"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "1,2-Dimethoxyethane",
+      "molecular_formula": "C4H10O2",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "50 vol % of base electrolyte",
+      "prov": ["Materials and Methods – Fabrication of Cl-saturated electrolyte"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "1,3-Dioxolane",
+      "molecular_formula": "C3H6O2",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "50 vol % of base electrolyte",
+      "prov": ["Materials and Methods – Fabrication of Cl-saturated electrolyte"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Lithium nitrate",
+      "molecular_formula": "LiNO3",
+      "ontology": {"role": "additive", "category": "inorganic"},
+      "amount": {"value": 0.02, "unit": "M"},
+      "notes": "2 % w/w relative to electrolyte (E2 composition)",
+      "prov": ["Main Text – Electrolyte descriptions"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {"role": "chloride source", "category": "inorganic"},
+      "amount": {"value": 0.04, "unit": "M"},
+      "notes": "final concentration in CLE2; added in excess then filtered",
+      "prov": ["Materials and Methods – Fabrication of Cl-saturated electrolyte"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "glovebox atmosphere during electrolyte preparation",
+      "prov": ["Materials and Methods – Fabrication of Cl-saturated electrolyte"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of TBABr3 cathode slurry and electrode",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"],
+              "ratio_by_weight": "7:2:1 (TBABr3:PVDF:carbon black)"
+            },
+            "duration": {"value": 60, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "vigorous stirring"
+          },
+          {
+            "action": "coat",
+            "parameters": {
+              "substrate": "carbon cloth"
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {"value": 4320, "unit": "min"},
+            "temperature": {"value": 343, "unit": "K"},
+            "notes": "vacuum-assisted drying; original temp 70 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Materials and Methods – Fabrication of TBABr3 cathodes"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of Cl-saturated electrolyte (CLE2)",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_9", "chem_5", "chem_6", "chem_7", "chem_8"],
+              "details": "excess LiCl added to E2 electrolyte"
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "performed in Ar-filled glovebox"
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "duration": {"value": 2880, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "vigorous stirring"
+          },
+          {
+            "action": "settle",
+            "parameters": {},
+            "duration": {"value": 4320, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "allow excess LiCl to precipitate"
+          },
+          {
+            "action": "separate",
+            "parameters": {
+              "method": "decant supernatant"
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "supernatant used as CLE2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Materials and Methods – Fabrication of Cl-saturated electrolyte"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Fabrication of TBABr3 cathode"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of Cl-saturated electrolyte (CLE2)"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of TBABr3, PVDF, and carbon black not specified",
+        "excerpt": "mix the active material (TBABr3 powders), polyvinylidene fluoride, and carbon black with a weight ratio of 7:2:1"
+      },
+      {
+        "issue": "Amount of LiCl described as 'excessive' without specific value",
+        "excerpt": "excessive LiCl powders were slowly added to different commercial electrolytes"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM with EDX mapping",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Br distribution",
+          "value": "homogeneous",
+          "unit": ""
+        },
+        {
+          "metric": "Br mass fraction",
+          "value": 50,
+          "unit": "wt%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Main Text – Fig. 1B"]
+    },
+    {
+      "method": "TGA",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "thermal stability temperature",
+          "value": 473,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "TBABr3 stable up to 200 °C",
+      "prov": ["Main Text – TGA discussion"]
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {"scan_rate": "2 mV s-1"},
+      "results": [
+        {
+          "metric": "redox peaks Br−/Br3−",
+          "value": "3.42/3.55",
+          "unit": "V"
+        },
+        {
+          "metric": "redox peaks Br+/Br0",
+          "value": "3.68/3.85",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Two-electron redox verified",
+      "prov": ["Fig. 2C"]
+    },
+    {
+      "method": "Galvanostatic charge-discharge",
+      "parameters": {"current_density": "1 A g-1"},
+      "results": [
+        {
+          "metric": "discharge capacity",
+          "value": 653,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "voltage plateau",
+          "value": 3.8,
+          "unit": "V"
+        },
+        {
+          "metric": "energy density",
+          "value": 2180,
+          "unit": "Wh kg-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 4C"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "charge transfer resistance CLE2",
+          "value": 149.6,
+          "unit": "ohm"
+        }
+      ],
+      "interpretation": "Lower Rct with Cl− addition",
+      "prov": ["fig. S12"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Br+ signal (binding energy)",
+          "value": 71.8,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Confirms Br+ formation",
+      "prov": ["Fig. 5A"]
+    },
+    {
+      "method": "In situ Raman",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Br+-Clx peak",
+          "value": "260–290",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Reversible Br+-Cl−2 formation",
+      "prov": ["Fig. 5C"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT cohesive energy calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": 1.85,
+            "unit": "eV",
+            "notes": "Highest cohesive energy for BrCl2 product"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 653,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1000
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

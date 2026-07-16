@@ -1,0 +1,388 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Anode-less",
+    "doi": "10.1038/s41560-019-0449-4",
+    "authors": [
+      "Ji-Guang Zhang"
+    ],
+    "journal": "Nature Energy",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "news & views commentary",
+    "tags": [
+      "lithium-ion batteries",
+      "anode-free",
+      "dual-salt electrolyte"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Anode-free lithium-ion battery pouch cell",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": [
+        "Page 637–638"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Dual-salt electrolyte (1 M LiDFOB + 0.2 M LiBF4 in FEC:DEC 1:2)",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Page 637"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "lithium difluoro(oxalate)borate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Concentration in electrolyte",
+      "prov": [
+        "Page 637"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "lithium tetrafluoroborate",
+      "molecular_formula": "LiBF4",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte salt"
+      },
+      "amount": {
+        "value": 0.2,
+        "unit": "M"
+      },
+      "notes": "Concentration in electrolyte",
+      "prov": [
+        "Page 637"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "fluoroethylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "carbonate solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Volume ratio 1 part in FEC:DEC (1:2)",
+      "prov": [
+        "Page 637"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "diethyl carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "carbonate solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Volume ratio 2 parts in FEC:DEC (1:2)",
+      "prov": [
+        "Page 637"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiNi0.5Mn0.3Co0.2O2",
+      "molecular_formula": "LiNi0.5Mn0.3Co0.2O2",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic compound"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Single-crystal cathode",
+      "prov": [
+        "Page 638"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "copper",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 637"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "aluminum",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Figure 1"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of dual-salt electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "1 M LiDFOB and 0.2 M LiBF4 dissolved in FEC:DEC (1:2 v/v)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 637"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Assembly of anode-free pouch cell",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "components": [
+                "chem_5",
+                "chem_6",
+                "chem_7",
+                "target_2"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Lean electrolyte loading of ~2 g Ah−1; separator inserted between electrodes"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 0.75,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 638"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Initial charging (formation) to deposit Li on Cu current collector",
+        "operations": [
+          {
+            "action": "electrochemical_charge",
+            "parameters": {
+              "voltage_range": "3.6–4.5 V"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 313,
+              "unit": "K"
+            },
+            "notes": "First charge extracts Li from cathode and plates metallic Li onto Cu"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 0.75,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 638"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Cycling test of pouch cell",
+        "operations": [
+          {
+            "action": "galvanostatic_cycle",
+            "parameters": {
+              "cycles": 90,
+              "voltage_range": "3.6–4.5 V"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 313,
+              "unit": "K"
+            },
+            "notes": "Cell retained 80% of initial capacity after 90 cycles"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 0.75,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 637–638"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare electrolyte"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Assemble anode-free pouch cell"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Initial formation charge"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Galvanostatic cycling"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact volume or mass of electrolyte solvents not specified; only volume ratio and lean metric provided.",
+        "excerpt": "Among the many FEC:DEC based liquid electrolytes with different salts that they studied, the dual-salt electrolyte was found to perform the best ... Dahn and team use a very lean electrolyte of approximately 2 g Ah–1"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Scanning Electron Microscopy (SEM)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "lithium deposit morphology",
+          "value": "flat, mosaic-like columns up to 50 μm diameter",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates suppression of isolated Li clusters and reduced side reactions",
+      "prov": [
+        "Page 638"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic cycling test",
+        "results": [
+          {
+            "equation": "",
+            "value": 80,
+            "unit": "% capacity retention after 90 cycles"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 90
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-06T00:00:00Z",
+    "source_file": "input_text_1",
+    "processing_time": null
+  }
+}

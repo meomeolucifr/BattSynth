@@ -1,0 +1,1386 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Polypeptide organic radical batteries",
+    "doi": "10.1038/s41586-021-03399-1",
+    "authors": [
+      "Tan P. Nguyen",
+      "Alexandra D. Easley",
+      "Nari Kang",
+      "Sarosh Khan",
+      "Soon-Mi Lim",
+      "Yohannes H. Rezenom",
+      "Shaoyang Wang",
+      "David K. Tran",
+      "Jingwei Fan",
+      "Rachel A. Letteri",
+      "Xun He",
+      "Lu Su",
+      "Cheng-Han Yu",
+      "Jodie L. Lutkenhaus",
+      "Karen L. Wooley"
+    ],
+    "journal": "Nature",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "organic radical battery",
+      "polypeptide",
+      "metal-free battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "viologen-chloride polypeptide (viol-Cl)",
+      "molecular_formula": "",
+      "intended_role": "anode active material",
+      "prov": [
+        "Fig. 2",
+        "Electrochemical section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank, but the paper clearly specifies the target active materials/formulations as two redox-active polypeptides: the viologen polypeptide (viol-Cl; also viol-I intermediate) and the biTEMPO polypeptide. These are repeatedly named and shown in Fig. 2 and throughout the electrochemical section (for example: \u201cviol-Cl polypeptide\u201d and \u201cbiTEMPO polypeptide\u201d; and the full cell is \u201cviol-Cl\u2013biTEMPO polypeptide full cell\u201d). Therefore, leaving the Target Formula empty is not supported by the source text.",
+        "suggested_fix": "Set Target Formula to the named target materials, e.g., \u201cviol-Cl polypeptide (viologen polypeptide) and biTEMPO polypeptide\u201d (full cell: viol-Cl\u2013biTEMPO)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "biTEMPO polypeptide",
+      "molecular_formula": "",
+      "intended_role": "cathode active material",
+      "prov": [
+        "Fig. 2",
+        "Electrochemical section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper describes the materials as \u201cviologen polypeptide\u201d (viol-Cl / viol-I) and \u201cbiTEMPO polypeptide\u201d and shows their chemical structures in Fig. 2, but it does not state a single explicit \u201cTarget Formula\u201d (e.g., a molecular formula like CxHyNzO...). The polymers have degrees of polymerization (~50) and are described by names/structures rather than an unambiguous chemical formula. Also, the extracted value is blank, which is not explicitly supported as a valid value by the text.",
+        "suggested_fix": "If the intended field is the target active material identity, use: \u201cviol-Cl (viologen-chloride polypeptide) and biTEMPO polypeptide (DP \u2248 50)\u201d. If the field strictly requires a molecular formula, it is not specified in the provided text and should be recorded as \u201cNot specified\u201d rather than left blank."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "L-glutamic acid",
+      "molecular_formula": "C5H9NO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "amino acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper clearly identifies the starting amino acid as \u201cl-glutamic acid\u201d (for example, \u201cFrom l-glutamic acid as a common starting amino acid\u2026\u201d on page 1 and in the Fig. 2 caption/scheme). However, no quantity/amount of l-glutamic acid used is given in Fig. 2b or elsewhere in the provided main text/Methods (the Methods list it among reagents but without mass, moles, or concentration). Therefore, the identity is supported and the extractor\u2019s note that the amount is not specified is also supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "6-Chloro-1-hexanol",
+      "molecular_formula": "C6H13ClO",
+      "ontology": {
+        "role": "reactant",
+        "category": "alcohol"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.84,
+        "reasoning": "The paper explicitly includes 6-Chlorohexanol as a reagent in the Fig. 2b synthetic scheme and again in the Methods/Reagents list (\u201c6-Chloro-1-hexanol \u2026 purchased from Alfa-Aesar\u201d). However, the extraction\u2019s statement \u201cAmount: Not specified in text\u201d is not supported because Fig. 2b reports a quantitative yield (\u201c6-Chlorohexanol, THF, H2SO4 \u2026 83%\u201d). Thus, at least one quantitative amount-related detail (yield) is specified in the text/figure, so \u201cnot specified\u201d is incorrect.",
+        "suggested_fix": "6-Chloro-1-hexanol | Yield: 83% (Fig. 2b)."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Propargyl alcohol",
+      "molecular_formula": "C3H4O",
+      "ontology": {
+        "role": "reactant",
+        "category": "alcohol"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly includes \u201cPropargyl alcohol\u201d as a reagent in the synthetic scheme (Fig. 2b) and also lists it in the Methods/Reagents section. However, no explicit quantity/amount (mass, volume, equivalents, concentration) of propargyl alcohol is given anywhere in the provided full text (Fig. 2b shows conditions like \u201cTMSCl, 0 \u00b0C to r.t., 36 h, 82%\u201d but no amount). Therefore, the extracted statement \u201cPropargyl alcohol | Amount: Not specified in text\u201d is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Trimethylsilyl chloride (TMSCl)",
+      "molecular_formula": "C3H9SiCl",
+      "ontology": {
+        "role": "reagent",
+        "category": "chlorosilane"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.88,
+        "reasoning": "The paper explicitly identifies TMSCl as trimethylsilyl chloride in the Fig. 2 caption/legend section (\u201cTMSCl, trimethylsilyl chloride\u201d). In the synthetic scheme (Fig. 2b), TMSCl is shown as a reagent for propargyl alcohol (\u201cPropargyl alcohol, TMSCl, 0 \u00b0C to r.t., 36 h, 82%\u201d), but no mass, volume, equivalents, or concentration is provided anywhere in the provided full text for TMSCl. Therefore, the chemical identity is supported and the extractor\u2019s \u2018Amount: Not specified in text\u2019 is also supported by the document\u2019s omission of a specific amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Triphosgene",
+      "molecular_formula": "C3Cl6O3",
+      "ontology": {
+        "role": "reagent",
+        "category": "phosgene analogue"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.88,
+        "reasoning": "The paper does mention triphosgene in the Fig. 2b synthetic scheme (used to convert PLG\u00b7HCl to PLG NCA) and again in the Methods/Reagents list (purchased from Sigma-Aldrich). However, the extracted chemical identity is mismatched to the alleged provenance: Fig. 2b shows triphosgene in the biTEMPO polypeptide route, but no explicit amount of triphosgene is provided anywhere in the provided full text (no masses, moles, equivalents, or concentrations). Thus, while 'Amount: Not specified in text' is correct, the field 'Chemical Identity and Amount' as a pair is not supported because triphosgene\u2019s usage is not uniquely tied to Fig. 2b as the provenance for an amount (and the extraction implies a chemical record with missing amount, but the document supports only its presence, not an amount).",
+        "suggested_fix": "Triphosgene | Amount: Not specified in text (appears in Fig. 2b and listed under Methods\u2014Reagents; no quantity given)."
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "n-Hexylamine",
+      "molecular_formula": "C6H15N",
+      "ontology": {
+        "role": "initiator",
+        "category": "amine"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The document explicitly includes n-hexylamine in the synthetic scheme (Fig. 2b) and in the Methods reagent list, but it does not give a specific quantity (mass, volume, mmol, concentration, equivalents) anywhere in the provided full text. Therefore the chemical identity is supported, but the claim that the amount is \u201cNot specified in text\u201d is also correct. However, the extracted chemical identity is listed as \u201cn-Hexylamine\u201d, while the paper consistently writes it as \u201cn-hexylamine\u201d; that formatting is acceptable. The main issue is that the field label implies both identity and amount; since the extraction includes an amount statement, it is supported, but the overall entry is flagged as unsupported because the alleged provenance 'Fig. 2b' does not uniquely support the 'amount not specified' claim (it is a document-wide absence, not a figure-specific statement).",
+        "suggested_fix": "n-hexylamine | Amount: Not specified in text (identity appears in Fig. 2b; amount not provided anywhere in the paper text)"
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "N,N-Dimethylformamide (DMF)",
+      "molecular_formula": "C3H7NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The Methods (Reagents section) explicitly lists N,N-dimethylformamide (DMF) as a reagent/solvent used in the work. However, no specific quantity/volume of DMF is provided in the main text; DMF only appears as part of reaction condition descriptions (e.g., \u201cDMF, 70 \u00b0C\u201d, \u201cDMF, r.t.\u201d) and in the reagents list without amounts. Therefore, the extracted identity is supported and the extracted statement that the DMF amount is not specified is also supported by omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Sodium iodide (NaI)",
+      "molecular_formula": "NaI",
+      "ontology": {
+        "role": "reagent",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.55,
+        "reasoning": "The paper text explicitly mentions sodium iodide (NaI) as a reagent used in the synthetic scheme (Fig. 2b) and in the Methods \u201cReagents\u201d list, but it also provides reaction conditions/yield rather than a mass or molar amount. Since NaI is present in the text yet its quantity is not given, the \u201cAmount: Not specified in text\u201d portion is supported. However, the extraction ties this to the chemical identity \u201cSodium iodide (NaI)\u201d as a field entry, which implies it is a target chemical used in the work; that is supported, but the alleged provenance ['Fig. 2b'] alone is incomplete because the same identity is also explicitly in Methods and the figure does not specify an amount either. As written, the combined entry is ambiguous but mostly correct; the only unsupported aspect is treating it as if Fig. 2b is a source for an amount/identity pair\u2014Fig. 2b shows NaI and conditions (reflux 3 d, 76%) but no amount, and Methods confirms NaI purchase. This should be marked supported only if the task is strictly \u2018Is the amount specified?\u2019; as a \u2018Chemical Identity and Amount\u2019 record, the identity is supported and amount omission is supported, so it should be supported.",
+        "suggested_fix": "Set is_supported=True. Provenance can be expanded to include Fig. 2b and Methods (Reagents), and keep amount as 'Not specified in text' (no mass/moles/concentration given for NaI)."
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Acetone",
+      "molecular_formula": "C3H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.88,
+        "reasoning": "The paper explicitly mentions acetone as a solvent in the Finkelstein reaction step shown in Fig. 2b: \u201cNaI, acetone, Reflux, 3 d\u201d. Therefore acetone is specified in the text/figure. However, the amount (volume/mass) of acetone is not provided in the provided full text (including Methods/Reagents), so only the chemical identity is supported while the claim \u201cAmount: Not specified in text\u201d is not supported as a combined field value if it implies acetone itself is not specified.",
+        "suggested_fix": "Acetone | Amount: Not specified in provided text (acetone is listed as solvent in Fig. 2b: NaI, acetone, reflux, 3 d)"
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "1-Methyl-[4,4\u2032]bipyridylium iodide (MBPI)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "viologen precursor"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.68,
+        "reasoning": "The paper does mention the chemical identity: \u201c1-methyl-[4,4\u2032]bipyridylium iodide (MBPI; 1)\u201d as the viologen precursor (described in the text on Page 2 and depicted in Fig. 2b). However, the extracted claim that the amount is \u201cNot specified in text\u201d is not supported as written because Fig. 2b and surrounding text include specific reaction conditions for preparing MBPI (e.g., \u201cMeI, DCM, 40 \u00b0C, 3 h, 95%\u201d), which provide quantities/conditions information rather than omitting them entirely. While the exact mass/volume of MBPI is not given in the main text, the extraction asserts a blanket \u2018not specified in text\u2019 with provenance Fig. 2b, which is inaccurate since Fig. 2b provides at least yield/conditions for the MBPI synthesis step and MBPI\u2019s role as reagent. (Detailed reagent amounts may be in Supplementary Information, but that is not included here.)",
+        "suggested_fix": "1-Methyl-[4,4\u2032]bipyridylium iodide (MBPI) | Amount: Not specified as a mass/volume in the provided main text; synthesis conditions/yield shown in Fig. 2b (MeI, DCM, 40 \u00b0C, 3 h, 95%)."
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "4,4\u2032-Bipyridine",
+      "molecular_formula": "C10H8N2",
+      "ontology": {
+        "role": "reactant",
+        "category": "heteroaromatic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly identifies 4,4\u2032-bipyridine as the precursor used to prepare 1-methyl-[4,4\u2032]bipyridylium iodide (MBPI) (\u201cprepared via methylation of 4,4\u2032-bipyridine (Fig. 2b)\u201d). Therefore, the chemical identity is supported, but the extracted statement \u201cAmount: Not specified in text\u201d is not supported because the document does provide amounts/concentrations for many reagents and solutions in Methods (e.g., polymer solution concentrations, electrolyte molarity). However, for 4,4\u2032-bipyridine specifically, the paper does not state a mass/moles/volume used; the extraction claims \u201cNot specified\u201d but anchors it to Fig. 2b, where no quantities are given. Since the extraction bundles identity + amount together, the overall extracted value is not fully supported as written (identity supported; amount-not-specified not explicitly established in Fig. 2b and amounts exist elsewhere, though not for this reagent).",
+        "suggested_fix": "4,4\u2032-Bipyridine (listed as 4,4\u2032-dipyridine in Methods; used to prepare MBPI via methylation). Amount used for 4,4\u2032-bipyridine: not specified in the paper."
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Methyl iodide",
+      "molecular_formula": "CH3I",
+      "ontology": {
+        "role": "reagent",
+        "category": "alkylating agent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "Fig. 2b (and surrounding text describing Fig. 2b) explicitly shows the reagent \u201cMeI\u201d (iodomethane / methyl iodide) used in the viologen-polypeptide synthesis step (\"MeI, DCM, 40 \u00b0C, 3 h, 95%\"). Therefore, methyl iodide is indeed present. However, the amount is not merely omitted; the figure and text do not provide any quantity (mass, volume, mmol, equivalents) for MeI. Since the extracted field is \u201cChemical Identity and Amount\u201d but the paper only supports identity (not an amount), the combined extracted value as given is not fully supported for the \u201cAmount\u201d portion.",
+        "suggested_fix": "Methyl iodide (MeI) is used (Fig. 2b), but its amount is not specified in the provided paper text/figure."
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Tetrahydrofuran (THF)",
+      "molecular_formula": "C4H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly identifies THF (tetrahydrofuran) as a reagent/solvent in the synthetic scheme (Fig. 2b / Fig. 2). In the viologen-polypeptide pathway it lists \u201cDiphosgene, THF, N2, r.t., 24 h, 66%\u201d, and also shows \u201c6-Chlorohexanol, THF, H2SO4 \u2026\u201d. However, no volume/mass/moles for THF are given anywhere in the provided full text (neither in Fig. 2 nor in Methods/Reagents), so the extractor\u2019s note \u201cAmount: Not specified in text\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "N,N\u2032-Dicyclohexylcarbodiimide (DCC)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reagent",
+        "category": "coupling agent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper (Fig. 2b caption) explicitly identifies DCC as \u201cN,N\u2032-dicyclohexylcarbodiimide (DCC)\u201d. Across the provided full text, DCC is mentioned as a reagent (Fig. 2b and Methods/Reagents), but no quantity/amount for DCC is given in the main text excerpt provided. Therefore, the chemical identity is supported and the extractor\u2019s \u201cAmount: Not specified in text\u201d is also supported by omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_15",
+      "name": "4-Dimethylaminopyridine (DMAP)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "catalyst",
+        "category": "organocatalyst"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly identifies DMAP as 4-dimethylaminopyridine in the caption/abbreviation list associated with Fig. 2 (\u201cDMAP, 4-dimethylaminopyridine\u201d) and also lists DMAP among reagents in the Methods. However, no explicit quantity/amount (e.g., mass, mmol, equivalents, concentration) for DMAP is provided anywhere in the supplied full text; DMAP appears only as a named reagent/abbreviation in the synthetic scheme and in the reagent list. Therefore, the extraction \u201cAmount: Not specified in text\u201d is supported by omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_16",
+      "name": "DMSO",
+      "molecular_formula": "C2H6OS",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly includes DMSO (dimethylsulfoxide) in Fig. 2b reaction scheme/abbreviations (\"DMSO, r.t., 3 h\") and also lists DMSO among reagents in the Methods section. However, no explicit volume/mass/molar amount for DMSO is provided in the main text/figure\u2014only that it is used as a solvent/reagent. Thus the extracted statement \"DMSO | Amount: Not specified in text\" is consistent with the source.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_17",
+      "name": "meta-Chloroperoxybenzoic acid (m-CPBA)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "oxidant",
+        "category": "peracid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly mentions meta-chloroperoxybenzoic acid (m-CPBA) as the oxidant used in the activation step for biTEMPO polypeptide synthesis (\u201coxidative cleavage with meta-chloroperoxybenzoic acid (m-CPBA) to afford the biTEMPO polypeptide 14.\u201d). However, no quantity/amount (mass, molar amount, equivalents, concentration, or volume) of m-CPBA used in that reaction is provided anywhere in the supplied main text and Methods; the only additional detail is its purity (\u201cm-CPBA; 77% purity\u201d). Therefore, the extracted chemical identity is supported and the extractor\u2019s \u2018Amount: Not specified in text\u2019 is also supported under the null-handling rule. The cited provenance (Fig. 2b) is consistent with where it appears, though it\u2019s also mentioned in the synthesis narrative on page 2 and in the Fig. 2 scheme on page 3.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_18",
+      "name": "Tetrabutylammonium triflate (TBACF3SO3)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 0.5,
+        "unit": "M"
+      },
+      "notes": "in propylene carbonate",
+      "prov": [
+        "Electrochemical characterization"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly states under \u201cElectrochemical characterization\u201d that cyclic voltammetry was performed in a metal-free electrolyte of \u201c0.5 M tetrabutylammonium triflate (TBACF3SO3) in propylene carbonate\u201d (shown on Page 2, and reiterated in Fig. 3 caption and Methods). This matches the extracted chemical identity and amount (0.5 M).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_19",
+      "name": "Propylene carbonate",
+      "molecular_formula": "C4H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Electrochemical characterization"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies propylene carbonate (PC) as the solvent in the electrolyte used for electrochemical characterization (e.g., \u201c0.5 M TBACF3SO3 in propylene carbonate\u201d; also \u201c...TBACF3SO3 or LiCF3SO3 in PC\u201d). However, the text does not provide a standalone \u2018amount\u2019 of propylene carbonate (only electrolyte concentration and total electrolyte volume in one method description), so reporting the amount as \u201cNot specified in text\u201d is consistent with the source.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_20",
+      "name": "Carbon black",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "60 wt % in composite electrode",
+      "prov": [
+        "Fig. 4 caption"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly includes carbon black as a component of the composite electrodes, but does not specify its mass/amount in absolute units. In the Fig. 4 caption it states the composite electrodes were composed of \u201c30 wt% active polypeptide, 60 wt% carbon black and 10 wt% polyvinylidene fluoride\u2026\u201d. This supports the chemical identity (carbon black) and supports that an absolute amount is not given (only a wt% composition).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_21",
+      "name": "Polyvinylidene fluoride (PVDF)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "10 wt % in composite electrode",
+      "prov": [
+        "Fig. 4 caption"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly identifies polyvinylidene fluoride (PVDF) as a component of the composite electrodes (e.g., Fig. 4 caption: \u201c10 wt% polyvinylidene fluoride\u201d; also Methods: \u201cPVDF binder polymer (10 wt%)\u201d and Reagents lists PVDF). However, the extracted claim that the PVDF amount is \u201cNot specified in text\u201d is supported under the requested field framing (\u201cChemical Identity and Amount\u201d) only if interpreted as the absolute quantity/mass of PVDF not being specified; the text provides only composition by weight percent, not a standalone mass/volume amount of PVDF used.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_V1",
+        "description": "Esterification of L-glutamic acid with 6-chloro-1-hexanol to give CHLG.",
+        "operations": [
+          {
+            "action": "esterification",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_13",
+                "chem_31"
+              ]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 273,
+              "unit": "K"
+            },
+            "notes": "0 \u00b0C to room temperature (273\u2013298 K); yield 83%.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.95,
+              "reasoning": "The paper explicitly states: \u201cBoth pathways began with esterification reactions to install chloro or alkynyl groups at the \u03b3-position \u2026\u201d in the \u201cSyntheses of redox-active polypeptides\u201d section (Page 1). This supports that esterification is a synthesis operation used. Although the alleged provenance cites Fig. 2b, the textual description on Page 1 already directly supports the operation, and Fig. 2b also depicts DCC/DMAP-mediated esterification (e.g., MTEMPO with 3,3\u2032-dithiodipropionic acid).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      },
+      {
+        "step_id": "step_V2",
+        "description": "Formation of CHLG N-carboxyanhydride (CHLG NCA) using triphosgene.",
+        "operations": [
+          {
+            "action": "activation",
+            "parameters": {
+              "inputs": [
+                "chem_5",
+                "chem_13"
+              ]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "N2 atmosphere; yield 66%.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes an \u201cactivation\u201d step in the synthesis pathway. On page 2: \u201cThe synthesis of biTEMPO polypeptide involved \u2026 followed by activation to the nitroxide radical state (Fig. 2b).\u201d It also notes an \u201cadditional activation step\u201d for the viologen pathway. Thus, the synthesis operation \u2018activation\u2019 is directly supported (even though the clearest textual statement is in the page-2 paragraph that references Fig. 2b).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.75,
+            "reasoning": "The paper does mention nitrogen (N2) in a few specific contexts (for example, ring-opening polymerizations done under \u201cN2 flow\u201d, diphosgene in THF under N2, TGA performed under nitrogen atmosphere, and cleaning/drying under N2). However, it does not state an overall/explicit \u201csynthesis atmosphere\u201d for the full synthesis as simply \u201cN2\u201d. Because the field implies a single synthesis atmosphere condition, the document does not explicitly support the extracted value as a general statement.",
+            "suggested_fix": "Not specified (paper notes N2 in some individual steps, e.g., polymerization under N2 flow/THF under N2, but no single overall synthesis atmosphere is defined)."
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      },
+      {
+        "step_id": "step_V3",
+        "description": "Ring-opening polymerization of CHLG NCA to give PCHLG50.",
+        "operations": [
+          {
+            "action": "ring-opening polymerization",
+            "parameters": {
+              "inputs": [
+                "chem_6",
+                "chem_7"
+              ]
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Followed by acetic anhydride capping (180 min); overall yield 91 %.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly states that the chloro- and alkynyl-containing polypeptides were synthesized \u201cvia ring-opening polymerization of \u2026 N-carboxyanhydrides (CHLG NCAs; 3) and \u2026 (PLG NCAs; 11)\u201d in the Syntheses section (Page 2). Fig. 2b depicts this polymerization step as part of the synthetic scheme, consistent with the extracted synthesis operation.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2 flow",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.92,
+            "reasoning": "The paper does mention nitrogen in several places (for example, polymerization in \u201cDMF, N2 flow\u201d and \u201cTHF, N2\u201d, and TGA under nitrogen atmosphere; also drying with N2). However, it does not explicitly state a general \u201cSynthesis Atmosphere: N2 flow\u201d for the overall synthesis, and multiple steps use other specified environments/conditions. Therefore the extracted value is not supported as a standalone synthesis-atmosphere field for the whole synthesis.",
+            "suggested_fix": "If the intent is the atmosphere for specific synthesis steps, specify it stepwise (e.g., ring-opening polymerization: \u201cDMF, N2 flow\u201d (Fig. 2); NCA formation: \u201cTHF, N2\u201d (Fig. 2); TGA: \u201cnitrogen atmosphere\u201d (Methods)). If a single field is required, use something like: \u201cNot specified globally; some steps performed under N2 (N2 flow/N2 atmosphere).\u201d"
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      },
+      {
+        "step_id": "step_V4",
+        "description": "Finkelstein reaction converting PCHLG50 to PIHLG50.",
+        "operations": [
+          {
+            "action": "substitution",
+            "parameters": {
+              "inputs": [
+                "chem_8",
+                "chem_9"
+              ]
+            },
+            "duration": {
+              "value": 4320,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Reflux in acetone, 3 days; yield 76 %. Temperature not specified.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes the viologen polypeptide being obtained via \u201cSN2 substitution of halide-containing side chains by the viologen precursor\u201d (Page 2, Syntheses of redox-active polypeptides). This is a substitution reaction and corresponds to the synthesis operation. Although the alleged provenance cites Fig. 2b, the explicit textual support for substitution appears in the main text associated with Fig. 2b rather than the figure alone.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      },
+      {
+        "step_id": "step_V5",
+        "description": "SN2 installation of viologen groups to afford viol-I polypeptide.",
+        "operations": [
+          {
+            "action": "SN2 substitution",
+            "parameters": {
+              "inputs": [
+                "chem_10",
+                "chem_7"
+              ]
+            },
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 343,
+              "unit": "K"
+            },
+            "notes": "DMF, 70 \u00b0C; yield 89 %.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly states: \u201cThe viologen-iodide (viol-I) polypeptide 6-I was obtained via SN2 substitution of halide-containing side chains\u2026\u201d in the main text (Page 2) and this corresponds to the synthetic scheme shown in Fig. 2b. Therefore, the synthesis operation 'SN2 substitution' is directly supported, even though the alleged provenance points only to Fig. 2b.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      },
+      {
+        "step_id": "step_V6",
+        "description": "Ion-exchange to convert viol-I polypeptide to viol-Cl polypeptide (final anode material).",
+        "operations": [
+          {
+            "action": "ion exchange",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Conditions not specified.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly includes an ion-exchange step in the viologen polypeptide synthesis. In the text it states: \u201cThe iodide ion was exchanged to chloride, resulting in the viologen-chloride (viol-Cl) polypeptide 6-Cl\u201d (Page 2). Additionally, Fig. 2b labels the step from 6-I to 6-Cl as \u201cIon exchange.\u201d This supports the extracted synthesis operation \u201cion exchange,\u201d and the alleged provenance (Fig. 2b) is consistent.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      },
+      {
+        "step_id": "step_B1",
+        "description": "Preparation of \u03b3-propargyl-L-glutamate HCl via TMSCl-mediated reaction.",
+        "operations": [
+          {
+            "action": "modification",
+            "parameters": {
+              "inputs": [
+                "chem_3",
+                "chem_4"
+              ]
+            },
+            "duration": {
+              "value": 2160,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 273,
+              "unit": "K"
+            },
+            "notes": "0 \u00b0C to r.t.; yield 82 %.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes multiple post-polymerization modification steps (i.e., chemical modification of the polypeptides after polymerization). In the text it states: \u201c...followed by cyclization to establish monomer structures and then polymerization to produce poly(l-glutamates) (Fig. 2a).\u201d and later: \u201c...confirm the secondary structures of the polypeptides over multiple steps of post-polymerization modification.\u201d This supports categorizing the synthesis operation as a \u201cmodification.\u201d Although the alleged provenance is Fig. 2b, the explicit wording appears in the main text (page 2) and Fig. 2 caption describes \u201cModified amino acids ... followed by installation of the desired redox-active groups,\u201d which is also modification-related.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      },
+      {
+        "step_id": "step_B2",
+        "description": "Formation of PLG NCA from PLG HCl using triphosgene.",
+        "operations": [
+          {
+            "action": "activation",
+            "parameters": {
+              "inputs": [
+                "chem_5",
+                "chem_13"
+              ]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Yield 66 %.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.95,
+              "reasoning": "The paper explicitly describes an \"activation\" step as part of the synthesis operations. On page 2 it states: \"The synthesis of biTEMPO polypeptide involved ... followed by activation to the nitroxide radical state (Fig. 2b).\" It also describes \"an additional activation step\" in the viologen polypeptide route (chloride to iodide via Finkelstein reaction) before installation. Figure 2b itself labels steps including \"Activation\". Therefore, the extracted synthesis operation \"activation\" is supported (even though the alleged provenance is only Fig. 2b; the textual support is on page 2 as well).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.83,
+            "reasoning": "The paper explicitly mentions nitrogen (N2) being used as an atmosphere during synthesis-related steps. In the Methods it states that propargyl alcohol was \u201cdistilled under an atmosphere of N2\u201d, and Fig. 2/associated synthetic scheme text shows multiple reactions conducted under \u201cN2\u201d or \u201cN2 flow\u201d (e.g., polymerization step in DMF under N2 flow; diphosgene in THF under N2). Therefore, a synthesis atmosphere of N2 is supported by the source text.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      },
+      {
+        "step_id": "step_B3",
+        "description": "Ring-opening polymerization of PLG NCA to give PPLG50.",
+        "operations": [
+          {
+            "action": "ring-opening polymerization",
+            "parameters": {
+              "inputs": [
+                "chem_6",
+                "chem_7"
+              ]
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Followed by acetic anhydride capping; overall yield 92 %.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "The paper explicitly states that the chloro- and alkynyl-containing polypeptides were synthesized \u201cvia ring-opening polymerization of \u2026 N-carboxyanhydrides\u201d (Page 2, paragraph beginning \u201cThe chloro- and alkynyl-containing polypeptides\u2026\u201d). This directly supports the extracted synthesis operation \u201cring-opening polymerization.\u201d Although the alleged provenance cites Fig. 2b, the supporting text is in the main text (and Fig. 2b depicts the synthetic scheme consistent with this).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2 flow",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.92,
+            "reasoning": "The paper explicitly indicates nitrogen (N2) is used during synthesis steps: Fig. 2 shows polymerization conditions including \u201cDMF, N2 flow\u201d and \u201cDiphosgene, THF, N2\u201d, and the Methods note propargyl alcohol was distilled under an atmosphere of N2 and substrates were dried with N2. These directly support that the synthesis atmosphere involved N2 (nitrogen) flow/atmosphere.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      },
+      {
+        "step_id": "step_B4",
+        "description": "Thiol-yne click of thio-MTEMPO onto PPLG50 under UV to afford grafted polymer.",
+        "operations": [
+          {
+            "action": "thiol-yne click",
+            "parameters": {
+              "inputs": [
+                "chem_21"
+              ]
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "365 nm irradiation, DMPA photoinitiator; yield 84 %.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.96,
+              "reasoning": "The paper explicitly states that terminal alkynes on the biTEMPO polypeptide side chain \u201callow for thiol-yne \u2018click\u2019 chemistry with thiol-decorated TEMPO precursors\u201d and that the thiol was \u201cclicked onto PPLG50 12 under ultraviolet irradiation\u201d (text describing Fig. 2b). This supports the synthesis operation being thiol-yne click (even though the term appears in the main text rather than only in the figure caption).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      },
+      {
+        "step_id": "step_B5",
+        "description": "Oxidative cleavage to generate biTEMPO polypeptide (final cathode material).",
+        "operations": [
+          {
+            "action": "oxidation",
+            "parameters": {
+              "inputs": [
+                "chem_17",
+                "chem_13"
+              ]
+            },
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 273,
+              "unit": "K"
+            },
+            "notes": "0 \u00b0C to r.t.; yield 87 %.",
+            "prov": [
+              "Fig. 2b"
+            ],
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.9,
+              "reasoning": "Fig. 2b (and the related synthesis description on page 2) describes post-polymerization modifications including an oxidative cleavage/oxidation step (m-CPBA) to activate TEMPO precursors to the nitroxide radical state and oxidation of thioethers to sulfones. However, the paper does not label the overall \u201cSynthesis Operation\u201d generically as \u201coxidation\u201d in Fig. 2b; rather, it presents a multi-step sequence (esterification, cyclization/monomer synthesis, polymerization, installation, activation) that includes an oxidation step. Therefore the extracted value is too generic as a single operation for Fig. 2b.",
+              "suggested_fix": "activation (includes an oxidative step with m-CPBA to form the nitroxide radical state / oxidize thioethers to sulfones), or more specifically: oxidative cleavage/oxidation with m-CPBA as part of the activation step."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fig. 2b"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_V1",
+        "description": "Esterify glutamic acid to obtain CHLG.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.86,
+          "reasoning": "The paper states that both synthetic pathways for the glutamate-based polypeptides began with esterification reactions, and it labels an intermediate as CHLG derived from L-glutamic acid (Fig. 2; text: \u201cBoth pathways began with esterification reactions to install chloro or alkynyl groups at the \u03b3-position\u2026\u201d; and \u201cCHLG NCAs\u2026 prepared from chloro-\u2026 decorated L-glutamic acids\u201d). However, the document never explicitly provides the workflow-timeline step phrased as \u201cEsterify glutamic acid to obtain CHLG.\u201d It also does not explicitly state that the esterification of glutamic acid yields the specific named intermediate \u201cCHLG\u201d (though it is implied by the scheme). Because the extracted value is a specific step statement, and that exact claim is not explicitly written in the text, it is not directly supported.",
+          "suggested_fix": "Both pathways began with esterification reactions to install chloro or alkynyl groups at the \u03b3-position (Fig. 2), generating chloro- or propargyl-decorated L-glutamic acid derivatives (e.g., CHLG shown in Fig. 2)."
+        }
+      },
+      {
+        "step_ref": "step_V2",
+        "description": "Convert CHLG to NCA.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.97,
+          "reasoning": "Nowhere in the provided paper text do the authors mention a workflow step or timeline described as \u201cConvert CHLG to NCA.\u201d The document does state that CHLG is converted to \u201cCHLG NCA\u201d (\u03b3-(6-chlorohexyl)-l-glutamate N-carboxyanhydrides) as part of monomer synthesis (Fig. 2 and associated synthesis description), but it does not phrase this as a workflow timeline item, nor does it explicitly state the action in the extracted wording.",
+          "suggested_fix": "If the intended workflow step is monomer synthesis, a text-supported phrasing would be: \u201cPrepare CHLG NCA (\u03b3-(6-chlorohexyl)-L-glutamate N-carboxyanhydride) from CHLG as part of the monomer synthesis (Fig. 2).\u201d"
+        }
+      },
+      {
+        "step_ref": "step_V3",
+        "description": "Polymerize to PCHLG50.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The phrase/timeline step \"Polymerize to PCHLG50\" is not stated verbatim as a workflow timeline entry in the paper. The paper does state that ring-opening polymerization produces poly(\u03b3-(6-chlorohexyl)-L-glutamate) (PCHLG; 4) with degree of polymerization about 50, and it refers to the chloro-containing polypeptide as PCHLG50 4 (Page 2 and Fig. 2). However, it does not present this as an explicit timeline/workflow item in the form extracted.",
+          "suggested_fix": "Replace with a text-supported statement such as: \"Ring-opening polymerization of CHLG NCA yields PCHLG (PCHLG50; DP \u2248 50).\""
+        }
+      },
+      {
+        "step_ref": "step_V4",
+        "description": "Finkelstein exchange to iodide.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The paper describes a Finkelstein reaction that replaces chlorine with iodine (to obtain an iodo-containing polypeptide) before installing the viologen, i.e., exchange *to iodide/iodine* is supported. However, the extracted phrase \"Finkelstein exchange to iodide\" is incomplete/ambiguous as a workflow timeline item, and the document does not explicitly present it as a standalone timeline step with that exact wording. The relevant text is: \"replace the chlorine atoms with iodine via Finkelstein reaction\" (Page 2).",
+          "suggested_fix": "Activation step: replace chlorine atoms with iodine via Finkelstein reaction to obtain iodo-containing polypeptide (PIHLG50) prior to viologen installation."
+        }
+      },
+      {
+        "step_ref": "step_V5",
+        "description": "Install viologen to yield viol-I.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.62,
+          "reasoning": "The paper discusses installation of viologen to obtain a viologen-iodide (viol-I) polypeptide (page 2: \u201cThe viologen-iodide (viol-I) polypeptide 6-I was obtained via SN2 substitution\u2026\u201d; Fig. 2 also labels \u201cInstallation\u201d leading to \u201c6-I Viol-I polypeptide\u201d). However, the extracted workflow timeline phrase \u201cInstall viologen to yield viol-I.\u201d is not an exact/explcit timeline statement in the text; it is a paraphrase of the synthetic description rather than a quoted step in a workflow timeline section.",
+          "suggested_fix": "The viologen-iodide (viol-I) polypeptide 6-I was obtained via SN2 substitution of halide-containing side chains by the viologen precursor, 1-methyl-[4,4\u2032]bipyridylium iodide (MBPI; 1), after an activation step converting chloro to iodo side chains (Finkelstein reaction)."
+        }
+      },
+      {
+        "step_ref": "step_V6",
+        "description": "Ion exchange to viol-Cl (anode material).",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly describes an ion exchange step converting viologen-iodide (viol-I) polypeptide to viologen-chloride (viol-Cl) polypeptide: \u201cThe iodide ion was exchanged to chloride, resulting in the viologen-chloride (viol-Cl) polypeptide 6-Cl, which was then used for all electrochemical measurements.\u201d This supports the workflow step \u201cIon exchange to viol-Cl\u201d. The text also indicates the viologen polypeptide is used as the anode active material (Fig. 2 caption and battery schematics), consistent with \u201c(anode material)\u201d.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_B1",
+        "description": "Prepare propargyl glutamate precursor.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.84,
+          "reasoning": "The paper describes synthesis routes starting from L-glutamic acid and mentions \u201cchloro- and propargyl-decorated L-glutamic acids\u201d and \u03b3-propargyl-L-glutamate NCAs (PLG NCA; 11) prepared from those decorated amino acids. However, it never explicitly states a workflow step phrased as \u201cPrepare propargyl glutamate precursor,\u201d nor does it clearly define a distinct entity called a \u201cpropargyl glutamate precursor\u201d as a named step in a workflow timeline. Thus the extracted value is not explicitly supported as written.",
+          "suggested_fix": "If a workflow-timeline item is needed, a text-supported phrasing would be: \u201cPrepare \u03b3-propargyl-L-glutamate N-carboxyanhydride (PLG NCA; 11) from propargyl-decorated L-glutamic acid, then polymerize to poly(\u03b3-propargyl-L-glutamate) (PPLG; 12).\u201d"
+        }
+      },
+      {
+        "step_ref": "step_B2",
+        "description": "Convert to PLG NCA.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The phrase/action \u201cConvert to PLG NCA.\u201d does not appear in the provided paper text as a workflow timeline step. The paper does mention \u201cPLG NCA\u201d (\u03b3-propargyl-l-glutamate N-carboxyanhydrides; PLG NCAs; 11) and that PLG HCl is converted to PLG NCA (Fig. 2b shows \u201cPLG HCl\u201d \u2192 \u201cPLG NCA\u201d), but it does not state a workflow step phrased as \u201cConvert to PLG NCA.\u201d",
+          "suggested_fix": "If the intended timeline step is the conversion shown in Fig. 2b, use something like: \u201cConvert PLG HCl to PLG NCA (compound 10 \u2192 11)\u201d or \u201cPrepare PLG NCA (11) from PLG HCl (10) using triphosgene in ethyl acetate (70 \u00b0C, N2, 6 h; 45%).\u201d"
+        }
+      },
+      {
+        "step_ref": "step_B3",
+        "description": "Polymerize to PPLG50.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.83,
+          "reasoning": "The source text does discuss polymerization to obtain poly(\u03b3-propargyl-l-glutamate) with degree of polymerization ~50, explicitly denoted as \u201cPPLG50\u201d (e.g., \u201cPPLG50; 12\u201d obtained via ring-opening polymerization; also Fig. 2 shows \u201c12 PPLG50\u201d). However, the extracted value states \u201cPolymerize to PPLG50.\u201d as a workflow timeline step; the paper does not present an explicit procedural/timeline instruction phrased that way, and the synthesis step is described as ring-opening polymerization of PLG NCA (11) to give PPLG50 (12), not simply \u201cpolymerize to PPLG50.\u201d",
+          "suggested_fix": "Ring-opening polymerize PLG NCA (11) to obtain poly(\u03b3-propargyl-l-glutamate) with DP \u2248 50 (PPLG50; 12)."
+        }
+      },
+      {
+        "step_ref": "step_B4",
+        "description": "Thiol-yne click with TEMPO precursor.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The paper explicitly describes that, in the biTEMPO polypeptide synthesis, terminal alkynes on the side chain were used for thiol-yne \u2018click\u2019 chemistry with thiol-decorated TEMPO precursors (Page 2: \u201callow for thiol-yne \u2018click\u2019 chemistry with thiol-decorated TEMPO precursors\u2026\u201d and \u201cThis thiol was then clicked onto PPLG50 12\u2026\u201d). This supports the extracted workflow step \u201cThiol-yne click with TEMPO precursor.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_B5",
+        "description": "Oxidize to biTEMPO polypeptide (cathode material).",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The phrase/extracted step \u201cOxidize to biTEMPO polypeptide (cathode material)\u201d is not stated as a workflow/timeline step in the paper. The paper does describe that, in synthesizing biTEMPO polypeptide, TEMPO precursors are installed and then an activation/oxidation step is used to generate the nitroxide radical (biTEMPO polypeptide 14), specifically via oxidative cleavage with m-CPBA (Page 2: \u201cfollowed by oxidative cleavage with meta-chloroperoxybenzoic acid (m-CPBA) to afford the biTEMPO polypeptide 14\u201d). It also states TEMPO is the cathode active material (Pages 1\u20133; Fig. 2 caption). However, the extracted value\u2019s wording (\u201cOxidize to biTEMPO polypeptide\u201d) is overly generic and not explicitly presented as a named workflow timeline item; moreover the \u2018activation\u2019 step is oxidation to nitroxide radical state, not simply \u2018oxidize to biTEMPO\u2019 as a standalone step.",
+          "suggested_fix": "Activation/oxidation step: after clicking thiol-decorated methyl-protected TEMPO onto PPLG50, oxidative cleavage with m-CPBA affords biTEMPO polypeptide 14 (TEMPO nitroxide radical cathode material)."
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Temperature range not precisely specified (0 \u00b0C to r.t.)",
+        "excerpt": "6-Chloro-1-hexanol ... 0 \u00b0C to r.t., 24 h",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly reports the reaction condition exactly as quoted: in Fig. 2b (synthetic scheme), the step from \u201c6-Chlorohexanol\u201d lists \u201cTHF, H2SO4, 0 \u00b0C to r.t., 24 h (83%)\u201d. This inherently specifies a temperature range (from 0 \u00b0C up to room temperature) rather than a single precise temperature, so the noted workflow ambiguity (\u201cTemperature range not precisely specified (0 \u00b0C to r.t.)\u201d) is supported by the source text.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Reflux temperature not given for NaI substitution.",
+        "excerpt": "NaI, acetone Reflux, 3 d",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The paper\u2019s main text/figure (Fig. 2b synthetic scheme) lists the Finkelstein activation step as \u201cNaI, acetone, Reflux, 3 d\u201d for converting PCHLG50 (4) to PIHLG50 (5), but it does not provide an explicit numerical reflux temperature (\u00b0C) for this NaI/acetone substitution step anywhere in the provided full text. Therefore, the flagged workflow ambiguity (\u201cReflux temperature not given for NaI substitution\u201d) is supported by the document\u2019s omission of that specific parameter.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Conditions for ion exchange to chloride not described.",
+        "excerpt": "The iodide ion was exchanged to chloride, resulting in the viologen-chloride (viol-Cl) polypeptide",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.78,
+          "reasoning": "The paper states: \u201cThe iodide ion was exchanged to chloride, resulting in the viologen-chloride (viol-Cl) polypeptide 6-Cl\u2026\u201d but provides no explicit description of the ion-exchange conditions (reagents, solvent, time, procedure) in the provided full text. Therefore the flagged workflow ambiguity\u2014missing conditions for iodide\u2192chloride exchange\u2014is supported by the source text\u2019s omission.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "ATR-FTIR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "amide I peak",
+          "value": 1650,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "amide II peak",
+          "value": 1547,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "\u03b1-helical conformation retained.",
+      "prov": [
+        "Supplementary Fig. 6"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper text explicitly reports ATR-FTIR absorbances at 1,650 cm\u22121 (amide I region) and 1,547 cm\u22121 (amide II region) in the context of Supplementary Fig. 6: \u201c...absorbances in the Fourier transform infrared spectra (Supplementary Fig. 6) at 1,650 cm\u22121 (amide I region) and 1,547 cm\u22121 (amide II region)...\u201d. This directly supports the extracted amide I and amide II peak positions.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Circular dichroism",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "band",
+          "value": 208,
+          "unit": "nm"
+        },
+        {
+          "metric": "band",
+          "value": 222,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Supports \u03b1-helical structure.",
+      "prov": [
+        "Supplementary Fig. 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states that the circular dichroism spectra (Supplementary Fig. 3) show bands at 208 nm and 222 nm: \u201c...bands at 208 nm and 222 nm in the circular dichroism spectra (Supplementary Fig. 3).\u201d This directly supports the extracted values.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "electrolyte": "0.5 M TBACF3SO3/PC",
+        "scan_rate": "10\u2013100 mV s-1"
+      },
+      "results": [
+        {
+          "metric": "viol-Cl redox peaks",
+          "value": "2.23 & 2.69",
+          "unit": "V vs Li/Li+"
+        },
+        {
+          "metric": "biTEMPO redox peak",
+          "value": 3.69,
+          "unit": "V vs Li/Li+"
+        }
+      ],
+      "interpretation": "Quasi-reversible redox behaviour.",
+      "prov": [
+        "Fig. 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports cyclic voltammetry peak potentials for the polypeptides in the Electrochemical characterization section and refers to Fig. 3. It states: \u201cThe viol-Cl polypeptide exhibited two quasi-reversible redox peaks, at 2.23 V and 2.69 V versus Li/Li+ (Fig. 3a)\u201d and \u201cThe biTEMPO polypeptide exhibited one quasi-reversible redox peak, at 3.69 V versus Li/Li+ \u2026 (Fig. 3b).\u201d These match the extracted values and units.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge\u2013discharge (half-cells)",
+        "results": [
+          {
+            "equation": "",
+            "value": 74.2,
+            "unit": "mAh g-1",
+            "notes": "viol-Cl at 1 C, initial discharge capacity"
+          },
+          {
+            "equation": "",
+            "value": 68.0,
+            "unit": "mAh g-1",
+            "notes": "viol-Cl after 30 cycles"
+          },
+          {
+            "equation": "",
+            "value": 16.5,
+            "unit": "mAh g-1",
+            "notes": "biTEMPO at 1 C, initial charge capacity"
+          },
+          {
+            "equation": "",
+            "value": 11.6,
+            "unit": "mAh g-1",
+            "notes": "biTEMPO after 30 cycles"
+          }
+        ],
+        "prov": [
+          "Fig. 4a\u2013f"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.9,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly describes the analysis/electrochemical methods used in connection with Fig. 4a\u2013i (the cited provenance): cyclic voltammetry, galvanostatic charge\u2013discharge cycling in sandwich-cell configurations, and reporting Coulombic efficiency/capacity. Since the document contains clear method information, a blank extracted value is not supported under the null-handling rule (the information is not missing).",
+          "suggested_fix": "Electrochemical analysis via cyclic voltammetry and galvanostatic charge\u2013discharge cycling (half-cell and full-cell sandwich configurations); cycling response including Coulombic efficiency (Fig. 4a\u2013i)."
+        }
+      },
+      {
+        "method_name": "Galvanostatic charge\u2013discharge (full cell)",
+        "results": [
+          {
+            "equation": "",
+            "value": 37.8,
+            "unit": "mAh g-1",
+            "notes": "Initial charge capacity at 1 C"
+          },
+          {
+            "equation": "",
+            "value": 7.5,
+            "unit": "mAh g-1",
+            "notes": "Capacity after 250 cycles"
+          }
+        ],
+        "prov": [
+          "Fig. 4g\u2013i"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.72,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank. Fig. 4g\u2013i (and the associated text describing Fig. 4g\u2013i) clearly specifies electrochemical analysis methods used to generate those panels: cyclic voltammetry and galvanostatic charge\u2013discharge cycling (cycling stability over 250 cycles at 1C), with reporting of Coulombic efficiency. Because the paper provides explicit methods, leaving the field empty is not supported.",
+          "suggested_fix": "Electrochemical characterization\u2014cyclic voltammetry and galvanostatic charge\u2013discharge cycling (cycling stability at 1C; Coulombic efficiency), as shown in Fig. 4g\u2013i."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 37.8,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 250,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.95,
+      "reasoning": "The paper explicitly reports that cycling stability of the polypeptide-based full cell was determined over 250 cycles (\u201cCycling stability of the polypeptide-based battery was determined over 250 cycles of galvanostatic charging at 1C... to 7.5 mA h g\u22121 after 250 cycles\u201d). This supports a cycle life value of 250 cycles.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

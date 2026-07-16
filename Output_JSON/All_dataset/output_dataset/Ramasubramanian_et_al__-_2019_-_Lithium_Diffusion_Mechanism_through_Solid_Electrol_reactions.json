@@ -1,0 +1,244 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium Diffusion Mechanism through Solid−Electrolyte Interphase in Rechargeable Lithium Batteries",
+    "doi": "10.1021/acs.jpcc.9b00436",
+    "authors": ["Ajaykrishna Ramasubramanian", "Vitaliy Yurkiv", "Tara Foroozan", "Marco Ragone", "Reza Shahbazian-Yassar", "Farzad Mashayek"],
+    "journal": "The Journal of Physical Chemistry C",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "lithium diffusion", "solid electrolyte interphase", "grain boundary"]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium fluoride",
+      "molecular_formula": "LiF",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 10239"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium oxide",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 10239"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 10238"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "diffusing species",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (DFT)",
+      "parameters": {
+        "code": "VASP",
+        "functional": "PBE-GGA",
+        "plane_wave_cutoff": {
+          "value": 400,
+          "unit": "eV"
+        },
+        "pseudopotential": "PAW",
+        "k_point_mesh": "system dependent (e.g., 5×3×1, 5×4×1, 3×3×1)",
+        "vacuum_thickness": {
+          "value": 15,
+          "unit": "Å"
+        },
+        "force_convergence": {
+          "value": 0.001,
+          "unit": "eV Å-1"
+        },
+        "energy_convergence": {
+          "value": 0.0001,
+          "unit": "eV"
+        },
+        "spin_polarization": "applied when odd number of Li atoms present"
+      },
+      "results": [
+        {
+          "metric": "GB energy LiF/LiF Σ5",
+          "value": 380.79,
+          "unit": "mJ m-2"
+        },
+        {
+          "metric": "GB energy LiF/LiF Σ3",
+          "value": 423.55,
+          "unit": "mJ m-2"
+        },
+        {
+          "metric": "GB energy Li2O/Li2O Σ3",
+          "value": 688.72,
+          "unit": "mJ m-2"
+        },
+        {
+          "metric": "GB energy Li2O/Li2O Σ5",
+          "value": 557.47,
+          "unit": "mJ m-2"
+        },
+        {
+          "metric": "GB energy LiF/Li2O",
+          "value": 288.62,
+          "unit": "mJ m-2"
+        },
+        {
+          "metric": "Activation energy LiF/LiF Σ5",
+          "value": 0.68,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy LiF/LiF Σ3",
+          "value": 1.03,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy Li2O/Li2O Σ15",
+          "value": 0.78,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy LiF/Li2O",
+          "value": 0.45,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Lower activation energy and GB energy correlate with higher Li diffusion rates, with LiF/Li2O GB showing the fastest diffusion.",
+      "prov": ["Pages 10239-10242"]
+    },
+    {
+      "method": "Nudged Elastic Band (NEB)",
+      "parameters": {
+        "images": "5-9 per path",
+        "convergence_force": {
+          "value": 0.1,
+          "unit": "eV Å-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "Li diffusion path count in LiF/Li2O GB",
+          "value": 3,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Pages 10240-10242"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius equation",
+        "results": [
+          {
+            "equation": "D = D0 * exp( -E_act / kB T )",
+            "value": 4.6e-16,
+            "unit": "m2 s-1",
+            "notes": "Li diffusion coefficient for LiF/LiF Σ5 GB at unspecified temperature"
+          },
+          {
+            "equation": "D = D0 * exp( -E_act / kB T )",
+            "value": 3.16e-23,
+            "unit": "m2 s-1",
+            "notes": "Li diffusion coefficient for LiF/LiF Σ3 GB"
+          },
+          {
+            "equation": "D = D0 * exp( -E_act / kB T )",
+            "value": 7.38e-16,
+            "unit": "m2 s-1",
+            "notes": "Li diffusion coefficient for Li2O/Li2O Σ15 GB"
+          },
+          {
+            "equation": "D = D0 * exp( -E_act / kB T )",
+            "value": 3.87e-14,
+            "unit": "m2 s-1",
+            "notes": "Li diffusion coefficient for LiF/Li2O GB"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-29T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

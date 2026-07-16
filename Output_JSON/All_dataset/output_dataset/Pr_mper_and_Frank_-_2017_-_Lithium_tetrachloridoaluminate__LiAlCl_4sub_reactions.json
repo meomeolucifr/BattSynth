@@ -1,0 +1,544 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium tetrachloridoaluminate, LiAlCl4: a new polymorph (oP12, Pmn21) with Li+ in tetrahedral interstices",
+    "doi": "10.1107/S205698901701235X",
+    "authors": ["Stephan W. Prömper", "Walter Frank"],
+    "journal": "Acta Crystallographica Section E",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "inorganic synthesis and characterization",
+    "tags": ["polymorph", "lithium tetrachloridoaluminate", "crystal structure"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiAlCl4 (oP12, Pmn21)",
+      "molecular_formula": "LiAlCl4",
+      "intended_role": "product",
+      "prov": ["Page 1426 – abstract", "Section 5 Synthesis and crystallization"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.112,
+        "unit": "g"
+      },
+      "notes": "2.64 mmol",
+      "prov": ["Section 5"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Aluminium chloride",
+      "molecular_formula": "AlCl3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.268,
+        "unit": "g"
+      },
+      "notes": "2.01 mmol; purified by sublimation",
+      "prov": ["Section 5"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "p-Xylene",
+      "molecular_formula": "C8H10",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Section 5"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "m-Xylene",
+      "molecular_formula": "C8H10",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "alternative solvent mentioned; purified similarly to p-xylene",
+      "prov": ["Section 1", "Section 5"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "inert atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "dry argon (argon 5.0)",
+      "prov": ["Section 5"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Aluminium (metal)",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "additive",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used to overlay AlCl3 prior to sublimation",
+      "prov": ["Section 5"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Sodium hydroxide solution",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "washing agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "0.2 M used to wash xylenes",
+      "prov": ["Section 5"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Water (distilled)",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "washing agent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section 5"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Purification of AlCl3 by sublimation in the presence of aluminium metal.",
+        "operations": [
+          {
+            "action": "sublime",
+            "parameters": {
+              "inputs": ["chem_2", "chem_6"],
+              "temperature": {
+                "value": 463,
+                "unit": "K"
+              },
+              "pressure": {
+                "value": null,
+                "unit": "bar"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "sealed ampoule in vacuo; original temperature 190 °C",
+            "prov": ["Section 5"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 5"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Purification of p-xylene and m-xylene.",
+        "operations": [
+          {
+            "action": "reflux",
+            "parameters": {
+              "inputs": ["chem_3", "chem_2"],
+              "duration": {
+                "value": null,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "notes": "xylene refluxed with AlCl3",
+            "prov": ["Section 5"]
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_3", "chem_7"],
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "followed by washing with distilled water (chem_8)",
+            "prov": ["Section 5"]
+          },
+          {
+            "action": "distill",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "distilled over molecular sieve 4 Å",
+            "prov": ["Section 5"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 5"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Reaction of LiCl and AlCl3 in p-xylene under reflux.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              },
+              "time": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "mixture prepared under dry argon",
+            "prov": ["Section 5"]
+          },
+          {
+            "action": "reflux",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "notes": "boiling p-xylene",
+            "prov": ["Section 5"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 5"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Isolation of LiAlCl4 crystals by partial solvent removal.",
+        "operations": [
+          {
+            "action": "separate",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "notes": "warm colourless solution separated from residual LiCl",
+            "prov": ["Section 5"]
+          },
+          {
+            "action": "evaporate",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "volume_removed": {
+                "value": 4,
+                "unit": "mL"
+              },
+              "temperature": {
+                "value": 298,
+                "unit": "K"
+              },
+              "pressure": {
+                "value": null,
+                "unit": "bar"
+              }
+            },
+            "notes": "reduced pressure at room temperature",
+            "prov": ["Section 5"]
+          },
+          {
+            "action": "crystallize",
+            "parameters": {
+              "product": "target_1"
+            },
+            "notes": "",
+            "prov": ["Section 5"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 5"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Washing and drying of LiAlCl4 crystals.",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["target_1", "chem_3"]
+            },
+            "notes": "",
+            "prov": ["Section 5"]
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["target_1"],
+              "temperature": {
+                "value": 298,
+                "unit": "K"
+              },
+              "pressure": {
+                "value": null,
+                "unit": "bar"
+              }
+            },
+            "notes": "in vacuo at room temperature",
+            "prov": ["Section 5"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 5"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "AlCl3 purification"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Solvent purification"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Main reaction under reflux"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Crystallization of product"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Product washing and drying"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "excitation_wavelength": "1064 nm",
+        "resolution": "2 cm-1",
+        "spectral_range": "3500–70 cm-1"
+      },
+      "results": [
+        {
+          "metric": "Raman shift",
+          "value": "523, 502, 487, 478, 350, 180, 170, 136, 126, 104",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Bands assigned to normal modes of AlCl4- tetrahedron; splitting due to cation interactions.",
+      "prov": ["Section 3", "Figure 2"]
+    },
+    {
+      "method": "Differential Scanning Calorimetry (DSC)",
+      "parameters": {
+        "heating_rate": {
+          "value": 5,
+          "unit": "K min-1"
+        },
+        "atmosphere": "dry nitrogen"
+      },
+      "results": [
+        {
+          "metric": "Melting onset",
+          "value": 421,
+          "unit": "K",
+          "notes": "original 148 °C"
+        },
+        {
+          "metric": "Melting peak",
+          "value": 425,
+          "unit": "K",
+          "notes": "original 152 °C"
+        }
+      ],
+      "interpretation": "No phase transition observed before melting.",
+      "prov": ["Section 4", "Figure 3"]
+    },
+    {
+      "method": "Single-crystal X-ray diffraction",
+      "parameters": {
+        "temperature": {
+          "value": 173,
+          "unit": "K"
+        },
+        "space_group": "Pmn21",
+        "cell_parameters": {
+          "a": 7.8273,
+          "b": 6.4466,
+          "c": 6.1304,
+          "unit": "Å"
+        }
+      },
+      "results": [
+        {
+          "metric": "R1",
+          "value": 0.028,
+          "unit": ""
+        },
+        {
+          "metric": "wR2",
+          "value": 0.075,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms orthorhombic defect wurtz-stannite-type structure.",
+      "prov": ["Table 2", "supporting information"]
+    },
+    {
+      "method": "X-ray powder diffraction",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "Product transforms to monoclinic LiAlCl4 after melting",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Bond order calculation (Brown formalism)",
+        "results": [
+          {
+            "equation": "",
+            "value": "Σs(Li—Cl)=1.17 (orthorhombic), 0.87 (monoclinic)",
+            "unit": ""
+          }
+        ],
+        "prov": ["Table 1"]
+      },
+      {
+        "method_name": "Density comparison",
+        "results": [
+          {
+            "value": "1.89 (orthorhombic) vs 1.98 g cm-3 (monoclinic)",
+            "unit": "g cm-3"
+          }
+        ],
+        "prov": ["Section 4"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": 60,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

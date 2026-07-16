@@ -1,0 +1,344 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Surface and interface sciences of Li-ion batteries -Research progress in electrode –electrolyte interface-",
+    "doi": "10.1016/j.progsurf.2017.10.001",
+    "authors": ["Taketoshi Minato", "Takeshi Abe"],
+    "journal": "Progress in Surface Science",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["Li-ion battery", "interface", "surface science"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiCoO2 composite electrode",
+      "molecular_formula": "LiCoO2 + additives",
+      "intended_role": "electrode",
+      "prov": ["Fig. 2"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiCoO2 thin film (1 0 4) epitaxial",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "model electrode",
+      "prov": ["Fig. 4"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li4Ti5O12 single crystal",
+      "molecular_formula": "Li4Ti5O12",
+      "intended_role": "electrode material",
+      "prov": ["text Page 258"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 94.5,
+        "unit": "%",
+        "type": "wt"
+      },
+      "notes": "Weight percentage in composite electrode",
+      "prov": ["Fig. 2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": 2.0,
+        "unit": "%",
+        "type": "wt"
+      },
+      "notes": "",
+      "prov": ["Fig. 2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "polyvinylidene difluoride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 3.5,
+        "unit": "%",
+        "type": "wt"
+      },
+      "notes": "PVdF",
+      "prov": ["Fig. 2"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiClO4",
+      "molecular_formula": "LiClO4",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Electrolyte salt",
+      "prov": ["Fig. 43"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Part of solvent mixture",
+      "prov": ["Fig. 43"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Part of solvent mixture",
+      "prov": ["Fig. 43"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mentioned typical electrolyte salt",
+      "prov": ["Page 241"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "tetraglyme",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for interface study",
+      "prov": ["Fig. 54"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of LiCoO2 composite electrode",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "ratios_wt%": {"chem_1": 94.5, "chem_2": 2.0, "chem_3": 3.5}
+            },
+            "notes": "Mixture applied onto aluminum current collector as shown in SEM image"
+          }
+        ],
+        "conditions": {
+          "temperature": {"value": null, "unit": "K"},
+          "time": {"value": null, "unit": "min"},
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Fig. 2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of LiClO4 electrolyte",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5", "chem_6"],
+              "concentration": {"value": 1, "unit": "M"},
+              "solvent_ratio_vol": {"chem_5": 1, "chem_6": 2}
+            },
+            "notes": "Deuterated EC used in neutron study"
+          }
+        ],
+        "conditions": {
+          "temperature": {"value": null, "unit": "K"},
+          "time": {"value": null, "unit": "min"},
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Fig. 43"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Formation of Li4Ti5O12 single crystal by calcination",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["TiO2 (single crystal)", "LiOH·H2O"],
+              "notes": "Li inserted into TiO2 lattice to form Li4Ti5O12 single crystal"
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {"value": null, "unit": "K"},
+          "time": {"value": null, "unit": "min"},
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 258"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Composite electrode mixed and cast"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Electrolyte solution prepared"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Single crystal Li4Ti5O12 obtained via calcination"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No specific temperatures or times for calcination step",
+        "excerpt": "Single-crystalline Li4Ti5O12 was successfully prepared by inserting Li into single-crystalline TiO2 by calcining TiO2 with a Li compounds [28]."
+      },
+      {
+        "issue": "Mixing and coating conditions for composite electrode not detailed",
+        "excerpt": "The composite electrode is prepared by mixing the active material with a binder."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "microstructure description",
+          "value": "Bright regions LiCoO2, gray carbon/binder, dark pores",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms homogeneous dispersion of additives",
+      "prov": ["Fig. 2"]
+    },
+    {
+      "method": "Neutron Reflectivity",
+      "parameters": {
+        "electrolyte": "1 M LiClO4 in deuterated EC:DMC (1:2)"
+      },
+      "results": [
+        {"metric": "interface layer thickness (after immersion)", "value": 30.6, "unit": "nm"},
+        {"metric": "interface layer thickness (charged)", "value": 48.8, "unit": "nm"},
+        {"metric": "interface layer thickness (discharged)", "value": 35.6, "unit": "nm"},
+        {"metric": "composition", "value": "mainly polyethylene oxide (PEO)", "unit": ""}
+      ],
+      "interpretation": "Interface layer grows during charge and partially strips during discharge",
+      "prov": ["Fig. 43"]
+    },
+    {
+      "method": "AFM",
+      "parameters": {
+        "mode": "in situ",
+        "electrolyte": "1 M LiClO4 in EC:DMC (1:1)"
+      },
+      "results": [
+        {"metric": "blister height", "value": 15, "unit": "nm"},
+        {"metric": "blister height max", "value": 20, "unit": "nm"}
+      ],
+      "interpretation": "Blister formation due to decomposition products in graphite layers",
+      "prov": ["Fig. 44"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical Impedance Spectroscopy",
+        "results": [
+          {"equation": "Arrhenius", "value": 69.9, "unit": "kJ mol-1", "note": "Activation barrier Li transfer LLT/electrolyte in DMSO"},
+          {"equation": "Arrhenius", "value": 57.3, "unit": "kJ mol-1", "note": "Activation barrier Li transfer LLT/electrolyte in PC"},
+          {"equation": "Arrhenius", "value": 31.5, "unit": "kJ mol-1", "note": "Activation barrier Li transfer LLT/electrolyte in FEC"},
+          {"equation": "Arrhenius", "value": 61.0, "unit": "kJ mol-1", "note": "Activation barrier Li transfer LiCoO2/PC interface"},
+          {"equation": "Arrhenius", "value": 25, "unit": "kJ mol-1", "note": "Activation barrier solvated Li transfer on HOPG in DME"},
+          {"equation": "Arrhenius", "value": 53, "unit": "kJ mol-1", "note": "Activation barrier Li transfer on HOPG in EC-DEC (lower bound)"},
+          {"equation": "Arrhenius", "value": 60, "unit": "kJ mol-1", "note": "Activation barrier Li transfer on HOPG in EC-DEC (upper bound)"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-21T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

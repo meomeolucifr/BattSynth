@@ -1,0 +1,169 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Effect of lattice and dopant–induced strain on the conductivity of solid electrolytes: application of the elastic dipole method",
+    "doi": "10.1016/j.mtla.2020.100607",
+    "authors": [
+      "Ashkan Moradabadi",
+      "Payam Kaghazchi"
+    ],
+    "journal": "Materialia",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["solid electrolyte", "elastic dipole method", "DFT", "AIMD", "Li-ion conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "cubic Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "study_material",
+      "prov": ["Page 2, Table 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Al-doped cubic Li6.25Al0.25La3Zr2O12",
+      "molecular_formula": "Li6.25Al0.25La3Zr2O12",
+      "intended_role": "study_material",
+      "prov": ["Page 2, Table 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Ta-doped cubic Li7La3Zr2O12",
+      "molecular_formula": "Ta-LLZO (approx. Li7La3TaZrO12)",
+      "intended_role": "study_material",
+      "prov": ["Page 2, Table 1"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "study_material",
+      "prov": ["Page 2, Table 1"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (DFT)",
+      "parameters": {
+        "software": "VASP",
+        "functional": "PBE",
+        "plane_wave_cutoff": {
+          "value": 500,
+          "unit": "eV"
+        },
+        "k_point_mesh": "2×2×2 for LLZO structures; 3×2×2 for LGPS"
+      },
+      "results": [
+        {
+          "metric": "Optimized lattice parameters",
+          "value": [
+            {"structure": "c-LLZO", "a": 12.932, "b": 13.056, "c": 13.087, "unit": "Å"},
+            {"structure": "Al-LLZO", "a": 12.986, "b": 13.022, "c": 13.022, "unit": "Å"},
+            {"structure": "Ta-LLZO", "a": 12.940, "b": 13.068, "c": 13.030, "unit": "Å"},
+            {"structure": "LGPS", "a": 8.851, "b": 8.719, "c": 12.809, "unit": "Å"}
+          ],
+          "unit": "",
+          "prov": ["Table 1"]
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Computational Details section"]
+    },
+    {
+      "method": "Ab-initio Molecular Dynamics (AIMD)",
+      "parameters": {
+        "ensemble": "NVT",
+        "temperature_range": "800–1600 K",
+        "time_per_run": {
+          "value": 40,
+          "unit": "min",
+          "notes": "40–50 ps simulated with 1 fs timestep"
+        }
+      },
+      "results": [
+        {
+          "metric": "Average Li migration barrier ΔEb",
+          "value": [
+            {"structure": "c-LLZO", "value": 0.30, "unit": "eV"},
+            {"structure": "Al-LLZO", "value": 0.37, "unit": "eV"},
+            {"structure": "Ta-LLZO", "value": 0.20, "unit": "eV"},
+            {"structure": "LGPS", "value": 0.23, "unit": "eV"}
+          ],
+          "unit": "eV",
+          "prov": ["Table 3", "Fig. 6"]
+        },
+        {
+          "metric": "Li ionic conductivity at 298 K",
+          "value": [
+            {"structure": "c-LLZO", "value": 4.6e-6, "unit": "S cm-1"},
+            {"structure": "Al-LLZO", "value": 5.6e-7, "unit": "S cm-1"},
+            {"structure": "Ta-LLZO", "value": 6.7e-5, "unit": "S cm-1"},
+            {"structure": "LGPS", "value": 1.5e-4, "unit": "S cm-1"}
+          ],
+          "unit": "S cm-1",
+          "prov": ["Table 3"]
+        }
+      ],
+      "interpretation": "Ta-doping lowers migration barrier and increases conductivity; Al-doping raises barrier.",
+      "prov": ["Results section", "Fig. 6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Elastic Dipole Method (EDM)",
+        "results": [
+          {
+            "equation": "ΔE_d(ε) = ΔE_d(0) – Σ G_ij ε_ij",
+            "value": null,
+            "unit": "",
+            "notes": "Used to predict strain dependence of defect formation energies",
+            "prov": ["Eq. (7)"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

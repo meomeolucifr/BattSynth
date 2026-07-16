@@ -1,0 +1,379 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Feature Analyses and Modeling of Lithium-Ion Battery Manufacturing Based on Random Forest Classification",
+    "doi": "10.1109/TMECH.2020.3049046",
+    "authors": ["Kailong Liu", "Xiaosong Hu", "Huiyu Zhou", "Lei Tong", "W. Dhammika Widanage", "James Marco"],
+    "journal": "IEEE/ASME Transactions on Mechatronics",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium-ion battery", "manufacturing", "random forest", "feature analysis"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Battery electrode (anode and cathode)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Fig. 1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Active material",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Specific chemistry not given",
+      "prov": ["Fig. 1", "Text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Copper foil",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Fig. 1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Aluminum foil",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Fig. 1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Electrolyte",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "mixture"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "No composition specified",
+      "prov": ["Fig. 1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mixing of active material slurry in a soft blender",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "equipment": "soft blender"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Slurry intermediate product features include AMMC, solid-to-liquid ratio, and viscosity"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Coating of slurry onto metal foils using a comma-gap coater",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["step_1", "chem_2", "chem_3"],
+              "equipment": "comma-gap coater",
+              "gap": {
+                "value": null,
+                "unit": "mm"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Built-in ovens used to dry the coating"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Drying of coated electrodes in built-in ovens",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["step_2"],
+              "equipment": "oven"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Calendering of dried coatings",
+        "operations": [
+          {
+            "action": "calender",
+            "parameters": {
+              "inputs": ["step_3"],
+              "equipment": "calender rolls"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Cutting of electrodes to shape",
+        "operations": [
+          {
+            "action": "cut",
+            "parameters": {
+              "inputs": ["step_4"],
+              "equipment": "cutting machine"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 1"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Assembly of battery cell with electrodes and electrolyte",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["step_5", "chem_4"],
+              "equipment": "assembly line"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Slurry preparation via mixing"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Coating slurry onto foils"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Drying coated electrodes"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Calendering dried electrodes"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Cutting electrodes"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Assembling battery cell"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No quantitative conditions (temperature, time, gap, etc.) provided for each manufacturing step",
+        "excerpt": "Fig. 1 systematically illustrates several key intermediate processes within the battery production chain especially for electrode manufacturing."
+      },
+      {
+        "issue": "Chemical identities of active material and electrolyte not specified",
+        "excerpt": "In general, after preparing active materials, the slurry could be made within a soft blender through a mixing stage."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Mass load measurement",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Electrode mass load classified into five labels (very low to very high)",
+      "prov": ["Table I"]
+    },
+    {
+      "method": "Porosity measurement",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Electrode porosity classified into five labels (very low to very high)",
+      "prov": ["Table I"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Random Forest classification",
+        "results": [
+          {
+            "equation": "",
+            "value": 0.902,
+            "unit": "",
+            "notes": "Overall correct classification rate (OCCrate) for mass load"
+          },
+          {
+            "equation": "",
+            "value": 0.707,
+            "unit": "",
+            "notes": "Overall correct classification rate (OCCrate) for porosity"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "Provided text excerpt",
+    "processing_time": null
+  }
+}

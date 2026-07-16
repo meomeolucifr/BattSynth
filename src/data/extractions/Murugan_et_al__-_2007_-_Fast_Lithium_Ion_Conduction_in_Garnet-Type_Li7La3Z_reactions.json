@@ -1,0 +1,469 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Fast Lithium Ion Conduction in Garnet-Type Li7La3Zr2O12",
+    "doi": "10.1002/anie.200701144",
+    "authors": ["Ramaswamy Murugan", "Venkataraman Thangadurai", "Werner Weppner"],
+    "journal": "Angewandte Chemie International Edition",
+    "year": 2007
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis",
+    "tags": ["solid electrolyte", "lithium ion conductor", "garnet"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "product",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hydroxide",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10 wt% excess added; dried at 473 K for 360 min before use",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum oxide",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Dried at 1173 K for 1440 min before use",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconium dioxide",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "2-Propanol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used during ball milling",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pre-drying of reactants",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "temperature": {"value": 473, "unit": "K"},
+              "duration": {"value": 360, "unit": "min"}
+            },
+            "notes": "",
+            "prov": ["Experimental Section"]
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_2"],
+              "temperature": {"value": 1173, "unit": "K"},
+              "duration": {"value": 1440, "unit": "min"}
+            },
+            "notes": "",
+            "prov": ["Experimental Section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "First ball milling of stoichiometric mixture with excess LiOH",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"],
+              "duration": {"value": 720, "unit": "min"},
+              "temperature": {"value": null, "unit": "K"}
+            },
+            "notes": "Zirconia balls; milling performed in air",
+            "prov": ["Experimental Section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heat treatment at 900 °C",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["target_1"],
+              "temperature": {"value": 1173, "unit": "K"},
+              "duration": {"value": null, "unit": "min"},
+              "heating_rate": {"value": 1, "unit": "K min-1"}
+            },
+            "notes": "",
+            "prov": ["Experimental Section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Second ball milling",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["target_1", "chem_4"],
+              "duration": {"value": 720, "unit": "min"},
+              "temperature": {"value": null, "unit": "K"}
+            },
+            "notes": "",
+            "prov": ["Experimental Section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Heat treatment at 1125 °C",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["target_1"],
+              "temperature": {"value": 1398, "unit": "K"},
+              "duration": {"value": null, "unit": "min"},
+              "heating_rate": {"value": 1, "unit": "K min-1"}
+            },
+            "notes": "",
+            "prov": ["Experimental Section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Pellet pressing and final annealing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["target_1"],
+              "pressure": {"value": null, "unit": "bar"},
+              "duration": {"value": null, "unit": "min"}
+            },
+            "notes": "Isostatic pressing",
+            "prov": ["Experimental Section"]
+          },
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["target_1"],
+              "temperature": {"value": 1503, "unit": "K"},
+              "duration": {"value": 2160, "unit": "min"},
+              "heating_rate": {"value": 1, "unit": "K min-1"}
+            },
+            "notes": "Samples covered with mother powder to minimize Li loss",
+            "prov": ["Experimental Section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Cutting of sintered slabs into thinner pellets",
+        "operations": [
+          {
+            "action": "cut",
+            "parameters": {
+              "inputs": ["target_1"],
+              "duration": {"value": null, "unit": "min"}
+            },
+            "notes": "Diamond saw used",
+            "prov": ["Experimental Section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Drying of LiOH and La2O3 powders"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "First ball milling with 2-propanol"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "First calcination at 900 °C"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Second ball milling"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Second calcination at 1125 °C"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Pellet pressing and high-temperature annealing at 1230 °C"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Cutting sintered pellets to size"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Duration of heat treatments at 900 °C and 1125 °C not specified",
+        "excerpt": "this process was repeated after heat treatments(at900and1125 8C)"
+      },
+      {
+        "issue": "Isostatic pressing pressure not given",
+        "excerpt": "pressed into pellets under isostatic pressure"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Powder XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "instrument": "Seifert 3000"
+      },
+      "results": [
+        {
+          "metric": "lattice constant a",
+          "value": 12.9682,
+          "unit": "Å"
+        },
+        {
+          "metric": "structure",
+          "value": "cubic garnet-type, space group Ia3d",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Main Text"]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "5 Hz–13 MHz",
+        "instrument": "HP 4192A",
+        "electrodes": "Au blocking",
+        "atmosphere": "air"
+      },
+      "results": [
+        {
+          "metric": "bulk conductivity (thick pellet, 18 °C)",
+          "value": 3.37e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "total conductivity (thick pellet, 18 °C)",
+          "value": 1.90e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "bulk conductivity (thick pellet, 25 °C)",
+          "value": 4.67e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "total conductivity (thick pellet, 25 °C)",
+          "value": 2.44e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "bulk conductivity (thin pellet, 25 °C)",
+          "value": 5.11e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "total conductivity (thin pellet, 25 °C)",
+          "value": 7.74e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy (bulk, thick pellet, 18–70 °C)",
+          "value": 0.34,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (total, thick pellet, 18–300 °C)",
+          "value": 0.31,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (bulk, thin pellet, 18–50 °C)",
+          "value": 0.32,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (total, thin pellet, 18–300 °C)",
+          "value": 0.30,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Li7La3Zr2O12 exhibits high Li+ conductivity with low grain-boundary resistance contribution.",
+      "prov": ["Figure 1", "Table 1", "Figure 2"]
+    },
+    {
+      "method": "TG–DTA",
+      "parameters": {
+        "temperature_range": "293–1173 K",
+        "heating_rate": "2 K min-1"
+      },
+      "results": [
+        {
+          "metric": "mass change",
+          "value": 0,
+          "unit": "%"
+        },
+        {
+          "metric": "phase transition",
+          "value": "none detected",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Material is thermally stable up to 1173 K",
+      "prov": ["Main Text"]
+    },
+    {
+      "method": "EMF measurement",
+      "parameters": {
+        "cell": "Li | Li7La3Zr2O12 | Li-Al/Al",
+        "temperature": "molten Li (exact T not specified)"
+      },
+      "results": [
+        {
+          "metric": "observed voltage",
+          "value": null,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Voltage agrees with theoretical, confirming purely ionic conduction",
+      "prov": ["Main Text"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Comparative conductivity analysis",
+        "results": [
+          {
+            "equation": "",
+            "value": 3e-4,
+            "unit": "S cm-1",
+            "notes": "Total conductivity at 298 K surpasses other solid electrolytes listed in Figure 3"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

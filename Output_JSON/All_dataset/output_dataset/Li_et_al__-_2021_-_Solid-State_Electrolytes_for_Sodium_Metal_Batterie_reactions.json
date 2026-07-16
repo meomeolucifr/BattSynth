@@ -1,0 +1,452 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Solid-State Electrolytes for Sodium Metal Batteries",
+    "doi": "10.1021/acs.energyfuels.1c00347",
+    "authors": ["Zhaopeng Li", "Pei Liu", "Kunjie Zhu", "Zhaoyuan Zhang", "Yuchang Si", "Yijing Wang", "Lifang Jiao"],
+    "journal": "Energy & Fuels",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["solid-state electrolyte", "sodium batteries", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "PEO/NaClO4/TiO2 solid polymer electrolyte (EO/Na 20:1, 5 wt% TiO2)",
+      "molecular_formula": "",
+      "intended_role": "solid polymer electrolyte product",
+      "prov": ["Figure 3b–c", "Text around ref 57"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "MgO-doped β″-Al2O3 solid electrolyte (0.4 wt % MgO)",
+      "molecular_formula": "",
+      "intended_role": "ceramic electrolyte product",
+      "prov": ["Text citing ref 67"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na3.4Zr1.9Zn0.1Si2.2P0.8O12 NASICON electrolyte",
+      "molecular_formula": "Na3.4Zr1.9Zn0.1Si2.2P0.8O12",
+      "intended_role": "ceramic electrolyte product",
+      "prov": ["Figure 5d–f", "Text citing ref 35"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Na3SbS4 sulfide electrolyte",
+      "molecular_formula": "Na3SbS4",
+      "intended_role": "sulfide electrolyte product",
+      "prov": ["Figure 6e–h", "Text citing ref 101"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Poly(ethylene oxide) (PEO)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer host",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for SPE film; EO/Na ratio 20:1",
+      "prov": ["Figure 3b–c"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sodium perchlorate",
+      "molecular_formula": "NaClO4",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Provides Na+; EO/Na = 20:1",
+      "prov": ["Figure 3b–c"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Titanium dioxide nanoparticles",
+      "molecular_formula": "TiO2",
+      "ontology": {
+        "role": "nanofiller",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "wt%"
+      },
+      "notes": "",
+      "prov": ["Figure 3b–c"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Magnesium oxide",
+      "molecular_formula": "MgO",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.4,
+        "unit": "wt%"
+      },
+      "notes": "",
+      "prov": ["Text citing ref 67"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "β″-Al2O3",
+      "molecular_formula": "Al2O3 (β″ phase with Na)",
+      "ontology": {
+        "role": "electrolyte matrix",
+        "category": "ceramic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text citing ref 67"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Zinc (as Zn2+ dopant)",
+      "molecular_formula": "Zn",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.1,
+        "unit": "stoichiometric"
+      },
+      "notes": "Substitutes 0.1 in formula Na3.4Zr1.9Zn0.1Si2.2P0.8O12",
+      "prov": ["Figure 5d–f"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Antimony sulfide framework (as Sb source)",
+      "molecular_formula": "Sb",
+      "ontology": {
+        "role": "framework cation",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Forms Na3SbS4 electrolyte",
+      "prov": ["Figure 6e–h"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of PEO/NaClO4/TiO2 solid polymer electrolyte via solution casting",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "notes": "EO/Na ratio 20:1; TiO2 5 wt% relative to polymer"
+          },
+          {
+            "action": "cast",
+            "parameters": {},
+            "notes": "Solution casting technique to form free-standing transparent film"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": ""
+          },
+          "time": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 3b–c"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Solid-state synthesis of MgO-doped β″-Al2O3 electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_5", "chem_4"]
+            },
+            "notes": "0.4 wt% MgO dopant"
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature": {
+                "value": 1823,
+                "unit": "K"
+              }
+            },
+            "notes": "Optimum sintering temperature 1550 °C (range 1550–1580 °C)"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 1823,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Text citing ref 67"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Substitutional synthesis of Na3.4Zr1.9Zn0.1Si2.2P0.8O12 NASICON electrolyte",
+        "operations": [
+          {
+            "action": "substitute",
+            "parameters": {
+              "inputs": ["chem_6"]
+            },
+            "notes": "Simultaneous substitution of P and Zr sites with Si and Zn"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": ""
+          },
+          "time": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 5d–f"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Solution process synthesis of Na3SbS4 superionic conductor",
+        "operations": [
+          {
+            "action": "solution_process",
+            "parameters": {
+              "inputs": ["chem_7"]
+            },
+            "notes": "Scalable solution process; details not specified"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": ""
+          },
+          "time": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 6e–h"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Formation of TiO2-reinforced PEO SPE film"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Sintering to produce dense MgO-doped β″-Al2O3 electrolyte"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Elemental substitution to obtain high-conductivity NASICON electrolyte"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Solution-processed fabrication of Na3SbS4 sulfide electrolyte"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis times and detailed atmospheres",
+        "excerpt": "\"via a solution casting technique\"; no casting temperature or duration given."
+      },
+      {
+        "issue": "High temperature unspecified for annealing",
+        "excerpt": "\"annealing Na3PS4 and Na4SnS4 pure phases at high temperature\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": {
+          "value": 333,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 2.62e-4,
+          "unit": "S cm-1",
+          "associated_target": "target_1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3c"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": {
+          "value": 673,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 0.264,
+          "unit": "S cm-1",
+          "associated_target": "target_2"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.21,
+          "unit": "eV",
+          "associated_target": "target_2"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 1", "Text citing ref 67"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 5.27e-3,
+          "unit": "S cm-1",
+          "associated_target": "target_3"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 5f", "Text citing ref 35"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 1.1e-3,
+          "unit": "S cm-1",
+          "associated_target": "target_4"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.20,
+          "unit": "eV",
+          "associated_target": "target_4"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 1", "Text citing ref 101"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Performance comparison (Table 1)",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": "",
+            "notes": "Table lists multiple conductivities; individual values captured in characterization section."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

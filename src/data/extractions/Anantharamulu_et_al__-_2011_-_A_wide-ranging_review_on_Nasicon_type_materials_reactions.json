@@ -1,0 +1,303 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A wide-ranging review on Nasicon type materials",
+    "doi": "10.1007/s10853-011-5302-5",
+    "authors": [
+      "N. Anantharamulu",
+      "K. Koteswara Rao",
+      "G. Rambabu",
+      "B. Vijaya Kumar",
+      "Velchuri Radha",
+      "M. Vithal"
+    ],
+    "journal": "Journal of Materials Science",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["NASICON", "solid electrolyte", "ionic conductor"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "NaZr2(PO4)3",
+      "molecular_formula": "NaZr2(PO4)3",
+      "intended_role": "product",
+      "prov": ["Page ~2822 (Hydrothermal synthesis paragraph)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na5ZrP3O12",
+      "molecular_formula": "Na5ZrP3O12",
+      "intended_role": "product",
+      "prov": ["Page ~2824 (flux growth paragraph)"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiSn2P3O12",
+      "molecular_formula": "LiSn2P3O12",
+      "intended_role": "product",
+      "prov": ["Page ~2826 (calcination paragraph)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Zr(HPO4)2·H2O",
+      "molecular_formula": "Zr(HPO4)2·H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page ~2822"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Na4SiO4",
+      "molecular_formula": "Na4SiO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page ~2822"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "NaOH",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "base",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "excess",
+      "prov": ["Page ~2822"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Na4P2O7",
+      "molecular_formula": "Na4P2O7",
+      "ontology": {
+        "role": "flux",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page ~2824"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page ~2826"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "SnO2",
+      "molecular_formula": "SnO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page ~2826"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "(NH4)2HPO4",
+      "molecular_formula": "(NH4)2HPO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page ~2826"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Hydrothermal synthesis of NaZr2(PO4)3 from zirconium acid phosphate and Na4SiO4 in excess NaOH at 300 °C.",
+        "operations": [
+          {
+            "action": "hydrothermal_reaction",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 573,
+              "unit": "K"
+            },
+            "notes": "excess NaOH used as mineralizer"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "autogenous pressure (hydrothermal)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page ~2822"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Flux growth of single crystals of Na5ZrP3O12 using Na4P2O7 flux at 1150 °C.",
+        "operations": [
+          {
+            "action": "flux_growth",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1423,
+              "unit": "K"
+            },
+            "notes": "Na4P2O7 acts as flux"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page ~2824"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Solid-state calcination of Li2CO3, SnO2 and (NH4)2HPO4 at 1200 °C to form LiSn2P3O12 (Phase I).",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6", "chem_7"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1473,
+              "unit": "K"
+            },
+            "notes": "stoichiometric amounts"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page ~2826"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of NaZr2(PO4)3 via hydrothermal method."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Flux growth to obtain single crystals of Na5ZrP3O12."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "High-temperature solid-state reaction to yield LiSn2P3O12."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing quantitative amounts and reaction times.",
+        "excerpt": "Single crystals of Na5ZrP3O12 grown from Na4P2O7 flux at 1150 °C"
+      },
+      {
+        "issue": "Hydrothermal reaction time not provided.",
+        "excerpt": "prepared ... from Zr(HPO4)2H2O and Na4SiO4 in excess NaOH at 300 °C"
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-23T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

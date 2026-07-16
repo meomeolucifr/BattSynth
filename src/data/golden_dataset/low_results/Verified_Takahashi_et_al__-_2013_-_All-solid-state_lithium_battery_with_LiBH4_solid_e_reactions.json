@@ -1,0 +1,1133 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "All-solid-state lithium battery with LiBH4 solid electrolyte",
+    "doi": "10.1016/j.jpowsour.2012.10.079",
+    "authors": [
+      "Kuniaki Takahashi",
+      "Kazuto Hattori",
+      "Toshihiro Yamazaki",
+      "Kazunori Takada",
+      "Motoaki Matsuo",
+      "Shinichi Orimo",
+      "Hideki Maekawa",
+      "Hitoshi Takamura"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "experimental study",
+    "tags": [
+      "all-solid-state battery",
+      "solid electrolyte",
+      "thin film",
+      "pulsed laser deposition"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Bulk-type all-solid-state cell (Li | LiBH4 | LiCoO2)",
+      "molecular_formula": "",
+      "intended_role": "electrochemical device",
+      "prov": [
+        "Experimental \u00a72.1",
+        "Results \u00a73.1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank, but the paper explicitly states the target composition(s) used for PLD: \u201cThe LiCoO2 target was a mixture of LiCoO2 and Li2O \u2026 with a weight ratio of 100:15\u201d and \u201cThe Li3PO4 target consisted of pure Li3PO4.\u201d Also, the cathode/electrode mixture used in the bulk cell is LiCoO2 + LiBH4 (10:1 wt). Since target formulas are given, a blank extraction is not supported.",
+        "suggested_fix": "Specify the target material(s) depending on what \u201cTarget Formula\u201d refers to: (1) For PLD LiCoO2 target: LiCoO2 + Li2O (100:15 wt). (2) For PLD Li3PO4 target: Li3PO4. (3) For bulk cathode mixture (if that\u2019s what was meant): LiCoO2 + LiBH4 (10:1 wt)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3PO4-coated LiCoO2 thin-film cathode",
+      "molecular_formula": "",
+      "intended_role": "cathode",
+      "prov": [
+        "Experimental \u00a72.2",
+        "Results \u00a73.2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The field \u201cTarget Formula\u201d is blank in the extracted value, but the paper explicitly provides multiple chemical formulas for target materials used in PLD (Experimental \u00a72.2): \u201cThe LiCoO2 target was a mixture of LiCoO2 and Li2O \u2026\u201d and \u201cThe Li3PO4 target consisted of pure Li3PO4.\u201d Therefore, leaving Target Formula empty is not supported by the source text.",
+        "suggested_fix": "Specify the target formula(s) as given in \u00a72.2, e.g., LiCoO2 (with Li2O added in the target mixture) and/or Li3PO4 (pure Li3PO4 target), depending on which target the field refers to."
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Thin-film all-solid-state cell (Li | LiBH4 | Li3PO4-LiCoO2)",
+      "molecular_formula": "",
+      "intended_role": "electrochemical device",
+      "prov": [
+        "Experimental \u00a72.2",
+        "Results \u00a73.3"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank, but the paper clearly specifies target compositions in Experimental \u00a72.2: (1) the LiCoO2 PLD target is a mixture of LiCoO2 and Li2O with a weight ratio of 100:15; (2) the Li3PO4 target consists of pure Li3PO4. Since the document explicitly provides these target compositions, leaving the field empty is not supported.",
+        "suggested_fix": "Specify the target formula(s) described in \u00a72.2, e.g., LiCoO2+Li2O (100:15 wt ratio) for the LiCoO2 target; Li3PO4 for the Li3PO4 target."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium borohydride",
+      "molecular_formula": "LiBH4",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as electrolyte powder; mixed with LiCoO2 at 1:10 (wt)",
+      "prov": [
+        "Experimental \u00a72.1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.94,
+        "reasoning": "The paper does specify an amount/ratio for LiBH4 in the Experimental section. In \u00a72.1: \u201cA hand-milled mixture of LiCoO2 powder and LiBH4 powder \u2026 in a weight ratio of 10:1\u201d and also \u201cthe cathode powder and LiBH4 powder were pressed together into a two-layer pellet\u2026\u201d. Therefore, the claim \u201cAmount: Not specified in text\u201d is contradicted by explicit quantitative information (weight ratio).",
+        "suggested_fix": "Lithium borohydride (LiBH4) | Amount: used in cathode mixture with LiCoO2 at LiCoO2:LiBH4 = 10:1 (wt ratio) (Aldrich, >90% purity); also used as a separate pressed electrolyte layer in the two-layer pellet."
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium cobalt oxide",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Powder (D10, Toda Kogyo); mixed with LiBH4 10:1 (wt)",
+      "prov": [
+        "Experimental \u00a72.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the cathode material as LiCoO2 (lithium cobalt oxide) in Experimental \u00a72.1 (\u201cmixture of LiCoO2 powder \u2026 and LiBH4 \u2026 was used as the cathode\u201d), and throughout the text (\u201cLiBH4/LiCoO2\u201d, \u201cLiCoO2 cathode\u201d). However, \u00a72.1 and the rest of the document do not specify an absolute amount (e.g., grams, mg, mol) of LiCoO2 used\u2014only a weight ratio (LiCoO2:LiBH4 = 10:1) and pellet dimensions/pressing conditions. Therefore, the extracted claim \u201cLithium cobalt oxide | Amount: Not specified in text\u201d is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Foil, \u03d59 mm, >99 % purity",
+      "prov": [
+        "Experimental \u00a72.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the anode material as lithium foil/metal (i.e., Li metal): in Experimental \u00a72.1, \u201cFor the anode, Li foil \u2026 was used,\u201d and throughout the text the cell is described as \u201cLi | LiBH4 | LiCoO2\u201d and notes \u201cgood compatibility with a Li-metal negative electrode.\u201d However, no mass, thickness, or amount of lithium metal is given\u2014only the foil diameter (\u03c6 = 9 mm). Therefore the extraction \u201cLithium metal | Amount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium phosphate",
+      "molecular_formula": "Li3PO4",
+      "ontology": {
+        "role": "intermediate layer / solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as PLD target and 25 nm coating",
+      "prov": [
+        "Experimental \u00a72.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The document discusses a Li3PO4 intermediate layer (lithium phosphate) extensively, including its use as a PLD target (\u201cThe Li3PO4 target consisted of pure Li3PO4 (Aldrich)\u201d) and coatings of specified thickness (e.g., 25 nm). However, the paper does not provide a single explicit mass, molar amount, or loading for Li3PO4 itself (only thickness, deposition parameters, and target composition/purity). Thus the extractor\u2019s claim that the chemical identity is lithium phosphate (Li3PO4) and the amount is not specified (in terms of quantity) is consistent with the text. Provenance \u00a72.2 is relevant for identity but not for any numeric amount beyond process conditions/thickness.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium oxide",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "lithium source additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mixed with LiCoO2 target at 100:15 (wt) to compensate Li loss",
+      "prov": [
+        "Experimental \u00a72.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.88,
+        "reasoning": "The paper mentions lithium oxide (Li2O) as an impurity and as a product in a proposed reaction, but it does not provide any explicit amount for lithium oxide. Specifically, Li2O appears (i) in \u00a72.2 as part of the PLD target composition for LiCoO2: \u201cLiCoO2 target was a mixture of LiCoO2 and Li2O \u2026 weight ratio of 100:15,\u201d which gives the Li2O amount only relative to LiCoO2 (not as an absolute amount), and (ii) in Eq. (1) as a reaction product \u201c+ 1/4 Li2O\u201d (stoichiometric coefficient, not an experimental quantity). No standalone mass, molar amount, concentration, thickness, or wt% of lithium oxide is specified elsewhere. Therefore the extracted statement that the amount is not specified in the text is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Silicon wafer",
+      "molecular_formula": "Si",
+      "ontology": {
+        "role": "substrate",
+        "category": "substrate"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Coated with Pt and Ti layers",
+      "prov": [
+        "Experimental \u00a72.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "Section 2.2 explicitly states: \u201cSi wafers coated with Pt and Ti were used as the substrate.\u201d No quantity/amount of silicon wafer (e.g., size, number, mass) is provided anywhere in the text. Therefore the chemical identity (silicon wafer) is supported and the extractor correctly notes that the amount is not specified.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Platinum",
+      "molecular_formula": "Pt",
+      "ontology": {
+        "role": "current collector layer",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Sputtered on Si wafer",
+      "prov": [
+        "Experimental \u00a72.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "Section 2.2 states: \u201cSi wafers coated with Pt and Ti were used as the substrate,\u201d confirming the presence of platinum (Pt). Nowhere in the paper is an amount/thickness/mass/loading of Pt provided (no Pt film thickness, deposition details, or composition). Thus the extractor\u2019s \u201cPlatinum | Amount: Not specified in text\u201d is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Titanium",
+      "molecular_formula": "Ti",
+      "ontology": {
+        "role": "adhesion layer",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Between Si and Pt",
+      "prov": [
+        "Experimental \u00a72.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "Section 2.2 explicitly states: \u201cSi wafers coated with Pt and Ti were used as the substrate.\u201d Titanium (Ti) is therefore present as a coating on the substrate, but no quantity/thickness/mass/amount of Ti is provided anywhere in the text. Thus the chemical identity (Titanium) is supported and the note that the amount is not specified is also correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "process gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used at 10 Pa for LiCoO2 PLD and 1 Pa for Li3PO4 PLD",
+      "prov": [
+        "Experimental \u00a72.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.87,
+        "reasoning": "The paper discusses oxygen only as part of compounds/processing atmosphere (e.g., LiCoO2, Li3PO4, P(O2)=10 Pa and 1 Pa during PLD, formation of Co3O4/CoO(OH)), but it does not specify an explicit standalone chemical identity entry \u201cOxygen\u201d with a corresponding amount to be used as a reagent/component in \u00a72.2 or elsewhere. In \u00a72.2, oxygen appears only as the deposition oxygen partial pressure, not as a quantified \u201camount\u201d of oxygen material. Therefore, the extractor\u2019s statement that the amount for \u201cOxygen\u201d is not specified in the text is consistent with the document.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "inert atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used during cell assembly",
+      "prov": [
+        "Experimental \u00a72.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "Section 2.1 states, \u201cThis process was carried out under an Ar atmosphere,\u201d confirming the use of argon. Nowhere in the paper is the amount/flow rate/pressure of Ar given; only the chamber pressure for PLD is specified (\u226410^-5 Pa) but that is unrelated to Ar. Therefore the extracted value \u201cArgon | Amount: Not specified in text\u201d is consistent with the source (argon mentioned; amount omitted).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Hand-mill cathode mixture",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_2",
+                "chem_1"
+              ],
+              "ratio_wt": "10:1"
+            },
+            "notes": "LiCoO2 powder (D10) and LiBH4 powder",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes a \u201chand-milled mixture\u201d of LiCoO2 powder and LiBH4 powder (10:1 wt ratio) used as the cathode (Experimental 2.1), which is a clear mixing operation. It also describes pressing cathode powder and LiBH4 powder together into a two-layer pellet, but the term \u201cmixture\u201d directly supports the synthesis operation being \u2018mix\u2019.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental \u00a72.1"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Press cathode and electrolyte powders into two-layer pellet",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "cathode mixture",
+                "chem_1"
+              ],
+              "diameter": "10 mm",
+              "thickness": "1 mm"
+            },
+            "pressure": {
+              "value": 3000,
+              "unit": "kgf cm-2"
+            },
+            "notes": "Original pressure 3 ton cm-2",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "The paper explicitly describes a pressing step in the cell fabrication: \u201cThe cathode powder and LiBH4 powder were pressed together into a two-layer pellet \u2026 under a pressure of 3 ton cm\u22122.\u201d This supports the extracted synthesis operation 'press' (used as a fabrication/processing operation).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.92,
+            "reasoning": "The paper does not state that synthesis/fabrication was done under \u201cambient\u201d atmosphere. In the Experimental section it explicitly says: \u201cThis process was carried out under an Ar atmosphere.\u201d Additionally, the PLD targets/substrate were placed in a vacuum chamber (<10^-5 Pa) and some depositions were done under controlled O2 partial pressure. These conditions contradict an ambient atmosphere claim.",
+            "suggested_fix": "Synthesis/fabrication atmosphere: Ar atmosphere (for cell assembly/pressing); PLD performed under vacuum (<10^-5 Pa) with controlled O2 partial pressure during deposition (e.g., 10 Pa for LiCoO2, 1 Pa for Li3PO4)."
+          }
+        },
+        "prov": [
+          "Experimental \u00a72.1"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Attach lithium foil anode and seal cell",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": [
+                "chem_3",
+                "pellet from step_2"
+              ]
+            },
+            "notes": "Li foil (\u03d59 mm) placed on LiBH4 side under Ar atmosphere",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.74,
+              "reasoning": "The paper describes the cell being \u201cfabricated,\u201d \u201cconstructed,\u201d \u201cprepared,\u201d \u201cpressed together,\u201d \u201cplaced,\u201d \u201csealed,\u201d and \u201cheated,\u201d but it does not explicitly use the term \u201cassemble\u201d (or \u201cassembled\u201d) to name a synthesis operation. Therefore the extracted operation label is not directly supported by the source text.",
+              "suggested_fix": "fabricated (or constructed/prepared)"
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The paper explicitly states in Experimental section 2.1: \u201cThis process was carried out under an Ar atmosphere.\u201d This directly supports the extracted synthesis/fabrication atmosphere being Ar.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental \u00a72.1"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat sealed cell to activate electrolyte",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "assembled cell"
+              ],
+              "temperature": {
+                "value": 393,
+                "unit": "K"
+              }
+            },
+            "notes": "120 \u00b0C where LiBH4 shows high conductivity",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes a heating step in the cell fabrication: \u201cThe cell was sealed and heated at 120 \u00b0C where LiBH4 shows high conductivity\u201d (Experimental, Section 2.1). This supports the extracted synthesis operation being 'heat' (even though it is more of a processing/assembly operation than chemical synthesis).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental \u00a72.1"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Prepare LiCoO2 PLD target",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_2",
+                "chem_5"
+              ],
+              "ratio_wt": "100:15"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly describes preparing a \"hand-milled mixture of LiCoO2 powder and LiBH4 powder\" (Experimental 2.1) and also refers to a \"mixture of LiCoO2 and Li2O\" for the PLD target (2.2). These are clear mixing operations, so the extracted synthesis operation \"mix\" is supported.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "mixed powder"
+              ],
+              "pressure": {
+                "value": 2500,
+                "unit": "bar"
+              }
+            },
+            "notes": "Cold isostatic pressing (250 MPa)",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes a pressing step in the fabrication process: \u201cThe cathode powder and LiBH4 powder were pressed together into a two-layer pellet \u2026 under a pressure of 3 ton cm\u22122.\u201d This supports the synthesis operation being \u201cpress.\u201d",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature": {
+                "value": 1123,
+                "unit": "K"
+              },
+              "time": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "notes": "12 h at 850 \u00b0C",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly states that the PLD target pellets were sintered: \u201cThe LiCoO2 and Li3PO4 pellets were sintered for 12 h at 850 \u00b0C and 1100 \u00b0C, respectively.\u201d This supports that a sintering operation occurred during fabrication (of the targets).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental \u00a72.2"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Prepare Li3PO4 PLD target",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "chem_4"
+              ],
+              "pressure": {
+                "value": 2500,
+                "unit": "bar"
+              }
+            },
+            "notes": "CIP 250 MPa",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.95,
+              "reasoning": "The paper explicitly describes a pressing step in the cell fabrication: \u201cThe cathode powder and LiBH4 powder were pressed together into a two-layer pellet \u2026 under a pressure of 3 ton cm\u22122\u201d (Section 2.1). It also mentions pelletizing targets and using cold isostatic pressing (CIP) in Section 2.2. Therefore, the synthesis/fabrication operation 'press' is supported by the source text.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature": {
+                "value": 1373,
+                "unit": "K"
+              },
+              "time": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "notes": "12 h at 1100 \u00b0C",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes sintering as part of the synthesis/fabrication of PLD targets: \u201ccold isostatic pressing (CIP) was carried out at 250 MPa before sintering. The LiCoO2 and Li3PO4 pellets were sintered for 12 h at 850 \u00b0C and 1100 \u00b0C, respectively.\u201d This supports the synthesis operation being 'sinter'.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental \u00a72.2"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Deposit LiCoO2 thin film by PLD",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": [
+                "LiCoO2 target",
+                "substrate with chem_6/chem_7/chem_8"
+              ],
+              "method": "PLD",
+              "laser_energy": "300 mJ",
+              "frequency": "10 Hz",
+              "substrate_temperature": {
+                "value": 573,
+                "unit": "K"
+              },
+              "oxygen_pressure": "10 Pa",
+              "distance": "45 mm",
+              "film_thickness": "250 nm"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.74,
+              "reasoning": "The paper describes fabrication by pressing powders into pellets and growing thin films by pulsed laser deposition (PLD). The term \u201cdeposition\u201d is used (e.g., \u201cgrown by pulsed laser deposition,\u201d \u201cused for deposition,\u201d \u201closs during deposition\u201d), but no synthesis operation is explicitly stated as \u201cdeposit\u201d as a standalone operation for the overall synthesis. Therefore the extracted value is not explicitly supported by the text as written.",
+              "suggested_fix": "pulsed laser deposition (PLD) (for LiCoO2 and Li3PO4 thin films); pressing/pelletizing (for bulk-type cell)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2",
+          "pressure": {
+            "value": 0.0001,
+            "unit": "bar"
+          },
+          "temperature": {
+            "value": 573,
+            "unit": "K"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.9,
+            "reasoning": "The paper explicitly states that the bulk-type all-solid-state cell fabrication process was carried out under an Ar atmosphere (Section 2.1). O2 is mentioned only in the context of pulsed laser deposition conditions as oxygen partial pressure P(O2)=10 Pa (LiCoO2) and P(O2)=1 Pa (Li3PO4) in the PLD chamber, not as the overall synthesis atmosphere for the cell or materials. Therefore, 'Synthesis Atmosphere: O2' is not supported.",
+            "suggested_fix": "Ar (for cell fabrication/pressing). If the field is meant for PLD deposition atmosphere, report oxygen partial pressure: P(O2)=10 Pa for LiCoO2 deposition and P(O2)=1 Pa for Li3PO4 deposition."
+          }
+        },
+        "prov": [
+          "Experimental \u00a72.2"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Deposit 25 nm Li3PO4 coating by PLD",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": [
+                "Li3PO4 target",
+                "LiCoO2 film"
+              ],
+              "method": "PLD",
+              "laser_energy": "150 mJ",
+              "frequency": "5 Hz",
+              "substrate_temperature": {
+                "value": 298,
+                "unit": "K"
+              },
+              "oxygen_pressure": "1 Pa",
+              "distance": "45 mm",
+              "film_thickness": "25 nm"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.83,
+              "reasoning": "The paper does discuss thin-film growth by pulsed laser deposition (PLD) and uses the verb \u201cdeposition\u201d (e.g., \u201cDeposition of a Li3PO4-coated thin-film cathode\u201d, \u201cA KrF excimer laser \u2026 was used for deposition\u201d). However, it does not explicitly state the synthesis operation as \u201cdeposit\u201d in a standalone way; instead it specifies \u201cdeposition\u201d via PLD as the method. Therefore the extracted value as a generic operation word (\u201cdeposit\u201d) is not explicitly supported verbatim by the source text, though the concept of deposition is clearly present.",
+              "suggested_fix": "deposition (pulsed laser deposition, PLD)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2",
+          "pressure": {
+            "value": 1e-05,
+            "unit": "bar"
+          },
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.78,
+            "reasoning": "The paper does not state that the overall synthesis/fabrication atmosphere is O2. It explicitly says the bulk-type cell pressing/assembly process was carried out under an Ar atmosphere. O2 is only mentioned as the oxygen partial pressure P(O2)=10 Pa (for LiCoO2 PLD) and P(O2)=1 Pa (for Li3PO4 PLD) during thin-film deposition, not as a general synthesis atmosphere.",
+            "suggested_fix": "For cell fabrication/assembly: Ar atmosphere. If referring specifically to PLD deposition ambient: O2 (P(O2)=10 Pa for LiCoO2; P(O2)=1 Pa for Li3PO4)."
+          }
+        },
+        "prov": [
+          "Experimental \u00a72.2"
+        ]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Assemble thin-film all-solid-state cell",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": [
+                "chem_3",
+                "LiBH4 electrolyte",
+                "Li3PO4-LiCoO2 cathode film"
+              ]
+            },
+            "notes": "Process same as bulk-type cell assembly under Ar",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.78,
+              "reasoning": "The paper describes the cell being \u201cfabricated\u201d, \u201cpressed together into a two-layer pellet\u201d, \u201cplaced\u201d with Li foil, \u201csealed and heated\u201d, and thin films being \u201cdeposited\u201d by PLD. Nowhere does the text explicitly use the term \u201cassemble\u201d (or \u201cassembled\u201d) as the synthesis operation. Therefore the extracted value is not explicitly supported by the source text.",
+              "suggested_fix": "Use an operation explicitly stated in the text, e.g., \u201cfabricated\u201d (cell fabricated/constructed), or more specific steps such as \u201cpressed (into a two-layer pellet)\u201d, \u201cplaced (Li foil)\u201d, and \u201csealed\u201d."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The Experimental section explicitly states: \u201cThis process was carried out under an Ar atmosphere.\u201d This directly supports the extracted synthesis/fabrication atmosphere as Ar.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental \u00a72.2"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare cathode mixture for bulk cell",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper describes the cathode preparation for the bulk-type cell as \u201cA hand-milled mixture of LiCoO2 powder and LiBH4 powder in a weight ratio of 10:1 was used as the cathode\u2026\u201d and then details pressing steps. However, the exact workflow-timeline phrase \u201cPrepare cathode mixture for bulk cell\u201d does not appear verbatim, and the document does not present discrete workflow timeline step labels. The extracted value is therefore not explicitly stated as a timeline item, though the underlying action (preparing a cathode mixture for a bulk cell) is described in the Experimental section.",
+          "suggested_fix": "Hand-milled mixture of LiCoO2 powder and LiBH4 powder (10:1 wt ratio) used as the cathode for a bulk-type cell; cathode and LiBH4 pressed into a two-layer pellet."
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Compress powders into two-layer pellet",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The workflow step is explicitly described in Experimental section 2.1: \u201cThe cathode powder and LiBH4 powder were pressed together into a two-layer pellet \u2026\u201d. This supports the extracted timeline item \u201cCompress powders into two-layer pellet.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Attach Li foil anode and seal cell",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The Experimental section explicitly describes placing/attaching the Li foil anode onto the LiBH4 side and then sealing the cell: \u201cThen, Li foil \u2026 was placed on the LiBH4 side as the anode\u2026 The cell was sealed\u2026\u201d This supports the workflow step \u201cAttach Li foil anode and seal cell.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Thermal activation of LiBH4 electrolyte",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper describes heating/sealing the assembled cell at 120 \u00b0C to obtain high conductivity (HT phase) in LiBH4 (\u201cThe cell was sealed and heated at 120 \u00b0C where LiBH4 shows high conductivity.\u201d) and mentions the LiBH4 LT\u2192HT transition at ~113 \u00b0C. However, it does not explicitly call this step \u201cthermal activation of LiBH4 electrolyte,\u201d nor does it present a distinct workflow/timeline step labeled as such. Therefore the extracted phrase is not explicitly supported by the source text as written.",
+          "suggested_fix": "Heat the sealed cell at 120 \u00b0C (above the ~113 \u00b0C phase transition) to use high-conductivity HT-phase LiBH4; or, if a workflow label is required: \u201cCell sealed and heated at 120 \u00b0C to obtain high conductivity in LiBH4 (HT phase).\u201d"
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Fabricate LiCoO2 PLD target",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper describes preparation of PLD targets for LiCoO2 and Li3PO4 (mixing LiCoO2 with Li2O, pelletizing, CIP at 250 MPa, sintering at 850 \u00b0C for LiCoO2), but it does not present a workflow timeline item explicitly phrased as \u201cFabricate LiCoO2 PLD target.\u201d The text supports that LiCoO2 PLD targets were prepared/fabricated, but not as a specific timeline step label/value.",
+          "suggested_fix": "Prepare/fabricate LiCoO2 PLD target by pelletizing a LiCoO2+Li2O (100:15 wt) mixture, CIP at 250 MPa, then sinter 12 h at 850 \u00b0C."
+        }
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Fabricate Li3PO4 PLD target",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.88,
+          "reasoning": "The paper describes PLD deposition of Li3PO4 and states: \u201cThe Li3PO4 target consisted of pure Li3PO4 (Aldrich). After the target materials were pelletized, cold isostatic pressing (CIP) was carried out\u2026 The LiCoO2 and Li3PO4 pellets were sintered\u2026\u201d. However, it does not present a workflow-timeline step explicitly phrased as \u201cFabricate Li3PO4 PLD target,\u201d nor is there a timeline section. The statement is an inferred procedural step, not an explicit workflow timeline item.",
+          "suggested_fix": "If the field is meant to capture explicit steps described in Experimental, use: \u201cLi3PO4 PLD target: pure Li3PO4 (Aldrich) pelletized, CIP at 250 MPa, sintered 12 h at 1100 \u00b0C.\u201d If the field requires a literal \u2018workflow timeline\u2019 entry, mark as Not specified."
+        }
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Deposit LiCoO2 thin film onto Pt/Ti/Si",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper describes using \u201cSi wafers coated with Pt and Ti\u201d as the substrate and then depositing LiCoO2 (and Li3PO4) thin films by PLD, but it does not explicitly state the workflow step as \u201cDeposit LiCoO2 thin film onto Pt/Ti/Si,\u201d nor does it use the \u201cPt/Ti/Si\u201d phrasing. The closest supported wording is that LiCoO2 thin films were deposited onto Si wafers coated with Pt and Ti.",
+          "suggested_fix": "Deposit LiCoO2 thin film (by PLD) on Si wafers coated with Pt and Ti (Pt/Ti/Si substrate)."
+        }
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Deposit Li3PO4 intermediate layer",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper discusses using/employing an intermediate Li3PO4 layer and describes the Li3PO4 coating deposition process (PLD) on the LiCoO2 cathode (Section 2.2) and its effects (Sections 3.2\u20133.3). However, the extracted value is a workflow timeline step phrased as an action: \"Deposit Li3PO4 intermediate layer.\" The text never explicitly presents a workflow timeline item in that exact form; it only describes the experimental procedure and results narrative. Therefore, as a \"Workflow Timeline\" entry, this is not explicitly supported as a labeled timeline step in the source text (even though the underlying action is described).",
+          "suggested_fix": "If the field is meant to capture a process step, use wording aligned with the methods text, e.g., \"Deposited amorphous Li3PO4 coating (25 nm) on LiCoO2 thin film by pulsed laser deposition (PLD) as an intermediate layer.\" If the field requires explicit 'timeline' labeling, the correct value would be \"Not specified\" (no timeline list provided)."
+        }
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Assemble thin-film all-solid-state battery",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.6,
+          "reasoning": "The phrase/value \u201cAssemble thin-film all-solid-state battery\u201d does not appear explicitly in the paper. The document does describe assembling/fabricating all-solid-state cells and includes a \u201cFabrication process\u201d plus use of Li3PO4/LiCoO2 thin-films (Sections 2.1\u20132.2), but it never states a workflow timeline step in those words. Therefore the extracted value is not explicitly supported as written.",
+          "suggested_fix": "Fabricated all-solid-state cells; for thin-film cathode cells, used PLD-grown Li3PO4/LiCoO2 thin-films and assembled the cell using the same fabrication process as the bulk-type cells (Sections 2.1\u20132.2)."
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Non-standard pressure unit for pellet pressing",
+        "excerpt": "pressed ... under a pressure of 3 ton cm\u22122",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The paper explicitly states in Experimental section 2.1 that the cathode powder and LiBH4 powder were \u201cpressed together into a two-layer pellet ... under a pressure of 3 ton cm\u22122.\u201d This directly supports the excerpt and confirms the workflow note about using a non-standard pressure unit (ton/cm^2).",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "ac_voltage": "100 mV",
+        "frequency_range": "1 MHz \u2013 0.1 Hz",
+        "temperature": ""
+      },
+      "results": [
+        {
+          "metric": "electrolyte resistance",
+          "value": 60,
+          "unit": "\u03a9"
+        },
+        {
+          "metric": "interfacial resistance (bulk cell, 1st cycle)",
+          "value": 350,
+          "unit": "\u03a9"
+        },
+        {
+          "metric": "interfacial resistance (bulk cell, 10th cycle)",
+          "value": 1150,
+          "unit": "\u03a9"
+        },
+        {
+          "metric": "interfacial resistance (thin film cell with Li3PO4)",
+          "value": 20,
+          "unit": "\u03a9"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results \u00a73.1",
+        "Results \u00a73.3",
+        "Fig. 1",
+        "Fig. 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "All four impedance-spectroscopy values are explicitly stated in the paper text associated with the Nyquist plots. In Results \u00a73.1: the high-frequency intercept (\u201cRe Z\u201d) is reported as the electrolyte resistance \u224860 \u03a9, and the semicircle diameter (interfacial resistance) is given as 350 \u03a9 after the 1st charging cycle and increases to 1150 \u03a9 after the 10th cycle. In Results \u00a73.3: for the LiCoO2 thin-film cell with a 25 nm Li3PO4 coating, the semicircle diameter (interfacial resistance) is stated to be around 20 \u03a9. These correspond to Fig. 1 and Fig. 3 descriptions, regardless of minor wording/approximation (\u2018approximately\u2019, \u2018around\u2019).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "film morphology",
+          "value": "dense, no pinholes/cracks",
+          "unit": ""
+        },
+        {
+          "metric": "LiCoO2 grain size",
+          "value": 100,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "In Section 3.2, the text explicitly states: \u201cAs shown in the SEM image in Fig. 2(a), the film formed was dense, without any pinholes or cracks. The average grain size of the LiCoO2 was approximately 100 nm.\u201d This directly supports both extracted SEM morphology (\u201cdense, no pinholes/cracks\u201d) and LiCoO2 grain size (~100 nm). The alleged provenance (Fig. 2a) matches the cited figure in the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SPM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface roughness Li3PO4 layer",
+          "value": 7.26,
+          "unit": "nm"
+        },
+        {
+          "metric": "surface roughness LiCoO2 before coating",
+          "value": 1.99,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly states in Section 3.2 (Surface modification to the LiCoO2 thin-film) that \u201cThe roughness of the Li3PO4 layer was determined to be 7.26 nm, as shown in Fig. 2(b), while that of the LiCoO2 layer before Li3PO4 growth was 1.99 nm.\u201d This directly supports both extracted SPM surface roughness values. Although the alleged provenance is Fig. 2b, the numeric values are also written in the main text (Page 2).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu-K\u03b1"
+      },
+      "results": [
+        {
+          "metric": "orientation",
+          "value": "c-axis oriented LiCoO2 with 003, 006, 009 reflections",
+          "unit": ""
+        },
+        {
+          "metric": "Li3PO4 crystallization temperature",
+          "value": 1023,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results \u00a73.2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper\u2019s XRD description in \u00a73.2 states that the LiCoO2 thin-film shows 003, 006, and 009 reflections from rhombohedral LiCoO2, implying the film is c-axis oriented. However, the paper does not explicitly state \u201cc-axis oriented LiCoO2 with 003, 006, 009 reflections\u201d as a combined phrasing, but it does support both parts. The second extracted metric is incorrect: the text says Li3PO4 crystallization occurred at around 750 \u00b0C (from high-temperature XRD), not 1023 K. 750 \u00b0C corresponds to ~1023 K, but the extracted value is a unit-converted number not given in the paper and also loses the \u2018around\u2019 qualifier.",
+        "suggested_fix": "Change \u2018Li3PO4 crystallization temperature\u2019 to \u2018around 750 \u00b0C\u2019 (or \u2018~750 \u00b0C\u2019). If you must report in Kelvin, it should be \u2018~1023 K\u2019, clearly marked as a conversion from 750 \u00b0C rather than a directly reported value."
+      }
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength": "632.8 nm"
+      },
+      "results": [
+        {
+          "metric": "LiCoO2 Eg band",
+          "value": 482,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "LiCoO2 A1g band",
+          "value": 593,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Co3O4/CoO(OH) bands after cycling",
+          "value": "360, 590, 680, 820",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Formation of Co3O4 and CoO(OH) indicates reaction between charged LiCoO2 and LiBH4",
+      "prov": [
+        "Fig. 5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly reports the Raman bands in the text describing Fig. 5(a): LiCoO2 before cycling shows two Raman bands at 482 cm\u22121 (Eg) and 593 cm\u22121 (A1g). After 30 charge\u2013discharge cycles, four additional peaks appear at around 360, 590, 680, and 820 cm\u22121, assigned to Co3O4 or CoO(OH). This directly supports all extracted values (noting the \u201caround\u201d qualifier for the post-cycling peaks).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Galvanostatic charge\u2013discharge",
+      "parameters": {
+        "current_density": "0.05\u20130.1 mA (0.065\u20130.13 mA cm-2)",
+        "voltage_window": "3.0 \u2013 4.2 V"
+      },
+      "results": [
+        {
+          "metric": "initial charge capacity (bulk cell)",
+          "value": 157,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "initial discharge capacity (bulk cell)",
+          "value": 68,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "discharge capacity after 10 cycles (bulk cell)",
+          "value": 18,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "initial discharge capacity (thin film cell with Li3PO4)",
+          "value": 89,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention after 30 cycles",
+          "value": 97,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results \u00a73.1",
+        "Results \u00a73.3",
+        "Fig. 4"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "Most values match the paper, but one metric is incorrect in cycle count.\n\nSupported by text:\n- Bulk cell initial charge capacity: \u201cinitial charge capacity \u2026 157 mAh g\u22121\u201d (Results 3.1).\n- Bulk cell initial discharge capacity: \u201cdecreased to 68 mAh g\u22121 in the subsequent discharge\u201d (Results 3.1).\n- Bulk cell discharge capacity after 10th cycle: \u201cfurther decreased to 18 mAh g\u22121 after the 10th cycle\u201d (Results 3.1).\n- Thin film cell (with 25 nm Li3PO4) initial discharge capacity: \u201cinitial discharge capacity \u2026 89 mAh g\u22121\u201d (Results 3.3; also reiterated in Conclusions).\n- Capacity retention after 30 cycles: \u201cdischarge capacity after 30 cycles was more than 97% of the initial discharge capacity\u201d (Results 3.3; also reiterated in Conclusions).\n\nNot supported:\n- \u201cdischarge capacity after 10 cycles (bulk cell) = 18 mAh g\u22121\u201d is correct, but the extracted list labels it as a standalone metric while the paper\u2019s value corresponds to \u201cafter the 10th cycle\u201d without explicitly stating it is a discharge capacity at exactly cycle 10? Actually it does: \u201cfurther decreased to 18 mAh g\u22121 after the 10th cycle.\u201d That supports discharge capacity after 10 cycles.\n\nThe real unsupported issue is that the extraction does not include any mistake besides cycle count? On checking: the only potential mismatch is that capacity retention is after 30 cycles (thin-film, Li3PO4-coated). The extraction lists \u201ccapacity retention after 30 cycles\u201d without specifying it\u2019s for the Li3PO4-coated thin-film cell; however the paper clearly attributes 97% retention to the Li3PO4-coated thin-film cell (Fig. 4/Results 3.3). If the field expects cell type association, it\u2019s ambiguous.\n\nGiven strict value checking, all numerical values are present and correct; but the dataset entry \u201cdischarge capacity after 10 cycles (bulk cell)\u201d is supported. The only issue is lack of explicit association for 97% retention to the Li3PO4-coated thin-film cell in the extracted metric name (it omits cell type). That makes the extraction partially incomplete/ambiguous rather than numerically wrong.",
+        "suggested_fix": "Clarify the last metric as: \u201ccapacity retention after 30 cycles (thin film cell with 25 nm Li3PO4-coated LiCoO2)\u201d: 97%."
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Thermodynamic estimation",
+        "results": [
+          {
+            "equation": "Li0.5CoO2 + 1/8 LiBH4 \u2192 1/4 Co3O4 + 1/4 CoO(OH) + 1/8 LiBO2 + 1/4 Li2O + 1/8 H2",
+            "value": "",
+            "unit": ""
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.75,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank. The paper explicitly states multiple analysis/characterization methods used, including electrochemical impedance spectroscopy (impedance analyzer Solartron1260), galvanostatic charge\u2013discharge testing (potentio-galvano stat Solartron1470E), and structural/chemical analyses: X-ray diffraction (XRD), scanning probe microscopy (SPM), scanning electron microscopy (SEM), and Raman spectroscopy. Therefore leaving the field empty is not supported by the document.",
+          "suggested_fix": "Analysis methods reported include: galvanostatic charge\u2013discharge measurements; electrochemical impedance spectroscopy (EIS); X-ray diffraction (XRD); scanning electron microscopy (SEM); scanning probe microscopy (SPM); Raman spectroscopy."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 89,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 30,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.9,
+      "reasoning": "The paper explicitly reports cycling results up to 30 cycles for the Li3PO4-coated LiCoO2 thin-film cell: it states that the interfacial resistance shows almost no change \u201ceven after 30 cycles of charge\u2013discharge\u201d and that the discharge capacity after 30 cycles is >97% of the initial capacity. Thus, a cycle life value of 30 (cycles demonstrated) is directly supported by the text.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

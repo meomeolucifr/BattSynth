@@ -1,0 +1,285 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Crystal Structure of Na2V2(PO4)3, an Intriguing Phase Spotted in the Na3V2(PO4)3−Na1V2(PO4)3 System",
+    "doi": "10.1021/acs.chemmater.1c04033",
+    "authors": ["Sunkyu Park", "Ziliang Wang", "Zeyu Deng", "Iona Moog", "Pieremanuele Canepa", "François Fauth", "Dany Carlier", "Laurence Croguennec", "Christian Masquelier", "Jean-Noël Chotard"],
+    "journal": "Chemistry of Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and characterization",
+    "tags": ["NASICON", "Na-ion battery cathode", "Na3V2(PO4)3", "intermediate phase"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Carbon-coated Na3V2(PO4)3",
+      "molecular_formula": "Na3V2(PO4)3",
+      "intended_role": "product",
+      "prov": ["Experimental Section – Synthesis"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sodium carbonate",
+      "molecular_formula": "Na2CO3",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Used in 1.5 molar ratio",
+      "prov": ["Experimental Section – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "C10H14O5V",
+      "molecular_formula": "C10H14O5V",
+      "ontology": {"role": "reactant", "category": "organometallic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Vanadium precursor, 2 molar ratio",
+      "prov": ["Experimental Section – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ammonium dihydrogen phosphate",
+      "molecular_formula": "NH4H2PO4",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "3 molar ratio",
+      "prov": ["Experimental Section – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Citric acid",
+      "molecular_formula": "C6H8O7",
+      "ontology": {"role": "chelating agent", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "2 molar ratio",
+      "prov": ["Experimental Section – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "Mixed 50 % v/v with ethanol",
+      "prov": ["Experimental Section – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "Mixed 50 % v/v with water",
+      "prov": ["Experimental Section – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Used for preheating at 400 °C",
+      "prov": ["Experimental Section – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Hydrogen",
+      "molecular_formula": "H2",
+      "ontology": {"role": "reducing atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "5 % in Ar/H2 mixture during annealing",
+      "prov": ["Experimental Section – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Carbon black",
+      "molecular_formula": "",
+      "ontology": {"role": "conductive additive", "category": "carbon"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Used in electrode fabrication (20 wt %)",
+      "prov": ["Operando Synchrotron X-ray Diffraction section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dissolution and mixing of precursors",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {"inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5", "chem_6"]},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "All precursors dissolved in deionized water/ethanol (50/50 v/v) according to molar ratio 1.5:2:3:2"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section – Synthesis"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Stirring at elevated temperature",
+        "operations": [
+          {
+            "action": "stir",
+            "parameters": {},
+            "temperature": {"value": 353.15, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": "Stirred overnight at 80 °C in an oil bath"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section – Synthesis"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Drying of solution to obtain precursor powder",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {"value": null, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": "Dried in an oven; temperature and time not specified"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section – Synthesis"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preheating/calcination",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {"value": 673.15, "unit": "K"},
+            "duration": {"value": 240, "unit": "min"},
+            "notes": "Preheated at 400 °C for 4 h in Ar"
+          }
+        ],
+        "conditions": {"atmosphere": "Ar", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section – Synthesis"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Annealing under reducing atmosphere",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "temperature": {"value": 973.15, "unit": "K"},
+            "duration": {"value": 600, "unit": "min"},
+            "notes": "Annealed at 700 °C for 10 h under Ar/H2 (95/5) atmosphere"
+          }
+        ],
+        "conditions": {"atmosphere": "Ar/H2 (95/5)", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section – Synthesis"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Solution preparation"},
+      {"step_ref": "step_2", "description": "Thermal stirring to form sol-gel"},
+      {"step_ref": "step_3", "description": "Drying to powder"},
+      {"step_ref": "step_4", "description": "Preheating/calcination at 400 °C in Ar"},
+      {"step_ref": "step_5", "description": "High-temperature annealing at 700 °C in Ar/H2 to obtain carbon-coated Na3V2(PO4)3"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified solvent volumes and absolute reagent amounts",
+        "excerpt": "Na2CO3, C10H14O5V, NH4H2PO4, and citric acid ... were dissolved in deionized water and ethanol (50/50 by volume)"
+      },
+      {
+        "issue": "Undefined duration of 'overnight' stirring",
+        "excerpt": "The solution was stirred overnight at 80 °C in an oil bath"
+      },
+      {
+        "issue": "Drying temperature and time not provided",
+        "excerpt": "before being dried in an oven"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "ICP-OES",
+      "parameters": {"instrument": "Varian 720-ES"},
+      "results": [
+        {"metric": "Na/V/P ratio", "value": "3.03(2):1.97(3):2.99(6)", "unit": ""}
+      ],
+      "interpretation": "Confirms target stoichiometry of Na3V2(PO4)3",
+      "prov": ["Material Characterization section"]
+    },
+    {
+      "method": "TGA",
+      "parameters": {"instrument": "NETZSCH STA 449C", "atmosphere": "air"},
+      "results": [
+        {"metric": "carbon coating content", "value": 9, "unit": "wt%"}
+      ],
+      "interpretation": "",
+      "prov": ["Material Characterization section"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {"instrument": "Hitachi S-4500"},
+      "results": [
+        {"metric": "morphology", "value": "agglomerated particles (micron-size) with primary particles a few hundred nm", "unit": ""}
+      ],
+      "interpretation": "",
+      "prov": ["Material Characterization section"]
+    },
+    {
+      "method": "Synchrotron X-ray Powder Diffraction (SXRPD)",
+      "parameters": {
+        "beamline": "MSPD, ALBA",
+        "wavelength": 0.8266,
+        "unit": "Å",
+        "temperature": 298
+      },
+      "results": [
+        {"metric": "cell parameters (Na3V2(PO4)3, C2/c)", "value": "a=15.4104(4) Å, b=8.7288(2) Å, c=8.8257(2) Å, β=126.1202(17)°"},
+        {"metric": "cell parameters (Na2V2(PO4)3, P21/c)", "value": "a=15.2377(5) Å, b=8.6082(5) Å, c=8.7391(4) Å, β=126.281(3)°"}
+      ],
+      "interpretation": "Confirms monoclinic distortion and identifies intermediate Na2V2(PO4)3 phase",
+      "prov": ["Results – Figures 1, 4"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-23T12:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,481 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Is graphite lithiophobic or lithiophilic?",
+    "doi": "10.1093/nsr/nwz222",
+    "authors": [
+      "Jian Duan",
+      "Yuheng Zheng",
+      "Wei Luo",
+      "Wangyan Wu",
+      "Tengrui Wang",
+      "Yong Xie",
+      "Sa Li",
+      "Ju Li",
+      "Yunhui Huang"
+    ],
+    "journal": "National Science Review",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium metal batteries", "graphite", "wettability", "composite anode"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Lithiated porous carbon paper",
+      "molecular_formula": "LiC6 (in PCP)",
+      "intended_role": "intermediate",
+      "prov": ["Figure 2", "Materials preparation"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li–PCP composite",
+      "molecular_formula": "",
+      "intended_role": "final product",
+      "prov": ["Figure 3", "Materials preparation"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li–graphite powder composite",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Figure 2g–i", "Materials preparation"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as molten lithium at 498 K, also as foil.",
+      "prov": ["Methods", "Materials preparation"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Porous carbon paper",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon matrix"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Toray paper 30, TGP-H-030",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Graphite powder",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Artificial graphite",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Highly ordered pyrolytic graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Figure 1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Hydrochloric acid (dilute)",
+      "molecular_formula": "HCl",
+      "ontology": {
+        "role": "washing agent",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Materials preparation"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "washing agent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Materials preparation"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "washing agent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Materials preparation"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Cleaning and melting lithium metal",
+        "operations": [
+          {
+            "action": "melt",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 498,
+              "unit": "K"
+            },
+            "notes": "Lithium foil placed in stainless-steel container on hotplate; impurities physically removed until surface shiny."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar-filled glovebox (O2, H2O <0.1 ppm)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pre-lithiation of porous carbon paper to form lithiated PCP",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_2", "chem_5", "chem_6", "chem_7"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Sequential washing with diluted HCl, water and ethanol; then dried."
+          },
+          {
+            "action": "lithiate",
+            "parameters": {
+              "inputs": ["chem_2", "chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 498,
+              "unit": "K"
+            },
+            "notes": "Dried PCP floated on molten Li; heated for several minutes until color turned bright yellow, yielding lithiated PCP (target_1)."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar-filled glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials preparation", "Figure 2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Fabrication of Li–PCP composite",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Clean lithium foil pressed onto PCP using Teflon roll."
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 498,
+              "unit": "K"
+            },
+            "notes": "Lithium foil/PCP bilayer placed on hotplate; lithium infused to yield Li–PCP composite (target_2) with ~65 wt% Li."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar-filled glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 3", "Materials preparation"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of Li–graphite powder composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 498,
+              "unit": "K"
+            },
+            "notes": "Lithium foil and graphite powder mixed in stainless container with continuous stirring on hotplate; graphite turned yellow then dispersed, yielding composite (target_3)."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar-filled glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 2g–i", "Materials preparation"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Lithium cleaning/melting at 498 K"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "PCP washing and pre-lithiation to LiC6"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Pressing and heating to obtain Li–PCP composite"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Stirred mixing of Li with graphite powder to form composite"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Undefined reaction time",
+        "excerpt": "heated for several minutes"
+      },
+      {
+        "issue": "Contact angle for lithiated PCP not numerically provided",
+        "excerpt": "a much smaller ACA was found compared to pristine PCP"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Contact angle measurement",
+      "parameters": {
+        "temperature": "498 K"
+      },
+      "results": [
+        {
+          "metric": "apparent contact angle",
+          "value": 73,
+          "unit": "deg",
+          "sample": "Li droplet on HOPG"
+        },
+        {
+          "metric": "apparent contact angle",
+          "value": 142,
+          "unit": "deg",
+          "sample": "Li droplet on PCP"
+        }
+      ],
+      "interpretation": "HOPG is lithiophilic while pristine PCP appears lithiophobic.",
+      "prov": ["Figure 1", "Figure 2"]
+    },
+    {
+      "method": "Ab initio molecular dynamics simulation",
+      "parameters": {
+        "temperature": "500 K"
+      },
+      "results": [
+        {
+          "metric": "simulated contact angle",
+          "value": 62,
+          "unit": "deg",
+          "sample": "Li droplet on graphite (002) surface"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1e"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase identified",
+          "value": "LiC6",
+          "unit": "",
+          "sample": "lithiated PCP"
+        }
+      ],
+      "interpretation": "Confirms formation of stage-1 Li–graphite intercalation compound.",
+      "prov": ["Supplementary Fig. 7"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "fiber diameter",
+          "value": 5,
+          "unit": "µm",
+          "sample": "pristine PCP fibers"
+        }
+      ],
+      "interpretation": "Shows morphology evolution from smooth fibers to Li-coated structures.",
+      "prov": ["Figure 3b–e"]
+    },
+    {
+      "method": "Electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "symmetric cell stability",
+          "value": 200,
+          "unit": "cycles",
+          "sample": "Li–PCP/Li–PCP at 1 mA cm-2, 1 mAh cm-2"
+        },
+        {
+          "metric": "full cell capacity retention",
+          "value": 130,
+          "unit": "mAh g-1",
+          "sample": "Li–PCP/NCM after 200 cycles"
+        },
+        {
+          "metric": "pouch cell cycle life",
+          "value": 300,
+          "unit": "cycles",
+          "sample": "Li–PCP/LTO pouch"
+        },
+        {
+          "metric": "pouch cell sulfur capacity",
+          "value": 3.0,
+          "unit": "mAh cm-2",
+          "sample": "Li–PCP/S at 0.5 C"
+        }
+      ],
+      "interpretation": "Li–PCP composite exhibits superior cycling stability compared to bare Li.",
+      "prov": ["Figure 4", "Supplementary Figures 13–18"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Weight ratio determination",
+        "results": [
+          {
+            "metric": "Li content in composite",
+            "value": 65,
+            "unit": "%",
+            "sample": "Li–PCP composite"
+          }
+        ],
+        "prov": ["Materials preparation"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 2000,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-17T12:00:00Z",
+    "source_file": "article_text_chunk_provided_by_user",
+    "processing_time": null
+  }
+}

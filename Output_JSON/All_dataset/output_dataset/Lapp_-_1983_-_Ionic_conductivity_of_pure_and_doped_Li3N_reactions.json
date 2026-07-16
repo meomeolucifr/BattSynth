@@ -1,0 +1,461 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Ionic Conductivity of Pure and Doped Li3N",
+    "doi": "",
+    "authors": [
+      "Torben Lapp",
+      "Steen Skaarup",
+      "Alan Hooper"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 1983
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "ionic conductivity",
+      "solid electrolyte",
+      "Li3N",
+      "hydrogen doping",
+      "metal doping"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "t1",
+      "compound_name": "Lithium nitride (Li3N) crystal",
+      "molecular_formula": "Li3N",
+      "intended_role": "product",
+      "prov": [
+        "Page 98 – Experimental"
+      ]
+    },
+    {
+      "target_id": "t2",
+      "compound_name": "Hydrogen-doped Li3N crystal",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Pages 98-101 – Experimental/Results"
+      ]
+    },
+    {
+      "target_id": "t3",
+      "compound_name": "Magnesium-doped Li3N crystal",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Page 98 – Experimental",
+        "Table 1"
+      ]
+    },
+    {
+      "target_id": "t4",
+      "compound_name": "Copper-doped Li3N crystal",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Page 98 – Experimental",
+        "Table 1"
+      ]
+    },
+    {
+      "target_id": "t5",
+      "compound_name": "Aluminium-doped Li3N crystal",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Page 98 – Experimental",
+        "Table 1"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "c1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reactant",
+        "category": "elemental metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "99.9% purity, CERAC",
+      "prov": [
+        "Page 98 – Experimental"
+      ]
+    },
+    {
+      "chemical_id": "c2",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "reactant",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "99.9992% purity",
+      "prov": [
+        "Page 98 – Experimental"
+      ]
+    },
+    {
+      "chemical_id": "c3",
+      "name": "Lithium amide",
+      "molecular_formula": "LiNH2",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "g"
+      },
+      "notes": "added for hydrogen doping",
+      "prov": [
+        "Page 98 – Experimental"
+      ]
+    },
+    {
+      "chemical_id": "c4",
+      "name": "Lithium deuteramide",
+      "molecular_formula": "LiND2",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used for deuterium doping",
+      "prov": [
+        "Page 98 – Experimental"
+      ]
+    },
+    {
+      "chemical_id": "c5",
+      "name": "Magnesium",
+      "molecular_formula": "Mg",
+      "ontology": {
+        "role": "dopant",
+        "category": "elemental metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "~1 atom % relative to lithium",
+      "prov": [
+        "Page 98 – Experimental"
+      ]
+    },
+    {
+      "chemical_id": "c6",
+      "name": "Copper",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "dopant",
+        "category": "elemental metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "~1 atom % relative to lithium",
+      "prov": [
+        "Page 98 – Experimental"
+      ]
+    },
+    {
+      "chemical_id": "c7",
+      "name": "Aluminium",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "dopant",
+        "category": "elemental metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "~1 atom % relative to lithium",
+      "prov": [
+        "Page 98 – Experimental"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "s1",
+        "description": "Preparation of lithium melt with optional dopants.",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "c1"
+              ],
+              "dopants": [
+                "c3",
+                "c4",
+                "c5",
+                "c6",
+                "c7"
+              ]
+            },
+            "notes": "LiNH2 or LiND2 (~1 g) for hydrogen/deuterium doping; ~1 atom % Mg, Cu or Al for metal doping."
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 98 – Experimental"
+        ]
+      },
+      {
+        "step_id": "s2",
+        "description": "Reaction of lithium (with dopants) with high-purity nitrogen to form Li3N melt.",
+        "operations": [
+          {
+            "action": "react",
+            "parameters": {
+              "inputs": [
+                "c1",
+                "c2"
+              ]
+            },
+            "notes": "99.9992 % N2 supplied to the melt."
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 98 – Experimental"
+        ]
+      },
+      {
+        "step_id": "s3",
+        "description": "Crystal growth of Li3N by the Czochralski pulling method.",
+        "operations": [
+          {
+            "action": "crystal_pull",
+            "parameters": {},
+            "notes": "Laue-oriented single crystals obtained."
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 98 – Experimental"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "s1",
+        "description": "Dopant materials added to lithium metal."
+      },
+      {
+        "step_ref": "s2",
+        "description": "Lithium (with dopants) reacted with N2 to form Li3N melt."
+      },
+      {
+        "step_ref": "s3",
+        "description": "Li3N crystals pulled via Czochralski method."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact temperatures and pressures during reaction and crystal pulling are not specified.",
+        "excerpt": "Crystals of Li3N were pulled by the Czochralski method from a melt produced by reacting lithium (99.9%, CERAC) with N2 (99.9992%) [10]."
+      },
+      {
+        "issue": "Quantities of lithium, LiND2, Mg, Cu and Al not stated explicitly (only given as ~1 atom %).",
+        "excerpt": "Crystals doped with Mg, Cu and Al were also grown by adding ~1 atom% of the respective metals to the lithium."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "AC conductivity measurement",
+      "parameters": {
+        "temperature_range": "298–473 K",
+        "frequency_range": "1 Hz – 5 MHz",
+        "electrode": "evaporated gold",
+        "orientation": "perpendicular to hexagonal c-axis"
+      },
+      "results": [
+        {
+          "sample": "Pure Li3N",
+          "metric": "conductivity",
+          "value": "2–4 × 10^-4",
+          "unit": "Ω^-1 cm^-1",
+          "conditions": "298 K"
+        },
+        {
+          "sample": "Pure Li3N",
+          "metric": "activation energy",
+          "value": "0.26–0.27",
+          "unit": "eV",
+          "conditions": ""
+        },
+        {
+          "sample": "Hydrogen-doped Li3N (max doping, sample L-21)",
+          "metric": "conductivity",
+          "value": "6 × 10^-3",
+          "unit": "Ω^-1 cm^-1",
+          "conditions": "298 K"
+        },
+        {
+          "sample": "Hydrogen-doped Li3N (L-21)",
+          "metric": "activation energy",
+          "value": "0.198",
+          "unit": "eV",
+          "conditions": ""
+        },
+        {
+          "sample": "Mg-doped Li3N",
+          "metric": "conductivity",
+          "value": "1 × 10^-4",
+          "unit": "Ω^-1 cm^-1",
+          "conditions": "298 K"
+        },
+        {
+          "sample": "Mg-doped Li3N",
+          "metric": "activation energy",
+          "value": "0.324",
+          "unit": "eV",
+          "conditions": ""
+        },
+        {
+          "sample": "Cu-doped Li3N",
+          "metric": "conductivity",
+          "value": "5 × 10^-5",
+          "unit": "Ω^-1 cm^-1",
+          "conditions": "298 K"
+        },
+        {
+          "sample": "Cu-doped Li3N",
+          "metric": "activation energy",
+          "value": "0.348",
+          "unit": "eV",
+          "conditions": ""
+        },
+        {
+          "sample": "Al-doped Li3N",
+          "metric": "conductivity",
+          "value": "1 × 10^-5",
+          "unit": "Ω^-1 cm^-1",
+          "conditions": "298 K"
+        },
+        {
+          "sample": "Al-doped Li3N",
+          "metric": "activation energy",
+          "value": "0.5",
+          "unit": "eV",
+          "conditions": ""
+        }
+      ],
+      "interpretation": "Hydrogen increases ionic conductivity and lowers activation energy, whereas Mg, Cu, and Al decrease conductivity.",
+      "prov": [
+        "Pages 98-101 – Results",
+        "Table 1",
+        "Table 2"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius fitting",
+        "results": [
+          {
+            "equation": "σT = A0 · exp(−Ea/kT)",
+            "notes": "Used to determine activation energies listed in Tables 1 and 2."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

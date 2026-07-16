@@ -1,0 +1,508 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Cation and anion Co-doping synergy to improve structural stability of Li- and Mn-rich layered cathode materials for lithium-ion batteries",
+    "doi": "10.1016/j.nanoen.2018.12.049",
+    "authors": [
+      "Guorong Chen",
+      "Juan An",
+      "Yiming Meng",
+      "Changzhou Yuan",
+      "Bryan Matthews",
+      "Fei Dou",
+      "Liyi Shi",
+      "Yongfeng Zhou",
+      "Pingan Song",
+      "Gang Wu",
+      "Dengsong Zhang"
+    ],
+    "journal": "Nano Energy",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "lithium-ion battery",
+      "cathode materials",
+      "co-doping",
+      "Li-rich layered oxides"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li1.2Ni0.2Mn0.6O2 (LNMO)",
+      "molecular_formula": "Li1.2Ni0.2Mn0.6O2",
+      "intended_role": "reference cathode material",
+      "prov": ["Experimental section 2.2", "Figure 2"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LNMOCd0.03OS0.03",
+      "molecular_formula": "Li1.2Ni0.2Mn0.6O2Cd0.03S0.03",
+      "intended_role": "co-doped cathode material (optimized)",
+      "prov": ["Experimental section 2.2", "Table 1", "Figure 3"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "nickel sulfate hexahydrate",
+      "molecular_formula": "NiSO4·6H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 6.5709,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "manganese(II) sulfate monohydrate",
+      "molecular_formula": "MnSO4·H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 12.6767,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "sodium hydroxide",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "precipitating agent",
+        "category": "base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "4 M aqueous solution; volume not specified",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "lithium source",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "cadmium sulfide",
+      "molecular_formula": "CdS",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic compound"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "cadmium oxide",
+      "molecular_formula": "CdO",
+      "ontology": {
+        "role": "alternative Cd dopant precursor",
+        "category": "inorganic compound"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as alternative to CdS",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "alternative S dopant precursor",
+        "category": "inorganic compound"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as alternative to CdS",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section 2.2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of homogeneous metal salt solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_8"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Continuous stirring until a homogeneous solution forms"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Co-precipitation to form hydroxide precursor",
+        "operations": [
+          {
+            "action": "add_dropwise",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "target_pH": 10
+            },
+            "temperature": {
+              "value": 323,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 480,
+              "unit": "min"
+            },
+            "notes": "4 M NaOH solution added until pH 10 and maintained for 8 h at 50 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Drying and grinding of hydroxide precursor",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [],
+              "temperature": {
+                "value": 393,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "notes": "Dried at 120 °C for 12 h"
+          },
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "Ground to obtain fine powder"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.2"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Lithiation and Cd/S co-doping, followed by thermal treatment",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["step_3", "chem_4", "chem_5/chem_6", "chem_7"]
+            },
+            "notes": "Mixed to form homogeneous elemental distribution"
+          },
+          {
+            "action": "calcine",
+            "parameters": {
+              "temperature": {
+                "value": 723,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 300,
+                "unit": "min"
+              }
+            },
+            "notes": "Pre-sintered in air"
+          },
+          {
+            "action": "calcine",
+            "parameters": {
+              "temperature": {
+                "value": 1173,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 900,
+                "unit": "min"
+              }
+            },
+            "notes": "Final calcination to obtain LNMOCd_yS_x"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dissolution of Ni and Mn salts in water"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Co-precipitation with NaOH to form hydroxide precursor"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Drying and grinding of precursor"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Lithiation, Cd/S doping and high-temperature calcination to form final cathode material"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact quantities of Li2CO3, CdS/CdO, and Li2S not specified",
+        "excerpt": "Then, it was mixed with Li2CO3 and CdS (or CdO, Li2S) and calcined to form a homogeneous elemental distribution of the active material."
+      },
+      {
+        "issue": "Volume of NaOH solution not reported",
+        "excerpt": "A 4 mol L−1 solution of NaOH was slowly added, dropwise, to the above metal salt solution until the pH reached 10"
+      },
+      {
+        "issue": "Atmosphere during final calcination not explicitly stated beyond 'in air'",
+        "excerpt": "were pre-sintered in air at 450 °C for 5 h and then calcined at 900 °C for 15 h."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "voltage": "40 kV",
+        "current": "20 mA"
+      },
+      "results": [
+        {
+          "metric": "lattice parameter a",
+          "value": 2.8619,
+          "unit": "Å",
+          "sample": "LNMOCd0.03OS0.03"
+        },
+        {
+          "metric": "lattice parameter c",
+          "value": 14.2277,
+          "unit": "Å",
+          "sample": "LNMOCd0.03OS0.03"
+        }
+      ],
+      "interpretation": "Co-doping enlarges interplanar spacing and unit cell volume",
+      "prov": ["Figure 2a", "Table 1"]
+    },
+    {
+      "method": "HR-TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "lattice spacing (003 planes)",
+          "value": 0.483,
+          "unit": "nm",
+          "sample": "LNMOCd0.03OS0.03"
+        },
+        {
+          "metric": "lattice spacing (003 planes)",
+          "value": 0.455,
+          "unit": "nm",
+          "sample": "LNMO"
+        }
+      ],
+      "interpretation": "Co-doping increases layer spacing",
+      "prov": ["Figure 2c", "Figure 2d"]
+    },
+    {
+      "method": "HAADF-STEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Cd presence in Li and TM layers",
+          "value": "confirmed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Heavy atom contrast shows Cd occupies both Li and TM layers",
+      "prov": ["Figure 2e", "Figure 2f"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {
+        "state": "fully discharged to 2.0 V",
+        "frequency_range": "100 kHz–0.01 Hz"
+      },
+      "results": [
+        {
+          "metric": "Li⁺ diffusion coefficient D_Li⁺",
+          "value": 1.4e-12,
+          "unit": "cm2 s-1",
+          "sample": "LNMOCd0.03OS0.03"
+        },
+        {
+          "metric": "Li⁺ diffusion coefficient D_Li⁺",
+          "value": 4.88e-13,
+          "unit": "cm2 s-1",
+          "sample": "LNMO"
+        }
+      ],
+      "interpretation": "Co-doping enhances Li⁺ mobility by ~3×",
+      "prov": ["Figure 5", "Table 2"]
+    },
+    {
+      "method": "In-situ XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "(104) peak splitting behaviour",
+          "value": "reversible for doped sample; irreversible for pristine",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Co-doping yields highly reversible structural changes during cycling",
+      "prov": ["Figure 4c-f"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical cycling",
+        "results": [
+          {
+            "metric": "initial capacity at 0.1 C",
+            "value": 268.5,
+            "unit": "mAh g-1",
+            "sample": "LNMOCd0.03OS0.03"
+          },
+          {
+            "metric": "capacity after 80 cycles at 0.1 C",
+            "value": 243.4,
+            "unit": "mAh g-1",
+            "sample": "LNMOCd0.03OS0.03"
+          },
+          {
+            "metric": "capacity at 5 C rate",
+            "value": 153.8,
+            "unit": "mAh g-1",
+            "sample": "LNMOCd0.03OS0.03"
+          },
+          {
+            "metric": "capacity retention after 200 cycles at 1 C",
+            "value": 84.4,
+            "unit": "%",
+            "sample": "LNMOCd0.03OS0.03"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 268.5,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 80
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

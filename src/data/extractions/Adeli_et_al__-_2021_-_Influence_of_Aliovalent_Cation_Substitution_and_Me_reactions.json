@@ -1,0 +1,387 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Influence of Aliovalent Cation Substitution and Mechanical Compression on Li-Ion Conductivity and Diffusivity in Argyrodite Solid Electrolytes",
+    "doi": "10.1021/acs.chemmater.0c03090",
+    "authors": ["Parvin Adeli", "J. David Bazak", "Ashfia Huq", "Gillian R. Goward", "Linda F. Nazar"],
+    "journal": "Chemistry of Materials",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid electrolyte", "argyrodite", "lithium conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li5.35Ca0.1PS4.5Cl1.55",
+      "molecular_formula": "Li5.35Ca0.1PS4.5Cl1.55",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 148-151"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li5.55Ca0.1PS4.75Cl1.25",
+      "molecular_formula": "Li5.55Ca0.1PS4.75Cl1.25",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 148-151"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li5.7Ca0.15PS5Cl",
+      "molecular_formula": "Li5.7Ca0.15PS5Cl",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 147-150"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "parent solid electrolyte",
+      "prov": ["Page 146-148"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dry grinding of stoichiometric solid precursors",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": [],
+              "duration": {
+                "value": 15,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Minimal manual/mechanical grinding of precursor mixture",
+            "prov": ["Experimental Methods, Page 147"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Methods, Page 147"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pelletization of ground mixture",
+        "operations": [
+          {
+            "action": "pelletize",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Experimental Methods, Page 147"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Methods, Page 147"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Sealing of pellets",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "quartz ampoule",
+              "insert": "glassy carbon crucible"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Experimental Methods, Page 147"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Methods, Page 147"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat treatment (annealing)",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "duration": {
+                "value": 300,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": 823,
+              "unit": "K"
+            },
+            "notes": "5 h at 550 °C",
+            "prov": ["Experimental Methods, Page 147"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Methods, Page 147"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "15 min grinding of precursors"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pelletization of mixture"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Sealing pellets in glassy carbon crucible inside quartz ampoule"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Anneal at 823 K for 300 min"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Precursors not explicitly specified",
+        "excerpt": "all the argyrodite compositions ... were prepared by minimal grinding of the precursors (15 min), followed by a short heat treatment (5 h) at 550 °C",
+        "prov": ["Experimental Methods, Page 147"]
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray Powder Diffraction",
+      "parameters": {
+        "radiation": "Cu Kα (1.5406 Å)",
+        "capillary_diameter": "0.3 mm"
+      },
+      "results": [
+        {
+          "metric": "phase purity",
+          "value": "<1.5",
+          "unit": "wt%",
+          "notes": "impurities in Li5.7Ca0.15PS5Cl"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 147"]
+    },
+    {
+      "method": "Time-of-Flight Neutron Diffraction",
+      "parameters": {
+        "instrument": "POWGEN",
+        "center_lambda": "1.5 Å",
+        "d_spacing_range": "0.50097–13.0087 Å",
+        "temperature": "ambient"
+      },
+      "results": [
+        {
+          "metric": "lattice parameter (Li5.7Ca0.15PS5Cl)",
+          "value": 9.8414,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameter (Li5.55Ca0.1PS4.75Cl1.25)",
+          "value": 9.8222,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameter (Li5.35Ca0.1PS4.5Cl1.55)",
+          "value": 9.7898,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "Successful incorporation of Ca and Cl leading to lattice contraction",
+      "prov": ["Tables 1-3"]
+    },
+    {
+      "method": "7Li Magic Angle Spinning NMR",
+      "parameters": {
+        "field_strength": "20 T",
+        "MAS_rate": "30 kHz"
+      },
+      "results": [
+        {
+          "metric": "chemical shift (Li5.35Ca0.1PS4.5Cl1.55)",
+          "value": 0.83,
+          "unit": "ppm"
+        },
+        {
+          "metric": "chemical shift (Li5.35Ca0.1PS4.5Cl1.55 second phase)",
+          "value": 0.98,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "Evidence of two closely related argyrodite phases",
+      "prov": ["Figure 4"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "1 MHz–100 mHz",
+        "voltage": "100 mV",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (Li5.35Ca0.1PS4.5Cl1.55 cold-pressed)",
+          "value": 10.2,
+          "unit": "mS·cm-1"
+        },
+        {
+          "metric": "activation energy (Li5.35Ca0.1PS4.5Cl1.55)",
+          "value": 0.30,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "High room-temperature conductivity with low activation energy",
+      "prov": ["Table 4", "Page 151"]
+    },
+    {
+      "method": "PFG NMR",
+      "parameters": {
+        "field_strength": "7.0 T",
+        "temperature_range": "243–358 K"
+      },
+      "results": [
+        {
+          "metric": "Li+ diffusivity (Li5.35Ca0.1PS4.5Cl1.55 pellet, 298 K)",
+          "value": 1.21e-11,
+          "unit": "m2/s"
+        },
+        {
+          "metric": "activation energy low-T (powder)",
+          "value": 0.38,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy low-T (pellet)",
+          "value": 0.30,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Mechanical compression lowers grain-boundary activation barrier",
+      "prov": ["Figures 10-12"]
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate": "1 mV s-1",
+        "voltage_window": "5.0 to -0.1 V vs Li/Li+",
+        "temperature": "300 K"
+      },
+      "results": [
+        {
+          "metric": "stability against Li metal",
+          "value": "",
+          "unit": "",
+          "notes": "Good reversible stripping and plating observed"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 6a"]
+    },
+    {
+      "method": "SEM/EDX",
+      "parameters": {
+        "acceleration_voltage": "15 kV"
+      },
+      "results": [
+        {
+          "metric": "particle_size_range",
+          "value": "0.5–5",
+          "unit": "µm"
+        },
+        {
+          "metric": "relative_density (cold-pressed pellets)",
+          "value": 91,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Uniform morphology; Ca substitution does not affect grain size",
+      "prov": ["Figure 5", "Table S4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis (EIS)",
+        "results": [
+          {
+            "equation": "σT = σ0 exp(-Ea/kbT)",
+            "value": 0.30,
+            "unit": "eV",
+            "notes": "Activation energy for Li5.35Ca0.1PS4.5Cl1.55"
+          }
+        ],
+        "prov": ["Page 152"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-27T14:30:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

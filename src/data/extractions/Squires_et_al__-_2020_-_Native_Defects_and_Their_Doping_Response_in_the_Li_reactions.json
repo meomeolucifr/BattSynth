@@ -1,0 +1,130 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Native Defects and Their Doping Response in the Lithium Solid Electrolyte Li7La3Zr2O12",
+    "doi": "10.1021/acs.chemmater.9b04319",
+    "authors": [
+      "Alexander G. Squires",
+      "David O. Scanlon",
+      "Benjamin J. Morgan"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["solid electrolyte", "defect chemistry", "DFT"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "studied_material",
+      "prov": ["Title", "Abstract"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_step_1",
+        "description": "Hybrid DFT calculations (HSE06) performed with VASP on 96-atom primitive cell of tetragonal Li7La3Zr2O12 to obtain defect formation energies."
+      },
+      {
+        "step_ref": "comp_step_2",
+        "description": "Self-consistent defect concentration calculations carried out over the LLZO thermodynamic stability region using SC-FERMI."
+      },
+      {
+        "step_ref": "comp_step_3",
+        "description": "Climbing-image nudged elastic band computations for oxygen-vacancy migration barriers."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (HSE06)",
+      "parameters": {
+        "functional": "HSE06",
+        "plane_wave_cutoff": "520 eV",
+        "k_point_mesh": "2×2×2"
+      },
+      "results": [
+        {
+          "metric": "band gap",
+          "value": 5.9,
+          "unit": "eV"
+        },
+        {
+          "metric": "lattice parameters (tetragonal phase)",
+          "value": "a,b = 13.00 Å; c = 12.50 Å",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Methods section"]
+    },
+    {
+      "method": "Nudged Elastic Band (NEB)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "oxygen vacancy diffusion barrier",
+          "value": 0.73,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Supporting Information S4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Self-consistent defect thermodynamics",
+        "results": [
+          {
+            "equation": "defect population model",
+            "value": "Predicted lithium stoichiometry range xLi = 6.9975 – 7.00125",
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

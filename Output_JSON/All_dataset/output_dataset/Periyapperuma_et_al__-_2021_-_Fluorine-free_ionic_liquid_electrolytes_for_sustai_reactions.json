@@ -1,0 +1,414 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Fluorine-free ionic liquid electrolytes for sustainable neodymium recovery using an electrochemical approach",
+    "doi": "10.1039/d1gc00361e",
+    "authors": [
+      "Kalani Periyapperuma",
+      "Jennifer M. Pringle",
+      "Laura Sanchez-Cupido",
+      "Maria Forsyth",
+      "Cristina Pozo-Gonzalo"
+    ],
+    "journal": "Green Chemistry",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["ionic liquids", "electrodeposition", "rare earth recovery", "neodymium", "fluorine-free electrolytes"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Neodymium metal",
+      "molecular_formula": "Nd",
+      "intended_role": "product",
+      "prov": ["Page 3414–3417 (SEM, XPS discussion)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Neodymium(III) oxide",
+      "molecular_formula": "Nd2O3",
+      "intended_role": "product",
+      "prov": ["Page 3416–3417 (XPS)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "N-butyl-N-methylpyrrolidinium dicyanamide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "ionic liquid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "[C4mpyr][DCA]",
+      "prov": ["Experimental – Materials and electrolytes"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Triethyl(methyl)phosphonium bis(fluorosulfonyl)imide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "ionic liquid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "[P1222][FSI]",
+      "prov": ["Experimental – Materials and electrolytes"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Neodymium(III) trifluoromethanesulfonate",
+      "molecular_formula": "Nd(OTf)3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 0.2,
+        "unit": "mol kg-1"
+      },
+      "notes": "Maximum concentration dissolved in [C4mpyr][DCA] at 50 °C",
+      "prov": ["Experimental – Materials and electrolytes"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Neodymium(III) nitrate hexahydrate",
+      "molecular_formula": "Nd(NO3)3·6H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 0.5,
+        "unit": "mol kg-1"
+      },
+      "notes": "Highest concentration in [C4mpyr][DCA] at 50 °C; additional solutions at 0.2 m and 0.1 m in other ILs",
+      "prov": ["Experimental – Materials and electrolytes"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Nickel metal foil",
+      "molecular_formula": "Ni",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "3 mm diameter exposed area",
+      "prov": ["Experimental – Surface characterisation"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "additive",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Present as moisture 0.15–4.7 wt % depending on electrolyte",
+      "prov": ["Table 1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of Nd(OTf)3 electrolyte",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_3", "chem_1"]
+            },
+            "temperature": {
+              "value": 323,
+              "unit": "K"
+            },
+            "notes": "0.2 mol kg−1 Nd(OTf)3 in [C4mpyr][DCA]"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Materials and electrolytes"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of Nd(NO3)3·6H2O electrolytes",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_4", "chem_1"]
+            },
+            "temperature": {
+              "value": 323,
+              "unit": "K"
+            },
+            "notes": "0.2 m and 0.5 m solutions"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Materials and electrolytes"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Electrodeposition of Nd from 0.2 m Nd(OTf)3/[C4mpyr][DCA]",
+        "operations": [
+          {
+            "action": "electrodeposit",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "substrate": "chem_5",
+              "potential": {
+                "value": -2.94,
+                "unit": "V vs Fc+/0"
+              },
+              "duration": {
+                "value": 210,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 323,
+                "unit": "K"
+              }
+            },
+            "notes": "Chronoamperometry; 3.5 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 3415–3416 (SEM sample prep)"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Electrodeposition of Nd from 0.5 m Nd(NO3)3·6H2O/[C4mpyr][DCA]",
+        "operations": [
+          {
+            "action": "electrodeposit",
+            "parameters": {
+              "inputs": ["chem_4"],
+              "substrate": "chem_5",
+              "potential": {
+                "value": -2.24,
+                "unit": "V vs Fc+/0"
+              },
+              "duration": {
+                "value": 210,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 323,
+                "unit": "K"
+              }
+            },
+            "notes": "Chronoamperometry; 3.5 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 3415–3416 (SEM sample prep)"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare Nd(OTf)3/[C4mpyr][DCA] electrolyte"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Prepare Nd(NO3)3·6H2O/[C4mpyr][DCA] electrolyte"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Electrodeposit Nd from triflate electrolyte onto Ni foil"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Electrodeposit Nd from nitrate electrolyte onto Ni foil"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses or volumes of IL and salts not stated",
+        "excerpt": "A maximum concentration of 0.2 mol kg−1 Nd(OTf)3 and 0.5 mol kg−1 Nd(NO3)3·6H2O were achieved..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate": {
+          "value": 100,
+          "unit": "mV s-1"
+        },
+        "temperature": {
+          "value": 323,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "onset reduction potential",
+          "value": -1.75,
+          "unit": "V vs Fc+/0",
+          "notes": "0.5 m Nd(NO3)3·6H2O/[C4mpyr][DCA]"
+        },
+        {
+          "metric": "peak current density",
+          "value": -38,
+          "unit": "mA cm-2",
+          "notes": "0.5 m Nd(NO3)3·6H2O/[C4mpyr][DCA]"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 1 & Fig. 2"]
+    },
+    {
+      "method": "Dynamic Viscosity",
+      "parameters": {
+        "temperature": {
+          "value": 323,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "viscosity",
+          "value": 35,
+          "unit": "mPa s",
+          "notes": "0.5 m Nd(NO3)3·6H2O/[C4mpyr][DCA]"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 1"]
+    },
+    {
+      "method": "SEM/EDX",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "thicker, flaky deposit with better coverage",
+          "unit": "",
+          "notes": "Nd(NO3)3 electrolyte"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 4"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Nd metal to Nd2O3 ratio",
+          "value": 1.5,
+          "unit": "",
+          "notes": "Deposit from 0.5 m Nd(NO3)3 electrolyte"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 5"]
+    },
+    {
+      "method": "ICP-MS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "current efficiency",
+          "value": 60,
+          "unit": "%",
+          "notes": "0.5 m Nd(NO3)3 electrolyte"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table S1 (text)"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical performance comparison",
+        "results": [
+          {
+            "equation": "",
+            "value": -0.5,
+            "unit": "V shift",
+            "notes": "Reduction potential difference between 0.2 m triflate and 0.2 m nitrate electrolytes"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": 60,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "green_chem_2021_23_3410.pdf (excerpt)",
+    "processing_time": null
+  }
+}

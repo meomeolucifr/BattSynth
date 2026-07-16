@@ -1,0 +1,251 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Challenges and Prospects of Lithium–Sulfur Batteries",
+    "doi": "10.1021/ar300179v",
+    "authors": [
+      "Arumugam Manthiram",
+      "Yongzhu Fu",
+      "Yu-Sheng Su"
+    ],
+    "journal": "Accounts of Chemical Research",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": [
+      "lithium-sulfur batteries",
+      "sulfur-carbon composites",
+      "battery cathodes"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "sulfur–carbon composite cathode",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Section 2.2, Page 1127"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Section 2.2, Page 1127"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Active carbon",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "matrix",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "mesoporous or microporous carbon as described",
+      "prov": [
+        "Section 2.2, Page 1127"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Thermal treatment to melt sulfur and allow diffusion into pores of active carbon",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "temperature": {
+              "value": 473,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "First step of two-step sulfur melting route"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2.2, Page 1127"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Second firing to vaporize excess surface sulfur",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "step_1"
+              ]
+            },
+            "temperature": {
+              "value": 573,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Removes sulfur covering outer surface"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2.2, Page 1127"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "One-step heating method for mesoporous carbons",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "temperature": {
+              "value": 428,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Single heating at 155 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Table 1, Page 1128"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Initial thermal infiltration of sulfur into carbon matrix"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Removal of excess surface sulfur via higher-temperature firing"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Alternative single-step heating route for mesoporous carbons"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No amounts or durations provided for thermal treatments",
+        "excerpt": "‘involving a thermal treatment at 200 °C to melt sulfur… followed by a second firing at 300 °C…’"
+      },
+      {
+        "issue": "Atmosphere during heating not specified",
+        "excerpt": "Text does not mention inert or ambient atmosphere for heat treatments."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical discharge capacity test",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "first discharge capacity",
+          "value": 800,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Section 2.2, Page 1127"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 800,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-23T10:55:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

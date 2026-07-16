@@ -1,0 +1,225 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A point defect model for YBa2Cu3O7 from density functional theory",
+    "doi": "10.1088/2399-6528/abc9a7",
+    "authors": ["Samuel T Murphy"],
+    "journal": "Journal of Physics Communications",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "defects", "YBa2Cu3O7", "superconductor"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "YBa2Cu3O7",
+      "molecular_formula": "YBa2Cu3O7",
+      "intended_role": "product",
+      "prov": ["Equation (5)", "Throughout text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Cu2O",
+      "molecular_formula": "Cu2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referenced in hypothetical formation reaction",
+      "prov": ["Equation (5)"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "BaO",
+      "molecular_formula": "BaO",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referenced in hypothetical formation reaction",
+      "prov": ["Equation (5)"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Y2O3",
+      "molecular_formula": "Y2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referenced in hypothetical formation reaction",
+      "prov": ["Equation (5)"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "O2",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "reactant",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Gaseous oxygen in hypothetical formation reaction",
+      "prov": ["Equation (5)"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "YBa2Cu3O7",
+      "molecular_formula": "YBa2Cu3O7",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Target superconducting material",
+      "prov": ["Throughout text"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Hypothetical solid-state reaction defining the formation of YBa2Cu3O7 from constituent binary oxides and oxygen, used for chemical-potential referencing in DFT calculations.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "notes": "Stoichiometry: 3 Cu2O + 4 BaO + Y2O3 + O2 → 2 YBa2Cu3O7"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "O2"
+        },
+        "prov": ["Equation (5)"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Definition of reference solid-state reaction for computation of chemical potentials."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (CASTEP)",
+      "parameters": {
+        "functional": "GGA-PBE",
+        "plane_wave_cutoff": "600 eV",
+        "k_point_grid": "8×8×4 (unit cell); Γ-point for 4×4×1 supercell"
+      },
+      "results": [
+        {
+          "metric": "lattice parameter a",
+          "value": 3.840,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameter b",
+          "value": 3.919,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameter c",
+          "value": 11.830,
+          "unit": "Å"
+        },
+        {
+          "metric": "elastic constant c11",
+          "value": 215.97,
+          "unit": "GPa"
+        }
+      ],
+      "interpretation": "Computed structural and mechanical properties agree with experimental values, validating the DFT model.",
+      "prov": ["Table 2", "Methodology section"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Defect formation energy calculations",
+        "results": [
+          {
+            "equation": "O_O → O_i + V_O",
+            "value": 0.98,
+            "unit": "eV",
+            "notes": "Oxygen Frenkel reaction energy"
+          },
+          {
+            "equation": "Y_Y + Ba_Ba → Ba_Y + Y_Ba",
+            "value": 1.52,
+            "unit": "eV",
+            "notes": "Cation antisite swap reaction energy"
+          }
+        ],
+        "prov": ["Table 8"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Ti2PTe2 monolayer: a promising two-dimensional anode material for sodium-ion batteries",
+    "doi": "10.1039/c9ra01686d",
+    "authors": ["Jie Liu", "Man Qiao", "Xiaorong Zhu", "Yu Jing", "Yafei Li"],
+    "journal": "RSC Advances",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "sodium-ion batteries", "two-dimensional materials", "anode"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ti2PTe2 monolayer",
+      "molecular_formula": "Ti2PTe2",
+      "intended_role": "anode material",
+      "prov": ["Page 15536-15540"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ti2PTe2 bulk",
+      "molecular_formula": "Ti2PTe2",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 15537"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ti2PTe2 monolayer",
+      "molecular_formula": "Ti2PTe2",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic 2D material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 15536-15540"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sodium",
+      "molecular_formula": "Na",
+      "ontology": {
+        "role": "adsorbate",
+        "category": "alkali metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 15538-15539"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Theoretical exfoliation of Ti2PTe2 monolayer from bulk Ti2PTe2",
+        "operations": [
+          {
+            "action": "exfoliate",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "outputs": ["chem_2"],
+              "cleavage_energy": {
+                "value": 0.38,
+                "unit": "J m-2"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Feasibility evaluated via DFT; cleavage energy converged when separation distance >6 Å"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 2", "Page 15537"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Exfoliation energy assessment indicating monolayer isolation is feasible"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (PBE-D3, HSE06)",
+      "parameters": {
+        "plane_wave_cutoff": "500 eV",
+        "k_points_grid": "4×4×1",
+        "vdW_correction": "DFT-D3"
+      },
+      "results": [
+        {
+          "metric": "Electronic character",
+          "value": "Metallic with Ti-3d states at Fermi level",
+          "unit": ""
+        },
+        {
+          "metric": "Lattice parameters (monolayer)",
+          "value": "a = 3.64 Å, b = 3.64 Å",
+          "unit": "Å"
+        },
+        {
+          "metric": "Cleavage energy",
+          "value": 0.38,
+          "unit": "J m-2"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 15537", "Figure 3"]
+    },
+    {
+      "method": "Phonon dispersion (DFPT)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Highest phonon frequency",
+          "value": 390,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Imaginary modes",
+          "value": "None",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates kinetic stability",
+      "prov": ["Figure 1c"]
+    },
+    {
+      "method": "AIMD simulation",
+      "parameters": {
+        "temperature": 500,
+        "unit_temperature": "K",
+        "ensemble": "NVT",
+        "time": 10,
+        "unit_time": "ps"
+      },
+      "results": [
+        {
+          "metric": "Structural distortion",
+          "value": "None significant",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Monolayer thermodynamically stable up to 500 K",
+      "prov": ["Supplementary Fig. S1"]
+    },
+    {
+      "method": "CI-NEB",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Na diffusion barrier (path 1)",
+          "value": 0.22,
+          "unit": "eV"
+        },
+        {
+          "metric": "Na diffusion barrier (path 2)",
+          "value": 0.67,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Low barrier suggests fast Na diffusion",
+      "prov": ["Figure 5"]
+    },
+    {
+      "method": "Bader charge analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Charge on Ti",
+          "value": 1.17,
+          "unit": "e"
+        },
+        {
+          "metric": "Charge on P",
+          "value": -1.36,
+          "unit": "e"
+        },
+        {
+          "metric": "Charge on Te",
+          "value": -0.49,
+          "unit": "e"
+        },
+        {
+          "metric": "Charge on adsorbed Na (T1 site)",
+          "value": 0.76,
+          "unit": "e"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 15537-15538"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical capacity calculation",
+        "results": [
+          {
+            "equation": "Capacity = 4 * F / molecular_weight",
+            "value": 280.72,
+            "unit": "mAh g-1"
+          }
+        ],
+        "prov": ["Page 15539-15540"]
+      },
+      {
+        "method_name": "Average open circuit voltage calculation",
+        "results": [
+          {
+            "value": 0.31,
+            "unit": "V"
+          }
+        ],
+        "prov": ["Page 15539"]
+      },
+      {
+        "method_name": "Na adsorption energy calculation",
+        "results": [
+          {
+            "site": "T1",
+            "value": -1.17,
+            "unit": "eV"
+          },
+          {
+            "site": "H",
+            "value": -1.14,
+            "unit": "eV"
+          },
+          {
+            "site": "T2",
+            "value": -0.56,
+            "unit": "eV"
+          },
+          {
+            "layer": "First Na layer average",
+            "value": -0.49,
+            "unit": "eV"
+          },
+          {
+            "layer": "Second Na layer average",
+            "value": -0.13,
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Page 15538-15539"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 280.72,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-19T20:20:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

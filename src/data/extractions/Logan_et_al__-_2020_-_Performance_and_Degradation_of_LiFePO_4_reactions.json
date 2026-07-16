@@ -1,0 +1,604 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Performance and Degradation of LiFePO4/Graphite Cells: The Impact of Water Contamination and an Evaluation of Common Electrolyte Additives",
+    "doi": "10.1149/1945-7111/abbbbe",
+    "authors": [
+      "E. R. Logan",
+      "Helena Hebecker",
+      "A. Eldesoky",
+      "Aidan Luscombe",
+      "Michel B. Johnson",
+      "J. R. Dahn"
+    ],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "electrochemistry",
+    "tags": ["Li-ion battery", "electrolyte additives", "water contamination", "LiFePO4", "graphite"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiFePO4/Graphite pouch cell",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": ["Experimental – Pouch cells"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Control electrolyte (1.5 M LiPF6 in EC:DMC 3:7)",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Experimental – Electrolyte preparation"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Part of EC:DMC 3:7 w/w solvent blend, <20 ppm water",
+      "prov": ["Experimental – Electrolyte preparation"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Part of EC:DMC 3:7 w/w solvent blend, <20 ppm water",
+      "prov": ["Experimental – Electrolyte preparation"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Methyl acetate",
+      "molecular_formula": "C3H6O2",
+      "ontology": {
+        "role": "co-solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used at 20 wt % in some electrolyte formulations",
+      "prov": ["Experimental – Electrolyte preparation"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.5,
+        "unit": "M"
+      },
+      "notes": "",
+      "prov": ["Experimental – Electrolyte preparation"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Vinylene carbonate",
+      "molecular_formula": "C3H2O3",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "%"
+      },
+      "notes": "2 wt % when present (2VC formulation)",
+      "prov": ["Experimental – Electrolyte preparation"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Fluoroethylene carbonate",
+      "molecular_formula": "C3H3FO3",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "%"
+      },
+      "notes": "2 wt % when present (2FEC formulation)",
+      "prov": ["Experimental – Electrolyte preparation"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium difluoro(oxalate)borate",
+      "molecular_formula": "LiBOB F2",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "%"
+      },
+      "notes": "1 wt % when present (1LFO formulation)",
+      "prov": ["Experimental – Electrolyte preparation"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Ethylene sulfate",
+      "molecular_formula": "C2H4SO4",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "%"
+      },
+      "notes": "1 wt % when present (DTD)",
+      "prov": ["Experimental – Electrolyte preparation"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Cathode supplied pre-coated with carbon (Hunan Yuneng)",
+      "prov": ["Experimental – Pouch cells"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Artificial graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "anode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Kaijin AML-400",
+      "prov": ["Experimental – Pouch cells"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "impurity",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Controlled between ~100 ppm and ~1000 ppm in electrodes via drying temperature",
+      "prov": ["Results – Water content"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of control electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "ratio": "3:7 w/w",
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Blend EC and DMC under Ar atmosphere (<20 ppm water)"
+          },
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "concentration": {
+              "value": 1.5,
+              "unit": "M"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Electrolyte preparation"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Addition of optional electrolyte additives",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6", "chem_7", "chem_8", "chem_3"]
+            },
+            "amount_details": "2 wt % VC; 2 wt % FEC; 1 wt % LFO; 1 wt % DTD; 20 wt % MA as per formulation",
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Electrolyte preparation"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Vacuum drying of assembled but electrolyte-free pouch cells",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["target_1"]
+            },
+            "temperature": {
+              "value": 373,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 840,
+              "unit": "min"
+            },
+            "pressure": {
+              "value": null,
+              "unit": "bar"
+            },
+            "notes": "Temperature varied (373–393 K) for water-content study; heater setpoint quoted"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Pouch cells"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Electrolyte filling and sealing",
+        "operations": [
+          {
+            "action": "fill",
+            "parameters": {
+              "inputs": ["target_2"]
+            },
+            "volume": {
+              "value": 1.0,
+              "unit": "mL"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Approx. 1.2 g electrolyte per cell"
+          },
+          {
+            "action": "seal",
+            "parameters": {},
+            "pressure": {
+              "value": -0.09,
+              "unit": "bar"
+            },
+            "duration": {
+              "value": 0.0667,
+              "unit": "min"
+            },
+            "notes": "Vacuum sealer, 4 s"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Pouch cells"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Electrolyte wetting",
+        "operations": [
+          {
+            "action": "hold_voltage",
+            "parameters": {},
+            "voltage": {
+              "value": 1.5,
+              "unit": "V"
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Ensure wetting of electrodes"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Pouch cells"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Formation cycle",
+        "operations": [
+          {
+            "action": "charge",
+            "parameters": {},
+            "rate": "C/20",
+            "end_voltage": {
+              "value": 3.65,
+              "unit": "V"
+            },
+            "notes": ""
+          },
+          {
+            "action": "hold_voltage",
+            "parameters": {},
+            "voltage": {
+              "value": 3.65,
+              "unit": "V"
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "notes": ""
+          },
+          {
+            "action": "discharge",
+            "parameters": {},
+            "rate": "C/20",
+            "end_soc": "≈60%",
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 313,
+            "unit": "K"
+          }
+        },
+        "prov": ["Experimental – Pouch cells"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare EC/DMC solvent blend and dissolve LiPF6 to 1.5 M."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Introduce specific additive package (e.g., 2 % VC) under Ar."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Vacuum-dry electrode stack at 373–393 K for 14 h to control water content."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Fill dried pouch cell with 1 mL electrolyte and vacuum-seal."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Wetting step: hold at 1.5 V for ~24 h."
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Perform one formation cycle at 313 K."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Additive percentage basis (wt % vs vol %) not explicitly stated",
+        "excerpt": "These additives were added to the CTRL electrolyte in different proportions, in single and binary additive blends. The different additive combinations considered were: 2% VC ..."
+      },
+      {
+        "issue": "Exact internal cell temperature during vacuum drying differs from heater setpoint",
+        "excerpt": "Actual temperatures reached inside the cell varied by a small systematic amount."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Karl Fischer coulometric titration",
+      "parameters": {
+        "oven_temperature": {
+          "value": 473,
+          "unit": "K"
+        },
+        "run_time": {
+          "value": 30,
+          "unit": "min"
+        },
+        "sample_mass": "0.5–0.7 g"
+      },
+      "results": [
+        {
+          "metric": "Water content at 298 K (no drying)",
+          "value": 1000,
+          "unit": "ppm"
+        },
+        {
+          "metric": "Water content after 373 K drying",
+          "value": 500,
+          "unit": "ppm"
+        },
+        {
+          "metric": "Water content after 393 K drying",
+          "value": 100,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "Higher drying temperature lowers residual water in LFP electrodes.",
+      "prov": ["Results – Figure 1"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "100 kHz–10 mHz",
+        "amplitude": {
+          "value": 10,
+          "unit": "mV"
+        },
+        "temperature": {
+          "value": 283,
+          "unit": "K"
+        }
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Experimental – EIS"]
+    },
+    {
+      "method": "Differential Scanning Calorimetry",
+      "parameters": {
+        "heating_rate": {
+          "value": 10,
+          "unit": "K min-1"
+        },
+        "temperature_range": "RT–523 K",
+        "atmosphere": "N2 (50 mL min-1)"
+      },
+      "results": [],
+      "interpretation": "Separator melting onset unchanged by drying up to 413 K.",
+      "prov": ["Experimental – DSC"]
+    },
+    {
+      "method": "Thermogravimetric Analysis",
+      "parameters": {
+        "heating_rates": ["10 K min-1", "0.5 K min-1"],
+        "temperature_range": "RT–773 K",
+        "atmosphere": "Ar (100 mL min-1)"
+      },
+      "results": [],
+      "interpretation": "CMC binder shows no decomposition between 373–393 K.",
+      "prov": ["Experimental – TGA"]
+    },
+    {
+      "method": "Micro X-ray Fluorescence (μXRF)",
+      "parameters": {
+        "spot_size": "25 μm",
+        "step_size": "45 or 100 μm",
+        "tube_current": "200 μA",
+        "energy_range": "0–50 keV",
+        "atmosphere": "<20 mbar vacuum"
+      },
+      "results": [
+        {
+          "metric": "Fe loading on graphite (control electrolyte, 313 K cycling, ~60 cycles)",
+          "value": 5.5,
+          "unit": "μg cm-2"
+        },
+        {
+          "metric": "Fe loading on graphite (control electrolyte, 40 °C cycling, 120 °C dried)",
+          "value": 0.2,
+          "unit": "μg cm-2"
+        }
+      ],
+      "interpretation": "Electrolyte additives and reduced water significantly suppress Fe dissolution.",
+      "prov": ["Results – Figure 11"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical cycling tests",
+        "results": [
+          {
+            "description": "Specific capacity of LiFePO4 cathode",
+            "value": 170,
+            "unit": "mAh g-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 170,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-14T12:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

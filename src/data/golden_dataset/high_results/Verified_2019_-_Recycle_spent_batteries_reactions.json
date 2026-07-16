@@ -1,0 +1,322 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recycle spent batteries",
+    "doi": "10.1038/s41560-019-0376-4",
+    "authors": [],
+    "journal": "Nature Energy",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "editorial",
+    "tags": [
+      "battery recycling",
+      "lithium-ion batteries"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Cobalt",
+      "molecular_formula": "Co",
+      "intended_role": "product",
+      "prov": [
+        "Page 253"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.7,
+        "reasoning": "The provided text (an editorial on battery recycling) mentions cobalt in narrative form (e.g., \u201ccobalt and lithium recovery rates\u2026\u201d, \u201ccobalt and lithium price fluctuations\u201d) and refers to compounds like \u201clithium nickel cobalt aluminium oxides\u201d and \u201clithium cobalt oxides,\u201d but it does not explicitly state a \u201cTarget Formula: Co\u201d for any material. \u201cCo\u201d does not appear as a standalone target formula in the text.",
+        "suggested_fix": "Not specified"
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Lithium",
+      "molecular_formula": "Li",
+      "intended_role": "product",
+      "prov": [
+        "Page 253"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The provided text is an editorial about recycling lithium-ion batteries. It mentions \u201clithium\u201d in various compound names (e.g., lithium-ion batteries, lithium cobalt oxides) and discusses lithium recovery, but it never explicitly states a \u201cTarget Formula\u201d as simply \u201cLi\u201d (elemental lithium) for a specific target material. Thus the extracted value \u201cLi\u201d is not explicitly supported by the source text as a target formula.",
+        "suggested_fix": "Not specified"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "deep eutectic solvent",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "biodegradable precursors; reused over multiple cycles",
+      "prov": [
+        "Page 253"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.84,
+        "reasoning": "The text explicitly mentions the chemical identity as \u201cdeep eutectic solvents\u201d (\u201cmethod of using deep eutectic solvents to dissolve and extract valuable metals\u2026\u201d). Nowhere in the provided document is an amount, concentration, volume, or composition ratio for the deep eutectic solvent specified. Therefore, the extracted value \u2018deep eutectic solvent | Amount: Not specified in text\u2019 is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "lithium cobalt oxide",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "feedstock",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "cathode material",
+      "prov": [
+        "Page 253"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.85,
+        "reasoning": "The text mentions \u201clithium cobalt oxides\u201d (plural) as a class of cathode materials, but it does not explicitly state the specific chemical identity \u201clithium cobalt oxide\u201d (singular, typically implying LiCoO2). Also, no amount is provided anywhere in the text, so the \u201cAmount: Not specified in text\u201d portion is correct, but the chemical identity as written is not explicitly supported.",
+        "suggested_fix": "Chemical identity: lithium cobalt oxides (cathode materials). Amount: Not specified in text."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "lithium nickel manganese oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "feedstock",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "cathode material",
+      "prov": [
+        "Page 253"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The text explicitly mentions the chemical identity as \u201clithium nickel manganese oxides\u201d (cathode materials). No amount/concentration/mass is provided anywhere in the provided document, so \u201cAmount: Not specified in text\u201d is correctly extracted as missing information per the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Cobalt",
+      "molecular_formula": "Co",
+      "ontology": {
+        "role": "product",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 253"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The document mentions cobalt (e.g., lithium cobalt oxides; cobalt and lithium price fluctuations; cobalt recovery rates), but nowhere provides a specific amount (mass, concentration, molar ratio, etc.) for cobalt. Therefore, the extracted statement that the amount is not specified is supported by the text. The cited provenance 'Page 253' corresponds to the provided page text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "product",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 253"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The text discusses lithium extensively (e.g., \u201clithium-ion batteries\u201d, \u201clithium nickel cobalt aluminium oxides\u201d, \u201clithium recovery rates...\u201d), confirming the chemical identity as lithium. Nowhere in the provided document is a specific amount of lithium given (no mass, molarity, wt%, etc.). Therefore the extraction \u201cLithium | Amount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dissolution of cathode materials in deep eutectic solvent to recover valuable metals.",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_2",
+                "chem_3",
+                "chem_1"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.88,
+              "reasoning": "The source text explicitly uses the term \u201cdissolve\u201d to describe the operation: \u201cmethod of using deep eutectic solvents to dissolve and extract valuable metals from cathode materials\u2026\u201d. This supports the extracted synthesis/recycling operation being \u201cdissolve.\u201d",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "extract",
+            "parameters": {
+              "outputs": [
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Cobalt and lithium recovered up to 90%.",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.88,
+              "reasoning": "The provided text is an editorial about lithium-ion battery recycling and mentions \u201cextractive metallurgical processes\u201d and \u201cdissolve and extract valuable metals,\u201d but it does not describe any experimental synthesis procedure or a defined \u201cSynthesis Operation\u201d step labeled as \u201cextract.\u201d There is no explicit synthesis workflow/operation field in the document to support this extracted value.",
+              "suggested_fix": "Not specified"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 253"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Use biodegradable deep eutectic solvent to dissolve and extract metals from spent cathode materials.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.87,
+          "reasoning": "The source text explicitly states that Ajayan and team report \u201ca method of using deep eutectic solvents to dissolve and extract valuable metals from cathode materials\u2026\u201d and adds that \u201cThe solvents use biodegradable precursors\u2026\u201d. This supports the extracted workflow statement about using a biodegradable deep eutectic solvent to dissolve/extract metals from spent cathode materials.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No synthesis parameters provided (temperature, time, solvent composition).",
+        "excerpt": "Pulickel Ajayan and team report a method of using deep eutectic solvents to dissolve and extract valuable metals from cathode materials ... with cobalt and lithium recovery rates of up to 90%.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The provided source text is a one-page editorial summarizing battery recycling challenges and briefly mentioning Ajayan\u2019s team using deep eutectic solvents with up to 90% Co/Li recovery. It does not include any explicit synthesis/process parameters such as temperature, time, or solvent composition. Therefore the extraction correctly flags that these parameters are not provided in the document.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Recovery rate measurement",
+        "results": [
+          {
+            "metric": "recovery rate",
+            "value": 90,
+            "unit": "%"
+          }
+        ],
+        "prov": [
+          "Page 253"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.94,
+          "reasoning": "The provided full text (Nature Energy editorial on recycling spent batteries, page 253) does not mention any specific 'Analysis Method' used in a study. It discusses recycling techniques in general (pyrometallurgy, hydrometallurgy, mechanical approaches, deep eutectic solvents) but does not describe an analysis method nor label one as such. Additionally, the extracted value is blank, so there is no explicit value to verify against the text.",
+          "suggested_fix": "Not specified"
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": 90,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null,
+    "_llm_flag": {
+      "is_supported": false,
+      "confidence": 0.9,
+      "reasoning": "The provided text is an editorial and does not report a \"Final Yield\". The only similar quantitative figure is that the referenced method achieves \"cobalt and lithium recovery rates of up to 90%\". That is a recovery rate (and for specific metals), not a final yield, and it is phrased as \"up to 90%\" rather than exactly 90%.",
+      "suggested_fix": "If the intended field is recovery rate, use: \"cobalt and lithium recovery rates of up to 90%\". Otherwise, for \"Final Yield\" specifically: Not specified in the text."
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-23T22:35:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

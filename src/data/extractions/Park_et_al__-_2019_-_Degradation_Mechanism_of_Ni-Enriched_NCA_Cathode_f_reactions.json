@@ -1,0 +1,405 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Degradation Mechanism of Ni-Enriched NCA Cathode for Lithium Batteries: Are Microcracks Really Critical?",
+    "doi": "10.1021/acsenergylett.9b00733",
+    "authors": [
+      "Kang-Joon Park",
+      "Jang-Yeon Hwang",
+      "Hoon-Hee Ryu",
+      "Filippo Maglia",
+      "Sung-Jin Kim",
+      "Peter Lamp",
+      "Chong S. Yoon",
+      "Yang-Kook Sun"
+    ],
+    "journal": "ACS Energy Letters",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis_and_evaluation",
+    "tags": ["Ni-rich cathode", "NCA", "microcracks", "lithium-ion battery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li[Ni0.8Co0.16Al0.04]O2",
+      "molecular_formula": "LiNi0.8Co0.16Al0.04O2",
+      "intended_role": "cathode_material",
+      "prov": ["Main text Page 1394-1395"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li[Ni0.88Co0.10Al0.02]O2",
+      "molecular_formula": "LiNi0.88Co0.10Al0.02O2",
+      "intended_role": "cathode_material",
+      "prov": ["Main text Page 1394-1395"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li[Ni0.95Co0.04Al0.01]O2",
+      "molecular_formula": "LiNi0.95Co0.04Al0.01O2",
+      "intended_role": "cathode_material",
+      "prov": ["Main text Page 1394-1395"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as counter/reference electrode in 2032 coin-type half-cells",
+      "prov": ["Main text Page 1395"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Synthesis of Ni-enriched Li[Ni_xCo_yAl_z]O2 (x = 0.80–0.95) powders",
+        "operations": [
+          {
+            "action": "synthesize",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Detailed procedure not provided in the text"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Main text Page 1394"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Assembly of 2032 coin-type half-cells with Li metal anode and synthesized NCA cathodes",
+        "operations": [
+          {
+            "action": "assemble_coin_cell",
+            "parameters": {
+              "anode": "chem_1",
+              "cathode": ["target_1", "target_2", "target_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Electrolyte composition not stated"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Main text Page 1395"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Electrochemical formation and cycling",
+        "operations": [
+          {
+            "action": "galvanostatic_cycle",
+            "parameters": {
+              "current_density": {
+                "value": 67,
+                "unit": "mA g-1"
+              },
+              "voltage_windows": [
+                "2.7–4.3 V",
+                "2.7–4.0 V (lower 60% DOD)",
+                "3.76–4.3 V (upper 60% DOD)"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Capacity and cycling stability evaluated up to 100 cycles"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Main text Pages 1395-1396"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of Ni-rich NCA powders"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Coin-cell assembly with Li metal anode"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Electrochemical cycling under various DOD windows"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis details (precursors, temperatures, calcination times, atmosphere)",
+        "excerpt": "A series of Ni-enriched Li[Ni xCoyAlz]O2 cathodes (x = 0.80 −0.95) were synthesized ..."
+      },
+      {
+        "issue": "Electrolyte composition for coin cells not specified",
+        "excerpt": "2032 coin-type half-cells using Li metal as the anode"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "ICP-OES",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "composition",
+          "value": "Li[Ni0.8Co0.16Al0.04]O2; Li[Ni0.88Co0.10Al0.02]O2; Li[Ni0.95Co0.04Al0.01]O2",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Main text Page 1395"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "structure_type": "rhombohedral α-NaFeO2",
+        "space_group": "R3̅m"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameters_a",
+          "value": 2.8630,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice_parameters_c",
+          "value": 14.1756,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice_parameters_a",
+          "value": 2.8679,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice_parameters_c",
+          "value": 14.1812,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice_parameters_a",
+          "value": 2.8721,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice_parameters_c",
+          "value": 14.1908,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "All samples crystallize in layered structure",
+      "prov": ["Table S1 referenced in Main text Page 1395"]
+    },
+    {
+      "method": "In situ XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "unit_cell_volume_contraction",
+          "value": 1.39,
+          "unit": "%"
+        },
+        {
+          "metric": "unit_cell_volume_contraction",
+          "value": 6.69,
+          "unit": "%"
+        },
+        {
+          "metric": "unit_cell_volume_contraction",
+          "value": 8.08,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Higher contraction correlates with poorer cycling stability",
+      "prov": ["Figure 1e Page 1395"]
+    },
+    {
+      "method": "SEM (cross-section)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "microcrack_areal_fraction_first_cycle_lower60",
+          "value": 11,
+          "unit": "%"
+        },
+        {
+          "metric": "microcrack_areal_fraction_first_cycle_fullDOD",
+          "value": 26,
+          "unit": "%"
+        },
+        {
+          "metric": "microcrack_areal_fraction_first_cycle_discharged",
+          "value": 1,
+          "unit": "%"
+        },
+        {
+          "metric": "microcrack_areal_fraction_100cycles_lower60",
+          "value": 2,
+          "unit": "%"
+        },
+        {
+          "metric": "microcrack_areal_fraction_100cycles_upper60",
+          "value": 16,
+          "unit": "%"
+        },
+        {
+          "metric": "microcrack_areal_fraction_100cycles_fullDOD",
+          "value": 8,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Microcrack density correlates with capacity fade",
+      "prov": ["Figure 2 and Figure 3 Pages 1395-1396"]
+    },
+    {
+      "method": "TEM / SAED",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "rocksalt_surface_layer_thickness",
+          "value": 5,
+          "unit": "nm"
+        },
+        {
+          "metric": "rocksalt_surface_layer_thickness_max",
+          "value": 10,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "NiO-like rocksalt forms on particle surface and along cracks",
+      "prov": ["Figure 6 Pages 1397-1398"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Rct_after_100cycles_upper60",
+          "value": 71.2,
+          "unit": "Ω"
+        },
+        {
+          "metric": "Rct_after_100cycles_fullDOD",
+          "value": 39,
+          "unit": "Ω"
+        },
+        {
+          "metric": "Rct_after_100cycles_lower60",
+          "value": 3.2,
+          "unit": "Ω"
+        }
+      ],
+      "interpretation": "Charge-transfer resistance increases with microcracking",
+      "prov": ["Figure 3d Page 1396"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic cycling",
+        "results": [
+          {
+            "description": "Initial discharge capacities between 2.7–4.3 V",
+            "value": "202.5 / 219.8 / 236.8",
+            "unit": "mAh g-1"
+          },
+          {
+            "description": "Capacity retention after 100 cycles (lower 60% DOD)",
+            "value": "100 / 99.6 / 96.1",
+            "unit": "%"
+          },
+          {
+            "description": "Capacity retention after 100 cycles (upper 60% DOD)",
+            "value": "94.6 / 86.8 / 65.6",
+            "unit": "%"
+          },
+          {
+            "description": "Capacity retention after 100 cycles (full DOD)",
+            "value": "95.7 / 88.7 / 85.5",
+            "unit": "%"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 236.8,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T12:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

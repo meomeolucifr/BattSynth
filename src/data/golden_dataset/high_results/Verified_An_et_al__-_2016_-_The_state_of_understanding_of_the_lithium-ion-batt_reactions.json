@@ -1,0 +1,361 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "The state of understanding of the lithium-ion-battery graphite solid electrolyte interphase (SEI) and its relationship to formation cycling",
+    "doi": "http://dx.doi.org/10.1016/j.carbon.2016.04.008",
+    "authors": [
+      "Seong Jin An",
+      "Jianlin Li",
+      "Claus Daniel",
+      "Debasish Mohanty",
+      "Shrikant Nagpure",
+      "David L. Wood III"
+    ],
+    "journal": "Carbon",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": [
+      "lithium-ion battery",
+      "SEI",
+      "graphite anode"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Used commonly in EC:DMC or EC:DEC electrolytes",
+      "prov": [
+        "Page 61"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper mentions LiPF6 in several electrolyte compositions, including explicitly \u201c1 M LiPF6 in EC:DMC\u201d (page 6) and \u201c1\u20131.2 M LiPF6 in EC/DEC\u201d as a common electrolyte (page 10). However, the document does not state \u201clithium hexafluorophosphate\u201d by name together with \u201cAmount: 1 M\u201d as a single explicit chemical identity-and-amount entry. Also, the alleged provenance \u201cPage 61\u201d is a table-of-contents page and does not contain the value. The extracted value is therefore not explicitly supported as written.",
+        "suggested_fix": "LiPF6 | Amount: 1 M (in EC:DMC electrolyte)"
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "High dielectric constant solvent (\u03b5=89)",
+      "prov": [
+        "Page 61"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions ethylene carbonate (EC) multiple times as an electrolyte solvent component (e.g., in the abbreviations list and in discussions of EC-based electrolytes). However, the document is a review and does not specify a single definitive \u2018amount\u2019 of ethylene carbonate as a standalone quantity; EC is referenced in mixture ratios (e.g., EC:DMC, EC/DEC 1:1 wt, 1.2 M LiPF6/EC) but no singular amount for \u2018ethylene carbonate\u2019 is given. Therefore the extracted value \u2018ethylene carbonate | Amount: Not specified in text\u2019 is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 61"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies DMC as dimethyl carbonate (e.g., in the abbreviations list: \u201cDMC dimethyl carbonate\u201d and in electrolyte descriptions such as \u201cEC:DMC\u201d). Nowhere in the document is an explicit quantitative amount given for dimethyl carbonate alone (only mixtures/ratios and salt molarities like \u201c1\u20131.2 M LiPF6 in 1:1 wt ratio of EC/DEC\u201d are mentioned). Therefore, the extraction \u201cdimethyl carbonate | Amount: Not specified in text\u201d is supported. The alleged provenance page number is inaccurate (the identification appears earlier than p.61), but the value is still supported by the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "diethyl carbonate",
+      "molecular_formula": "C5H10O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 61"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.8,
+        "reasoning": "The document explicitly identifies DEC as \u201cdiethyl carbonate\u201d in the List of abbreviations (\u201cDEC diethyl carbonate\u201d). However, no specific amount/concentration/volume fraction for diethyl carbonate itself is given as a standalone parameter; it is only mentioned as an electrolyte solvent and in example mixtures (e.g., \u201c1\u20131.2 M LiPF6 in 1:1 wt ratio of EC/DEC\u201d). Therefore the extractor\u2019s note \u201cAmount: Not specified in text\u201d is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "ethyl methyl carbonate",
+      "molecular_formula": "C4H8O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 61"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly identifies EMC as \u201cethyl methyl carbonate\u201d in the List of abbreviations (Page 2/3 area, journal page 53). Nowhere in the provided full text is a specific quantity/amount of ethyl methyl carbonate given as a standalone reagent amount; it is only mentioned as an electrolyte component in general examples (e.g., \u201cEC:EMC (3:7)\u201d and solvent mixtures), not as an amount for \u201cethyl methyl carbonate\u201d itself. Therefore the extractor\u2019s \u201cAmount: Not specified in text\u201d is consistent with the document lacking a specific EMC amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "propylene carbonate",
+      "molecular_formula": "C4H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Melting point 309 K; causes co-intercalation issues with graphite",
+      "prov": [
+        "Page 61"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper repeatedly mentions propylene carbonate (PC) as an electrolyte solvent (e.g., abbreviation list defines \u201cPC propylene carbonate\u201d; sections discuss PC-based electrolytes and PC reduction). However, the document does not specify a particular quantitative amount (e.g., wt%, vol%, molarity fraction) of propylene carbonate used in a specific formulation\u2014PC is discussed generically (e.g., \u201cEC/PC\u201d, \u201cPC containing electrolytes\u201d, \u201cLiPF6 in PC\u201d) without giving an explicit amount. Therefore, the identity is supported and the \u2018Amount: Not specified in text\u2019 is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "vinylene carbonate",
+      "molecular_formula": "C3H2O3",
+      "ontology": {
+        "role": "additive",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "wt%"
+      },
+      "notes": "Typical concentration used for SEI improvement",
+      "prov": [
+        "Page 62"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The document explicitly states in Section 8 (\u201cEffects of electrolyte composition on SEI formation\u201d) that vinylene carbonate (VC) is a commonly used additive and that \u201cAbout 3 wt% of VC is usually incorporated\u2026\u201d. This supports the extracted value \u201cvinylene carbonate | Amount: 3 wt%.\u201d The alleged provenance (Page 62) is inaccurate; the statement appears on Page 11 of the provided text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "lithium bis(oxalato)borate",
+      "molecular_formula": "LiB(C2O4)2",
+      "ontology": {
+        "role": "electrolyte salt/additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referred to as LiBOB; often 1.2 M in EC:EMC (3:7) electrolyte",
+      "prov": [
+        "Page 61"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.94,
+        "reasoning": "The paper explicitly identifies the chemical as lithium bis(oxalato)borate via the abbreviation list (\u201cLiBOB Lithium bis(oxalato)borate\u201d) and also discusses LiBOB in the electrolyte composition section. However, no specific amount/concentration/loading for LiBOB is given anywhere in the provided full text; it is only described as a salt/additive and compared qualitatively (e.g., \u201c1\u20131.2 M LiPF6\u2026\u201d is given for LiPF6, but not for LiBOB). Therefore, the extracted statement \u201cAmount: Not specified in text\u201d is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "lithium perchlorate",
+      "molecular_formula": "LiClO4",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "High ionic conductivity 5.6\u20138.4 mS cm-1 depending on solvent",
+      "prov": [
+        "Page 61"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.62,
+        "reasoning": "The paper does mention lithium perchlorate (LiClO4) in Section 8 (\u201cLiClO4 has high ionic conductivity\u2026\u201d) on the page labeled 61 in the text. However, no specific amount/concentration of LiClO4 used in any experiment is given; it is only discussed qualitatively with conductivity values in different solvents. Since the extracted field is \u201cChemical Identity and Amount,\u201d the chemical identity is supported but the combined extraction as written (\u201clithium perchlorate | Amount: Not specified in text\u201d) is not explicitly supported as a pair because the amount is indeed not specified, yet the extractor implies a usage context rather than a general discussion.",
+        "suggested_fix": "Chemical: lithium perchlorate (LiClO4); Amount: Not specified (only qualitative discussion and conductivity values are provided, no concentration/amount used)."
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiN(SO2CF3)2",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Thermally stable; ionic conductivity 5.1\u20139.0 mS cm-1",
+      "prov": [
+        "Page 61"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly identifies the chemical as LiTFSI: it appears in the List of abbreviations as \u201cLiTFSI Lithium bis(trifluoromethane sulfonyl) imide\u201d (Page 2 of the provided text; journal page 53). The document discusses LiTFSI as an electrolyte salt but does not provide a specific amount/concentration for LiTFSI anywhere in the text (amounts given are for other salts, e.g., 1\u20131.2 M LiPF6). Therefore, the extracted claim 'lithium bis(trifluoromethanesulfonyl)imide | Amount: Not specified in text' is supported under the null-handling rule. Provenance 'Page 61' is not accurate for the identity, which is earlier, but support is still present.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Used to study SEI morphology evolution (e.g., Fig. 2)",
+      "prov": [
+        "Figure 2 caption, Pages 55-56"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The document explicitly discusses SEM as a characterization method (Section 6) and includes SEM micrographs in Fig. 2 (caption: \u201cFig. 2 shows SEM micrographs...\u201d), indicating SEM characterization is present. Therefore, extracting an empty list for \u201cCharacterization: SEM\u201d is not supported. The alleged provenance pointing to Fig. 2 caption is consistent with SEM being present, not absent.",
+        "suggested_fix": "Populate the SEM field as present, e.g., [\"SEM (Scanning Electron Microscopy)\"] or include the specific instance: \"SEM micrographs of SEI morphology at various formation potentials (Fig. 2, from Lu et al.)\"."
+      }
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Observed SEI thickness at various cutoff voltages (Fig. 3)",
+      "prov": [
+        "Figure 3 caption, Pages 55-56"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The extracted value is an empty list ([]), implying no TEM characterization was reported. However, scanning the provided full text shows explicit TEM usage: e.g., Fig. 3 is labeled \u201cTEM images of fresh graphite and SEI on graphite anodes\u2026\u201d and Section 6 lists \u201ctransmission electron microscopy (TEM)\u201d as a technique used to image SEI morphology. Therefore, the paper does include TEM, but no specific TEM experimental parameters (instrument model, operating voltage, etc.) are provided in the text excerpt. If the field expects a boolean/flag that TEM was used, [] is not appropriate; if it expects a list of TEM conditions, an empty list is consistent with missing details.",
+        "suggested_fix": "If the field is meant to capture whether TEM was used: [\"TEM\"] (supported by Fig. 3 caption and Section 6). If the field is meant to capture TEM conditions/parameters: keep [] because the paper provides no explicit TEM operating conditions in the provided text."
+      }
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Cited as non-destructive tool for SEI investigation",
+      "prov": [
+        "Page 60"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.62,
+        "reasoning": "The document explicitly discusses electrochemical impedance spectroscopy (EIS) as a characterization/analysis method for the SEI (Section 6, starting on page 60). Therefore, the empty list '[]' for 'Characterization: EIS' is not supported by the text, which clearly indicates EIS was used/considered as a characterization technique in the review.",
+        "suggested_fix": "Include EIS as a characterization technique (e.g., [\"Electrochemical Impedance Spectroscopy (EIS)\"])."
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Used to determine SEI chemical composition",
+      "prov": [
+        "Pages 60-61"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper explicitly discusses XPS as a characterization method for SEI analysis (Section 6) and includes XPS in the abbreviations list, but it does not provide a discrete list of XPS characterization entries that would justify an extracted value of an empty list ([]). Since XPS is clearly mentioned/used as a method, recording no XPS characterization is not supported by the text.",
+        "suggested_fix": "Indicate that XPS was used/mentioned for SEI characterization. For example: [\"X-ray Photoelectron Spectroscopy (XPS)\"] or a boolean/yes flag for XPS characterization."
+      }
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-17T12:00:00Z",
+    "source_file": "input_text_chunk",
+    "processing_time": null
+  }
+}

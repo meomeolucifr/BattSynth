@@ -1,0 +1,1117 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Heterointerface Effects on Lithium-Induced Phase Transitions in Intercalated MoS2",
+    "doi": "10.1021/acsami.0c21495",
+    "authors": [
+      "Sajad Yazdani",
+      "Joshua V. Pondick",
+      "Aakash Kumar",
+      "Milad Yarali",
+      "John M. Woods",
+      "David J. Hynek",
+      "Diana Y. Qiu",
+      "Judy J. Cha"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemical study",
+    "tags": [
+      "MoS2",
+      "hBN",
+      "heterostructure",
+      "lithium intercalation",
+      "phase transition"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "hBN\u2013MoS2\u2013hBN heterostructure device",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Methods \u2013 Heterostructure Assembly and Device Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank, but the paper clearly specifies the materials/chemical formulas involved. The main target material studied is MoS2 (molybdenum disulfide), in heterostructures with hBN and with Li intercalation (e.g., hBN\u2212MoS2\u2212hBN; Li+ intercalation). Therefore, leaving the target formula empty is not supported by the source text.",
+        "suggested_fix": "MoS2 (often studied as hBN\u2212MoS2\u2212hBN with Li+ intercalation)."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Molybdenum disulfide",
+      "molecular_formula": "MoS2",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Exfoliated flakes from bulk MoS2 crystal",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper clearly identifies the chemical as MoS2 (molybdenum disulfide) throughout (title, abstract, methods, and experimental descriptions). However, there is no explicit statement of an 'amount' of MoS2 used (e.g., mass, moles, concentration). The Methods describe MoS2 flakes exfoliated from bulk crystals (SPI Supplies) and stacked into heterostructures, but do not quantify an amount. Therefore, the extractor\u2019s 'Amount: Not specified in text' is accurate.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Hexagonal boron nitride",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Exfoliated flakes from bulk hBN crystal",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper repeatedly identifies hexagonal boron nitride (hBN) as a material in the heterostructure (e.g., abstract, introduction, results, and Methods: \u201cMoS2\u2212hexagonal boron nitride (hBN) interface\u201d, \u201chBN\u2212MoS2\u2212hBN heterostructures\u201d). However, the text does not provide an explicit quantitative amount for hBN (e.g., mass, moles, concentration, or volume) used in experiments; it is described qualitatively as exfoliated flakes and, in computations, as \u201c6 layers of hBN,\u201d which is not an experimental amount. Therefore, reporting the chemical identity as hBN with amount \u201cNot specified in text\u201d is consistent with the source.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "0.38 mm thick ribbon pressed onto Cu foil",
+      "prov": [
+        "Electrochemical Cell Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions lithium metal used in the electrochemical cell (\u201clithium metal pressed onto copper foil served as the reference/counter electrode\u201d and later \u201ca small piece (\u223c3 \u00d7 3 mm) of lithium metal (0.38 mm-thick ribbon, Sigma-Aldrich)\u2026\u201d). However, it does not provide a mass, moles, or other quantitative amount of lithium metal used (only the approximate piece dimensions and ribbon thickness), so the extractor\u2019s statement that the amount is \u201cNot specified\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "In 50/50 v/v EC/DEC",
+      "prov": [
+        "Electrochemical Cell Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "In the Methods section under \u201cElectrochemical Cell Fabrication\u201d, the paper explicitly states: \u201cThe liquid electrolyte, a battery-grade solution of 1 M lithium hexafluorophosphate in 50/50 v/v ethylene carbonate/diethyl carbonate (LiPF6 in EC/DEC, Sigma-Aldrich)\u2026\u201d. This supports the extracted chemical identity (lithium hexafluorophosphate, i.e., LiPF6) and amount (1 M).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 50,
+        "unit": "volume %"
+      },
+      "notes": "Part of electrolyte (EC/DEC 50/50 v/v)",
+      "prov": [
+        "Electrochemical Cell Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "In the Electrochemical Cell Fabrication section, the electrolyte is described as \u201c1 M lithium hexafluorophosphate in 50/50 v/v ethylene carbonate/diethyl carbonate (LiPF6 in EC/DEC)\u201d. This specifies ethylene carbonate as 50% of the EC/DEC solvent mixture (i.e., 50/50 v/v EC/DEC), but it does not explicitly state \u201cEthylene carbonate | Amount: 50 volume %\u201d as a standalone component of the full electrolyte (which also contains 1 M LiPF6). The extracted value is therefore imprecise/ambiguous relative to the paper\u2019s wording.",
+        "suggested_fix": "Ethylene carbonate/diethyl carbonate solvent mixture (EC/DEC) | Amount: 50/50 v/v (i.e., 50 vol% EC and 50 vol% DEC) in a 1 M LiPF6 electrolyte"
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Diethyl carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 50,
+        "unit": "volume %"
+      },
+      "notes": "Part of electrolyte (EC/DEC 50/50 v/v)",
+      "prov": [
+        "Electrochemical Cell Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.97,
+        "reasoning": "The paper mentions diethyl carbonate only as part of the electrolyte solvent mixture: \u201c1 M lithium hexafluorophosphate in 50/50 v/v ethylene carbonate/diethyl carbonate (LiPF6 in EC/DEC)\u201d. This specifies diethyl carbonate at 50% of the solvent volume fraction within the EC/DEC mixture, not \u201c50 volume %\u201d as a standalone amount of diethyl carbonate in the overall electrolyte/cell. The extracted entry omits the paired solvent (ethylene carbonate) and the 1 M LiPF6 context, so it is incomplete/misleading.",
+        "suggested_fix": "Diethyl carbonate (DEC) present as 50/50 v/v ethylene carbonate/diethyl carbonate (EC/DEC) solvent in the electrolyte: 1 M LiPF6 in EC/DEC (50/50 v/v)."
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Chromium",
+      "molecular_formula": "Cr",
+      "ontology": {
+        "role": "adhesion layer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "nm"
+      },
+      "notes": "Thermally evaporated",
+      "prov": [
+        "Device Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper\u2019s Device Fabrication/Methods describe metal contacts as \u201c10 nm Cr/100 nm Au\u201d (chromium/gold thicknesses). There is no statement of \u201cChromium | Amount: 10 nm\u201d as a standalone chemical amount; it is specifically part of a Cr/Au bilayer thickness specification. Thus the extracted value is incomplete/mischaracterized: it omits the associated Au layer (100 nm) and the fact it is a contact stack thickness, not a chemical amount in general.",
+        "suggested_fix": "Cr/Au contacts: 10 nm Cr and 100 nm Au (thermal evaporation)"
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "electrode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "nm"
+      },
+      "notes": "Thermally evaporated; also thick edge cover layer",
+      "prov": [
+        "Device Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.96,
+        "reasoning": "The paper mentions gold only as part of device structures (e.g., Cr/Au contacts deposited with 100 nm Au; \u201cthick layer of gold\u201d to cover edges). There is no statement that the amount of gold is \u201c100 nm\u201d (i.e., gold thickness = 100 nm). The only explicit 100 nm value is for Au thickness in the Cr/Au stack (10 nm Cr / 100 nm Au). Also, \u201c100 nm\u201d is a thickness, not an amount of chemical identity in the sense of mass/moles.",
+        "suggested_fix": "Gold (Au) | Thickness: 100 nm (thermally evaporated Au contact layer; with 10 nm Cr adhesion layer)."
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Potassium hydroxide",
+      "molecular_formula": "KOH",
+      "ontology": {
+        "role": "etchant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "M"
+      },
+      "notes": "\u224830 \u00b5L used to etch SiO2 during transfer",
+      "prov": [
+        "Heterostructure Assembly"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "In the Methods section under \u201cHeterostructure Assembly and Device Fabrication\u201d, the text states: \u201cAbout 30 \u03bcL of a 2 M aqueous solution of potassium hydroxide (KOH, Sigma-Aldrich) was added\u2026\u201d. This explicitly supports potassium hydroxide at 2 M concentration (amount).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Polypropylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "transfer polymer",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 13,
+        "unit": "wt %"
+      },
+      "notes": "Solution in anisole, spin-coated on epoxy droplet",
+      "prov": [
+        "Heterostructure Assembly"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The Methods section under \u201cHeterostructure Assembly and Device Fabrication\u201d explicitly states: \u201cThen, a 13 wt % solution of polypropylene carbonate (PPC, Sigma-Aldrich) in anisole was spun-coated\u2026\u201d. This directly supports the chemical identity (polypropylene carbonate, PPC) and the amount (13 wt %). The alleged provenance ('Heterostructure Assembly') aligns with this location.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Epoxy (DP100Plus)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "support medium",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "\u22480.5 mm hemispherical droplet cured on glass slide",
+      "prov": [
+        "Heterostructure Assembly"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.72,
+        "reasoning": "The paper explicitly identifies the epoxy used in heterostructure assembly as \u201cepoxy (Scotch-Weld, Series DP100Plus)\u201d, but it also specifies an amount: \u201cabout 0.5 mm in diameter\u201d for the epoxy droplet. Therefore, the extracted claim that the amount is \u201cNot specified in text\u201d is incorrect.",
+        "suggested_fix": "Epoxy (Scotch-Weld, Series DP100Plus) | Amount: hemispherical droplet about 0.5 mm in diameter"
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Polymethyl methacrylate (PMMA A3)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "mask",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Spin-coated 4000 rpm 2 min",
+      "prov": [
+        "Edge-exposed Device Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The Methods section (device fabrication for the edge-exposed heterostructure) explicitly states that a layer of \u201cPMMA A3\u201d (polymethyl methacrylate) was spin-coated, confirming the chemical identity. However, the paper does not specify the amount of PMMA used (only spin speed/time and bake conditions are given), so \u201cAmount: Not specified in text\u201d is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Hydrogen silsesquioxane (HSQ)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "hard mask",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Spin-coated 3000 rpm",
+      "prov": [
+        "Edge-exposed Device Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly mentions hydrogen silsesquioxane (HSQ) in the device fabrication/etch mask description, but it does not leave the amount entirely unspecified: it states \u201cHSQ was subsequently spun-coated at 3000 rpm with no baking.\u201d While this is not a mass/volume amount, it is an explicit processing amount/condition associated with HSQ usage, contradicting the claim that the amount is \u201cNot specified in text.\u201d",
+        "suggested_fix": "Hydrogen silsesquioxane (HSQ) | Amount/condition: spun-coated at 3000 rpm (no baking) (used with PMMA as an etch mask)."
+      }
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "plasma etchant gas",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 20,
+        "unit": "sccm"
+      },
+      "notes": "Used 15 s at 50 W RF",
+      "prov": [
+        "Edge-exposed Device Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper mentions oxygen only in the context of O2 plasma used during fabrication/etching, including \u201cO2 plasma (20 sccm)\u201d for 15 s and also \u201ca mixture of O2 (4 sccm) and CHF3 (40 sccm)\u201d. There is no mention of an oxygen flow rate of 20 sccm specifically associated with the \u201cEdge-exposed Device Fabrication\u201d section; rather, the edge-exposed device fabrication uses O2/CHF3 mixture at 4 sccm O2, and the 20 sccm O2 step is for removing PMMA not covered by HSQ. Therefore, the extracted value \u201cOxygen | Amount: 20 sccm\u201d is not supported as stated for the alleged provenance.",
+        "suggested_fix": "If the intent is edge etching conditions: Oxygen (O2) 4 sccm (with CHF3 40 sccm) during RIE for 2 min. If the intent is the PMMA removal step: O2 plasma 20 sccm for 15 s."
+      }
+    },
+    {
+      "chemical_id": "chem_15",
+      "name": "Trifluoromethane",
+      "molecular_formula": "CHF3",
+      "ontology": {
+        "role": "plasma etchant gas",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 40,
+        "unit": "sccm"
+      },
+      "notes": "Used with 4 sccm O2 at 60 W RF for 2 min",
+      "prov": [
+        "Edge-exposed Device Fabrication"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The paper does not mention trifluoromethane (CHF3) as a chemical used at 40 sccm in the cited \u201cEdge-exposed Device Fabrication\u201d context. In the Methods section describing reactive ion etching for edge exposure, the gas mixture is O2 (4 sccm) and CHF3 (40 sccm). CHF3 here is trifluoromethane, but the text explicitly names it only as \u201cCHF3\u201d, not \u201cTrifluoromethane\u201d. Thus the chemical identity as written (\u201cTrifluoromethane\u201d) is not explicitly supported by the document text, even though the formula and flow rate are.",
+        "suggested_fix": "CHF3 | Amount: 40 sccm (reactive ion etching gas mixture used for edge exposure)"
+      }
+    },
+    {
+      "chemical_id": "chem_16",
+      "name": "Anisole",
+      "molecular_formula": "C7H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Solvent for 13 wt % PPC solution",
+      "prov": [
+        "Heterostructure Assembly"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly mentions anisole as the solvent in the heterostructure assembly method: \u201ca 13 wt % solution of polypropylene carbonate (PPC, Sigma-Aldrich) in anisole\u2026\u201d. However, it does not provide a standalone amount/volume for anisole itself (only the concentration of PPC in anisole is given, and a separate 30 \u03bcL volume is for KOH solution). Therefore, the extracted value \u201cAnisole | Amount: Not specified in text\u201d is supported under the null-handling rule for the amount field.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_17",
+      "name": "Chloroform",
+      "molecular_formula": "CHCl3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used overnight to dissolve PPC",
+      "prov": [
+        "Heterostructure Assembly"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section explicitly states: \u201cThe PPC was subsequently dissolved in chloroform overnight.\u201d This supports the chemical identity (chloroform) and indicates its use in heterostructure assembly/device fabrication. The text does not provide a volume/mass/concentration for chloroform, so \u201cAmount: Not specified in text\u201d is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Exfoliation of MoS2 and hBN onto pre-cleaned SiO2/Si substrates",
+        "operations": [
+          {
+            "action": "exfoliate",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "notes": "Substrates sonicated in acetone and isopropyl alcohol, treated with O2 plasma prior to exfoliation",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.85,
+              "reasoning": "The paper describes hBN and MoS2 flakes being mechanically exfoliated (\u201cmechanically exfoliated\u2026 using the scotch-tape method\u201d) and then stacked to form hBN\u2212MoS2\u2212hBN heterostructures. However, it never explicitly states a synthesis operation of \u201cexfoliate\u201d as the operation being performed (e.g., as a single-step synthesis operation label), nor does it use \u201cexfoliate\u201d to describe a dedicated synthesis operation beyond sample preparation/fabrication. The closest explicit operation described is \u201cmechanically exfoliated \u2026 using the scotch-tape method.\u201d",
+              "suggested_fix": "mechanically exfoliated (scotch-tape method)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods \u2013 Heterostructure Assembly"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of epoxy/PPC pickup stamp",
+        "operations": [
+          {
+            "action": "cure",
+            "parameters": {
+              "inputs": [
+                "chem_11"
+              ],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "notes": "\u22480.5 mm hemispherical droplet cured on glass slide",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.84,
+              "reasoning": "The paper does not describe a synthesis step labeled \"cure\" as an operation for making MoS2 or the heterostructure. The term \"cured\" appears only in device fabrication/transfer steps (epoxy droplet cured; PPC cured; epoxy cured to seal the cell), which are processing/assembly steps rather than a synthesis operation of the material itself. Therefore extracting \"cure\" as the (material) Synthesis Operation is not explicitly supported.",
+              "suggested_fix": "If the intent is general fabrication processing, use something like: \"epoxy/PPC curing during heterostructure transfer and cell sealing\". If the field strictly requires a synthesis operation of the material, it should be left as \"Not specified\"."
+            }
+          },
+          {
+            "action": "spin coat",
+            "parameters": {
+              "inputs": [
+                "chem_10"
+              ],
+              "speed": "3000 rpm",
+              "duration": {
+                "value": 2,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 363,
+                "unit": "K"
+              }
+            },
+            "notes": "13 wt % PPC in anisole",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper describes heterostructure assembly using a KOH-assisted transfer with PPC on epoxy (\"spun-coated\" PPC at 3000 rpm) and device fabrication via electron-beam lithography, thermal evaporation, and reactive ion etching. Nowhere does it state that the synthesis or deposition operation for the material/device was \"spin coat\" (or \"spin coat\" as the primary synthesis operation). The only spin-related step is \"spun-coated\" PPC (a polymer transfer layer), which is a fabrication/transfer support step rather than the synthesis operation for MoS2/hBN heterostructures or contacts.",
+              "suggested_fix": "Not specified (no explicit 'spin coat' synthesis operation stated). If capturing a processing step: 'spun-coated PPC at 3000 rpm for 2 min' (transfer stack preparation), but this is not described as the synthesis operation."
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Methods \u2013 Heterostructure Assembly"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Pickup of exfoliated flakes using PPC stamp and KOH etching",
+        "operations": [
+          {
+            "action": "etch",
+            "parameters": {
+              "inputs": [
+                "chem_9"
+              ],
+              "volume": {
+                "value": 0.03,
+                "unit": "mL"
+              },
+              "concentration": {
+                "value": 2,
+                "unit": "M"
+              }
+            },
+            "notes": "Etched top SiO2 few \u00c5 to release flakes",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes an etching step as part of device fabrication: the hBN\u2212MoS2\u2212hBN heterostructure perimeter was \u201creactively ion-etched\u201d/\u201cetching to expose the edges\u201d (Page 4, Figure 3a caption) and Methods describe reactive ion etching of the heterostructure edges (Page 7). This supports the synthesis/fabrication operation being an etch.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "rinse",
+            "parameters": {},
+            "notes": "Deionized water rinse to remove KOH",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.87,
+              "reasoning": "The Methods section explicitly describes a rinsing step during heterostructure assembly: after KOH etching, \u201cthe glass slide with the epoxy/PPC/flake was then rinsed with deionized water to remove any KOH residue.\u201d This supports the synthesis operation 'rinse' (even though the provenance list is empty).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Methods \u2013 Heterostructure Assembly"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Release and stacking of flakes to form hBN\u2013MoS2\u2013hBN heterostructure",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 368,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 5,
+                "unit": "min"
+              }
+            },
+            "notes": "Melt PPC (95\u2013100 \u00b0C) to release flake onto target substrate",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.83,
+              "reasoning": "The paper explicitly discusses heating during electrochemical intercalation and reports that the phase transition occurs at lower applied voltages upon heating (\u201cThe phase transition occurs at lower applied voltages upon heating the heterostructure...\u201d, Page 1 abstract). It also describes in situ heating experiments (60 \u00b0C, 100 \u00b0C) in Results (Pages 5\u20136) and Methods (\u201cin situ heating experiments were conducted...\u201d). This supports that a synthesis/processing operation involved \u2018heat\u2019 (heating).",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_17"
+              ],
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "PPC dissolved in chloroform overnight",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper\u2019s experimental and methods sections describe exfoliation, transfer/stacking, etching, electrode deposition, electrolyte addition, and Li intercalation. Nowhere does the synthesis description explicitly state a step of \u201cdissolve\u201d as a synthesis operation (aside from mentioning PPC being dissolved in chloroform and reagents/electrolyte being solutions). Thus, \u201cdissolve\u201d is not supported as a general synthesis operation for the material/device fabrication in this paper.",
+              "suggested_fix": "Use a supported operation such as \u201cexfoliate\u201d, \u201ctransfer/stack/assemble\u201d, \u201cdeposit (thermal evaporation)\u201d, \u201cetch (reactive ion etch)\u201d, or if specifically referring to polymer removal: \u201cdissolve PPC in chloroform overnight\u201d."
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Methods \u2013 Heterostructure Assembly"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Deposition of metal contacts",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": [
+                "chem_7",
+                "chem_8"
+              ],
+              "thickness": "10 nm Cr / 100 nm Au",
+              "method": "thermal evaporation"
+            },
+            "notes": "Patterned by electron beam lithography",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.86,
+              "reasoning": "The paper discusses electrochemical lithium intercalation, device fabrication, and metal contact deposition (e.g., \u201cCr/Au metal contacts directly deposited onto the top surface of MoS2\u201d), but it does not describe a general synthesis operation of the MoS2 or hBN as \u201cdeposit.\u201d The work uses mechanically exfoliated flakes and stacked heterostructures; the \u201cdeposited\u201d step refers to depositing metal contacts/electrodes, not synthesizing the materials/heterostructure itself. Therefore labeling the synthesis operation as \u201cdeposit\u201d is not explicitly supported.",
+              "suggested_fix": "Use \u201cexfoliation\u201d / \u201cmechanical exfoliation\u201d (and \u201cstacking/transfer to form heterostructure\u201d) as the synthesis/assembly operation; if the field is meant to capture electrode fabrication, specify \u201cthermal evaporation deposition of Cr/Au contacts\u201d instead."
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Device Fabrication"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Edge exposure via lithography and reactive ion etching (optional variant)",
+        "operations": [
+          {
+            "action": "spin coat",
+            "parameters": {
+              "inputs": [
+                "chem_12"
+              ],
+              "speed": "4000 rpm",
+              "duration": {
+                "value": 2,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 453,
+                "unit": "K"
+              }
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The Methods section explicitly states that a 13 wt % PPC solution \u201cwas spun-coated onto the epoxy at 3000 rpm for 2 min\u201d, which is a spin-coating synthesis/fabrication operation. Therefore the extracted synthesis operation \u201cspin coat\u201d is supported by the paper text (even though no provenance was provided).",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "spin coat",
+            "parameters": {
+              "inputs": [
+                "chem_13"
+              ],
+              "speed": "3000 rpm"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper\u2019s experimental fabrication uses spin-coating only for depositing a PPC polymer layer (\u201cPPC \u2026 was spun-coated onto the epoxy at 3000 rpm for 2 min\u201d) and also PMMA/HSQ resist spin-coating during lithography. Nowhere does the text describe \u201cspin coat/spin coating\u201d as a synthesis operation for MoS2 or hBN\u2212MoS2\u2212hBN heterostructures (these are made by mechanical exfoliation and transfer/stacking). Therefore, labeling the synthesis operation as \u201cspin coat\u201d is not supported.",
+              "suggested_fix": "Replace with the explicitly described synthesis/assembly operation: \u201cmechanical exfoliation\u201d and \u201cflake transfer/stacking to assemble hBN\u2212MoS2\u2212hBN heterostructures\u201d (spin-coating applies only to PPC/PMMA/HSQ layers used in processing)."
+            }
+          },
+          {
+            "action": "develop",
+            "parameters": {
+              "duration": {
+                "value": 4,
+                "unit": "min"
+              }
+            },
+            "notes": "MF-312 developer",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.94,
+              "reasoning": "The paper does not use the term \u201cdevelop\u201d as a synthesis operation, nor does it describe a \u201cdevelop\u201d step as part of material synthesis. The work focuses on assembling hBN\u2013MoS2\u2013hBN heterostructures and electrochemical Li intercalation; fabrication steps include electron-beam lithography and resist development (e.g., \u201cdeveloped in a MF-312 developer\u201d), but that is a lithography processing step, not a synthesis operation, and the extracted value is not explicitly stated as the operation name.",
+              "suggested_fix": "If the intent is the device-processing operation, use \u201cdevelop (lithography development in MF-312 developer)\u201d. If the intent is a synthesis operation, a better value from the text would be \u201cheterostructure assembly (stacking/transfer)\u201d or \u201celectrochemical lithium intercalation\u201d depending on the schema."
+            }
+          },
+          {
+            "action": "plasma etch",
+            "parameters": {
+              "inputs": [
+                "chem_14"
+              ],
+              "flow_rate": "20 sccm",
+              "power": "50 W",
+              "duration": {
+                "value": 0.25,
+                "unit": "min"
+              }
+            },
+            "notes": "O2 plasma to remove PMMA",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper does not describe a synthesis operation specifically as \"plasma etch\" or \"plasma etching\". It mentions O2 plasma treatment of substrates prior to exfoliation and an O2 plasma step used during reactive ion etching (device fabrication/edge exposure), but these are fabrication/cleaning steps, not a stated synthesis operation labeled as \"plasma etch\".",
+              "suggested_fix": "If the field is meant to capture processing steps, use: \"O2 plasma treatment\" (substrate cleaning) and/or \"reactive ion etching with O2/CHF3 (including an O2 plasma step)\" for edge exposure. If it must be a synthesis operation, it is not specified."
+            }
+          },
+          {
+            "action": "reactive ion etch",
+            "parameters": {
+              "inputs": [
+                "chem_14",
+                "chem_15"
+              ],
+              "flow_rate": "4 sccm O2 / 40 sccm CHF3",
+              "power": "60 W",
+              "duration": {
+                "value": 2,
+                "unit": "min"
+              }
+            },
+            "notes": "Edge etching of heterostructure",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.94,
+              "reasoning": "The paper explicitly states that the heterostructure perimeter/edges were \"reactively ion-etched\" to expose the MoS2 edges to the electrolyte (Page 4: \"fabricated a hBN\u2212MoS2\u2212hBN heterostructure and reactively ion-etched its perimeter\"; and Methods on Page 7 describe \"reactive ion etching (Oxford Plasmalab 100)\"). This directly supports the synthesis/fabrication operation being reactive ion etch.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "clean",
+            "parameters": {
+              "inputs": [
+                "acetone"
+              ]
+            },
+            "notes": "Mask removal",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.9,
+              "reasoning": "The paper\u2019s Methods and experimental description include many synthesis/fabrication steps (mechanical exfoliation, stacking/transfer, metal deposition, reactive ion etching, solvent cleaning/dissolution, etc.), but nowhere is there an explicit \u201cSynthesis Operation: clean\u201d step or the operation named \u201cclean.\u201d Thus the extracted value is not directly supported by the text.",
+              "suggested_fix": "If the field is meant to capture a specific named operation, it is not explicitly stated; use \"Not specified\". If it should capture fabrication operations, list those explicitly mentioned (e.g., exfoliation, transfer/stacking, sonication in acetone/isopropyl alcohol, O2 plasma treatment, thermal evaporation, reactive ion etching, PPC dissolved in chloroform)."
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Edge-exposed Device Fabrication"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Edge covering with thick Au layer (optional variant)",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": [
+                "chem_8"
+              ],
+              "method": "thermal evaporation",
+              "notes": "Covers heterostructure edges to block Li diffusion"
+            },
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.86,
+              "reasoning": "The paper describes multiple synthesis/fabrication operations (mechanical exfoliation, transfer/stacking to assemble hBN\u2013MoS2\u2013hBN heterostructures, electrode patterning by e-beam lithography, Cr/Au deposited by thermal evaporation, and reactive ion etching). It does not describe any synthesis operation as simply \u201cdeposit\u201d as the primary operation; deposition is only mentioned specifically as metal contact deposition (Cr/Au) by thermal evaporation, which is a distinct, more specific operation than the generic term \u201cdeposit.\u201d Thus the extracted value is too vague and not explicitly supported as stated.",
+              "suggested_fix": "If the field intends the key fabrication operation, use \u201cmechanical exfoliation and stacking/transfer (heterostructure assembly)\u201d and/or \u201cCr/Au deposition by thermal evaporation (metal contacts).\u201d"
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Methods \u2013 Li diffusion pathways study"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Assembly of sealed electrochemical microreactor",
+        "operations": [
+          {
+            "action": "attach",
+            "parameters": {},
+            "notes": "Device mounted on glass slide; Au contacts wire-bonded to copper tape",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.78,
+              "reasoning": "The paper\u2019s Methods and Results describe multiple synthesis/fabrication actions (mechanical exfoliation, stacking/transfer, lithography, thermal evaporation, etching, cell assembly, etc.), but there is no explicit synthesis operation described as \u201cattach,\u201d nor is \u201cattach\u201d used as a named operation. The closest wording is that \u201cdevices fabricated on SiO2/Si were attached to a glass slide,\u201d which is a mounting step, not a synthesis operation label.",
+              "suggested_fix": "If the intent is a fabrication operation, use a term explicitly supported such as \u201cmechanical exfoliation,\u201d \u201cstacking/transfer to form hBN\u2212MoS2\u2212hBN heterostructures,\u201d or \u201cdevices were attached to a glass slide\u201d (mounting). If the field must be one word: \u201cexfoliate\u201d or \u201cstack\u201d are supported by the text; \u201cattach\u201d is not as an operation name."
+            }
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "inputs": [
+                "chem_11"
+              ]
+            },
+            "notes": "Glass top cover epoxied on three sides",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.78,
+              "reasoning": "The paper uses the term \u201cseal\u201d only in the context of \u201csealed with an optical-grade glass top cover\u201d and \u201cforming an air-tight seal\u201d during electrochemical cell fabrication (Methods). It does not describe a synthesis step/operation named \u201cseal\u201d for material synthesis. Thus, labeling the Synthesis Operation as \u201cseal\u201d is not explicitly supported by the text.",
+              "suggested_fix": "If this field is meant to capture a device/cell assembly operation (not synthesis), use: \u201csealed the electrochemical cell with epoxy to form an air-tight seal (glass top cover)\u201d. If it truly must be a synthesis operation, then it is not specified in the paper."
+            }
+          },
+          {
+            "action": "insert",
+            "parameters": {
+              "inputs": [
+                "chem_3"
+              ]
+            },
+            "notes": "Li metal pressed onto Cu foil inserted as reference/counter electrode",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.92,
+              "reasoning": "The extracted value for the field \"Synthesis Operation\" is \"insert\". While the paper frequently discusses lithium intercalation and uses the verb \"inserted\" in contexts like \"intercalating Li\" and \"Li atom is intercalated/placed\" (e.g., Page 2: \"when a Li atom is intercalated...\"; Methods: \"a Li atom was placed...\"), it does not define or list a discrete synthesis step/operation explicitly labeled as \"insert\". There is no explicit synthesis procedure step called \"insert\"; the relevant operation described is \"electrochemical lithium intercalation\" or \"intercalation\" rather than an operation name \"insert.\"",
+              "suggested_fix": "electrochemical lithium intercalation (Li+ intercalation)"
+            }
+          },
+          {
+            "action": "fill",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5",
+                "chem_6"
+              ]
+            },
+            "notes": "Cell filled with 1 M LiPF6 in EC/DEC (50/50)",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.96,
+              "reasoning": "The paper text does not mention any synthesis operation described as \"fill\" (or equivalent). The Methods and experimental sections discuss exfoliation, stacking/transfer, electrode deposition, etching, and electrochemical cell assembly, but no step is labeled or described as a \"fill\" synthesis operation. Therefore the extracted value is not explicitly supported by the source.",
+              "suggested_fix": "Not specified (no \"fill\" synthesis operation is described in the text)."
+            }
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "inputs": [
+                "chem_11"
+              ]
+            },
+            "notes": "Fourth side sealed to form airtight cell",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.83,
+              "reasoning": "The paper does not describe a synthesis step/operation as simply \u201cseal\u201d. The only relevant use is in electrochemical cell fabrication: the enclosed cell \u201cis sealed with an optical-grade glass top cover\u201d and later \u201cthe open side was then covered with epoxy and allowed to cure, forming an air-tight seal.\u201d This is a device/cell assembly sealing step, not a synthesis operation labeled \u201cseal.\u201d",
+              "suggested_fix": "If the field is intended to capture a process step, use: \u201csealed the electrochemical cell with an optical-grade glass top cover; open side covered with epoxy to form an air-tight seal.\u201d If it must be a single-word operation: \u201cseal (electrochemical cell with epoxy/glass cover)\u201d."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.92,
+            "reasoning": "The paper mentions that subsequent electrochemical cell fabrication steps were conducted in an \"argon glovebox\" (Methods: Electrochemical Cell Fabrication), but it does not state that the *synthesis* was performed in an argon glovebox. The term appears in the context of device/cell assembly and handling prior to intercalation experiments, not synthesis of materials.",
+            "suggested_fix": "If the field intends the experimental handling/assembly atmosphere: \"argon glovebox\". If it strictly intends synthesis atmosphere: \"Not specified\"."
+          }
+        },
+        "prov": [
+          "Electrochemical Cell Fabrication"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Exfoliation of starting crystals",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.86,
+          "reasoning": "The paper describes mechanically exfoliating MoS2 and hBN flakes from bulk crystals and assembling hBN\u2013MoS2\u2013hBN heterostructures (Methods: \u201cmechanically exfoliated\u2026 using the scotch-tape method\u201d), but it does not present a workflow step/timeline item explicitly phrased as \u201cExfoliation of starting crystals.\u201d There is no explicit workflow timeline section; the closest support is the Methods description of exfoliation, which is not framed as a timeline entry.",
+          "suggested_fix": "If the field is meant to capture a workflow step, use wording explicitly supported by the text, e.g., \u201cMoS2 and hBN flakes were mechanically exfoliated from bulk crystals onto SiO2/Si substrates (scotch-tape method).\u201d If the field requires an actual \u2018timeline\u2019, mark as Not specified."
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of pickup stamp",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.91,
+          "reasoning": "The paper\u2019s Methods/Experimental section describes heterostructure assembly using an epoxy/PPC droplet on a glass slide (a transfer \u201cpickup\u201d technique), but it never explicitly states a workflow step named \u201cPreparation of pickup stamp\u201d nor uses that phrasing as a timeline item. Therefore the extracted workflow-timeline value is not directly supported by the text.",
+          "suggested_fix": "If the workflow timeline must reflect the paper\u2019s wording, use something like: \u201cHeterostructure assembly and device fabrication (epoxy/PPC transfer stamp prepared by curing epoxy on glass slide and spin-coating PPC)\u201d or simply \u201cHeterostructure assembly and device fabrication\u201d."
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "KOH-assisted pickup of flakes",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The Methods section explicitly states: \"Flakes of the desired size and thickness were transferred ... using a KOH-assisted technique\" and describes adding a 2 M aqueous KOH solution to \"release the flake\" onto the pickup droplet, i.e., a KOH-assisted pickup/transfer of flakes. This supports the workflow timeline item \"KOH-assisted pickup of flakes.\"",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Stacking to build hBN\u2013MoS2\u2013hBN heterostructure",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper discusses electrochemical Li+ intercalation experiments on hBN\u2013MoS2\u2013hBN heterostructures and states that MoS2 flakes were \u201csandwiched between exfoliated flakes of hBN\u201d and that \u201cMoS2 and hBN flakes were stacked on each other to form hBN\u2212MoS2\u2212hBN heterostructures\u201d (Methods; also Results). However, it does not present a workflow timeline step explicitly phrased as \u201cStacking to build hBN\u2013MoS2\u2013hBN heterostructure,\u201d nor does it describe this as a timeline item. The extracted value reads like a process step in a workflow timeline rather than a statement in the text.",
+          "suggested_fix": "If the field is meant to capture a fabrication step (not explicitly labeled as a timeline), use: \u201cMoS2 and hBN flakes were stacked to form hBN\u2013MoS2\u2013hBN heterostructures (MoS2 sandwiched between top and bottom hBN).\u201d If it must be a \u2018workflow timeline\u2019 entry explicitly, the paper does not provide such a timeline."
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Metal contact deposition",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper discusses metal contact materials and how they were made (e.g., \u201cCr/Au metal contacts directly deposited\u2026\u201d and \u201c10 nm Cr/100 nm Au was deposited using thermal evaporation\u201d), but it does not present a workflow timeline step labeled \u201cMetal contact deposition.\u201d The extracted value is a fabrication step, not an explicit timeline entry in the text.",
+          "suggested_fix": "If the field is meant to capture fabrication steps, use: \u201cCr/Au metal contact deposition (10 nm Cr/100 nm Au) by thermal evaporation (after e-beam lithography patterning).\u201d If it must be a named timeline label, it is not explicitly specified in the paper."
+        }
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Optional edge exposure via RIE",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The paper explicitly describes an \u201cedge-exposed\u201d device created by reactive ion etching: \u201cwe fabricated a hBN\u2212MoS2\u2212hBN heterostructure and reactively ion-etched its perimeter, directly exposing the edges of MoS2 to the liquid electrolyte\u2026\u201d (Page 4). This corresponds to an optional edge exposure step via RIE in the workflow.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Optional edge covering with Au",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The paper discusses an architecture where the heterostructure edge is covered with a thick layer of gold to block edge intercalation (page 4: \u201cthe heterostructure edge is covered with a thick layer of gold to block edge intercalation\u201d). However, it does not describe this step as an \u201coptional edge covering with Au\u201d in a workflow timeline, nor does it frame it as optional within a general workflow; it is presented as a specific experimental variant/device (\u201cedge-covered heterostructure\u201d) fabricated for studying Li+ diffusion pathways.",
+          "suggested_fix": "Fabricated an edge-covered hBN\u2013MoS2\u2013hBN heterostructure by covering the heterostructure edge with a thick Au layer to block edge intercalation (a specific device variant used to test Li+ diffusion pathways)."
+        }
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Electrochemical microreactor assembly",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The document discusses using/ integrating devices into \u201celectrochemical microreactors\u201d for Li+ intercalation experiments (e.g., Results section: \u201cintegrated into electrochemical microreactors\u201d and Figure 2b schematic), but it does not present a workflow timeline item explicitly labeled \u201cElectrochemical microreactor assembly.\u201d The Methods describe electrochemical cell fabrication and heterostructure assembly, which is related, but the exact extracted timeline entry is not stated as such.",
+          "suggested_fix": "If the intended timeline step is supported by the paper\u2019s language, use: \u201cDevices were integrated into electrochemical microreactors for Li+ intercalation (electrochemical cell fabrication described in Methods).\u201d"
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified epoxy curing temperature",
+        "excerpt": "a hemispherical droplet of epoxy ... was cured on a glass slide",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.83,
+          "reasoning": "The paper does specify the epoxy curing temperature in the Methods section during heterostructure assembly: \u201ca hemispherical droplet of epoxy \u2026 was cured on a glass slide\u201d is followed by \u201cPPC \u2026 was spun-coated \u2026 and cured at 90 \u00b0C for 2 min.\u201d Thus, curing temperature information is present, so labeling it as \u2018Unspecified epoxy curing temperature\u2019 is not supported by the source text. (Note: the 90 \u00b0C cure is explicitly for the PPC layer on epoxy; the epoxy droplet itself is described as \u2018cured\u2019 but without an explicit temperature.)",
+          "suggested_fix": "Revise the ambiguity to: \u2018Epoxy droplet curing conditions (temperature/time) not specified; subsequent PPC layer is cured at 90 \u00b0C for 2 min.\u2019"
+        }
+      },
+      {
+        "issue": "No explicit amount for Au edge-cover thickness",
+        "excerpt": "covering the edges with a thick layer of gold",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper states that the heterostructure edge was covered \u201cwith a thick layer of gold to block edge intercalation\u201d (Page 4, Lithium Diffusion Pathways section; also Figure 3c caption: \u201cafter covering the edges with gold\u201d). Nowhere in the provided full text is an explicit numerical thickness (e.g., nm) given for this Au edge-cover layer\u2014only the qualitative descriptor \u201cthick layer of gold.\u201d Therefore the extraction correctly flags that there is no explicit amount for the Au edge-cover thickness.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength": "633 nm",
+        "laser_power": "3\u20137.5 mW",
+        "grating": "1800 lines/mm",
+        "exposures": "15 \u00d7 5 s"
+      },
+      "results": [
+        {
+          "metric": "phase transition voltage (room temperature)",
+          "value": 1.0,
+          "unit": "V vs Li/Li+"
+        },
+        {
+          "metric": "phase transition voltage (60 \u00b0C heterostructure)",
+          "value": null,
+          "unit": "V vs Li/Li+",
+          "notes": "No transition at 1.1 V up to 60 \u00b0C"
+        },
+        {
+          "metric": "phase transition temperature at 1.1 V (bare MoS2)",
+          "value": 333,
+          "unit": "K"
+        },
+        {
+          "metric": "phase transition temperature at 1.1 V (heterostructure)",
+          "value": 373,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Raman peak evolution (E2g, A1g suppressed; J1, J2 appear) indicates 2H to 1T\u2032 transition.",
+      "prov": [
+        "Figures 2e; 3b; 3d; 4b; 4e"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The text supports a 2H\u21921T\u2032 phase transition at 1.0 V vs Li/Li+ at room temperature for both bare MoS2 and hBN\u2013MoS2\u2013hBN (Fig. 2e; also Fig. 3b,d). It also states that at 1.1 V vs Li/Li+ the heterostructure shows no phase change at room temperature and at 60 \u00b0C, with onset only at 100 \u00b0C (Fig. 4e). However, the extracted temperature values are incorrect: the paper reports temperatures in \u00b0C (20, 60, 100 \u00b0C), not 333 K and 373 K, and specifically the onset at 1.1 V occurs at 60 \u00b0C for bare MoS2 and at 100 \u00b0C (after 5 min) for the heterostructure. Therefore the entries '333 K (bare)' and '373 K (heterostructure)' are not supported. The 'heterostructure 60 \u00b0C value: None' is supported, but the overall list contains unsupported items.",
+        "suggested_fix": "Use: (1) phase transition voltage (room temperature): 1.0 V vs Li/Li+ (bare and heterostructure). (2) At 1.1 V vs Li/Li+: bare MoS2 onset at 60 \u00b0C (333 K) and full transition at 100 \u00b0C; heterostructure shows no transition at 60 \u00b0C and onset at 100 \u00b0C (373 K, after 5 min) with full transition after 10 min."
+      }
+    },
+    {
+      "method": "Optical microscopy (in situ)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Visual darkening corresponding to phase change",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figures 2c, 2d, 3a, 3c, 4a, 4d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly reports an in situ optical microscopy color change (\u201cturned dark\u201d/\u201cdarkened\u201d) during electrochemical lithiation that is linked to the MoS2 2H\u21921T\u2032 phase transition. On Page 4, the text states that in situ optical microscopy shows MoS2 \u201cturned dark\u201d at 1.0 V vs Li/Li+ (heterostructure) and bare MoS2 \u201calso darkened\u201d at 1.0 V, and adds that \u201cThe color change may indicate a phase transition to the 1T\u2032 phase,\u201d which Raman confirms. This supports the metric description \u201cVisual darkening corresponding to phase change.\u201d The cited figures (2c, 2d, and also 4a/4d show darkened regions) align with this observation, though the extracted entry has empty value/unit fields.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density Functional Theory",
+        "results": [
+          {
+            "equation": "",
+            "value": 100,
+            "unit": "mJ m-2",
+            "notes": "Intercalated Li stabilizes 1T\u2013MoS2\u2013hBN interface over 2H by ~100 mJ m\u22122"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.94,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly states multiple analysis/characterization methods used, including \u201cin situ Raman spectroscopy\u201d (also in Keywords and throughout Results), \u201cin situ optical microscopy,\u201d and \u201ccyclic voltammetry,\u201d as well as \u201cdensity functional theory (DFT) calculations\u201d in the computational section. Therefore, leaving the field empty is not supported by the document text.",
+          "suggested_fix": "Analysis Method: in situ Raman spectroscopy (primary experimental analysis); also in situ optical microscopy, cyclic voltammetry, and DFT calculations."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,520 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Interactions between Lithium Growths and Nanoporous Ceramic Separators",
+    "doi": "10.1016/j.joule.2018.08.018",
+    "authors": ["Peng Bai", "Jinzhao Guo", "Miao Wang", "Akihiro Kushima", "Liang Su", "Ju Li", "Fikile R. Brushett", "Martin Z. Bazant"],
+    "journal": "Joule",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "electrochemical cell assembly and testing",
+    "tags": ["lithium metal anode", "separator", "AAO membrane", "critical current density"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Sandwich lithium symmetric cell",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": ["Page 2446 'Sandwich Cell'"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Glass-capillary junction lithium cell",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": ["Page 2446 'Junction Cell'"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Chips, 99.9% purity, 250 µm and 450 µm thick, 15.6 mm diameter (MTI).",
+      "prov": ["Page 2446 'Materials'"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "In EC/DMC 1:1 v/v electrolyte.",
+      "prov": ["Page 2446 'Materials'"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Component of electrolyte (1:1 v/v with DMC).",
+      "prov": ["Page 2446 'Materials'"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Component of electrolyte (1:1 v/v with EC).",
+      "prov": ["Page 2446 'Materials'"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Anodic aluminum oxide membrane",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "separator",
+        "category": "ceramic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Whatman AAO, 60 µm thick, 13 mm diameter, 100 nm or 200 nm pores.",
+      "prov": ["Page 2446 'Materials'"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Polyvinylidene fluoride washer",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {
+        "role": "spacer",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "127 µm thickness, inner diameter 8 mm.",
+      "prov": ["Page 2446 'Sandwich Cell'"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Stainless steel",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "current collector",
+        "category": "alloy"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as current collectors and wires.",
+      "prov": ["Page 2446 'Sandwich Cell'"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Ceramic-coated polyethylene separator",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "separator",
+        "category": "composite"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2 µm Al2O3 coating each side of 12 µm PE core (total 16 µm).",
+      "prov": ["Page 2442 'Existing Ceramic Separators/Electrolytes'"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Polytetrafluoroethylene washer",
+      "molecular_formula": "(C2F4)n",
+      "ontology": {
+        "role": "spacer",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "50 µm thick, inner diameter 8 mm.",
+      "prov": ["Page 2442 'Existing Ceramic Separators/Electrolytes'"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Epoxy resin",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "adhesive",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to seal glass capillaries; cured overnight.",
+      "prov": ["Page 2446 'Junction Cell'"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glovebox atmosphere, H2O & O2 < 1 ppm.",
+      "prov": ["Page 2446 'Measurement and Characterization'"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of polymer washers",
+        "operations": [
+          {
+            "action": "punch",
+            "parameters": {
+              "inputs": ["chem_6"],
+              "inner_diameter_mm": 8
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "PVDF sheet thickness 127 µm.",
+            "prov": ["Page 2446 'Sandwich Cell'"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 2446 'Sandwich Cell'"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Assembly of sandwich lithium symmetric cell",
+        "operations": [
+          {
+            "action": "stack",
+            "parameters": {
+              "inputs": ["chem_7", "chem_1", "chem_6", "chem_5"]
+            },
+            "notes": "Stack order SS | Li | Washer | AAO | Washer | Li | SS.",
+            "prov": ["Page 2446 'Sandwich Cell'"]
+          },
+          {
+            "action": "dispense",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3", "chem_4"],
+              "amount": "excess"
+            },
+            "notes": "Ensure AAO fully wetted and washer compartment filled.",
+            "prov": ["Page 2446 'Sandwich Cell'"]
+          },
+          {
+            "action": "seal",
+            "parameters": {},
+            "notes": "Seal stack in split test cell.",
+            "prov": ["Page 2446 'Sandwich Cell'"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (H2O,O2<1 ppm)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 2446 'Sandwich Cell'"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Assembly of sandwich cell with ceramic-coated PE separator",
+        "operations": [
+          {
+            "action": "stack",
+            "parameters": {
+              "inputs": ["chem_7", "chem_1", "chem_8", "chem_9", "chem_1"]
+            },
+            "notes": "Stack order SS | Li | ceramic-coated PE separator | PTFE washer | Li | SS.",
+            "prov": ["Page 2442 'Existing Ceramic Separators/Electrolytes'"]
+          },
+          {
+            "action": "dispense",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3", "chem_4"],
+              "amount": "excess"
+            },
+            "notes": "",
+            "prov": ["Page 2442 'Existing Ceramic Separators/Electrolytes'"]
+          },
+          {
+            "action": "seal",
+            "parameters": {},
+            "notes": "Seal in split cell.",
+            "prov": ["Page 2442 'Existing Ceramic Separators/Electrolytes'"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (H2O,O2<1 ppm)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 2442"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Construction of glass-capillary junction cell",
+        "operations": [
+          {
+            "action": "cut",
+            "parameters": {
+              "inputs": [],
+              "length_cm": 3
+            },
+            "notes": "Cut two glass capillary segments.",
+            "prov": ["Page 2446 'Junction Cell'"]
+          },
+          {
+            "action": "align",
+            "parameters": {},
+            "notes": "Align capillaries on glass slide; fix with adhesive tape.",
+            "prov": ["Page 2446 'Junction Cell'"]
+          },
+          {
+            "action": "insert",
+            "parameters": {
+              "inputs": ["chem_5"],
+              "size_mm2": "1-2"
+            },
+            "notes": "AAO piece inserted between capillaries.",
+            "prov": ["Page 2446 'Junction Cell'"]
+          },
+          {
+            "action": "dispense",
+            "parameters": {
+              "inputs": ["chem_10"]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "Epoxy applied to seal junction; cured overnight.",
+            "prov": ["Page 2446 'Junction Cell'"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 2446 'Junction Cell'"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Electrolyte filling and lithium insertion in junction cell",
+        "operations": [
+          {
+            "action": "fill",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3", "chem_4"],
+              "method": "capillary action"
+            },
+            "notes": "Electrolyte introduced starting from one side until AAO wetted.",
+            "prov": ["Page 2446 'Junction Cell'"]
+          },
+          {
+            "action": "insert",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "form": "thin filaments"
+            },
+            "notes": "Lithium filaments pushed into each capillary with stainless steel wire.",
+            "prov": ["Page 2446 'Junction Cell'"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (H2O,O2<1 ppm)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 2446 'Junction Cell'"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Washer preparation"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Assembly of baseline sandwich cell for separator penetration study"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Assembly of sandwich cell using commercial ceramic-coated separator"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Fabrication of transparent junction cell body"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Electrolyte filling and electrode insertion in junction cell"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact quantity of electrolyte dispensed defined as 'excess', not specified.",
+        "excerpt": "During the assembling process, excess electrolyte was dispensed to ensure the compartment... fully filled"
+      },
+      {
+        "issue": "Limiting current density equation misprinted; units unclear.",
+        "excerpt": "Jlim= 2zcc0FDapp(taL)/C01"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Scanning Electron Microscopy (SEM)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "lithium filament observation",
+          "value": "",
+          "unit": "",
+          "notes": "Thin Li filaments detected on top of AAO after penetration."
+        }
+      ],
+      "interpretation": "Confirmed that sudden voltage drops correspond to metal penetration through separator.",
+      "prov": ["Figure 3C–E"]
+    },
+    {
+      "method": "Optical Microscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "deposit advancement length",
+          "value": 11,
+          "unit": "mm",
+          "notes": "Observed in operando junction cell from time C to F."
+        }
+      ],
+      "interpretation": "Used to calculate porosity of lithium deposits (~38%).",
+      "prov": ["Figure 4C–F"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Limiting current density calculation (dilute solution theory)",
+        "results": [
+          {
+            "equation": "J_lim calculation using D_app=2.3×10^-6 cm^2 s^-1, L=300 µm",
+            "value": 20,
+            "unit": "mA cm^-2"
+          }
+        ],
+        "prov": ["Page 2436"]
+      },
+      {
+        "method_name": "Limiting current density estimation for ceramic-coated PE separator",
+        "results": [
+          {
+            "equation": "Corrected D_por= D_app/τ with τ=3.43, L=16 µm",
+            "value": 109,
+            "unit": "mA cm^-2"
+          }
+        ],
+        "prov": ["Page 2442"]
+      },
+      {
+        "method_name": "Critical current density determination from penetration tests",
+        "results": [
+          {
+            "equation": "Empirical from Fig.2F",
+            "value": 6,
+            "unit": "mA cm^-2"
+          }
+        ],
+        "prov": ["Figure 2F"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-17T20:25:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

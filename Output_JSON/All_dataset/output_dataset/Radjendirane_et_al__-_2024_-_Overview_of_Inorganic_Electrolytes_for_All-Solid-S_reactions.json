@@ -1,0 +1,182 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Overview of Inorganic Electrolytes for All-Solid-State Sodium Batteries",
+    "doi": "10.1021/acs.langmuir.4c01845",
+    "authors": [
+      "Aakash Carthick Radjendirane",
+      "Dheeraj Kumar Maurya",
+      "Juanna Ren",
+      "Hua Hou",
+      "Hassan Algadi",
+      "Ben Bin Xu",
+      "Zhanhu Guo",
+      "Subramania Angaiah"
+    ],
+    "journal": "Langmuir",
+    "year": 2024
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["solid-state sodium batteries", "inorganic electrolytes"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "cubic Na3PS4",
+      "molecular_formula": "Na3PS4",
+      "intended_role": "electrolyte",
+      "prov": ["Page 1697"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "tetragonal Na3PS4",
+      "molecular_formula": "Na3PS4",
+      "intended_role": "electrolyte",
+      "prov": ["Page 1697"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Na2S",
+      "molecular_formula": "Na2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "part of 75Na2S-25P2S5 glass precursor",
+      "prov": ["Page 1697"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "part of 75Na2S-25P2S5 glass precursor",
+      "prov": ["Page 1697"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Heat treatment of 75Na2S-25P2S5 glass to obtain different Na3PS4 polymorphs",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "temperature": {
+              "value": 543,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Heating at 270 °C yields cubic Na3PS4"
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "temperature": {
+              "value": 673,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Heating at 400 °C yields tetragonal Na3PS4"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 1697"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Thermal conversion of Na2S/P2S5 glass precursor to Na3PS4 polymorphs"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing time/atmosphere details for heat treatment",
+        "excerpt": "cubic and tetragonal phases of 75Na2S-25P2S5 glass at 270 and 400°C"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 2.0e-4,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "superionic cubic Na3PS4 shows high conductivity",
+      "prov": ["Page 1697"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 184,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

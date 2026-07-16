@@ -1,0 +1,481 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Electrochemical surface passivation of LiCoO2 particles at ultrahigh voltage and its applications in lithium-based batteries",
+    "doi": "10.1038/s41467-018-07296-6",
+    "authors": [
+      "Jiawei Qian",
+      "Lei Liu",
+      "Jixiang Yang",
+      "Siyuan Li",
+      "Xiao Wang",
+      "Houlong L. Zhuang",
+      "Yingying Lu"
+    ],
+    "journal": "Nature Communications",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": [
+      "LiCoO2",
+      "surface passivation",
+      "hydrothermal synthesis",
+      "battery cathode"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li, Al, F–modified LiCoO2 (LAF-LCO)",
+      "molecular_formula": "Li, Al, F–modified LiCoO2 (LAF-LCO)",
+      "intended_role": "product",
+      "prov": [
+        "Fig. 1a",
+        "Methods – Syntheses of LAF/AF/LF-LiCoO2"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Al(NO3)3·9H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.0683,
+        "unit": "g"
+      },
+      "notes": "amount for 2 % LAF-LCO batch",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiNO3",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.0126,
+        "unit": "g"
+      },
+      "notes": "amount for 2 % LAF-LCO batch",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "NH4F",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "fluorine source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.0283,
+        "unit": "g"
+      },
+      "notes": "amount for 2 % LAF-LCO batch",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiCoO2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "g"
+      },
+      "notes": "particle diameter 5 µm",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 30,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used during calcination",
+      "prov": [
+        "Methods"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of precursor solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_5"
+              ]
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Stirring until complete dissolution"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Introduction of LiCoO2 and stirring",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_4"
+              ]
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "LiCoO2 added slowly while stirring"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Hydrothermal reaction",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {},
+            "notes": "Mixture transferred to Teflon-lined autoclave"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 433.15,
+              "unit": "K"
+            },
+            "notes": "Hydrothermal treatment"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "autogenous",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Washing and drying",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "solvent": "H2O",
+              "times": 3
+            },
+            "notes": ""
+          },
+          {
+            "action": "anneal",
+            "parameters": {},
+            "duration": {
+              "value": 480,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 353.15,
+              "unit": "K"
+            },
+            "notes": "Convection oven"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Calcination / annealing to form LAF-LCO",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "heating_rate": "5 °C min-1"
+            },
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 773.15,
+              "unit": "K"
+            },
+            "notes": "Under argon"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dissolution of metal salts and NH4F"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Surface adsorption of precursors onto LiCoO2"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Hydrothermal growth of precursor layer at 160 °C"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Isolation and drying of coated particles"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Argon calcination at 500 °C to yield LAF-LCO"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "wt% definition of '2% LAF'",
+        "excerpt": "labeled 2% LAF-LCO (2 wt% LAF)",
+        "prov": "Methods – Syntheses"
+      },
+      {
+        "issue": "Exact argon pressure during calcination not specified",
+        "excerpt": "calcinated at 500 °C for 6 h in argon gas",
+        "prov": "Methods"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "coating thickness",
+          "value": 7,
+          "unit": "nm"
+        },
+        {
+          "metric": "MO nanoparticle size",
+          "value": "60–100",
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Confirms ultrathin fluorine-enriched layer and presence of Al/O nanoparticles",
+      "prov": [
+        "Fig. 2c–e"
+      ]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Al 2p peak (solid solution fraction)",
+          "value": 73.17,
+          "unit": "% peak area"
+        }
+      ],
+      "interpretation": "Indicates formation of Li-Al-Co-O-F solid solution",
+      "prov": [
+        "Fig. 3b"
+      ]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        "Confirmed in source paper"
+      ],
+      "interpretation": "Bulk layered structure retained after coating",
+      "prov": [
+        "Supplementary Fig. 4"
+      ]
+    },
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {
+        "current_density": 27.4,
+        "unit": "mA g-1",
+        "voltage_window": "3.0–4.6 V vs Li/Li+"
+      },
+      "results": [
+        {
+          "metric": "capacity after 200 cycles",
+          "value": 170.7,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention",
+          "value": 81.8,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Enhanced long-term stability compared to bare LCO",
+      "prov": [
+        "Fig. 4b"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Inductively Coupled Plasma (ICP)",
+        "results": [
+          {
+            "equation": "",
+            "value": "Lower Co dissolution for 2% LAF-LCO vs bare LCO",
+            "unit": ""
+          }
+        ]
+      },
+      {
+        "method_name": "DFT calculation",
+        "results": [
+          {
+            "equation": "Formation energy comparison",
+            "value": "-4.48 eV vs -3.69 eV (LiCoO2)",
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 170.7,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

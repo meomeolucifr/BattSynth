@@ -1,0 +1,363 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Electrolyte Design for Fast-Charging Li-Ion Batteries",
+    "doi": "10.1016/j.trechm.2020.01.011",
+    "authors": [
+      "E.R. Logan",
+      "J.R. Dahn"
+    ],
+    "journal": "Trends in Chemistry",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["electrolytes", "fast charging", "Li-ion batteries"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Electrolyte: 1 M LiPF6 in BN:EC (9:1) with 3% FEC",
+      "molecular_formula": "",
+      "intended_role": "electrolyte formulation",
+      "prov": ["Text – paragraph discussing Hilbig et al. [28]"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Electrolyte: 3.6 M LiFSI in DME",
+      "molecular_formula": "",
+      "intended_role": "electrolyte formulation",
+      "prov": ["Text – paragraph discussing Yamada et al. [33]"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Electrolyte: LiPF6 in EC:DMC 3:7 (w/w)",
+      "molecular_formula": "",
+      "intended_role": "reference electrolyte formulation",
+      "prov": ["Figure 1B description"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Butyronitrile",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Fluoroethylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "additive",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "%"
+      },
+      "notes": "percentage; exact basis not specified",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium bis(fluorosulfonyl)imide",
+      "molecular_formula": "LiN(SO2F)2",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "1,2-Dimethoxyethane",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Dimethyl carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of 1 M LiPF6 in BN:EC (9:1) with 3 % FEC additive",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"]
+            },
+            "ratio": "9:1",
+            "notes": "Ratio basis not specified"
+          },
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "concentration": {
+              "value": 1,
+              "unit": "M"
+            }
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "amount": {
+              "value": 3,
+              "unit": "%"
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Text – Hilbig et al. reference"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of 3.6 M LiFSI in DME",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6"]
+            },
+            "concentration": {
+              "value": 3.6,
+              "unit": "M"
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Text – Yamada et al. reference"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Preparation of LiPF6 in EC:DMC 3:7 (w/w) reference electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_3", "chem_7"]
+            },
+            "ratio": "3:7 w/w",
+            "notes": ""
+          },
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "concentration": {
+              "value": null,
+              "unit": "M"
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1B description"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Electrolyte formulation for high-rate performance study (Hilbig et al.)"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Highly concentrated electrolyte preparation for fast-charging study (Yamada et al.)"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Reference carbonate electrolyte preparation for conductivity comparison"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified basis for solvent ratios (volume vs weight)",
+        "excerpt": "“BN:EC 9:1” and “EC:DMC 3:7 (w/w)”"
+      },
+      {
+        "issue": "Percentage basis of FEC additive not stated (wt% vs vol%)",
+        "excerpt": "“+ 3% FEC”"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "rate": "5C"
+      },
+      "results": [
+        {
+          "metric": "rate capability",
+          "value": "superior to carbonate-based electrolyte",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Electrolyte target_1 enabled high-rate (5C) charging performance.",
+      "prov": ["Text – Hilbig et al. reference"]
+    },
+    {
+      "method": "Performance comparison",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "rate capability",
+          "value": "improved vs conventional electrolyte",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Highly concentrated LiFSI/DME electrolyte (target_2) showed improved fast-charge performance.",
+      "prov": ["Text – Yamada et al. reference"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T16:40:00Z",
+    "source_file": "input_text_1",
+    "processing_time": null
+  }
+}

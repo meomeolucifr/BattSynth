@@ -1,0 +1,316 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Mechanism of Dissolution of a Lithium Salt in an Electrolytic Solvent in a Lithium Ion Secondary Battery: A Direct Ab Initio Molecular Dynamics (AIMD) Study",
+    "doi": "10.1002/cphc.201301151",
+    "authors": ["Hiroto Tachikawa"],
+    "journal": "ChemPhysChem",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "AIMD", "lithium-ion battery", "electrolyte", "solvation"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "(EC)n(Li+BF4−) (n = 0–4)",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Page 1605–1606"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "(EC)4Li+",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 1608 Eq. (1)"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "BF4−",
+      "molecular_formula": "BF4-",
+      "intended_role": "product",
+      "prov": ["Page 1608 Eq. (1)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium tetrafluoroborate",
+      "molecular_formula": "LiBF4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 1", "Page 1605"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 1", "Page 1605"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li+ ion",
+      "molecular_formula": "Li+",
+      "ontology": {
+        "role": "intermediate",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 1605"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "BF4− ion",
+      "molecular_formula": "BF4-",
+      "ontology": {
+        "role": "counter-ion",
+        "category": "anion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 1605"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "analysis_1",
+        "description": "DFT optimisation of LiBF4 and solvated complexes (n = 0–4) at CAM-B3LYP/6-311++G(d,p)."
+      },
+      {
+        "step_ref": "analysis_2",
+        "description": "CCSD single-point calculations on LiBF4 for comparison."
+      },
+      {
+        "step_ref": "analysis_3",
+        "description": "Direct AIMD simulations of EC + (EC)3(Li+BF4−) leading to Li+ dissociation."
+      },
+      {
+        "step_ref": "analysis_4",
+        "description": "QM/MM AIMD simulations with 20 explicit EC solvent molecules."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (CAM-B3LYP/6-311++G(d,p))",
+      "parameters": {
+        "systems": "LiBF4 and (EC)n(Li+BF4−) n=0–4"
+      },
+      "results": [
+        {
+          "metric": "Li−F bond distance (n=0)",
+          "value": 1.773,
+          "unit": "Å"
+        },
+        {
+          "metric": "Li−F bond distance (n=1)",
+          "value": 1.820,
+          "unit": "Å"
+        },
+        {
+          "metric": "Li−F bond distance (n=2)",
+          "value": 1.974,
+          "unit": "Å"
+        },
+        {
+          "metric": "Li−F bond distance (n=3)",
+          "value": 1.942,
+          "unit": "Å"
+        },
+        {
+          "metric": "Li−F bond distance (n=4)",
+          "value": 4.156,
+          "unit": "Å"
+        },
+        {
+          "metric": "Binding energy per EC (n=1)",
+          "value": 91.5,
+          "unit": "kcal mol-1"
+        },
+        {
+          "metric": "Binding energy per EC (n=2)",
+          "value": 89.8,
+          "unit": "kcal mol-1"
+        },
+        {
+          "metric": "Binding energy per EC (n=3)",
+          "value": 87.2,
+          "unit": "kcal mol-1"
+        },
+        {
+          "metric": "Binding energy per EC (n=4)",
+          "value": 84.0,
+          "unit": "kcal mol-1"
+        }
+      ],
+      "interpretation": "Li–F interaction weakens and BF4− dissociates as n increases.",
+      "prov": ["Page 1605–1606", "Figure 2", "Figure 3", "Figure 4A"]
+    },
+    {
+      "method": "Bond population analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li–F bond population (n=0)",
+          "value": 0.202,
+          "unit": ""
+        },
+        {
+          "metric": "Li–F bond population (n=1)",
+          "value": 0.186,
+          "unit": ""
+        },
+        {
+          "metric": "Li–F bond population (n=2)",
+          "value": 0.150,
+          "unit": ""
+        },
+        {
+          "metric": "Li–F bond population (n=3)",
+          "value": 0.038,
+          "unit": ""
+        },
+        {
+          "metric": "Li–F bond population (n=4)",
+          "value": 0.0,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Covalent character diminishes with solvation.",
+      "prov": ["Figure 4B"]
+    },
+    {
+      "method": "CCSD/6-311++G(d,p)",
+      "parameters": {
+        "system": "LiBF4"
+      },
+      "results": [
+        {
+          "metric": "Binding energy Li+–BF4−",
+          "value": 142.7,
+          "unit": "kcal mol-1"
+        },
+        {
+          "metric": "Li–F bond distance",
+          "value": 1.791,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "Confirms DFT results.",
+      "prov": ["Table 1"]
+    },
+    {
+      "method": "AIMD (gas phase)",
+      "parameters": {
+        "time_step": 0.25,
+        "time_step_unit": "fs"
+      },
+      "results": [
+        {
+          "metric": "Reaction time to complex formation",
+          "value": 415,
+          "unit": "fs"
+        },
+        {
+          "metric": "Energy stabilization of intermediate vs reactant",
+          "value": -38,
+          "unit": "kcal mol-1"
+        }
+      ],
+      "interpretation": "Li+ dissociation occurs spontaneously without activation barrier.",
+      "prov": ["Figure 6", "Figure 7"]
+    },
+    {
+      "method": "QM/MM AIMD (solution)",
+      "parameters": {
+        "solvent_molecules": 20,
+        "QM_level": "B3LYP/6-31G(d)",
+        "MM_level": "PM3"
+      },
+      "results": [
+        {
+          "metric": "Li+–BF4− dissociation time",
+          "value": 170,
+          "unit": "fs"
+        }
+      ],
+      "interpretation": "Solvent reorientation accelerates dissociation; still barrier-less.",
+      "prov": ["Figure 9", "Figure 10"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Potential energy surface scan",
+        "results": [
+          {
+            "equation": "E(RC) = -38 kcal mol-1 relative to reactant, -5 kcal mol-1 relative to product",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Observation of an intermediate state during lithium intercalation of twisted bilayer MoS 2",
+    "doi": "10.1038/s41467-022-30516-z",
+    "authors": [
+      "Yecun Wu",
+      "Jingyang Wang",
+      "Yanbin Li",
+      "Jiawei Zhou",
+      "Bai Yang Wang",
+      "Ankun Yang",
+      "Lin-Wang Wang",
+      "Harold Y. Hwang",
+      "Yi Cui"
+    ],
+    "journal": "Nature Communications",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "lithium intercalation",
+      "twisted bilayer MoS2",
+      "phase transition",
+      "Raman spectroscopy"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Monolayer MoS2",
+      "molecular_formula": "MoS2",
+      "intended_role": "product",
+      "prov": ["Methods: Synthesis of Monolayer of MoS2"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Twisted bilayer MoS2",
+      "molecular_formula": "MoS2",
+      "intended_role": "product",
+      "prov": ["Main text: fabrication description", "Figure 2a"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li-intercalated twisted bilayer MoS2 (intermediate state)",
+      "molecular_formula": "LiₓMoS₂",
+      "intended_role": "product",
+      "prov": ["Figure 3", "Methods: Chemical intercalation"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Molybdenum oxide",
+      "molecular_formula": "MoO3",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Methods: Synthesis of Monolayer of MoS2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "precursor",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Methods: Synthesis of Monolayer of MoS2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "carrier gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used as carrier gas during CVD and glovebox atmosphere",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Sodium chloride",
+      "molecular_formula": "NaCl",
+      "ontology": {
+        "role": "additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Optional additive to improve yield",
+      "prov": ["Methods: Synthesis of Monolayer of MoS2"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Polymethyl methacrylate (PMMA)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "transfer medium",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Main text: transfer process description"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Polydimethylsiloxane (PDMS)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "transfer medium",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Main text: transfer process description"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "n-Butyllithium",
+      "molecular_formula": "C4H9Li",
+      "ontology": {
+        "role": "intercalant",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Used as 1.6 M solution in hexane",
+      "prov": ["Methods: Chemical intercalation"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Hexane",
+      "molecular_formula": "C6H14",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Solvent for n-Butyllithium and washing",
+      "prov": ["Methods: Chemical intercalation"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Chemical vapor deposition (CVD) growth of monolayer MoS2 on SiO2/Si substrate.",
+        "operations": [
+          {
+            "action": "CVD_growth",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"],
+              "temperature": {
+                "value": 1023,
+                "unit": "K"
+              },
+              "atmosphere": "Ar"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "NaCl additive optional to improve yield."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods: Synthesis of Monolayer of MoS2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "PMMA- and PDMS-assisted transfer of CVD monolayer MoS2 onto another monolayer to form twisted bilayer.",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6"],
+              "twist_angle_control": "by alignment of triangular edges"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Main text: fabrication description", "Supplementary Fig. 2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Chemical lithium intercalation of twisted bilayer MoS2 using n-Butyllithium solution.",
+        "operations": [
+          {
+            "action": "immerse",
+            "parameters": {
+              "inputs": ["chem_7", "chem_8"],
+              "concentration": {
+                "value": 1.6,
+                "unit": "M"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Performed inside Ar-filled glovebox with O2 & H2O <0.1 ppm."
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_8"],
+              "cycles": "several"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Washed with anhydrous hexane."
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "method": "argon gas flow"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (<0.1 ppm O2/H2O)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods: Chemical intercalation", "Figure 3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Monolayer MoS2 grown by CVD at 1023 K."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Formation of twisted bilayer MoS2 via PMMA/PDMS-assisted transfer."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Li intercalation by immersion in 1.6 M n-Butyllithium/hexane followed by washing and drying."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing growth time for CVD process",
+        "excerpt": "Monolayer MoS 2 was synthesized ... at a growth temperature of 750 °C"
+      },
+      {
+        "issue": "Undefined washing repetitions",
+        "excerpt": "samples were washed by anhydrous hexane for several times"
+      },
+      {
+        "issue": "Room temperature not explicitly specified",
+        "excerpt": "chemical intercalation was conducted ... at room temperature"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength_nm": 532,
+        "grating": "1800 l/mm",
+        "resolution_cm-1": 0.33,
+        "spot_size_nm": 564
+      },
+      "results": [
+        {
+          "metric": "E2g peak position (before intercalation, bilayer region)",
+          "value": 385.5,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "E2g peak positions (intermediate Li state, split)",
+          "value": [383, 386.6],
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Onset of peak splitting",
+          "value": 5,
+          "unit": "min"
+        },
+        {
+          "metric": "Appearance of J modes (T phase indicator)",
+          "value": 20,
+          "unit": "min"
+        },
+        {
+          "metric": "Complete H→T phase transition time",
+          "value": 30,
+          "unit": "min"
+        }
+      ],
+      "interpretation": "Peak splitting signifies intermediate Li-intercalated H phase; disappearance at 1T transition.",
+      "prov": ["Figure 2", "Figure 3"]
+    },
+    {
+      "method": "Photoluminescence",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "A exciton peak (intrinsic)",
+          "value": 670,
+          "unit": "nm"
+        },
+        {
+          "metric": "Bandgap (intrinsic)",
+          "value": 1.85,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Intermediate state shows weaker PL and redshift indicating narrower bandgap while retaining semiconducting H phase.",
+      "prov": ["Figure 4a"]
+    },
+    {
+      "method": "Electrical (FET) measurement",
+      "parameters": {
+        "bias_voltage_V": 1
+      },
+      "results": [
+        {
+          "metric": "Conductivity enhancement at Vg=0 V (intermediate vs intrinsic)",
+          "value": 10,
+          "unit": "fold"
+        }
+      ],
+      "interpretation": "Intermediate state remains n-type with increased conductivity; fully intercalated 1T shows gate-independent conductance.",
+      "prov": ["Figure 4b"]
+    },
+    {
+      "method": "Cryo-TEM",
+      "parameters": {
+        "accelerating_voltage_kV": 300
+      },
+      "results": [
+        {
+          "metric": "Observation",
+          "value": "Moiré pattern visible; Li not directly observed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms maintained twisted bilayer structure post intercalation; EELS evidences Li incorporation.",
+      "prov": ["Figure 4c", "Figure 4d", "Supplementary Fig. 7"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT phonon calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": 374,
+            "unit": "cm-1",
+            "notes": "Calculated E2g mode for pristine 2H bilayer"
+          },
+          {
+            "equation": "",
+            "value": 406,
+            "unit": "cm-1",
+            "notes": "Calculated A1g mode for pristine 2H bilayer"
+          },
+          {
+            "equation": "",
+            "value": [341, 353],
+            "unit": "cm-1",
+            "notes": "Split E2g modes after full Li intercalation in H phase model"
+          }
+        ],
+        "prov": ["Figure 5c", "Supplementary Fig. 8", "Supplementary Fig. 9"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-14T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

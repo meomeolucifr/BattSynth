@@ -1,0 +1,669 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Understanding the Chemical Composition with Doping Aliovalent Ions, Followed by the Electrochemical Behavior for Surface-Modified Ni-Rich NMC Cathode Materials",
+    "doi": "10.1021/acs.inorgchem.1c02114",
+    "authors": ["Eun Gyu Lee", "Hyemin Park", "Seulki Ji", "Si Jin Seong", "Mihye Wu", "Sun Sook Lee", "Yongseon Kim", "Sungho Choi"],
+    "journal": "Inorganic Chemistry",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": ["Li-ion battery", "Ni-rich NCM", "surface modification", "sol–gel", "aliovalent doping"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ni-rich NCM (pristine)",
+      "molecular_formula": "Li(Ni,Co,Mn)O2",
+      "intended_role": "product",
+      "prov": ["Page 16295, Section 2.1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Al-treated Ni-rich NCM",
+      "molecular_formula": "Li(Ni,Co,Mn)O2:Al",
+      "intended_role": "product",
+      "prov": ["Page 16295, Section 2.1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Zr-treated Ni-rich NCM",
+      "molecular_formula": "Li(Ni,Co,Mn)O2:Zr",
+      "intended_role": "product",
+      "prov": ["Page 16295, Section 2.1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hydroxide",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Used in 1.1:1 molar ratio with TM hydroxide precursor",
+      "prov": ["Page 16295, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "[Ni_xCo_yMn_{1-x-y}](OH)₂ precursor",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "x > 0.8; mixed with LiOH in 1:1 molar basis",
+      "prov": ["Page 16295, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Oxygen gas",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Atmosphere during calcination at 850 °C",
+      "prov": ["Page 16295, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Aluminum tri-sec butoxide",
+      "molecular_formula": "C12H27AlO3",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Page 16295, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Acetylacetone",
+      "molecular_formula": "C5H8O2",
+      "ontology": {
+        "role": "chelating agent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.1,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 16295, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Anhydrous ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "mL"
+      },
+      "notes": "For Al-treatment solution; 10 mL used for Zr-treatment",
+      "prov": ["Page 16295, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Zirconium butoxide",
+      "molecular_formula": "C16H36O4Zr",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Page 16295, Section 2.1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mix LiOH and [Ni_xCo_yMn_{1-x-y}](OH)₂ precursors",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "molar_ratio": "1.1:1"
+            },
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Stirred for 5 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 16295, Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Calcine mixture to form pristine Ni-rich NCM",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": [],
+              "heating_rate": {
+                "value": 3,
+                "unit": "K min-1"
+              }
+            },
+            "duration": {
+              "value": 600,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1123,
+              "unit": "K"
+            },
+            "notes": "Under O2 atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2 (chem_3)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 16295, Section 2.1"],
+        "outputs": ["target_1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Prepare Al-containing sol–gel solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5", "chem_6"]
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 16295, Section 2.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Add pristine NCM powder to Al-containing solution and stir",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["target_1"],
+              "amount": {
+                "value": 2,
+                "unit": "g"
+              }
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 16295, Section 2.1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Remove ethanol solvent at 80 °C",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [],
+              "method": "oven"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 16295, Section 2.1"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Calcine dried powder to obtain Al-treated NCM",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {},
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "notes": "In air"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 16295, Section 2.1"],
+        "outputs": ["target_2"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Prepare Zr-containing sol–gel solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_7", "chem_6"]
+            },
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 16295, Section 2.1"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Add pristine NCM powder to Zr solution and stir at 80 °C",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["target_1"],
+              "amount": {
+                "value": 1,
+                "unit": "g"
+              }
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "controlled ambient",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 16295, Section 2.1"]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Remove ethanol solvent from Zr-treated mixture at 80 °C",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [],
+              "method": "oven"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 16295, Section 2.1"]
+      },
+      {
+        "step_id": "step_10",
+        "description": "Calcine to obtain Zr-treated NCM",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {},
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "notes": "In air"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 16295, Section 2.1"],
+        "outputs": ["target_3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Precursor mixing"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Primary calcination to form pristine NCM"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Preparation of Al sol–gel solution"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Incorporation of NCM into Al solution"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Drying of Al-coated mixture"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Calcination to yield Al-treated NCM"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Preparation of Zr sol–gel solution"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Incorporation of NCM into Zr solution"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Drying of Zr-coated mixture"
+      },
+      {
+        "step_ref": "step_10",
+        "description": "Calcination to yield Zr-treated NCM"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Duration of solvent removal steps not specified",
+        "excerpt": "\"the ethanol solvent was moved to an oven at 80 °C\""
+      },
+      {
+        "issue": "Room temperature not explicitly defined",
+        "excerpt": "\"at room temperature\""
+      },
+      {
+        "issue": "Conflicting statement about \"stable capacity retention of 8%\" which contradicts earlier 85–88%",
+        "excerpt": "\"had stable capacity retention of 8% after 100 cycles\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "instrument": "Rigaku D/MAX-2500"
+      },
+      "results": [
+        {
+          "metric": "crystal structure",
+          "value": "layered α-NaFeO₂ (R3̅m)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates well-ordered layered structure suitable for electrochemical study",
+      "prov": ["Figure 1a, Page 16296"]
+    },
+    {
+      "method": "FE-SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle morphology",
+          "value": "spherical secondary particles (~10 µm) with onion-skin outer layer for Al treatment",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1b, Page 16296"]
+    },
+    {
+      "method": "ICP-AES",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Zr content",
+          "value": 0.0008,
+          "unit": "mol"
+        },
+        {
+          "metric": "Al content",
+          "value": 0.002,
+          "unit": "mol"
+        }
+      ],
+      "interpretation": "Zr incorporation is much lower than Al under identical sol–gel conditions",
+      "prov": ["Figure 3b, Page 16297"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ni²⁺ fraction after cycling (pristine)",
+          "value": 82,
+          "unit": "%"
+        },
+        {
+          "metric": "Ni²⁺ fraction after cycling (Al-treated)",
+          "value": 47,
+          "unit": "%"
+        },
+        {
+          "metric": "Ni²⁺ fraction after cycling (Zr-treated)",
+          "value": 57,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Surface modification suppresses NiO formation",
+      "prov": ["Figure 5b, Page 16300"]
+    },
+    {
+      "method": "Electrochemical charge/discharge",
+      "parameters": {
+        "potential_window": "3.0–4.3 V vs Li/Li⁺",
+        "current_rates": "0.1 C, 0.2 C, 1 C"
+      },
+      "results": [
+        {
+          "metric": "initial discharge capacity (Zr-treated at 0.1–0.2 C)",
+          "value": 216,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention after 100 cycles at 1 C (Zr-treated)",
+          "value": 85,
+          "unit": "%"
+        },
+        {
+          "metric": "capacity retention after 100 cycles at 1 C (Al-treated)",
+          "value": 88,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Zr treatment enhances capacity; both treatments improve cycle stability",
+      "prov": ["Figure 4a, Page 16298"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "1 Hz–1 MHz"
+      },
+      "results": [
+        {
+          "metric": "Trend in R_CT and R_SEI",
+          "value": "increased for pristine; negligible change for treated samples",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Surface modification lowers charge-transfer resistance",
+      "prov": ["Figure 5a, Page 16299"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT phase diagram simulation",
+        "results": [
+          {
+            "equation": "",
+            "value": "",
+            "unit": ""
+          }
+        ],
+        "prov": ["Figure 2, Pages 16296-16297"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 216,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T00:00:00Z",
+    "source_file": "extracted_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Charge carrier interactions in ionic conductors: A classical molecular-dynamics and Monte Carlo study on AgI",
+    "doi": "10.1063/1.481205",
+    "authors": ["F. Zimmer", "P. Ballone", "J. Maier", "M. Parrinello"],
+    "journal": "Journal of Chemical Physics",
+    "year": 2000
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["ionic conductors", "molecular dynamics", "Monte Carlo", "defect chemistry", "AgI"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Silver iodide (β-AgI)",
+      "molecular_formula": "AgI",
+      "intended_role": "material studied",
+      "prov": ["Title", "Introduction"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Silver iodide",
+      "molecular_formula": "AgI",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Investigated via classical MD and MC simulations; 2304 ions model.",
+      "prov": ["Simulation section"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Classical Molecular Dynamics simulation",
+      "parameters": {
+        "system_size": "2304 ions",
+        "cell_volume": "78372.89 Å^3",
+        "ensemble": "constant volume",
+        "time_step": "0.01 ps",
+        "production_run": "20000 steps (200 ps)",
+        "temperature_range": "≈ 496–586 K"
+      },
+      "results": [
+        {
+          "metric": "interaction parameter J",
+          "value": 0.5,
+          "unit": "eV",
+          "prov": ["Figure 6"]
+        },
+        {
+          "metric": "activation energy (high-T diffusion)",
+          "value": 1.2,
+          "unit": "eV",
+          "prov": ["Fig. 7"]
+        },
+        {
+          "metric": "activation energy (low-T diffusion)",
+          "value": 0.46,
+          "unit": "eV",
+          "prov": ["Fig. 7"]
+        }
+      ],
+      "interpretation": "Simulations reproduce cube-root defect interaction behaviour and diffusion activation energies consistent with experiment.",
+      "prov": ["Simulation section", "Figures 3–7"]
+    },
+    {
+      "method": "Quenched Molecular Dynamics energy calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "defect energy (neighboring tetrahedron)",
+          "value": 0.1,
+          "unit": "eV",
+          "prov": ["Table I"]
+        },
+        {
+          "metric": "defect energy (vacant octahedron)",
+          "value": 0.55,
+          "unit": "eV",
+          "prov": ["Table I"]
+        },
+        {
+          "metric": "defect energy (distant tetrahedron)",
+          "value": 1.18,
+          "unit": "eV",
+          "prov": ["Table I"]
+        }
+      ],
+      "interpretation": "Octahedral interstitials are energetically favored compared with distant tetrahedral sites.",
+      "prov": ["Table I"]
+    },
+    {
+      "method": "Monte Carlo simulation (phonon-only constraint)",
+      "parameters": {
+        "constraint_radius": "R_c (exact value not given)"
+      },
+      "results": [
+        {
+          "metric": "excess potential energy vs defect concentration",
+          "value": "linear cube-root dependence observed",
+          "unit": "",
+          "prov": ["Figure 6"]
+        }
+      ],
+      "interpretation": "Supports energetic origin of cube-root excess chemical potential.",
+      "prov": ["Simulation section", "Figure 6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Cube-root (quasi-Madelung) model fitting",
+        "results": [
+          {
+            "equation": "μ_ex = −J c^{1/3}",
+            "value": 0.47,
+            "unit": "eV (J from free tetrahedral interstitials)",
+            "prov": ["Figure 3"]
+          },
+          {
+            "equation": "μ_ex = −J c^{1/3}",
+            "value": 0.56,
+            "unit": "eV (J from total free defects)",
+            "prov": ["Figure 4"]
+          },
+          {
+            "equation": "μ_ex = −J c^{1/3}",
+            "value": 0.52,
+            "unit": "eV (J from octahedral interstitials)",
+            "prov": ["Figure 5"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

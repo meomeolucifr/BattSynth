@@ -1,0 +1,630 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Enhancing ionic conductivity in composite polymer electrolytes with well-aligned ceramic nanowires",
+    "doi": "10.1038/nenergy.2017.35",
+    "authors": [
+      "Wei Liu",
+      "Seok Woo Lee",
+      "Dingchang Lin",
+      "Feifei Shi",
+      "Shuang Wang",
+      "Austin D. Sendek",
+      "Yi Cui"
+    ],
+    "journal": "Nature Energy",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid polymer electrolyte",
+      "ceramic nanowires",
+      "ionic conductivity"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li0.33La0.557TiO3 nanowires",
+      "molecular_formula": "Li0.33La0.557TiO3",
+      "intended_role": "intermediate_product",
+      "prov": ["Methods – Synthesis of the ceramic nanowires"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "PAN–LiClO4 composite polymer electrolyte with aligned LLTO nanowires",
+      "molecular_formula": "",
+      "intended_role": "final_product",
+      "prov": ["Methods – Synthesis of the composite polymer electrolyte with ceramic nanowires"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNO3",
+      "molecular_formula": "LiNO3",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "La(NO3)3·6H2O",
+      "molecular_formula": "LaN3O9·6H2O",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ti(OC4H9)4",
+      "molecular_formula": "C16H36O4Ti",
+      "ontology": {
+        "role": "precursor",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Dimethylformamide",
+      "molecular_formula": "C3H7NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Acetic acid",
+      "molecular_formula": "C2H4O2",
+      "ontology": {
+        "role": "additive",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 20,
+        "unit": "vol%"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Polyvinylpyrrolidone (PVP)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 12,
+        "unit": "wt%"
+      },
+      "notes": "concentration in precursor solution",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Li0.33La0.557TiO3 nanowires",
+      "molecular_formula": "Li0.33La0.557TiO3",
+      "ontology": {
+        "role": "filler",
+        "category": "ceramic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "wt%"
+      },
+      "notes": "weight % relative to PAN + LiClO4",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Polyacrylonitrile (PAN)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer_matrix",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2:1 weight ratio with LiClO4; 10 wt% in DMF",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "LiClO4",
+      "molecular_formula": "LiClO4",
+      "ontology": {
+        "role": "lithium_salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2:1 PAN:LiClO4 weight ratio",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "ZrO2 nanowires",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "inert_filler",
+        "category": "ceramic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "wt%"
+      },
+      "notes": "used for comparison",
+      "prov": ["Main text – Supplementary Fig. 12"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of LLTO precursor solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "LiNO3, La(NO3)3·6H2O and Ti(OC4H9)4 dissolved in DMF containing 20 vol% acetic acid"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_6"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "PVP added to reach 12 wt% concentration, followed by vigorous stirring until transparent"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis of the ceramic nanowires"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Electrospinning of precursor solution to form composite fibres",
+        "operations": [
+          {
+            "action": "electrospin",
+            "parameters": {
+              "inputs": [],
+              "voltage": {
+                "value": 15,
+                "unit": "kV"
+              },
+              "distance": {
+                "value": 15,
+                "unit": "cm"
+              },
+              "collector_speed": {
+                "value": 6000,
+                "unit": "rpm"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Interdigital Pt electrodes placed on rotating drum at specific angles (0°, 45°, 90°)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis of the ceramic nanowires"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calcination to obtain LLTO nanowires",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": []
+            },
+            "temperature": {
+              "value": 1073,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "Heating rate 1 K min⁻¹, in air"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis of the ceramic nanowires"],
+        "outputs": ["target_1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of PAN–LiClO4 solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_8", "chem_9", "chem_4"]
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "PAN and LiClO4 (2:1 wt) dissolved in DMF to make 10 wt% PAN solution"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis of the composite polymer electrolyte with ceramic nanowires"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Addition of LLTO nanowires and mixing",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_7"]
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "notes": "LLTO nanowires added at 3 wt% (relative to PAN+LiClO4); mixture mechanically stirred"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis of the composite polymer electrolyte with ceramic nanowires"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Film casting",
+        "operations": [
+          {
+            "action": "cast",
+            "parameters": {
+              "inputs": []
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Doctor blade casting on glass plate or on aligned nanowires/electrodes"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis of the composite polymer electrolyte with ceramic nanowires"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Drying and solvent removal",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": []
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "notes": "High-vacuum oven"
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": []
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "notes": "Argon-filled glove box (<0.6 ppm O2/H2O)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis of the composite polymer electrolyte with ceramic nanowires"],
+        "outputs": ["target_2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Precursor solution preparation"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Electrospinning to obtain composite fibres"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Calcination to yield LLTO nanowires"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Preparation of PAN–LiClO4 solution"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Incorporation of LLTO nanowires and mixing"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Casting of electrolyte film"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Drying and solvent removal to obtain composite polymer electrolyte"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact quantities of LiNO3, La(NO3)3·6H2O, Ti(OC4H9)4 not specified",
+        "excerpt": "LiNO3 (>99.99%), La(NO3)3·6H2O (>99.99%) and Ti(OC4H9)4 (>99.0%) of various corresponding molar mass were dissolved..."
+      },
+      {
+        "issue": "Duration of electrospinning not explicitly stated",
+        "excerpt": "The collection time during electrospinning was controlled precisely to obtain a sufficient (but not excessive) number (about 2,000) of aligned nanowires..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "AC-impedance spectroscopy",
+      "parameters": {
+        "temperature": {
+          "value": 303,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 6.05e-5,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Composite polymer electrolyte with 0° aligned LLTO nanowires shows one order of magnitude higher conductivity than random nanowires.",
+      "prov": ["Figure 3b"]
+    },
+    {
+      "method": "Hebb–Wagner polarization",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "electronic conductivity (composite)",
+          "value": 2.90e-11,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "electronic conductivity (filler-free)",
+          "value": 7.29e-11,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Electronic contribution is negligible.",
+      "prov": ["Supplementary Fig. 8"]
+    },
+    {
+      "method": "Transference number measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li ion transference number (filler-free)",
+          "value": 0.27,
+          "unit": ""
+        },
+        {
+          "metric": "Li ion transference number (with LLTO nanowires)",
+          "value": 0.42,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Nanowire addition increases Li⁺ transference number.",
+      "prov": ["Figure 3c"]
+    },
+    {
+      "method": "Arrhenius analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "activation energy (aligned nanowires)",
+          "value": 0.77,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (random nanowires)",
+          "value": 0.84,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (filler-free)",
+          "value": 0.94,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Lower activation energy indicates faster ion transport with nanowires.",
+      "prov": ["Figure 3b"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "nanowire diameter",
+          "value": 138,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "LLTO nanowires are polycrystalline with high aspect ratio.",
+      "prov": ["Figure 2c"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "COMSOL numerical simulation",
+        "results": [
+          {
+            "equation": "",
+            "value": 1.26e-2,
+            "unit": "S cm-1",
+            "description": "Calculated surface ionic conductivity of LLTO nanowires at 303 K"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

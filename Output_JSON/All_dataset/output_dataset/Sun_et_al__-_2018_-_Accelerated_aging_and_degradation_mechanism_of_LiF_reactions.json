@@ -1,0 +1,420 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Accelerated aging and degradation mechanism of LiFePO4/graphite batteries cycled at high discharge rates",
+    "doi": "10.1039/c8ra04074e",
+    "authors": ["Shun Sun", "Ting Guan", "Xinqun Cheng", "Pengjian Zuo", "Yunzhi Gao", "Chunyu Du", "Geping Yin"],
+    "journal": "RSC Advances",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "battery aging study",
+    "tags": ["LiFePO4", "graphite", "battery degradation", "high discharge rate"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiFePO4/graphite full cell",
+      "molecular_formula": "",
+      "intended_role": "battery device",
+      "prov": ["Page 25695"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiFePO4 electrode material",
+      "molecular_formula": "LiFePO4",
+      "intended_role": "cathode",
+      "prov": ["Page 25695"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Graphite electrode material",
+      "molecular_formula": "C",
+      "intended_role": "anode",
+      "prov": ["Page 25695"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "active_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 25695"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "active_material",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 25695"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 25696"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "1-methyl-2-pyrrolidinone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 25696"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Purity: <1 ppm H2O, <10 ppm O2",
+      "prov": ["Page 25696"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter_electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for half‐cell assembly",
+      "prov": ["Page 25696"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mentioned in XPS discussion",
+      "prov": ["Page 25699"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Cycling of commercial LiFePO4/graphite cells at controlled charge/discharge rates",
+        "operations": [
+          {
+            "action": "charge",
+            "parameters": {
+              "current_rate": "0.5C",
+              "voltage_limit": {"start": null, "end": 3.7, "unit": "V"},
+              "cutoff_current": {"value": 0.02, "unit": "C"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "",
+            "prov": ["Page 25695-25696"]
+          },
+          {
+            "action": "rest",
+            "parameters": {},
+            "duration": {"value": 2, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "Rest after charge before discharge; longer rest at higher rates",
+            "prov": ["Page 25695-25696"]
+          },
+          {
+            "action": "discharge",
+            "parameters": {
+              "current_rates": ["0.5C","1.0C","2.0C","3.0C","4.0C","5.0C"],
+              "voltage_limit": {"start": 3.7, "end": 2.5, "unit": "V"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "Different discharge rates examined; additional rest of 6–10 min after high-rate discharge",
+            "prov": ["Page 25695-25696"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Page 25695-25696"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Periodic capacity checks during cycling",
+        "operations": [
+          {
+            "action": "capacity_test",
+            "parameters": {
+              "current_rate": "0.5C",
+              "voltage_window": "2.5–3.7 V"
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "Performed every 25 cycles",
+            "prov": ["Page 25695-25696"]
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 25695-25696"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Cell disassembly and electrode retrieval",
+        "operations": [
+          {
+            "action": "disassemble",
+            "parameters": {},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Cells in 0% SOC; glove box with argon (<1 ppm H2O, <10 ppm O2)",
+            "prov": ["Page 25696"]
+          },
+          {
+            "action": "rinse",
+            "parameters": {
+              "solvent": "chem_3"
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Rinse electrodes with dimethyl carbonate to remove electrolyte",
+            "prov": ["Page 25696"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "chem_5",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Page 25696"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of half-cells for electrode performance evaluation",
+        "operations": [
+          {
+            "action": "remove_active_material",
+            "parameters": {
+              "tool": "cotton tissue",
+              "solvent": "chem_4"
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Active material scraped from current collector",
+            "prov": ["Page 25696"]
+          },
+          {
+            "action": "assemble_half_cell",
+            "parameters": {
+              "counter_electrode": "chem_6",
+              "electrolyte": "",
+              "cell_type": "coin cell"
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "LiFePO4/Li tested 2.5–4.2 V; Graphite/Li tested 0.01–1.5 V",
+            "prov": ["Page 25696"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Page 25696"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Accelerated cycling of full cells at varied discharge rates"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Intermittent capacity checks to monitor degradation"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Glove-box disassembly and electrode cleaning"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Fabrication of Li half-cells for individual electrode testing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Cell dimensions unclear due to formatting symbols",
+        "excerpt": "the dimensions of this prismatic cell were 52 mm /C234 mm /C25 mm"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "instrument": "Empyrean, Panalytical"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameter_a",
+          "value": 10.3261,
+          "unit": "Å",
+          "notes": "LiFePO4 aged at 4.0C",
+          "prov": ["Table 3"]
+        },
+        {
+          "metric": "grain_size",
+          "value": 49.11,
+          "unit": "nm",
+          "notes": "LiFePO4 aged at 5.0C",
+          "prov": ["Table 3"]
+        }
+      ],
+      "interpretation": "High discharge rates expand lattice parameters and reduce grain size in LiFePO4",
+      "prov": ["Page 25701"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {
+        "instrument": "HELIOS NanoLab 600i, FEI"
+      },
+      "results": [
+        {
+          "metric": "observation",
+          "value": "fractures in graphite particles at ≥4.0C",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Mechanical degradation of graphite at high discharge rates",
+      "prov": ["Figure 5"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "instrument": "PHI 5700 ESCA System"
+      },
+      "results": [
+        {
+          "metric": "relative_content_LiF",
+          "value": "increased",
+          "unit": "",
+          "notes": "Anodes aged at 4.0C and 5.0C compared to 0.5C"
+        }
+      ],
+      "interpretation": "More complete LiPF6 decomposition at high discharge rates",
+      "prov": ["Page 25699-25700"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength": 532,
+        "unit": "nm",
+        "instrument": "Renishaw inVia"
+      },
+      "results": [
+        {
+          "metric": "D/G intensity ratio increase",
+          "value": "observed",
+          "unit": "",
+          "notes": "Graphite anodes aged at 4.0C and 5.0C"
+        }
+      ],
+      "interpretation": "Increased defects in graphite at high discharge rates",
+      "prov": ["Supplementary Figure S4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Capacity fade fitting",
+        "results": [
+          {
+            "equation": "Qloss(n)=C*n^z",
+            "value": {"C": 0.27, "z": 0.63},
+            "unit": "",
+            "notes": "Fitted for 4.0C discharge rate"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 580,
+      "unit": "mAh",
+      "notes": "Rated capacity of fresh full cell"
+    },
+    "cycle_life": "Capacity declined to 80% under each discharge rate; life shortest at ≥4.0C"
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,770 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "In situ formation of a Li3N-rich interface between lithium and argyrodite solid electrolyte enabled by nitrogen doping",
+    "doi": "10.1039/d1ta03343c",
+    "authors": [
+      "Yu Liu",
+      "Han Su",
+      "Min Li",
+      "Jiayuan Xiang",
+      "Xianzhang Wu",
+      "Yu Zhong",
+      "Xiuli Wang",
+      "Xinhui Xia",
+      "Changdong Gu",
+      "Jiangping Tu"
+    ],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "solid electrolyte",
+      "argyrodite",
+      "nitrogen doping",
+      "Li metal batteries"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6+xPS5\u2212xNxCl (LPSNC-x, 0 \u2264 x \u2264 1)",
+      "molecular_formula": "",
+      "intended_role": "solid electrolyte product",
+      "prov": [
+        "Experimental \u2013 Preparation of materials"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank. The paper explicitly states target compositions/formulas for the synthesized materials, e.g., \u201cLi6+xPS5\u2212xNxCl (or LPSNC-x, x = 0, 0.125, 0.25, 0.375, 0.5, 0.75, 1)\u201d in the Experimental (Preparation of materials) section, and gives an explicit example \u201cLi6.25PS4.75N0.25Cl (LPSNC-0.25)\u201d. Therefore, leaving the field empty is not supported by the source text.",
+        "suggested_fix": "Li6+xPS5\u2212xNxCl (LPSNC-x; x = 0, 0.125, 0.25, 0.375, 0.5, 0.75, 1). If a single target is required: Li6.25PS4.75N0.25Cl (LPSNC-0.25)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li6PS5Cl (LPSC)",
+      "molecular_formula": "",
+      "intended_role": "reference electrolyte product",
+      "prov": [
+        "Experimental \u2013 Preparation of materials"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The document explicitly gives target compositions/formulas for the synthesized materials (e.g., \u201cLi6+xPS5\u2212xNxCl (or LPSNC-x, x = 0, 0.125, 0.25, 0.375, 0.5, 0.75, 1)\u201d in the Experimental \u2013 Preparation of materials section, and an example \u201cLi6.25PS4.75N0.25Cl (LPSNC-0.25)\u201d later). However, the provided Extracted Value for \u201cTarget Formula\u201d is blank/empty, so it is not supported as a correct extraction of the paper\u2019s stated target formula.",
+        "suggested_fix": "Li6+xPS5\u2212xNxCl (LPSNC-x; x = 0, 0.125, 0.25, 0.375, 0.5, 0.75, 1). (Example composition: Li6.25PS4.75N0.25Cl for x = 0.25)"
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LCO/Li6PS5Cl composite cathode",
+      "molecular_formula": "",
+      "intended_role": "cathode composite",
+      "prov": [
+        "Experimental \u2013 Preparation of materials"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank. The paper explicitly states multiple target material formulas in the Experimental/Preparation of materials section, including the general nitrogen-doped argyrodite electrolyte formula \u201cLi6+xPS5\u2212xNxCl (or LPSNC-x)\u201d with x = 0, 0.125, 0.25, 0.375, 0.5, 0.75, 1, and also gives a specific example \u201cLi6.25PS4.75N0.25Cl (LPSNC-0.25)\u201d. Therefore, leaving the target formula empty is not supported by the source text.",
+        "suggested_fix": "Li6+xPS5\u2212xNxCl (LPSNC-x); e.g., Li6.25PS4.75N0.25Cl for LPSNC-0.25"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "g"
+      },
+      "notes": "Part of 2 g total precursor mixture; exact fraction depends on stoichiometry.",
+      "prov": [
+        "Experimental \u2013 Preparation of materials"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "In the \u201cPreparation of materials\u201d section, the paper lists starting materials as Li2S, P2S5, LiCl, and Li3N. It states: \u201cThe total mass of the powder mixture was 2 g.\u201d This 2 g refers to the total mixture, not specifically to lithium sulfide. Lithium sulfide amount is not given in grams in the text, and lithium sulfide is not the only component.",
+        "suggested_fix": "Chemical identity: Li2S (lithium sulfide); Amount: not specified (only total starting powder mixture mass = 2 g)."
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "g"
+      },
+      "notes": "Included in 2 g total precursor mixture; stoichiometric proportion unspecified.",
+      "prov": [
+        "Experimental \u2013 Preparation of materials"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "In the \u201cExperimental \u2013 Preparation of materials\u201d section, the starting materials listed include Li2S, P2S5, LiCl, and Li3N. It states: \u201cThe total mass of the powder mixture was 2 g.\u201d This 2 g refers to the entire powder mixture, not specifically to P2S5. No text states that phosphorus pentasulfide (P2S5) amount alone is 2 g.",
+        "suggested_fix": "Phosphorus pentasulfide (P2S5) | Amount: Not specified (individual amount). The paper only specifies total powder mixture mass = 2 g."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "g"
+      },
+      "notes": "Part of total precursor mix; precise mass not individually given.",
+      "prov": [
+        "Experimental \u2013 Preparation of materials"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "In the Experimental \u2013 Preparation of materials section, LiCl is listed as a starting material, but no mass amount for LiCl is given. The only explicit \u201c2 g\u201d stated is: \u201cThe total mass of the powder mixture was 2 g,\u201d which refers to the combined starting-material mixture (Li2S, P2S5, LiCl, Li3N), not specifically to lithium chloride alone. Therefore, \u201cLithium chloride | Amount: 2 g\u201d is not explicitly supported.",
+        "suggested_fix": "Lithium chloride (LiCl) is used as a starting material (99.9%, anhydrous, Alfa Aesar); amount not specified. Alternatively: Total mass of the powder mixture (Li2S + P2S5 + LiCl + Li3N) = 2 g."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium nitride",
+      "molecular_formula": "Li3N",
+      "ontology": {
+        "role": "dopant/reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "g"
+      },
+      "notes": "Used to substitute Li2S; exact mass varies with x (0\u20131).",
+      "prov": [
+        "Experimental \u2013 Preparation of materials"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.82,
+        "reasoning": "In the \u201cPreparation of materials\u201d section, the paper states that the starting materials include Li3N and that \u201cThe total mass of the powder mixture was 2 g.\u201d This 2 g refers to the total mixed starting powder (Li2S, P2S5, LiCl, and Li3N) combined, not specifically to Li3N. No explicit mass amount for Li3N alone (e.g., 2 g Li3N) is provided.",
+        "suggested_fix": "Lithium nitride (Li3N) is used as a starting material; amount not specified (only total powder mixture mass = 2 g)."
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium cobalt oxide",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mixed with Li6PS5Cl in 7:3 mass ratio for cathode composite.",
+      "prov": [
+        "Experimental \u2013 Preparation of materials"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.83,
+        "reasoning": "The paper mentions lithium cobalt oxide (LiCoO2, LCO) as the cathode material (e.g., \u201ccommercial LCO\u201d and \u201cASSLMBs employing LiCoO2 (LCO) as the cathode\u201d). However, the document does not provide a standalone amount of lithium cobalt oxide used as a chemical reagent (e.g., grams or mmol). It only provides: (i) a mass ratio for the cathode composite (LCO : Li6PS5Cl = 7:3) and (ii) an overall cathode composite mass (~3 mg) spread during cell assembly, without specifying the LCO mass itself. Therefore, 'Amount: Not specified in text' is an accurate missing-information extraction for LCO amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to fill glovebox and milling pot.",
+      "prov": [
+        "Experimental \u2013 Preparation of materials"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly states that the preparation/assembly steps were conducted in an \u201cargon-filled\u201d environment (argon gas filled zirconia pot; argon-filled glovebox). However, the text does not provide any quantitative amount (e.g., volume, pressure, flow rate, purity beyond \u2018argon gas filled\u2019) for argon. Therefore the extracted value \u201cArgon | Amount: Not specified in text\u201d is consistent with the document (missing amount information).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as foil pieces in symmetric and full cells.",
+      "prov": [
+        "Cell assembly and electrochemical measurements"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper repeatedly states the use of lithium metal/foil (e.g., \u201cTwo pieces of lithium metal were subsequently pressed\u2026\u201d and \u201cLi foil \u2026 was placed\u2026\u201d in the \u201cCell assembly and electrochemical measurements\u201d section), confirming the chemical identity as lithium metal. However, no mass, thickness (except a single \u201cLi foil of 300 mm\u201d which is ambiguous and not an amount), area, or molar quantity of lithium metal is specified. Therefore, the extractor\u2019s \u201cAmount: Not specified in text\u201d is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Stoichiometric weighing and mixing of precursors for LPSNC-x electrolytes",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4"
+              ]
+            },
+            "notes": "Amounts adjusted to achieve Li6+xPS5\u2212xNxCl (0 \u2264 x \u2264 1); total powder mass 2 g.",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly describes a weighing step in the synthesis procedure: in the 'Preparation of materials' section it states the starting materials 'were weighed stoichiometrically' before ball milling. This directly supports the synthesis operation 'weigh'.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "mix",
+            "parameters": {
+              "method": "manual transfer into zirconia pot",
+              "atmosphere": "Ar"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.67,
+              "reasoning": "The paper does not explicitly state a synthesis operation described as \"mix\". It describes specific preparation steps such as weighing stoichiometrically, placing powders in a zirconia pot, mechanical ball milling, sealing and heating, and for cathode composite \"mixing\" by hand with an agate mortar. While these imply mixing occurs, the exact operation label/value \"mix\" is not stated as a discrete synthesis operation in the text, and synthesis is primarily described as ball milling and heating.",
+              "suggested_fix": "If the intent is the operation used during preparation, a supported value would be: \"mechanically milled (high-energy ball milling)\"; alternatively for the cathode composite specifically: \"mixing by hand with an agate mortar\"."
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.78,
+            "reasoning": "The paper does not state a single \u201csynthesis temperature\u201d of 298 K. The synthesis step explicitly states the ball-milled powder was \u201cheated at 823 K for 5 h\u201d to yield the final product. The only 298 K mentions refer to measurement/room-temperature conditions (e.g., ionic conductivity collected between 298\u2013338 K; electrochemical tests at room temperature), not synthesis.",
+            "suggested_fix": "823 K (heat treatment temperature used to synthesize the final argyrodite product; heated at 823 K for 5 h)."
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Preparation of materials"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-energy ball milling",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "equipment": "Retch Emax",
+              "speed": {
+                "value": 510,
+                "unit": "rpm"
+              },
+              "duration": {
+                "value": 780,
+                "unit": "min"
+              },
+              "container_volume": {
+                "value": 125,
+                "unit": "mL"
+              },
+              "media": "25 zirconia balls, 10 mm diameter"
+            },
+            "notes": "Conducted in Ar-filled zirconia pot.",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes a mechanical milling step during electrolyte synthesis: \u201cThe mixture was mechanically milled using a high energy ball milling apparatus (Retch, Emax) at 510 rpm for 13 h.\u201d This supports the synthesis operation being milling (i.e., \u2018mill\u2019).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.78,
+            "reasoning": "The paper does not state a single \u201csynthesis temperature\u201d of 298 K. Instead, it reports that the ball-milled powder was \u201cheated at 823 K for 5 h\u201d to yield the final argyrodite product. The value 298 K appears only as part of measurement conditions (e.g., ionic conductivities collected between 298\u2013338 K and multiple results reported at room temperature), not as a synthesis temperature.",
+            "suggested_fix": "823 K (heated for 5 h)"
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Preparation of materials"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heat treatment to form argyrodite phase",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "quartz tube"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.78,
+              "reasoning": "The paper explicitly states that after ball milling, \u201cthe resulting ball-milled powder was sealed in a quartz tube and heated at 823 K for 5 h\u201d (Experimental \u2013 Preparation of materials). This supports the synthesis operation being a sealing step (\u201cseal\u201d).",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 823,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 300,
+                "unit": "min"
+              },
+              "atmosphere": "sealed tube"
+            },
+            "notes": "Produces final Li6+xPS5\u2212xNxCl argyrodite electrolyte.",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.62,
+              "reasoning": "The paper explicitly describes a heating step in the synthesis: after ball milling, the powder was \u201csealed in a quartz tube and heated at 823 K for 5 h to yield the final argyrodite product\u201d (Experimental \u2192 Preparation of materials, Page 2). This supports that a synthesis operation involved heat/heating.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Preparation of materials"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of LCO/Li6PS5Cl cathode composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_5",
+                "target_2"
+              ],
+              "mass_ratio": "7:3",
+              "method": "hand mixing in agate mortar"
+            },
+            "notes": "Conducted in Ar-filled glovebox.",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.78,
+              "reasoning": "The paper does not explicitly describe a synthesis operation as \u201cmix\u201d. In the experimental section it states the starting materials were \u201cweighed stoichiometrically\u201d and the \u201cmixture was mechanically milled\u2026\u201d, and for the cathode composite it says \u201cprepared via mixing \u2026 by hand with an agate mortar.\u201d While the verb \u201cmixing\u201d appears, the extracted operation \u201cmix\u201d is not clearly and unambiguously a stated synthesis operation for the main electrolyte synthesis step (which is primarily ball milling and heating).",
+              "suggested_fix": "If the intent is the electrolyte synthesis operation: \u201cmechanical milling (ball milling) followed by heating/annealing (solid-state reaction)\u201d. If the intent is the cathode composite preparation: \u201cmixing (by hand with an agate mortar).\u201d"
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.86,
+            "reasoning": "The paper does mention 298 K, but only as the lower bound of the temperature range used for temperature-dependent ionic conductivity measurements (\u201cbetween 298 K and 338 K\u201d). The synthesis/heat-treatment temperature for producing the solid electrolyte is explicitly stated as 823 K for 5 h. No synthesis step is described at 298 K.",
+            "suggested_fix": "823 K (heated at 823 K for 5 h to yield the final argyrodite product)"
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Preparation of materials"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Weigh and mix precursors under Ar atmosphere.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The paper describes weighing starting materials stoichiometrically and conducting all assembly/preparation steps in an argon-filled glovebox (Page 2, Experimental: Preparation of materials; and later sections). However, it does not explicitly state a workflow step phrased as \u201cWeigh and mix precursors under Ar atmosphere.\u201d It mentions weighing and placing powders into a zirconia pot, mechanical milling, and that preparation/assembling was conducted in an argon-filled glovebox, but \u201cmix precursors\u201d is not stated explicitly in that step.",
+          "suggested_fix": "Weighed starting materials stoichiometrically, placed them in an argon gas-filled zirconia pot, and mechanically milled; preparation/assembling was conducted in an argon-filled glovebox."
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Ball-mill mixture at 510 rpm for 13 h.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.99,
+          "reasoning": "The Experimental section (Preparation of materials, Page 2) explicitly states: \u201cThe mixture was mechanically milled using a high energy ball milling apparatus (Retch, Emax) at 510 rpm for 13 h.\u201d This directly supports the extracted workflow timeline statement.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Anneal milled powder at 823 K for 5 h in sealed quartz tube to obtain LPSNC-x electrolyte.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "The Experimental section (Page 2, \u201cPreparation of materials\u201d) explicitly states: after mechanical milling (510 rpm, 13 h), \u201cthe resulting ball-milled powder was sealed in a quartz tube and heated at 823 K for 5 h to yield the final argyrodite product\u201d (LPSNC-x electrolyte). This matches the extracted workflow timeline step (anneal at 823 K for 5 h in sealed quartz tube to obtain LPSNC-x).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Hand-mix LCO and Li6PS5Cl (7:3) for cathode composite.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The paper explicitly states in the Experimental section (Preparation of materials) that the \u201cLCO/Li6PS5Cl cathode composite was prepared via mixing commercial LCO and the as-prepared Li6PS5Cl electrolyte powder in a mass ratio of 7 : 3 by hand with an agate mortar.\u201d This directly supports the extracted workflow step of hand-mixing LCO and Li6PS5Cl at 7:3 for the cathode composite.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometric masses of individual precursors not provided.",
+        "excerpt": "they were weighed stoichiometrically and placed in an argon gas-filled 125 mL zirconia pot ... The total mass of the powder mixture was 2 g.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper states in the Experimental/Preparation section that the starting materials (Li2S, P2S5, LiCl, Li3N) were \u201cweighed stoichiometrically\u201d and gives only the total powder mass (\u201cThe total mass of the powder mixture was 2 g.\u201d) without listing individual precursor masses. Thus, the issue that exact stoichiometric masses of individual precursors are not provided is supported by the text.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Thickness of electrolyte pellets approximated as \u201c\u22481 mm\u201d; explicit value not given.",
+        "excerpt": "150 mg of LPSNC-x electrolyte powder was pressed into a pellet (10 mm in diameter, \u22481 mm in thickness)...",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The paper explicitly states the pellet thickness as an approximate value: \u201c150 mg of LPSNC-x electrolyte powder was pressed into a pellet (10 mm in diameter, ~1 mm in thickness) \u2026\u201d in the Ionic conductivity measurements section (Page 2). Therefore, the extraction noting that thickness is approximated (\u22481 mm) and not given as an exact value is supported.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu K\u03b1 (\u03bb = 1.54178 \u00c5)",
+        "scan_range": "10\u00b0\u201380\u00b0 2\u03b8",
+        "instrument": "RIGAKU D/MAX 2550/PC"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "cubic argyrodite phase confirmed for x \u2264 0.25; impurities increase at higher x",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Characterization methods \u2013 XRD"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper\u2019s XRD results do not say \u201ccubic argyrodite phase confirmed for x \u2264 0.25.\u201d Instead, it reports that the argyrodite phase remains the major phase up to x = 0.25 but with slight impurities at x = 0.125 and 0.25; it further states that for x \u2265 0.375 N-containing/impurity peaks appear and impurity intensity increases with x, and at x = 1 the argyrodite phase is hardly seen. Also, the cubic argyrodite phase (F-43m) is explicitly confirmed via Rietveld refinement for LPSNC-0.25 only, not as a general statement for all x \u2264 0.25.",
+        "suggested_fix": "phase identification: XRD shows Li6PS5Cl (x=0) is single-phase argyrodite (ICSD #259205); at low N doping (x=0.125, 0.25) argyrodite remains the major phase but slight Li2S and LiCl impurities are observed; for x \u2265 0.375, additional N-containing/impurity peaks appear and impurity peak intensity increases with x; at x=1 argyrodite peaks are hardly seen and impurities dominate. LPSNC-0.25 is refined as cubic argyrodite (space group F-43m)."
+      }
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength": "532 nm",
+        "spectral_range": "300\u2013550 cm-1"
+      },
+      "results": [
+        {
+          "metric": "A1 symmetric stretching of PS4^3\u2212",
+          "value": "peak at ~425 cm-1",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Peak splitting at higher N content indicates structural change due to N substitution.",
+      "prov": [
+        "Characterization methods \u2013 Raman spectra"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states in the Raman discussion (Page 4) that all samples (except x = 1) show \u201ca peak at around 425 cm\u22121,\u201d identified as the fingerprint of the A1 symmetric stretching vibration of PS4^3\u2212 tetrahedral anions. This directly supports the extracted value \u2018peak at ~425 cm\u22121\u2019 for the A1 symmetric stretching of PS4^3\u2212.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SEM-EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "elemental distribution",
+          "value": "uniform for S, P, N, Cl in LPSNC-0.25",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results \u2013 Fig. S1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly states that the SEM image and EDS mapping of Li6.25PS4.75N0.25Cl (LPSNC-0.25) (Fig. S1\u2020) show a uniform distribution of each element (S, P, N, and Cl). This directly supports the extracted claim of uniform elemental distribution for S, P, N, Cl in LPSNC-0.25. The alleged provenance (Results \u2013 Fig. S1) matches the cited figure in the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "1 Hz\u20131 MHz",
+        "amplitude": "10 mV"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (Li6PS5Cl, x=0)",
+          "value": 3.86,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "activation energy (x \u2264 0.5)",
+          "value": 0.3,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Conductivity decreases with increasing N but remains >1 mS cm-1 for x \u2264 0.5.",
+      "prov": [
+        "Results \u2013 Fig. 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Supported in Results & discussion around Fig. 2. The text states: \u201cThe Li6PS5Cl SE without N doping exhibits a high s of 3.86 mS cm\u22121\u201d (ionic conductivity for x=0). It also states: \u201cThe calculated activation energy of LPSNC-x electrolytes is below 0.3 eV when x \u2264 0.5\u201d (activation energy bound for x#0.5). These correspond to the extracted values; note the activation energy is given as \u2018below 0.3 eV\u2019 rather than an exact 0.3 eV.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Galvanostatic cycling (Li/Li symmetric)",
+      "parameters": {
+        "current_density": "0.5 mA cm-2",
+        "capacity_limit": "0.5 mAh cm-2",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "stable cycling time",
+          "value": 1000,
+          "unit": "h"
+        },
+        {
+          "metric": "critical current density (LPSNC-0.25)",
+          "value": 1.52,
+          "unit": "mA cm-2"
+        }
+      ],
+      "interpretation": "Li3N-rich SEI suppresses dendrite formation.",
+      "prov": [
+        "Results \u2013 Fig. 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Both extracted metrics are explicitly stated in the paper\u2019s galvanostatic Li/Li symmetric-cell results around Fig. 3. The text reports (i) CCD for optimized LPSNC-0.25 reaches 1.52 mA cm\u22122 at room temperature (Results discussion of Fig. 3c; also repeated in Abstract/Conclusions) and (ii) long-time Li plating/stripping for over 1000 h at 0.5 mA cm\u22122 (Results discussion of Fig. 3d; also repeated in Abstract/Conclusions). Thus the extracted values (1000 h stable cycling time; 1.52 mA cm\u22122 CCD for LPSNC-0.25) are supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "scan_rate": "0.1 mV s-1",
+        "voltage_range": "0\u20135 V"
+      },
+      "results": [],
+      "interpretation": "LPSNC-0.25 shows better reduction stability than oxidation stability.",
+      "prov": [
+        "Cell assembly and electrochemical measurements"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports cyclic voltammetry under \u201cCell assembly and electrochemical measurements\u201d: \u201cCyclic voltammetry was conducted with a sweep rate of 0.1 mV s\u22121 in the voltage range of 0\u20135 V\u201d for Li|LPSC|LPSC(or LPSNC-0.25)+C semi-blocking cells. Therefore, cyclic voltammetry characterization is present and the extracted value as an empty list [] is not supported as a \u201cnot reported\u201d/missing entry.",
+        "suggested_fix": "Report that cyclic voltammetry was performed; e.g., \"Cyclic voltammetry (0.1 mV s\u22121, 0\u20135 V)\" (cell: Li|LPSC|LPSC(or LPSNC-0.25)+C semi-blocking)"
+      }
+    },
+    {
+      "method": "Galvanostatic charge-discharge (full cell)",
+      "parameters": {
+        "voltage_range": "2.5\u20134.2 V",
+        "current_density": "0.05\u20131 C"
+      },
+      "results": [
+        {
+          "metric": "initial discharge capacity (0.05 C)",
+          "value": 114.6,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity after 100 cycles (0.1 C)",
+          "value": 82.3,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Capacity retention 86.5% after 100 cycles.",
+      "prov": [
+        "Results \u2013 Fig. 6"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The full text (Results discussion around Fig. 6) explicitly reports: (1) \u201cThe specific capacity of the first discharge is 114.6 mA h g\u22121\u201d at 0.05C, and (2) \u201cThe reversible specific capacity maintains at 82.3 mA h g\u22121 \u2026 after 100 cycles\u201d after switching to 0.1C. These match the extracted metrics and units for full-cell galvanostatic charge\u2013discharge performance (Fig. 6b\u2013c).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "source": "Al K\u03b1 (1486.6 eV)"
+      },
+      "results": [
+        {
+          "metric": "SEI composition",
+          "value": "Li2S, Li3P, LiCl, Li3N detected after cycling",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms in situ formation of Li3N-rich SEI.",
+      "prov": [
+        "Results \u2013 Fig. 5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly states (in the Results/discussion section describing XPS, referring to Fig. 5) that XPS measurements on the Li/LPSNC-0.25 interface after cycling confirm an SEI composed of Li2S, Li3P, LiCl and Li3N formed in situ during cycling: \u201cXPS measurements\u2026 further confirm that an SEI composed of Li2S, Li3P, LiCl and Li3N has been in situ formed (Fig. 5).\u201d This matches the extracted SEI composition after cycling.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations",
+        "results": [
+          {
+            "equation": "\u0394E(doping)=E(LPSNC)+E(Li2S)\u2212E(LPSC)\u2212E(Li3N)",
+            "value": -3.113,
+            "unit": "eV",
+            "notes": "Lowest mean doping energy for N at 16e site"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.25,
+          "reasoning": "The paper explicitly lists several analysis/characterization methods (e.g., XRD, Raman, SEM/EDS, XPS) and computational DFT, but the extracted value for \u201cAnalysis Method\u201d is blank/empty. Since the document does contain analysis methods, a blank value is not supported under the null-handling rule.",
+          "suggested_fix": "Report the analysis methods mentioned under \u201cCharacterization methods\u201d and \u201cComputation details\u201d, e.g., Powder X-ray diffraction (XRD), Raman spectroscopy, SEM with EDS mapping, XPS, and DFT calculations (VASP/PAW/PBE)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 114.6,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100,
+    "_llm_flag": {
+      "is_supported": false,
+      "confidence": 0.9,
+      "reasoning": "The paper does not report a cycle life value of 100 (as a generic number). The only explicit \u201c100\u201d related to cycling is that the full cell retains capacity \u201cafter 100 cycles\u201d and the symmetric cell runs \u201cover 1000 h,\u201d but neither states a cycle life equal to 100 as a standalone metric. Therefore, \u201cCycle Life: 100\u201d is not explicitly supported as an extracted value without additional context (e.g., \u2018100 cycles\u2019 for the full cell test).",
+      "suggested_fix": "If the intended metric is full-cell cycle life, the text supports: \u201cafter 100 cycles\u201d (full cell at 0.1C). If the intended metric is symmetric-cell stability, the text supports: \u201cover 1000 h\u201d (not cycles)."
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

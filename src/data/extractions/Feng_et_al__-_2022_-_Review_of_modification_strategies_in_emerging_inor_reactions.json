@@ -1,0 +1,412 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Review of modification strategies in emerging inorganic solid-state electrolytes for lithium, sodium, and potassium batteries",
+    "doi": "10.1016/j.joule.2022.01.015",
+    "authors": ["Xuyong Feng", "Hong Fang", "Nan Wu", "Pengcheng Liu", "Puru Jena", "Jagjit Nanda", "David Mitlin"],
+    "journal": "Joule",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["solid-state electrolyte", "LLZO", "argyrodite", "NASICON", "tape casting", "surface coating"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LLZO thin film",
+      "molecular_formula": "Li7La3Zr2O12 (tape-cast film)",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page 559, paragraph describing tape casting"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "SnO2-coated NASICON",
+      "molecular_formula": "",
+      "intended_role": "surface-modified solid electrolyte",
+      "prov": ["Page 573, first full paragraph"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li6PS5Cl thin electrolyte layer",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid electrolyte film",
+      "prov": ["Page 565, first full paragraph"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "lithium source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 559"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "polyvinyl butyral",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 559"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "benzyl butyl phthalate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "plasticizer",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 559"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "alcohol",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 559"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "acetone",
+      "molecular_formula": "C3H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 559"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "graphite foil",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "support",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 559"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "SnCl4 solution",
+      "molecular_formula": "SnCl4",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "0.5 M in unspecified solvent",
+      "prov": ["Page 573"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "ontology": {
+        "role": "electrolyte powder",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 565"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "acrylate-type binder",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "%",
+        "notes": "wt%"
+      },
+      "notes": "relative to Li6PS5Cl",
+      "prov": ["Page 565"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "xylene",
+      "molecular_formula": "C8H10",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 565"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Tape-casting and sintering of LLZO film",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5"]
+            },
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "notes": "ball-milled for 48 h to homogenize suspension"
+          },
+          {
+            "action": "cast",
+            "parameters": {
+              "substrate": "Mylar sheet"
+            },
+            "notes": "tape cast onto substrate and dried"
+          },
+          {
+            "action": "peel",
+            "parameters": {},
+            "notes": "green tape peeled and punched into 22 mm disks"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 1343,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "atmosphere": "Ar",
+            "notes": "densiﬁcation between graphite foils under mechanical support"
+          },
+          {
+            "action": "reheat",
+            "parameters": {},
+            "temperature": {
+              "value": 1113,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "atmosphere": "air",
+            "notes": "to remove carbon"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 559"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "SnO2 coating on NASICON",
+        "operations": [
+          {
+            "action": "impregnate",
+            "parameters": {
+              "inputs": ["SnCl4 solution"]
+            },
+            "notes": "NASICON pellets immersed in 0.5 M SnCl4 solution"
+          },
+          {
+            "action": "calcine",
+            "parameters": {},
+            "temperature": {
+              "value": 773,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "atmosphere": "air"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 573"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Preparation of Li6PS5Cl thin electrolyte layer",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_8", "chem_9", "chem_10"]
+            },
+            "notes": "1 wt % acrylate binder dissolved in xylene with Li6PS5Cl powder"
+          },
+          {
+            "action": "cast",
+            "parameters": {},
+            "notes": "cast to obtain 30 µm thick film"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "notes": "dried to remove solvent"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 565"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "LLZO tape casting and high-temperature sintering to form dense film"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Surface modification of NASICON via SnO2 layer for improved Na wetting"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Solution processing of argyrodite Li6PS5Cl into thin flexible electrolyte"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing quantitative amounts for several reagents",
+        "excerpt": "Li2CO3, polyvinyl butyral, and benzyl butyl phthalate were added to alcohol and acetone solvents"
+      },
+      {
+        "issue": "Solvent for 0.5 M SnCl4 not specified",
+        "excerpt": "impregnating it with 0.5 M SnCl4 solution"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "total resistance",
+          "value": 35,
+          "unit": "Ω cm²"
+        }
+      ],
+      "interpretation": "LLZO thin film exhibits low resistance",
+      "prov": ["Page 559"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interfacial resistance (Na/NASICON)",
+          "value": 270,
+          "unit": "Ω cm²"
+        }
+      ],
+      "interpretation": "SnO2 coating lowers resistance compared to >10000 Ω cm² baseline",
+      "prov": ["Page 573"]
+    },
+    {
+      "method": "Thickness measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "film thickness",
+          "value": 30,
+          "unit": "µm"
+        }
+      ],
+      "interpretation": "Thin Li6PS5Cl layer achieved via casting",
+      "prov": ["Page 565"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-22T10:31:00Z",
+    "source_file": "review_text_chunk",
+    "processing_time": 0.9
+  }
+}

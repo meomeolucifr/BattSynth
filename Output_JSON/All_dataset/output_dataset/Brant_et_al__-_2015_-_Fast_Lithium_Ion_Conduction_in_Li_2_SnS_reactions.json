@@ -1,0 +1,366 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Fast Lithium Ion Conduction in Li2SnS3: Synthesis, Physicochemical Characterization, and Electronic Structure",
+    "doi": "10.1021/cm5037524",
+    "authors": [
+      "Jacilynn A. Brant",
+      "Danielle M. Massi",
+      "N. A. W. Holzwarth",
+      "Joseph H. MacNeil",
+      "Alexios P. Douvalis",
+      "Thomas Bakas",
+      "Steve W. Martin",
+      "Michael D. Gross",
+      "Jennifer A. Aitken"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state electrolyte", "lithium ion conductor", "chalcogenide"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2SnS3",
+      "molecular_formula": "Li2SnS3",
+      "intended_role": "product",
+      "prov": ["Section 2.1 Synthesis"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "mmol"
+      },
+      "notes": "0.0460 g, ~200 mesh, 99.9%, Cerac",
+      "prov": ["Section 2.1 Synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Tin",
+      "molecular_formula": "Sn",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "mmol"
+      },
+      "notes": "0.1187 g, ~200 mesh, 99.99%, Cerac",
+      "prov": ["Section 2.1 Synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "mmol"
+      },
+      "notes": "0.0647 g, sublimed, 99.5%, Fisher Scientific",
+      "prov": ["Section 2.1 Synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "argon-filled glovebox",
+      "prov": ["Section 2.1 Synthesis"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Grinding and mixing of reactants",
+        "operations": [
+          {
+            "action": "grind_mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Ground using an agate mortar and pestle in an argon-filled glovebox"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.1 Synthesis"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Sealing of powder mixture",
+        "operations": [
+          {
+            "action": "seal_vacuum",
+            "parameters": {
+              "inputs": ["step_1_output"]
+            },
+            "pressure": {
+              "value": 1e-3,
+              "unit": "bar"
+            },
+            "notes": "Mixture placed in graphite crucible inside 12 mm o.d. fused-silica tube"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": 1e-3,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1 Synthesis"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "High-temperature reaction and controlled cooling",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "target_temperature": {
+                "value": 1023.15,
+                "unit": "K"
+              },
+              "ramp_rate": "0.83 K/min"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Heating rate 50 °C/h"
+          },
+          {
+            "action": "hold",
+            "parameters": {},
+            "duration": {
+              "value": 5760,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1023.15,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "target_temperature": {
+                "value": 773.15,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": 7500,
+              "unit": "min"
+            },
+            "notes": "slow cooling to 500 °C in 125 h"
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "target_temperature": {
+                "value": 298,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "allowed to cool to room temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed vacuum",
+          "pressure": {
+            "value": 1e-3,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1 Synthesis"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Stoichiometric reactants ground and mixed under Ar atmosphere."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Powder mixture placed in graphite crucible, sealed in fused-silica tube under 1×10−3 bar vacuum."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Heated to 1023 K, held 5760 min, cooled to 773 K over 7500 min, then to room temperature yielding dark-green Li2SnS3 powder."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Single-crystal X-ray diffraction",
+      "parameters": {
+        "radiation": "Mo Kα, λ=0.71073 Å",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "space group",
+          "value": "C2/c (#15)",
+          "unit": ""
+        },
+        {
+          "metric": "unit cell a",
+          "value": 6.3964,
+          "unit": "Å"
+        },
+        {
+          "metric": "unit cell b",
+          "value": 11.0864,
+          "unit": "Å"
+        },
+        {
+          "metric": "unit cell c",
+          "value": 12.405,
+          "unit": "Å"
+        },
+        {
+          "metric": "beta",
+          "value": 99.867,
+          "unit": "deg"
+        },
+        {
+          "metric": "R1(all data)",
+          "value": 0.0174,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms sodium chloride-like structure of Li2SnS3.",
+      "prov": ["Table 1"]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "1 Hz – 3 MHz",
+        "temperature_range": "-100 °C to 100 °C",
+        "electrode": "Au sputtered",
+        "pellet_density": "56% theoretical"
+      },
+      "results": [
+        {
+          "metric": "Li+ conductivity at 100 °C",
+          "value": 1.6e-3,
+          "unit": "S/cm"
+        },
+        {
+          "metric": "Li+ conductivity at 25 °C",
+          "value": 1.5e-5,
+          "unit": "S/cm"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.59,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Li2SnS3 exhibits fast lithium-ion conduction among ternary chalcogenides.",
+      "prov": ["Section 3.4", "Figure 4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density functional theory (DFT)",
+        "results": [
+          {
+            "equation": "indirect bandgap of 1.25 eV (calculated)",
+            "value": 1.25,
+            "unit": "eV"
+          }
+        ]
+      },
+      {
+        "method_name": "Diffuse reflectance UV–vis–NIR spectroscopy",
+        "results": [
+          {
+            "equation": "direct optical bandgap from (αE)^2 vs E plot",
+            "value": 2.382,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

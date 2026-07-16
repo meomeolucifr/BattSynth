@@ -1,0 +1,323 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Nickel-rich and cobalt-free layered oxide cathode materials for lithium ion batteries",
+    "doi": "10.1016/j.ensm.2022.05.019",
+    "authors": [
+      "Yu-hong Luo",
+      "Han-xin Wei",
+      "Lin-bo Tang",
+      "Ying-de Huang",
+      "Zhen-yu Wang",
+      "Zhen-jiang He",
+      "Cheng Yan",
+      "Jing Mao",
+      "Kehua Dai",
+      "Jun-chao Zheng"
+    ],
+    "journal": "Energy Storage Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["nickel-rich cathode", "cobalt-free", "lithium-ion battery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNiO2",
+      "molecular_formula": "LiNiO2",
+      "intended_role": "product",
+      "prov": ["Ref. 20"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiNi0.975Ti0.025O2",
+      "molecular_formula": "LiNi0.975Ti0.025O2",
+      "intended_role": "product",
+      "prov": ["Ref. 75"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiNi0.96Mg0.02Ti0.02O2",
+      "molecular_formula": "LiNi0.96Mg0.02Ti0.02O2",
+      "intended_role": "product",
+      "prov": ["Ref. 83"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ni(OH)2",
+      "molecular_formula": "Ni(OH)2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Ref. 20", "Ref. 75"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiOH",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "lithium source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Ref. 20", "Ref. 75"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "TiO2",
+      "molecular_formula": "TiO2",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Ref. 75"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of LiNiO2 via multi-stage calcination",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "Ni(OH)2 and LiOH mixed uniformly"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 758,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "notes": "preheating stage"
+          },
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "manual grinding after first heat"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 758,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "second heating"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 973,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1200,
+              "unit": "min"
+            },
+            "atmosphere": "O2",
+            "notes": "final sintering to form LiNiO2"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "O2"
+        },
+        "prov": ["Ref. 20"],
+        "outputs": ["target_1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Solid-state synthesis of Ti-doped LiNiO2",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "raw materials milled"
+          },
+          {
+            "action": "sinter",
+            "parameters": {},
+            "temperature": {
+              "value": 1023,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1800,
+              "unit": "min"
+            },
+            "atmosphere": "O2",
+            "notes": "formation of LiNi0.975Ti0.025O2"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "O2"
+        },
+        "prov": ["Ref. 75"],
+        "outputs": ["target_2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of LiNiO2 via staged calcination"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Synthesis of Ti-doped LiNiO2 via ball milling and high-temp sintering"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "missing reactant quantities",
+        "excerpt": "\"Ni(OH)2 precursor is mixed uniformly with LiOH\" (Ref. 20)"
+      },
+      {
+        "issue": "dopant level unspecified for general synthesis in step_2 (only example x=0.025 used)",
+        "excerpt": "\"LiNi1−xTixO2 (0.025≤x≤0.2) materials\" (Ref. 75)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 225,
+          "unit": "mAh g-1",
+          "conditions": "LiNiO2 at 0.1C",
+          "prov": ["Ref. 20"]
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Ref. 20"]
+    },
+    {
+      "method": "electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 235,
+          "unit": "mAh g-1",
+          "conditions": "LiNi0.975Ti0.025O2 (0.025 Ti) at unspecified C-rate",
+          "prov": ["Ref. 75"]
+        },
+        {
+          "metric": "initial discharge capacity",
+          "value": 171,
+          "unit": "mAh g-1",
+          "conditions": "LiNi0.975Ti0.025O2 (molten salt synthesis) at unspecified C-rate",
+          "prov": ["Ref. 96"]
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Ref. 75", "Ref. 96"]
+    },
+    {
+      "method": "electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 208,
+          "unit": "mAh g-1",
+          "conditions": "LiNi0.96Mg0.02Ti0.02O2 at C/3",
+          "prov": ["Ref. 83"]
+        },
+        {
+          "metric": "capacity retention",
+          "value": 90,
+          "unit": "%",
+          "conditions": "after 150 cycles at 0.5C",
+          "prov": ["Ref. 83"]
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Ref. 83"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 235,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 150
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "Energy Storage Materials 50 (2022) 274–307 extract",
+    "processing_time": null
+  }
+}

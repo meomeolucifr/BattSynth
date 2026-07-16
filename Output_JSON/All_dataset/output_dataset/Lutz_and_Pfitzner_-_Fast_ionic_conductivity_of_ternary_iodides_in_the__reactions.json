@@ -1,0 +1,465 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Fast ionic conductivity of ternary iodides in the systems LiI–M II I2 (M II  = Mn, Cd, Pb)",
+    "doi": "",
+    "authors": ["H.D. Lutz", "Z. Zhang", "A. Pfitzner"],
+    "journal": "Solid State Ionics",
+    "year": 1993
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["ionic conductivity", "ternary iodides", "solid electrolyte"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2CdI4",
+      "molecular_formula": "Li2CdI4",
+      "intended_role": "product",
+      "prov": ["Page 1, Experimental", "Table 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li2PbI4",
+      "molecular_formula": "Li2PbI4",
+      "intended_role": "product",
+      "prov": ["Page 1, Experimental", "Table 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li4PbI6",
+      "molecular_formula": "Li4PbI6",
+      "intended_role": "product",
+      "prov": ["Page 1, Experimental", "Table 1"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "MnI2",
+      "molecular_formula": "MnI2",
+      "intended_role": "intermediate",
+      "prov": ["Page 1, Experimental"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiI",
+      "molecular_formula": "LiI",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used after dehydration",
+      "prov": ["Page 1, Experimental"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "MnI2",
+      "molecular_formula": "MnI2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Prepared in-house",
+      "prov": ["Page 1, Experimental"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "CdI2",
+      "molecular_formula": "CdI2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Dried at 470 K in vacuum",
+      "prov": ["Page 1, Experimental"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "PbI2",
+      "molecular_formula": "PbI2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Dried at 470 K in vacuum",
+      "prov": ["Page 1, Experimental"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Mn",
+      "molecular_formula": "Mn",
+      "ontology": {
+        "role": "reactant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used for MnI2 synthesis",
+      "prov": ["Page 1, Experimental"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "I2",
+      "molecular_formula": "I2",
+      "ontology": {
+        "role": "reactant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used for MnI2 synthesis",
+      "prov": ["Page 1, Experimental"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "2,2-dimethoxypropane",
+      "molecular_formula": "C5H12O2",
+      "ontology": {
+        "role": "reagent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used to dehydrate LiI",
+      "prov": ["Page 1, Experimental"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dehydration of LiI with 2,2-dimethoxypropane.",
+        "operations": [
+          {
+            "action": "dehydrate",
+            "parameters": {
+              "inputs": ["chem_1", "chem_7"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1, Experimental"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Synthesis of MnI2 by reacting Mn and I2 in evacuated quartz ampoules and subsequent sublimation.",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6"]
+            },
+            "notes": "Evacuated quartz ampoule"
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature_max": {
+                "value": 1170,
+                "unit": "K"
+              }
+            },
+            "notes": "Temperature gradient to condense iodine at cold end"
+          },
+          {
+            "action": "sublimate",
+            "parameters": {},
+            "notes": "Vacuum sublimation after reaction"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1, Experimental"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Drying of CdI2 and PbI2.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4"],
+              "temperature": {
+                "value": 470,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "In vacuum"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1, Experimental"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of polycrystalline ternary iodide samples by fusing binary iodides in evacuated sealed borosilicate glass ampoules.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"],
+              "stoichiometry": "stoichiometric for targeted Li2CdI4, Li2PbI4, Li4PbI6 compositions"
+            },
+            "notes": ""
+          },
+          {
+            "action": "seal",
+            "parameters": {},
+            "notes": "Evacuated borosilicate glass ampoules"
+          },
+          {
+            "action": "fuse",
+            "parameters": {
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "notes": "Samples melted; exact temperature not specified"
+          },
+          {
+            "action": "cool",
+            "parameters": {},
+            "notes": "Yielding polycrystalline samples"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1, Experimental"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dehydration of LiI"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Synthesis of MnI2 precursor"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Vacuum drying of CdI2 and PbI2"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Fusion of binary iodides to obtain ternary Li2CdI4, Li2PbI4, Li4PbI6"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact fusion temperature and duration not specified",
+        "excerpt": "Polycrystalline samples of the lithium iodides under investigation were prepared by fusing the binary iodides in evacuated sealed borosilicate glass ampoules."
+      },
+      {
+        "issue": "Activation energies in Fig. 2 not readable from provided text",
+        "excerpt": "Fig. 2. Arrhenius plots ... activation energies of conduction in kJ mol-1"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray powder diffraction",
+      "parameters": {
+        "radiation": "Cu Kα1",
+        "instrument": "Huber-Guinier 600; high-temperature Guinier-Simon FR 533",
+        "internal_standard": "α-quartz"
+      },
+      "results": [
+        {
+          "metric": "formation_temperature_Li2CdI4",
+          "value": 538,
+          "unit": "K"
+        },
+        {
+          "metric": "formation_temperature_Li1−xPb0.5xI solid solution",
+          "value": 545,
+          "unit": "K"
+        },
+        {
+          "metric": "lattice_constant_trend",
+          "value": "increases with Cd or Pb content",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Deficient NaCl-type solid solutions form above ~540 K.",
+      "prov": ["Figure 1", "Page 2, Results"]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "instrument": "Hewlett-Packard 4192A LF impedance analyzer"
+      },
+      "results": [
+        {
+          "sample_id": "target_1",
+          "temperature": 470,
+          "value": 3e-5,
+          "unit": "S cm-1"
+        },
+        {
+          "sample_id": "target_1",
+          "temperature": 510,
+          "value": 5e-2,
+          "unit": "S cm-1"
+        },
+        {
+          "sample_id": "target_1",
+          "temperature": 570,
+          "value": 1e-1,
+          "unit": "S cm-1"
+        },
+        {
+          "sample_id": "target_2",
+          "temperature": 470,
+          "value": 3e-5,
+          "unit": "S cm-1"
+        },
+        {
+          "sample_id": "target_2",
+          "temperature": 510,
+          "value": 5.3e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "sample_id": "target_2",
+          "temperature": 570,
+          "value": 3e-2,
+          "unit": "S cm-1"
+        },
+        {
+          "sample_id": "target_2",
+          "temperature": 585,
+          "value": 3.5e-2,
+          "unit": "S cm-1"
+        },
+        {
+          "sample_id": "target_3",
+          "temperature": 470,
+          "value": 1.7e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "sample_id": "target_3",
+          "temperature": 510,
+          "value": 1e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "sample_id": "target_3",
+          "temperature": 570,
+          "value": 7e-2,
+          "unit": "S cm-1"
+        },
+        {
+          "sample_id": "target_3",
+          "temperature": 585,
+          "value": 9e-2,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Ternary iodides exhibit conductivities up to two orders of magnitude higher than binary LiI at 570 K.",
+      "prov": ["Table 1", "Figure 2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": []
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-27T03:20:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

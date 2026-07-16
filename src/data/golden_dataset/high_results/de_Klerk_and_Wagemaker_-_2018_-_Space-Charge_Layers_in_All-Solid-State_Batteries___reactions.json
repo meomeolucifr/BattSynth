@@ -1,0 +1,252 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Space-Charge Layers in All-Solid-State Batteries; Important or Negligible?",
+    "doi": "10.1021/acsaem.8b01141",
+    "authors": [
+      "Niek J. J. de Klerk",
+      "Marnix Wagemaker"
+    ],
+    "journal": "ACS Applied Energy Materials",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "all-solid-state batteries",
+      "space-charge",
+      "modeling"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "electrode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referenced as LCO cathode material.",
+      "prov": ["Table 1", "Main text – modeling sections"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "electrode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Anode material in modeling.",
+      "prov": ["Table 1", "Main text – modeling sections"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referred to as LLZO.",
+      "prov": ["Table 1", "Main text – modeling sections"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li1.2Al0.2Ti1.8(PO4)3",
+      "molecular_formula": "Li1.2Al0.2Ti1.8(PO4)3",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referred to as LATP.",
+      "prov": ["Table 1", "Main text – modeling sections"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Negative resistance values reported",
+        "excerpt": "LLZO interface resistances at 4.0 V and 3.9 V are −2×10−4 and −3×10−5 Ω cm2 (Table 2). Physical interpretation unclear."
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Space-charge layer modeling (Table 2)",
+        "results": [
+          {
+            "interface": "LCO/LATP",
+            "voltage": 4.3,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 11,
+            "capacitance_unit": "μF cm-2",
+            "resistance": 17,
+            "resistance_unit": "Ω cm2"
+          },
+          {
+            "interface": "LCO/LATP",
+            "voltage": 4.0,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 8,
+            "capacitance_unit": "μF cm-2",
+            "resistance": 0.02,
+            "resistance_unit": "Ω cm2"
+          },
+          {
+            "interface": "LCO/LATP",
+            "voltage": 3.9,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 4,
+            "capacitance_unit": "μF cm-2",
+            "resistance": 0.0005,
+            "resistance_unit": "Ω cm2"
+          },
+          {
+            "interface": "LCO/LLZO",
+            "voltage": 4.3,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 49,
+            "capacitance_unit": "μF cm-2",
+            "resistance": 0.003,
+            "resistance_unit": "Ω cm2"
+          },
+          {
+            "interface": "LCO/LLZO",
+            "voltage": 4.0,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 29,
+            "capacitance_unit": "μF cm-2",
+            "resistance": -0.0002,
+            "resistance_unit": "Ω cm2"
+          },
+          {
+            "interface": "LCO/LLZO",
+            "voltage": 3.9,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 12,
+            "capacitance_unit": "μF cm-2",
+            "resistance": -0.00003,
+            "resistance_unit": "Ω cm2"
+          }
+        ],
+        "prov": ["Table 2"]
+      },
+      {
+        "method_name": "Space-charge layer modeling (Table 3)",
+        "results": [
+          {
+            "interface": "Graphite/LATP",
+            "voltage": 0.2,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 8,
+            "capacitance_unit": "μF cm-2",
+            "resistance": 0.15,
+            "resistance_unit": "Ω cm2"
+          },
+          {
+            "interface": "Graphite/LATP",
+            "voltage": 0.15,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 11,
+            "capacitance_unit": "μF cm-2",
+            "resistance": 0.04,
+            "resistance_unit": "Ω cm2"
+          },
+          {
+            "interface": "Graphite/LATP",
+            "voltage": 0.1,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 12,
+            "capacitance_unit": "μF cm-2",
+            "resistance": 0.02,
+            "resistance_unit": "Ω cm2"
+          },
+          {
+            "interface": "Graphite/LLZO",
+            "voltage": 0.2,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 9,
+            "capacitance_unit": "μF cm-2",
+            "resistance": 0.29,
+            "resistance_unit": "Ω cm2"
+          },
+          {
+            "interface": "Graphite/LLZO",
+            "voltage": 0.15,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 16,
+            "capacitance_unit": "μF cm-2",
+            "resistance": 1.0,
+            "resistance_unit": "Ω cm2"
+          },
+          {
+            "interface": "Graphite/LLZO",
+            "voltage": 0.1,
+            "voltage_unit": "V vs Li/Li+",
+            "capacitance": 19,
+            "capacitance_unit": "μF cm-2",
+            "resistance": 0.06,
+            "resistance_unit": "Ω cm2"
+          }
+        ],
+        "prov": ["Table 3"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-28T10:31:00Z",
+    "source_file": "user_provided_text_chunk",
+    "processing_time": null
+  }
+}

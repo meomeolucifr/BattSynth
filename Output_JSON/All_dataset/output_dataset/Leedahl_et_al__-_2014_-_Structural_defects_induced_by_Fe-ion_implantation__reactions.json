@@ -1,0 +1,537 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Structural defects induced by Fe-ion implantation in TiO2",
+    "doi": "10.1063/1.4864748",
+    "authors": ["B. Leedahl", "D. A. Zatsepin", "D. W. Boukhvalov", "R. J. Green", "J. A. McLeod", "S. S. Kim", "E. Z. Kurmaev", "I. S. Zhidkov", "N. V. Gavrilov", "S. O. Cholakh", "A. Moewes"],
+    "journal": "Journal of Applied Physics",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and characterization",
+    "tags": ["TiO2", "Fe ion implantation", "thin film", "pellet", "defects"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "TiO2 thin film",
+      "molecular_formula": "TiO2",
+      "intended_role": "substrate/product",
+      "prov": ["Section II.A, Page 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Fe-implanted TiO2 thin film",
+      "molecular_formula": "TiO2:Fe",
+      "intended_role": "product",
+      "prov": ["Section II.B, Page 2"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "TiO2 pellet (rutile)",
+      "molecular_formula": "TiO2",
+      "intended_role": "substrate/product",
+      "prov": ["Section II.A, Page 2"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Fe-implanted TiO2 pellet",
+      "molecular_formula": "TiO2:Fe",
+      "intended_role": "product",
+      "prov": ["Section II.B, Page 2"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "titanium isopropoxide",
+      "molecular_formula": "C12H28O4Ti",
+      "ontology": {
+        "role": "precursor",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "abbreviated as TIPP in text",
+      "prov": ["Section II.A, Page 1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "nitric acid",
+      "molecular_formula": "HNO3",
+      "ontology": {
+        "role": "catalyst",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section II.A, Page 1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "ethanol (anhydrous)",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Section II.A, Page 1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "water (deionized)",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used for hydrolysis of TIPP",
+      "prov": ["Section II.A, Page 1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "silicon wafer",
+      "molecular_formula": "Si",
+      "ontology": {
+        "role": "substrate",
+        "category": "solid substrate"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "(100) orientation",
+      "prov": ["Section II.A, Page 1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "working gas",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used to initiate cathodic arc",
+      "prov": ["Section II.B, Page 2"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "iron",
+      "molecular_formula": "Fe",
+      "ontology": {
+        "role": "dopant",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "introduced as 30 keV ion beam",
+      "prov": ["Section II.B, Page 2"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "TiO2 powder",
+      "molecular_formula": "TiO2",
+      "ontology": {
+        "role": "starting material",
+        "category": "oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "produced by electrical explosion of wires",
+      "prov": ["Section II.A, Page 2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of TiO2 sol by sol-gel process",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "titanium-isopropoxide as precursor, nitric acid as catalyst, ethanol as solvent, water for hydrolysis"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section II.A, Page 1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Dip-coating deposition of TiO2 sol onto Si wafers",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["target_1", "chem_5"]
+            },
+            "misc": {
+              "withdrawal_rate": "4 mm s-1"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section II.A, Page 1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Drying of coated films",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["target_1"]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "initial room-temperature drying"
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["target_1"]
+            },
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "oven treatment to remove remaining solvent"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section II.A, Page 1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Annealing of TiO2 thin film",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["target_1"]
+            },
+            "temperature": {
+              "value": 373,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section II.A, Page 1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Formation and sintering of TiO2 pellet",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_8"]
+            },
+            "misc": {
+              "mold_diameter": "15 mm",
+              "force": "7×10^4 N"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": ["target_3"]
+            },
+            "temperature": {
+              "value": 1313,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section II.A, Page 2"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Fe ion implantation into TiO2 thin film and pellet",
+        "operations": [
+          {
+            "action": "implant",
+            "parameters": {
+              "inputs": ["chem_7", "target_1", "target_3"]
+            },
+            "temperature": {
+              "value": 293,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 38,
+              "unit": "min"
+            },
+            "notes": "30 keV Fe ions; fluence 1×10^17 cm^-2; pulse mode 25 Hz, 0.4 ms; pulse current density 0.7 mA cm^-2; samples cooled under vacuum for 20 min post-implantation"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": 3e-8,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section II.B, Page 2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Sol-gel preparation of TiO2 coating sol"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Dip-coating deposition onto Si substrates"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Drying and solvent removal"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Annealing to form TiO2 thin film"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Pressing and sintering to fabricate TiO2 pellet"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Fe ion implantation into both thin film and pellet"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No explicit quantities of precursors provided for sol preparation",
+        "excerpt": "TiO2 coating sols were prepared by a sol-gel chemical process, where titanium-isopropoxide, nitric acid, and anhydrous ethanol were used..."
+      },
+      {
+        "issue": "Withdrawal rate unit not converted in schema",
+        "excerpt": "The withdrawal rate of the substrate was 4 mm/s."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "FE-SEM",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Used to characterize thin film morphology",
+      "prov": ["Section II.A, Page 1"]
+    },
+    {
+      "method": "AFM",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Surface topology of thin film",
+      "prov": ["Section II.A, Page 1"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "phase": "rutile",
+        "lattice_parameters": "a=b=4.592 Å, c=2.960 Å"
+      },
+      "results": [
+        {
+          "metric": "phase_purity",
+          "value": 99.85,
+          "unit": "%"
+        },
+        {
+          "metric": "crystallite_size",
+          "value": 200,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Pellet is nearly single-phase rutile",
+      "prov": ["Section II.A, Page 2"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "source": "Al Kα 1486.6 eV",
+        "energy_resolution": 0.5
+      },
+      "results": [],
+      "interpretation": "Surface oxidation states of Fe determined",
+      "prov": ["Section II.C, Page 2"]
+    },
+    {
+      "method": "XAS",
+      "parameters": {
+        "edge": "Fe L",
+        "mode": "TEY & TFY"
+      },
+      "results": [],
+      "interpretation": "Probed oxidation state and clustering of Fe",
+      "prov": ["Section II.D, Page 2"]
+    },
+    {
+      "method": "RXES",
+      "parameters": {
+        "edge": "Fe L2,3"
+      },
+      "results": [],
+      "interpretation": "Confirmed Fe atom clustering in thin films",
+      "prov": ["Section II.D, Page 2"]
+    },
+    {
+      "method": "SRIM simulation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "average_Fe_concentration",
+          "value": 23,
+          "unit": "%"
+        },
+        {
+          "metric": "implantation_depth",
+          "value": 45,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Ion distribution profile",
+      "prov": ["Section II.B, Page 2"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

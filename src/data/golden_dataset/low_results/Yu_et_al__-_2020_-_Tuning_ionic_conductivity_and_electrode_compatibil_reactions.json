@@ -1,0 +1,419 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Tuning ionic conductivity and electrode compatibility of Li3YBr6 for high-performance all solid-state Li batteries",
+    "doi": "10.1016/j.nanoen.2020.105097",
+    "authors": ["Chuang Yu","Yong Li","Keegan R. Adair","Weihan Li","Kees Goubitz","Yang Zhao","Mathew J. Willans","Michel A. Thijs","Changhong Wang","Feipeng Zhao","Qian Sun","Sixu Deng","Jianwen Liang","Xiaona Li","Ruying Li","Tsun-Kong Sham","Huan Huang","Shigang Lu","Shangqian Zhao","Li Zhang","Lambert van Eijck","Yining Huang","Xueliang Sun"],
+    "journal": "Nano Energy",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid electrolyte","Li3YBr6","ionic conductivity","all-solid-state battery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "BM-Li3YBr6",
+      "molecular_formula": "Li3YBr6",
+      "intended_role": "solid electrolyte",
+      "prov": ["Text – Abstract, Results"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "AN-Li3YBr6",
+      "molecular_formula": "Li3YBr6",
+      "intended_role": "solid electrolyte",
+      "prov": ["Text – Abstract, Results"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium bromide",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Results, Fig.1c description"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Yttrium(III) bromide",
+      "molecular_formula": "YBr3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Results, Fig.1c description"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li3YBr6",
+      "molecular_formula": "Li3YBr6",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Refers to both BM- and AN- forms depending on synthesis step.",
+      "prov": ["Text – throughout"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Zirconia (milling media)",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as milling balls and jar material.",
+      "prov": ["Results – milling description"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium niobate",
+      "molecular_formula": "LiNbO3",
+      "ontology": {
+        "role": "coating layer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Results – battery assembly"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "LiNi0.8Co0.1Mn0.1O2",
+      "molecular_formula": "LiNi0.8Co0.1Mn0.1O2",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Results – battery assembly"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Li5.7PS4.7Cl1.3",
+      "molecular_formula": "Li5.7PS4.7Cl1.3",
+      "ontology": {
+        "role": "buffer layer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 50,
+        "unit": "mg"
+      },
+      "notes": "Introduced as buffer layer",
+      "prov": ["Results – battery assembly"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Indium",
+      "molecular_formula": "In",
+      "ontology": {
+        "role": "anode",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Results – battery assembly"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Results – lithium compatibility tests"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanical ball milling of LiBr and YBr3 to form BM-Li3YBr6",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1","chem_2"]
+            },
+            "notes": "Stoichiometric ratio not specified"
+          },
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "speed": {
+                "value": 550,
+                "unit": "rpm"
+              },
+              "duration": {
+                "value": 1920,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Jar opened every 4 h (~240 min) for hand grinding to ensure homogeneity; ZrO2 balls used."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Results – milling optimization"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Annealing BM-Li3YBr6 to obtain AN-Li3YBr6 with higher crystallinity",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "temperature": {
+              "value": 773.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "notes": "Optimal condition; atmosphere not stated."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Results – annealing optimization"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Planetary ball milling of LiBr and YBr3 at 550 rpm for 32 h with intermittent hand grinding produced BM-Li3YBr6."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "BM-Li3YBr6 was annealed at 500 °C (773 K) for 5 h to yield AN-Li3YBr6 with improved ionic conductivity."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Stoichiometric proportions of LiBr and YBr3 not specified",
+        "excerpt": "Fig. 1c shows the XRD patterns for the mixture prepared by milling LiBr and YBr3 at 550 rpm for 4, 32, and 50 h."
+      },
+      {
+        "issue": "Atmosphere during milling and annealing not stated",
+        "excerpt": "The ball milled mixture, BM-Li 3YBr6, was annealed at various temperatures (250, 300, 400, 450, 500, and 550 °C)..."
+      },
+      {
+        "issue": "Exact milling temperature not mentioned",
+        "excerpt": "During the high rotation speed milling process..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "temperature": {
+          "value": 303.15,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 0.39,
+          "unit": "mS cm-1",
+          "sample": "BM-Li3YBr6"
+        },
+        {
+          "metric": "ionic conductivity",
+          "value": 3.31,
+          "unit": "mS cm-1",
+          "sample": "AN-Li3YBr6"
+        }
+      ],
+      "interpretation": "Annealing sharply increases conductivity.",
+      "prov": ["Abstract","Results – Fig.1e"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.281,
+          "unit": "eV",
+          "sample": "BM-Li3YBr6"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.299,
+          "unit": "eV",
+          "sample": "AN-Li3YBr6"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results – Fig.2b"]
+    },
+    {
+      "method": "7Li NMR spin–lattice relaxation (SLR)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "activation energy (low-T flank)",
+          "value": 0.117,
+          "unit": "eV",
+          "sample": "AN-Li3YBr6"
+        },
+        {
+          "metric": "activation energy (high-T flank)",
+          "value": 0.088,
+          "unit": "eV",
+          "sample": "AN-Li3YBr6"
+        }
+      ],
+      "interpretation": "Lower activation energies at local scale than macroscopic impedance values.",
+      "prov": ["Results – Fig.2d"]
+    },
+    {
+      "method": "Neutron diffraction",
+      "parameters": {
+        "temperatures": ["223 K","253 K","298 K","392 K"]
+      },
+      "results": [
+        {
+          "metric": "lattice expansion with temperature",
+          "value": null,
+          "unit": "",
+          "sample": "AN-Li3YBr6"
+        }
+      ],
+      "interpretation": "Higher temperature expands lattice aiding Li mobility.",
+      "prov": ["Results – Fig.1i"]
+    },
+    {
+      "method": "XANES",
+      "parameters": {
+        "edges": ["Y K-edge","Y L3-edge"]
+      },
+      "results": [
+        {
+          "metric": "local structure similarity",
+          "value": "no significant change between BM and AN samples",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Annealing does not alter Y local environment.",
+      "prov": ["Results – Fig.2h,i"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "AIMD simulations",
+        "results": [
+          {
+            "equation": "",
+            "value": 0.11,
+            "unit": "eV",
+            "notes": "Lower bound energy barrier Li-1 to Li-1 in (001) plane"
+          },
+          {
+            "equation": "",
+            "value": 0.19,
+            "unit": "eV",
+            "notes": "Upper bound energy barrier Li-1 to Li-1 in (001) plane"
+          },
+          {
+            "equation": "",
+            "value": 0.39,
+            "unit": "eV",
+            "notes": "Energy barrier Li-1 to Li-2 along [001] direction"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 180.2,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 90
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-21T18:48:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

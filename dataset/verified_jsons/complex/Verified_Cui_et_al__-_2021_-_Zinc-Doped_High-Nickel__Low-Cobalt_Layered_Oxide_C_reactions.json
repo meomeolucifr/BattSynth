@@ -1,0 +1,942 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Zinc-Doped High-Nickel, Low-Cobalt Layered Oxide Cathodes for High-Energy-Density Lithium-Ion Batteries",
+    "doi": "10.1021/acsami.1c01824",
+    "authors": [
+      "Zehao Cui",
+      "Qiang Xie",
+      "Arumugam Manthiram"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "lithium-ion battery",
+      "cathode",
+      "high-nickel",
+      "zinc doping"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNi0.94Co0.04Zn0.02O1.99",
+      "molecular_formula": "LiNi0.94Co0.04Zn0.02O1.99",
+      "intended_role": "product",
+      "prov": [
+        "Page 15325, Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The formula LiNi0.94Co0.04Zn0.02O1.99 is explicitly stated in the paper multiple times, including in the Abstract (Page 15324) and again in the Introduction (Page 15325) and Conclusions (Page 15330). The alleged provenance (Page 15325, Experimental Section 2.1) is slightly off in placement: Section 2.1 on page 15325 does include “LiNi0.94Co0.04Zn0.02O1.99 cathode materials were then prepared…”, which directly supports the extracted target formula.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiNi0.94Co0.06O2",
+      "molecular_formula": "LiNi0.94Co0.06O2",
+      "intended_role": "baseline product",
+      "prov": [
+        "Page 15325, Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly identifies the baseline cathode material as LiNi0.94Co0.06O2 (NC). This appears in the Abstract (Page 15324) and again in the Experimental Section 2.1 (Page 15325): “LiNi0.94Co0.06O2 and LiNi0.94Co0.04Zn0.02O1.99 cathode materials were then prepared…”. Therefore the extracted Target Formula LiNi0.94Co0.06O2 is supported (even though the alleged provenance points to Page 15325, it is also stated elsewhere).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "NiSO4·6H2O",
+      "molecular_formula": "NiSO4·6H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2.0 M aqueous solution, part of Ni/Co/Zn = 94:4:2 mixture",
+      "prov": [
+        "Page 15325, Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "In Experimental Section 2.1 (page 15325), the paper explicitly lists NiSO4·6H2O as part of a 2.0 M aqueous solution prepared with CoSO4·7H2O and ZnSO4·7H2O. However, it does not provide a specific mass, volume, or molar amount of NiSO4·6H2O itself—only the overall solution concentration (2.0 M) and the Ni/Co/Zn molar ratio (94:4:2). Therefore, the extractor’s statement that the amount of NiSO4·6H2O is not specified is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "CoSO4·7H2O",
+      "molecular_formula": "CoSO4·7H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2.0 M aqueous solution, part of Ni/Co/Zn = 94:4:2 mixture",
+      "prov": [
+        "Page 15325, Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly lists CoSO4·7H2O as a reagent in Experimental Section 2.1 (materials preparation): “a 2.0 M aqueous solution of NiSO4·6H2O, CoSO4·7H2O, and ZnSO4·7H2O … was first prepared.” However, the extracted statement says the amount is “Not specified in text.” While no mass or volume is given for CoSO4·7H2O, an amount/concentration is specified for the prepared mixed solution (2.0 M total transition-metal sulfate solution). Therefore, stating “amount not specified” is not accurate as at least the solution molarity is provided.",
+        "suggested_fix": "CoSO4·7H2O | Amount: part of a 2.0 M aqueous solution of NiSO4·6H2O, CoSO4·7H2O, and ZnSO4·7H2O (Ni/Co/Zn = 94:4:2); no individual mass/volume for CoSO4·7H2O specified."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "ZnSO4·7H2O",
+      "molecular_formula": "ZnSO4·7H2O",
+      "ontology": {
+        "role": "dopant source",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2.0 M aqueous solution, part of Ni/Co/Zn = 94:4:2 mixture",
+      "prov": [
+        "Page 15325, Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly includes ZnSO4·7H2O in the transition-metal solution for precursor synthesis (Section 2.1): “a 2.0 M aqueous solution of NiSO4·6H2O, CoSO4·7H2O, and ZnSO4·7H2O (molar ratio of Ni/Co/Zn = 94:4:2) was first prepared.” However, the extracted claim says the amount is “Not specified in text,” which is incorrect because a concentration (2.0 M aqueous solution) and molar ratio (94:4:2) are specified. The exact mass/grams of ZnSO4·7H2O is not given, but some quantitative amount information is provided.",
+        "suggested_fix": "ZnSO4·7H2O | Amount: part of a 2.0 M aqueous solution of NiSO4·6H2O, CoSO4·7H2O, and ZnSO4·7H2O with Ni/Co/Zn molar ratio = 94:4:2 (exact mass not reported)."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "KOH",
+      "molecular_formula": "KOH",
+      "ontology": {
+        "role": "precipitating agent",
+        "category": "base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "4.0 M solution used in co-precipitation",
+      "prov": [
+        "Page 15325, Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper explicitly mentions KOH and gives its concentration: in Experimental Section 2.1 it states that the transition-metal solution was pumped “along with a 4.0 M KOH solution”. Therefore, the amount/concentration is specified in the text, contradicting the extracted claim “Amount: Not specified in text”.",
+        "suggested_fix": "KOH | Amount: 4.0 M KOH solution"
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "NH4OH",
+      "molecular_formula": "NH4OH",
+      "ontology": {
+        "role": "complexing agent",
+        "category": "base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "14.8 M solution used in co-precipitation",
+      "prov": [
+        "Page 15325, Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly specifies the NH4OH concentration used in the co-precipitation: “a 14.8 M NH4OH solution” (Experimental Section 2.1, page 15325). Therefore the extracted claim that the NH4OH amount is “Not specified in text” is contradicted by the source text.",
+        "suggested_fix": "NH4OH | Amount: 14.8 M (NH4OH solution)"
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "H2O",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "aqueous media for all solutions; also used for washing",
+      "prov": [
+        "Page 15325, Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper’s Experimental Section (2.1–2.3) and the rest of the text do not list H2O as a chemical used by itself. Water is only implied as part of an “aqueous solution” and explicitly appears only as water of crystallization in reagents (NiSO4·6H2O, CoSO4·7H2O, ZnSO4·7H2O, and LiOH·H2O). Therefore, the extracted chemical identity “H2O” is not explicitly supported as a standalone chemical entry, even though water is present in hydrated salts/aqueous solutions. The “Amount: Not specified” part would only be applicable if H2O were explicitly listed, which it is not.",
+        "suggested_fix": "If the field is meant to capture chemicals and amounts used: list the hydrated reagents instead (NiSO4·6H2O, CoSO4·7H2O, ZnSO4·7H2O, LiOH·H2O) with the concentrations/molar ratios given (e.g., 2.0 M aqueous solution of the sulfates; precursor/LiOH·H2O = 1:1.03). If the field strictly requires H2O: mark Chemical Identity = H2O as 'not explicitly specified/only implied as solvent' rather than asserting H2O."
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiOH·H2O",
+      "molecular_formula": "LiOH·H2O",
+      "ontology": {
+        "role": "lithium source",
+        "category": "base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "mixed with precursor at molar ratio precursor/LiOH·H2O = 1:1.03",
+      "prov": [
+        "Page 15325, Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The text explicitly mentions using LiOH·H2O in Materials Preparation (Section 2.1), but it also provides a specific amount/ratio: “molar ratio of the precursor/LiOH·H2O = 1:1.03”. Therefore, the claim “Amount: Not specified in text” is contradicted by the source, which does specify the amount as a molar ratio.",
+        "suggested_fix": "LiOH·H2O | Amount: precursor/LiOH·H2O molar ratio = 1:1.03"
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "O2",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "flowing oxygen atmosphere during calcination",
+      "prov": [
+        "Page 15325, Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.83,
+        "reasoning": "The paper does mention oxygen (O2) as a flowing oxygen atmosphere used during calcination (“under a flowing oxygen atmosphere for 15 h” in Experimental Section 2.1), but it does not provide an explicit amount/flow rate/partial pressure for O2. However, the extracted field is \"Chemical Identity and Amount\" with value \"O2 | Amount: Not specified in text\". This is not supported as written because O2 is not presented as a chemical with an associated (missing) amount in a way that fits this field; rather it is a processing atmosphere, and the paper’s explicitly specified chemical identities/amounts in 2.1 are the precursor salts and solution molarities (e.g., 2.0 M metal sulfate solution, 4.0 M KOH, 14.8 M NH4OH). If the intent is to capture the calcination atmosphere, then O2 identity is supported and the amount is indeed not specified, but the document does not frame it as a reagent amount.",
+        "suggested_fix": "If the field is meant to capture calcination atmosphere: \"O2 (flowing oxygen atmosphere) | Amount/flow rate: not specified\". Otherwise, remove O2 and instead list the explicitly quantified reagents in 2.1 (e.g., 2.0 M NiSO4·6H2O/CoSO4·7H2O/ZnSO4·7H2O solution; 4.0 M KOH; 14.8 M NH4OH; LiOH·H2O with precursor:LiOH·H2O = 1:1.03)."
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Super P conductive carbon",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "5 wt% in electrode slurry",
+      "prov": [
+        "Page 15325, Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly specifies the amount of Super P (conductive black) in the cathode slurry as part of a 90:5:5 weight ratio (active material:Super P:PVDF) in Section 2.2 (page 15325). Therefore, the extracted statement that the amount is “Not specified in text” is contradicted by the source text.",
+        "suggested_fix": "Super P conductive carbon (conductive black) | Amount: 5 wt% (active material:Super P:PVDF = 90:5:5 by weight)"
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "poly(vinylidene fluoride)",
+      "molecular_formula": "PVDF",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "5 wt% in electrode slurry",
+      "prov": [
+        "Page 15325, Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "Section 2.2 explicitly lists poly(vinylidene) fluoride (PVDF) as the binder used in cathode slurry preparation: “active materials (NC/NCZ), conductive black (Super P), and poly(vinylidene) fluoride (PVDF) binder (90:5:5 by weight) …”. The text provides its identity but does not specify an absolute amount (e.g., grams or mg); it only gives a weight ratio. Therefore, the extractor’s note that the amount is not specified (as an absolute quantity) is consistent with the document.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "N-methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used to make electrode slurry",
+      "prov": [
+        "Page 15325, Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "Section 2.2 explicitly states the cathode slurries were mixed with a proper amount of N-methyl-2-pyrrolidone (NMP), confirming the chemical identity. The text does not provide a quantitative amount (mass/volume) of NMP, only saying “a proper amount,” so “Amount: Not specified in text” is correctly extracted.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "in EC/EMC (3:7 w/w)",
+      "prov": [
+        "Page 15325, Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Section 2.2 (page 15325) explicitly states: “The electrolyte solution consisted of 1 M LiPF6 in ethylene carbonate (EC) and ethyl methyl carbonate (EMC) (3:7 by weight) with 2 wt % vinylene carbonate (VC) as a functional additive.” This directly supports chemical identity LiPF6 and amount 1 M.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of EC/EMC 3:7 mixture",
+      "prov": [
+        "Page 15325, Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly specifies ethylene carbonate (EC) as an electrolyte solvent in Section 2.2: “The electrolyte solution consisted of 1 M LiPF6 in ethylene carbonate (EC) and ethyl methyl carbonate (EMC) (3:7 by weight) with 2 wt % vinylene carbonate (VC) as a functional additive.” Therefore, the amount is specified (EC:EMC = 3:7 by weight), so the extracted claim “Amount: Not specified in text” is incorrect.",
+        "suggested_fix": "ethylene carbonate (EC) | Amount: in electrolyte solvent mixture with EMC at EC:EMC = 3:7 by weight (electrolyte: 1 M LiPF6 in EC/EMC (3:7 wt) + 2 wt% VC)."
+      }
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "ethyl methyl carbonate",
+      "molecular_formula": "C4H8O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of EC/EMC 3:7 mixture",
+      "prov": [
+        "Page 15325, Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "Section 2.2 explicitly mentions ethyl methyl carbonate (EMC) as part of the electrolyte solvent mixture: “1 M LiPF6 in ethylene carbonate (EC) and ethyl methyl carbonate (EMC) (3:7 by weight) with 2 wt % vinylene carbonate (VC)”. Thus, while the chemical identity (EMC) is supported, the statement “Amount: Not specified in text” is not supported because the text provides the amount as a 3:7 weight ratio (with EC) and also gives 1 M LiPF6 and 2 wt% VC.",
+        "suggested_fix": "ethyl methyl carbonate (EMC) | Amount: EC:EMC = 3:7 by weight (electrolyte: 1 M LiPF6 in EC/EMC with 2 wt% VC)"
+      }
+    },
+    {
+      "chemical_id": "chem_15",
+      "name": "vinylene carbonate",
+      "molecular_formula": "C3H2O3",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "organic additive"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "wt%"
+      },
+      "notes": "added to electrolyte",
+      "prov": [
+        "Page 15325, Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Section 2.2 (page 15325) explicitly states: “The electrolyte solution consisted of 1 M LiPF6 in ethylene carbonate (EC) and ethyl methyl carbonate (EMC) (3:7 by weight) with 2 wt % vinylene carbonate (VC) as a functional additive.” This directly supports the extracted chemical identity (vinylene carbonate) and amount (2 wt%).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_16",
+      "name": "graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "anode material",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "commercial graphite electrode",
+      "prov": [
+        "Page 15325, Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper repeatedly mentions use of a graphite anode/electrodes in full cells (e.g., Abstract: “full cell assembled with a graphite anode”; Section 2.2: “pouch-type full cells… and graphite electrodes (MTI Corp.)”). However, no mass/amount/loading of graphite itself is specified—only cathode active-material loading (8–9 mg cm−2) and an N/P ratio (1.08) are given. Therefore “graphite | Amount: Not specified in text” is consistent with the source text, though the alleged provenance is incorrect because Section 2.2 is on page 15325, not 15325/‘Page 15325, Section 2.2’ as listed.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_17",
+      "name": "dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "washing solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used to rinse electrodes",
+      "prov": [
+        "Page 15325, Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions dimethyl carbonate (DMC) as a rinsing/washing solvent in Section 2.3 (e.g., “rinsed in a dimethyl carbonate (DMC) solvent three times” and “washed with dimethyl carbonate (DMC) three times”), but it does not specify an amount/volume/mass of DMC used. Therefore, the chemical identity is supported, while the combined extracted field value “dimethyl carbonate | Amount: Not specified in text” is not fully correct if this field is expected to include both identity and amount together—because the identity is specified, but the amount is indeed not specified.",
+        "suggested_fix": "dimethyl carbonate (DMC) | Amount: Not specified in text"
+      }
+    },
+    {
+      "chemical_id": "chem_18",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "glove box and DSC atmosphere",
+      "prov": [
+        "Page 15325, Section 2.2",
+        "Page 15325, Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly mentions use of an argon-filled glove box for coin cell assembly (“...in an argon-filled glove box.”, Section 2.2, page 15325), but it does not provide any quantitative amount/volume/pressure/flow rate for argon. Section 2.3 also mentions measurements “under an Ar atmosphere” without specifying an amount. Therefore, identifying the chemical as argon with amount not specified is consistent with the text.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of 2.0 M transition-metal sulfate solution with Ni/Co/Zn molar ratio 94:4:2.",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_6"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Final concentration 2.0 M.",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.77,
+              "reasoning": "The paper’s Experimental Section describes the co-precipitation synthesis and slurry preparation steps (e.g., “a 2.0 M aqueous solution … was first prepared”, “mixed with a proper amount of NMP”), but it does not explicitly use the term “dissolve” (or “dissolved/dissolution”) as a synthesis operation. Since the extracted value is the specific operation word “dissolve”, it is not directly supported by the provided text.",
+              "suggested_fix": "If the field requires an explicitly stated operation, use wording present in the text such as “prepare (aqueous solution)”, “pump (solutions)”, or “mix (with NMP)”. If the schema allows inferred operations, then “prepare an aqueous solution” could be mapped to “dissolve”, but that mapping is not explicit in the paper."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 15325, Experimental Section 2.1"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Co-precipitation of Ni0.94Co0.04Zn0.02(OH)2 precursor.",
+        "operations": [
+          {
+            "action": "pump",
+            "parameters": {
+              "inputs": [
+                "step_1",
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "temperature": {
+              "value": 323,
+              "unit": "K"
+            },
+            "time": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "10 L stirred-tank reactor; pH 11.6; 600 rpm.",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The Experimental Section explicitly states that the transition-metal solution, KOH solution, and NH4OH solution \"was pumped separately into a 10 L continuously stirred tank reactor\" during co-precipitation, which supports the synthesis operation being a pump/pumping step.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 15325, Experimental Section 2.1"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Isolation of hydroxide precursor.",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": [
+                "step_2",
+                "chem_6"
+              ]
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.96,
+              "reasoning": "The Experimental Section (2.1 Materials’ Preparation) explicitly states: “Afterward, the material was washed, filtered, and dried…” indicating a wash step in the synthesis workflow. Therefore the extracted synthesis operation “wash” is supported by the paper text.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The Experimental Section (2.1 Materials’ Preparation) explicitly states: “Afterward, the material was washed, filtered, and dried…”, which directly supports that a synthesis operation included filtering.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "notes": "Remove impurities and residual moisture.",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.9,
+              "reasoning": "The paper mentions “dried” only in the context of processing steps (e.g., precursors “washed, filtered, and dried”; cathode materials “dried” after washing). However, it does not explicitly list a distinct synthesis operation named simply “dry” as an operation step/category. The extracted value appears to be an overgeneralization of incidental drying steps rather than an explicitly stated synthesis operation.",
+              "suggested_fix": "If this field is meant to capture a named/explicit operation, use \"dried\" (or \"drying\") with context: e.g., \"washed, filtered, and dried\" (precursor processing) and \"after the cleaning, the dried cathode electrode materials were collected\"."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 15325, Experimental Section 2.1"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Lithiation of precursor with LiOH·H2O.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "step_3",
+                "chem_7"
+              ]
+            },
+            "notes": "Molar ratio precursor/LiOH·H2O = 1:1.03.",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.75,
+              "reasoning": "The paper describes several specific synthesis operations (e.g., co-precipitation with solutions pumped into a stirred tank reactor; later the precursor is fired/calcined with LiOH·H2O under flowing O2). It does not explicitly state a synthesis operation simply as \"mix\" (nor use equivalent wording like \"mixed\" in the materials preparation step as the primary operation; instead it emphasizes pumping/co-precipitation and firing). Therefore the extracted value \"mix\" is not explicitly supported as the synthesis operation for material synthesis.",
+              "suggested_fix": "co-precipitation (hydroxide co-precipitation in a continuously stirred tank reactor), followed by firing/calcination with LiOH·H2O under flowing O2"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 15325, Experimental Section 2.1"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Calcination to obtain LiNi0.94Co0.04Zn0.02O1.99 (NCZ).",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": [
+                "step_4"
+              ],
+              "temperature": {
+                "value": 913,
+                "unit": "K"
+              },
+              "time": {
+                "value": 900,
+                "unit": "min"
+              }
+            },
+            "notes": "Flowing oxygen atmosphere.",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes a calcination-related step. In the Experimental Section, the lithiated cathode materials are prepared by “firing … precursors with LiOH·H2O … at 660 and 640 °C … for 15 h,” which is a calcination/heat-treatment step. The Conclusions also state “hydroxide co-precipitation followed by calcination.” Additionally, Figure 1 caption refers to “SEM images of calcined … samples.” Therefore, the synthesis operation “calcine” is supported by the source text.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The Experimental Section (2.1 Materials’ Preparation) explicitly states the cathode materials were prepared by firing the precursors with LiOH·H2O “under a flowing oxygen atmosphere for 15 h.” This directly supports the synthesis atmosphere being O2 (oxygen).",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Page 15325, Experimental Section 2.1"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare metal sulfate solution.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The paper’s Experimental Section describes preparing a 2.0 M aqueous solution of NiSO4·6H2O, CoSO4·7H2O, and ZnSO4·7H2O for co-precipitation, but it does not present a workflow timeline step phrased as “Prepare metal sulfate solution.” The extracted value is a paraphrase/interpretation rather than an explicit workflow-timeline entry in the text.",
+          "suggested_fix": "If the field must reflect explicit text, use: “A 2.0 M aqueous solution of NiSO4·6H2O, CoSO4·7H2O, and ZnSO4·7H2O (Ni/Co/Zn = 94:4:2) was first prepared.”"
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Co-precipitate hydroxide precursor in stirred reactor.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.83,
+          "reasoning": "The Experimental Section explicitly states that the transition-metal solution, KOH, and NH4OH were pumped into a “10 L continuously stirred tank reactor for the hydroxide co-precipitation reaction,” which corresponds to co-precipitating a hydroxide precursor in a stirred reactor.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Wash, filter, and dry precursor.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The workflow step “Wash, filter, and dry precursor.” is explicitly stated in the Experimental Section 2.1 (Materials’ Preparation): “Afterward, the material was washed, filtered, and dried to remove all impurities and residual moisture.” This directly supports the extracted workflow timeline item.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Mix precursor with LiOH·H2O.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The paper’s workflow describes firing the hydroxide precursor with LiOH·H2O (precursor/LiOH·H2O = 1:1.03) to prepare the cathode materials. It does not state a step phrased as “Mix precursor with LiOH·H2O”; instead it specifies “prepared by firing ... precursors with LiOH·H2O ... at 660 and 640 °C ... for 15 h.” Thus the extracted value is an imprecise/unsupported timeline step as written.",
+          "suggested_fix": "Fire the as-prepared Ni0.94Co0.06(OH)2 and Ni0.94Co0.04Zn0.02(OH)2 precursors with LiOH·H2O (precursor/LiOH·H2O = 1:1.03) at 660 °C (NC) and 640 °C (NCZ) under flowing O2 for 15 h."
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Calcine mixture at 640 °C in O2 for 15 h to produce NCZ.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "In the Experimental Section 2.1 (Materials’ Preparation), the paper states that LiNi0.94Co0.04Zn0.02O1.99 (NCZ) was prepared by firing the Ni0.94Co0.04Zn0.02(OH)2 precursor with LiOH·H2O at 640 °C under a flowing oxygen atmosphere for 15 h. This directly supports the extracted workflow step to calcine at 640 °C in O2 for 15 h to produce NCZ (though the paper uses 'firing' rather than 'calcine').",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing volume and time details during pumping and washing steps",
+        "excerpt": "…was pumped separately into a 10 L continuously stirred tank reactor…",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.78,
+          "reasoning": "The Experimental Section (2.1 Materials’ Preparation) states that the transition-metal solution, 4.0 M KOH, and 14.8 M NH4OH solutions “was pumped separately into a 10 L continuously stirred tank reactor” and then says “Afterward, the material was washed, filtered, and dried,” but it does not provide any pumping volumes/flow rates, pumping duration, or washing volume/time/number of washes for the precursor synthesis step. Therefore the noted workflow ambiguity (missing volume and time details for pumping and washing) is supported by the text. (Note: later in 2.3, electrode rinsing is specified as ‘three times’, but that is a different step—rinsing cycled electrodes for XPS—not the precursor washing in 2.1.)",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle morphology",
+          "value": "spherical, ~13 µm diameter",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1, Page 15326"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "Page 3 (ACS Appl. Mater. Interfaces 2021, 13, 15326) explicitly states: “SEM images show that both NC and NCZ samples possess a similar spherical morphology with a diameter of ∼13 μm on average.” This supports the extracted particle morphology “spherical, ~13 µm diameter.” The alleged provenance to Figure 1 / page 15326 is consistent with the text accompanying Figure 1 on that page.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "elemental distribution",
+          "value": "uniform Ni, Co, Zn",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1c, Page 15326"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "On page 3 (ACS AMI 2021, 13, 15324–15332), section 3.1 states: “EDS tests (TEM in Figure 1c and SEM in Figure S2) illustrate the uniform distribution of Ni, Co, and Zn elements… of the NCZ sample.” This directly supports the extracted EDS characterization claim of uniform Ni/Co/Zn elemental distribution, and matches the alleged provenance (Figure 1c, p. 15326).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "ICP-OES",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Zn content",
+          "value": 1.96,
+          "unit": "mol%"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table S1, Supporting Information"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states: “ICP-OES (Table S1) analysis reveals that 1.96 mol % of Zn has been successfully incorporated into NCZ...” (Results and Discussion, p.3). This directly supports the extracted Zn content value of 1.96 mol% and matches the alleged provenance pointing to Table S1 in the Supporting Information.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase",
+          "value": "single-phase R3m layered structure",
+          "unit": ""
+        },
+        {
+          "metric": "I(003)/I(104)",
+          "value": 1.28,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Page 15326, Figure S3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper text explicitly states: (1) “XRD patterns… are shown in Figure S3. A single-phase (R3̅m space group), layered lattice structure is revealed for both samples…” which supports the extracted phase value “single-phase R3m layered structure”; and (2) “the intensity ratio of the (003) peak to the (104) peak in NCZ (1.28)…”, which supports I(003)/I(104)=1.28. The alleged provenance cites “Figure S3” and the statements appear in the main text on page 15326 (not necessarily in the figure itself), but the values are clearly supported by the document.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "DSC",
+      "parameters": {
+        "heating_rate": {
+          "value": 1,
+          "unit": "K min-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "exothermic peak temperature",
+          "value": 460.25,
+          "unit": "K"
+        },
+        {
+          "metric": "heat release",
+          "value": 795,
+          "unit": "J g-1"
+        }
+      ],
+      "interpretation": "Improved thermal stability vs NC",
+      "prov": [
+        "Figure 7, Page 15330"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.94,
+        "reasoning": "Figure 7 (page 15330) states: for NCZ, the exothermic peak temperature is 187.1 °C and the heat release is 795 J g−1. The extracted heat release (795 J g−1) matches, but the extracted exothermic peak temperature (460.25 K) does not match the paper’s value. 187.1 °C corresponds to 460.25 K only if converted using an incorrect offset (adding 273.15 to 187.1 gives 460.25, but correct conversion is K = °C + 273.15, so 187.1 °C = 460.25 K is actually correct). Wait: 187.1 + 273.15 = 460.25 K, so the conversion is correct; however the paper reports the value in °C, not K. The extracted value is a converted form and is consistent numerically with the reported °C value. Since unit conversion is acceptable if mathematically correct, the peak temperature is supported. But the extraction does not specify whether the metric refers to NC or NCZ; Figure 7 reports both NC and NCZ, and the values 187.1 °C / 795 J g−1 correspond specifically to NCZ, while NC is 180.7 °C / 1380 J g−1. The extracted pair matches NCZ only; if the field is meant to capture a single DSC result without material context, it is ambiguous and not explicitly supported as a general DSC value.",
+        "suggested_fix": "Specify the material: for NCZ: exothermic peak temperature = 187.1 °C (460.25 K) and heat release = 795 J g−1; for NC: 180.7 °C (453.85 K) and 1380 J g−1."
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical cycling",
+        "results": [
+          {
+            "metric": "discharge capacity at C/3",
+            "value": 218,
+            "unit": "mAh g-1"
+          },
+          {
+            "metric": "capacity retention after 500 cycles (full cell)",
+            "value": 74,
+            "unit": "%"
+          },
+          {
+            "metric": "average voltage retention after 130 cycles (half cell)",
+            "value": 99.4,
+            "unit": "%"
+          }
+        ],
+        "prov": [
+          "Pages 15326-15327, Figure 2"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.62,
+          "reasoning": "The paper explicitly describes multiple analysis/characterization methods (e.g., XRD including in situ/ex situ, SEM, TEM/EDS, XPS, ICP-OES, DSC, EIS) in the Experimental Section and Results, including around the region where Figure 2 appears. However, the extracted value for “Analysis Method” is blank, and the document does not support a blank/empty entry because analysis methods are clearly specified.",
+          "suggested_fix": "Populate “Analysis Method” with the methods used, e.g., \"XRD (ex situ & in situ), SEM, TEM/EDS, XPS, ICP-OES, DSC, EIS\" (and electrochemical testing/charge–discharge/dQ/dV as applicable)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 218,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 500,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.95,
+      "reasoning": "The paper explicitly reports cycling over 500 cycles in pouch-type full cells: the Abstract states “NCZ retains 74% of the initial capacity after 500 cycles…” and Results section (Figure 2h–i discussion) says “After 500 cycles, NCZ delivers a capacity retention of 74%…”. Thus, a cycle life value of 500 cycles is supported by the source text.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T20:05:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

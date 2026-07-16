@@ -1,0 +1,250 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Designing flexible 2D transition metal carbides with strain-controllable lithium storage",
+    "doi": "10.1073/pnas.1717219115",
+    "authors": [
+      "Hang Zhang",
+      "Zhongheng Fu",
+      "Ruifeng Zhang",
+      "Qianfan Zhang",
+      "Hongzhen Tian",
+      "Dominik Legut",
+      "Timothy C. Germann",
+      "Yuanqi Guo",
+      "Shiyu Du",
+      "Joseph S. Francisco"
+    ],
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["MXene", "DFT", "Li-ion battery", "2D materials"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ti2C",
+      "molecular_formula": "Ti2C",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Ti3C2",
+      "molecular_formula": "Ti3C2",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Ti4C3",
+      "molecular_formula": "Ti4C3",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Ti2CO2",
+      "molecular_formula": "Ti2CO2",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Ti2CF2",
+      "molecular_formula": "Ti2CF2",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "Zr2C",
+      "molecular_formula": "Zr2C",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_7",
+      "compound_name": "Zr2CO2",
+      "molecular_formula": "Zr2CO2",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_8",
+      "compound_name": "Zr2CF2",
+      "molecular_formula": "Zr2CF2",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_9",
+      "compound_name": "Hf2C",
+      "molecular_formula": "Hf2C",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_10",
+      "compound_name": "Ta2C",
+      "molecular_formula": "Ta2C",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_11",
+      "compound_name": "Mo2C",
+      "molecular_formula": "Mo2C",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_12",
+      "compound_name": "W2C",
+      "molecular_formula": "W2C",
+      "intended_role": "anode candidate",
+      "prov": ["Main text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "intercalant",
+        "category": "alkali metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Discussed as Li+ for intercalation processes",
+      "prov": ["Main text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "No experimental synthesis details provided; study is computational.",
+        "excerpt": "Computational Methods section describes only DFT calculations."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT (GGA-PBE)",
+      "parameters": {
+        "plane_wave_cutoff": "600 eV",
+        "k_mesh": "8×8×1",
+        "functional": "PBE-GGA",
+        "spin_polarized": "yes"
+      },
+      "results": [
+        {
+          "metric": "Ti2C lattice constant a",
+          "value": 3.083,
+          "unit": "Å"
+        },
+        {
+          "metric": "Zr2C lattice constant a",
+          "value": 3.310,
+          "unit": "Å"
+        },
+        {
+          "metric": "Hf2C lattice constant a",
+          "value": 3.211,
+          "unit": "Å"
+        },
+        {
+          "metric": "Ti2C M–C bond length",
+          "value": 2.102,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "Computed structural parameters agree with published data.",
+      "prov": ["Table 1"]
+    },
+    {
+      "method": "CI-NEB",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li+ diffusion barrier on Ti2C",
+          "value": 16,
+          "unit": "meV"
+        },
+        {
+          "metric": "Li+ diffusion barrier on Ti2CO2",
+          "value": 158,
+          "unit": "meV"
+        }
+      ],
+      "interpretation": "Bare MXenes exhibit lower diffusion barriers than functionalized counterparts.",
+      "prov": ["Figure 3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical capacity calculation",
+        "results": [
+          {
+            "equation": "Steady-state capacity measurement (ref 17)",
+            "value": 410,
+            "unit": "mAh g-1",
+            "notes": "Capacity for Ti3C2Tx flexible electrode at 1 C"
+          }
+        ]
+      },
+      {
+        "method_name": "Equilibrium voltage calculation",
+        "results": [
+          {
+            "equation": "V = −ΔG/(zF)",
+            "value": 0.4,
+            "unit": "V",
+            "notes": "Average equilibrium voltage for Ti2C across Li concentration range"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 410,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-11T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

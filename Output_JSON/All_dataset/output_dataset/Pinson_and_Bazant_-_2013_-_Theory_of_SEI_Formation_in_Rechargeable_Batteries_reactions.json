@@ -1,0 +1,284 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Theory of SEI Formation in Rechargeable Batteries: Capacity Fade, Accelerated Aging and Lifetime Prediction",
+    "doi": "10.1149/2.044302jes",
+    "authors": [
+      "Matthew B. Pinson",
+      "Martin Z. Bazant"
+    ],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "battery modeling",
+      "SEI formation",
+      "capacity fade",
+      "lithium-ion batteries"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Solid-electrolyte interphase (SEI) layer",
+      "molecular_formula": "",
+      "intended_role": "degradation product",
+      "prov": [
+        "Main Text Page A244-A245"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium fluoride",
+      "molecular_formula": "LiF",
+      "ontology": {
+        "role": "reference SEI component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Chosen arbitrarily as a typical SEI component; molar mass 26 g/mol, density 2.6 g/cm3.",
+      "prov": [
+        "Page A244"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium ion",
+      "molecular_formula": "Li+",
+      "ontology": {
+        "role": "reactant",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Throughout"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "anode material",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Throughout"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Silicon",
+      "molecular_formula": "Si",
+      "ontology": {
+        "role": "anode material",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Pages A246-A247"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiNi0.8Co0.15Al0.05O2",
+      "molecular_formula": "LiNi0.8Co0.15Al0.05O2",
+      "ontology": {
+        "role": "cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page A243"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page A243"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "No explicit experimental synthesis or processing steps are described in the provided text; therefore synthesis section is left empty.",
+        "excerpt": "Entire provided excerpt"
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Single particle model fitting",
+        "parameters": {
+          "temperature_1": {
+            "value": 288,
+            "unit": "K",
+            "notes": "Originally reported as 15 °C"
+          },
+          "temperature_2": {
+            "value": 333,
+            "unit": "K",
+            "notes": "Originally reported as 60 °C"
+          }
+        },
+        "results": [
+          {
+            "metric": "Electrolyte diffusivity through SEI",
+            "value": 2e-17,
+            "unit": "cm2 s-1",
+            "conditions": "15 °C",
+            "prov": [
+              "Page A244"
+            ]
+          },
+          {
+            "metric": "Electrolyte diffusivity through SEI",
+            "value": 3e-16,
+            "unit": "cm2 s-1",
+            "conditions": "60 °C",
+            "prov": [
+              "Page A244"
+            ]
+          }
+        ],
+        "interpretation": "Diffusivity increases with temperature.",
+        "prov": [
+          "Page A244"
+        ]
+      },
+      {
+        "method_name": "Arrhenius fit of diffusivity",
+        "parameters": {},
+        "results": [
+          {
+            "metric": "Activation energy",
+            "value": 0.52,
+            "unit": "eV",
+            "prov": [
+              "Page A246"
+            ]
+          }
+        ],
+        "interpretation": "SEI diffusivity follows Arrhenius behaviour.",
+        "prov": [
+          "Page A246"
+        ]
+      },
+      {
+        "method_name": "Capacity fade analysis for silicon anode",
+        "parameters": {
+          "particle_size_assumed": {
+            "value": 1,
+            "unit": "µm"
+          }
+        },
+        "results": [
+          {
+            "metric": "Diffusivity estimate",
+            "value": 4e-15,
+            "unit": "cm2 s-1",
+            "conditions": "Silicon anode derived from model",
+            "prov": [
+              "Page A247"
+            ]
+          },
+          {
+            "metric": "Capacity fade rate",
+            "value": 4,
+            "unit": "mAh g-1 per cycle",
+            "conditions": "C/15 rate",
+            "prov": [
+              "Page A247 (Figure 10)"
+            ]
+          },
+          {
+            "metric": "Capacity fade rate",
+            "value": 2,
+            "unit": "mAh g-1 per cycle",
+            "conditions": "C/4 rate",
+            "prov": [
+              "Page A247 (Figure 10)"
+            ]
+          }
+        ],
+        "interpretation": "SEI growth on silicon leads to linear capacity fade proportional to cycling rate and fresh surface generation.",
+        "prov": [
+          "Page A247"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-21T00:00:00Z",
+    "source_file": "Provided text excerpt",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,459 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A chemically stabilized sulfur cathode for lean electrolyte lithium sulfur batteries",
+    "doi": "10.1073/pnas.2006301117",
+    "authors": [
+      "Chao Luo",
+      "Enyuan Hu",
+      "Karen J. Gaskell",
+      "Xiulin Fan",
+      "Tao Gao",
+      "Chunyu Cui",
+      "Sanjit Ghose",
+      "Xiao-Qing Yang",
+      "Chunsheng Wang"
+    ],
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium–sulfur batteries", "sulfur cathode", "carbon–sulfur composite", "lean electrolyte"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "CPAPN–S composite",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": ["Materials and Methods", "Results"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "CPAN–S composite",
+      "molecular_formula": "",
+      "intended_role": "control cathode material",
+      "prov": ["Results"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "CPTCDA–S composite",
+      "molecular_formula": "",
+      "intended_role": "control cathode material",
+      "prov": ["Results"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in 5:1:1 weight ratio with PTCDA and PAN",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Perylene-3,4,9,10-tetracarboxylic dianhydride (PTCDA)",
+      "molecular_formula": "C24H8O6",
+      "ontology": {
+        "role": "carbon precursor",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "oxygen-rich carbon precursor; weight part 1 in 5:1:1 mixture",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Polyacrylonitrile (PAN)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "carbon precursor",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "nitrogen-rich carbon precursor; weight part 1 in 5:1:1 mixture",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte salt"
+      },
+      "amount": {
+        "value": 1.0,
+        "unit": "M"
+      },
+      "notes": "dissolved in various solvent mixtures for electrolyte",
+      "prov": ["Electrochemical Measurements"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Fluoroethylene carbonate (FEC)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "electrolyte solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of all-fluorinated organic electrolyte (2:6:2 weight ratio FEC:FEMC:HFE)",
+      "prov": ["Results"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "3,3,3-Fluoroethyl methyl carbonate (FEMC)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "electrolyte solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of all-fluorinated organic electrolyte",
+      "prov": ["Results"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "1,1,2,2-Tetrafluoroethyl-2′,2′,2′-trifluoroethyl ether (HFE)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "electrolyte solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of all-fluorinated organic electrolyte",
+      "prov": ["Results"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mixing of sulfur, PTCDA, and PAN",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "ratio_by_weight": "5:1:1"
+            },
+            "notes": "",
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient (glovebox unspecified)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Sealing the mixture under vacuum in a glass tube",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "glass tube",
+              "atmosphere": "vacuum"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Annealing to form CPAPN–S composite",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 873,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 180,
+                "unit": "min"
+              }
+            },
+            "notes": "carbonization of PTCDA and PAN and reaction with sulfur"
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "temperature": {
+                "value": 298,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 1440,
+                "unit": "min"
+              }
+            },
+            "notes": "cooled to room temperature over 24 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed tube (vacuum)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Collection of black powder CPAPN–S",
+        "operations": [
+          {
+            "action": "collect",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Sulfur, PTCDA, and PAN mixed in 5:1:1 weight ratio"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Mixture sealed under vacuum in glass tube"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Annealed at 873 K for 180 min, then cooled to 298 K over 1440 min"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Black CPAPN–S powder collected"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of reactants not provided",
+        "excerpt": "Sulfur, perylene-3, 4, 9, 10-tetracarboxylic dianhydride, and polyacrylonitrile were mixed with a ratio of 5:1:1 by weight"
+      },
+      {
+        "issue": "Atmosphere during mixing not explicitly defined",
+        "excerpt": "Sulfur, perylene-3, 4, 9, 10-tetracarboxylic dianhydride,and polyacrylonitrile were mixed ... and sealed in a glass tube under vacuum."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [],
+      "interpretation": "CPAPN–S amorphous; CPTCDA–S shows crystalline S8",
+      "prov": ["Results"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "peaks",
+          "value": "475 cm−1, 930 cm−1 (S–S, C–O); 790 cm−1 (C–S)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms C–S and S–O bonding",
+      "prov": ["Results"]
+    },
+    {
+      "method": "FTIR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "peaks",
+          "value": "1240 cm−1, 1510 cm−1 (chain vibrations); 790 cm−1 (C–S)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Supports presence of C–S bonds",
+      "prov": ["Results"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "S 2p binding energies",
+          "value": "161.1–170.4 eV range with assignments to aromatic S, S–S/C–S, S–O–C, oxidized sulfur",
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Multiple sulfur environments; evidence of C–S and O–S bonds",
+      "prov": ["Results"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": "nano-sized aggregates into micro-sized particles",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Uniform distribution of O, N, S in carbon matrix",
+      "prov": ["Results"]
+    },
+    {
+      "method": "Thermogravimetric analysis",
+      "parameters": {
+        "heating_rate": {
+          "value": 10,
+          "unit": "K min-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "weight loss up to 600 °C",
+          "value": 4,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Indicates sulfur retention; composition ~60 wt% S",
+      "prov": ["Results"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical performance (flooded electrolyte)",
+        "results": [
+          {
+            "equation": "",
+            "value": 870,
+            "unit": "mAh g-1",
+            "notes": "Reversible capacity at 50 mA g-1 for CPAPN–S"
+          }
+        ]
+      },
+      {
+        "method_name": "Electrochemical performance (lean electrolyte, AFOE)",
+        "results": [
+          {
+            "equation": "",
+            "value": 541,
+            "unit": "mAh g-1",
+            "notes": "Reversible capacity after 200 cycles, sulfur loading ~10 mg cm-2"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 541,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

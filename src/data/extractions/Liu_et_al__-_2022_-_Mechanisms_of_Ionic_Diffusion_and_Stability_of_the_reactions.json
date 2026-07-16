@@ -1,0 +1,200 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Mechanisms of Ionic Diffusion and Stability of the Na4MnCr(PO4)3 Cathode",
+    "doi": "10.1021/acsmaterialslett.2c00194",
+    "authors": [
+      "Jiahui Liu",
+      "Shuo Wang",
+      "Yoshiyuki Kawazoe",
+      "Qiang Sun"
+    ],
+    "journal": "ACS Materials Letters",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "AIMD", "Na-ion batteries", "cathode material"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na4MnCr(PO4)3",
+      "molecular_formula": "Na4MnCr(PO4)3",
+      "intended_role": "cathode material",
+      "prov": ["Main text, first paragraph"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Na4MnCr(PO4)3",
+      "molecular_formula": "Na4MnCr(PO4)3",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Na+",
+      "molecular_formula": "Na",
+      "ontology": {
+        "role": "mobile ion",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (GGA+U)",
+      "parameters": {
+        "U_Mn": {
+          "value": 5.23,
+          "unit": "eV"
+        },
+        "U_Cr": {
+          "value": 4.07,
+          "unit": "eV"
+        }
+      },
+      "results": [
+        {
+          "metric": "Voltage plateaus reproduced",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Redox couples Mn2+/Mn3+, Mn3+/Mn4+, and Cr3+/Cr4+ confirmed.",
+      "prov": ["Figure 1c", "Figure 1d", "Figure 1e"]
+    },
+    {
+      "method": "PDOS analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Band gap pristine",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "O-2p states change but framework remains stable.",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "CI-NEB",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Energy barrier (concerted)",
+          "value": 0.18,
+          "unit": "eV"
+        },
+        {
+          "metric": "Energy barrier (stepwise)",
+          "value": 0.21,
+          "unit": "eV"
+        },
+        {
+          "metric": "Energy barrier (direct Na2-Na2)",
+          "value": 1.27,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Concerted and stepwise Na migration enable fast 3D diffusion.",
+      "prov": ["Figure 3b-d"]
+    },
+    {
+      "method": "AIMD",
+      "parameters": {
+        "temperature": {
+          "value": 1400,
+          "unit": "K"
+        },
+        "time": {
+          "value": 20,
+          "unit": "min"
+        }
+      },
+      "results": [
+        {
+          "metric": "Haven ratio",
+          "value": 0.52,
+          "unit": ""
+        },
+        {
+          "metric": "Site occupation factor (Na1, final)",
+          "value": 0.94,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Framework stable, confirms concerted migration and Na1 locking.",
+      "prov": ["Main text, discussion of AIMD", "Figure 4d"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Voltage calculation",
+        "results": [
+          {
+            "equation": "V ≈ (E_Nax2 − E_Nax1 − (x2−x1)E_Na)/ (x2−x1)",
+            "value": "",
+            "unit": "V"
+          }
+        ],
+        "prov": ["Figure 1e"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 160.5,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

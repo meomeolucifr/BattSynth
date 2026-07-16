@@ -1,0 +1,545 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "DFT Study on the Li Mobility in Li-Ion-Based Solid-State Electrolytes",
+    "doi": "10.1557/adv.201.37",
+    "authors": [
+      "Md Shafiqul Islam",
+      "Paul Simanjuntak",
+      "Saibal Mitra",
+      "Ridwan Sakidja"
+    ],
+    "journal": "MRS Advances",
+    "year": null
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "DFT",
+      "NEB",
+      "AIMD",
+      "solid-state electrolyte"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiPO3",
+      "molecular_formula": "LiPO3",
+      "intended_role": "solid-state electrolyte model (crystal & glass)",
+      "prov": [
+        "Page 3277-3279"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "γ-Li3PO4",
+      "molecular_formula": "Li3PO4",
+      "intended_role": "solid-state electrolyte model (crystal)",
+      "prov": [
+        "Page 3278"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "40 % Li2SO4 – 60 % (Li2O-P2O5) glass",
+      "molecular_formula": "",
+      "intended_role": "solid-state electrolyte model (glass)",
+      "prov": [
+        "Page 3279-3280"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiPO3",
+      "molecular_formula": "LiPO3",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3277-3279"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li3PO4",
+      "molecular_formula": "Li3PO4",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3278"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3277"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "P2O5",
+      "molecular_formula": "P2O5",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3277"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Li2SO4",
+      "molecular_formula": "Li2SO4",
+      "ontology": {
+        "role": "dopant/additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3277-3279"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Oxygen",
+      "molecular_formula": "O",
+      "ontology": {
+        "role": "framework/anion",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Throughout text"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Sulphur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "dopant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3279-3280"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Generation of relaxed 1×2×1 super-cell model of LiPO3 for amorphization studies.",
+        "operations": [
+          {
+            "action": "model_relaxation",
+            "parameters": {
+              "software": "VASP",
+              "plane_wave_cutoff": {
+                "value": 275,
+                "unit": "eV"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Initial structural relaxation prior to melt simulation."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "NVT ensemble",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 3278"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Melting of relaxed super-cell to create amorphous structure.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 3000,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": 0.8,
+              "unit": "ps"
+            },
+            "notes": "NVT ensemble, Verlet algorithm with 1 fs time step."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "NVT",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 3278"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Pressure release by expanding super-cell volume after melting.",
+        "operations": [
+          {
+            "action": "volume_increase",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 3278"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Stabilization run for the amorphous LiPO3 structure.",
+        "operations": [
+          {
+            "action": "molecular_dynamics",
+            "parameters": {
+              "ensemble": "NVT"
+            },
+            "duration": {
+              "value": 2,
+              "unit": "ps"
+            },
+            "temperature": {
+              "value": 3000,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "NVT",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 3278"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Construction of S-containing glass model (40 % Li2SO4 – 60 % Li2O-P2O5).",
+        "operations": [
+          {
+            "action": "substitution",
+            "parameters": {
+              "fraction_P_replaced_by_S": "40 %"
+            },
+            "notes": "Additional O and Li atoms introduced to maintain charge balance."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 3279-3280"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Relax initial crystal structure."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Heat to 3000 K for 0.8 ps to melt."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Release pressure by expanding volume."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Run 2 ps MD to obtain stable amorphous LiPO3."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Introduce sulphur to form Li2SO4-containing glass model."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact numerical values of lattice constants are partially unreadable due to OCR artifacts.",
+        "excerpt": "Table 1: ͳͲǤͷʹ  ͸Ǥͳ͵͹ͺ  ͶǤͻͷ͵"
+      },
+      {
+        "issue": "No explicit experimental quantities (mass, moles) provided; amounts left null.",
+        "excerpt": "… a model of supercell of 60%Li2O-P2O5 40% Li2SO4 was created for this study."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Nudge Elastic Band (NEB)",
+      "parameters": {
+        "software": "Quantum ESPRESSO",
+        "energy_cutoff": {
+          "value": 60,
+          "unit": "Ry"
+        },
+        "force_convergence": {
+          "value": 1e-3,
+          "unit": "Ry/Å"
+        }
+      },
+      "results": [
+        {
+          "metric": "Activation energy (Li3PO4, 1d-4c path)",
+          "value": 0.463,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy (Li3PO4, 1d-2c-3d path)",
+          "value": 0.69,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy (LiPO3, Li16-Li14 path)",
+          "value": 0.294,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy (LiPO3, Li5-Li14 path)",
+          "value": 0.094,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy (LiPO3, Li14-Li12 path)",
+          "value": 0.31,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "LiPO3 exhibits lower and less fluctuating energy barriers compared to γ-Li3PO4.",
+      "prov": [
+        "Page 3278-3279"
+      ]
+    },
+    {
+      "method": "Ab-initio Molecular Dynamics (AIMD)",
+      "parameters": {
+        "temperature": {
+          "value": 3000,
+          "unit": "K"
+        },
+        "time_step": {
+          "value": 1,
+          "unit": "fs"
+        },
+        "simulation_time": {
+          "value": 11.8,
+          "unit": "ps"
+        }
+      },
+      "results": [
+        {
+          "metric": "Mean squared displacement hierarchy",
+          "value": "Li > O > S ≈ P",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Li ions are the most mobile species; mobility increases with Li2SO4 addition.",
+      "prov": [
+        "Page 3281"
+      ]
+    },
+    {
+      "method": "Radial Distribution Function (RDF)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Loss of long-range order in amorphous LiPO3 beyond 2 Å",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Amorphous structure confirmed.",
+      "prov": [
+        "Figure 3"
+      ]
+    },
+    {
+      "method": "Coordination Number Analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "P coordination number in pure LiPO3 glass",
+          "value": 5.11,
+          "unit": ""
+        },
+        {
+          "metric": "P coordination number in S-mixed glass",
+          "value": 5.36,
+          "unit": ""
+        },
+        {
+          "metric": "Li coordination number in pure LiPO3 glass",
+          "value": 2.87,
+          "unit": ""
+        },
+        {
+          "metric": "Li coordination number in S-mixed glass",
+          "value": 3.17,
+          "unit": ""
+        }
+      ],
+      "interpretation": "S substitution increases coordination environments.",
+      "prov": [
+        "Figure 4"
+      ]
+    },
+    {
+      "method": "Bader Charge Analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Average Li charge in S-mixed glass",
+          "value": 0.86,
+          "unit": "e"
+        },
+        {
+          "metric": "Average Li charge in pure glass",
+          "value": 0.57,
+          "unit": "e"
+        }
+      ],
+      "interpretation": "Greater ionicity of Li in S-containing glass.",
+      "prov": [
+        "Page 3281"
+      ]
+    },
+    {
+      "method": "Vibrational Density of States",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Shift of Li vibrational frequency upon S addition",
+          "value": "lower frequency",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Lower frequency indicates easier hopping pathways.",
+      "prov": [
+        "Figure 7"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

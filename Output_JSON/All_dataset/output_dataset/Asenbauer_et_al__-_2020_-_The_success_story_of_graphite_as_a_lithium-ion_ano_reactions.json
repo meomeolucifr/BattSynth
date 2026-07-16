@@ -1,0 +1,251 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "The success story of graphite as a lithium-ion anode material – fundamentals, remaining challenges, and recent developments including silicon (oxide) composites",
+    "doi": "10.1039/d0se00175a",
+    "authors": ["Jakob Asenbauer", "Tobias Eisenmann", "Matthias Kuenzel", "Arefeh Kazzazi", "Zhen Chen", "Dominic Bresser"],
+    "journal": "Sustainable Energy & Fuels",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["graphite", "lithium-ion battery", "anode", "silicon composites"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "oxidized graphite",
+      "molecular_formula": "",
+      "intended_role": "modified anode material",
+      "prov": ["Page 5395 (Fig. 7b text)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "acid–base treated graphite",
+      "molecular_formula": "",
+      "intended_role": "modified anode material",
+      "prov": ["Page 5395 (Ein-Eli and Koch description)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "air",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "oxidant",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Oxidative atmosphere assumed for thermal treatment (not explicitly specified).",
+      "prov": ["Page 5395"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "nitric acid",
+      "molecular_formula": "HNO3",
+      "ontology": {
+        "role": "oxidizing solution",
+        "category": "acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 5395"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "ammonium persulfate",
+      "molecular_formula": "(NH4)2S2O8",
+      "ontology": {
+        "role": "oxidant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in saturated solution with sulfuric acid",
+      "prov": ["Page 5395"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "sulfuric acid",
+      "molecular_formula": "H2SO4",
+      "ontology": {
+        "role": "solvent",
+        "category": "acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Medium for (NH4)2S2O8 saturation",
+      "prov": ["Page 5395"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "lithium hydroxide",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "post-treatment base",
+        "category": "base"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Hot LiOH solution used after acid treatment",
+      "prov": ["Page 5395"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mild thermal oxidation of graphite",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 823,
+              "unit": "K"
+            },
+            "notes": "Temperature stated as 550 °C for 1 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "oxidizing (air, assumed)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 5395 (Peled et al.)"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Chemical oxidation and base treatment of graphite",
+        "operations": [
+          {
+            "action": "disperse",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3"]
+            },
+            "notes": "Graphite dispersed in nitric acid; amounts not given"
+          },
+          {
+            "action": "disperse",
+            "parameters": {
+              "inputs": ["chem_1", "chem_4", "chem_5"]
+            },
+            "notes": "Alternative treatment: saturated (NH4)2S2O8 in H2SO4"
+          },
+          {
+            "action": "treat",
+            "parameters": {
+              "inputs": ["chem_1", "chem_6"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Subsequent treatment with hot LiOH solution; no temperature specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 5395 (Ein-Eli & Koch)"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Thermal oxidation of graphite at 823 K for 60 min"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Sequential acid/oxidant dispersion and LiOH base treatment of graphite"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Atmosphere during thermal oxidation not explicitly stated",
+        "excerpt": "mild oxidation at 550 °C for 1 h"
+      },
+      {
+        "issue": "No quantitative reagent amounts given for acid/base treatments",
+        "excerpt": "dispersed graphite particles either in nitric acid or a saturated solution of (NH4)2S2O8 in sulfuric acid, followed by a subsequent treatment with a hot LiOH solution"
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T19:57:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

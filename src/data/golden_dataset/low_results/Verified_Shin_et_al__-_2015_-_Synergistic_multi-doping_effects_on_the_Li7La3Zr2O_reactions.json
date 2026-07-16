@@ -1,0 +1,780 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Synergistic multi-doping effects on the Li7La3Zr2O12 solid electrolyte for fast lithium ion conduction",
+    "doi": "10.1038/srep18053",
+    "authors": [
+      "Dong Ok Shin",
+      "Kyungbae Oh",
+      "Kwang Man Kim",
+      "Kyu-Young Park",
+      "Byungju Lee",
+      "Young-Gi Lee",
+      "Kisuk Kang"
+    ],
+    "journal": "Scientific Reports",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research_article",
+    "tags": [
+      "solid electrolyte",
+      "LLZO",
+      "multi-doping",
+      "lithium ion conduction"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Single Al-doped cubic LLZO",
+      "molecular_formula": "Li7\u22123x\u2212yAlxLa3Zr2\u2212yTayO12 (x=0.2,y=0)",
+      "intended_role": "solid electrolyte product",
+      "prov": [
+        "Methods",
+        "Fig.2a",
+        "Preparation section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly gives the target composition using the formula Li7\u22123x\u2212yAlxLa3Zr2\u2212yTayO12 and specifies the single Al-doped case as x = 0.2, y = 0. This appears in the Results section describing Fig. 2a: \u201cdoping with Al (Li7\u22123x\u2212yAlxLa3Zr2\u2212yTayO12; x = 0.2, y = 0) \u2026\u201d. This matches the extracted value exactly (aside from minor formatting).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Multi-doped cubic LLZO",
+      "molecular_formula": "Li7\u22123x\u2212yAlxLa3Zr2\u2212yTayO12 (x=0.2,y=0.2)",
+      "intended_role": "solid electrolyte product",
+      "prov": [
+        "Methods",
+        "Fig.2a",
+        "Preparation section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly gives the target composition in the Results section describing Fig. 2a: \u201cLi7\u22123x\u2212yAlxLa3Zr2\u2212yTayO12; x = 0.2, y = 0.2\u201d for the multi-doped LLZO. This matches the extracted value exactly (same formula and x,y values).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The Methods section explicitly lists Li2CO3 as a precursor material (\u201cLi2CO3 (99.9%), La2O3 (99.9%), ZrO2 (99.9%), Al2O3..., Ta2O5...\u201d), supporting the chemical identity. However, the text does not provide a specific amount (mass, molar quantity, or concentration) for Li2CO3\u2014only that precursors were \u201cweighed according to the stoichiometry\u201d and that \u201cNo excess Li was added.\u201d Therefore, the extractor\u2019s note that the amount is not specified is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "La2O3",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The Methods section explicitly lists La2O3 (99.9%) as a precursor (\u201cLi2CO3 (99.9%), La2O3 (99.9%), ZrO2 (99.9%), \u2026 were purchased\u2026 and used as received.\u201d). However, the text does not provide a mass, molar amount, or concentration for La2O3\u2014only that precursors were \u201cweighed according to the stoichiometry\u201d without specific quantities. Therefore, the identity is supported and the extracted statement that the amount is not specified is also supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "ZrO2",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The Methods section explicitly lists ZrO2 (99.9%) as a precursor material (\u201cLi2CO3\u2026, La2O3\u2026, ZrO2 (99.9%), \u2026\u201d). However, the text does not provide a specific mass, molar amount, or wt% for ZrO2; it only states that precursors were \u201cweighed according to the stoichiometry\u201d without giving quantities. Therefore, the identity is supported and the extractor is correct that the amount is not specified.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Al2O3 nanopowder",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "<50 nm particle size",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The Methods section explicitly lists \u201cAl2O3 nanopowder (<50 nm particle size)\u201d among the purchased precursor materials, supporting the chemical identity. The Methods text does not provide any mass, molar amount, or concentration specifically for the Al2O3 nanopowder\u2014only that precursors were \u201cweighed according to the stoichiometry,\u201d without listing individual weighed quantities\u2014so \u201cAmount: Not specified in text\u201d is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ta2O5",
+      "molecular_formula": "Ta2O5",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section explicitly lists Ta2O5 (99.9%) as a purchased precursor (\u201cLi2CO3\u2026, Al2O3\u2026, Ta2O5 (99.9%)\u2026\u201d), supporting the chemical identity Ta2O5. Nowhere in the paper is a specific mass, molar amount, or concentration of Ta2O5 added reported; instead it states precursors were \u201cweighed according to the stoichiometry,\u201d without giving numeric amounts. Therefore \u201cAmount: Not specified in text\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Isopropyl alcohol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section explicitly states that the precursor materials were \u201cmixed by planetary ball-milling in isopropyl alcohol at 200 rpm for 10 h,\u201d confirming the chemical identity (isopropyl alcohol). However, the text provides no volume/mass/concentration for the isopropyl alcohol, so \u201cAmount: Not specified in text\u201d is accurate.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Boron nitride",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "crucible coating",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as coating on Al2O3 crucible",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The Methods section states that an Al2O3 crucible with boron nitride (BN) coating was used (\u201cAl2O3 crucible with boron nitride (BN) coating was used\u2026\u201d), confirming the chemical identity as boron nitride. The text does not provide any quantity or amount for the boron nitride coating (no mass, thickness, concentration, etc.), so \u201cAmount: Not specified in text\u201d is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Copper",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "electrode material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "\u22486 \u03bcm thick evaporated layer on pellets",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper\u2019s Methods and main text list precursor chemicals and dopants as Li2CO3, La2O3, ZrO2, Al2O3, and Ta2O5, and discusses Al and Ta doping into LLZO. Copper (Cu) is only mentioned as an evaporated electrode/current collector (~6 \u03bcm thick Cu electrode) for impedance measurements, not as a dopant/chemical identity in the synthesized electrolyte. Therefore, the extracted chemical identity 'Copper' for 'Chemical Identity and Amount' is not supported. While the Cu electrode thickness is specified, no 'amount of copper' as a reagent/dopant is applicable here.",
+        "suggested_fix": "If the intended chemical is a dopant/precursor: Al (from Al2O3) and/or Ta (from Ta2O5) are the relevant dopants; amounts are given via stoichiometry (e.g., Li7\u22123x\u2212yAlxLa3Zr2\u2212yTayO12 with x=0.2, y=0 or 0.2). If the intended chemical is the electrode: Copper electrode thickness is ~6 \u03bcm (amount otherwise not specified)."
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Stoichiometric weighing and mixing of precursor oxides/carbonate with solvent",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "notes": "amounts according to target stoichiometry",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "In the Methods section (\u201cPreparation of the single Al-doped and multi-doped\u2026\u201d), the paper explicitly states: \u201cThe whole precursor materials were weighed according to the stoichiometry\u2026\u201d. This supports that a synthesis operation involved weighing (i.e., \u201cweigh\u201d).",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4",
+                "chem_5",
+                "chem_6"
+              ],
+              "method": "planetary ball milling",
+              "speed": {
+                "value": 200,
+                "unit": "rpm"
+              }
+            },
+            "duration": {
+              "value": 600,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.64,
+              "reasoning": "The Methods section explicitly states that the precursor materials were \u201cweighed according to the stoichiometry and mixed by planetary ball-milling in isopropyl alcohol at 200 rpm for 10 h,\u201d which supports that a synthesis operation of mixing occurred. Although the paper uses the word \u201cmixed\u201d (not exactly \u201cmix\u201d), this is a formatting/wording variant and refers to the same operation.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Drying of the mixed slurry",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper\u2019s Methods section describes solid-state synthesis steps including planetary ball-milling in isopropyl alcohol, followed by *drying* the mixture, calcination, regrinding, pressing, and sintering. However, \u201cdry\u201d is not stated as a synthesis operation type (e.g., dry milling/dry synthesis) nor as a standalone operation; it only appears as \u201cAfter drying the mixture...\u201d. Thus the extracted value \u2018dry\u2019 is not explicitly supported as the synthesis operation.",
+              "suggested_fix": "If the field is meant to capture a specific operation mentioned: use \u201cdrying\u201d (as in \u201cAfter drying the mixture...\u201d). If it is meant to capture the overall synthesis route: \u201csolid-state reaction (planetary ball-milling in isopropyl alcohol; drying; calcination; pressing; sintering)\u201d."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calcination to form cubic LLZO powder",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1273,
+              "unit": "K"
+            },
+            "notes": "2 h for multi-doped; 4 h (240 min) for single Al-doped",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes a calcination step in the Methods: \u201cAfter drying the mixture, the collected powder was calcined at 1000\u2009\u00b0C for 2\u20134\u2009h to obtain the cubic LLZO powder.\u201d It also mentions \u201cone-step calcination\u201d in the Introduction/Results discussion of synthesis. Therefore, the synthesis operation \u201ccalcine\u201d is supported by the source text.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods",
+          "Fig.2a"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Regrinding of calcined powder",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "manual or mechanical",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.95,
+              "reasoning": "The Methods section describes mixing by planetary ball-milling, drying, calcination, regrinding, pressing, and sintering. While \u201creground\u201d implies a grinding step, the paper does not explicitly state the synthesis operation as \u201cgrind\u201d (or \u201cgrinding\u201d) in the procedural description; it uses \u201creground\u201d. Therefore the extracted value \u201cgrind\u201d is not explicitly supported verbatim.",
+              "suggested_fix": "reground (after calcination)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Pellet pressing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 500,
+                "unit": "bar"
+              }
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The Methods section explicitly states: \u201cThe calcined LLZO powder was reground and pressed into a pellet at 50 MPa.\u201d This directly supports that a pressing operation (\u201cpress\u201d) was part of the synthesis process.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 500,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.93,
+            "reasoning": "The full text describes synthesis steps including calcination at 1000 \u00b0C, pellet pressing at 50 MPa, and sintering at 1200 \u00b0C, but nowhere mentions applying a synthesis pressure of 500 bar. The only pressure explicitly given is the pellet pressing pressure (50 MPa), which is not stated in bar and is not 500 bar (50 MPa \u2248 500 bar). Therefore the extracted value '500 bar' is not explicitly supported by the paper text as written.",
+            "suggested_fix": "Not specified (no synthesis pressure in bar is stated). If the intended field was pellet pressing pressure, the paper states 50 MPa (\u2248500 bar), but it is not reported in bar."
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Sintering to densify pellets",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1473,
+              "unit": "K"
+            },
+            "notes": "Duration varied 60\u20131440 min; 720 min gives highest conductivity",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly describes a sintering step multiple times, e.g., stating an \u201coptimized sintering process\u201d (12 h at 1200 \u00b0C) and in Methods: \u201cFinally, the pellet was sintered at 1200 \u02daC from 1 to 24 h\u2026\u201d. Therefore the synthesis operation 'sinter' is supported by the source text.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods",
+          "Fig.3a"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Deposition of Cu current collector",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": [
+                "chem_8"
+              ],
+              "method": "thermal evaporation",
+              "thickness": {
+                "value": 6,
+                "unit": "\u00b5m"
+              }
+            },
+            "notes": "Both sides of pellet",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper describes synthesis via solid-state reaction, including mixing by planetary ball-milling in isopropyl alcohol, drying, calcination (1000 \u00b0C), pellet pressing, and sintering (1200 \u00b0C). Nowhere in the text is a synthesis operation described as \u201ccoat\u201d (e.g., coating a substrate or coating during deposition). The only occurrence of \u201ccoating\u201d is \u201cAl2O3 crucible with boron nitride (BN) coating was used,\u201d which is not a synthesis operation on the material itself.",
+              "suggested_fix": "Replace \u201ccoat\u201d with \u201csolid-state reaction\u201d (mix/ball-mill \u2192 dry \u2192 calcine \u2192 press pellet \u2192 sinter)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ball milling of precursors in isopropyl alcohol for 10 h at 200 rpm",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The Methods section explicitly states: \"The whole precursor materials were weighed according to the stoichiometry and mixed by planetary ball-milling in isopropyl alcohol at 200 rpm for 10 h.\" This directly supports the extracted workflow timeline item (ball milling in isopropyl alcohol, 200 rpm, 10 h).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Drying of milled slurry",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The Methods section describes mixing by planetary ball-milling in isopropyl alcohol, then \"After drying the mixture, the collected powder was calcined...\" However, the phrase \"Drying of milled slurry\" is not explicitly stated anywhere in the provided text (no mention of a slurry). The text only mentions drying the mixture after milling in isopropyl alcohol.",
+          "suggested_fix": "After drying the mixture (following planetary ball-milling in isopropyl alcohol for 10 h)"
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Calcination at 1000 \u00b0C (2\u20134 h) to obtain cubic LLZO powder",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The Methods section explicitly states: \u201cAfter drying the mixture, the collected powder was calcined at 1000 \u00b0C for 2\u20134 h to obtain the cubic LLZO powder.\u201d This directly supports the extracted workflow timeline statement about calcination at 1000 \u00b0C for 2\u20134 h yielding cubic LLZO powder.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Regrinding of calcined powder",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The Methods section explicitly states: \u201cThe calcined LLZO powder was reground and pressed into a pellet at 50 MPa.\u201d This directly supports the workflow step \u201cRegrinding of calcined powder.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Cold pressing into pellets at 50 MPa",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The Methods section explicitly states: \u201cThe calcined LLZO powder was reground and pressed into a pellet at 50 MPa.\u201d This directly supports the extracted workflow timeline item \u201cCold pressing into pellets at 50 MPa.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Sintering at 1200 \u00b0C (1\u201324 h; optimal 12 h) with mother powder cover",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.94,
+          "reasoning": "The Methods section states: \u201cFinally, the pellet was sintered at 1200\u0002\u0002C from 1 to 24 h\u2026\u201d and \u201cIn the sintering step, the pellet was covered with the mother LLZO power to minimize the Li loss\u2026\u201d. In the Results section it further notes an \u201coptimized sintering process\u2026 (12 h at 1200\u0002\u0002C)\u201d and discusses conductivity vs. sintering time at 1200\u0002\u0002C with the highest value at 12 h, consistent with \u2018optimal 12 h\u2019 within the 1\u201324 h range. (Minor typo in paper: \u2018power\u2019 should be \u2018powder\u2019.)",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Cu evaporation (~6 \u00b5m) on pellet surfaces for impedance testing",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The Methods/Characterization section explicitly states: \u201cPrior to measurement, the ~6 \u03bcm thick Cu electrode was evaporated on both sides of LLZO pellet to form the current collector.\u201d This supports the extracted workflow step of Cu evaporation (~6 \u00b5m) on pellet surfaces for impedance testing.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact precursor masses not specified",
+        "excerpt": "The whole precursor materials were weighed according to the stoichiometry...",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The Methods section states: \u201cThe whole precursor materials were weighed according to the stoichiometry\u2026\u201d, but nowhere in the paper are the actual precursor masses (e.g., grams of Li2CO3, La2O3, ZrO2, Al2O3, Ta2O5) reported. The text lists reagents, processing conditions, and explicitly notes \u201cNo excess Li was added into the mixture,\u201d but does not provide exact weighed amounts. Therefore, the flagged workflow ambiguity (\u201cExact precursor masses not specified\u201d) is supported by the document\u2019s omission.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Drying conditions unspecified",
+        "excerpt": "After drying the mixture, the collected powder was calcined...",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.87,
+          "reasoning": "In the Methods section, the synthesis procedure states: \u201cAfter drying the mixture, the collected powder was calcined at 1000 \u00b0C for 2\u20134 h\u2026\u201d, but it does not specify any drying conditions (temperature, duration, atmosphere, method such as oven/vacuum). Therefore the noted workflow ambiguity\u2014drying conditions unspecified\u2014is accurate and supported by the paper\u2019s omission.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Atmosphere during calcination and sintering not stated",
+        "excerpt": "calcined at 1000 \u02daC for 2\u20134 h ... sintered at 1200 \u02daC from 1 to 24 h",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "In the Methods section, the paper states the calcination and sintering temperatures/times (\u201ccalcined at 1000 \u00b0C for 2\u20134 h\u2026 sintered at 1200 \u00b0C from 1 to 24 h\u201d) but does not specify the atmosphere (e.g., air, O2, Ar) during these thermal steps. Elsewhere, it discusses general air stability of LLZO and uses isopropyl alcohol for milling, but no explicit calcination/sintering atmosphere is given. Therefore the noted workflow ambiguity (atmosphere not stated) is supported by the document\u2019s omission.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu K\u03b1 (\u03bb = 1.54056 \u00c5)"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "cubic LLZO confirmed; multi-doped stabilizes cubic in 2 h",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig.2a",
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The text explicitly supports that XRD confirms cubic LLZO formation and that multi-doping accelerates/stabilizes the cubic phase with shorter treatment. In the Results section describing Fig. 2a, it states Al-doping stabilizes the pure cubic phase, and that with multi-doping of Al and Ta the cubic phase forms more quickly, reducing thermal reaction time to 2 h at 1000 \u00b0C (vs 4 h for other samples). This matches the extracted claim 'cubic LLZO confirmed; multi-doped stabilizes cubic in 2 h'.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "microstructure",
+          "value": "dense grains after 12 h sintering; porous at 1 h",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig.3a",
+        "Fig.3b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The text describing Fig. 3a,b explicitly states: \u201cIn the initial stage of the sintering, the pellet had porous microstructures\u2026\u201d and that the \u201c12 h sintered pellets\u201d indicate an \u201cinternal dense structure.\u201d Fig. 3a,b are described as including cross-sectional SEM images vs sintering time at 1200 \u00b0C, matching the extracted claim of porous at 1 h and dense after 12 h sintering.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "10^-1\u201310^5 Hz",
+        "temperature_range": "-20\u2013100 \u00b0C"
+      },
+      "results": [
+        {
+          "metric": "total ionic conductivity (multi-doped, 12 h)",
+          "value": 0.000614,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "total ionic conductivity (single Al-doped, 12 h)",
+          "value": 0.000254,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy (multi-doped)",
+          "value": 0.29,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (single Al-doped)",
+          "value": 0.36,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig.3c",
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly reports the room-temperature total ionic conductivities for 12 h sintered pellets as 6.14 \u00d7 10\u22124 S cm\u22121 (multi-doped) and 2.54 \u00d7 10\u22124 S cm\u22121 (single Al-doped) (Results, Page 3; also reiterated in Summary, Page 7). It also explicitly states activation energies from Arrhenius plots as 0.29 eV (multi-doped) and 0.36 eV (single Al-doped) (Page 4, Fig. 3c discussion). The extracted decimal values (0.000614 and 0.000254 S cm\u22121) correctly match the scientific notation values. Provenance is partially off: conductivities are stated in text near Fig. 3a/b and activation energies near Fig. 3c; Methods describes impedance setup but not these specific numeric results.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "\u03c3 = A exp(-Ea/kT)",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.77,
+          "reasoning": "The paper explicitly describes multiple analysis/characterization methods (e.g., X-ray diffraction (XRD) including Rietveld refinement, scanning electron microscopy (SEM), AC impedance spectroscopy for ionic conductivity, bond valence method (BVM) simulations, and density functional theory (DFT) calculations). Since the extracted value for \u201cAnalysis Method\u201d is blank/empty, it is not supported as a correct extraction.",
+          "suggested_fix": "Specify the analysis methods used, e.g., XRD (with Rietveld refinement), SEM, AC impedance spectroscopy, DFT calculations, and bond valence method (BVM) for diffusion pathway visualization."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

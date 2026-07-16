@@ -1,0 +1,120 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Deep potential generation scheme and simulation protocol for the Li10GeP2S12-type superionic conductors",
+    "doi": "10.1063/5.0041849",
+    "authors": ["Jianxing Huang", "Linfeng Zhang", "Han Wang", "Jinbao Zhao", "Jun Cheng", "Weinan E"],
+    "journal": "Journal of Chemical Physics",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["solid-state electrolyte", "superionic conductor", "machine learning potential", "diffusion coefficient"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "study material",
+      "prov": ["Page 1, Abstract"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li10SiP2S12",
+      "molecular_formula": "Li10SiP2S12",
+      "intended_role": "study material",
+      "prov": ["Page 1, Abstract"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li10SnP2S12",
+      "molecular_formula": "Li10SnP2S12",
+      "intended_role": "study material",
+      "prov": ["Page 1, Abstract"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Molecular dynamics simulation (Deep Potential, DP-GEN)",
+      "parameters": {
+        "temperature_range": "300–1000 K",
+        "system_size": "≈1000 atoms",
+        "ensemble": "NVT (fixed lattice) and NpT (thermal expansion)",
+        "time_scale": "up to 10 ns"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Pages 5-9"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Diffusion coefficient calculation",
+        "results": [
+          {
+            "system": "Li10SiP2S12",
+            "value": 16,
+            "unit": "10^-12 m2 s-1",
+            "temperature": 300,
+            "prov": ["Page 10, Comparison to experiment"]
+          },
+          {
+            "system": "Li10GeP2S12",
+            "value": 19,
+            "unit": "10^-12 m2 s-1",
+            "temperature": 300,
+            "prov": ["Page 10, Comparison to experiment"]
+          },
+          {
+            "system": "Li10SnP2S12",
+            "value": 9,
+            "unit": "10^-12 m2 s-1",
+            "temperature": 300,
+            "prov": ["Page 10, Comparison to experiment"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-27T18:23:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

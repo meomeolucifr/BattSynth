@@ -1,0 +1,437 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Atomic Scale Simulations of the Solid Electrolyte Li7La3Zr2O12",
+    "doi": "",
+    "authors": ["Seungho Yu"],
+    "journal": "",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "PhD Dissertation",
+    "tags": ["solid electrolyte", "LLZO", "DFT", "molecular dynamics", "grain boundary", "ionic conductivity", "electrochemical window"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "solid electrolyte",
+      "prov": ["Chapters 3–7"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic solid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Garnet electrolyte, also appears in protonated or doped forms",
+      "prov": ["Chapters 3–7"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "H2O",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Liquid or vapor phase depending on reaction pathway",
+      "prov": ["Chapter 4, Eq 4.5a, 4.7a"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "CO2",
+      "molecular_formula": "CO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Chapter 4, Eq 4.5b, 4.6b, 4.7b"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiOH",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "intermediate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Forms on LLZO surface after protonation",
+      "prov": ["Chapter 4, Eq 4.5a, 4.5b"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Surface contamination layer",
+      "prov": ["Chapter 4, Eq 4.5b, 4.6b"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "intermediate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Chapter 4, Eq 4.6a"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "La2O3",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reference phase",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for chemical potential calculations",
+      "prov": ["Chapter 3, Eq 3.2"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Li metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Multiple chapters"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Protonation of LLZO via Li+/H+ exchange forming LiOH surface layer",
+        "operations": [
+          {
+            "action": "reaction",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "products": ["chem_4"],
+              "byproducts": [],
+              "stoichiometry": "Li7La3Zr2O12 + x H2O → Li7−xHxLa3Zr2O12 + x LiOH"
+            },
+            "temperature": {
+              "value": 298.15,
+              "unit": "K"
+            },
+            "notes": "Equation 4.5a; thermodynamically favorable up to 466 K"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "humid air",
+          "pressure": {
+            "value": 1,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Table 4.1", "Figure 4.2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Carbonation of LiOH to form Li2CO3 contamination layer",
+        "operations": [
+          {
+            "action": "reaction",
+            "parameters": {
+              "inputs": ["chem_4", "chem_3"],
+              "products": ["chem_5", "chem_2"],
+              "stoichiometry": "LiOH + 0.5 CO2 → 0.5 Li2CO3 + 0.5 H2O"
+            },
+            "temperature": {
+              "value": 298.15,
+              "unit": "K"
+            },
+            "notes": "Equation 4.5b; ΔG = -33.6 kJ/mol"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient CO2",
+          "pressure": {
+            "value": 1,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Table 4.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Alternative pathway: Protonation yielding Li2O intermediate",
+        "operations": [
+          {
+            "action": "reaction",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "products": ["chem_6"],
+              "stoichiometry": "Li7La3Zr2O12 + x H2O → Li7−2xH2xLa3Zr2O12 + x Li2O"
+            },
+            "temperature": {
+              "value": 298.15,
+              "unit": "K"
+            },
+            "notes": "Equation 4.6a; less favorable (ΔG = +21.5 kJ/mol)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "humid air",
+          "pressure": {
+            "value": 1,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Table 4.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Carbonation of Li2O to Li2CO3",
+        "operations": [
+          {
+            "action": "reaction",
+            "parameters": {
+              "inputs": ["chem_6", "chem_3"],
+              "products": ["chem_5"],
+              "stoichiometry": "Li2O + CO2 → Li2CO3"
+            },
+            "temperature": {
+              "value": 298.15,
+              "unit": "K"
+            },
+            "notes": "Equation 4.6b; highly exergonic (ΔG = -147.6 kJ/mol)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient CO2",
+          "pressure": {
+            "value": 1,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Table 4.1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Initial air exposure leading to protonation of LLZO"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Formation of Li2CO3 surface layer via carbonation"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Alternative Li2O intermediate pathway"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Conversion of Li2O to Li2CO3"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No explicit quantities for reactants/products",
+        "excerpt": "The calculations assume x=1/8 but no masses or volumes are given."
+      },
+      {
+        "issue": "Temperature units",
+        "excerpt": "Room temperature mentioned without specifying exact value; assumed 298.15 K."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT (PBE, HSE06, G0W0)",
+      "parameters": {
+        "energy_cutoff": "600 eV (PBE); 450 eV (HSE06)",
+        "k_point_grid": "2×2×2 for bulk",
+        "functional": ["PBE", "HSE06", "HSE06+G0W0"]
+      },
+      "results": [
+        {
+          "metric": "band_gap",
+          "value": 6.4,
+          "unit": "eV"
+        },
+        {
+          "metric": "CBM_position_vs_Li/Li+",
+          "value": 0.2,
+          "unit": "eV above Li/Li+",
+          "notes": "(100) slab"
+        },
+        {
+          "metric": "VBM_position_vs_Li/Li+",
+          "value": 4,
+          "unit": "eV below",
+          "notes": "stable up to 4 V cathodes"
+        }
+      ],
+      "interpretation": "LLZO has wide electrochemical window ~0–4 V vs Li/Li+",
+      "prov": ["Chapter 3, Figures 3.3–3.9"]
+    },
+    {
+      "method": "AIMD",
+      "parameters": {
+        "temperatures": "700–1000 K",
+        "time_window": "40 ps",
+        "timestep": "1–2 fs"
+      },
+      "results": [
+        {
+          "metric": "Li+ conductivity (pure LLZO, 300 K)",
+          "value": 3.2e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "Li+ conductivity (35H-LLZO, 300 K)",
+          "value": 5.3e-5,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation_energy_Li_diffusion_pure",
+          "value": 0.22,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "High protonation levels significantly reduce Li transport",
+      "prov": ["Figure 4.5", "Figure 4.6", "Table 4.2"]
+    },
+    {
+      "method": "Molecular Dynamics (classical)",
+      "parameters": {
+        "grain_boundaries": "Σ3(112), Σ5(310), Σ5(210)",
+        "temperatures": "700–1100 K"
+      },
+      "results": [
+        {
+          "metric": "Li_diffusivity_reduction_S5(310)_300K",
+          "value": 2,
+          "unit": "orders of magnitude",
+          "notes": "vs bulk"
+        },
+        {
+          "metric": "elastic_softening_GB_max",
+          "value": 50,
+          "unit": "%",
+          "notes": "C44 drop at Σ5 tilt GB"
+        }
+      ],
+      "interpretation": "GBs show reduced Li mobility and mechanical softening",
+      "prov": ["Chapter 6, Chapter 7"]
+    },
+    {
+      "method": "Contact angle (DFT-based Wad)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "θ_Li_on_Li2CO3",
+          "value": 142,
+          "unit": "degree"
+        },
+        {
+          "metric": "θ_Li_on_LLZO",
+          "value": 62,
+          "unit": "degree"
+        }
+      ],
+      "interpretation": "Surface contamination decreases Li wettability leading to high interfacial resistance",
+      "prov": ["Figure 4.4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Thermodynamic calculations of Gibbs free energy",
+        "results": [
+          {
+            "equation": "ΔG for Li7La3Zr2O12 + H2O → protonated LLZO + LiOH",
+            "value": -33,
+            "unit": "kJ mol-1"
+          },
+          {
+            "equation": "ΔG for LiOH + 0.5 CO2 → 0.5 Li2CO3 + 0.5 H2O",
+            "value": -33.6,
+            "unit": "kJ mol-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

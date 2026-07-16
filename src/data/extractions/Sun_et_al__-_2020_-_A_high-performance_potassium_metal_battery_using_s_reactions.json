@@ -1,0 +1,594 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A high-performance potassium metal battery using safe ionic liquid electrolyte",
+    "doi": "10.1073/pnas.2012716117",
+    "authors": [
+      "Hao Sun",
+      "Peng Liang",
+      "Guanzhou Zhu",
+      "Wei Hsuan Hung",
+      "Yuan-Yao Li",
+      "Hung-Chun Tai",
+      "Cheng-Liang Huang",
+      "Jiachen Li",
+      "Yongtao Meng",
+      "Michael Angell",
+      "Chang-An Wang",
+      "Hongjie Dai"
+    ],
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis_and_battery_performance",
+    "tags": ["ionic liquid electrolyte", "potassium battery", "Prussian blue analogue", "energy storage"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Buffered K-Cl-IL electrolyte",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Page 27848 Fig.1A"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "K1.91Mn[Fe(CN)6]0.97 (KMFC)",
+      "molecular_formula": "K1.91Mn[Fe(CN)6]0.97",
+      "intended_role": "cathode_material",
+      "prov": ["Page 27848"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "K1.90Mn0.92Co0.08[Fe(CN)6]0.96 (KMCFC)",
+      "molecular_formula": "K1.90Mn0.92Co0.08[Fe(CN)6]0.96",
+      "intended_role": "cathode_material",
+      "prov": ["Page 27848"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "K1.90Mn0.92Co0.08[Fe(CN)6]0.96@rGO (KMCFC@rGO)",
+      "molecular_formula": "",
+      "intended_role": "cathode_material",
+      "prov": ["Page 27849"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Aluminum chloride",
+      "molecular_formula": "AlCl3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used to form chloroaluminate ionic liquid; mixed with [EMIm]Cl at molar ratio 1.2",
+      "prov": ["Page 27848"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "1-ethyl-3-methylimidazolium chloride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "ionic liquid cation source"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mixed with AlCl3 at molar ratio 1.2 to form acidic IL",
+      "prov": ["Page 27848"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Potassium chloride",
+      "molecular_formula": "KCl",
+      "ontology": {
+        "role": "buffering_agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Added in excess to neutralize acidic IL",
+      "prov": ["Page 27848"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Ethylaluminum dichloride",
+      "molecular_formula": "C2H5AlCl2",
+      "ontology": {
+        "role": "additive",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": 0.5,
+        "unit": "wt%"
+      },
+      "notes": "Added to IL electrolyte",
+      "prov": ["Page 27848"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Potassium bis(fluorosulfonyl)imide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "additive",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 8,
+        "unit": "wt%"
+      },
+      "notes": "Critical additive for SEI/CEI formation",
+      "prov": ["Page 27848"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Potassium metal",
+      "molecular_formula": "K",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 27848"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Nickel foil",
+      "molecular_formula": "Ni",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as current collector and for plating tests",
+      "prov": ["Page 27849"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Reduced graphene oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive_additive",
+        "category": "carbon_material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Introduced into cathode via ultrasonic treatment",
+      "prov": ["Page 27849"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of acidic chloroaluminate ionic liquid",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "molar_ratio": 1.2
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Referred to as 1.2 AlCl3/[EMIm]Cl electrolyte"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 27848"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Buffering to neutrality with excess KCl",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "state": "solid"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Generates buffered 1.2 AlCl3/[EMIm]Cl electrolyte"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 27848"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Addition of EtAlCl2 additive",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_4"],
+              "amount_wt%": 0.5
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 27848"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Addition of KFSI additive to form final buffered K-Cl-IL electrolyte",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_5"],
+              "amount_wt%": 8
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Final electrolyte contains 0.96 M K+ and 0.48 M FSI-"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 27848"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Coprecipitation synthesis of cobalt-doped Prussian blue analogue (KMCFC)",
+        "operations": [
+          {
+            "action": "coprecipitate",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Facile coprecipitation method yielded K1.90Mn0.92Co0.08[Fe(CN)6]0.96"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 27848"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Formation of KMCFC@rGO composite cathode",
+        "operations": [
+          {
+            "action": "ultrasonicate",
+            "parameters": {
+              "inputs": ["chem_8"],
+              "medium": "precursor solution"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "rGO added before coprecipitation to build conducting network"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 27849"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare acidic ionic liquid by mixing AlCl3 with [EMIm]Cl"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Buffer ionic liquid with KCl to neutrality"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Introduce EtAlCl2 additive"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Introduce KFSI additive to generate final buffered K-Cl-IL electrolyte"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Synthesize Co-doped Prussian blue analogue cathode via coprecipitation"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Integrate rGO during coprecipitation to obtain KMCFC@rGO composite"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing quantitative details (temperature, duration) for synthesis steps",
+        "excerpt": "Here we mixed AlCl3 and [EMIm]Cl at a certain molar ratio, e.g., 1.2 to produce an acidic room-temperature IL... (see SI Appendix, Materials and Methods)."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "AlCl4− peak intensity",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Conversion of Al2Cl7− to AlCl4− after buffering; appearance of FSI peak at 387 cm−1 after KFSI addition",
+      "prov": ["Page 27848 Fig.1B"]
+    },
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": [
+          {
+            "value": 295,
+            "unit": "K"
+          },
+          {
+            "value": 323,
+            "unit": "K"
+          }
+        ]
+      },
+      "results": [
+        {
+          "metric": "ionic_conductivity",
+          "value": 13.1,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "ionic_conductivity",
+          "value": 20.8,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "Buffered K-Cl-IL exhibits higher conductivity than prior IL and organic electrolytes",
+      "prov": ["Page 27848 Fig.1C"]
+    },
+    {
+      "method": "Thermogravimetric analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "onset_weight_loss_temperature",
+          "value": 603,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Electrolyte shows superior thermal stability vs. organic carbonate electrolyte",
+      "prov": ["Page 27848 Fig.1D"]
+    },
+    {
+      "method": "Flammability test",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "flammability",
+          "value": "nonflammable",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Buffered K-Cl-IL does not ignite upon flame exposure",
+      "prov": ["Page 27848 Fig.1E"]
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "scan_rate": {
+          "value": 0.1,
+          "unit": "mV s-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "reduction_peak_voltages",
+          "value": "3.8 V, 3.5 V",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Correspond to Mn3+/Mn2+, Co3+/Co2+ and Fe3+/Fe2+ redox",
+      "prov": ["Page 27849 Fig.2A"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle_size",
+          "value": "0.5–2",
+          "unit": "µm"
+        }
+      ],
+      "interpretation": "Cathode particles morphology",
+      "prov": ["SI Appendix Fig. S8"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "structure",
+          "value": "Rhombohedral R-3m",
+          "unit": ""
+        }
+      ],
+      "interpretation": "KMFC and KMCFC have same lattice structure",
+      "prov": ["SI Appendix Fig. S7"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "SEI_components",
+          "value": "KF, AlF3, Al2O3, Al, KCl, K2SxOy, K2S",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Robust SEI formed on K anode",
+      "prov": ["SI Appendix Fig. S20"]
+    },
+    {
+      "method": "ToF-SIMS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "CEI_components",
+          "value": "Strong K, F, Al signals; presence of AlF4−",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Hybrid CEI containing KF, AlF3, Al2O3, KCl",
+      "prov": ["Page 27851 Fig.4D-F"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge–discharge",
+        "results": [
+          {
+            "description": "Specific discharge capacity at 25 mA g−1",
+            "value": 107,
+            "unit": "mAh g-1"
+          },
+          {
+            "description": "Energy density",
+            "value": 381,
+            "unit": "Wh kg-1"
+          },
+          {
+            "description": "Power density (room temperature)",
+            "value": 1350,
+            "unit": "W kg-1"
+          },
+          {
+            "description": "Power density at 50 °C",
+            "value": 2240,
+            "unit": "W kg-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 107,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 820
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-22T17:45:00Z",
+    "source_file": "PNAS_117_27847_2020",
+    "processing_time": null
+  }
+}

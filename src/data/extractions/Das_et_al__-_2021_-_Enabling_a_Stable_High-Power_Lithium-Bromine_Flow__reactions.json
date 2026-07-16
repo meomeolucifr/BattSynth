@@ -1,0 +1,613 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Enabling a Stable High-Power Lithium-Bromine Flow Battery Using Task-Specific Ionic Liquids",
+    "doi": "10.1149/1945-7111/ac1396",
+    "authors": [
+      "Supratim Das",
+      "Sahag Voskian",
+      "Krzysztof P. Rajczykowski",
+      "T. Alan Hatton",
+      "Martin Z. Bazant"
+    ],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "lithium-bromine flow battery",
+      "task-specific ionic liquid",
+      "electrochemistry",
+      "redox flow battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "2-ethylhexyl(ethylenediaminium) bis(trifluoroethanesulfonyl)amide",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Experimental – Gen 1 TSIL synthesis"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "2-ethylhexyl(tetramethylethylenediaminum) bis(trifluoroethanesulfonyl)amide",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Experimental – Gen 2 TSIL synthesis"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "ethylenediamine",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 5000,
+        "unit": "mmol"
+      },
+      "notes": "300.5 g",
+      "prov": ["Experimental – Gen 1 synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "2-ethylhexyl bromide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic halide"
+      },
+      "amount": {
+        "value": 1000,
+        "unit": "mmol"
+      },
+      "notes": "193.5 g (Gen 1) / 19.3 g (Gen 2)",
+      "prov": ["Experimental – Gen 1 & Gen 2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "sodium hydroxide solution",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "work-up reagent",
+        "category": "inorganic base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2 M, used for washing (3×)",
+      "prov": ["Experimental – Gen 1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "magnesium sulfate (anhydrous)",
+      "molecular_formula": "MgSO4",
+      "ontology": {
+        "role": "drying agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Experimental – Gen 1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "bis(trifluoromethane)sulfonimide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "anion source",
+        "category": "acid"
+      },
+      "amount": {
+        "value": 800,
+        "unit": "mmol"
+      },
+      "notes": "224.8 g for Gen 1; 28.1 g (100 mmol) for Gen 2 silver salt prep",
+      "prov": ["Experimental – Gen 1 & Gen 2"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "N,N,N',N'-tetramethylethylenediamine",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic amine"
+      },
+      "amount": {
+        "value": 500,
+        "unit": "mmol"
+      },
+      "notes": "58.1 g",
+      "prov": ["Experimental – Gen 2"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "silver(I) oxide",
+      "molecular_formula": "Ag2O",
+      "ontology": {
+        "role": "reagent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 50,
+        "unit": "mmol"
+      },
+      "notes": "11.57 g",
+      "prov": ["Experimental – Gen 2"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "isopropanol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as solvent in Gen 2 steps",
+      "prov": ["Experimental – Gen 2"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "tetrahydrofuran",
+      "molecular_formula": "C4H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 600,
+        "unit": "mL"
+      },
+      "notes": "300 mL + 300 mL in Gen 1 anion exchange",
+      "prov": ["Experimental – Gen 1"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "lithium bis(trifluoromethanesulfone)imide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte additive"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1.5 M in IL for conductivity measurements",
+      "prov": ["Results – Table I"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_g1_1",
+        "description": "Alkylation of ethylenediamine with 2-ethylhexyl bromide to form 2-ethylhexylethylenediamine",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_2", "chem_1"]
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "2-ethylhexyl bromide added dropwise over 3 h with vigorous stirring"
+          },
+          {
+            "action": "heat/reflux",
+            "parameters": {},
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 323,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "vacuum_remove",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Removal of unreacted ethylenediamine"
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "times": 3
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "distill_vacuum",
+            "parameters": {},
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "pressure": {
+              "value": 0.027,
+              "unit": "bar"
+            },
+            "notes": "90–150 °C (363–423 K) range under 20 mtorr"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Gen 1 synthesis"]
+      },
+      {
+        "step_id": "step_g1_2",
+        "description": "Formation of Gen 1 TSIL via anion exchange with bis(trifluoromethanesulfonimide)",
+        "operations": [
+          {
+            "action": "add_dropwise",
+            "parameters": {
+              "inputs": ["chem_5", "chem_9"]
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "0.8 mol bis(Tf2N) solution into amine solution (exothermic)"
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "vacuum_remove",
+            "parameters": {
+              "inputs": ["chem_9"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Removal of THF"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Gen 1 synthesis"]
+      },
+      {
+        "step_id": "step_g2_1",
+        "description": "Alkylation of TMEDA with 2-ethylhexyl bromide to form 2-ethylhexyltetramethylethylenediamine",
+        "operations": [
+          {
+            "action": "reflux",
+            "parameters": {
+              "inputs": ["chem_6", "chem_2"]
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "vacuum_remove",
+            "parameters": {
+              "inputs": ["chem_6"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Removal of unreacted TMEDA"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Gen 2 synthesis"]
+      },
+      {
+        "step_id": "step_g2_2",
+        "description": "Preparation of silver bis(trifluoromethanesulfonimide)",
+        "operations": [
+          {
+            "action": "stir",
+            "parameters": {
+              "inputs": ["chem_7", "chem_5", "chem_8"]
+            },
+            "duration": {
+              "value": 30,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Formation of silver salt suspension"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Gen 2 synthesis"]
+      },
+      {
+        "step_id": "step_g2_3",
+        "description": "Anion exchange to obtain Gen 2 TSIL",
+        "operations": [
+          {
+            "action": "add_dropwise",
+            "parameters": {
+              "inputs": ["step_g2_2 product solution", "chem_8"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Added to amine solution (30.9 g) with stirring"
+          },
+          {
+            "action": "centrifuge_decant",
+            "parameters": {
+              "times": 3
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Removal of AgBr"
+          },
+          {
+            "action": "vacuum_remove",
+            "parameters": {
+              "inputs": ["chem_8"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Removal of solvent"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Gen 2 synthesis"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_g1_1",
+        "description": "Synthesis of 2-ethylhexylethylenediamine intermediate"
+      },
+      {
+        "step_ref": "step_g1_2",
+        "description": "Anion exchange to produce Gen 1 TSIL"
+      },
+      {
+        "step_ref": "step_g2_1",
+        "description": "Synthesis of 2-ethylhexyltetramethylethylenediamine intermediate"
+      },
+      {
+        "step_ref": "step_g2_2",
+        "description": "Formation of silver bis(Tf2N) salt"
+      },
+      {
+        "step_ref": "step_g2_3",
+        "description": "Anion exchange to produce Gen 2 TSIL"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing yield information for Gen 2 TSIL final product",
+        "excerpt": "Isopropanol was then removed by vacuum."
+      },
+      {
+        "issue": "Exact reflux temperature for Gen 2 alkylation not provided",
+        "excerpt": "A mixture ... was refluxed for 12 h."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "0.1 Hz – 1 MHz",
+        "excitation_amplitude": "5 mV"
+      },
+      "results": [
+        {
+          "metric": "Li+ conductivity",
+          "value": 0.87,
+          "unit": "mS cm-1",
+          "conditions": "1.5 M LiTFSI in Gen 2 TSIL at 298 K"
+        },
+        {
+          "metric": "Li+ conductivity",
+          "value": 0.65,
+          "unit": "mS cm-1",
+          "conditions": "2 M LiTFSI in Gen 2 TSIL at 298 K"
+        },
+        {
+          "metric": "Li+ conductivity",
+          "value": 0.35,
+          "unit": "mS cm-1",
+          "conditions": "0.5 M LiTFSI in Gen 2 TSIL at 298 K"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table I"]
+    },
+    {
+      "method": "Battery polarization testing",
+      "parameters": {
+        "flow_rate": "2 mL min-1 cm-2",
+        "electrolyte": "1 M Br2 / 9 M LiBr catholyte, Gen 2 TSIL membrane"
+      },
+      "results": [
+        {
+          "metric": "Peak power density",
+          "value": 34.5,
+          "unit": "mW cm-2",
+          "conditions": "current density 10 mA cm-2, 3.45 V"
+        },
+        {
+          "metric": "Voltage efficiency",
+          "value": 95,
+          "unit": "%",
+          "conditions": "1 M Br2 in 9 M LiBr catholyte"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Text – Results section"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": 97,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2025-03-17T12:30:00Z",
+    "source_file": "input_text.txt",
+    "processing_time": null
+  }
+}

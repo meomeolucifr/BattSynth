@@ -1,0 +1,220 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Atomic pinning mitigates voltage decay in a lithium-rich layered oxide",
+    "doi": "10.1038/s41560-023-01289-6",
+    "authors": ["Dong, L.", "Qi Liu", "Yang Ren"],
+    "journal": "Nature Energy",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research briefing",
+    "tags": ["lithium-ion batteries", "Li-rich layered oxide cathode", "voltage decay mitigation"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li1.1(Ni0.21Mn0.65Al0.04)O2",
+      "molecular_formula": "Li1.1Ni0.21Mn0.65Al0.04O2",
+      "intended_role": "product",
+      "prov": ["Main text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "transition metal carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Described as 'extra TM carbonate' added during precursor synthesis; specific metal carbonates and quantities not provided.",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2-type Na/Li-TMO2 precursor",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Incorporation of excess transition metal carbonate during synthesis of a P2-type Na/Li-TMO2 precursor.",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Main text"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Ion exchange of the P2-type Na layered compound to produce the Li-rich layered oxide with O2-type stacking.",
+        "operations": [
+          {
+            "action": "ion exchange",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Main text"],
+        "outputs": ["target_1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Addition of excess transition metal carbonate to precursor synthesis."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Ion-exchange conversion of precursor to Li1.1(Ni0.21Mn0.65Al0.04)O2."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis parameters",
+        "excerpt": "we added extra TM carbonate during the synthesis of a P2-type Na/Li-TMO2 precursor"
+      },
+      {
+        "issue": "Unspecified ion-exchange conditions",
+        "excerpt": "Subsequent ion exchange of the P2-type Na layered compound produced an LMR material"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Scanning Transmission Electron Microscopy (STEM)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interlayer TM ion location",
+          "value": "interlayer TM ions occupy octahedral Li sites above/below honeycomb structure",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Interlayer TM ions act as caps reinforcing honeycomb stability.",
+      "prov": ["Main text", "Fig. 1b"]
+    },
+    {
+      "method": "Galvanostatic charge–discharge cycling",
+      "parameters": {
+        "current_density": {
+          "value": 20,
+          "unit": "mA g-1"
+        },
+        "rate": "0.1 C"
+      },
+      "results": [
+        {
+          "metric": "voltage decay per cycle",
+          "value": 0.02,
+          "unit": "mV cycle-1"
+        }
+      ],
+      "interpretation": "Excess TM ions mitigate voltage decay.",
+      "prov": ["Fig. 1a", "Main text"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "First-principles calculations",
+        "results": [
+          {
+            "equation": "",
+            "value": "",
+            "unit": "",
+            "description": "Interlayer TM site occupation energetically favorable; energy barrier prevents migration."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

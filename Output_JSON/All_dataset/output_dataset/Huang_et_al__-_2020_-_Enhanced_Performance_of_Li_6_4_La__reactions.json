@@ -1,0 +1,542 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Enhanced Performance of Li6.4La3Zr1.4Ta0.6O12 Solid Electrolyte by the Regulation of Grain and Grain Boundary Phases",
+    "doi": "10.1021/acsami.0c18674",
+    "authors": ["Zeya Huang", "Linhui Chen", "Bing Huang", "Biyi Xu", "Gang Shao", "Hailong Wang", "Yutao Li", "Chang-An Wang"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid electrolyte", "garnet", "LLZTO", "hot pressing"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6.4La3Zr1.4Ta0.6O12 pellet",
+      "molecular_formula": "Li6.4La3Zr1.4Ta0.6O12",
+      "intended_role": "product",
+      "prov": ["Experimental Procedure 2.2"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li6.4La3Zr1.4Ta0.6O12",
+      "molecular_formula": "Li6.4La3Zr1.4Ta0.6O12",
+      "ontology": {
+        "role": "starting_material",
+        "category": "ceramic powder"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "prepared via solid-state reaction (ref 17)",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "sintering_additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.2,
+        "unit": "wt%"
+      },
+      "notes": "average diameter 0.3 µm",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "isopropanol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used as sand-milling medium",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere_gas",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "protective atmosphere during hot pressing and storage",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "zirconia balls",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "milling_media",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "0.3 mm diameter; ball:material ratio 1:1",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode_material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used for Li|LLZTO|Li symmetric cells",
+      "prov": ["Section 2.4"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "coating",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "sputtered as blocking electrode",
+      "prov": ["Section 2.3"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Bulk LLZTO synthesized by conventional solid-state reaction (details in ref 17).",
+        "operations": [
+          {
+            "action": "solid_state_reaction",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "notes": "details not provided in the text"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Addition of Al2O3 sintering additive and ball milling with precalcined LLZTO powder.",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "amount of Al2O3 = 1.2 wt %; ball-milling time not specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_3a",
+        "description": "Preparation of micron-sized LLZTO powder by hand grinding and sieving.",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "notes": "hand-grinding of LLZTO pellets"
+          },
+          {
+            "action": "sieve",
+            "parameters": {
+              "mesh_size": "300–500 mesh"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_3b",
+        "description": "Preparation of nano-sized LLZTO powder by sand milling.",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "notes": "slight grinding, 60-mesh pre-sieving"
+          },
+          {
+            "action": "sand_mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_5", "chem_3"],
+              "duration": {
+                "value": 60,
+                "unit": "min"
+              }
+            },
+            "notes": "zirconia balls 0.3 mm; ball:material = 1:1"
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "method": "vacuum_oven"
+            },
+            "notes": ""
+          },
+          {
+            "action": "store",
+            "parameters": {},
+            "notes": "stored in argon-filled glovebox"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Hot-press sintering of LLZTO powders (with or without Al2O3).",
+        "operations": [
+          {
+            "action": "hot_press",
+            "parameters": {
+              "inputs": ["chem_1", "chem_4"],
+              "temperature": {
+                "value": 1473,
+                "unit": "K"
+              },
+              "heating_rate": {
+                "value": 20,
+                "unit": "K min-1"
+              },
+              "hold_time": {
+                "value": 60,
+                "unit": "min"
+              },
+              "pressure": {
+                "value": 880,
+                "unit": "bar"
+              }
+            },
+            "notes": "graphite mold, inner diameter 12 mm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": 880,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.2"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Post-processing of sintered cylinder into tablets.",
+        "operations": [
+          {
+            "action": "cut",
+            "parameters": {
+              "thickness": {
+                "value": 0.65,
+                "unit": "mm"
+              }
+            },
+            "notes": "diamond saw; thickness range 0.6–0.7 mm"
+          },
+          {
+            "action": "polish",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "wash",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "store",
+            "parameters": {},
+            "notes": "argon-filled glovebox"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of bulk LLZTO via solid-state reaction."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Introduction of Al2O3 additive and ball milling."
+      },
+      {
+        "step_ref": "step_3a",
+        "description": "Preparation of micron-sized powder."
+      },
+      {
+        "step_ref": "step_3b",
+        "description": "Preparation of nano-sized powder."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Hot-press sintering under Ar at 1473 K and 880 bar for 60 min."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Cutting, polishing, washing, and storage of LLZTO tablets."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing details of initial solid-state reaction (temperatures, durations, reagent amounts).",
+        "excerpt": "\"bulk LLZTO was synthesized by a conventional solid-state reaction, which is described in ref 17\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {
+        "instrument": "ZEISS MERLIN Compact"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Section 2.1", "Figure 1", "Figure 2"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "scan_range": "10–90°",
+        "step_size": "0.02°",
+        "voltage": "40 kV"
+      },
+      "results": [],
+      "interpretation": "all samples show pure garnet phase",
+      "prov": ["Section 2.3", "Figure S1"]
+    },
+    {
+      "method": "Laser particle size analysis",
+      "parameters": {
+        "instrument": "Malvern 2000"
+      },
+      "results": [
+        {
+          "metric": "D50 (micron powder)",
+          "value": 34,
+          "unit": "µm"
+        },
+        {
+          "metric": "D50 (nano powder)",
+          "value": 0.21,
+          "unit": "µm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1d", "Table S1"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "40 Hz–110 MHz",
+        "voltage_amplitude": "50 mV",
+        "temperature_range": "RT–353 K"
+      },
+      "results": [
+        {
+          "sample": "M-LLZTO",
+          "metric": "total conductivity",
+          "value": 1.01e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "sample": "M-LLZTO",
+          "metric": "activation energy",
+          "value": 0.29,
+          "unit": "eV"
+        },
+        {
+          "sample": "N-LLZTO-AO",
+          "metric": "total conductivity",
+          "value": 3.60e-4,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3", "Table 1"]
+    },
+    {
+      "method": "Three-point bending",
+      "parameters": {
+        "span": "15 mm",
+        "loading_speed": "0.5 mm min-1"
+      },
+      "results": [
+        {
+          "sample": "N-LLZTO",
+          "metric": "bending strength",
+          "value": 165,
+          "unit": "MPa"
+        },
+        {
+          "sample": "all samples",
+          "metric": "elastic modulus range",
+          "value": 75,
+          "unit": "GPa"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 4"]
+    },
+    {
+      "method": "Interfacial EIS (Li|LLZTO|Li)",
+      "parameters": {
+        "frequency_range": "7 MHz–0.1 Hz"
+      },
+      "results": [
+        {
+          "sample": "M-LLZTO",
+          "metric": "interfacial resistance",
+          "value": 68.7,
+          "unit": "Ω cm2"
+        },
+        {
+          "sample": "N-LLZTO-AO",
+          "metric": "interfacial resistance",
+          "value": 129.4,
+          "unit": "Ω cm2"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 5"]
+    },
+    {
+      "method": "Critical current density test",
+      "parameters": {
+        "step_current_increment": "0.1 mA cm-2",
+        "cycle_time": "30 min"
+      },
+      "results": [
+        {
+          "sample": "N-LLZTO-AO",
+          "metric": "CCD (298 K)",
+          "value": 0.6,
+          "unit": "mA cm-2"
+        },
+        {
+          "sample": "N-LLZTO-AO",
+          "metric": "CCD (333 K)",
+          "value": 1.7,
+          "unit": "mA cm-2"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 6", "Table 3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "EIS fitting (equivalent circuit)",
+        "results": [
+          {
+            "sample": "M-LLZTO",
+            "equation": "Rg+Rgb",
+            "value": 57.50,
+            "unit": "Ω"
+          },
+          {
+            "sample": "N-LLZTO-AO",
+            "equation": "Rg+Rgb",
+            "value": 159.12,
+            "unit": "Ω"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "acsami.0c18674.pdf (excerpt)",
+    "processing_time": null
+  }
+}

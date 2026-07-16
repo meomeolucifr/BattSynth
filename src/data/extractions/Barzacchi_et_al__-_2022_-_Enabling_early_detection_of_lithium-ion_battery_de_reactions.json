@@ -1,0 +1,223 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Enabling early detection of lithium-ion battery degradation by linking electrochemical properties to equivalent circuit model parameters",
+    "doi": "10.1016/j.est.2022.104213",
+    "authors": [
+      "Leonardo Barzacchi",
+      "Marco Lagnoni",
+      "Roberto Di Rienzo",
+      "Antonio Bertei",
+      "Federico Baronti"
+    ],
+    "journal": "Journal of Energy Storage",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "lithium-ion batteries",
+      "equivalent circuit model",
+      "P2D model",
+      "battery degradation"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "concentration": {
+        "value": 1.2,
+        "unit": "M"
+      },
+      "notes": "Electrolyte salt concentration reported as 1.2 mol L-1",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Propylene carbonate",
+      "molecular_formula": "C4H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium manganese oxide",
+      "molecular_formula": "LiMn2O4",
+      "ontology": {
+        "role": "cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Cathode active material",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium intercalated graphite",
+      "molecular_formula": "LiC6",
+      "ontology": {
+        "role": "anode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Anode active material",
+      "prov": [
+        "Page 4"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Pulsed discharge test",
+      "parameters": {
+        "currents": [
+          {
+            "value": 2,
+            "unit": "A"
+          },
+          {
+            "value": 10,
+            "unit": "A"
+          }
+        ],
+        "temperature": {
+          "value": 298,
+          "unit": "K",
+          "notes": "Original text reports 25 °C"
+        }
+      },
+      "results": [
+        {
+          "metric": "maximum deviation in voltage/capacity prediction",
+          "value": 4,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "P2D model and ECM closely match experimental discharge curves.",
+      "prov": [
+        "Figure 2"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Energy loss simulation",
+        "results": [
+          {
+            "equation": "",
+            "value": 2,
+            "unit": "%",
+            "notes": "Electrochemical parameters varied to achieve 2% reduction in accessible energy at 1C."
+          }
+        ],
+        "prov": [
+          "Pages 5-6"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

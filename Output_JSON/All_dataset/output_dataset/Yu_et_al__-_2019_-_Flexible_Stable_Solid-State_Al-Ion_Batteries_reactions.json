@@ -1,0 +1,551 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Flexible Stable Solid-State Al-Ion Batteries",
+    "doi": "10.1002/adfm.201806799",
+    "authors": [
+      "Zhijing Yu",
+      "Shuqiang Jiao",
+      "Shijie Li",
+      "Xiaodong Chen",
+      "Wei-Li Song",
+      "Teng Teng",
+      "Jiguo Tu",
+      "Hao-Sen Chen",
+      "Guohua Zhang",
+      "Dai-Ning Fang"
+    ],
+    "journal": "Advanced Functional Materials",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["aluminum-ion battery", "gel polymer electrolyte", "solid-state battery", "flexible energy storage"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "AlCl3–acrylamide gel polymer electrolyte (GPE)",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Page 2, Figure 2a"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "acrylamide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "monomer",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 2, Step 1 description"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "aluminium chloride (anhydrous)",
+      "molecular_formula": "AlCl3",
+      "ontology": {
+        "role": "Lewis acid / reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 2, Step 1 description"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "dichloromethane",
+      "molecular_formula": "CH2Cl2",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 2, Step 1 description"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "1-ethyl-3-methylimidazolium chloride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "ionic liquid component",
+        "category": "organic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 1, mixture description"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "acidic ionic liquid ([EMIm]Cl/AlCl3, 1:1.3 molar ratio)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrolyte precursor",
+        "category": "ionic liquid mixture"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2, Step 2 description"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "AIBN (azobisisobutyronitrile)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymerization initiator",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 2, Step 3 description"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "aluminium foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "substrate / anode current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2, Step 4 description"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "graphite (flake graphite carbon paper)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "cathode",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4, cell assembly"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Complexation of acrylamide with AlCl3 in dichloromethane",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Mixture stirred vigorously until solution turned light yellow"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2, Figure 2a, Step 1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Introduction of acidic ionic liquid",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Solution color changed to brown indicating complexation"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2, Figure 2a, Step 2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Polymerization initiation",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_6"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Polymerization commenced upon AIBN addition"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2, Figure 2a, Step 3"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Casting and membrane formation",
+        "operations": [
+          {
+            "action": "cast",
+            "parameters": {
+              "inputs": ["product_of_step_3"],
+              "substrate": "chem_7"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Cast film transferred into glove box to obtain self-standing GPE membrane"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "glove box (inert)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2, Figure 2a, Step 4"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Assembly of solid-state Al-ion pouch cell",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "anode": "chem_7 (coated with GPE)",
+              "cathode": "chem_8",
+              "electrolyte": "target_1"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Self-standing GPE functions as both separator and electrolyte"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4, Figure 3a"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Formation of AlCl3–acrylamide complex in CH2Cl2"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Addition of acidic IL to form polymerizable mixture"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Initiation of polymerization with AIBN"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Casting and curing to obtain self-standing GPE"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Integration of GPE into solid-state Al-ion battery pouch cell"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing quantitative amounts and temperatures in synthesis steps",
+        "excerpt": "In a typical preparation, acrylamide was initially added into a mixture suspension of anhydrous aluminium chloride and dichloromethane under vigorously stirring (Step 1)."
+      },
+      {
+        "issue": "No specific polymerization conditions (time, temperature) provided",
+        "excerpt": "Upon adding the initiator AIBN, the polymerization process started (Step 3)."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "AlCl4− peak",
+          "value": 350,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Al2Cl7− peaks",
+          "value": "311 & 432",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Presence of AlCl4− and Al2Cl7− anions in GPE confirmed",
+      "prov": ["Page 2, Figure S1a"]
+    },
+    {
+      "method": "27Al NMR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "AlCl4− resonance",
+          "value": 106.03,
+          "unit": "ppm"
+        },
+        {
+          "metric": "Al2Cl7− resonance",
+          "value": 99.97,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "Multiple aluminium species identified in GPE",
+      "prov": ["Page 2, Figure S1b"]
+    },
+    {
+      "method": "FT-IR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "C=O shift after complexation",
+          "value": 1673,
+          "unit": "→ 1660 cm-1"
+        }
+      ],
+      "interpretation": "Electron donation from amide to AlCl3 indicative of complex formation",
+      "prov": ["Page 2, Figure S1c"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface morphology",
+          "value": "flat",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Homogeneous surface of GPE membrane",
+      "prov": ["Page 2, Figure S2"]
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "scan_rate": {
+          "value": 1,
+          "unit": "mV s-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "Al deposition peak",
+          "value": -0.50,
+          "unit": "V vs Al/Al3+"
+        },
+        {
+          "metric": "Al stripping peak",
+          "value": 0.20,
+          "unit": "V vs Al/Al3+"
+        }
+      ],
+      "interpretation": "Reversible aluminium plating/stripping confirmed",
+      "prov": ["Page 2, Figure 2b"]
+    },
+    {
+      "method": "Linear sweep voltammetry",
+      "parameters": {
+        "scan_rate": {
+          "value": 1,
+          "unit": "mV s-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "electrochemical stability window",
+          "value": 2.5,
+          "unit": "V (vs Al/Al3+)"
+        }
+      ],
+      "interpretation": "GPE stable up to 2.5 V",
+      "prov": ["Page 2, Figure 2c"]
+    },
+    {
+      "method": "AC impedance",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 5.77e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.09,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "High ionic conductivity with low activation energy",
+      "prov": ["Page 2, Figure 2d-e"]
+    },
+    {
+      "method": "Steady-state current measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "anion transference number",
+          "value": 0.019,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Ionic transport dominated by anions",
+      "prov": ["Page 2, Figure 2f"]
+    },
+    {
+      "method": "Battery cycling test",
+      "parameters": {
+        "current_density": {
+          "value": 60,
+          "unit": "mA g-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "specific capacity (initial)",
+          "value": 120,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity after 100 cycles",
+          "value": 109,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "High capacity with 88.6 % retention over 100 cycles",
+      "prov": ["Page 4, Figure 3g"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis of ionic conductivity",
+        "results": [
+          {
+            "equation": "σ = σ0 exp(-Ea/kT)",
+            "value": 0.09,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 120,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T14:30:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

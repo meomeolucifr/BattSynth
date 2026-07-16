@@ -1,0 +1,201 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Simulating Diffusion Properties of Solid-State Electrolytes via a Neural Network Potential: Performance and Training Scheme",
+    "doi": "10.1002/syst.201900031",
+    "authors": ["Aris Marcolongo", "Tobias Binninger", "Federico Zipoli", "Teodoro Laino"],
+    "journal": "ChemSystemsChem",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state electrolytes", "machine learning potential", "diffusion coefficient", "activation energy", "molecular dynamics"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "studied material",
+      "prov": ["Page 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "studied material",
+      "prov": ["Page 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na3Zr2Si2PO12",
+      "molecular_formula": "Na3Zr2Si2PO12",
+      "intended_role": "studied material",
+      "prov": ["Page 1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Na3Zr2Si2PO12",
+      "molecular_formula": "Na3Zr2Si2PO12",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 1"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Molecular Dynamics (NVE) with DeepMD potential",
+      "parameters": {
+        "temperature_range": "≥600 K",
+        "cell_size_atoms": 200
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.16,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Activation energy aligns with previous computational studies and is slightly lower than experimental value (0.22 eV).",
+      "prov": ["Figure 3"]
+    },
+    {
+      "method": "Molecular Dynamics (NVE) with DeepMD potential",
+      "parameters": {
+        "temperature_range": "≥600 K",
+        "cell_size_atoms": 192
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.21,
+          "unit": "eV",
+          "notes": "Reported range 0.20–0.22 eV; midpoint recorded."
+        }
+      ],
+      "interpretation": "Computed activation energy matches experimental high-temperature measurements (0.20–0.21 eV).",
+      "prov": ["Figure 4", "Figure 5"]
+    },
+    {
+      "method": "Molecular Dynamics (NVE) with DeepMD potential",
+      "parameters": {
+        "temperature_range": "≥600 K",
+        "cell_size_atoms": 480
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.2,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Value consistent with high-temperature experimental activation energies (0.18–0.20 eV).",
+      "prov": ["Figure 6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius plot fit",
+        "results": [
+          {
+            "subject": "Li10GeP2S12",
+            "equation": "ln(D)=ln(D0)−Ea/(k_B T)",
+            "value": 0.16,
+            "unit": "eV"
+          },
+          {
+            "subject": "Li7La3Zr2O12",
+            "equation": "ln(D)=ln(D0)−Ea/(k_B T)",
+            "value": 0.21,
+            "unit": "eV"
+          },
+          {
+            "subject": "Na3Zr2Si2PO12",
+            "equation": "ln(D)=ln(D0)−Ea/(k_B T)",
+            "value": 0.2,
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Figures 3–6"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Low Melting Temperature Liquid Metals and Their Impacts on Physical Chemistry",
+    "doi": "10.1021/accountsmr.1c00143",
+    "authors": [
+      "Kourosh Kalantar-Zadeh",
+      "Md. Arifur Rahim",
+      "Jianbo Tang"
+    ],
+    "journal": "Accounts of Materials Research",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": [
+      "low-melting-temperature metals",
+      "liquid metals",
+      "post-transition metals"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Field's metal",
+      "molecular_formula": "",
+      "intended_role": "example LMT alloy",
+      "prov": [
+        "Page 578"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank, and the paper does contain explicit chemical formulas/compositions (e.g., EGaIn as a eutectic Ga\u2013In alloy on p. 578; Field\u2019s metal composition 32.5% Bi, 51% In, 16.5% Sn on p. 579; CO2, CH4, Pt, etc.). Therefore, treating the target formula as unspecified/empty is not supported by the source text.",
+        "suggested_fix": "Specify the intended target material formula from the text, e.g., \u201cEGaIn (eutectic gallium\u2013indium alloy)\u201d (p. 578) or Field\u2019s metal composition \u201cBi\u2013In\u2013Sn (32.5 wt% Bi, 51 wt% In, 16.5 wt% Sn)\u201d (p. 579), depending on what the extraction is meant to capture."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "EGaIn",
+      "molecular_formula": "",
+      "intended_role": "example LMT alloy",
+      "prov": [
+        "Figure 1 caption"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper\u2019s Figure 1 caption mentions \u201cEGaIn (eutectic alloy of gallium and indium)\u201d but does not provide an explicit chemical formula for the target (e.g., Ga-In ratio or composition). Elsewhere it gives a composition formula only for Field\u2019s metal (32.5% Bi, 51% In, 16.5% Sn). Since the extracted value for \u201cTarget Formula\u201d is blank and no specific formula is stated for the Figure 1 material beyond naming the eutectic alloy, the extraction is not explicitly supported as-is.",
+        "suggested_fix": "If the intended target is the Figure 1 liquid metal, record it as \u201cEGaIn (eutectic alloy of gallium and indium)\u201d (name only). If a true formula is required, the paper does not specify it; use \u201cNot specified\u201d."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Bismuth",
+      "molecular_formula": "Bi",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 32.5,
+        "unit": "wt%"
+      },
+      "notes": "Component percentage in Field's metal alloy",
+      "prov": [
+        "Page 578"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The text explicitly states: \u201cField\u2019s metal ... made of 32.5% Bi, 51% In, and 16.5% Sn (weight ratios)\u201d (Page 579 in the provided text). This directly supports Bismuth (Bi) amount = 32.5 wt%. The alleged provenance (Page 578) is off by one page, but the value is present in the document.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Indium",
+      "molecular_formula": "In",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 51,
+        "unit": "wt%"
+      },
+      "notes": "Component percentage in Field's metal alloy",
+      "prov": [
+        "Page 578"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The text explicitly states the composition of Field\u2019s metal as \u201c32.5% Bi, 51% In, and 16.5% Sn (weight ratios)\u201d, which directly supports Indium at 51 wt%. This appears on Page 3 of the provided text (journal page 579), not on Page 2/journal page 578 as alleged.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Tin",
+      "molecular_formula": "Sn",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 16.5,
+        "unit": "wt%"
+      },
+      "notes": "Component percentage in Field's metal alloy",
+      "prov": [
+        "Page 578"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The source text explicitly states the composition of Field\u2019s metal as \u201c32.5% Bi, 51% In, and 16.5% Sn (weight ratios)\u201d. This directly supports the extracted chemical identity (tin, Sn) and amount (16.5 wt%). The alleged provenance (Page 578) is slightly off; the statement appears on Page 579 in the provided text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Gallium",
+      "molecular_formula": "Ga",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Component of EGaIn and general LMT metal; melting point 29.8 \u00b0C (303 K) mentioned",
+      "prov": [
+        "Page 579"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly discusses gallium (Ga) as a low-melting-temperature liquid metal element (e.g., \u201cHg\u2026 and Ga\u2026 suitable for practical liquid-based applications\u201d and mentions \u201cGa (29.8 \u00b0C) and its alloys\u201d). However, nowhere in the provided full text is a specific *amount* of gallium given (no mass, volume, molarity, wt%, etc., for gallium itself; only an example alloy composition for Field\u2019s metal and mention of EGaIn as an alloy). Therefore the extracted statement \u201cGallium | Amount: Not specified in text\u201d is supported under the null-handling rule. Provenance page number is not critical; the relevant mentions appear on page 577 and elsewhere, not page 579.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Indium",
+      "molecular_formula": "In",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Component of EGaIn",
+      "prov": [
+        "Figure 1 caption"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper mentions indium (In) as part of the expanded family of low-melting-temperature liquid metals (Page 1) and in Figure 1 caption describes droplets made of EGaIn (eutectic gallium\u2013indium alloy) (Page 2). Nowhere in the provided text is an absolute amount of indium (mass, moles, concentration, etc.) specified; indium is only referenced qualitatively or as a component in named alloys. Therefore, the extracted statement that the chemical identity is indium and the amount is not specified is consistent with the source text.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Ab initio molecular dynamics study of lithium diffusion in tetragonal Li7La3Zr2O12",
+    "doi": "10.1016/j.matchemphys.2016.10.025",
+    "authors": [
+      "B. Andriyevsky",
+      "K. Doll",
+      "T. Jacob"
+    ],
+    "journal": "Materials Chemistry and Physics",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "ab initio molecular dynamics",
+      "lithium diffusion",
+      "solid electrolyte",
+      "LLZO"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12 (tetragonal)",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "material under study",
+      "prov": [
+        "Page 211 paragraph 3"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "constituent",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "La",
+      "molecular_formula": "La",
+      "ontology": {
+        "role": "constituent",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zr",
+      "molecular_formula": "Zr",
+      "ontology": {
+        "role": "constituent",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "O",
+      "molecular_formula": "O",
+      "ontology": {
+        "role": "constituent",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Ab initio molecular dynamics (AIMD)",
+      "parameters": {
+        "ensemble": "NVE",
+        "time_step": {
+          "value": 1,
+          "unit": "fs"
+        },
+        "simulation_time": {
+          "value": 10,
+          "unit": "ps"
+        },
+        "cutoff_energy": {
+          "value": 400,
+          "unit": "eV"
+        },
+        "temperature_range": {
+          "min": 981,
+          "max": 2211,
+          "unit": "K"
+        },
+        "k_point_grid": "8 irreducible k-points"
+      },
+      "results": [
+        {
+          "metric": "activation_energy_stoichiometric",
+          "value": 0.36,
+          "unit": "eV",
+          "notes": "Ea for 56 Li per unit cell",
+          "prov": [
+            "Figure 2"
+          ]
+        },
+        {
+          "metric": "activation_energy_53Li",
+          "value": 0.19,
+          "unit": "eV",
+          "notes": "average over sites",
+          "prov": [
+            "Table 1"
+          ]
+        },
+        {
+          "metric": "activation_energy_59Li",
+          "value": 0.46,
+          "unit": "eV",
+          "notes": "average over sites",
+          "prov": [
+            "Table 1"
+          ]
+        },
+        {
+          "metric": "diffusion_coefficient_1500K_non_expanded",
+          "value": 0.00184,
+          "unit": "nm2 ps-1",
+          "notes": "",
+          "prov": [
+            "Figure 11"
+          ]
+        },
+        {
+          "metric": "diffusion_coefficient_1500K_expanded",
+          "value": 0.0037,
+          "unit": "nm2 ps-1",
+          "notes": "",
+          "prov": [
+            "Figure 11"
+          ]
+        },
+        {
+          "metric": "unit_cell_volume_T0K",
+          "value": 2133,
+          "unit": "Å3",
+          "notes": "",
+          "prov": [
+            "Page 212 paragraph 2"
+          ]
+        },
+        {
+          "metric": "unit_cell_volume_1500K",
+          "value": 2331,
+          "unit": "Å3",
+          "notes": "thermally expanded",
+          "prov": [
+            "Figure 10 caption"
+          ]
+        }
+      ],
+      "interpretation": "Activation energy increases with Li content; diffusion coefficient decreases with increased Li content and with unit cell compression.",
+      "prov": [
+        "Sections 2 Results and discussion"
+      ]
+    },
+    {
+      "method": "Nudged Elastic Band (NEB)",
+      "parameters": {
+        "pathway": "concerted six-lithium movement",
+        "system": "stoichiometric LLZO"
+      },
+      "results": [
+        {
+          "metric": "activation_energy_NEB",
+          "value": 0.39,
+          "unit": "eV",
+          "notes": "",
+          "prov": [
+            "Figure 12"
+          ]
+        }
+      ],
+      "interpretation": "NEB barrier slightly larger than AIMD-derived activation energy.",
+      "prov": [
+        "Figure 12"
+      ]
+    },
+    {
+      "method": "Spectral Density of States (SDOS) analysis",
+      "parameters": {
+        "frequency_range": {
+          "min": 0,
+          "max": 40,
+          "unit": "THz"
+        }
+      },
+      "results": [
+        {
+          "metric": "prefactor_t0_inverse",
+          "value": 10,
+          "unit": "THz",
+          "notes": "pre-exponential factor derived from SDOS center",
+          "prov": [
+            "Page 214 paragraph 5"
+          ]
+        }
+      ],
+      "interpretation": "Broader SDOS width correlates with higher diffusivity.",
+      "prov": [
+        "Figures 7-9"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius fitting",
+        "results": [
+          {
+            "equation": "D = D0 * exp(-Ea/(kT))",
+            "value": 0.36,
+            "unit": "eV",
+            "notes": "Activation energy for 56 Li derived from Figure 2"
+          },
+          {
+            "equation": "same",
+            "value": 0.19,
+            "unit": "eV",
+            "notes": "Activation energy for 53 Li"
+          },
+          {
+            "equation": "same",
+            "value": 0.46,
+            "unit": "eV",
+            "notes": "Activation energy for 59 Li"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

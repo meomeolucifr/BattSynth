@@ -1,0 +1,336 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A Review of Emerging Dual-Ion Batteries: Fundamentals and Recent Advances",
+    "doi": "10.1002/adfm.202010958",
+    "authors": [
+      "Luojiang Zhang",
+      "Haitao Wang",
+      "Xiaoming Zhang",
+      "Yongbing Tang"
+    ],
+    "journal": "Advanced Functional Materials",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["dual-ion battery", "SEI", "gel polymer electrolyte"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "SEI-modified graphite electrode",
+      "molecular_formula": "",
+      "intended_role": "modified electrode",
+      "prov": ["Page 3: paragraph describing artificial SEI on graphite"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "PHPG membrane",
+      "molecular_formula": "",
+      "intended_role": "polymer electrolyte host",
+      "prov": ["Page 20: paragraph beginning 'Tang and co-workers developed a porous GPE...'"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "poly(vinylidene fluoride-co-hexafluoropropylene)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer host",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 20"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "poly(ethylene oxide)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "wt%",
+        "basis": "of polymer matrix"
+      },
+      "notes": "",
+      "prov": ["Page 20"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "graphene oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "wt%",
+        "basis": "of polymer matrix"
+      },
+      "notes": "",
+      "prov": ["Page 20"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte salt"
+      },
+      "amount": {
+        "value": 4,
+        "unit": "M"
+      },
+      "notes": "",
+      "prov": ["Page 20"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "ethyl-methyl carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 20"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "vinylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "additive",
+        "category": "electrolyte additive"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "wt%",
+        "basis": "of electrolyte"
+      },
+      "notes": "",
+      "prov": ["Page 20"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of artificial SEI on graphite by electrochemical cycling",
+        "operations": [
+          {
+            "action": "electrochemical cycling",
+            "parameters": {
+              "potential_window": "0.3–2.0 V vs Li/Li+",
+              "cycles": 5,
+              "mode": "constant current (value not specified)"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Creates artificial SEI layer on graphite"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 3"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of PHPG porous membrane",
+        "operations": [
+          {
+            "action": "blend",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3", "chem_4"],
+              "ratios": "chem_3 at 5 wt%, chem_4 at 1 wt% relative to polymer matrix"
+            },
+            "notes": "Intermolecular hydrogen bonding forms 3D porous network"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 20"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Soaking PHPG membrane with electrolyte",
+        "operations": [
+          {
+            "action": "soak",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6", "chem_7"],
+              "electrolyte_composition": "4 M LiPF6 in EMC with 2 wt% VC"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Electrolyte uptake 368%; retention 60% after 200 min"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 20"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Electrochemical formation of SEI on graphite electrode"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Fabrication of porous PHPG membrane with PEO and GO dopants"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Electrolyte impregnation of PHPG membrane"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing operational details such as current density, solvent for polymer blending, and processing temperature",
+        "excerpt": "Tang and co-workers developed a porous GPE based on PVDF-HFP co-doped with poly(ethylene oxide) (PEO) and graphene oxide (GO)..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "porosity measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "porosity",
+          "value": 63,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 20"]
+    },
+    {
+      "method": "ionic conductivity test",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K",
+          "notes": "reported as 25°C"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 2.1,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 20"]
+    },
+    {
+      "method": "electrolyte uptake test",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electrolyte uptake",
+          "value": 368,
+          "unit": "%"
+        },
+        {
+          "metric": "electrolyte retention after 200 min",
+          "value": 60,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 20"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-05T14:27:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

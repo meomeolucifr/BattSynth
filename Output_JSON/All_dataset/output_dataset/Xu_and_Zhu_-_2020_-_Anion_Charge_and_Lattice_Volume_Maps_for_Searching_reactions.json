@@ -1,0 +1,267 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Anion Charge and Lattice Volume Maps for Searching Lithium Superionic Conductors",
+    "doi": "10.1021/acs.chemmater.0c00993",
+    "authors": ["Zhenming Xu", "Hong Zhu"],
+    "journal": "Chemistry of Materials",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "NEB", "lithium ion migration", "solid electrolytes"]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "model_component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Single lithium cation used in each anion sublattice model (bcc and hcp, Figure 1).",
+      "prov": ["Figure 1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "model_component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Sixteen sulfur anions used in the sulfur anion sublattice models (bcc and hcp, Figure 1).",
+      "prov": ["Figure 1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Oxygen",
+      "molecular_formula": "O",
+      "ontology": {
+        "role": "model_component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Sixteen oxygen anions used in the oxygen anion sublattice models (bcc and hcp, Figure 1).",
+      "prov": ["Figure 1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Construction of artificial anion sublattice models.",
+        "operations": [
+          {
+            "action": "build_model",
+            "parameters": {
+              "structure_type": ["bcc-type", "hcp-type"],
+              "components": ["chem_1", "chem_2", "chem_3"],
+              "composition": "1 Li + 16 anions per model"
+            },
+            "notes": "Models comprise either sulfur or oxygen anion lattices.",
+            "prov": ["Figure 1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Density Functional Theory geometry optimization of sublattice models.",
+        "operations": [
+          {
+            "action": "DFT_calculation",
+            "parameters": {
+              "software": "VASP",
+              "method": "PAW-GGA-PBE",
+              "energy_cutoff": {
+                "value": 500,
+                "unit": "eV"
+              },
+              "k_point_mesh": "4×4×4 (bcc) or 4×4×2 (hcp)",
+              "convergence_energy": {
+                "value": 1e-5,
+                "unit": "eV atom-1"
+              },
+              "convergence_force": {
+                "value": 0.01,
+                "unit": "eV Å-1"
+              }
+            },
+            "notes": "",
+            "prov": ["Computational Methodologies"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Computational Methodologies"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Nudged Elastic Band (NEB) calculations for lithium ion migration.",
+        "operations": [
+          {
+            "action": "NEB_calculation",
+            "parameters": {
+              "mobile_ion": "Li",
+              "fixed_species": ["S or O anions"],
+              "anion_charge_range": "−0.5e to −1.8e (uniform background charge adjustment)"
+            },
+            "notes": "Only one lithium ion is allowed to relax; anions are fixed.",
+            "prov": ["Computational Methodologies"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Computational Methodologies"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Build artificial bcc and hcp anion sublattice models with Li and 16 anions."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Optimize model structures using DFT (PBE, 500 eV cutoff)."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Compute energy landscapes and activation energies via NEB while varying anion charge and lattice volume."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (VASP, PBE)",
+      "parameters": {
+        "energy_cutoff": "500 eV",
+        "k_points": "4×4×4 (bcc), 4×4×2 (hcp)",
+        "convergence": "1e−5 eV/atom, 0.01 eV/Å"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Computational Methodologies"]
+    },
+    {
+      "method": "Nudged Elastic Band (NEB)",
+      "parameters": {
+        "mobile_species": "Li+",
+        "fixed_species": "anion lattice",
+        "anion_charge_range": "−0.5e to −1.8e"
+      },
+      "results": [
+        {
+          "metric": "Activation energy (bcc O, Tet–Tet)",
+          "value": "0–0.42",
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy (hcp S/O, Tet–Tet)",
+          "value": "0–0.5",
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy (hcp S/O, Oct–Oct)",
+          "value": "0–1.5",
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Activation energies depend more strongly on lattice volume than anion charge.",
+      "prov": ["Figures 2", "3", "S3", "S11"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Activation energy mapping",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": ""
+          },
+          {
+            "description": "Range of anion charges investigated",
+            "value": "−0.5 to −1.8",
+            "unit": "e"
+          },
+          {
+            "description": "Lattice volume ranges investigated (oxides)",
+            "value": "15–30",
+            "unit": "Å^3 atom−1"
+          },
+          {
+            "description": "Lattice volume ranges investigated (sulfides)",
+            "value": "30–50",
+            "unit": "Å^3 atom−1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T10:00:00Z",
+    "source_file": "Provided text excerpt",
+    "processing_time": null
+  }
+}

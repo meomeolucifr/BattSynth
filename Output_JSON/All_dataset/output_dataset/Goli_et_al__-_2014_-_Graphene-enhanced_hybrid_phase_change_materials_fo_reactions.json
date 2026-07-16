@@ -1,0 +1,403 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Graphene-enhanced hybrid phase change materials for thermal management of Li-ion batteries",
+    "doi": "10.1016/j.jpowsour.2013.08.135",
+    "authors": [
+      "Pradyumna Goli",
+      "Stanislav Legedza",
+      "Aditya Dhar",
+      "Ruben Salgado",
+      "Jacqueline Renteria",
+      "Alexander A. Balandin"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "graphene",
+      "phase change material",
+      "thermal management",
+      "Li-ion battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Hybrid graphene–paraffin phase change material",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Section 2 Preparation and characterization",
+        "Fig.1(a)"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Paraffin wax IGI-1260",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "matrix",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Base phase change material",
+      "prov": [
+        "Section 2"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Graphene (liquid-phase exfoliated, type A/B/C)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "filler",
+        "category": "carbon allotrope"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Loading fraction 0.5–20 wt %",
+      "prov": [
+        "Section 2"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Melting of paraffin wax IGI-1260",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "temperature": {
+              "value": 343,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Wax kept at 70 °C to avoid oxidation",
+            "prov": [
+              "Section 2"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Dispersion of graphene into molten paraffin with high-shear mixing",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "temperature": {
+              "value": 343,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "High-shear mixing on hot plate with magnetic stirrer; graphene loading 0.5–20 wt %",
+            "prov": [
+              "Section 2"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Molding and solidification",
+        "operations": [
+          {
+            "action": "cast",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Composite poured into molds and allowed to solidify at room temperature under controlled humidity",
+            "prov": [
+              "Section 2"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Paraffin wax melted at 70 °C (343 K)."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Liquid-phase exfoliated graphene dispersed into molten wax under high-shear mixing at 343 K."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Mixture cast into molds and solidified at room temperature (~298 K) to form hybrid graphene–paraffin PCM."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact amounts of graphene and paraffin not specified; only weight-percent range given.",
+        "excerpt": "The hybrid graphene–PCM composite with the graphene–FLG loading fraction varying from 0.5 to 20 wt %."
+      },
+      {
+        "issue": "Mixing duration not provided.",
+        "excerpt": "The hybrid graphene PCM was prepared by ... high-shear mixing on a hot plate."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "flake distribution",
+          "value": "uniform",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Graphene/FLG fillers evenly distributed in paraffin matrix.",
+      "prov": [
+        "Fig.1(b)"
+      ]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "excitation_wavelength": "488 nm"
+      },
+      "results": [
+        {
+          "metric": "G peak position",
+          "value": 1580,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "CH2 rocking region",
+          "value": "650–850",
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Peak shift after graphene addition",
+          "value": "1–4",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Presence of graphene confirmed; interaction with paraffin chains suggested by peak shifts.",
+      "prov": [
+        "Fig.1(c)"
+      ]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "C1s peak (paraffin)",
+          "value": 284.9,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Decrease in hydrocarbon peak intensity indicates interaction between graphene and alkane chains.",
+      "prov": [
+        "Fig.2(a)",
+        "Fig.2(b)"
+      ]
+    },
+    {
+      "method": "Transient Planar Source (TPS)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Thermal conductivity (pristine paraffin)",
+          "value": 0.25,
+          "unit": "W mK-1"
+        },
+        {
+          "metric": "Thermal conductivity (1 wt % graphene)",
+          "value": 15,
+          "unit": "W mK-1"
+        },
+        {
+          "metric": "Thermal conductivity (20 wt % graphene)",
+          "value": 45,
+          "unit": "W mK-1"
+        }
+      ],
+      "interpretation": "Graphene addition increases thermal conductivity up to >100×.",
+      "prov": [
+        "Fig.3(a)"
+      ]
+    },
+    {
+      "method": "Specific heat measurement (NETZSCH)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Specific heat (pristine paraffin at RT)",
+          "value": 2,
+          "unit": "kJ kg-1 K-1"
+        }
+      ],
+      "interpretation": "Specific heat near RT unchanged by graphene; increases at higher temperature.",
+      "prov": [
+        "Fig.3(b)"
+      ]
+    },
+    {
+      "method": "Battery thermal testing",
+      "parameters": {
+        "charge_current": "16 A",
+        "discharge_current": "5 A",
+        "cycles": 10
+      },
+      "results": [
+        {
+          "metric": "ΔT inside pack (no PCM)",
+          "value": 37,
+          "unit": "°C"
+        },
+        {
+          "metric": "ΔT inside pack (paraffin PCM)",
+          "value": 24,
+          "unit": "°C"
+        },
+        {
+          "metric": "ΔT inside pack (hybrid PCM 1 wt %, cycle 1)",
+          "value": 10,
+          "unit": "°C"
+        },
+        {
+          "metric": "ΔT inside pack (hybrid PCM 1 wt %, steady)",
+          "value": 16,
+          "unit": "°C"
+        },
+        {
+          "metric": "ΔT inside pack (hybrid PCM 20 wt %, steady)",
+          "value": 13,
+          "unit": "°C"
+        }
+      ],
+      "interpretation": "Hybrid graphene PCM significantly reduces temperature rise in Li-ion battery packs.",
+      "prov": [
+        "Fig.5(a)",
+        "Fig.5(b)"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Numerical heat diffusion simulation (COMSOL)",
+        "results": [
+          {
+            "equation": "Cp ∂T/∂t = ∇·(K∇T) + Q",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "interpretation": "Simulated temperature profiles align with experimental reductions in battery temperature when using hybrid graphene PCM.",
+        "prov": [
+          "Fig.6",
+          "Methods section 4.1.2"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T12:00:00Z",
+    "source_file": "input_text_1",
+    "processing_time": null
+  }
+}

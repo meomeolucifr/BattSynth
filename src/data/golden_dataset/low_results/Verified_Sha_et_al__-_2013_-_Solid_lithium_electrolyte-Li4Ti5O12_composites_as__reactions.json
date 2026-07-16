@@ -1,0 +1,1092 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Solid lithium electrolyte-Li4Ti5O12 composites as anodes of lithium-ion batteries showing high-rate performance",
+    "doi": "10.1016/j.jpowsour.2012.12.081",
+    "authors": [
+      "Yujing Sha",
+      "Tao Yuan",
+      "Bote Zhao",
+      "Rui Cai",
+      "Huanting Wang",
+      "Zongping Shao"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "Li4Ti5O12",
+      "lithium lanthanum titanate",
+      "solid electrolyte composite",
+      "combustion synthesis",
+      "lithium-ion batteries"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "La-incorporated Li4Ti5O12 composite",
+      "molecular_formula": "",
+      "intended_role": "anode material",
+      "prov": [
+        "Experimental \u2013 Material preparation"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The field \u201cTarget Formula\u201d is blank in the extracted value, but the paper explicitly names the target/anode material as Li4Ti5O12 (lithium titanate) and specifically discusses La-incorporated Li4Ti5O12 and lithium lanthanum titanate\u2013Li4Ti5O12 composites in the Experimental/Material preparation section (e.g., \u201cThe La-incorporated Li4Ti5O12\u2026 was synthesized\u2026\u201d). Therefore, leaving the Target Formula empty is not supported by the document text.",
+        "suggested_fix": "Li4Ti5O12 (for pristine target); for the composite/La-incorporated samples: La-incorporated Li4Ti5O12 / lithium lanthanum titanate\u2013Li4Ti5O12 composite."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Pristine Li4Ti5O12",
+      "molecular_formula": "Li4Ti5O12",
+      "intended_role": "reference anode material",
+      "prov": [
+        "Experimental \u2013 Material preparation"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper repeatedly and explicitly identifies the target anode material as spinel-type Li4Ti5O12. In the Experimental section (2.1 Material preparation) it states \u201cThe La-incorporated Li4Ti5O12\u2026\u201d and \u201cWe also prepared pristine Li4Ti5O12 sample\u2026\u201d, directly supporting the target formula Li4Ti5O12. The formula also appears in the title/abstract and throughout the text.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium nitrate",
+      "molecular_formula": "LiNO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 43,
+        "unit": "mmol"
+      },
+      "notes": "Excess 8% relative to stoichiometry",
+      "prov": [
+        "Fig. 1 \u2013 Procedure description"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly states the lithium nitrate amount used in the typical combustion synthesis: \u201cwe took ... 0.043 mol LiNO3\u201d (Experimental section, Material preparation, page 2). 0.043 mol equals 43 mmol, so the amount is supported. However, the extracted value labels the amount as \u201c43 mmol,\u201d which is correct, but the chemical identity is given as \u201cLithium nitrate\u201d without the formula; still acceptable. The main issue is provenance: it is not in Fig. 1\u2019s procedure description itself, but in the surrounding Experimental text. Therefore, the value is supported by the document but not by the alleged provenance location.",
+        "suggested_fix": "Provenance should cite Experimental section 2.1 (Material preparation, page 2): \u201c0.043 mol LiNO3\u201d (i.e., 43 mmol)."
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum nitrate hexahydrate",
+      "molecular_formula": "La(NO3)3\u00b76H2O",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Varied to obtain La:Ti ratios 1:500\u20131:50",
+      "prov": [
+        "Experimental \u2013 Material preparation"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly lists the chemical as \u201clanthanum nitrate (La(NO3)3\u00b76H2O) (AR)\u201d in the Material preparation section. It also provides a quantified amount used in a typical synthesis: \u201cspecific mole of La(NO3)3\u00b76H2O according to different La to Ti mole ratios (1:500, 1:250, 1:150, 1:100, 1:50)\u201d, along with fixed amounts for other reagents (e.g., 0.050 mol Ti precursor). Therefore, the claim \u201cAmount: Not specified in text\u201d is not correct; the amount is specified in terms of a mole ratio (and thus a calculable mol amount given 0.050 mol Ti precursor).",
+        "suggested_fix": "Lanthanum nitrate hexahydrate (La(NO3)3\u00b76H2O) | Amount: used in specific molar amount corresponding to La:Ti molar ratios 1:500, 1:250, 1:150, 1:100, or 1:50 (with 0.050 mol Ti(C4H9O)4 per batch)."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Tetrabutyl titanate",
+      "molecular_formula": "Ti(C4H9O)4",
+      "ontology": {
+        "role": "titanium precursor",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": 50,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental \u2013 Material preparation"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "In the Experimental section (2.1 Material preparation), the paper specifies: \u201cfor one single combustion synthesis, we took 0.050 mol Ti(C4H9O)4\u201d (tetrabutyl titanate). 0.050 mol equals 50 mmol, but the extracted value states 50 mmol. However, the text uses 0.050 mol explicitly; the extraction is numerically equivalent but not in the same expressed unit. Still, this should be considered supported only if unit conversion is allowed; the instructions say to flag mathematical conversion errors\u2014this is not an error, but a conversion. Since the extracted value is not explicitly stated as 50 mmol in the text, it is not explicitly supported.",
+        "suggested_fix": "Tetrabutyl titanate (Ti(C4H9O)4) | Amount: 0.050 mol"
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Glycine",
+      "molecular_formula": "C2H5NO2",
+      "ontology": {
+        "role": "fuel",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 150,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental \u2013 Material preparation"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "In the Experimental section 2.1 (Material preparation), the paper explicitly states: \u201cfor one single combustion synthesis, we took \u2026 0.15 mol glycine \u2026 as raw materials.\u201d 0.15 mol equals 150 mmol, matching the extracted amount for glycine. The value appears in the detailed synthesis quantities, not just generally in the procedure description.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "De-ionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental \u2013 Material preparation"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "In Experimental section 2.1 (Material preparation), the text explicitly states: \u201cDe-ionized water was slowly dropped into Ti(C4H9O)4\u2026\u201d. No quantity/volume of de-ionized water is provided anywhere in the provided paper text, so \u201cAmount: Not specified in text\u201d is accurate under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Nitric acid",
+      "molecular_formula": "HNO3",
+      "ontology": {
+        "role": "acid/activator",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used both for Ti precursor solution and cotton activation",
+      "prov": [
+        "Experimental \u2013 Material preparation"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions nitric acid (HNO3) in the material preparation section: cotton fiber was activated with HNO3 before use, and later \u201cNitric acid was then introduced\u2026\u201d to form a titanyl nitrate solution. However, no quantity/volume/concentration of nitric acid is provided anywhere in the text; only amounts for Ti(C4H9O)4, LiNO3, glycine, and La(NO3)3\u00b76H2O are specified. Therefore the extracted value \u201cNitric acid | Amount: Not specified in text\u201d is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Natural cotton fiber (cellulose)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "template",
+        "category": "biopolymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Activated with HNO3",
+      "prov": [
+        "Experimental \u2013 Material preparation"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly identifies the cellulose source as \u201cDe-seeded natural cotton fiber\u201d used in the one-pot cellulose-assisted combustion synthesis (\u201cDe-seeded natural cotton fiber was applied as the cellulose source\u2026\u201d in Experimental > 2.1 Material preparation). However, no amount/mass of the cotton fiber is provided anywhere in the text (while amounts are given for Ti(C4H9O)4, LiNO3, glycine, and La(NO3)3\u00b76H2O). Therefore, the identity is supported and the statement that the amount is not specified is also supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Super P conductive carbon",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "8 wt % in electrode",
+      "prov": [
+        "Experimental \u2013 Electrochemical test"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly identifies \u201cconductive Super P\u201d as a component of the working electrode formulation in the Electrochemical test section (2.3). However, the text does not provide the mass loading or absolute amount of Super P (e.g., mg or mg/cm^2); it only gives the electrode composition ratio (active material:Super P:PVDF = 85:8:7 by weight). Therefore, the statement \u201cSuper P conductive carbon | Amount: Not specified in text\u201d is supported under the null-handling rule for absolute amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Polyvinylidene fluoride (PVDF)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "7 wt % in electrode",
+      "prov": [
+        "Experimental \u2013 Electrochemical test"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly states PVDF (polyvinylidene fluoride, Aldrich) is used in the working electrodes and gives the electrode composition ratio as active material : Super P : PVDF = 85:8:7 by weight (Section 2.3 Electrochemical test). Therefore, the amount is specified and the extraction claim \u201cAmount: Not specified in text\u201d is incorrect.",
+        "suggested_fix": "Polyvinylidene fluoride (PVDF, Aldrich) | Amount: 7 wt% in the electrode mixture (active material:Super P:PVDF = 85:8:7 by weight)."
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "N-methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "For electrode slurry",
+      "prov": [
+        "Experimental \u2013 Electrochemical test"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies NMP as N-methyl-2-pyrrolidone in the Electrochemical test section: \u201c...PVDF ... (85:8:7 in weight) in NMP (N-methyl-2-pyrrolidone).\u201d However, the text does not provide an amount/volume/mass or concentration for NMP\u2014only that it is the solvent for preparing the slurry. Therefore, the extracted statement that the amount is not specified is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "In EC/DMC (1:1 v/v)",
+      "prov": [
+        "Experimental \u2013 Electrochemical test"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The source text explicitly states in the Electrochemical test section that the electrolyte was \u201ca mixture solution composed of 1 mol L\u22121 LiPF6 and ethylene carbonate (EC)/diethyl carbonate (DMC) (1:1 by volume)\u201d. This directly supports the extracted chemical identity (LiPF6) and amount (1 M).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "1:1 with DMC",
+      "prov": [
+        "Experimental \u2013 Electrochemical test"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly states the electrolyte is \u201ca mixture solution composed of 1 mol L\u22121 LiPF6 and ethylene carbonate (EC)/diethyl carbonate (DMC) (1:1 by volume)\u201d in the Electrochemical test section (Page 3). While ethylene carbonate is clearly identified, the text does not provide an absolute amount (mass/volume) of ethylene carbonate used\u2014only the 1:1 volume ratio with DMC\u2014so \u201cAmount: Not specified in text\u201d is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Diethyl carbonate",
+      "molecular_formula": "C5H10O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "1:1 with EC",
+      "prov": [
+        "Experimental \u2013 Electrochemical test"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper mentions an electrolyte of \u201c1 mol L\u22121 LiPF6 and ethylene carbonate (EC)/diethyl carbonate (DMC) (1:1 by volume)\u201d in the Electrochemical test section. It does not mention diethyl carbonate; it mentions dimethyl carbonate (DMC). Therefore the extracted chemical identity (diethyl carbonate) is not supported. The amount being \u201cNot specified\u201d is also not accurate because the text specifies 1 mol L\u22121 LiPF6 and a 1:1 (v/v) solvent mixture.",
+        "suggested_fix": "Dimethyl carbonate (DMC) (with ethylene carbonate, EC) | Amount: electrolyte is 1 mol L\u22121 LiPF6 in EC/DMC (1:1 by volume)."
+      }
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "Metallic lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter/reference electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental \u2013 Electrochemical test"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly states in the Electrochemical test section that half-cells were assembled using a \u201cmetallic lithium film\u201d as the reference electrode and also the counter electrode. No mass, thickness, area, or other quantitative amount of the metallic lithium is provided anywhere in the text. Therefore, the chemical identity (metallic lithium) is supported and the extractor is correct that the amount is not specified.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Activation of cotton template",
+        "operations": [
+          {
+            "action": "soak",
+            "parameters": {
+              "inputs": [
+                "chem_7",
+                "chem_6"
+              ]
+            },
+            "notes": "Cotton fibres activated with HNO3; no explicit conditions",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper\u2019s synthesis procedure is a one-pot cellulose-assisted combustion method: solutions are prepared, absorbed into activated cotton fibers, dried, then heated to trigger self-combustion, followed by calcination. Nowhere in the provided text is a synthesis step described as \u201csoak\u201d or \u201csoaking.\u201d The closest described operation is \u201cabsorbed into dried activated cotton fibers,\u201d but that is not explicitly called soaking.",
+              "suggested_fix": "Replace \u201csoak\u201d with an operation explicitly stated, e.g., \u201cabsorb (impregnate) mixed solution into activated cotton fibers,\u201d or more generally \u201cone-pot cellulose-assisted combustion synthesis (impregnation/absorption, drying, combustion, calcination)."
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Fig. 1"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Hydrolysis of tetrabutyl titanate",
+        "operations": [
+          {
+            "action": "hydrolyze",
+            "parameters": {
+              "inputs": [
+                "chem_3",
+                "chem_5"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Water added slowly under vigorous stirring, white TiO(OH)2 precipitate forms",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.92,
+              "reasoning": "The paper\u2019s synthesis procedure is a one-pot cellulose-assisted combustion method. It explicitly describes adding deionized water to tetrabutyl titanate to form a white precipitate of TiO(OH)2 (a hydrolysis step), but it does not use the term \u201chydrolyze\u201d as a named synthesis operation, nor does it describe the overall synthesis as \u201chydrolyze.\u201d The dominant/explicit operation described is combustion synthesis (auto-combustion), followed by calcination at 800 \u00b0C.",
+              "suggested_fix": "one-pot cellulose-assisted combustion synthesis (auto-combustion), followed by calcination at 800 \u00b0C (with an initial hydrolysis of Ti(C4H9O)4 to TiO(OH)2 during solution preparation)"
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Material preparation"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Nitration to titanyl nitrate solution",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_6"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Nitric acid added with ice-water bath to give transparent bright yellow solution",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.63,
+              "reasoning": "The paper\u2019s synthesis/procedure text uses specific verbs like \u201cslowly dropped\u201d, \u201cintroduced\u201d, and \u201cadded slowly into the solution in sequence\u201d (Experimental, 2.1), but it does not explicitly state a single synthesis operation labeled exactly as \u201cadd\u201d as a standalone operation/value. Therefore the extracted value as a lone operation term is not explicitly supported verbatim by the document.",
+              "suggested_fix": "If the field expects a verb describing the operation, use the wording from the text, e.g., \u201cadded slowly into the solution in sequence\u201d (reagents added) or list specific operations: \u201cdrop deionized water\u201d, \u201cintroduce nitric acid\u201d, \u201cadd LiNO3/La(NO3)3\u00b76H2O/glycine\u201d."
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Material preparation"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Addition of nitrates and fuel",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_4"
+              ]
+            },
+            "notes": "Added slowly in sequence under stirring",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.83,
+              "reasoning": "The paper describes multiple synthesis steps using verbs such as \u201cslowly dropped\u201d, \u201cintroduced\u201d, and explicitly \u201cadded slowly into the solution in sequence\u201d (LiNO3, La(NO3)3\u00b76H2O and glycine), but it does not state a discrete synthesis operation labeled simply as \u201cadd\u201d as a standalone operation/value. Since the extracted value is overly generic and not explicitly present as the operation name, it is not directly supported by the text.",
+              "suggested_fix": "If the field allows a more specific operation, use: \u201cadd slowly into the solution in sequence (LiNO3, La(NO3)3\u00b76H2O, and glycine)\u201d or \u201cdropwise addition of de-ionized water into Ti(C4H9O)4; then add/introduce HNO3; then add LiNO3, La(NO3)3\u00b76H2O, glycine\u201d."
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Material preparation"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Impregnation of activated cotton",
+        "operations": [
+          {
+            "action": "impregnate",
+            "parameters": {
+              "inputs": [
+                "chem_7"
+              ]
+            },
+            "notes": "Mixed solution absorbed into dried activated cotton fibres",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.95,
+              "reasoning": "The paper explicitly describes an impregnation step: in Results/Discussion (Particulate morphology), it states that after \u201cthe impregnation with metal nitrates and glycine fuel\u201d the fibers became robust, and in Experimental it says \u201cThe mixed solution was then absorbed into dried activated cotton fibers,\u201d which is an impregnation/absorption operation. Therefore, the synthesis operation \u201cimpregnate\u201d is supported by the source text.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Fig. 1"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Drying of impregnated fibres",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.84,
+              "reasoning": "The paper describes several heating steps and explicitly uses the word \u201cdrying\u201d only in phrases like \u201cAfter drying at around 80 \u00b0C\u201d (solid precursor) and \u201cDisk-shape pieces\u2026were dried in a vacuum at 100 \u00b0C for 12 h\u201d (electrode preparation). It does not state a standalone synthesis operation labeled simply as \u201cdry,\u201d nor does it present \u201cdry\u201d as the synthesis operation in a way that matches the extracted categorical value.",
+              "suggested_fix": "If the field expects an operation, use the explicit phrases from the text, e.g., \u201cdrying at ~80 \u00b0C\u201d (precursor) and/or \u201cvacuum drying at 100 \u00b0C for 12 h\u201d (electrode). If it must be a single-word category, \u201cdrying\u201d is supported; \u201cdry\u201d is not explicitly used."
+            }
+          }
+        ],
+        "conditions": {
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Material preparation"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Self-combustion synthesis",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Flame 10\u201315 s followed by gentle combustion for several minutes",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes multiple heating steps during synthesis: after drying at ~80 \u00b0C, the precursor was \"further heated at 250 \u00b0C in an electric oven\" to trigger self-combustion, and the product was then \"subjected for further calcinations at 800 \u00b0C for 5 h\". These are clearly heat-based synthesis operations, so the extracted operation \"heat\" is supported.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Material preparation"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Grinding of primary product",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes a grinding step in the synthesis: \u201cThe as-obtained primary products\u2026 were grinded and subjected for further calcinations at 800 \u00b0C for 5 h to result in the final products.\u201d This supports the synthesis operation being grinding.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Material preparation"
+        ]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Calcination to obtain final product",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {},
+            "temperature": {
+              "value": 1073,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes a calcination step: in Experimental 2.1 it states the products were \"subjected for further calcinations at 800 \u00b0C for 5 h to result in the final products.\" Calcination corresponds to the synthesis operation 'calcine'.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.9,
+            "reasoning": "The paper does not state that the synthesis atmosphere was air in general. While it mentions calcination \u201cat 800 \u00b0C in air\u201d (page 3) for the final product, other key steps occur in different environments (e.g., self-combustion in an electric oven; coin-cell assembly in a glove box filled with pure argon). Therefore, labeling the overall \u201cSynthesis Atmosphere\u201d simply as \u201cair\u201d is not explicitly supported as a single synthesis atmosphere for the whole preparation.",
+            "suggested_fix": "If the field refers specifically to the calcination atmosphere: \"air\" (calcined at 800 \u00b0C in air). Otherwise: \"Not specified/Multiple (calcination in air; other steps not specified)\"."
+          }
+        },
+        "prov": [
+          "Experimental \u2013 Material preparation"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Activation of cotton template with nitric acid",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "Supported. In the Experimental section (2.1 Material preparation), the paper states: \"De-seeded natural cotton fiber was applied as the cellulose source which was activated with HNO3 before use.\" This explicitly describes activation of the cotton template/fibers with nitric acid.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Hydrolysis of Ti precursor",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.32,
+          "reasoning": "The paper\u2019s experimental procedure explicitly describes adding deionized water to tetrabutyl titanate, which \u201cleading to the formation of white precipitate of TiO(OH)2,\u201d i.e., hydrolysis/precipitation of the Ti precursor (Section 2.1, Material preparation). However, the extracted value is presented as a standalone \u201cWorkflow Timeline\u201d item (\u201cHydrolysis of Ti precursor\u201d) without any timeline/sequence context (e.g., step number, timepoint label) and no provenance is given. The source text supports that hydrolysis occurs as part of the synthesis steps, but it does not explicitly label it as a \u2018workflow timeline\u2019 entry; it\u2019s simply part of the method description.",
+          "suggested_fix": "If the field is meant to capture an explicit step in the synthesis workflow, use wording tied to the text: \u201cDeionized water was slowly dropped into Ti(C4H9O)4 under vigorous stirring, forming TiO(OH)2 (hydrolysis/precipitation step).\u201d Also cite Section 2.1 (Material preparation)."
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Formation of titanyl nitrate solution",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The workflow step \u201cFormation of titanyl nitrate solution\u201d is explicitly described in the Experimental section (Material preparation): after forming TiO(OH)2 precipitate, \u201cNitric acid was then introduced ... to result in a transparent bright yellow titanyl nitrate solution.\u201d This directly supports the extracted timeline item.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Addition of Li/La nitrates and glycine",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.83,
+          "reasoning": "The Experimental section (2.1 Material preparation) explicitly states: \u201cProper amounts of LiNO3, La(NO3)3\u00b76H2O and glycine were added slowly into the solution in sequence.\u201d This directly supports the workflow step/timeline item \u2018Addition of Li/La nitrates and glycine\u2019.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Impregnation into cotton fibres",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The paper describes a cellulose (cotton fiber) assisted combustion synthesis where a mixed metal nitrate/glycine solution was absorbed into dried activated cotton fibers (\u201cThe mixed solution was then absorbed into dried activated cotton fibers.\u201d) and later SEM discussion mentions \u201cafter the impregnation with metal nitrates and glycine fuel\u2026\u201d. However, the extracted value \u201cImpregnation into cotton fibres\u201d is not stated as a workflow timeline item/step label in the paper; the closest explicit wording is absorption/impregnation of cotton fibers with metal nitrates and glycine fuel, not a standalone timeline phrase. Also, no explicit \u2018Workflow Timeline\u2019 field exists in the text.",
+          "suggested_fix": "Replace with an explicit step as written in the Experimental section, e.g., \u201cThe mixed solution was absorbed into dried activated cotton fibers (impregnation with metal nitrates and glycine fuel), then dried (~80 \u00b0C) and combusted (250 \u00b0C).\u201d"
+        }
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Drying at 80 \u00b0C",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The Experimental section (2.1 Material preparation, Page 2) explicitly states: \u201cAfter drying at around 80 \u00b0C, the solid precursor was further heated at 250 \u00b0C\u2026\u201d. This supports the workflow timeline step of drying at 80 \u00b0C (noted as \u2018around 80 \u00b0C\u2019).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Self-combustion at 250 \u00b0C",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The Experimental section (2.1 Material preparation, Page 2) explicitly states that after drying, \u201cthe solid precursor was further heated at 250 \u00b0C in an electric oven, a high temperature self-combustion\u2026 was triggered,\u201d and Fig. 2 caption (Page 3) refers to \u201ccellulose after 250 \u00b0C self-combustion.\u201d This supports the workflow timeline item \u201cSelf-combustion at 250 \u00b0C.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Grinding of combusted product",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The workflow step \u201cGrinding of combusted product\u201d is explicitly described in the Experimental section: after the 250 \u00b0C self-combustion, \u201cThe as-obtained primary products ... were grinded and subjected for further calcinations at 800 \u00b0C for 5 h to result in the final products.\u201d This clearly indicates grinding of the combusted/primary product.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Calcination at 800 \u00b0C for 5 h to yield composite",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "The Experimental section (2.1 Material preparation, Page 2) explicitly states that the as-obtained products were \u201csubjected for further calcinations at 800 \u00b0C for 5 h to result in the final products.\u201d This supports the workflow step of calcination at 800 \u00b0C for 5 h yielding the final composite/product.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified drying time at 80 \u00b0C",
+        "excerpt": "After drying at around 80 \u00b0C, the solid precursor was further heated...",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "The Methods section states: \u201cAfter drying at around 80 \u00b0C, the solid precursor was further heated at 250 \u00b0C\u2026\u201d. No duration/time is given for the drying step at ~80 \u00b0C anywhere else in the provided full text. Therefore, the identified workflow ambiguity\u2014unspecified drying time at 80 \u00b0C\u2014is correct and supported by the document\u2019s omission.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Duration of gentle combustion not quantified",
+        "excerpt": "a gentle combustion was followed which lasted for several minutes",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The Experimental section explicitly states: \u201ca gentle combustion was followed which lasted for several minutes\u201d after an initial 10\u201315 s self-combustion. This provides only a qualitative duration (\u201cseveral minutes\u201d) and does not quantify it numerically, matching the reported workflow ambiguity issue.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu K\u03b1",
+        "wavelength_nm": 0.15406
+      },
+      "results": [
+        {
+          "metric": "Phase identification",
+          "value": "Spinel Li4Ti5O12 peaks; emergence of perovskite lithium lanthanum titanate peaks at higher La content",
+          "unit": ""
+        },
+        {
+          "metric": "Lattice parameter (spinel)",
+          "value": [
+            "8.321 \u00c5 (pristine)",
+            "8.314 \u00c5 (La:Ti 1:50)"
+          ],
+          "unit": "\u00c5"
+        }
+      ],
+      "interpretation": "Indicates dual-phase composite formation and slight lattice shrinkage with La incorporation",
+      "prov": [
+        "Fig. 5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "Supported by the XRD discussion in Section 3.2 and Fig. 5 caption. The text states that at low La:Ti ratios the XRD peaks match spinel Li4Ti5O12 (Fd3m) with no impurities, while at higher La content (La:Ti = 1:100 and 1:50) additional peaks appear (around 2\u03b8 \u2248 33\u00b0 and 58\u00b0) assigned to perovskite-type lithium lanthanum titanate. The lattice parameters of the spinel phase are explicitly listed as 8.321(3) \u00c5 for pristine Li4Ti5O12 and 8.314(2) \u00c5 for La:Ti = 1:50, matching the extracted values (rounding/parentheses ignored).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Particle size (secondary)",
+          "value": "0.2\u20131.0",
+          "unit": "\u00b5m"
+        }
+      ],
+      "interpretation": "Dense micrometer-sized aggregates observed",
+      "prov": [
+        "Fig. 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "Fig. 2 is discussed in Section 3.1 (Particulate morphology), where the text explicitly states that after calcination the products are composed of irregular grains with size mainly in the range of 0.20\u20131.00 \u00b5m (written as 0.20e1.00 mm, i.e., micrometers). This corresponds to the secondary particle/grain size observed by SEM and matches the extracted value 0.2\u20131.0 \u00b5m.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Primary particle size",
+          "value": "0.05\u20130.35",
+          "unit": "\u00b5m"
+        }
+      ],
+      "interpretation": "Nanoscale dual phases confirmed by HR-TEM and SAED",
+      "prov": [
+        "Fig. 3",
+        "Fig. 6"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly states (Page 4, in the TEM discussion referencing Fig. 3) that \u201cthe primary particles \u2026 have the size mainly in the range of 0.05e0.35 mm,\u201d and Fig. 3 is the TEM image set for pristine and La-incorporated Li4Ti5O12. This directly supports the extracted TEM primary particle size range 0.05\u20130.35 \u00b5m (mm here denotes micrometer, consistent with the context and SEM-reported micrometer-scale grains). Fig. 6 is HR-TEM/SAED about lattice fringes and phases and does not provide this size range, but the value is still supported via Fig. 3 text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "BET N2 adsorption",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Surface area (pristine)",
+          "value": 1.4,
+          "unit": "m2 g-1"
+        },
+        {
+          "metric": "Surface area (La:Ti 1:50)",
+          "value": 5.9,
+          "unit": "m2 g-1"
+        }
+      ],
+      "interpretation": "Samples are coarse with low surface area",
+      "prov": [
+        "Text \u2013 Section 3.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly reports BET N2 adsorption specific surface areas: \"only 1.4... and ...5.9 m2 g\u22121 for pristine Li4Ti5O12 ... and ... La-incorporated Li4Ti5O12 with La to Ti molar ratios ... 1:50, respectively\" (Page 4, Section 3.1). These match the extracted values for pristine (1.4 m2 g\u22121) and La:Ti=1:50 (5.9 m2 g\u22121). Alleged provenance 'Section 3.1' is correct (values appear within Section 3.1, though on Page 4 of the provided text).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ti oxidation state",
+          "value": "Ti4+ in both pristine and La-incorporated samples",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Minimal change in Ti valence after La incorporation",
+      "prov": [
+        "Fig. 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Supported. In the text discussing Fig. 7 (XPS), the authors state: \u201cWe further analyzed the oxidation states of titanium in the pristine Li4Ti5O12 and La-Li4Ti5O12 (La:Ti = 1:50) by XPS with the results shown in Fig. 7\u2026 It means the Ti in both samples took Ti4+ oxidation state.\u201d This directly supports the extracted value that Ti is Ti4+ in both pristine and La-incorporated samples.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Galvanostatic charge\u2013discharge",
+      "parameters": {
+        "voltage_window_V": "1.0\u20133.0"
+      },
+      "results": [
+        {
+          "metric": "Capacity at 1 C (La:Ti 1:50)",
+          "value": 168.7,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "Capacity at 40 C (La:Ti 1:50)",
+          "value": 113.5,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "High-rate capability retained despite coarse morphology",
+      "prov": [
+        "Fig. 8",
+        "Fig. 9"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The full text explicitly reports, in the Fig. 8 discussion, that the first discharge capacity at 1 C for La-incorporated Li4Ti5O12 with La:Ti = 1:50 is 168.7 mA h g\u22121 (\u201c...168.7 mA h g\u22121... for ... La to Ti molar ratios of ... 1:50\u201d). It also explicitly reports, in the Fig. 9 discussion, that at 40 C a discharge capacity of around 113.5 mA h g\u22121 is reached for La:Ti = 1:50 (\u201cA high discharge capacity of around 113.5 mA h g\u22121 was still reached at a 40 C rate for ... La to Ti molar ratio of 1:50.\u201d). These match the extracted values and units (mAh g\u22121).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "frequency_range_Hz": "1e6\u20131e-1",
+        "perturbation_mV": 10,
+        "state": "1.6 V discharged"
+      },
+      "results": [
+        {
+          "metric": "Li\u207a diffusion coefficient (La:Ti 1:50)",
+          "value": 4.6e-08,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "Li\u207a diffusion enhanced nearly fivefold compared to pristine",
+      "prov": [
+        "Table 1",
+        "Fig. 14"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports the Li+ diffusion coefficient (~D) for La-incorporated Li4Ti5O12 with La:Ti = 1:50 as 4.6 \u00d7 10^-8 cm^2 s^-1. This appears in the EIS/Warburg diffusion analysis section and is listed in Table 1 (row \u201c1:50\u201d, column \u201c~D (cm2 s\u22121)\u201d: 4.6 \u00d7 10^-8). The text also states: \u201ca value of 4.6 \u00d7 10^-8 cm2 s^-1 was found for La-Li4Ti5O12 with La:Ti = 1:50\u201d. Fig. 14 is the associated plot used for extracting A and thus ~D, consistent with the alleged provenance.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "CV b-value analysis",
+        "results": [
+          {
+            "equation": "i = a v^b",
+            "value": "b \u2248 1 for La:Ti 1:50 sample",
+            "unit": ""
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.76,
+          "reasoning": "The paper explicitly reports multiple analysis/characterization methods (e.g., XRD, SEM/ESEM, TEM/HR-TEM/SAED, BET N2 adsorption, XPS, electrochemical tests including charge\u2013discharge, cyclic voltammetry, EIS/impedance, and four-probe DC conductivity). However, the Extracted Value for \u201cAnalysis Method\u201d is blank, so it is not supported as an extracted value.",
+          "suggested_fix": "Populate \u201cAnalysis Method\u201d with the methods stated in Section 2.2\u20132.3 and Results: XRD; (E)SEM; TEM/HR-TEM/SAED; BET N2 adsorption\u2013desorption; XPS; galvanostatic charge\u2013discharge; cyclic voltammetry; electrochemical impedance spectroscopy; four-probe DC conductivity."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 113.5,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 150,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.9,
+      "reasoning": "The paper explicitly reports cycling performance over 150 cycles: \u201cThe capacity after the 150 times of cycling still reached 111.3 mA h g\u22121, with capacity retention as high as 98%.\u201d This supports a cycle life value of 150 (cycles).",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-25T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

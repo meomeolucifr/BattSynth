@@ -1,0 +1,518 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Amorphous versus Crystalline Li3PS4: Local Structural Changes during Synthesis and Li Ion Mobility",
+    "doi": "10.1021/acs.jpcc.9b01425",
+    "authors": [
+      "Heike Stöffler",
+      "Tatiana Zinkevich",
+      "Murat Yavuz",
+      "Anna-Lena Hansen",
+      "Michael Knapp",
+      "Jozef Bednarčík",
+      "Simon Randau",
+      "Felix H. Richter",
+      "Jürgen Janek",
+      "Helmut Ehrenberg",
+      "Sylvio Indris"
+    ],
+    "journal": "The Journal of Physical Chemistry C",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "solid_state_synthesis",
+    "tags": [
+      "solid electrolyte",
+      "thiophosphate",
+      "Li3PS4"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "75Li2S–25P2S5 glass",
+      "molecular_formula": "",
+      "intended_role": "intermediate_product",
+      "prov": [
+        "Experimental Section (Preparation of Li2S–P2S5 glass)"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "β-Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "intended_role": "final_product",
+      "prov": [
+        "Experimental Section (calcined sample)",
+        "Figure 6"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "75 mol % in precursor mixture; purity 99.9 %",
+      "prov": [
+        "Experimental Section"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "25 mol % in precursor mixture; purity 99 %",
+      "prov": [
+        "Experimental Section"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective_atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used during ball-milling",
+      "prov": [
+        "Experimental Section"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Zirconium dioxide balls",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "milling_media",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "g"
+      },
+      "notes": "Diameter 3 mm",
+      "prov": [
+        "Experimental Section"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of precursor mixture",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "notes": "75 mol % Li2S and 25 mol % P2S5 powders combined"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental Section"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Ball-milling to obtain amorphous Li2S–P2S5 glass",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ],
+              "speed": {
+                "value": 510,
+                "unit": "rpm"
+              },
+              "cycles": 350,
+              "cycle_pattern": "5 min milling / 15 min rest",
+              "milling_media": [
+                "chem_4"
+              ]
+            },
+            "duration": {
+              "value": 1750,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "4 g batch in 45 mL ZrO2 bowl; performed under Ar atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental Section"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calcination to form β-Li3PS4 glass-ceramic",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ],
+              "heating_rate": {
+                "value": 4,
+                "unit": "K min-1"
+              },
+              "target_temperature": {
+                "value": 523,
+                "unit": "K"
+              },
+              "hold_time": {
+                "value": 60,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "notes": "Sample in Al2O3 crucible sealed in quartz tube under vacuum; slow natural cooling to 298 K"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum (sealed quartz tube)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental Section"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mix Li2S and P2S5 powders (75:25 mol%)"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Ball-mill mixture at 510 rpm under Ar for up to 350 cycles to form amorphous glass"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Calcine glass at 523 K for 60 min to obtain β-Li3PS4"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of Li2S and P2S5 not given; only mol% and total 4 g batch",
+        "excerpt": "A batch of 4 g of the powder mixture was ball-milled ... mixture of 75 mol % Li2S and 25 mol % P2S5"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {
+        "radiation": "Mo Kα1 λ=0.70932 Å (lab), 60 keV synchrotron",
+        "temperature_range_K": [298, 973]
+      },
+      "results": [
+        {
+          "metric": "Onset crystallization temperature",
+          "value": 473,
+          "unit": "K"
+        },
+        {
+          "metric": "β→α phase transition range",
+          "value": "573–773",
+          "unit": "K"
+        },
+        {
+          "metric": "Melting temperature",
+          "value": 923,
+          "unit": "K"
+        },
+        {
+          "metric": "β-Li3PS4 lattice constants",
+          "value": "a = 12.8829 Å, b = 8.1404 Å, c = 6.1459 Å",
+          "unit": ""
+        },
+        {
+          "metric": "Cell volume",
+          "value": 644.5,
+          "unit": "Å3"
+        }
+      ],
+      "interpretation": "Phase-pure β-Li3PS4 forms after calcination at 523 K",
+      "prov": [
+        "Figure 5",
+        "Figure 6"
+      ]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "excitation_wavelength": "632.81 nm",
+        "range": "100–1198 cm-1"
+      },
+      "results": [
+        {
+          "metric": "Presence of [PS4]3- units",
+          "value": "observed",
+          "unit": ""
+        },
+        {
+          "metric": "Presence of [P2S6]4- units in amorphous sample",
+          "value": "observed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 2a"
+      ]
+    },
+    {
+      "method": "31P MAS NMR",
+      "parameters": {
+        "field_T": 11.7,
+        "spinning_speed_kHz": 20
+      },
+      "results": [
+        {
+          "metric": "Chemical shift of [PS4]3- in β-Li3PS4",
+          "value": 87,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "Uniform [PS4]3- units dominate the crystalline phase",
+      "prov": [
+        "Figure 2b"
+      ]
+    },
+    {
+      "method": "7Li PFG NMR",
+      "parameters": {
+        "diffusion_time": {
+          "value": 300,
+          "unit": "ms"
+        },
+        "temperature_range_K": [303, 343]
+      },
+      "results": [
+        {
+          "metric": "Li+ diffusion coefficient (298 K)",
+          "value": 1.4e-13,
+          "unit": "m2 s-1"
+        },
+        {
+          "metric": "Li+ conductivity (bulk, 298 K)",
+          "value": 1.6e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "Activation energy (calcined)",
+          "value": 0.31,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy (amorphous)",
+          "value": 0.33,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Similar Li+ mobility in amorphous and calcined samples",
+      "prov": [
+        "Figure 10",
+        "Figure 11"
+      ]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy (EIS)",
+      "parameters": {
+        "frequency_range": "7 MHz–1 Hz",
+        "signal_amplitude": "10 mV"
+      },
+      "results": [
+        {
+          "metric": "Overall conductivity (amorphous, 298 K)",
+          "value": 2.98e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "Overall conductivity (calcined, 298 K)",
+          "value": 1.09e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "Activation energy (both samples)",
+          "value": 0.37,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Grain boundaries increase resistance in calcined sample",
+      "prov": [
+        "Supporting Information Figure S6",
+        "Figure 12"
+      ]
+    },
+    {
+      "method": "TGA/DSC",
+      "parameters": {
+        "heating_rate": {
+          "value": 5,
+          "unit": "K min-1"
+        },
+        "max_temperature": {
+          "value": 973,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "Exothermic crystallization peak",
+          "value": 508,
+          "unit": "K"
+        },
+        {
+          "metric": "Total mass loss",
+          "value": 6,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Mass loss attributed to sulfur sublimation",
+      "prov": [
+        "Figure 5c"
+      ]
+    },
+    {
+      "method": "BET nitrogen physisorption",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Specific surface area",
+          "value": 2,
+          "unit": "m2 g-1"
+        }
+      ],
+      "interpretation": "No significant nanoporous structure required for conductivity",
+      "prov": [
+        "Supporting Information Figure S7"
+      ]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Particle size range",
+          "value": "1–15",
+          "unit": "µm"
+        },
+        {
+          "metric": "Nanoparticle crystallite size in calcined sample",
+          "value": 20,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Calcined sample shows agglomerated nanoparticles increasing grain boundaries",
+      "prov": [
+        "Figure 14"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Crystallization kinetics (XRD intensity integration)",
+        "results": [
+          {
+            "equation": "I = I0 + A·(1−e^(−t/τ))",
+            "value": 4.1,
+            "unit": "h",
+            "notes": "Time constant τ for crystallization at 453 K"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

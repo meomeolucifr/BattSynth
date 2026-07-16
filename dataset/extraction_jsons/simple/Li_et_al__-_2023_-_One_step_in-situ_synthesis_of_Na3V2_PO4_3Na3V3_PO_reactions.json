@@ -1,0 +1,514 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "One step in-situ synthesis of Na3V2(PO4)3/Na3V3(PO4)4 biphase coexisted cathode with high energy density by inducing of polyvinylpyrrolidone for sodium ion batteries",
+    "doi": "10.1016/j.jpowsour.2023.232802",
+    "authors": [
+      "Jiahao Li",
+      "Yanjun Chen",
+      "Hongen Shi",
+      "Tao Zhou",
+      "Zhen Tian",
+      "Yanzhong Wang",
+      "Li Guo"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "sodium-ion batteries",
+      "cathode",
+      "sol-gel synthesis",
+      "polyvinylpyrrolidone"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na3V2(PO4)3/Na3V3(PO4)4 composite (PVP-NVP)",
+      "molecular_formula": "Na3V2(PO4)3/Na3V3(PO4)4",
+      "intended_role": "cathode material",
+      "prov": [
+        "Title",
+        "Abstract",
+        "Scheme 1"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "polyvinylpyrrolidone",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "structural-guiding agent; carbon source; reducing agent",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Amounts used for comparative samples: 1 g, 2 g, 4 g (precursor)",
+      "prov": [
+        "Fig. 1a caption paragraph"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Na3V2(PO4)3",
+      "molecular_formula": "Na3V2(PO4)3",
+      "ontology": {
+        "role": "product phase",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 1a",
+        "XRD discussion"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Na3V3(PO4)4",
+      "molecular_formula": "Na3V3(PO4)4",
+      "ontology": {
+        "role": "product phase",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Fig. 1a",
+        "XRD discussion"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "nitrogen-doped carbon",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "coating",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Formed in-situ from PVP during sintering; carbon content 8.42 wt % in composite",
+      "prov": [
+        "Fig. 3a",
+        "Raman discussion"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of sol-gel precursor containing Na, V, PO4 sources and polyvinylpyrrolidone (PVP).",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "PVP acts as chelating and structural-guiding agent; variants used 1 g, 2 g, or 4 g PVP in precursor."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Scheme 1",
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "One-step sol-gel calcination/sintering to form Na3V2(PO4)3/Na3V3(PO4)4 composite with in-situ nitrogen-doped carbon coating.",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "PVP decomposes, forming N-doped carbon; produces two-phase product. Carbonization leads to ordered/graphitized carbon."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Scheme 1",
+          "Results & discussions (TEM, Raman)"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Sol-gel precursor preparation with PVP"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Thermal treatment yielding biphase composite with N-doped carbon coating"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Sintering temperature and duration not specified",
+        "excerpt": "the entire synthesis process is shown in Scheme 1"
+      },
+      {
+        "issue": "Exact precursors for Na, V, and PO4 sources not provided",
+        "excerpt": "The optimized sample was synthesized by sol-gel method in one step"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase composition (mass ratio)",
+          "value": "Na3V2(PO4)3 : Na3V3(PO4)4 = 79 : 21",
+          "unit": "",
+          "prov": [
+            "Fig. 1a"
+          ]
+        }
+      ],
+      "interpretation": "High crystallinity; successful formation of both phases",
+      "prov": [
+        "Fig. 1a-c"
+      ]
+    },
+    {
+      "method": "23Na solid-state NMR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Na sites detected",
+          "value": "Three distinct Na environments in composite",
+          "unit": "",
+          "prov": [
+            "Fig. 1d"
+          ]
+        }
+      ],
+      "interpretation": "Confirms coexistence of both phases and enhanced ionic mobility",
+      "prov": [
+        "Fig. 1d-e"
+      ]
+    },
+    {
+      "method": "SEM/EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "elemental distribution",
+          "value": "C, N, V, Na, P, O uniformly present",
+          "unit": "",
+          "prov": [
+            "Fig. 2c"
+          ]
+        }
+      ],
+      "interpretation": "Uniform dispersion, small particle size, low agglomeration",
+      "prov": [
+        "Fig. 2a-c"
+      ]
+    },
+    {
+      "method": "TEM/HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "lattice planes observed",
+          "value": "(200),(110),(510),(112),(220) for Na3V3(PO4)4; (204),(116),(300) for Na3V2(PO4)3",
+          "unit": "",
+          "prov": [
+            "Fig. 2g-i"
+          ]
+        }
+      ],
+      "interpretation": "Confirms two-phase structure and carbon coating",
+      "prov": [
+        "Fig. 2d-i"
+      ]
+    },
+    {
+      "method": "Thermogravimetric analysis (TGA)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "carbon content (PVP-NVP)",
+          "value": 8.42,
+          "unit": "wt%",
+          "prov": [
+            "Fig. 3a"
+          ]
+        },
+        {
+          "metric": "carbon content (NVP/C)",
+          "value": 4.57,
+          "unit": "wt%",
+          "prov": [
+            "Fig. 3a"
+          ]
+        }
+      ],
+      "interpretation": "Higher carbon content due to PVP",
+      "prov": [
+        "Fig. 3a"
+      ]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ID/IG (PVP-NVP)",
+          "value": 1.04,
+          "unit": "",
+          "prov": [
+            "Fig. 3b"
+          ]
+        },
+        {
+          "metric": "ID/IG (NVP/C)",
+          "value": 0.97,
+          "unit": "",
+          "prov": [
+            "Fig. 3b"
+          ]
+        }
+      ],
+      "interpretation": "More defects in N-doped carbon coating",
+      "prov": [
+        "Fig. 3b"
+      ]
+    },
+    {
+      "method": "X-ray photoelectron spectroscopy (XPS)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "V 2p3/2 binding energy",
+          "value": 516.25,
+          "unit": "eV",
+          "prov": [
+            "Fig. 4a"
+          ]
+        },
+        {
+          "metric": "Na 1s binding energy",
+          "value": 1070.85,
+          "unit": "eV",
+          "prov": [
+            "Fig. 4b"
+          ]
+        }
+      ],
+      "interpretation": "Presence of V3+ and Na confirmed; multiple N species in carbon layer",
+      "prov": [
+        "Fig. 4a-e"
+      ]
+    },
+    {
+      "method": "BET surface area",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface area (PVP-NVP)",
+          "value": 20.47,
+          "unit": "m2 g-1",
+          "prov": [
+            "Fig. 4f"
+          ]
+        },
+        {
+          "metric": "surface area (NVP/C)",
+          "value": 10.9,
+          "unit": "m2 g-1",
+          "prov": [
+            "Fig. 4f"
+          ]
+        },
+        {
+          "metric": "average pore size (PVP-NVP)",
+          "value": 11.17,
+          "unit": "nm",
+          "prov": [
+            "Fig. 4f"
+          ]
+        }
+      ],
+      "interpretation": "Higher surface area aids electrolyte contact",
+      "prov": [
+        "Fig. 4f"
+      ]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy (EIS)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "charge transfer resistance (Rct, PVP-NVP)",
+          "value": 131.0,
+          "unit": "Ω",
+          "prov": [
+            "Fig. 6d"
+          ]
+        },
+        {
+          "metric": "charge transfer resistance (Rct, NVP/C)",
+          "value": 750.1,
+          "unit": "Ω",
+          "prov": [
+            "Fig. 6d"
+          ]
+        }
+      ],
+      "interpretation": "Lower resistance indicates improved conductivity",
+      "prov": [
+        "Fig. 6d-e"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge–discharge (GCD)",
+        "results": [
+          {
+            "metric": "initial capacity at 0.1 C",
+            "value": 119.17,
+            "unit": "mAh g-1",
+            "prov": [
+              "Fig. 5a"
+            ]
+          },
+          {
+            "metric": "capacity after 200 cycles at 0.1 C",
+            "value": 102.6,
+            "unit": "mAh g-1",
+            "prov": [
+              "Fig. 5b"
+            ]
+          },
+          {
+            "metric": "capacity at 10 C",
+            "value": 86.8,
+            "unit": "mAh g-1",
+            "prov": [
+              "Fig. 5c"
+            ]
+          }
+        ]
+      },
+      {
+        "method_name": "Energy density calculation",
+        "results": [
+          {
+            "metric": "initial energy density",
+            "value": 471.19,
+            "unit": "Wh kg-1",
+            "prov": [
+              "Fig. 5e"
+            ]
+          },
+          {
+            "metric": "average energy density after 200 cycles",
+            "value": 408.12,
+            "unit": "Wh kg-1",
+            "prov": [
+              "Fig. 5e"
+            ]
+          }
+        ]
+      },
+      {
+        "method_name": "Diffusion coefficient (CV Randles–Sevcik)",
+        "results": [
+          {
+            "equation": "Ip = 2.69×10^5 n^{3/2}ACD^{1/2}v^{1/2}",
+            "value": 3.21e-11,
+            "unit": "cm2 s-1",
+            "notes": "Anodic DNa+ at ~3.4 V",
+            "prov": [
+              "Table 1"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 119.17,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T22:18:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,471 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Grain Boundary Contributions to Li-Ion Transport in the Solid Electrolyte Li7La3Zr2O12 (LLZO)",
+    "doi": "10.1021/acs.chemmater.7b02805",
+    "authors": [
+      "Seungho Yu",
+      "Donald J. Siegel"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid electrolyte",
+      "LLZO",
+      "grain boundaries",
+      "molecular dynamics",
+      "Monte Carlo"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "solid electrolyte model",
+      "prov": [
+        "Page 9639"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "cubic polymorph used in simulations",
+      "prov": [
+        "Page 9640 Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "component",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Figure 2 composition profiles"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lanthanum",
+      "molecular_formula": "La",
+      "ontology": {
+        "role": "component",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Figure 2 composition profiles"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Zirconium",
+      "molecular_formula": "Zr",
+      "ontology": {
+        "role": "component",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Figure 2 composition profiles"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "component",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Figure 2 composition profiles"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Geometry optimization of GB-containing and bulk LLZO cells using conjugate gradient algorithm in LAMMPS.",
+        "operations": [
+          {
+            "action": "optimize_geometry",
+            "parameters": {
+              "algorithm": "conjugate gradient"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 0,
+              "unit": "K"
+            },
+            "notes": "Initial relaxation before simulations"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods Page 9640"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Heating of optimized cells to target temperatures (700–1100 K) using NPT molecular dynamics with a heating rate of 1 K/ps; time step 2 fs.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "heating_rate": {
+                "value": 1,
+                "unit": "K ps-1"
+              },
+              "time_step": {
+                "value": 2,
+                "unit": "fs"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "NPT ensemble used to allow thermal expansion"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods Page 9640"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Equilibration using MD in NPT followed by NVT ensembles for 3 ns each at selected temperatures.",
+        "operations": [
+          {
+            "action": "equilibrate",
+            "parameters": {
+              "ensemble": "NPT then NVT",
+              "duration": {
+                "value": 3,
+                "unit": "ns"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Performed at each target temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods Page 9640"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "NVT Monte Carlo equilibration to establish GB stoichiometry; >1e7 move attempts with r_max = 0.5 Å.",
+        "operations": [
+          {
+            "action": "simulate",
+            "parameters": {
+              "simulation_type": "Monte Carlo",
+              "moves": {
+                "value": 10000000,
+                "unit": "attempts"
+              },
+              "r_max": {
+                "value": 0.5,
+                "unit": "Å"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Metropolis algorithm, acceptance ratio ~0.1"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods Page 9640-9641"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "NVT molecular dynamics to calculate Li-ion diffusivity over 5 ns after 1 ns startup at 700, 800, 900, 1000, and 1100 K.",
+        "operations": [
+          {
+            "action": "simulate",
+            "parameters": {
+              "simulation_type": "Molecular dynamics",
+              "duration_data_collection": {
+                "value": 5,
+                "unit": "ns"
+              },
+              "startup_duration": {
+                "value": 1,
+                "unit": "ns"
+              },
+              "temperatures": [
+                700,
+                800,
+                900,
+                1000,
+                1100
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Three runs with different initial velocities per temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods Page 9641"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Geometry optimization of GB and bulk cells"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Controlled heating to simulation temperatures"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Equilibration at temperature using MD"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Monte Carlo equilibration for composition"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "MD calculations for Li-ion diffusivity"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No explicit physical synthesis of LLZO material described; workflow reflects computational procedures.",
+        "excerpt": "Calculations were performed using the cubic polymorph of LLZO."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Molecular dynamics simulation",
+      "parameters": {
+        "time_step": "2 fs",
+        "ensembles": ["NPT", "NVT"],
+        "temperatures": "700–1100 K",
+        "duration": "5 ns data collection after 1 ns startup"
+      },
+      "results": [
+        {
+          "metric": "Li-ion diffusivity in bulk at 1000 K",
+          "value": 1.35e-6,
+          "unit": "cm2 s-1"
+        },
+        {
+          "metric": "Activation energy for Li-ion diffusion in bulk",
+          "value": 0.52,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy in Σ5(310) GB",
+          "value": 0.64,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy in Σ5(210) GB",
+          "value": 0.71,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy in Σ3(112) GB",
+          "value": 0.52,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li enrichment ratio ΓLi in Σ3(112) GB",
+          "value": 2.43,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Diffusivity is reduced in GB regions, with magnitude dependent on GB structure.",
+      "prov": [
+        "Table 1 Page 9643",
+        "Figure 5 Page 9643",
+        "Figure 2 Page 9641"
+      ]
+    },
+    {
+      "method": "Monte Carlo simulation",
+      "parameters": {
+        "moves": ">1e7",
+        "temperature": "700–1000 K",
+        "r_max": "0.5 Å"
+      },
+      "results": [
+        {
+          "metric": "GB energy after MC equilibration Σ5(310)",
+          "value": 0.73,
+          "unit": "J m-2"
+        },
+        {
+          "metric": "GB excess volume after MC equilibration Σ5(310)",
+          "value": 30,
+          "unit": "Å3"
+        }
+      ],
+      "interpretation": "MC equilibration reduces GB energy and volume due to segregation.",
+      "prov": [
+        "Results Page 9641"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "D(T) = D0 * exp(-Ea/kBT)",
+            "Ea_bulk": {
+              "value": 0.52,
+              "unit": "eV"
+            },
+            "Ea_Sigma5_210": {
+              "value": 0.71,
+              "unit": "eV"
+            },
+            "Ea_Sigma5_310": {
+              "value": 0.64,
+              "unit": "eV"
+            },
+            "Ea_Sigma3_112": {
+              "value": 0.52,
+              "unit": "eV"
+            }
+          }
+        ],
+        "prov": [
+          "Figure 5c Page 9643"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

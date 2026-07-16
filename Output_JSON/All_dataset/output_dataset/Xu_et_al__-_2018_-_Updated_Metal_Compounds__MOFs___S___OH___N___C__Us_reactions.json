@@ -1,0 +1,266 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Updated Metal Compounds (MOFs, –S, –OH, –N, –C) Used as Cathode Materials for Lithium–Sulfur Batteries",
+    "doi": "10.1002/aenm.201702607",
+    "authors": [
+      "Jing Xu",
+      "Tom Lawson",
+      "Hongbo Fan",
+      "Dawei Su",
+      "Guoxiu Wang"
+    ],
+    "journal": "Advanced Energy Materials",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["lithium–sulfur batteries", "cathode materials", "metal compounds"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2S/N,P–C electrode",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 5, paragraph describing Yu’s group approach"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "lithium sulfate",
+      "molecular_formula": "Li2SO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 5"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "carbon",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "part of Li2SO4/C mixture",
+      "prov": ["Page 5"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "phytic acid-doped polyaniline hydrogel",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 5"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "protective gas during heat treatment",
+      "prov": ["Page 5"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of Li2SO4/C/phytic-acid doped polyaniline hydrogel mixture",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "exact proportions not specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 5"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Blade-coating of the hydrogel mixture onto current collector",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "blade-coating; substrate unspecified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 5"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Carbothermic reduction/heat treatment to form Li2S/N,P–C electrode",
+        "operations": [
+          {
+            "action": "heat_treat",
+            "parameters": {
+              "inputs": ["step_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1173,
+              "unit": "K"
+            },
+            "notes": "900 °C reported; argon atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mix Li2SO4, carbon and phytic-acid doped polyaniline hydrogel"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Blade-coat mixture onto current collector"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Heat treat at 1173 K under argon to obtain Li2S/N,P–C electrode"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No quantitative amounts or durations provided for mixing and coating steps",
+        "excerpt": "blade-coating Li2SO4/C/phytic acid doped polyaniline hydrogel on to current collector, followed by heat treatment under 900 °C in argon atmosphere"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "S 2p chemical shift",
+          "value": 0.7,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Indicates strong interaction between sulfur species and MOF metal sites",
+      "prov": ["Figure 5e"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical testing",
+        "results": [
+          {
+            "metric": "specific capacity",
+            "value": 1160,
+            "unit": "mAh g-1",
+            "notes": "Li2S/N,P–C electrode reversible capacity at unspecified current; loading 10 mg Li2S cm−2",
+            "prov": ["Page 5, paragraph on Amine’s group"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 1160,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "advenergymat_201702607_review_text",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,770 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Mechanochemical synthesis of Li-argyrodite Li6PS5X (X=Cl, Br, I) as sulfur-based solid electrolytes for all solid state batteries application",
+    "doi": "10.1016/j.ssi.2012.06.008",
+    "authors": [
+      "Sylvain Boulineau",
+      "Matthieu Courty",
+      "Jean-Marie Tarascon",
+      "Virginie Viallet"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2012
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid electrolyte",
+      "ball milling",
+      "Li-argyrodite",
+      "all solid state battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Abstract",
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly discusses the chloride-containing target composition as \u201cLi6PS5Cl\u201d multiple times (e.g., Abstract: \u201c...conductivity of 1.33\u00d710\u22123 S/cm for the Li6PS5Cl phase...\u201d; Experimental: global compositions \u201cLi6PS5X (X=Cl, Br, I)\u201d; Results: repeated references to \u201cLi6PS5Cl\u201d). Therefore the target formula Li6PS5Cl is directly supported by the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li6PS5Br",
+      "molecular_formula": "Li6PS5Br",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Abstract",
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly discusses the target family Li6PS5X (X = Cl, Br, I) throughout. It specifically mentions the bromide member Li6PS5Br multiple times (e.g., Abstract: \u201cLi6PS5X (X=Cl, Br, I)\u201d; Introduction cites \u201cLi6PS5Br\u201d; Experimental: \u201cglobal compositions of Li6PS5X (X=Cl, Br, I)\u201d; Results: \u201cLi6PS5Cl, Li6PS5Br and Li6PS5I phases\u201d). Therefore the target formula Li6PS5Br is directly supported by the text, regardless of the exact provenance location.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li6PS5I",
+      "molecular_formula": "Li6PS5I",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Abstract",
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly includes Li6PS5I as one of the target compositions. The abstract states the general formula Li6PS5X (X=Cl, Br, I), which includes the iodide member Li6PS5I. The main text also explicitly mentions Li6PS5I (e.g., Introduction: \u201cPecher et al. reported values\u2026 for Li6PS5I\u201d and Results: \u201cLi6PS5Cl, Li6PS5Br and Li6PS5I phases\u201d). The Experimental section describes mixing reagents to yield global compositions of Li6PS5X (X=Cl, Br, I), again encompassing Li6PS5I. \u0628\u0646\u0627\u0628\u0631\u0627\u06cc\u0646 the extracted target formula Li6PS5I is supported by the document text.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Reagent-grade, 99 %",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.74,
+        "reasoning": "The paper explicitly lists Li2S as a reagent-grade starting material in the Experimental section: \u201cReagent-grade Li2S \u2026 P2S5 \u2026 and LiX \u2026 were used as starting materials\u2026\u201d. Thus the chemical identity Li2S is supported, but the claim \u201cAmount: Not specified in text\u201d is not, because the Experimental section specifies the batch size: \u201cThe mechanical milling treatment was carried out for 1 g overall mass of mixed powders\u2026\u201d. While it does not give the mass of Li2S alone, it does specify the total amount of the mixed powders used in milling, so \u2018amount not specified\u2019 is too strong without qualification.",
+        "suggested_fix": "Li2S | Amount: used as starting material; total mixed powders mass for milling = 1 g (individual Li2S mass not specified; mixed in stoichiometric proportions to yield Li6PS5X)."
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Reagent-grade, 99 %",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "In the Experimental section, the paper lists P2S5 (Sigma Aldrich 99%) as a starting material, but it does not provide a specific amount/mass for P2S5 (only that reagents were mixed in stoichiometric proportions and that the overall mixed powder mass was 1 g). Therefore, identifying the chemical as P2S5 while marking the amount as not specified is consistent with the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "When X = Cl",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper mentions use of \u201cLiX (Acros Organic 99%)\u201d as a starting material with X = Cl, Br, I to make Li6PS5X (Experimental section), and later explicitly refers to LiCl as a precursor/impurity (e.g., XRD after 1\u20132 h shows peaks assigned to Li2S and LiCl). However, the text does not provide a specific amount (mass, molarity, etc.) of LiCl used\u2014only that reagents were mixed in stoichiometric proportions and the total batch mass was 1 g. Therefore, \u201cLiCl | Amount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiBr",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "When X = Br",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Experimental section (Page 2) states that starting materials include \u201cLiX (Acros Organic 99%)\u201d and that compositions are \u201cLi6PS5X (X=Cl, Br, I)\u201d. This implies LiBr is used when X=Br, but the paper does not specify an explicit amount/mass of LiBr (only that reagents are mixed in stoichiometric proportions and total batch mass is 1 g). Therefore, \u201cLiBr | Amount: Not specified in text\u201d is supported: LiBr is a chemical identity present via LiX for X=Br, and no specific LiBr quantity is given.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiI",
+      "molecular_formula": "LiI",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "When X = I",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "In the Experimental section, the authors list starting materials as \u201cReagent-grade Li2S\u2026, P2S5\u2026 and LiX \u2026 (X=Cl, Br, I) \u2026 mixed in stoichiometric proportions to yield\u2026 Li6PS5X (X=Cl, Br, I).\u201d This implies LiI is used when X=I, but the paper does not provide a separate explicit amount for LiI (only an overall batch mass of 1 g for mixed powders). Therefore, the extractor\u2019s statement that LiI is present and its amount is not specified is consistent with the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Protective atmosphere during milling and annealing",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly mentions argon atmosphere/flow multiple times in the Experimental section (e.g., \u201cAll processes were conducted under argon atmosphere\u201d and DSC under \u201ca constant argon flow of 200 ml/min\u201d). Nowhere does it specify an overall \u2018amount\u2019 of argon used (only a flow rate for DSC), so the extractor\u2019s statement that the argon amount is not specified in text is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in composite positive electrode (36 %)",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly mentions using LiCoO2 in the all-solid-state half-cells/composite positive electrode (Experimental section: \u201cmixture of LiCoO2, argyrodite phase and VGCF\u2026\u201d, and later \u201cLiCoO2-based composite positive electrode\u201d). However, it does not provide a specific mass, loading, or molar amount of LiCoO2\u2014only a composition ratio (36/54/10) within the composite. Thus, the statement \u201cAmount: Not specified in text\u201d is supported (the text lacks an explicit absolute amount for LiCoO2).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Indium",
+      "molecular_formula": "In",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "100 \u00b5m foil",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper includes indium (In) as a component of the all-solid-state cell (\u201cLiCoO2/Elec./In\u201d in the abstract; \u201cIn foil (100 \u03bcm) as counter electrode\u201d in Experimental; \u201cIndium negative electrode\u201d in Results). However, no quantity/amount of indium is specified beyond the foil thickness; there is no mass, molar amount, or composition fraction given for In. Therefore \u201cIndium | Amount: Not specified in text\u201d is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Vapor-grown carbon fiber",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10 % in composite positive electrode",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The Experimental section states the composite positive electrode mixture includes VGCF (vapor growth carbon fiber) in a 36/54/10 ratio with LiCoO2 and argyrodite, confirming the chemical identity as vapor-grown carbon fiber (VGCF). No absolute mass/amount of VGCF is provided anywhere in the text; only the mixture ratio is given, so \u201cAmount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Stoichiometric mixing of precursors Li2S, P2S5 and LiX (X = Cl, Br, I)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3/chem_4/chem_5"
+              ],
+              "total_mass": {
+                "value": 1,
+                "unit": "g"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Stoichiometric proportions; conducted under argon",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly states the starting crystalline powders (Li2S, P2S5, LiX) were \u201cmixed in stoichiometric proportions\u201d to yield Li6PS5X (Experimental section, Page 2). This directly supports the synthesis operation being a mix step. (They further use ball milling and annealing, but mixing is clearly part of the synthesis.)",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The paper explicitly states in the Experimental section: \u201cAll processes were conducted under argon atmosphere.\u201d This directly supports the extracted synthesis atmosphere being argon.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-energy ball milling of precursor mixture",
+        "operations": [
+          {
+            "action": "ball mill",
+            "parameters": {
+              "rotation_speed": {
+                "value": 600,
+                "unit": "rpm"
+              },
+              "ball_material": "zirconia",
+              "ball_count": 15,
+              "ball_diameter": {
+                "value": 10,
+                "unit": "mm"
+              },
+              "jar_volume": {
+                "value": 45,
+                "unit": "mL"
+              }
+            },
+            "duration": {
+              "value": 1200,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Continuous milling; optimized to 600 min (10 h) for Li6PS5Cl",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly describes the synthesis as a high-energy ball-milling (mechanochemical) process. The abstract states the Li6PS5X compounds were prepared through high-energy ball milling, and the Experimental section details the mechanical milling treatment using a high-energy ball milling apparatus (Pulverisette 7) at 600 rpm for 20 h. Therefore, the synthesis operation \"ball mill\" is directly supported.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The paper explicitly states in the Experimental section: \u201cAll processes were conducted under argon atmosphere.\u201d This directly supports the extracted synthesis atmosphere as argon.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Annealing of ball-milled powders",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "equipment": "autoclave in tubular furnace",
+              "heating_rate": {
+                "value": null,
+                "unit": "K/min"
+              }
+            },
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 823,
+              "unit": "K"
+            },
+            "notes": "Used to increase crystallinity; not required for optimized Cl phase",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.66,
+              "reasoning": "The paper describes mechanochemical synthesis by high-energy ball milling at room temperature, followed by annealing/heat treatment (e.g., \u201cSamples were then annealed\u2026 5 h at 550 \u00b0C\u201d and \u201cheat treatments at 550 \u00b0C for 5 h\u201d). While heating is indeed mentioned as an annealing step, the synthesis operation is not simply stated as \u201cheat\u201d alone; the primary operation is ball-milling, with heating as a subsequent optional/post-treatment step.",
+              "suggested_fix": "ball milling (high-energy mechanochemical milling); optionally followed by annealing/heat treatment at 550 \u00b0C for 5 h"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.99,
+            "reasoning": "The paper explicitly states in the Experimental section: \u201cAll processes were conducted under argon atmosphere.\u201d This directly supports the extracted synthesis atmosphere as argon (also consistent with other mentions such as impedance under Ar and DSC under argon flow).",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of stoichiometric precursor mixture",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.62,
+          "reasoning": "The paper describes the starting powders being \u201cmixed in stoichiometric proportions\u201d (Experimental section, Page 2), but it does not present a workflow/timeline step explicitly phrased as \u201cPreparation of stoichiometric precursor mixture.\u201d The concept is present (mixing stoichiometric precursor powders), but the extracted value is not explicitly stated as a named timeline item.",
+          "suggested_fix": "Mix reagent-grade Li2S, P2S5, and LiX powders in stoichiometric proportions to yield Li6PS5X (X=Cl, Br, I)."
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Energy-intensive ball-milling (20 h typical, 10 h optimum for Li6PS5Cl)",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The paper explicitly states high-energy ball milling at 600 rpm for 20 h as the standard synthesis condition (Experimental section, Page 2). It also reports an optimization study for Li6PS5Cl showing the highest conductivity at 10 h milling and describes 10 h as a record time (Section 3.3 and Conclusion, Pages 4\u20135). Thus the timeline claim \u201c20 h typical, 10 h optimum for Li6PS5Cl\u201d is supported (though the text frames 20 h as the baseline procedure and 10 h as optimal in their study).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Optional annealing at 550 \u00b0C for 5 h to increase crystallinity",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper does report annealing at 550 \u00b0C for 5 h (Experimental: \u201cSamples were then annealed\u2026 during 5 h at 550 \u00b0C\u201d; Results 3.2: heat treatments at 550 \u00b0C for 5 h \u201cto increase the amounts of crystallized phase\u201d and \u201cenhancement\u201d of crystallinity). However, it is not described as \u201coptional\u201d; annealing is presented as an actual step performed (and later evaluated) rather than an optional step in the workflow timeline. The extracted phrase adds the unsupported qualifier \u201cOptional.\u201d",
+          "suggested_fix": "Annealing at 550 \u00b0C for 5 h under Ar to increase the amount of crystallized (crystalline) argyrodite phase / crystallinity."
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometric masses of individual precursors not stated",
+        "excerpt": "Reagent-grade Li2S ... and LiX ... powders were used as starting materials and mixed in stoichiometric proportions",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The paper states only that reagent-grade Li2S, P2S5, and LiX powders were \"mixed in stoichiometric proportions\" to yield Li6PS5X (Experimental section, Page 2). It does not provide the exact masses (or molar amounts) of the individual precursors used, only an overall batch mass of 1 g for the mixed powders. Therefore, the identified workflow ambiguity\u2014missing exact stoichiometric masses\u2014is supported by the document text.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {
+        "instrument": "Bruker D8",
+        "radiation": "Co K\u03b1 (\u03bb1=1.7892 \u00c5, \u03bb2=1.7932 \u00c5)"
+      },
+      "results": [
+        {
+          "metric": "lattice parameter a (Li6PS5Cl)",
+          "value": 9.8397,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "lattice parameter a (Li6PS5Br)",
+          "value": 9.9689,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "lattice parameter a (Li6PS5I)",
+          "value": 10.149,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "crystallite size (ball-milled)",
+          "value": 15,
+          "unit": "nm"
+        },
+        {
+          "metric": "crystallite size (annealed)",
+          "value": 90,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Successful formation of cubic Li-argyrodite phases",
+      "prov": [
+        "Fig. 1",
+        "Fig. 5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly reports the refined cubic lattice parameters for ball-milled Li6PS5X as a=9.8397(4) \u00c5 (Cl), 9.9689(4) \u00c5 (Br), and 10.1490(7) \u00c5 (I) in the Results section (3.1), and states crystallite sizes of ~15 nm for ball-milled phases (Scherrer) and ~90 nm for annealed phases (Scherrer) in sections 3.1 and 3.2, respectively. These match the extracted values (minor rounding on Li6PS5I: 10.1490 to 10.149). Figures cited (Fig. 1 and Fig. 5) correspond to the XRD patterns, but the numerical values are stated in the main text, not in the figure captions.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Transmission Electron Microscopy (TEM)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "observation",
+          "value": "Nanocrystallites embedded in amorphous matrix",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The Results and discussion section (3.1) explicitly states that TEM shows \u201cthe presence, besides the crystallized grains, of a Li2S\u2013P2S5\u2013LiX \u2026 amorphous matrix,\u201d and the Conclusion reiterates \u201cnano-sized crystallites \u2026 in an amorphous \u2026 matrix.\u201d This supports the extracted observation of nanocrystallites embedded in an amorphous matrix (wording differs but meaning matches).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "200 kHz \u2013 10 mHz",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (Li6PS5Cl, BM)",
+          "value": 0.00046,
+          "unit": "S/cm"
+        },
+        {
+          "metric": "ionic conductivity (Li6PS5Br, BM)",
+          "value": 0.00062,
+          "unit": "S/cm"
+        },
+        {
+          "metric": "ionic conductivity (Li6PS5I, BM)",
+          "value": 0.00019,
+          "unit": "S/cm"
+        },
+        {
+          "metric": "ionic conductivity (Li6PS5Cl, 10 h milling)",
+          "value": 0.00133,
+          "unit": "S/cm"
+        },
+        {
+          "metric": "ionic conductivity (Li6PS5I, annealed)",
+          "value": 1e-07,
+          "unit": "S/cm"
+        },
+        {
+          "metric": "activation energy (Li6PS5Cl)",
+          "value": 0.33,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (Li6PS5Br)",
+          "value": 0.41,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (Li6PS5I)",
+          "value": 0.35,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2",
+        "Fig. 3",
+        "Fig. 7",
+        "Fig. 9"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "All extracted impedance-spectroscopy-derived conductivities and activation energies are explicitly stated in the paper text (even if some are associated with figures). Page 2 (Results 3.1) states ionic conductivities at 298 K for BM phases: 6.2\u00d710\u22124 S/cm (Li6PS5Br), 4.6\u00d710\u22124 S/cm (Li6PS5Cl), 1.9\u00d710\u22124 S/cm (Li6PS5I), matching 0.00062, 0.00046, 0.00019 S/cm. Page 3 states Arrhenius activation energies: 0.33 eV (Cl), 0.41 eV (Br), 0.35 eV (I). Page 4 (annealed iodide) states conductivity decreases to 10\u22127 S/cm upon annealing, matching 1e\u221207 S/cm. Page 4 (optimization) states Li6PS5Cl conductivity reaches 1.33\u00d710\u22123 S/cm after 10 h milling, matching 0.00133 S/cm. No unit/conversion errors detected.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Hebb\u2013Wagner polarization",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electronic conductivity (Li6PS5Cl)",
+          "value": 6.4e-09,
+          "unit": "S/cm"
+        },
+        {
+          "metric": "electronic conductivity (Li6PS5Br)",
+          "value": 2.6e-08,
+          "unit": "S/cm"
+        },
+        {
+          "metric": "electronic conductivity (Li6PS5I)",
+          "value": 2.4e-08,
+          "unit": "S/cm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The Results & discussion section (Page 2, Section 3.1) explicitly reports: \u201cThe total electronic conductivity (electron+hole) is 2.6\u00d710\u22128 (Li6PS5Br), 6.4\u00d710\u22129 (Li6PS5Cl) and 2.4\u00d710\u22128 S/cm (Li6PS5I) using the Hebb\u2013Wagner polarization method.\u201d These match the extracted values and units (S/cm).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Differential Scanning Calorimetry (DSC)",
+      "parameters": {
+        "heating_rate": "10 K/min",
+        "gas_flow": "Ar 200 mL/min"
+      },
+      "results": [
+        {
+          "metric": "broad exotherms",
+          "value": "100\u2013400 \u00b0C",
+          "unit": ""
+        }
+      ],
+      "interpretation": "No clear glass transition identified",
+      "prov": [
+        "Fig. 6"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states in the DSC results section that the DSC traces (Fig. 6) show \u201cbroad exothermic peaks \u2026 between 100 and 400 \u00b0C\u201d (Page 4). This directly supports the extracted value of broad exotherms at 100\u2013400 \u00b0C, and the alleged provenance (Fig. 6) is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate": "1 mV/s",
+        "voltage_window": "-0.5 to 7 V vs Li"
+      },
+      "results": [
+        {
+          "metric": "electrochemical stability (Li6PS5Cl)",
+          "value": 7,
+          "unit": "V vs Li"
+        }
+      ],
+      "interpretation": "No parasitic redox processes observed for at least five cycles",
+      "prov": [
+        "Fig. 4"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly states that optimized ball-milling yields Li6PS5Cl with \u201can electrochemical stability up to 7 V vs. lithium\u201d (Abstract, page 1). In the Experimental section, cyclic voltammetry is described as sweeping from \u22120.5 V to +7 V (page 2), and Fig. 4 is the cyclic voltammogram used to assess electrochemical stability (page 3). This supports the extracted metric/value of 7 V vs Li for Li6PS5Cl electrochemical stability.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": "64 \u00b5A/cm\u00b2",
+        "voltage_window": "3.3\u20134.3 V"
+      },
+      "results": [
+        {
+          "metric": "first discharge capacity",
+          "value": 100,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "first charge capacity",
+          "value": 130,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "cell polarization",
+          "value": 0.15,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 10"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "Page 4 text describing Fig. 10 states: \u201cpresents a charge capacity of 130 mAh/g of LiCoO2 and a reversible capacity of ~100 mAh/g (Fig. 10)\u201d and \u201csmall polarization of the cell (150 mV)\u201d. These explicitly support first charge capacity = 130 mAh g\u22121, first discharge/reversible capacity \u2248100 mAh g\u22121, and cell polarization = 150 mV = 0.15 V. Provenance \u2018Fig. 10\u2019 is consistent (values are stated in the Fig. 10 discussion).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 100,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.96,
+      "reasoning": "The paper explicitly reports for the LiCoO2-based all-solid-state cell: \u201ca reversible capacity of ~100 mAh/g\u201d (Page 4, Section 3.3; Fig. 10 context). This matches the extracted Final Capacity value of 100 mAh g\u22121 (formatting aside).",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-29T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

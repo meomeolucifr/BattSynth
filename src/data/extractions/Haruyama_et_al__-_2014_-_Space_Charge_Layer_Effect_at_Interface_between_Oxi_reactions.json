@@ -1,0 +1,375 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Supporting Information for: Space-Charge Layer Effect at Interface between Oxide Cathode and Sulfide Electrolyte in All Solid-State Lithium-Ion Battery",
+    "doi": "",
+    "authors": [
+      "Jun Haruyama",
+      "Keitaro Sodeyama",
+      "Liyuan Han",
+      "Kazunori Takada",
+      "Yoshitaka Tateyama"
+    ],
+    "journal": "",
+    "year": null
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "DFT",
+      "DFT+U",
+      "all-solid-state battery",
+      "interface",
+      "surface energy"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiCoO2 (LCO)",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "studied_material",
+      "prov": [
+        "Page 1, Table S1"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiNbO3 (LNO)",
+      "molecular_formula": "LiNbO3",
+      "intended_role": "studied_material",
+      "prov": [
+        "Page 1, Table S1"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li3PS4 (LPS)",
+      "molecular_formula": "Li3PS4",
+      "intended_role": "studied_material",
+      "prov": [
+        "Page 1, Table S1"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "studied_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Denoted as LCO throughout the text.",
+      "prov": [
+        "Page 1"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiNbO3",
+      "molecular_formula": "LiNbO3",
+      "ontology": {
+        "role": "studied_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Denoted as LNO throughout the text.",
+      "prov": [
+        "Page 1"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "ontology": {
+        "role": "studied_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Denoted as LPS throughout the text.",
+      "prov": [
+        "Page 1"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Energy gap unit listed as 'V' instead of 'eV'.",
+        "excerpt": "Table S1 column header: 𝐸! (V)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT+U calculation",
+      "parameters": {
+        "k_point_meshes": {
+          "LCO_bulk": "8×8×4",
+          "LNO_bulk": "8×8×4",
+          "LPS_bulk": "4×6×8",
+          "LCO_surface": "8×4×1",
+          "LNO_surface_small": "8×4×1",
+          "LNO_surface_large": "4×4×1",
+          "LPS_surface": "4×8×1"
+        }
+      },
+      "results": [
+        {
+          "material_ref": "chem_1",
+          "metric": "lattice_constants_bulk",
+          "value": {
+            "a": 2.835,
+            "b": null,
+            "c": 14.04
+          },
+          "unit": "Å"
+        },
+        {
+          "material_ref": "chem_1",
+          "metric": "energy_gap_bulk",
+          "value": 2.2,
+          "unit": "eV"
+        },
+        {
+          "material_ref": "chem_2",
+          "metric": "lattice_constants_bulk",
+          "value": {
+            "a": 5.183,
+            "b": null,
+            "c": 13.96
+          },
+          "unit": "Å"
+        },
+        {
+          "material_ref": "chem_2",
+          "metric": "energy_gap_bulk",
+          "value": 3.6,
+          "unit": "eV"
+        },
+        {
+          "material_ref": "chem_3",
+          "metric": "lattice_constants_bulk",
+          "value": {
+            "a": 13.13,
+            "b": 8.062,
+            "c": 6.178
+          },
+          "unit": "Å"
+        },
+        {
+          "material_ref": "chem_3",
+          "metric": "energy_gap_bulk",
+          "value": 2.8,
+          "unit": "eV"
+        },
+        {
+          "material_ref": "chem_1",
+          "metric": "surface_energy_LCO(110)",
+          "value": 14.08,
+          "unit": "eV nm-2"
+        },
+        {
+          "material_ref": "chem_1",
+          "metric": "surface_energy_gap_LCO(110)",
+          "value": 0.70,
+          "unit": "eV"
+        },
+        {
+          "material_ref": "chem_2",
+          "metric": "surface_energy_LNO(110)_Li2Nb2O6_termination",
+          "value": 5.63,
+          "unit": "eV nm-2"
+        },
+        {
+          "material_ref": "chem_2",
+          "metric": "surface_energy_gap_LNO(110)_Li2Nb2O6_termination",
+          "value": 3.0,
+          "unit": "eV"
+        },
+        {
+          "material_ref": "chem_2",
+          "metric": "surface_energy_LNO(110)_Li6Nb6O9_termination",
+          "value": 6.45,
+          "unit": "eV nm-2"
+        },
+        {
+          "material_ref": "chem_2",
+          "metric": "surface_energy_gap_LNO(110)_Li6Nb6O9_termination",
+          "value": 3.1,
+          "unit": "eV"
+        },
+        {
+          "material_ref": "chem_3",
+          "metric": "surface_energy_LPS(010)",
+          "value": 1.94,
+          "unit": "eV nm-2"
+        },
+        {
+          "material_ref": "chem_3",
+          "metric": "surface_energy_gap_LPS(010)",
+          "value": 2.6,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table S1",
+        "Table S2"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Interface adhesion energy calculation",
+        "results": [
+          {
+            "interface": "LCO(110)/LNO(110)",
+            "misfit_parameter_%": 3.4,
+            "adhesion_energy": 10.6,
+            "adhesion_energy_unit": "eV nm-2",
+            "prov": "Table S3"
+          },
+          {
+            "interface": "LCO(110)/LNO(110) (second configuration)",
+            "misfit_parameter_%": 5.2,
+            "adhesion_energy": 6.1,
+            "adhesion_energy_unit": "eV nm-2",
+            "prov": "Table S3"
+          },
+          {
+            "interface": "LCO(110)/LPS(010)",
+            "misfit_parameter_%": 3.7,
+            "adhesion_energy": 4.3,
+            "adhesion_energy_unit": "eV nm-2",
+            "prov": "Table S3"
+          },
+          {
+            "interface": "LNO(110)/LPS(010)",
+            "misfit_parameter_%": 3.6,
+            "adhesion_energy": 3.8,
+            "adhesion_energy_unit": "eV nm-2",
+            "prov": "Table S3"
+          }
+        ]
+      },
+      {
+        "method_name": "Relative interface energy comparison",
+        "results": [
+          {
+            "interface": "LCO(110)/LNO(110)",
+            "relative_energies_eV": [
+              7.22,
+              6.12,
+              8.70,
+              4.77,
+              3.85,
+              5.70,
+              4.30,
+              9.07,
+              3.84,
+              3.42,
+              5.03,
+              6.79,
+              5.97,
+              0.00,
+              8.74,
+              8.72
+            ],
+            "prov": "Table S4"
+          },
+          {
+            "interface": "LCO(110)/LNO(110) (alternative)",
+            "relative_energies_eV": [
+              3.71,
+              2.58,
+              1.99,
+              3.73,
+              3.58,
+              2.58,
+              1.32,
+              2.84,
+              3.20,
+              3.57,
+              1.47,
+              2.46,
+              1.66,
+              1.97,
+              0.00,
+              2.69
+            ],
+            "prov": "Table S4"
+          },
+          {
+            "interface": "LCO(110)/LPS(010)",
+            "relative_energies_eV": [
+              6.19,
+              1.77,
+              1.41,
+              0.00
+            ],
+            "prov": "Table S4"
+          },
+          {
+            "interface": "LNO(110)/LPS(010)",
+            "relative_energies_eV": [
+              1.07,
+              5.04,
+              0.00
+            ],
+            "prov": "Table S4"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T14:56:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

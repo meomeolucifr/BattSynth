@@ -1,0 +1,200 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Binding and Diffusion of Lithium in Graphite: Quantum Monte Carlo Benchmarks and Validation of van der Waals Density Functional Methods",
+    "doi": "10.1021/ct500617z",
+    "authors": [
+      "P. Ganesh",
+      "Jeongnim Kim",
+      "Changwon Park",
+      "Mina Yoon",
+      "Fernando A. Reboredo",
+      "Paul R. C. Kent"
+    ],
+    "journal": "Journal of Chemical Theory and Computation",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "quantum Monte Carlo",
+      "DFT",
+      "van der Waals interactions",
+      "lithium diffusion",
+      "graphite"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "AA-stacked graphite",
+      "molecular_formula": "C",
+      "intended_role": "model_system",
+      "prov": [
+        "Figure 1",
+        "Text Page 5319"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper studies lithium in AA-stacked graphite (a Li\u2013C system) and discusses compositions such as LixC6 and LiC6, but it does not state the target material/formula as simply elemental carbon (\u201cC\u201d). The closest explicit formulas in the text are graphite (carbon), LixC6, and LiC6; none supports an explicit target formula value of just \u201cC\u201d.",
+        "suggested_fix": "Graphite (C), or if a formula is required from the text: LiC6 (fully lithiated) / LixC6 with x = 0.06 (dilute case), depending on what \u2018Target Formula\u2019 is intended to represent."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li in AA-stacked graphite (Li0.06C6)",
+      "molecular_formula": "Li0.06C6",
+      "intended_role": "model_system",
+      "prov": [
+        "Figure 2",
+        "Text Page 5320"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.88,
+        "reasoning": "The paper specifies the Li concentration as x = 0.06 in the composition written as LixC6 (\u201ca Li concentration of x = 0.06 in LixC6\u201d) but it does not explicitly state the target formula as \u201cLi0.06C6\u201d. Figure 2 discusses Li binding energy vs interplanar separation and does not provide this explicit formula either. Therefore the exact extracted value is not directly supported as written in the text/figures provided, even though it is a straightforward substitution from LixC6 with x=0.06.",
+        "suggested_fix": "LixC6 with x = 0.06 (i.e., Li concentration x=0.06 in LixC6)"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "adsorbate",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Dilute concentration x = 0.06 in Li_xC6 supercells",
+      "prov": [
+        "Methods Section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper clearly studies lithium (Li) in graphite throughout (e.g., title/abstract and multiple mentions of \u201cone Li atom\u201d, \u201cdilute Li in graphite\u201d, \u201cLi concentration x = 0.06 in LixC6\u201d). However, it does not specify a real-world chemical amount (e.g., mass, moles, concentration in solution, dosage); the only quantitative \u2018amount\u2019 information is in-model composition/concentration within computational supercells (x=0.06 in LixC6; one Li atom in a supercell; two Li atoms in a larger supercell). Thus the extractor\u2019s statement that the amount is not specified in the text is supported if \u2018amount\u2019 refers to experimental/reagent quantity rather than simulation stoichiometry.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Graphite (AA-stacked)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate",
+        "category": "allotrope"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Two graphene layers per supercell, 50 C atoms each",
+      "prov": [
+        "Methods Section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly identifies the material studied as \u201cAA-stacked graphite\u201d (e.g., Abstract: \u201catomic lithium in AA-stacked graphite\u201d; Methods: \u201cstudy AA stacked graphite\u201d). Nowhere in the provided full text is an explicit quantity/amount of graphite given (no mass, moles, volume, or reagent amount); the work is computational and discusses supercells (e.g., 50-atom graphene layers, 200 carbon atoms) but not an experimental \u2018amount\u2019 of graphite. Therefore, the identity is supported and the \u2018Amount: Not specified in text\u2019 is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Diffusion Quantum Monte Carlo (DMC)",
+      "parameters": {
+        "time_step": {
+          "value": 0.02,
+          "unit": "au"
+        },
+        "walkers": 16000
+      },
+      "results": [
+        {
+          "metric": "lattice constant (AA graphite)",
+          "value": 3.63,
+          "unit": "\u00c5",
+          "error": 0.02
+        },
+        {
+          "metric": "binding energy (AA graphite)",
+          "value": 36,
+          "unit": "meV",
+          "error": 1
+        },
+        {
+          "metric": "optimal lattice constant for Li in graphite",
+          "value": 3.61,
+          "unit": "\u00c5",
+          "error": 0.02
+        },
+        {
+          "metric": "Li binding energy at optimum separation",
+          "value": 1.6,
+          "unit": "eV",
+          "error": 0.1
+        }
+      ],
+      "interpretation": "DMC accurately captures van der Waals interactions and charge transfer in Li\u2013graphite system.",
+      "prov": [
+        "Figure 1",
+        "Figure 2",
+        "Text Pages 5319-5320"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "All four reported DMC/QMC metrics are explicitly stated in the paper text/figure captions: (1) AA graphite DMC minimum interplanar separation (lattice constant) 3.63(2) \u00c5 and (2) AA graphite binding energy 36(1) meV are stated in the Figure 1 caption and reiterated in the Page 3 text (\u201clattice constant 3.63(2)\u00c5 and binding energy of 36(1)meV\u201d). (3) The Li-in-graphite optimal lattice constant 3.61(2) \u00c5 is stated in Figure 2b caption (\u201cminimum lattice constant 3.61(2)\u00c5\u201d) and in Page 4 text (\u201cLi\u2212C optimal 3.61(2)\u00c5\u201d). (4) The Li binding energy at optimum is given in Page 4 text as \u201c\u223c1.6(1) eV at the Li\u2212C optimal 3.61(2)\u00c5.\u201d Extracted units and uncertainties match the paper\u2019s parenthetical notation (e.g., 3.63(2) \u00c5 = 3.63 \u00b1 0.02 \u00c5).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T20:51:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

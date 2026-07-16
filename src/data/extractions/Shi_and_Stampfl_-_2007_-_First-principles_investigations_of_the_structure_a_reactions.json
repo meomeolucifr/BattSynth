@@ -1,0 +1,165 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "First-principles investigations of the structure and stability of oxygen adsorption and surface oxide formation at Au(111)",
+    "doi": "10.1103/PhysRevB.76.075327",
+    "authors": [
+      "Hongqing Shi",
+      "Catherine Stampfl"
+    ],
+    "journal": "Physical Review B",
+    "year": 2007
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "oxygen adsorption", "Au(111)", "surface oxide"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "thin surface-oxide-like structure on Au(111)",
+      "molecular_formula": "",
+      "intended_role": "studied_structure",
+      "prov": ["Section VI, Fig. 11g"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Entire text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Dioxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "reactant",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section II"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Atomic oxygen",
+      "molecular_formula": "O",
+      "ontology": {
+        "role": "adsorbate",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Sections IV–VI"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_1",
+        "description": "Density-functional theory calculations of oxygen adsorption, subsurface penetration, and surface-oxide formation on Au(111) using VASP with GGA-PAW."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (GGA-PAW)",
+      "parameters": {
+        "plane_wave_cutoff": {"value": 500, "unit": "eV"},
+        "slab_layers": 5,
+        "vacuum_thickness": {"value": 15, "unit": "Å"},
+        "k_point_mesh": "12×12×1",
+        "energy_smearing": {"value": 0.2, "unit": "eV"}
+      },
+      "results": [
+        {"metric": "O2 binding energy per atom", "value": 3.14, "unit": "eV"},
+        {"metric": "O–O bond length", "value": 1.24, "unit": "Å"},
+        {"metric": "O2 vibrational frequency", "value": 193, "unit": "meV"},
+        {"metric": "work-function change at 1 ML O", "value": 2.6, "unit": "eV"}
+      ],
+      "interpretation": "Calculated properties are consistent with typical DFT-GGA accuracy.",
+      "prov": ["Section III", "Fig. 2", "Appendix"]
+    },
+    {
+      "method": "DFT adsorption energy calculations",
+      "parameters": {},
+      "results": [
+        {"metric": "Adsorption energy (0.06 ML)", "value": 3.36, "unit": "eV per O"},
+        {"metric": "Adsorption energy (0.11 ML)", "value": 3.27, "unit": "eV per O"},
+        {"metric": "Adsorption energy (0.25 ML)", "value": 3.25, "unit": "eV per O"},
+        {"metric": "Adsorption energy (0.50 ML)", "value": 2.91, "unit": "eV per O"},
+        {"metric": "Adsorption energy (0.75 ML)", "value": 2.45, "unit": "eV per O"},
+        {"metric": "Adsorption energy (1.00 ML)", "value": 1.99, "unit": "eV per O"},
+        {"metric": "Adsorption energy (surface-oxide structure Fig. 11g)", "value": 3.54, "unit": "eV per O"}
+      ],
+      "interpretation": "Surface-oxide-like configuration (coverage 0.3125 ML) is most stable among all considered.",
+      "prov": ["Table I", "Table III"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "ab initio atomistic thermodynamics",
+        "results": [
+          {
+            "equation": "Δμ_O range −0.17 to −0.40 eV corresponds to stability of surface oxide up to 420 K at 1 atm",
+            "value": 420,
+            "unit": "K"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Interphase formation and degradation of charge transfer kinetics between a lithium metal anode and highly crystalline Li7P3S11 solid electrolyte",
+    "doi": "10.1016/j.ssi.2015.11.034",
+    "authors": ["Sebastian Wenzel", "Dominik A. Weber", "Thomas Leichtweiss", "Martin R. Busche", "Joachim Sann", "Jürgen Janek"],
+    "journal": "Solid State Ionics",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid electrolyte", "sulfide glass-ceramic", "lithium ion conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7P3S11",
+      "molecular_formula": "Li7P3S11",
+      "intended_role": "product",
+      "prov": ["Section 2.1 Material preparation"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric amount used",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric amount used",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glove box atmosphere and milling environment",
+      "prov": ["Section 2.1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Stoichiometric mixing of Li2S and P2S5 under Ar atmosphere.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "All handling inside Ar-filled glove box"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-energy ball milling to form amorphous 70Li2S–30P2S5 glass.",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "rpm": 510,
+              "cycle": "10 min milling / 20 min cooling",
+              "total_time": 8640
+            },
+            "duration": {
+              "value": 8640,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "ZrO2 bowl (80 mL) with 3 mm ZrO2 balls; intermittent agate-mortar grinding every 480 min"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Crystallization heat treatment to obtain Li7P3S11.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 523.15,
+              "unit": "K"
+            },
+            "notes": "PTFE-sealed borosilicate jar in gas-tight steel vessel"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {
+              "value": 30,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 533.15,
+              "unit": "K"
+            },
+            "notes": "Second step in Nabertherm furnace"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (sealed vessel)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Isostatic pelletizing of crystallized powder.",
+        "operations": [
+          {
+            "action": "pelletize",
+            "parameters": {
+              "pressure": 4000
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": 4000,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Sintering of pellets to enhance density.",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {},
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 523.15,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Initial mixing of precursors under inert atmosphere"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Extended ball milling to produce amorphous precursor glass"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Controlled heat treatment yields highly crystalline Li7P3S11"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Pelletizing for further processing"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Sintering improves density and ionic conductivity"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "X-ray powder diffraction (XRD)",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "geometry": "Bragg–Brentano and Debye–Scherrer",
+        "step_size": "0.026° (routine), 0.012° (refinement)",
+        "range": "10°–90° 2θ",
+        "count_time": "270 s per step (routine); 780 s (refinement)"
+      },
+      "results": [
+        {
+          "metric": "crystallinity",
+          "value": 100,
+          "unit": "%",
+          "notes": "Phase-pure Li7P3S11 confirmed; no amorphous fraction detected"
+        }
+      ],
+      "interpretation": "Material is fully crystalline and phase-pure.",
+      "prov": ["Fig. 2", "Fig. 3", "Tables 1, S1–S3"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy (EIS)",
+      "parameters": {
+        "frequency_range": "7 MHz – 100 mHz",
+        "temperature_range": "233–333 K",
+        "amplitude": "20 mV"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (cold-pressed pellet)",
+          "value": 2,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "ionic conductivity (sintered pellet)",
+          "value": 4,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "activation_energy (cold-pressed)",
+          "value": 0.396,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation_energy (sintered)",
+          "value": 0.289,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Sintering halves activation energy and doubles conductivity.",
+      "prov": ["Fig. 4", "Section 3.1"]
+    },
+    {
+      "method": "Polarization (Wagner–Hebb type)",
+      "parameters": {
+        "electrodes": "Au blocking",
+        "applied_potential": "1 V"
+      },
+      "results": [
+        {
+          "metric": "electronic_partial_conductivity",
+          "value": 8,
+          "unit": "nS cm-1"
+        }
+      ],
+      "interpretation": "Electronic conductivity ~6 orders lower than ionic; suitable as electrolyte.",
+      "prov": ["Section 3.1"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-26T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

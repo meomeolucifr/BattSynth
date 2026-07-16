@@ -1,0 +1,709 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A chemically stabilized sulfur cathode for lean electrolyte lithium sulfur batteries",
+    "doi": "10.1073/pnas.2006301117",
+    "authors": [
+      "Chao Luo",
+      "Enyuan Hu",
+      "Karen J. Gaskell",
+      "Xiulin Fan",
+      "Tao Gao",
+      "Chunyu Cui",
+      "Sanjit Ghose",
+      "Xiao-Qing Yang",
+      "Chunsheng Wang"
+    ],
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "lithium\u2013sulfur batteries",
+      "sulfur cathode",
+      "carbon\u2013sulfur composite",
+      "lean electrolyte"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "CPAPN\u2013S composite",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": [
+        "Materials and Methods",
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The paper discusses several materials/composites (e.g., CPAPN\u2013S, CPAN\u2013S, CPTCDA\u2013S) and provides synthesis ratios and elemental composition, but it does not explicitly state a single \u201cTarget Formula\u201d in the sense of a chemical formula (e.g., empirical formula). The extracted value is blank, and the text does not present a dedicated target chemical formula field/value to match.",
+        "suggested_fix": "If the intended target is the cathode/composite identity, use \u201cCPAPN\u2013S (carbonized PTCDA\u2013PAN\u2013S composite; carbon/small sulfur composite)\u201d rather than a chemical formula. If a true chemical formula is required, it is not specified in the text (report as \u201cNot specified\u201d)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "CPAN\u2013S composite",
+      "molecular_formula": "",
+      "intended_role": "control cathode material",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank. The paper explicitly identifies the sulfur cathode material/composite as \u201cCPAPN\u2013S composite\u201d (carbonized PTCDA\u2013PAN\u2013S) throughout the Results and Methods sections (e.g., \u201ccarbonized PTCDA\u2013PAN\u2013S, which is denoted as CPAPN\u2013S composite\u201d). Therefore, a target material/formula is specified in the text, but it was not captured in the extraction.",
+        "suggested_fix": "CPAPN\u2013S (carbonized PTCDA\u2013PAN\u2013S; a carbon/small-sulfur composite derived from PTCDA+PAN+sulfur)."
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "CPTCDA\u2013S composite",
+      "molecular_formula": "",
+      "intended_role": "control cathode material",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The field 'Target Formula' has an empty extracted value, but the paper clearly specifies the composition/formula of the target cathode material as the CPAPN\u2013S carbon/small-sulfur composite (carbonized PTCDA\u2013PAN\u2013S), including its elemental composition by wt% (60 wt% S, 28 wt% C, 2 wt% N, 8 wt% O). Since a target material identity/composition is provided in the text, leaving the extracted value blank is not supported.",
+        "suggested_fix": "Target Formula: CPAPN\u2013S (carbonized PTCDA\u2013PAN\u2013S carbon/small-sulfur composite; elemental composition ~60 wt% S, 28 wt% C, 2 wt% N, 8 wt% O)."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in 5:1:1 weight ratio with PTCDA and PAN",
+      "prov": [
+        "Materials and Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly specifies sulfur amounts/composition in multiple places, so the statement \"Amount: Not specified in text\" is incorrect. In Materials and Methods, sulfur is mixed with PTCDA and PAN at a 5:1:1 weight ratio. Elsewhere, the CPAPN\u2013S composite is reported to contain 60 wt% sulfur (elemental analysis/TG discussion). Therefore the amount is specified in the text.",
+        "suggested_fix": "Sulfur | Amount: mixed with PTCDA and PAN at 5:1:1 by weight (Materials and Methods); CPAPN\u2013S composite contains 60 wt% sulfur (elemental analysis/TG discussion)."
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Perylene-3,4,9,10-tetracarboxylic dianhydride (PTCDA)",
+      "molecular_formula": "C24H8O6",
+      "ontology": {
+        "role": "carbon precursor",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "oxygen-rich carbon precursor; weight part 1 in 5:1:1 mixture",
+      "prov": [
+        "Materials and Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the chemical as perylene-3,4,9,10-tetracarboxylic dianhydride (PTCDA) in the Results section (page 2) and again in Materials and Methods (page 7). The specific standalone amount of PTCDA is not given (e.g., grams or mmol), but the Materials and Methods provides only a mixture ratio by weight (sulfur:PTCDA:PAN = 5:1:1) rather than an absolute amount. Therefore, the extractor\u2019s statement that the amount is not specified in the text is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Polyacrylonitrile (PAN)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "carbon precursor",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "nitrogen-rich carbon precursor; weight part 1 in 5:1:1 mixture",
+      "prov": [
+        "Materials and Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies polyacrylonitrile (PAN) as a nitrogen-rich polymer used as a carbon precursor (e.g., Page 2: \u201ca nitrogen-rich polymer (polyacrylonitrile, PAN) as carbon precursors\u201d; Page 7 Materials and Methods lists \u201cpolyacrylonitrile\u201d in the synthesis). However, no standalone amount for PAN is given (e.g., in grams or wt% of PAN alone). The only composition provided is the mixing ratio for sulfur:PTCDA:PAN = 5:1:1 by weight, which does not specify an absolute PAN amount. Therefore the \u2018Amount: Not specified in text\u2019 portion is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte salt"
+      },
+      "amount": {
+        "value": 1.0,
+        "unit": "M"
+      },
+      "notes": "dissolved in various solvent mixtures for electrolyte",
+      "prov": [
+        "Electrochemical Measurements"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly specifies the electrolyte composition as \u201c1.0 M LiPF6\u201d (lithium hexafluorophosphate) in multiple places, including Page 2 (intro) and in the \u201cElectrochemical Measurements\u201d section (Page 8): \u201cCoin cells for lean electrolyte LSBs were assembled with\u2026 1M lithium hexafluorophosphate (LiPF6) \u2026 as the electrolyte.\u201d This directly supports the extracted chemical identity and amount (1.0 M).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Fluoroethylene carbonate (FEC)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "electrolyte solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of all-fluorinated organic electrolyte (2:6:2 weight ratio FEC:FEMC:HFE)",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly specifies FEC as part of the electrolyte composition, including concentration and mixing ratio: \u201c1.0 M LiPF6 in fluoroethylene carbonate/3,3,3-fluoroethylmethyl carbonate/1,1,2,2-tetrafluoroethyl-2\u2032,2\u2032,2\u2032-trifluoroethyl ether [FEC:FEMC:HFE, 2:6:2 by weight]\u201d (Page 2; also repeated in Materials and Methods). Therefore, the statement \u201cAmount: Not specified in text\u201d is not correct because an explicit amount/ratio for FEC is given (2 parts by weight out of 2:6:2).",
+        "suggested_fix": "Fluoroethylene carbonate (FEC) | Amount: present in electrolyte as part of 1.0 M LiPF6 in FEC:FEMC:HFE = 2:6:2 by weight (i.e., FEC = 2 parts by weight in the solvent mixture)."
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "3,3,3-Fluoroethyl methyl carbonate (FEMC)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "electrolyte solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of all-fluorinated organic electrolyte",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly includes FEMC as an electrolyte solvent component: \u201c1.0 M LiPF6 in fluoroethylene carbonate/3,3,3-fluoroethylmethyl carbonate/\u2026 [FEC:FEMC:HFE, 2:6:2 by weight]\u201d (page 2; also reiterated in Materials and Methods and in the LEC discussion). However, the paper does not provide an absolute mass/volume amount of FEMC used\u2014only its presence and the mixture ratio by weight\u2014so \u201cAmount: Not specified in text\u201d is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "1,1,2,2-Tetrafluoroethyl-2\u2032,2\u2032,2\u2032-trifluoroethyl ether (HFE)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "electrolyte solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of all-fluorinated organic electrolyte",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.74,
+        "reasoning": "The chemical identity is explicitly mentioned in the electrolyte composition as \u201c1,1,2,2-tetrafluoroethyl-2\u2032,2\u2032,2\u2032-trifluoroethyl ether [HFE]\u201d. However, the extracted value claims the amount is \u201cNot specified in text,\u201d which is incorrect: the paper specifies the electrolyte formulation as FEC:FEMC:HFE = 2:6:2 by weight (with 1.0 M LiPF6). This gives HFE a specified proportion (2 parts by weight out of 10 parts total solvent mixture, i.e., 20 wt% of the solvent blend).",
+        "suggested_fix": "1,1,2,2-Tetrafluoroethyl-2\u2032,2\u2032,2\u2032-trifluoroethyl ether (HFE) | Amount: present in electrolyte at FEC:FEMC:HFE = 2:6:2 by weight (i.e., HFE = 2 parts by weight; 20 wt% of the solvent mixture)."
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mixing of sulfur, PTCDA, and PAN",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ],
+              "ratio_by_weight": "5:1:1"
+            },
+            "notes": "",
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes the synthesis as \u201cannealing the mixture of carbon precursors \u2026 and sulfur\u201d and, in Materials and Methods, states \u201cSulfur, \u2026 PTCDA, and PAN were mixed \u2026 and sealed\u2026\u201d. This supports that a mixing operation is part of the synthesis process. Although the extracted value is generic (\u201cmix\u201d), it matches the described step.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient (glovebox unspecified)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.92,
+            "reasoning": "The paper specifies the synthesis atmosphere/conditions as being \u201csealed in a glass tube under vacuum\u201d for annealing at 600 \u00b0C (Materials and Methods: \u201csealed in a glass tube under vacuum\u201d). It also mentions sample handling/loading in an argon glovebox for XPS, but that is characterization handling, not synthesis atmosphere. There is no support for \u201cambient (glovebox unspecified)\u201d for synthesis.",
+            "suggested_fix": "Synthesis atmosphere: sealed in a glass tube under vacuum (annealed at 600 \u00b0C for 3 h)."
+          }
+        },
+        "prov": [
+          "Materials and Methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Sealing the mixture under vacuum in a glass tube",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "glass tube",
+              "atmosphere": "vacuum"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.96,
+              "reasoning": "The paper explicitly states the synthesis involved sealing the reactant mixture: \u201cSulfur, ... were mixed ... and sealed in a glass tube under vacuum.\u201d It also describes synthesis \u201cin a sealed vacuum glass tube.\u201d Therefore the synthesis operation \u2018seal\u2019 is directly supported.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Materials and Methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Annealing to form CPAPN\u2013S composite",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 873,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 180,
+                "unit": "min"
+              }
+            },
+            "notes": "carbonization of PTCDA and PAN and reaction with sulfur",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.83,
+              "reasoning": "The paper\u2019s synthesis procedure is described as sealing the sulfur/PTCDA/PAN mixture in a vacuum glass tube and **annealing at 600 \u00b0C for 3 h** (followed by cooling). The term \u201cheat\u201d is not explicitly used as a named synthesis operation in the text; the explicit operation is \u201cannealed/carbonized at 600 \u00b0C.\u201d Therefore the extracted value is too generic and not explicitly stated.",
+              "suggested_fix": "anneal (carbonize) the sealed mixture at 600 \u00b0C for 3 h (then cool to room temperature)"
+            }
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "temperature": {
+                "value": 298,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 1440,
+                "unit": "min"
+              }
+            },
+            "notes": "cooled to room temperature over 24 h",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.82,
+              "reasoning": "The paper\u2019s synthesis procedure (Materials and Methods: \u201cSynthesis of C/S Composites\u201d) describes mixing precursors, sealing in a vacuum glass tube, annealing at 600 \u00b0C for 3 h, and then \u201ccooled to room temperature in 24 h.\u201d The extracted synthesis operation \u201ccool\u201d is not explicitly stated as an operation step in the main synthesis description; the text uses \u201ccooled to room temperature in 24 h\u201d rather than the standalone operation \u201ccool.\u201d",
+              "suggested_fix": "cooled to room temperature in 24 h"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed tube (vacuum)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.95,
+            "reasoning": "The paper explicitly states the synthesis was done in a sealed vacuum environment: (Results, page 2) \u201cannealing the mixture \u2026 and sulfur in a sealed vacuum glass tube,\u201d and (Materials and Methods, page 7) \u201csealed in a glass tube under vacuum.\u201d This supports the extracted synthesis atmosphere as a sealed tube under vacuum.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Materials and Methods"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Collection of black powder CPAPN\u2013S",
+        "operations": [
+          {
+            "action": "collect",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.72,
+              "reasoning": "The paper does not explicitly list a synthesis operation named/worded as \u201ccollect.\u201d In the Materials and Methods section it states: \u201cThe carbon\u2013small sulfur composites were collected as black powder.\u201d While this contains the word \u201ccollected,\u201d it is part of a descriptive sentence about the outcome, not an explicit step labeled as an operation in the way the extracted value implies. Therefore the extracted standalone operation \u201ccollect\u201d is not unambiguously supported as a defined synthesis operation.",
+              "suggested_fix": "If this field is meant to capture an explicit step, use: \u201canneal (600 \u00b0C for 3 h) and cool to room temperature (24 h); collect as black powder.\u201d If only a single verb is allowed, \u201canneal\u201d would be better supported than \u201ccollect.\u201d"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Materials and Methods"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Sulfur, PTCDA, and PAN mixed in 5:1:1 weight ratio",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.99,
+          "reasoning": "The Materials and Methods section explicitly states: \u201cSulfur, perylene-3, 4, 9, 10-tetracarboxylic dianhydride, and polyacrylonitrile were mixed with a ratio of 5:1:1 by weight\u2026\u201d. This directly supports the extracted value (sulfur, PTCDA, and PAN mixed in 5:1:1 weight ratio).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Mixture sealed under vacuum in glass tube",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly states that the carbon precursors and sulfur were \u201cmixed \u2026 and sealed in a glass tube under vacuum.\u201d This appears both in the Results section (\u201cannealing the mixture \u2026 in a sealed vacuum glass tube\u201d) and in Materials and Methods (\u201csealed in a glass tube under vacuum\u201d). This supports the extracted workflow timeline item \u201cMixture sealed under vacuum in glass tube.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Annealed at 873 K for 180 min, then cooled to 298 K over 1440 min",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The paper specifies the annealing step as \u201cannealed \u2026 at 600 \u00b0C for 3 h, and \u2026 cooled to room temperature in 24 h\u201d (Materials and Methods, Synthesis of C/S Composites). This corresponds to ~873 K for 180 min and cooling over 1440 min, but the text does not explicitly state 873 K, 298 K, or the times in minutes, nor does it explicitly state \u201ccooled to 298 K.\u201d Therefore the extracted value is a converted/restated version rather than an explicitly supported workflow timeline.",
+          "suggested_fix": "Annealed at 600 \u00b0C for 3 h, then cooled to room temperature in 24 h."
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Black CPAPN\u2013S powder collected",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The source text explicitly states in the Materials and Methods section (Page 7, \u201cSynthesis of C/S Composites\u201d) that after annealing and cooling, \u201cThe carbon\u2013small sulfur composites were collected as black powder.\u201d This supports the workflow timeline item \u201cBlack CPAPN\u2013S powder collected\u201d (CPAPN\u2013S is one of the carbon\u2013small sulfur composites).",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of reactants not provided",
+        "excerpt": "Sulfur, perylene-3, 4, 9, 10-tetracarboxylic dianhydride, and polyacrylonitrile were mixed with a ratio of 5:1:1 by weight",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly states only a weight ratio for the reactants without giving exact masses. In \u201cMaterials and Methods \u2013 Synthesis of C/S Composites\u201d it says: \u201cSulfur, perylene-3, 4, 9, 10-tetracarboxylic dianhydride, and polyacrylonitrile were mixed with a ratio of 5:1:1 by weight\u2026\u201d. No gram/mg quantities for each reactant are provided anywhere else in the provided full text, so the noted workflow ambiguity (\u201cExact masses of reactants not provided\u201d) is correct.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Atmosphere during mixing not explicitly defined",
+        "excerpt": "Sulfur, perylene-3, 4, 9, 10-tetracarboxylic dianhydride,and polyacrylonitrile were mixed ... and sealed in a glass tube under vacuum.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper\u2019s Materials and Methods explicitly states: \u201cSulfur, perylene-3,4,9,10-tetracarboxylic dianhydride, and polyacrylonitrile were mixed \u2026 and sealed in a glass tube under vacuum.\u201d This confirms the excerpt and shows that the atmosphere is specified for the sealing step (vacuum), but it does not specify the atmosphere during the mixing step (e.g., air vs Ar glovebox), making the noted workflow ambiguity valid.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [],
+      "interpretation": "CPAPN\u2013S amorphous; CPTCDA\u2013S shows crystalline S8",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly states that the materials were characterized by X-ray diffraction (XRD) and discusses XRD results (e.g., CPAPN\u2013S Fig. 1A; SI Appendix Fig. S1 A\u2013E). Therefore, an extracted value of an empty list ([]) for \u201cCharacterization: XRD\u201d is not supported; XRD characterization is clearly present in the Results and Methods sections.",
+        "suggested_fix": "Indicate that XRD was performed; e.g., include: \"XRD (Fig. 1A)\" and summarize findings: CPTCDA/CPAN/CPAPN amorphous; CPAPN\u2013S and CPAN\u2013S remain amorphous after cocarbonization; CPTCDA\u2013S shows crystalline sulfur (S8) peaks (SI Appendix Fig. S1D)."
+      }
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "peaks",
+          "value": "475 cm\u22121, 930 cm\u22121 (S\u2013S, C\u2013O); 790 cm\u22121 (C\u2013S)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms C\u2013S and S\u2013O bonding",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "In the Results section (Page 2), the Raman discussion explicitly states: \u201cthere are two sharp peaks at 475 cm\u22121 and 930 cm\u22121 and one small peak at 790 cm\u22121, representing S\u2013S stretching mode, C\u2013O vibration, and C\u2013S stretching mode, respectively.\u201d This directly supports the extracted Raman peak positions and assignments (475 and 930 cm\u22121 for S\u2013S and C\u2013O; 790 cm\u22121 for C\u2013S).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "FTIR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "peaks",
+          "value": "1240 cm\u22121, 1510 cm\u22121 (chain vibrations); 790 cm\u22121 (C\u2013S)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Supports presence of C\u2013S bonds",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly reports FTIR peaks at 1,240 cm\u22121 and 1,510 cm\u22121 assigned to alicyclic chain vibrations and aromatic ring chain vibrations, and a small peak at ~790 cm\u22121 assigned to C\u2013S vibration in CPAPN\u2013S (Fig. 1C description on Page 3). This matches the extracted peak positions and assignments (chain vibrations; C\u2013S).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "S 2p binding energies",
+          "value": "161.1\u2013170.4 eV range with assignments to aromatic S, S\u2013S/C\u2013S, S\u2013O\u2013C, oxidized sulfur",
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Multiple sulfur environments; evidence of C\u2013S and O\u2013S bonds",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly reports S 2p XPS binding energies for CPAPN\u2013S with assignments. In the Results section (Page 3, describing Fig. 1F), it states: aromatic sulfur at 161.1/162.3 eV; sulfur in S\u2013S and S\u2013C groups at 163.2/164.4 eV; sulfur in S\u2013O\u2013C at 164.8/166.0 eV; and oxidized sulfur at 167.2/168.4 eV and 169.3/170.4 eV. These values span 161.1\u2013170.4 eV and match the extracted range and qualitative assignments (aromatic S, S\u2013S/C\u2013S, S\u2013O\u2013C, oxidized sulfur).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": "nano-sized aggregates into micro-sized particles",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "Supported by the SEM/TEM morphology description in the Results section (page 3). The text states: \u201cthe particles of SSCCs decrease to nanoscale\u2026\u201d and \u201cnanosized CPAPN\u2013S particles aggregate into a microsized particle,\u201d which matches the extracted statement \u201cnano-sized aggregates into micro-sized particles.\u201d Although the SEM sentence also notes microsized particles for the carbons (without sulfur), the aggregate description for CPAPN\u2013S is explicit.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Uniform distribution of O, N, S in carbon matrix",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.88,
+        "reasoning": "The paper explicitly reports use of transmission electron microscopy (TEM) and includes a TEM image (Fig. 1H) plus TEM/elemental mapping discussion (Page 2\u20133: \u201ctransmission electron microscopy (TEM)\u201d; \u201cTEM and elemental mappings\u2026 As shown in Fig. 1H and SI Appendix, Fig. S5\u2026\u201d). Therefore the extracted value as an empty list (i.e., no TEM characterization) is not supported by the source text.",
+        "suggested_fix": "TEM was performed; include at least: \u201cTEM (Fig. 1H; SI Appendix Fig. S5; JEOL 2100F TEM used)\u201d or similar."
+      }
+    },
+    {
+      "method": "Thermogravimetric analysis",
+      "parameters": {
+        "heating_rate": {
+          "value": 10,
+          "unit": "K min-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "weight loss up to 600 \u00b0C",
+          "value": 4,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Indicates sulfur retention; composition ~60 wt% S",
+      "prov": [
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly reports thermogravimetric (TG) analysis results: \u201conly 4% weight loss of CPAPN\u2013S composite was observed after annealing to 600 \u00b0C\u201d (Page 3, Results; referring to SI Appendix Fig. S6). This directly supports the extracted metric of weight loss up to 600 \u00b0C being 4%.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical performance (flooded electrolyte)",
+        "results": [
+          {
+            "equation": "",
+            "value": 870,
+            "unit": "mAh g-1",
+            "notes": "Reversible capacity at 50 mA g-1 for CPAPN\u2013S"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.6,
+          "reasoning": "The paper explicitly lists multiple analysis/characterization methods (e.g., XRD, Raman, FTIR, XPS, SEM, TEM, TG, PDF, CV, EIS, GITT) in the Results and Materials and Methods sections. However, the extracted value for \u201cAnalysis Method\u201d is blank, so it does not capture any of the explicitly stated methods.",
+          "suggested_fix": "Populate \u201cAnalysis Method\u201d with the methods stated in the text, e.g., XRD; Raman spectroscopy; FTIR; XPS; SEM; TEM; thermogravimetric (TG) analysis; pair distribution function (PDF) experiments; cyclic voltammetry (CV); electrochemical impedance spectroscopy (EIS); galvanostatic intermittent titration technique (GITT)."
+        }
+      },
+      {
+        "method_name": "Electrochemical performance (lean electrolyte, AFOE)",
+        "results": [
+          {
+            "equation": "",
+            "value": 541,
+            "unit": "mAh g-1",
+            "notes": "Reversible capacity after 200 cycles, sulfur loading ~10 mg cm-2"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.62,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank. The paper explicitly reports multiple analysis/characterization methods (e.g., XRD, Raman spectroscopy, FTIR, XPS, SEM, TEM, TG/TGA, PDF, CV, EIS, GITT) in the Results and in the \u201cMaterial Characterizations\u201d / \u201cElectrochemical Measurements\u201d sections. Therefore a blank/empty value is not supported by the source text (the method(s) are specified).",
+          "suggested_fix": "List the analysis methods explicitly mentioned, e.g., XRD; Raman; FTIR; XPS; SEM; TEM; TG/TGA; pair distribution function (PDF); cyclic voltammetry (CV); electrochemical impedance spectroscopy (EIS); galvanostatic intermittent titration technique (GITT)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 541,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.97,
+      "reasoning": "The paper explicitly reports cycle performance over 200 cycles under lean electrolyte conditions: on Page 1 it states the C/S cathode \u201cretains\u2026for 200 cycles under lean electrolyte conditions,\u201d and on Page 5 it further specifies \u201ca reversible capacity\u2026is retained after 200 cycles (Fig. 4D).\u201d Thus, a cycle life value of 200 cycles is supported by the source text.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

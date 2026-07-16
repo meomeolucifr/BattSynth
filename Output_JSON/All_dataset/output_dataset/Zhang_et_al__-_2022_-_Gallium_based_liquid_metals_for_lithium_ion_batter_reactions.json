@@ -1,0 +1,277 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Gallium ‐based liquid metals for lithium ‐ion batteries",
+    "doi": "10.1002/idm2.12042",
+    "authors": [
+      "Bin-Wei Zhang",
+      "Long Ren",
+      "Yun-Xiao Wang",
+      "Xun Xu",
+      "Yi Du",
+      "Shi-Xue Dou"
+    ],
+    "journal": "Interdisciplinary Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review_article",
+    "tags": ["gallium liquid metal", "lithium ion battery", "self-healing electrodes"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "GaIn alloy nanoparticles",
+      "molecular_formula": "",
+      "intended_role": "anode material",
+      "prov": ["Page 362, Fig.7A"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "S@Ga core–shell composite",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": ["Page 365, Fig.9A"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Porous S/Ga hybrid",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": ["Page 365, Fig.9B"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Gallium–Indium alloy (GaIn)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "alloy"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 362"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Gallium (Ga)",
+      "molecular_formula": "Ga",
+      "ontology": {
+        "role": "precursor",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 365"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sulfur (S)",
+      "molecular_formula": "S8",
+      "ontology": {
+        "role": "precursor",
+        "category": "non-metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 365"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Ultrasonication of bulk GaIn alloy to form nanoparticles",
+        "operations": [
+          {
+            "action": "ultrasonicate",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Stated as 'ultrasonication of their bulk materials' to obtain GaIn nanoparticles"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 362"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Mixing liquid gallium with sulfur to create S@Ga core-shell particles",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Described as 'harnessing the mixing process between Ga and S'"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 365"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Thermal synthesis of porous S/Ga hybrid",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Stated as 'obtained through a thermal synthesis process'"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 365"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of GaIn alloy nanoparticles by ultrasonication."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Formation of S@Ga core–shell composite by mixing Ga and S."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Thermal treatment to obtain porous S/Ga hybrid."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis parameters such as temperature, duration and amounts.",
+        "excerpt": "‘GaIn alloy nanoparticles were synthesized through the ultrasonication of their bulk materials’ (Page 362)"
+      },
+      {
+        "issue": "No quantitative details for mixing conditions.",
+        "excerpt": "‘S@Ga core@shell structure via harnessing the mixing process between Ga and S.’ (Page 365)"
+      },
+      {
+        "issue": "Thermal synthesis lacks explicit temperature profile.",
+        "excerpt": "‘Three-dimensional porous S/Ga hybrid materials obtained through a thermal synthesis process.’ (Page 365)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "capacity",
+          "value": 706.0,
+          "unit": "mAh g-1",
+          "notes": "GaIn NP anode at 0.1 C; capacity retention 96.9% per 100 cycles",
+          "prov": ["Page 362, Fig.7A"]
+        },
+        {
+          "metric": "capacity",
+          "value": 1259,
+          "unit": "mAh g-1",
+          "notes": "S@Ga cathode at 0.1 C",
+          "prov": ["Page 365, Fig.9A"]
+        },
+        {
+          "metric": "capacity",
+          "value": 1044,
+          "unit": "mAh g-1",
+          "notes": "Porous S/Ga cathode at 1.0 mA cm-2 over 100 cycles; Coulombic efficiency 98.7%",
+          "prov": ["Page 365, Fig.9B"]
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Pages 362-365"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 706.0,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T13:07:00Z",
+    "source_file": "Extracted text from DOI:10.1002/idm2.12042",
+    "processing_time": null
+  }
+}

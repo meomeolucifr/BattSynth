@@ -1,0 +1,436 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Na3MnZr(PO 4)3: A High-Voltage Cathode for Sodium Batteries",
+    "doi": "10.1021/jacs.8b11388",
+    "authors": [
+      "Hongcai Gao",
+      "Ieuan D. Seymour",
+      "Sen Xin",
+      "Leigang Xue",
+      "Graeme Henkelman",
+      "John B. Goodenough"
+    ],
+    "journal": "Journal of the American Chemical Society",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis_and_electrochemistry",
+    "tags": [
+      "sodium-ion battery",
+      "NASICON",
+      "cathode",
+      "manganese phosphate"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na3MnZr(PO4)3",
+      "molecular_formula": "Na3MnZr(PO4)3",
+      "intended_role": "cathode material",
+      "prov": [
+        "Page 18192–18193, Figure 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly identifies the target material as NASICON-structured Na3MnZr(PO4)3 multiple times, including the title and abstract on Page 18192 and in the Results/Discussion section and Figure 1 caption on Page 18193 (Figure 1: “cathode material Na3MnZr(PO4)3”). Therefore the extracted target formula matches the source text.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Na3MnZr(PO4)3",
+      "molecular_formula": "Na3MnZr(PO4)3",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 18193"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the chemical as NASICON-structured Na3MnZr(PO4)3 throughout (title, abstract, and Results section). However, it does not specify a discrete ‘amount’ of Na3MnZr(PO4)3 used (e.g., mass in grams or moles for an experiment) in the provided full text. Therefore, the extractor’s 'Amount: Not specified in text' is correct under the null-handling rule. (Note: the text does mention related quantities such as ~7.1% coated carbon, but not an amount of Na3MnZr(PO4)3 itself.)",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "carbon",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "conductive_coating",
+        "category": "additive"
+      },
+      "amount": {
+        "value": 7.1,
+        "unit": "%",
+        "basis": "mass"
+      },
+      "notes": "Carbon content determined by TGA",
+      "prov": [
+        "Figure S1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states: “the amount of coated carbon was about 7.1% according to thermogravimetric analysis (Figure S1)” (Page 2). This directly supports the extracted value of carbon at 7.1% and matches the alleged provenance (Figure S1).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Sol–gel synthesis of Na3MnZr(PO4)3 with in-situ carbon coating",
+        "operations": [
+          {
+            "action": "synthesize",
+            "parameters": {
+              "method": "sol–gel"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Resulting particles ~200 nm; thin carbon layer formed in situ (7.1 wt %)",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.66,
+              "reasoning": "The paper discusses the material being “prepared”/“used a sol−gel synthesis” and refers to a “synthesis procedure” and “solid-state reaction”, but it does not explicitly state the synthesis operation as the verb/label “synthesize”. Therefore the extracted value is not explicitly supported as written.",
+              "suggested_fix": "sol−gel synthesis (used to prepare Na3MnZr(PO4)3; in situ carbon coating during synthesis)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 18193, Figure 1a–d"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of ~200 nm Na3MnZr(PO4)3 particles coated with 7.1 wt % carbon via sol–gel method",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "The paper explicitly describes a sol–gel synthesis producing ~200 nm Na3MnZr(PO4)3 particles with an in situ carbon coating of ~7.1% by TGA. Page 2 states: “we have used a sol−gel synthesis to obtain 200 nm particles of Na3MnZr(PO4)3 that were coated in situ with a thin carbon layer,” and further: “the amount of coated carbon was about 7.1% according to thermogravimetric analysis.” This supports the extracted workflow timeline statement (minor wording differences only).",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis parameters (precursor identities, temperatures, times).",
+        "excerpt": "“A sol−gel method was used to prepare the cathode material Na3MnZr(PO4)3; the resulting material had a particle size of about 200 nm… A thin layer of carbon was coated on the surface… ”",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper does mention only high-level synthesis information in the main text (\"A sol−gel method was used...\"; ~200 nm particles; in situ carbon coating; carbon amount 7.1% by TGA). However, it does not support the specific claim that synthesis parameters are missing in general, because the full article explicitly points to the Supporting Information for \"Experimental details\" (listed under Associated Content). Therefore, the document text indicates that detailed synthesis parameters are provided elsewhere (SI), so labeling the workflow as missing precursor identities/temperatures/times based on this source text alone is not explicitly supported.",
+          "suggested_fix": "Revise to: \"Main text provides only a brief synthesis description (sol–gel; ~200 nm; in situ carbon coating; 7.1% carbon) and refers to Supporting Information for full experimental details.\""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": 200,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Supported. The text explicitly states: “the resulting material had a particle size of about 200 nm (Figure 1a)” in the Results/Discussion section describing the SEM image. This directly matches the extracted SEM particle size value (200 nm) and provenance (Figure 1a).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "carbon coating observation",
+          "value": "thin surface layer",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The text explicitly states: “A thin layer of carbon was coated on the surface of Na3MnZr(PO4)3 particles during the synthesis procedure … (Figure 1b).” This supports the TEM-based observation of a thin surface carbon layer, consistent with the extracted value “thin surface layer.”",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interplanar spacing (012)",
+          "value": 0.64,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The text explicitly states: “The crystalline region … exhibited lattice fringes with an interplanar spacing of about 0.64 nm, consistent with the (012) atomic planes … (Figure 1c).” This directly supports interplanar spacing (012) = 0.64 nm and matches the alleged provenance (Figure 1c).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XRD (Rietveld)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "lattice parameter a",
+          "value": 8.988,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameter c",
+          "value": 22.594,
+          "unit": "Å"
+        },
+        {
+          "metric": "space group",
+          "value": "R-3c",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirmed rhombohedral NASICON structure with random Mn/Zr distribution",
+      "prov": [
+        "Figure 1d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "Page 2 (Results and Discussion, “Synthesis and Crystal Structure...”) explicitly states: (1) space group “R3̅c” (i.e., R-3c) from Rietveld refinement of the XRD pattern (Figure 1d), and (2) lattice parameters “a = 8.988 Å, and c = 22.594 Å” for Na3MnZr(PO4)3. These match the extracted values and are tied to Figure 1d as alleged provenance.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TGA",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "carbon content",
+          "value": 7.1,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure S1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states: “the amount of coated carbon was about 7.1% according to thermogravimetric analysis (Figure S1)” in the Results and Discussion section (page 2 of the provided text). This supports the extracted TGA-derived carbon content of 7.1%.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "scan_rate": {
+          "value": 1,
+          "unit": "mV s-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "oxidation peaks",
+          "value": "3.6 V, 4.1 V",
+          "unit": "V vs Na+/Na"
+        },
+        {
+          "metric": "reduction peaks",
+          "value": "4.0 V, 3.5 V",
+          "unit": "V vs Na+/Na"
+        }
+      ],
+      "interpretation": "Two reversible Na+ extraction/insertion processes via Mn redox couples",
+      "prov": [
+        "Figure 2a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The text explicitly states: “Two oxidation peaks at 3.6 and 4.1 V are revealed in the cyclic voltammetry profiles…” and “The two reduction peaks located at 4.0 and 3.5 V…”, matching the extracted oxidation and reduction peak voltages. This statement appears in the Results/Discussion section adjacent to the mention of Figure 2a, consistent with the alleged provenance.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Galvanostatic charge–discharge",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "discharge capacity at 0.1 C",
+          "value": 105,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "discharge capacity at 1 C",
+          "value": 82,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "discharge capacity at 10 C",
+          "value": 52,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention after 500 cycles (0.5 C)",
+          "value": 91,
+          "unit": "%"
+        },
+        {
+          "metric": "average Coulombic efficiency (0.5 C)",
+          "value": 98.7,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "High rate capability and excellent cycling stability",
+      "prov": [
+        "Figure 2b–d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "All extracted galvanostatic charge–discharge metrics are explicitly stated in the paper text associated with Figure 2 (and not only in the figure itself). Specifically: discharge capacity 105 mAh g−1 at 0.1 C; 82 mAh g−1 at 1 C; 52 mAh g−1 at 10 C (page 3, discussion of Figure 2c). Cycling stability: 91% capacity retained after 500 cycles at 0.5 C and average Coulombic efficiency 98.7% (page 3, discussion of Figure 2d). These match the extracted values and units.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Mn 3p binding energy (pristine)",
+          "value": 48.8,
+          "unit": "eV"
+        },
+        {
+          "metric": "Mn 3p binding energy after charge to 3.9 V",
+          "value": 49.5,
+          "unit": "eV"
+        },
+        {
+          "metric": "Mn 3p binding energy after charge to 4.3 V",
+          "value": 50.2,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Mn oxidation from +2 to +4; Zr remains +4",
+      "prov": [
+        "Figure S4"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly reports Mn 3p XPS binding energies at different states of charge: 48.8 eV before charging (pristine), 49.5 eV after charging to 3.9 V, and 50.2 eV after charging to 4.3 V, referencing Figure S4. These match the extracted values and units exactly.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations (convex hull)",
+        "results": [
+          {
+            "equation": "",
+            "value": "Predicted voltages 3.52 V and 4.02 V for sequential Na extraction",
+            "unit": "V"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper explicitly describes multiple analysis/characterization methods (e.g., SEM, TEM/HRTEM, XRD with Rietveld refinement, cyclic voltammetry, charge/discharge galvanostatic testing, ex situ XRD, XPS, and DFT calculations). However, the extracted value for “Analysis Method” is empty, so it does not capture any method and is not supported as a valid extracted value.",
+          "suggested_fix": "SEM; TEM/HRTEM; XRD (Rietveld refinement; ex situ XRD during cycling); electrochemical testing (cyclic voltammetry; galvanostatic charge/discharge, rate capability, cycling); XPS; DFT (first-principles) calculations / Bader analysis."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 105,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 500,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.93,
+      "reasoning": "The paper explicitly reports cycling over 500 charge/discharge cycles: the abstract states the material retains 91% of initial capacity after 500 cycles, and the main text (Electrochemical Performance, Figure 2d description) states “91% of the initial capacity could be retained after 500 cycles at 0.5 C rate.” This supports a cycle life value of 500 cycles.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-06T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

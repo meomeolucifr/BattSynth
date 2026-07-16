@@ -1,0 +1,209 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Voltage, stability and diffusion barrier differences between sodium-ion and lithium-ion intercalation materials",
+    "doi": "10.1039/c1ee01782a",
+    "authors": [
+      "Shyue Ping Ong",
+      "Vincent L. Chevrier",
+      "Geoffroy Hautier",
+      "Anubhav Jain",
+      "Charles Moore",
+      "Sangtae Kim",
+      "Xiaohua Ma",
+      "Gerbrand Ceder"
+    ],
+    "journal": "Energy & Environmental Science",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "sodium-ion batteries",
+      "lithium-ion batteries",
+      "DFT",
+      "intercalation voltage",
+      "diffusion barrier"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "studied material",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "NaCoO2",
+      "molecular_formula": "NaCoO2",
+      "intended_role": "studied material",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiNiO2",
+      "molecular_formula": "LiNiO2",
+      "intended_role": "studied material",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "NaNiO2",
+      "molecular_formula": "NaNiO2",
+      "intended_role": "studied material",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "LiFePO4 (olivine)",
+      "molecular_formula": "LiFePO4",
+      "intended_role": "studied material",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "NaFePO4 (olivine)",
+      "molecular_formula": "NaFePO4",
+      "intended_role": "studied material",
+      "prov": ["Table 2"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_1",
+        "description": "DFT total energy calculations performed with VASP using GGA+U (U values: Co 5.7 eV, Ni 6.1 eV, Fe 3.9 eV, Mn 4.0 eV, V 3.1 eV). Plane-wave cutoff 520 eV; k-point density ≥ 500/atom."
+      },
+      {
+        "step_ref": "comp_2",
+        "description": "Average intercalation voltages computed from total energies according to equation V = –ΔE / xe."
+      },
+      {
+        "step_ref": "comp_3",
+        "description": "Phase stability assessed via 0 K convex-hull calculations (Edecomp)."
+      },
+      {
+        "step_ref": "comp_4",
+        "description": "Alkali and vacancy diffusion barriers calculated with nudged elastic band (NEB) using standard GGA; supercells: layered (1×2×5) and olivine (1×2×2)."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Approximate voltage values denoted by 'z' (~) symbol without explicit uncertainty.",
+        "excerpt": "3.48 z3.65"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT (VASP, GGA+U)",
+      "parameters": {
+        "plane_wave_cutoff": {
+          "value": 520,
+          "unit": "eV"
+        },
+        "k_point_density": "≥500/(number of atoms)",
+        "U_values": {
+          "Co": 5.7,
+          "Ni": 6.1,
+          "Fe": 3.9,
+          "Mn": 4.0,
+          "V": 3.1
+        }
+      },
+      "results": [
+        {
+          "metric": "calculated average intercalation voltage (LiCoO2)",
+          "value": 4.13,
+          "unit": "V"
+        },
+        {
+          "metric": "calculated average intercalation voltage (NaCoO2)",
+          "value": 3.48,
+          "unit": "V"
+        },
+        {
+          "metric": "calculated decomposition energy (NaFePO4 maricite)",
+          "value": 0.0,
+          "unit": "eV atom-1"
+        }
+      ],
+      "interpretation": "Voltages for Na materials are 0.18–0.57 V lower than Li analogues; phase stability depends on structure.",
+      "prov": ["Table 2", "Fig. 2"]
+    },
+    {
+      "method": "NEB diffusion barrier calculation",
+      "parameters": {
+        "functional": "GGA (no U)",
+        "supercell_size_layered": "1×2×5",
+        "supercell_size_olivine": "1×2×2"
+      },
+      "results": [
+        {
+          "metric": "Li+ migration barrier in layered LiCoO2 (divacancy)",
+          "value": 375,
+          "unit": "meV"
+        },
+        {
+          "metric": "Na+ migration barrier in layered NaCoO2 (divacancy)",
+          "value": 355,
+          "unit": "meV"
+        }
+      ],
+      "interpretation": "Na+ diffusion can be comparable or even slightly faster than Li+ in layered structures.",
+      "prov": ["Fig. 3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Voltage difference fitting",
+        "results": [
+          {
+            "equation": "DV_Na–Li (layered) ≈ –0.57 V; maricite ≈ –0.18 V; olivine ≈ –0.39 V; NASICON ≈ –0.31 V",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": ["Fig. 1"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T09:30:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

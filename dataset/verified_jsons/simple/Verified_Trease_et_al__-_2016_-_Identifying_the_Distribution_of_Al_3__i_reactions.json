@@ -1,0 +1,495 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Identifying the Distribution of Al3+ in LiNi0.8Co0.15Al0.05O2",
+    "doi": "10.1021/acs.chemmater.6b02797",
+    "authors": [
+      "Nicole M. Trease",
+      "Ieuan D. Seymour",
+      "Maxwell D. Radin",
+      "Haodong Liu",
+      "Hao Liu",
+      "Sunny Hy",
+      "Natalya Chernova",
+      "Pritesh Parikh",
+      "Arun Devaraj",
+      "Kamila M. Wiaderek",
+      "Peter J. Chupas",
+      "Karena W. Chapman",
+      "M. Stanley Whittingham",
+      "Ying Shirley Meng",
+      "Anton Van der Van",
+      "Clare P. Grey"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "Li-ion battery",
+      "cathode",
+      "NCA",
+      "solid-state NMR",
+      "atom probe tomography",
+      "neutron diffraction"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNi0.8Co0.15Al0.05O2 (NCA)",
+      "molecular_formula": "LiNi0.8Co0.15Al0.05O2",
+      "intended_role": "product",
+      "prov": [
+        "Experimental Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The document explicitly states the compound/formula as LiNi0.8Co0.15Al0.05O2 multiple times, including the title/abstract (Page 1) and in the Experimental Methods section as “Materials. Li[Ni0.8Co0.15Al0.05]O2 …” (Page 3), which is the same stoichiometry written with brackets. Therefore the extracted Target Formula is supported.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi0.8Co0.15Al0.05O2 (NCA)",
+      "molecular_formula": "LiNi0.8Co0.15Al0.05O2",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Purchased as NAT1050 from TODA America.",
+      "prov": [
+        "Experimental Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly identifies the material as LiNi0.8Co0.15Al0.05O2 and refers to it as NCA (e.g., title/abstract and Introduction). In Experimental Methods it states: “Materials. Li[Ni0.8Co0.15Al0.05]O2 was used as purchased (NAT1050, TODA America).” However, no mass, moles, concentration, or quantity of the material used is provided anywhere in the text (only e.g., “Around 3 g of powder” for neutron diffraction sample prep, which is not stated as the amount defining the material generally). Therefore the identity is supported and the extractor’s ‘Amount: Not specified in text’ is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "AlF3",
+      "molecular_formula": "AlF3",
+      "ontology": {
+        "role": "reference_standard",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Secondary reference at −17 ppm for 27Al NMR.",
+      "prov": [
+        "Experimental Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions AlF3 as a material used to optimize and reference the 27Al NMR experiments (“π/2 ... optimized on solid AlF3”; “Solid AlF3 was used as a secondary reference...”) in the Experimental Methods section, but it does not state any amount/mass/concentration of AlF3 used. Therefore, the chemical identity (AlF3) is supported and the extractor is also correct that the amount is not specified in the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Al(NO3)3 (aqueous)",
+      "molecular_formula": "Al(NO3)3",
+      "ontology": {
+        "role": "reference_standard",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Primary reference (0 ppm) for 27Al NMR.",
+      "prov": [
+        "Experimental Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.94,
+        "reasoning": "In the Experimental Methods (NMR section), the paper states: “Solid AlF3 was used as a secondary reference at −17 ppm (with respect to aqueous Al(NO3)3 at 0 ppm).” This supports the chemical identity “aqueous Al(NO3)3”. The text does not provide any amount/concentration/volume for the aqueous Al(NO3)3 reference, so “Amount: Not specified in text” is correct per the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reference_standard",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Reference (0 ppm) for 7Li NMR.",
+      "prov": [
+        "Experimental Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The source text mentions Li2CO3 only as an NMR referencing standard: “Spectra were referenced to solid Li2CO3 at 0 ppm…” in the Experimental Methods section. No quantity/amount of Li2CO3 is given anywhere in the provided text. Therefore, the extracted identity (Li2CO3) plus “Amount: Not specified in text” is consistent with the document.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Acquisition of commercial Li[Ni0.8Co0.15Al0.05]O2 powder (NAT1050, TODA America).",
+        "operations": [
+          {
+            "action": "obtain",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Material used as-received for all characterizations.",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.83,
+              "reasoning": "The paper does not describe a synthesis procedure or any synthesis operation performed by the authors. Instead it states: “Li[Ni0.8Co0.15Al0.05]O2 was used as purchased (NAT1050, TODA America).” Therefore the extracted synthesis operation “obtain” is not explicitly stated or supported by the text (the closest supported concept would be “used as purchased”).",
+              "suggested_fix": "used as purchased"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental Methods"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Commercial NCA powder obtained for study.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The paper explicitly states in Experimental Methods (Materials): “Li[Ni0.8Co0.15Al0.05]O2 was used as purchased (NAT1050, TODA America).” This supports that the NCA powder was commercially obtained for the study.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Li deficiency detected in APT attributed to Ga damage; true Li content uncertain.",
+        "excerpt": "The Li shows a slightly decreased concentration at the surface, which coincides directly with the Ga enriched region... indicating surface damage due to Ga as the cause for the observed loss of Li near the top surface of the specimen.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "The paper explicitly states that APT shows Li has a slightly decreased concentration at the surface coincident with a Ga-enriched region, and interprets this as Ga-induced surface damage causing the observed Li loss near the top surface of the specimen (Page 5: “The map for Li shows a slightly decreased concentration at the surface… indicating surface damage due to Ga as the cause for the observed loss of Li near the top surface of the specimen”). It also notes the measured Li composition deviates from stoichiometry and that efforts are underway to understand the deviation (Page 5: Table 2 shows Li 0.410 vs expected 1.000; text: “Currently, an effort is underway to study… deviation in Li concentration”), supporting the claim that true Li content is uncertain due to measurement/artifact issues.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "27Al MAS NMR",
+      "parameters": {
+        "magnetic_field": "4.7 T and 7 T",
+        "probe": "1.3 mm MAS",
+        "pulse_sequence": "Hahn-echo, π/2 = 1.5 μs",
+        "spinning_speed": "40 kHz and 60 kHz",
+        "reference": "AlF3 at −17 ppm vs Al(NO3)3"
+      },
+      "results": [
+        {
+          "metric": "isotropic shifts (νr 60 kHz)",
+          "value": "-1243, -1030, -827, -620, -413",
+          "unit": "ppm"
+        },
+        {
+          "metric": "isotropic shifts (νr 40 kHz)",
+          "value": "-1346, -1113, -891, -668, -445",
+          "unit": "ppm"
+        },
+        {
+          "metric": "paramagnetic Al fraction",
+          "value": 97,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Al atoms are homogeneously distributed and experience shifts consistent with dynamic JT distortion.",
+      "prov": [
+        "Figure 6",
+        "Experimental Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly reports five 27Al MAS NMR isotropic resonances for two spinning speeds in the Results/Discussion describing Figure 6. It states: for νr = 60 kHz the shifts for Al with 6, 5, 4, 3, 2 Ni3+ neighbors are −1243, −1030, −827, −620, −413 ppm; for νr = 40 kHz they are −1346, −1113, −891, −668, −445 ppm. It also states that the diamagnetic Al peak at 0 ppm is <0.2% and concludes “Thus, greater than 97% of the Al experiences a NMR shift…”, supporting the extracted paramagnetic Al fraction of 97%. Provenance aligns with Figure 6 (not Figure 6a wording) and the NMR method is in Experimental Methods, but the numerical values are in the Results text around Figure 6.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "7Li MAS NMR",
+      "parameters": {
+        "magnetic_field": "4.7 T",
+        "probe": "1.3 mm MAS",
+        "pulse_sequence": "pj-MATPASS, π/2 = 1.02 μs",
+        "spinning_speed": "40 kHz and 60 kHz",
+        "reference": "Li2CO3 at 0 ppm"
+      },
+      "results": [
+        {
+          "metric": "diamagnetic peak",
+          "value": 0,
+          "unit": "ppm"
+        },
+        {
+          "metric": "broad paramagnetic envelope",
+          "value": "0-1000",
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "Lineshape matches calculated spectrum for dynamic Jahn-Teller distortion.",
+      "prov": [
+        "Figure 5",
+        "Experimental Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper does state that the diamagnetic 7Li shift region is extremely narrow (0 ± 5 ppm) and Figure 5 discusses a sharp 7Li resonance at 0 ppm attributed to diamagnetic impurities/Li with 0 Ni3+ neighbors. However, it does NOT describe the 7Li spectrum as a single “broad paramagnetic envelope 0–1000 ppm.” Instead, it reports a dynamic JT line shape “distributed from 1000 to 0 ppm, with the greatest intensity at 724 ppm,” i.e., approximately 0–1000 ppm. The extracted range is close but not explicitly stated as “0–1000” and is phrased in the opposite order in the text. Also, the alleged provenance “Experimental Methods” does not contain these peak positions/ranges; the relevant support is in the Results/Discussion around Figure 5.",
+        "suggested_fix": "Update to match the text: diamagnetic sharp resonance at 0 ppm; broad resonance/line shape distributed from ~1000 to 0 ppm (dynamic JT), with greatest intensity at 724 ppm."
+      }
+    },
+    {
+      "method": "Neutron Powder Diffraction",
+      "parameters": {
+        "instrument": "POWGEN, SNS",
+        "wavelength": "1.066 Å",
+        "d_spacing_range": "0.3–3.0 Å",
+        "sample_mass": "3 g"
+      },
+      "results": [
+        {
+          "metric": "space group",
+          "value": "R3̅m",
+          "unit": ""
+        },
+        {
+          "metric": "lattice parameter a",
+          "value": 2.86415,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameter c",
+          "value": 14.19052,
+          "unit": "Å"
+        },
+        {
+          "metric": "oxygen z coordinate",
+          "value": 0.2592,
+          "unit": ""
+        },
+        {
+          "metric": "Li/Ni mixing",
+          "value": 0.1,
+          "unit": "%"
+        },
+        {
+          "metric": "Al occupancy",
+          "value": 5.0,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Confirms well-ordered layered structure with minimal cation mixing.",
+      "prov": [
+        "Figure 3",
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.88,
+        "reasoning": "Space group R3̅m is explicitly stated in the discussion of the Rietveld refinement (Figure 3) and Table 1. Lattice parameters a = 2.86415(1) Å and c = 14.19052(4) Å are explicitly given in the text on Page 5. Oxygen position is given as (0,0,0.25920(2)), matching oxygen z = 0.2592. Al occupancy is explicitly stated as 5.0(3)% in the text and corresponds to 0.050(3) in Table 1. However, Li/Ni mixing is reported as 0.1% (text on Page 4), which is a percent value; the extracted entry lists value 0.1 with unit '%', implying 0.1%, which is consistent. The issue is that this field is labeled 'Neutron Powder Diffraction' but the reported values come from a *joint X-ray and neutron* Rietveld refinement, not neutron-only. Additionally, the Li/Ni mixing is not presented in Table 1 (it is mentioned in text), so provenance 'Table 1' does not support that specific metric.",
+        "suggested_fix": "Either (a) change the characterization label to 'Joint X-ray and neutron Rietveld refinement (XRD+NPD)' or (b) if the field must be neutron-only, provide neutron-only refined parameters (not given separately in the text). Update provenance for Li/Ni mixing to 'Rietveld refinement discussion near Figure 3 (Page 4)' rather than Table 1."
+      }
+    },
+    {
+      "method": "Synchrotron X-ray Powder Diffraction",
+      "parameters": {
+        "instrument": "11-BM, APS",
+        "wavelength": "0.45999 Å"
+      },
+      "results": [
+        {
+          "metric": "structure confirmation",
+          "value": "matches neutron data",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Cross-validated layered R3̅m structure.",
+      "prov": [
+        "Figure 3"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "Figure 3 (and surrounding text) discusses the joint Rietveld refinement of synchrotron X-ray and neutron diffraction patterns, confirming a single R-3m layered phase and refined parameters (e.g., Li/Ni mixing, lattice parameters, Al occupancy). Nowhere does the paper state that the synchrotron X-ray powder diffraction result 'matches neutron data' or use that phrasing as a structure-confirmation metric. The relationship is described as a joint refinement of both datasets, not an explicit 'match' statement.",
+        "suggested_fix": "Revise to something explicitly stated, e.g., “Structure confirmed by joint Rietveld refinement of synchrotron X-ray and neutron diffraction; all peaks indexed to single R-3m phase” (Figure 3 and associated text)."
+      }
+    },
+    {
+      "method": "Atom Probe Tomography",
+      "parameters": {
+        "instrument": "CAMECA LEAP 4000 XHR",
+        "laser_pulsing": "UV",
+        "sample_prep": "FIB lift-out, Ga ion milling, Pt cap"
+      },
+      "results": [
+        {
+          "metric": "composition (relative)",
+          "value": "Li0.410 Al0.058 Ni0.800 Co0.164 O1.825 (normalized to Ni)",
+          "unit": ""
+        },
+        {
+          "metric": "element distribution",
+          "value": "homogeneous",
+          "unit": ""
+        }
+      ],
+      "interpretation": "No elemental segregation detected at 10 nm scale.",
+      "prov": [
+        "Figure 4",
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "Table 2 explicitly reports the atom probe tomography (APT) bulk composition (Ni taken as reference): Li 0.410, Al 0.058, Ni 0.800, Co 0.164, O 1.825, which corresponds to the extracted relative composition “Li0.410 Al0.058 Ni0.800 Co0.164 O1.825 (normalized to Ni)”. Figure 4 caption/text states the APT ion maps “show a uniform distribution” and “clearly show a uniform distribution of the elements,” i.e., homogeneous element distribution. Thus both extracted metrics are directly supported by the paper (Figure 4 and Table 2).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SQUID Magnetic Susceptibility",
+      "parameters": {
+        "instrument": "MPMS XL-5",
+        "field": "1000 Oe",
+        "temperature_range": "350–2 K"
+      },
+      "results": [
+        {
+          "metric": "effective magnetic moment (μ_eff)",
+          "value": 1.98,
+          "unit": "μB"
+        },
+        {
+          "metric": "Weiss constant (Θ)",
+          "value": 16,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Data used for scaling DFT-calculated hyperfine shifts.",
+      "prov": [
+        "Experimental Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports these SQUID-derived fit parameters when scaling NMR shifts: it states “using μeff = 1.98 μB and Θ = 16 K derived from fits to the magnetic data obtained for NCA” (Results/Discussion section around the 27Al NMR/DFT assignment; also referenced after the SQUID methods description). Thus both the effective magnetic moment and Weiss constant values are directly supported by the text.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT Phase Diagram Calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": "Layered Li(Ni,Co,Al)O2 phase stable with up to ~80 % Al in TM layer at 1000 K",
+            "unit": ""
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.71,
+          "reasoning": "The paper explicitly lists several analysis/characterization methods used (e.g., 27Al and 7Li MAS NMR, atom probe tomography (APT), X-ray and neutron diffraction with Rietveld refinement, DFT calculations/cluster expansion, SQUID magnetic susceptibility). However, the extracted value for “Analysis Method” is blank, so it does not capture any of the stated methods and is not supported as an accurate extraction.",
+          "suggested_fix": "Report the analysis methods described in the Abstract/Experimental Methods, e.g.: 27Al and 7Li MAS NMR; atom probe tomography (APT); synchrotron X-ray powder diffraction and TOF neutron diffraction (joint Rietveld refinement); DFT (VASP DFT+U, cluster expansion/CASM; CRYSTAL hybrid-DFT NMR shift calculations); SQUID magnetic susceptibility."
+        }
+      },
+      {
+        "method_name": "DFT Hyperfine Shift Calculation (spin-flip, HYB20)",
+        "results": [
+          {
+            "equation": "δ_SS = 11 ppm; δ_SL = −336 ppm; dynamic contribution per Ni^3+ = −220 ppm",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The paper explicitly states multiple analysis/characterization methods (e.g., 27Al and 7Li MAS NMR, atom probe tomography (APT), X-ray and neutron diffraction with Rietveld refinement, DFT calculations/cluster expansions, and SQUID magnetic susceptibility). However, the extracted value for “Analysis Method” is blank, so it is not supported by the source text as provided/extracted.",
+          "suggested_fix": "Combination of techniques including 27Al and 7Li MAS NMR; atom probe tomography (APT); synchrotron X-ray and TOF neutron diffraction (joint Rietveld refinement); DFT/first-principles calculations (VASP/CRYSTAL; cluster expansion/CASM; NMR shift calculations); and SQUID magnetic susceptibility measurements."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T10:37:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

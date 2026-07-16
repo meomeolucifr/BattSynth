@@ -1,0 +1,825 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Rechargeable Li//Br battery: a promising platform for post lithium ion batteries",
+    "doi": "10.1039/c4ta04419c",
+    "authors": [
+      "Zheng Chang",
+      "Xujiong Wang",
+      "Yaqiong Yang",
+      "Jie Gao",
+      "Minxia Li",
+      "Lili Liu",
+      "Yuping Wu"
+    ],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "battery research paper",
+    "tags": [
+      "Li//Br battery",
+      "aqueous lithium battery",
+      "gel polymer electrolyte",
+      "LISICON"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Gel polymer electrolyte (GPE)",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Experimental, Assembly of the aqueous Li//Br battery"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.72,
+        "reasoning": "The paper describes an aqueous Li//Br battery using Li metal (negative electrode) and bromine/tribromide\u2013bromide redox couple (positive electrode), e.g., \u201cLi//Br battery\u201d and Br3\u2212/Br\u2212, Br2 in LiBr solution. However, no explicit chemical \u201cTarget Formula\u201d field/value is stated in the text (no single formula is given as the target compound). Since the extracted value is blank, it is not explicitly supported by the source text, and it also does not follow the null-handling rule (it is not stated as None/null/Not specified).",
+        "suggested_fix": "Set extracted value to \"Not specified\" (or explicitly to \"Li//Br\" if the schema expects the battery chemistry rather than a molecular formula)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Coated lithium metal electrode",
+      "molecular_formula": "Li (core) | GPE | LISICON",
+      "intended_role": "negative electrode",
+      "prov": [
+        "Experimental, Assembly of the aqueous Li//Br battery"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper describes the negative electrode as Li metal coated with a gel polymer electrolyte (GPE) and then a LISICON film (\u201canother rechargeable battery system, Li//Br battery\u2026 Lithium metal is coated with a home-made gel polymer electrolyte (GPE) and a ceramic solid electrolyte (LISICON\u2026) film\u201d; also in the Experimental section). However, the extracted value \u201cLi (core) | GPE | LISICON\u201d is not presented explicitly as a \u201cTarget Formula\u201d in that layered/pipe-delimited wording, nor is it a chemical formula. The text supports the electrode/coating structure, not a target material formula.",
+        "suggested_fix": "If the field is meant to capture electrode/stack architecture, use: \u201cLi metal (core) coated with GPE and LISICON film (Li|GPE|LISICON)\u201d. If it must be a chemical formula, the paper does not specify a single \u2018target formula\u2019 for this stack."
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li//Br battery",
+      "molecular_formula": "",
+      "intended_role": "electrochemical device",
+      "prov": [
+        "Experimental, Assembly of the aqueous Li//Br battery"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The document describes the Li//Br battery system and various components (Li metal, Br2, LiBr electrolyte, Br3\u2212/Br\u2212 redox couple), but it does not explicitly state a single consolidated \"Target Formula\" (chemical formula) for the target material. Since the extracted value is blank/empty and the paper provides no explicit target formula field/value, the extraction is not supported as a valid extracted value.",
+        "suggested_fix": "Not specified"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Spherical, 15 mm diameter, 0.5 mm thickness; attached to Cu mesh",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.83,
+        "reasoning": "The paper explicitly identifies the negative electrode as lithium metal (\u201cLi metal \u2026 attached to a copper mesh\u2026\u201d, Experimental section). However, while it provides the Li metal geometry (15 mm diameter, 0.5 mm thickness) and contact area (~0.15 cm2), it does not explicitly state the mass or amount of lithium metal used. Therefore the extracted statement \u201cLithium metal | Amount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Copper mesh",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "current collector",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.88,
+        "reasoning": "The paper explicitly states that the Li metal negative electrode is attached to a copper (Cu) mesh (\u201cLi metal\u2026 attached to a copper (Cu) mesh\u2026\u201d, Experimental section, Page 2). However, no mass, dimensions, or quantity for the copper mesh itself is provided anywhere in the text (only Li metal dimensions are given: 15 mm diameter, 0.5 mm thickness). Therefore, the identity is supported and the extractor\u2019s note that the copper mesh amount is not specified is also supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Poly(vinylidene fluoride)",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {
+        "role": "polymer matrix",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in PVDF/GFM/PVDF membrane, 50 \u00b5m thick",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly identifies PVDF (poly(vinyldifluoride), i.e., poly(vinylidene fluoride)) as part of the GPE membrane stack, and it also specifies an amount/size for that PVDF/GFM/PVDF membrane: \u201cPVDF/GFM/PVDF, of 50 mm\u201d. Therefore, the claim \u201cAmount: Not specified in text\u201d is incorrect because an amount/dimension is provided.",
+        "suggested_fix": "Poly(vinylidene fluoride) (PVDF) | Amount: 50 mm (PVDF/GFM/PVDF sandwiched polymer membrane size; exact unit context as written: \u201cof 50 mm\u201d)."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Glass fiber mat",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reinforcement",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Middle layer of sandwiched membrane",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.83,
+        "reasoning": "The document explicitly mentions glass fiber mat (GFM) as part of the PVDF/GFM/PVDF sandwiched polymer membrane used to make the gel polymer electrolyte (Experimental section, Page 2). However, the text does not clearly provide an amount (mass, thickness of the GFM itself, or loading) for the glass fiber mat. The extracted value claims the chemical identity is glass fiber mat but then states 'Amount: Not specified in text'; since the identity *is* specified, the combined field value is internally inconsistent and not fully supported as written.",
+        "suggested_fix": "Glass fiber mat (GFM) | Amount: Not specified in text"
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium perchlorate",
+      "molecular_formula": "LiClO4",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "In EC/DEC/DMC mixed solvent",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly states the gel polymer electrolyte (GPE) was made by saturating the membrane with a \u201c1 mol L\u22121 LiClO4 solution\u201d (LiClO4 = lithium perchlorate). This directly supports Lithium perchlorate at 1 M (1 mol/L) in the Experimental section description of the negative electrode coating (page 2).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Part of 1:1:1 EC/DEC/DMC solvent mixture",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.88,
+        "reasoning": "The paper explicitly mentions ethylene carbonate as a solvent component of the LiClO4 solution used to prepare the gel polymer electrolyte (GPE): \u201c1 mol L\u22121 LiClO4 solution in ethylene carbonate, diethyl carbonate and dimethyl carbonate (volumetric ratio is 1 : 1 : 1).\u201d Therefore, the claim \u201cAmount: Not specified in text\u201d is not correct because an amount/ratio is provided (volumetric ratio 1:1:1), even though absolute volumes are not given.",
+        "suggested_fix": "Ethylene carbonate | Amount: present in solvent mixture for 1 mol L\u22121 LiClO4 solution; volumetric ratio EC:DEC:DMC = 1:1:1 (absolute volume not specified)."
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Diethyl carbonate",
+      "molecular_formula": "C5H10O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Part of 1:1:1 EC/DEC/DMC solvent mixture",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions diethyl carbonate as a solvent component in the gel polymer electrolyte: \u201c1 mol L\u22121 LiClO4 solution in ethylene carbonate, diethyl carbonate and dimethyl carbonate (volumetric ratio is 1 : 1 : 1).\u201d However, the extracted amount is given as \u201cNot specified in text,\u201d which is incorrect because the text specifies its volumetric ratio (1:1:1) within the solvent mixture (though not an absolute volume).",
+        "suggested_fix": "Diethyl carbonate | Amount: present in electrolyte solvent mixture at volumetric ratio 1:1:1 with ethylene carbonate and dimethyl carbonate (in 1 mol L\u22121 LiClO4 solution used to make the GPE)."
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Part of 1:1:1 EC/DEC/DMC solvent mixture",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.74,
+        "reasoning": "The paper explicitly mentions dimethyl carbonate as a solvent component in the gel polymer electrolyte: \u201cLiClO4 solution in ethylene carbonate, diethyl carbonate and dimethyl carbonate (volumetric ratio is 1 : 1 : 1).\u201d Thus, the chemical identity is correct, but the extracted statement \u201cAmount: Not specified in text\u201d is not accurate because a quantitative amount is given as a volumetric ratio (1:1:1) among the three solvents (even though an absolute volume is not provided).",
+        "suggested_fix": "Dimethyl carbonate | Amount: present in solvent mixture with ethylene carbonate and diethyl carbonate at a 1:1:1 volumetric ratio (absolute volume not specified)"
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "LISICON glass\u2013ceramic film",
+      "molecular_formula": "Li2O\u2013Al2O3\u2013SiO2\u2013P2O5\u2013TiO2\u2013GeO2 (composite)",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Thickness 100 \u00b5m; ionic conductivity 0.1 mS cm^-1",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly identifies a \u201cLISICON film\u201d used as a coating layer on Li metal (Experimental, p.2) and later refers to it as a \u201cLISICON glass\u2013ceramics separator\u201d (p.5). However, no amount for this LISICON film/glass\u2013ceramic is given in terms of mass, moles, volume, or loading; only properties like thickness (100 \u03bcm) and conductivity are provided. Therefore, the extracted statement \u201cAmount: Not specified in text\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Lithium bromide",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "supporting electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1\u20137 M aqueous solutions",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly specifies LiBr concentrations (e.g., 1 mol L\u22121 LiBr; 7 mol L\u22121 LiBr) in the Experimental section and throughout Results/Discussion. Therefore, the amount is not 'Not specified'\u2014it is given as solution molarities. The extracted value correctly identifies the chemical (lithium bromide) but incorrectly claims the amount is omitted.",
+        "suggested_fix": "Lithium bromide (LiBr) | Amount: 1 mol L\u22121 (aqueous solution used as electrolyte in several tests); also 7 mol L\u22121 LiBr used in other experiments (e.g., with 1 mol L\u22121 Br2)."
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Bromine",
+      "molecular_formula": "Br2",
+      "ontology": {
+        "role": "active material (positive electrode)",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.1,
+        "unit": "M"
+      },
+      "notes": "Also tested at 1 M",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.82,
+        "reasoning": "The paper explicitly reports using **0.1 mol L\u22121 Br2 (bromine)** in 1 mol L\u22121 LiBr (e.g., \u201c0.1 mol L\u22121 Br2 in 1 mol L\u22121 LiBr aqueous electrolyte\u201d and Fig. 2 caption \u201c0.1 mol L\u22121 liquid Br2 or Br3\u2212\u201d). It does **not** state \u201cBromine (elemental Br2) | Amount: 0.1 M\u201d as simply \u201cBromine\u201d; the chemical identity is specifically Br2 (and sometimes Br3\u2212), not elemental bromine generically. Therefore the extracted identity is imprecise even though the 0.1 M magnitude matches Br2.",
+        "suggested_fix": "Bromine (Br2) | Amount: 0.1 M (0.1 mol L\u22121)"
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of gel polymer electrolyte (GPE)",
+        "operations": [
+          {
+            "action": "saturate",
+            "parameters": {
+              "inputs": [
+                "chem_3",
+                "chem_4",
+                "chem_5",
+                "chem_6",
+                "chem_7",
+                "chem_8"
+              ],
+              "membrane_thickness": {
+                "value": 50,
+                "unit": "micrometer"
+              },
+              "solution_concentration": {
+                "value": 1,
+                "unit": "M"
+              },
+              "solvent_ratio": "EC:DEC:DMC = 1:1:1 (v/v)"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Sandwiched PVDF/GFM/PVDF membrane soaked with 1 M LiClO4 electrolyte",
+            "prov": [
+              "Experimental"
+            ],
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.92,
+              "reasoning": "The paper does not list a synthesis operation as simply \"saturate\". The only occurrence of the word is in the Experimental section describing preparation of the gel polymer electrolyte (GPE): it was made by \"saturating\" a sandwiched polymer membrane with 1 mol L\u22121 LiClO4 solution in EC/DEC/DMC. This is a specific step (saturating a membrane), not a standalone synthesis operation label for the whole procedure.",
+              "suggested_fix": "Change to a more specific operation description, e.g., \"Saturating the PVDF/GFM/PVDF membrane with 1 mol L\u22121 LiClO4 in EC/DEC/DMC (1:1:1) to prepare the GPE\" (Experimental section)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Coating lithium metal with GPE",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "target_1"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Li metal (15 mm diameter, 0.5 mm thick) attached to Cu mesh was coated like casing",
+            "prov": [
+              "Experimental"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes the synthesis/assembly operation as coating the Li metal: in the Experimental section it states the Li metal attached to a Cu mesh \u201cwas simply coated (like casing) with a home-made gel polymer electrolyte (GPE)\u201d and that \u201canother layer of LISICON film was coated on the GPE layer.\u201d This directly supports the operation being \u201ccoat.\u201d",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (<0.1 ppm H2O, O2)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.99,
+            "reasoning": "The Experimental section states: \u201cThe assembly of the negative electrode was conducted in an Ar-filled glove box (<0.1 ppm H2O and O2).\u201d This directly supports the extracted synthesis/assembly atmosphere as Ar with <0.1 ppm H2O and O2.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Application of LISICON layer",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": [
+                "chem_9"
+              ],
+              "film_thickness": {
+                "value": 100,
+                "unit": "micrometer"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "LISICON film placed on top of GPE-coated Li",
+            "prov": [
+              "Experimental"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.91,
+              "reasoning": "The paper explicitly describes the synthesis/assembly step as Li metal being \u201csimply coated (like casing) with a home-made gel polymer electrolyte (GPE)\u201d and then \u201canother layer of LISICON film was coated on the GPE layer\u201d (Experimental section, page 2). This supports the synthesis operation being a coating step (i.e., \u201ccoat\u201d).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Assembly of Li//Br battery",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "negative_electrode": "target_2",
+              "positive_electrolyte": "1 M LiBr + 0.1 M Br2 aqueous solution (pH 5.6) or 7 M LiBr + 1 M Br2",
+              "current_collector_positive": "glassy carbon (0.07 cm2)",
+              "contact_area_Li": {
+                "value": 0.15,
+                "unit": "cm2"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Two-electrode cell; assembly performed after coating steps",
+            "prov": [
+              "Experimental"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly uses the term \u201cAssembly\u201d to describe the synthesis/constructive operation. In the Experimental section it states \u201cAssembly of the aqueous Li//Br battery,\u201d and within that section describes how the cell components were put together (e.g., Li metal \u201cattached to a copper mesh,\u201d \u201csimply coated\u201d with GPE, \u201canother layer of LISICON film was coated,\u201d etc.). This supports the extracted synthesis operation as \u2018assemble\u2019 (minor tense difference).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Saturate PVDF/GFM/PVDF membrane with LiClO4 electrolyte to form GPE",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "Page 2 explicitly describes forming the home-made gel polymer electrolyte (GPE) by \u201csaturating a sandwiched polymer membrane, PVDF/GFM/PVDF \u2026 with a 1 mol L\u22121 LiClO4 solution in ethylene carbonate, diethyl carbonate and dimethyl carbonate (1:1:1).\u201d This matches the extracted workflow step of saturating a PVDF/GFM/PVDF membrane with LiClO4 electrolyte to form GPE (though the paper includes the LiClO4 concentration and solvent mixture details).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Coat Li metal with prepared GPE",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The paper explicitly describes the workflow step of coating Li metal with the prepared gel polymer electrolyte (GPE). In the Experimental section (page 2), it states that Li metal attached to a Cu mesh \u201cwas simply coated (like casing) with a home-made gel polymer electrolyte (GPE),\u201d and then describes how the GPE was made. This supports the extracted workflow timeline item \u201cCoat Li metal with prepared GPE.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Apply 100 \u00b5m LISICON film onto GPE layer",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper states that Li metal is first coated with a home-made gel polymer electrolyte (GPE) and that \u201canother layer of LISICON film was coated on the GPE layer,\u201d and it specifies the LISICON film thickness is 100 \u03bcm. However, it does not describe this as a workflow/timeline step phrased as \u201cApply 100 \u00b5m LISICON film onto GPE layer,\u201d nor does it explicitly say \u201capply\u201d (it says \u201ccoated\u201d) or present it as a procedural step in a timeline. The supported content is the coating of LISICON on GPE and the LISICON thickness being 100 \u03bcm, but the extracted value reads like an instruction step rather than the paper\u2019s statement.",
+          "suggested_fix": "Coat the GPE layer with a LISICON film (thickness 100 \u03bcm)."
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Assemble coated Li electrode with aqueous Br2/LiBr solution to construct Li//Br battery",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The paper explicitly describes assembling the Li//Br battery by combining a coated Li metal negative electrode with an aqueous Br2/LiBr positive electrode/electrolyte solution. In Experimental (Assembly), it states: \u201cThe positive electrode comprised of an aqueous solution of Br2, and LiBr \u2026 solution was used as the electrolyte\u2026\u201d. In Results (Fig. 2a description), it further specifies the structure: coated Li metal (GPE + LISICON) as the negative electrode and \u201c0.1 mol L\u22121 liquid Br2 or Br3\u2212 as the positive electrode\u201d with \u201caqueous LiBr solution \u2026 as the electrolyte.\u201d This supports the extracted workflow step.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear exponent in reported diffusion coefficient",
+        "excerpt": "\"lithium diffusion coefficient was further calculated as 2.42 /C2 10/C02 cm2 s/C01\"",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly reports the diffusion coefficient as \u201c2.42 \u00d7 10\u22122 cm2 s\u22121\u201d (Page 3: \u201cBased on the b parameter, the lithium diffusion coefficient was further calculated as 2.42 \u00d7 10\u22122 cm2 s\u22121.\u201d). The extracted excerpt shows garbled characters (\u201c2.42 /C2 10/C02 cm2 s/C01\u201d), creating an \u201cunclear exponent\u201d issue that is not present in the source text. Thus the extracted value is not faithfully supported as written; it is an extraction/OCR encoding error, not an ambiguity in the paper.",
+          "suggested_fix": "Report the value clearly as: lithium diffusion coefficient = 2.42 \u00d7 10^\u22122 cm^2 s^\u22121 (as stated in the text)."
+        }
+      },
+      {
+        "issue": "Current density units formatting",
+        "excerpt": "\"1.7 mA cm/C02\"",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The paper reports current density with units formatted as \u201cmA cm\u22122\u201d (e.g., \u201c3.96 V at 1.7 mA cm\u22122\u201d on Page 1; also 12.8 mA cm\u22122, 4.2 mA cm\u22122, etc.). Nowhere does the text contain the excerpted malformed unit string \u201c1.7 mA cm/C02\u201d. This appears to be an OCR/encoding error where \u201ccm\u22122\u201d was corrupted.",
+          "suggested_fix": "Use \u201c1.7 mA cm\u22122\u201d (or equivalently \u201c1.7 mA cm^-2\u201d) instead of \u201c1.7 mA cm/C02\u201d."
+        }
+      },
+      {
+        "issue": "Thickness notation uses 'mm' instead of '\u00b5m' in text",
+        "excerpt": "\"PVDF ... 50 mm\"; likely 50 \u00b5m",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The source text explicitly uses \u201cmm\u201d for membrane/film thickness values that are physically implausible in this context, indicating a unit-notation issue consistent with the extracted ambiguity. On Page 2: \u201cPVDF (poly(vinyldifluoride))/GFM (glass fiber mat)/PVDF, of 50 mm \u2026\u201d appears in a thickness context (a sandwiched polymer membrane), and later in the same paragraph: \u201cThickness \u2026 of the LISICON film are 100 mm \u2026\u201d. These are almost certainly intended to be micrometers (\u00b5m), so the extraction correctly flags a workflow/unit ambiguity rather than a definitive numeric value.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate_range": "0.1\u201310 mV s^-1",
+        "electrolyte": "1 M LiBr with 1.69\u00d710^-2 M Br3-",
+        "electrode": "glassy carbon (0.07 cm2)"
+      },
+      "results": [
+        {
+          "metric": "cathodic peak potential",
+          "value": 0.831,
+          "unit": "V vs SCE"
+        },
+        {
+          "metric": "diffusion coefficient",
+          "value": 2.42,
+          "unit": "cm2 s-1",
+          "notes": "Value from Randles\u2013Sevcik analysis; exponent ambiguous"
+        }
+      ],
+      "interpretation": "Fast, diffusion-controlled Br3-/Br- redox kinetics with good reversibility",
+      "prov": [
+        "Fig. 1a, 1b"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The cathodic peak potential value is explicitly stated in the text associated with Fig. 1a: at 0.1 mV s\u22121 the cathodic peak potential is 0.831 V vs SCE, so that part is supported. However, the extracted diffusion coefficient is incorrect: the paper (Randles\u2013Sevcik analysis tied to Fig. 1b) reports a diffusion coefficient of 2.42 \u00d7 10\u22122 cm^2 s\u22121, not 2.42 cm^2 s\u22121. This is a factor-of-100 error. Also, the paper calls it the (misnamed) 'lithium diffusion coefficient' but it is derived using Br3\u2212 concentration; regardless, the numeric value includes \u00d710\u22122.",
+        "suggested_fix": "[{'metric':'cathodic peak potential','value':0.831,'unit':'V vs SCE'},{'metric':'diffusion coefficient','value':2.42e-2,'unit':'cm^2 s^-1','notes':'From Randles\u2013Sevcik analysis (Fig. 1b); reported as 2.42 \u00d7 10^-2 cm^2 s^-1'}]"
+      }
+    },
+    {
+      "method": "Electrochemical Impedance / Polarization",
+      "parameters": {
+        "current_density_range": "0.42\u201312.7 mA cm^-2"
+      },
+      "results": [
+        {
+          "metric": "average discharge voltage at low current",
+          "value": 4.097,
+          "unit": "V"
+        },
+        {
+          "metric": "voltage at 12.7 mA cm^-2",
+          "value": 2.495,
+          "unit": "V"
+        },
+        {
+          "metric": "max power density",
+          "value": 29.7,
+          "unit": "mW cm^-2"
+        }
+      ],
+      "interpretation": "Performance limited by solid electrolyte resistance at high current",
+      "prov": [
+        "Fig. 4a"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.84,
+        "reasoning": "The paper text describing Fig. 4a states: discharge voltage up to 4.097 V at low current density; it \u201cstill keeps 2.495 V\u201d at 12.7 mA cm\u22122; and maximal power density 29.7 mW cm\u22122 at a current density of 12.3 mA cm\u22122 (with corresponding average discharge voltage 2.495 V). Thus, two extracted items match (4.097 V at low current; 2.495 V at 12.7 mA cm\u22122), but the extracted \u2018voltage at 12.7 mA cm^-2\u2019 conflicts with the paper\u2019s later statement that the maximum power density occurs at 12.3 mA cm\u22122. Also, the \u2018average discharge voltage at low current\u2019 is not described as an average in the text\u2014just \u201cdischarge voltage\u2026 at the low current density.\u201d Because the extracted list contains an internal mismatch on the current density for the max power point and a slight metric-label inaccuracy, the overall extraction as given is not fully supported.",
+        "suggested_fix": "Update to: [{'metric':'discharge voltage at low current density','value':4.097,'unit':'V'},{'metric':'discharge voltage at 12.7 mA cm^-2','value':2.495,'unit':'V'},{'metric':'max power density (at 12.3 mA cm^-2)','value':29.7,'unit':'mW cm^-2'}]"
+      }
+    },
+    {
+      "method": "Galvanostatic charge\u2013discharge",
+      "parameters": {
+        "current": 0.03,
+        "unit_current": "mA",
+        "depth_of_discharge": "100% (Br2 basis)"
+      },
+      "results": [
+        {
+          "metric": "specific capacity (Br2)",
+          "value": 335,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "average discharge voltage",
+          "value": 3.95,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Flat plateau, small polarization (0.19\u20130.29 V)",
+      "prov": [
+        "Fig. 3a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper text describing Fig. 3a explicitly states: \u201cits voltage initially drops to 3.95 V\u201d and \u201cIts specific capacity is 335 mA h g\u22121 for Br2.\u201d These match the extracted values (average discharge voltage ~3.95 V and specific capacity 335 mAh g\u22121 for Br2) and are directly tied to Fig. 3a\u2019s galvanostatic charge/discharge behavior discussion.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cycle life test",
+      "parameters": {
+        "current_density": 4.2,
+        "unit_current": "mA cm^-2",
+        "depth_of_discharge": "35%"
+      },
+      "results": [
+        {
+          "metric": "cycle_number",
+          "value": 100,
+          "unit": ""
+        },
+        {
+          "metric": "voltage fade",
+          "value": 0,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "No observable voltage degradation after 100 cycles",
+      "prov": [
+        "Fig. 3c"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "Fig. 3c (described in the text) compares the 1st and 100th cycles at 35% DOD, stating voltages change only from 4.12\u21924.11 V (charge) and 3.67\u21923.66 V (discharge). This supports a cycle number of 100, but it does not support a 'voltage fade' of 0 V; the reported voltage change is ~0.01 V (for both charge and discharge).",
+        "suggested_fix": "[{'metric': 'cycle_number', 'value': 100, 'unit': ''}, {'metric': 'voltage fade', 'value': 0.01, 'unit': 'V'}]"
+      }
+    },
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": 298,
+        "unit_temperature": "K"
+      },
+      "results": [
+        {
+          "metric": "GPE ionic conductivity",
+          "value": 0.2,
+          "unit": "mS cm^-1"
+        },
+        {
+          "metric": "LISICON ionic conductivity",
+          "value": 0.1,
+          "unit": "mS cm^-1"
+        },
+        {
+          "metric": "LiBr (7 M) conductivity",
+          "value": 197.3,
+          "unit": "mS cm^-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Experimental text",
+        "ESI Fig. S1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.82,
+        "reasoning": "Two of the three conductivities match the text values but their units are wrong. The paper states: (1) GPE ionic conductivity is about 0.2 mS cm\u22121 at room temperature, not mS cm\u22122 (Page 2, Experimental). (2) LISICON film ionic conductivity is 0.1 mS cm\u22121 at room temperature, not mS cm\u22122 (Page 2, Experimental). (3) LiBr (7 mol L\u22121) ionic conductivity can be up to 197.3 mS cm\u22121 at room temperature (Page 2, Results; refers to ESI Fig. S1), which matches the extracted value and unit. Because two entries have incorrect units, the overall extracted list is not fully supported as given.",
+        "suggested_fix": "[{'metric':'GPE ionic conductivity','value':0.2,'unit':'mS cm^-1'},{'metric':'LISICON ionic conductivity','value':0.1,'unit':'mS cm^-1'},{'metric':'LiBr (7 M) conductivity','value':197.3,'unit':'mS cm^-1'}]"
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Randles\u2013Sevcik equation",
+        "results": [
+          {
+            "equation": "Ip = 2.69\u00d710^5 n^1.5 A D^0.5 C v^0.5",
+            "value": 2.42,
+            "unit": "cm2 s-1",
+            "notes": "Calculated diffusion coefficient for Br3-/Br- redox"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.72,
+          "reasoning": "The document explicitly describes several analysis/electrochemical characterization methods (cyclic voltammetry (CV), galvanostatic charge\u2013discharge testing, UV-vis spectra, SEM morphology), but the Extracted Value for \u201cAnalysis Method\u201d is blank and therefore does not capture the stated methods.",
+          "suggested_fix": "Analysis methods reported include cyclic voltammetry (CV), galvanostatic charge/discharge tests, UV-vis spectroscopy, and SEM (for LISICON surfaces)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 335,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.9,
+      "reasoning": "The paper explicitly states the battery shows no evidence of voltage decrease after 100 cycles (at 35% DOD). This supports a cycle life value of 100 cycles. Mentioned on Page 1 (\u201cno evidence of voltage decrease after 100 cycles at 35% DOD\u201d) and corroborated on Page 4 describing profiles for the 1st and 100th cycles at 35% DOD.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-27T20:00:00Z",
+    "source_file": "provided_text",
+    "processing_time": null
+  }
+}

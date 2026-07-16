@@ -1,0 +1,220 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Periodicity, work function and reactivity of graphene on Ru(0001) from first principles",
+    "doi": "10.1088/1367-2630/12/4/043041",
+    "authors": [
+      "B Wang",
+      "S Günther",
+      "J Wintterlin",
+      "M-L Bocquet"
+    ],
+    "journal": "New Journal of Physics",
+    "year": 2010
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "theoretical study",
+    "tags": [
+      "DFT calculations",
+      "graphene",
+      "Ru(0001)",
+      "work function",
+      "metal adsorption"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Graphene on Ru(0001) (12×12)C/(11×11)Ru moiré structure",
+      "molecular_formula": "",
+      "intended_role": "modelled material",
+      "prov": [
+        "Page 4-6"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Graphene",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate/overlayer",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Throughout text"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ruthenium",
+      "molecular_formula": "Ru",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Ru(0001) surface",
+      "prov": [
+        "Throughout text"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "adsorbate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Single atom adsorption study",
+      "prov": [
+        "Page 10-12"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Platinum",
+      "molecular_formula": "Pt",
+      "ontology": {
+        "role": "adsorbate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Single atom adsorption study",
+      "prov": [
+        "Page 10-12"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (PBE-GGA)",
+      "parameters": {
+        "plane_wave_cutoff": {
+          "value": 300,
+          "unit": "eV"
+        },
+        "k_point_mesh": "1×1×1 (geometry); 3×3×1 (DOS)",
+        "slab_model": "Graphene on 3-layer Ru slab with 7.5 Å vacuum",
+        "functional": "PBE",
+        "software": "VASP"
+      },
+      "results": [
+        {
+          "metric": "Work function of graphene/Ru",
+          "value": 3.6,
+          "unit": "eV"
+        },
+        {
+          "metric": "Work function change relative to clean Ru",
+          "value": -1.7,
+          "unit": "eV"
+        },
+        {
+          "metric": "Adsorption energy of Au at low region (C8, fully relaxed)",
+          "value": -1.4,
+          "unit": "eV"
+        },
+        {
+          "metric": "Adsorption energy of Au at low region (C8, rigid substrate)",
+          "value": -0.7,
+          "unit": "eV"
+        },
+        {
+          "metric": "Adsorption energy of Au at high region (C1, rigid substrate)",
+          "value": 0.26,
+          "unit": "eV"
+        },
+        {
+          "metric": "Adsorption energy range for Pt atoms on low region",
+          "value": -2.0,
+          "unit": "eV to -3.0 eV"
+        },
+        {
+          "metric": "Adsorption energy per unit cell for (11×11)Ru periodicity",
+          "value": -3.9,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Pages 6-12"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Energy decomposition analysis",
+        "results": [
+          {
+            "equation": "E_adsorption = E(g+Ru) - E(g) - E(Ru)",
+            "value": -3.9,
+            "unit": "eV",
+            "notes": "(11×11)Ru periodicity"
+          },
+          {
+            "equation": "Work function change Δφ = φ(g/Ru) - φ(Ru)",
+            "value": -1.7,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-25T10:37:00Z",
+    "source_file": "provided_text_segment",
+    "processing_time": null
+  }
+}

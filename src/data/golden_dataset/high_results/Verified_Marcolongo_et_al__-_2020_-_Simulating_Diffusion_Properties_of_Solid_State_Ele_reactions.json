@@ -1,0 +1,293 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Simulating Diffusion Properties of Solid-State Electrolytes via a Neural Network Potential: Performance and Training Scheme",
+    "doi": "10.1002/syst.201900031",
+    "authors": [
+      "Aris Marcolongo",
+      "Tobias Binninger",
+      "Federico Zipoli",
+      "Teodoro Laino"
+    ],
+    "journal": "ChemSystemsChem",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid-state electrolytes",
+      "machine learning potential",
+      "diffusion coefficient",
+      "activation energy",
+      "molecular dynamics"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "studied material",
+      "prov": [
+        "Page 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "Page 1 explicitly lists the test case solid-state electrolytes as \u201cLi10GeP2S12, Li7La3Zr2O12 and Na3Zr2Si2PO12.\u201d This directly supports the extracted Target Formula value Li10GeP2S12.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "studied material",
+      "prov": [
+        "Page 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "Page 1 explicitly lists the test cases and includes the formula \u201cLi7La3Zr2O12\u201d in the sentence: \u201cWe consider as test cases the well known Li10GeP2S12, Li7La3Zr2O12 and Na3Zr2Si2PO12.\u201d This directly supports the extracted Target Formula.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na3Zr2Si2PO12",
+      "molecular_formula": "Na3Zr2Si2PO12",
+      "intended_role": "studied material",
+      "prov": [
+        "Page 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "Page 1 explicitly lists the test cases as \u201cLi10GeP2S12, Li7La3Zr2O12 and Na3Zr2Si2PO12.\u201d This directly supports the extracted Target Formula Na3Zr2Si2PO12.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "Page 1 explicitly lists Li10GeP2S12 as one of the solid-state electrolyte test cases (\u201cWe consider as test cases the well known Li10GeP2S12, Li7La3Zr2O12 and Na3Zr2Si2PO12.\u201d). Nowhere in the provided paper text is an explicit chemical amount (mass, molar quantity, concentration, loading, etc.) for Li10GeP2S12 specified; the paper discusses simulation cells/atom counts and protocols but not an amount of the chemical. Therefore the identity is supported and the 'Amount: Not specified in text' null-handling is also supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "Page 1 explicitly lists Li7La3Zr2O12 as one of the test-case solid-state electrolytes (\u201cLi10GeP2S12, Li7La3Zr2O12 and Na3Zr2Si2PO12\u201d). Nowhere in the provided full text is an explicit chemical amount (mass, molar quantity, concentration, loading, etc.) given for Li7La3Zr2O12; it is only referenced as a material/system name. Therefore the statement that the amount is not specified is supported by the document\u2019s omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Na3Zr2Si2PO12",
+      "molecular_formula": "Na3Zr2Si2PO12",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Page 1 explicitly lists Na3Zr2Si2PO12 among the test-case solid-state electrolytes (\u201cLi10GeP2S12, Li7La3Zr2O12 and Na3Zr2Si2PO12.\u201d). Nowhere in the provided full text is an explicit chemical amount (mass, molar quantity, concentration, wt%, etc.) for Na3Zr2Si2PO12 given; the paper discusses simulation cell atom counts (e.g., NASICON cell of 480 atoms) but not an amount of the chemical itself. Therefore the identity is supported and the 'Amount: Not specified in text' is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Molecular Dynamics (NVE) with DeepMD potential",
+      "parameters": {
+        "temperature_range": "\u2265600 K",
+        "cell_size_atoms": 200
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.16,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Activation energy aligns with previous computational studies and is slightly lower than experimental value (0.22 eV).",
+      "prov": [
+        "Figure 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The source text explicitly states: \u201cFrom linear fits of the Arrhenius plots, we estimate an activation energy of 0.16 eV\u201d in the LGPS results section (Page 6) and refers to the Arrhenius data shown in Figure 3. Thus the extracted activation energy value 0.16 eV is supported, though the explicit numeric statement is in text rather than inside the figure itself.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Molecular Dynamics (NVE) with DeepMD potential",
+      "parameters": {
+        "temperature_range": "\u2265600 K",
+        "cell_size_atoms": 192
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.21,
+          "unit": "eV",
+          "notes": "Reported range 0.20\u20130.22 eV; midpoint recorded."
+        }
+      ],
+      "interpretation": "Computed activation energy matches experimental high-temperature measurements (0.20\u20130.21 eV).",
+      "prov": [
+        "Figure 4",
+        "Figure 5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly states for LLZO: \u201cThe activation energies are very stable with values ranging from 0.2 to 0.22 eV.\u201d This appears in Section 3.2 (page 6 of the provided text) and corresponds to the Arrhenius plots shown in Figures 4 and 5. The extracted midpoint value 0.21 eV with note \u201crange 0.20\u20130.22 eV; midpoint recorded\u201d is consistent with this explicit range.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Molecular Dynamics (NVE) with DeepMD potential",
+      "parameters": {
+        "temperature_range": "\u2265600 K",
+        "cell_size_atoms": 480
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.2,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Value consistent with high-temperature experimental activation energies (0.18\u20130.20 eV).",
+      "prov": [
+        "Figure 6"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper discusses activation energies from DeepMD-based NVE diffusion simulations, but Figure 6 pertains to Na diffusion in NASICON and the text states the activation energy from the left plot in Figure 6 was \u201caround 0.2 eV\u201d (approximate, not an explicit exact value). Additionally, the clearest explicit numeric activation-energy range given is for LLZO: \u201cvalues ranging from 0.2 to 0.22 eV,\u201d and for LGPS: \u201c0.16 eV.\u201d Thus, an extracted value of exactly 0.2 eV as a single activation energy metric attributed to Figure 6 is not explicitly supported as an exact value in the text (it is only approximate).",
+        "suggested_fix": "If the intent is NASICON (Figure 6): activation energy \u22480.2 eV (reported as 'around 0.2 eV'). If the intent is LLZO: activation energies range 0.2\u20130.22 eV. If the intent is LGPS: activation energy 0.16 eV."
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius plot fit",
+        "results": [
+          {
+            "subject": "Li10GeP2S12",
+            "equation": "ln(D)=ln(D0)\u2212Ea/(k_B T)",
+            "value": 0.16,
+            "unit": "eV"
+          },
+          {
+            "subject": "Li7La3Zr2O12",
+            "equation": "ln(D)=ln(D0)\u2212Ea/(k_B T)",
+            "value": 0.21,
+            "unit": "eV"
+          },
+          {
+            "subject": "Na3Zr2Si2PO12",
+            "equation": "ln(D)=ln(D0)\u2212Ea/(k_B T)",
+            "value": 0.2,
+            "unit": "eV"
+          }
+        ],
+        "prov": [
+          "Figures 3\u20136"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.22,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is empty. The paper explicitly states analysis/evaluation methods used to compute diffusion coefficients (e.g., NVE molecular dynamics with DeePMD in LAMMPS and Arrhenius analysis/linear fits; MSD-based diffusion), including in the Results section associated with Figures 3\u20136. Therefore, leaving the field blank is not supported by the source text.",
+          "suggested_fix": "Analysis method: diffusion coefficients evaluated from mean squared displacement (MSD) obtained from NVE MD simulations using the LAMMPS implementation of the DeePMD (DeepMD) model; Arrhenius plots with linear fits (error bars one standard deviation)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

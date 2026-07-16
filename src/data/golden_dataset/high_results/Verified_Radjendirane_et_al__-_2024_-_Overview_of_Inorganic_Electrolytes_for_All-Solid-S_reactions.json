@@ -1,0 +1,263 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Overview of Inorganic Electrolytes for All-Solid-State Sodium Batteries",
+    "doi": "10.1021/acs.langmuir.4c01845",
+    "authors": [
+      "Aakash Carthick Radjendirane",
+      "Dheeraj Kumar Maurya",
+      "Juanna Ren",
+      "Hua Hou",
+      "Hassan Algadi",
+      "Ben Bin Xu",
+      "Zhanhu Guo",
+      "Subramania Angaiah"
+    ],
+    "journal": "Langmuir",
+    "year": 2024
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": [
+      "solid-state sodium batteries",
+      "inorganic electrolytes"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "cubic Na3PS4",
+      "molecular_formula": "Na3PS4",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Page 1697"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The document explicitly mentions the compound Na3PS4 multiple times as a sulfide-based sodium-ion conductor (e.g., \u201cA class of lithium analogue sulfides such as Na3PS4\u2026\u201d and later \u201cHyashi et al. first reported the Na3PS4-based glass\u2212ceramic electrolyte\u2026\u201d). Therefore the extracted target formula Na3PS4 is supported, even though the alleged provenance page number does not match this text snippet.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "tetragonal Na3PS4",
+      "molecular_formula": "Na3PS4",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Page 1697"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The document explicitly mentions the sulfide electrolyte formula \u201cNa3PS4\u201d (e.g., Page 5: \u201cA class of lithium analogue sulfides such as Na3PS4\u2026\u201d; also Page 8: \u201cNa3PS4-based glass\u2212ceramic electrolyte\u2026\u201d and Table 1 lists \u201cNa3PS4\u201d). Thus the extracted Target Formula Na3PS4 is supported, though the alleged provenance \u201cPage 1697\u201d is incorrect for this source.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Na2S",
+      "molecular_formula": "Na2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "part of 75Na2S-25P2S5 glass precursor",
+      "prov": [
+        "Page 1697"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.87,
+        "reasoning": "The full text mentions Na2S (e.g., \u201c75Na2S-25P2S5 glass\u201d and related discussion of Na3PS4 glass-ceramic synthesis), but it does not provide an explicit standalone \u201camount of Na2S\u201d in a specific experimental procedure beyond describing compositional ratios as part of cited literature. Thus, the identification of the chemical (Na2S) is supported, and the statement that the amount is not specified in the text (as a single explicit amount entry) is also supported by omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "part of 75Na2S-25P2S5 glass precursor",
+      "prov": [
+        "Page 1697"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.94,
+        "reasoning": "The provided full text (Langmuir 2024, 40, 16690\u201316712) does not mention P2S5 anywhere. It does mention P2S5 only indirectly as part of a glass composition written as \u201c75Na2S-25P2S5 glass\u201d, but that is not the standalone chemical identity \u201cP2S5\u201d, nor does the paper specify an amount of P2S5 used as a reagent. Therefore the extracted chemical identity \u201cP2S5\u201d is not supported by the text, and the claimed provenance page is inconsistent with the document page numbering provided.",
+        "suggested_fix": "Chemical identity should be changed to either (a) \u201cP2S5: not mentioned\u201d if you are extracting reagents, or (b) if extracting compositions, use \u201c75Na2S-25P2S5 glass (25 mol% P2S5 component)\u201d with no additional reagent amount specified."
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Heat treatment of 75Na2S-25P2S5 glass to obtain different Na3PS4 polymorphs",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "temperature": {
+              "value": 543,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Heating at 270 \u00b0C yields cubic Na3PS4",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.78,
+              "reasoning": "The full text is a review of inorganic electrolytes and discusses concepts such as sintering temperatures, heating\u2013cooling processes, and molten infusion, but it does not explicitly state a general \u201cSynthesis Operation: heat\u201d as a synthesis step for a particular material. Mentions of \u201cheat\u201d occur in other contexts (battery operation temperatures, sintering, heat treatment/cofiring, melting sodium, etc.) rather than clearly labeling the synthesis operation as \u201cheat.\u201d",
+              "suggested_fix": "Not specified"
+            }
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "temperature": {
+              "value": 673,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Heating at 400 \u00b0C yields tetragonal Na3PS4",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.83,
+              "reasoning": "The paper is a review and does not describe a specific synthesis procedure with an operation explicitly labeled as \u201cheat.\u201d While it contains many mentions of elevated temperatures, sintering temperatures, \u201cheat treatment cofiring,\u201d and melting/thermal infusion in various cited works, there is no explicit, general \u201cSynthesis Operation: heat\u201d stated for a particular synthesized material in this document itself. Therefore the extracted value is too generic and not directly supported as an explicit synthesis operation.",
+              "suggested_fix": "Not specified (no single explicit synthesis operation given in the review text)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 1697"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Thermal conversion of Na2S/P2S5 glass precursor to Na3PS4 polymorphs",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.87,
+          "reasoning": "The provided review text does discuss Na3PS4 polymorphs (cubic vs tetragonal) and mentions that Hayashi et al. obtained cubic/tetragonal Na3PS4 glass-ceramics from a 75Na2S\u201325P2S5 glass at different temperatures (270 \u00b0C and 400 \u00b0C). However, the extracted phrase \u201cThermal conversion of Na2S/P2S5 glass precursor to Na3PS4 polymorphs\u201d is not explicitly stated as a workflow/timeline step in this paper, and the precursor is described as a specific composition (75Na2S\u201325P2S5), not generically \u201cNa2S/P2S5 glass precursor.\u201d This reads like a paraphrase/inference rather than a verbatim workflow timeline item from the source document.",
+          "suggested_fix": "If the intent is to capture the described process, use the wording supported by the text: \u201cHayashi et al. reported Na3PS4-based glass\u2013ceramic electrolyte; cubic and tetragonal phases were obtained from 75Na2S\u201325P2S5 glass by heat treatment at 270 \u00b0C and 400 \u00b0C, respectively.\u201d"
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing time/atmosphere details for heat treatment",
+        "excerpt": "cubic and tetragonal phases of 75Na2S-25P2S5 glass at 270 and 400\u00b0C",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The source text does mention \u201ccubic \u2026 and tetragonal phases of 75Na2S-25P2S5 glass at 270 and 400 \u00b0C\u201d (Page 8). However, the extracted workflow-ambiguity claim (\u201cMissing time/atmosphere details for heat treatment\u201d) is not supported by this excerpt because the document does not frame this as a heat-treatment step needing time/atmosphere; it is describing phases obtained at those temperatures without explicitly stating a heat-treatment duration or atmosphere. The paper indeed does not provide time/atmosphere details for that phase formation statement, but the extraction\u2019s \u2018excerpt\u2019 alone doesn\u2019t evidence that a heat treatment occurred or that such parameters were required/omitted\u2014only temperatures are given.",
+          "suggested_fix": "Revise to: \u201cStatement gives only temperatures (270 and 400 \u00b0C) for formation of cubic/tetragonal phases of 75Na2S-25P2S5 glass; no duration or atmosphere is provided in the review text.\u201d"
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 0.0002,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "superionic cubic Na3PS4 shows high conductivity",
+      "prov": [
+        "Page 1697"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The document contains a value of ionic conductivity 2.0 \u00d7 10\u22124 S cm\u22121 for cubic Na3PS4 (page labeled 8) and several other conductivity values in Table 1, but no statement of 0.0002 S cm\u22121 as a general/standalone \u201cionic conductivity measurement\u201d for the paper itself. The extracted value appears to be taken from a specific example (Na3PS4) rather than a characterization result of this review, and the alleged provenance \u201cPage 1697\u201d does not match the provided page numbering (16690\u201316712).",
+        "suggested_fix": "If the intent is Na3PS4 (cubic) conductivity: 2.0 \u00d7 10\u22124 S cm\u22121 (reported for optimized cubic Na3PS4 from 75Na2S-25P2S5). Alternatively, Table 1 lists Na3PS4 = 4.6 \u00d7 10\u22124 S cm\u22121 (RT). Clarify which material/condition is being extracted."
+      }
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 184,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null,
+    "_llm_flag": {
+      "is_supported": false,
+      "confidence": 0.86,
+      "reasoning": "The source text mentions a \u201chigh specific capacity \u2026 of 184 mA h kg\u22121\u201d for an all-solid-state sodium battery (Na4C6O6:Na3PS4:carbon 4:5:1) in the discussion around Figure 10. This is per kilogram (mAh kg\u22121), not per gram (mAh g\u22121). Elsewhere the document reports capacities in mAh g\u22121 (e.g., 110 mAh g\u22121, 94 mAh g\u22121, etc.), but no statement of a final capacity of 184 mAh g\u22121 was found. Therefore the extracted unit/value combination is not explicitly supported.",
+      "suggested_fix": "184 mAh kg\u22121 (as written in the text), or if the intended metric is per gram: 0.184 mAh g\u22121 (unit conversion), but the paper itself reports 184 mAh kg\u22121."
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

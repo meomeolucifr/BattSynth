@@ -1,0 +1,290 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "THE ARGYRODITES - A NEW FAMILY OF TETRAHEDRALLY CLOSE-PACKED STRUCTURES",
+    "doi": "",
+    "authors": ["W.F. Kuhs", "R. Nitsche", "K. Scheunemann"],
+    "journal": "Materials Research Bulletin",
+    "year": 1979
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "inorganic solid-state synthesis and characterization",
+    "tags": ["argyrodite", "tetrahedrally close-packed", "ionic conductor", "non-linear optics"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Cu6PS5Cl",
+      "molecular_formula": "Cu6PS5Cl",
+      "intended_role": "product",
+      "prov": ["Page 246, Experimental Results"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Cu6PS5Br",
+      "molecular_formula": "Cu6PS5Br",
+      "intended_role": "product",
+      "prov": ["Page 246, Experimental Results"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Cu6PS5I",
+      "molecular_formula": "Cu6PS5I",
+      "intended_role": "product",
+      "prov": ["Page 246, Experimental Results"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Argyrodite (general)",
+      "molecular_formula": "A_{(12−n−x)/m} B_n X_{6−x} Y_x",
+      "intended_role": "product",
+      "prov": ["Page 242, Crystal chemistry"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "As2O3",
+      "molecular_formula": "As2O3",
+      "ontology": {
+        "role": "internal standard",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as internal standard (a = 11.075 Å) in Guinier powder photographs",
+      "prov": ["Page 244, Experimental Results"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Solid-state synthesis of argyrodite compounds from elements.",
+        "operations": [
+          {
+            "action": "load",
+            "parameters": {
+              "inputs": [],
+              "container": "quartz ampoule"
+            },
+            "notes": "Stoichiometric amounts of high-purity elements, total mass ≈ 8 g, were placed in ampoule.",
+            "prov": ["Page 244, Experimental Results"]
+          },
+          {
+            "action": "evacuate_seal",
+            "parameters": {},
+            "notes": "Ampoules were evacuated and flame-sealed.",
+            "prov": ["Page 244, Experimental Results"]
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {
+              "value": 8640,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "temperature_end": {
+              "value": 973,
+              "unit": "K"
+            },
+            "notes": "Heated 6 days at 600–700 °C.",
+            "prov": ["Page 244, Experimental Results"]
+          },
+          {
+            "action": "cool",
+            "parameters": {},
+            "notes": "Cooled to room temperature; small crystals obtained.",
+            "prov": ["Page 244, Experimental Results"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum (sealed ampoule)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 244, Experimental Results"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Growth of larger crystals of selected argyrodites by chemical vapour transport (CVT).",
+        "operations": [
+          {
+            "action": "chemical_vapour_transport",
+            "parameters": {},
+            "notes": "Details not given in this paper; referenced elsewhere.",
+            "prov": ["Page 244, Experimental Results"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 244, Experimental Results"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of polycrystalline argyrodites in sealed ampoules at 600–700 °C for 6 days."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Optional CVT growth of larger single crystals."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Reactant identities and amounts not specified",
+        "excerpt": "\"stoichiometric amounts of high-purity elements (total charge about 8 g)\""
+      },
+      {
+        "issue": "CVT conditions (transport agent, temperature gradient) not provided",
+        "excerpt": "\"The growth of larger crystals of selected argyrodites by chemical vapour transport has been described elsewhere (1, 2).\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Guinier powder X-ray diffraction",
+      "parameters": {
+        "radiation": "Cu Kα (implied)",
+        "internal_standard": "As2O3 (a = 11.075 Å)"
+      },
+      "results": [],
+      "interpretation": "Used to identify cubic F-centred lattices and low-temperature distortions.",
+      "prov": ["Page 244, Experimental Results"]
+    },
+    {
+      "method": "Differential Thermal Analysis (DTA)",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Determined phase-transition temperatures (see Table 1).",
+      "prov": ["Page 244, Experimental Results"]
+    },
+    {
+      "method": "Polarizing microscopy (hot stage)",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Observed phase transitions in single crystals.",
+      "prov": ["Page 244, Experimental Results"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "instrument": "Hewlett Packard 4270A automatic AC bridge",
+        "frequencies": ["100 kHz", "1 MHz"],
+        "electrodes": "CuS ionically conductive electrodes",
+        "geometry": "sandwiched pellets"
+      },
+      "results": [
+        {
+          "sample_id": "target_1",
+          "metric": "total conductivity",
+          "value": 4.7e-4,
+          "unit": "(Ω cm)⁻¹",
+          "conditions": {
+            "temperature": {
+              "value": 293,
+              "unit": "K"
+            }
+          }
+        },
+        {
+          "sample_id": "target_1",
+          "metric": "total conductivity",
+          "value": 1.0e-2,
+          "unit": "(Ω cm)⁻¹",
+          "conditions": {
+            "temperature": {
+              "value": 473,
+              "unit": "K"
+            }
+          }
+        },
+        {
+          "sample_id": "target_1",
+          "metric": "activation energy",
+          "value": 0.22,
+          "unit": "eV",
+          "conditions": {}
+        },
+        {
+          "sample_id": "target_2",
+          "metric": "activation energy",
+          "value": 0.35,
+          "unit": "eV",
+          "conditions": {}
+        },
+        {
+          "sample_id": "target_3",
+          "metric": "activation energy",
+          "value": 0.35,
+          "unit": "eV",
+          "conditions": {}
+        }
+      ],
+      "interpretation": "Room-temperature conductivity is predominantly ionic (electronic fraction <1 %).",
+      "prov": ["Page 246, Physical Properties", "Figure 1 caption"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis of conductivity",
+        "results": [
+          {
+            "equation": "ln(σ) = ln(σ0) − Ea/(kT)",
+            "value": null,
+            "unit": "",
+            "notes": "Activation energies extracted: 0.22 eV for Cu6PS5Cl; 0.35 eV for Cu6PS5Br/Cu6PS5I"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T10:20:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

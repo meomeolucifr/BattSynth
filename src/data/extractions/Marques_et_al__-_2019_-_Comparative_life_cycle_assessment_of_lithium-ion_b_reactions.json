@@ -1,0 +1,229 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Comparative life cycle assessment of lithium-ion batteries for electric vehicles addressing capacity fade",
+    "doi": "10.1016/j.jclepro.2019.05.026",
+    "authors": [
+      "Pedro Marques",
+      "Rita Garcia",
+      "Luiz Kulay",
+      "Fausto Freire"
+    ],
+    "journal": "Journal of Cleaner Production",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["life cycle assessment", "lithium-ion batteries", "LiMn2O4", "LiFePO4"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiMn2O4 battery",
+      "molecular_formula": "LiMn2O4",
+      "intended_role": "product",
+      "prov": ["Table 1", "Page 788"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiFePO4 battery",
+      "molecular_formula": "LiFePO4",
+      "intended_role": "product",
+      "prov": ["Table 1", "Page 788"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiMn2O4 battery",
+      "molecular_formula": "LiMn2O4",
+      "ontology": {
+        "role": "product",
+        "category": "battery"
+      },
+      "amount": {
+        "value": 300000,
+        "unit": "g"
+      },
+      "notes": "Weight of complete 24 kWh battery pack",
+      "prov": ["Table 1", "Page 788"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiFePO4 battery",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "product",
+        "category": "battery"
+      },
+      "amount": {
+        "value": 368000,
+        "unit": "g"
+      },
+      "notes": "Weight of complete 24 kWh battery pack",
+      "prov": ["Table 1", "Page 788"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Battery end-of-life processing",
+        "operations": [
+          {
+            "action": "dismantle",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Initial manual/mechanical dismantling of battery packs",
+            "prov": ["Page 788"]
+          },
+          {
+            "action": "pyrometallurgical treatment",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "",
+            "prov": ["Page 788"]
+          },
+          {
+            "action": "hydrometallurgical treatment",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Metals recycled into new lithium-ion batteries",
+            "prov": ["Page 788"]
+          },
+          {
+            "action": "landfill_disposal",
+            "parameters": {},
+            "notes": "Remaining scrap sent to landfill",
+            "prov": ["Page 788"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 788"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "End-of-life processing of LiMn2O4 and LiFePO4 battery packs including dismantling and metallurgical recycling"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear unit notation 'Wh km/C01' for energy consumption and density values",
+        "excerpt": "Energy density (Wh km/C01) 114 93",
+        "prov": ["Table 1", "Page 788"]
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Capacity fade modelling",
+      "parameters": {
+        "temperature": 295,
+        "unit_temperature": "K",
+        "depth_of_discharge": 70,
+        "unit_depth_of_discharge": "%"
+      },
+      "results": [
+        {
+          "metric": "cycles_to_70%_capacity (LiMn2O4)",
+          "value": {
+            "light_use": 1555,
+            "moderate_use": 1472,
+            "intensive_use": 1394
+          },
+          "unit": "cycles"
+        },
+        {
+          "metric": "cycles_to_70%_capacity (LiFePO4)",
+          "value": {
+            "light_use": 2022,
+            "moderate_use": 1914,
+            "intensive_use": 1812
+          },
+          "unit": "cycles"
+        }
+      ],
+      "interpretation": "LiFePO4 batteries provide ~30 % more cycles than LiMn2O4 under identical conditions.",
+      "prov": ["Table 3", "Page 789"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Life Cycle Assessment (LCA)",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": ["Multiple pages (788-794)"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

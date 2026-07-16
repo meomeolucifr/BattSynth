@@ -1,0 +1,981 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Introducing high-valence elements into cobalt-free layered cathodes for practical lithium-ion batteries",
+    "doi": "10.1038/s41560-022-01106-6",
+    "authors": [
+      "Geon-Tae Park",
+      "Been Namkoong",
+      "Su-Bin Kim",
+      "Jun Liu",
+      "Chong S. Yoon",
+      "Yang-Kook Sun"
+    ],
+    "journal": "Nature Energy",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": [
+      "Li-ion battery",
+      "Co-free cathode",
+      "Mo doping",
+      "Ni-rich layered oxide"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li(Ni0.9Mn0.1)O2",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank, but the paper explicitly states multiple target/cathode formulas throughout the text, especially in the Abstract and Methods (for example, Li(Ni0.9Mn0.1)O2 and Li(Ni0.89Mn0.1Mo0.01)O2 (Mo\u2013NM90)). Therefore, leaving the field empty is not supported by the document.",
+        "suggested_fix": "If the intended target is the main material studied: Li(Ni0.89Mn0.1Mo0.01)O2 (Mo\u2013NM90). If the intended undoped baseline target: Li(Ni0.9Mn0.1)O2 (NM90)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li(Ni0.89Mn0.1Mo0.01)O2",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Methods",
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The field 'Target Formula' has an empty extracted value, but the paper explicitly states the target cathode compositions/formulae multiple times (e.g., Li(Ni0.9Mn0.1)O2 and the Mo-doped Li(Ni0.89Mn0.1Mo0.01)O2 / Li(Ni0.89Mn0.1Mo0.01)O2 (Mo\u2013NM90)). Therefore, leaving this field blank is not supported by the source text.",
+        "suggested_fix": "Set Target Formula to the main target material formula reported, e.g., Li(Ni0.9Mn0.1)O2 (NM90); for the optimized doped target: Li(Ni0.89Mn0.1Mo0.01)O2 (Mo\u2013NM90)."
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li(Ni0.89Mn0.1X0.01)O2 (X = Co, Al, Ti, Nb, Ta, W)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states multiple target/cathode formulas throughout the text (e.g., Li(Ni0.9Mn0.1)O2; Li(Ni0.89Mn0.1Mo0.01)O2; also other doped variants in the Methods). The extracted value for \u201cTarget Formula\u201d is blank, so it is not supported as a correct extraction of a missing/unspecified value.",
+        "suggested_fix": "If the intended target is the main undoped material: Li(Ni0.9Mn0.1)O2. If the intended target is the primary improved/doped cathode highlighted: Li(Ni0.89Mn0.1Mo0.01)O2 (Mo\u2013NM90)."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "NiSO4\u00b76H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2.0 M aqueous solution used",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The Methods section explicitly specifies the amount/concentration of NiSO4\u00b76H2O used: it states an aqueous solution of \"2.0 M NiSO4\u00b76H2O\" was used as starting material. Therefore the extracted claim that the amount is \"Not specified in text\" is incorrect. (The chemical identity NiSO4\u00b76H2O is supported, but the amount is in fact specified.)",
+        "suggested_fix": "NiSO4\u00b76H2O | Amount: 2.0 M (aqueous solution concentration)"
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "MnSO4\u00b7H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of 2.0 M solution, Ni:Mn = 90:10",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The Methods section explicitly specifies MnSO4\u00b7H2O as a starting material and gives its concentration (part of an aqueous solution of 2.0 M NiSO4\u00b76H2O and MnSO4\u00b7H2O) with a Ni:Mn molar ratio of 90:10. Therefore, the claim that the amount is \u201cNot specified in text\u201d is not supported.",
+        "suggested_fix": "MnSO4\u00b7H2O | Amount: used in starting aqueous solution with 2.0 M NiSO4\u00b76H2O and MnSO4\u00b7H2O at Ni:Mn molar ratio = 90:10 (MnSO4\u00b7H2O concentration not given explicitly)."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "NH4OH (aq.)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "complexing agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "10.5 M solution pumped; NH4OH:TM molar ratio = 1.2:1",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The Methods section explicitly specifies the NH4OH concentration and molar ratio: it states that \u201c10.5 M NH4OH (aq.) (NH4OH:TM molar ratio = 1.2:1) were pumped separately into the reactor.\u201d Therefore, the amount is not missing from the text, contrary to the extracted value.",
+        "suggested_fix": "NH4OH (aq.) | Amount: 10.5 M (also given as NH4OH:TM molar ratio = 1.2:1)"
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "NaOH (aq.)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precipitating agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "4.0 M solution pumped; NaOH:TM molar ratio = 2:1",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section explicitly lists the use of NaOH (aq.) during co-precipitation but does not specify a single added volume or mass amount for that NaOH feed. It states NaOH (aq.) is present in the reactor and that a 4.0 M NaOH(aq.) solution was pumped in (with NaOH:TM molar ratio = 2:1), but no absolute amount is provided. Therefore, the extracted claim that the amount is not specified is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section explicitly states that the reactor contained \u201ca solution of deionized water, NH4OH (aq.) \u2026 and NaOH (aq.)\u201d, confirming the chemical identity (deionized water). No quantity/volume for the deionized water is provided anywhere in the Methods text; only the reactor volume (47 l) and concentrations/ratios for other reagents are specified. Therefore, \u201cAmount: Not specified in text\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "N2 gas",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used to purge reactor",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The Methods explicitly state that the reactor was continuously purged with inert N2 gas to remove O2 (\u201cThe reactor was continuously purged with inert N2 gas to remove any O2.\u201d). No flow rate, pressure, volume, or other quantitative amount for N2 is provided anywhere in the provided text, so \u201cAmount: Not specified in text\u201d is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiOH\u00b7H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "lithiation agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Li:(Ni+Mn):X molar ratio 1.01:1\u2212x:x",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.83,
+        "reasoning": "The Methods section explicitly states the precursor was mixed with \u201cLiOH\u00b7H2O (Sigma-Aldrich)\u201d but does not provide any mass/volume or absolute amount of LiOH\u00b7H2O used\u2014only a molar ratio target \u201cLi:(Ni+Mn):X = 1.01:1\u2212x:x\u201d. Therefore, the chemical identity is supported and the extractor\u2019s \u201cAmount: Not specified in text\u201d is also supported (the document lacks an explicit amount for LiOH\u00b7H2O).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Co2O3",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used when x=0.01 Co",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions Co2O3 in the Methods as a dopant source, but it also specifies the amount: doped cathodes use x = 0.01 in a Li:(Ni+Mn):X molar ratio of 1.01:1\u2212x:x, i.e., 1 mol% dopant. Therefore, the extracted statement 'Amount: Not specified in text' is incorrect.",
+        "suggested_fix": "Co2O3 used as dopant precursor at x = 0.01 (1 mol% Co) in Li:(Ni+Mn):X = 1.01:1\u2212x:x mixture (Methods, synthesis section)."
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Al(OH)3\u00b73H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "In the Methods section, Al(OH)3\u00b73H2O is explicitly listed as a dopant source: the precursor was mixed with LiOH\u00b7H2O and (for doped cathodes) \u201cCo2O3, Al(OH)3\u00b73H2O, TiO2, Nb2O5, Ta2O5, WO3 or MoO3 \u2026 to achieve a Li:(Ni+Mn):X molar ratio of 1.01:1\u2212x:x, where x=0.01 for the doped cathode materials (X=Co, Al, Ti, Nb, Ta, W and Mo).\u201d This provides an explicit amount in molar ratio terms (x=0.01, i.e., 1 mol% dopant in the target stoichiometry), so the claim \u201cAmount: Not specified in text\u201d is not correct.",
+        "suggested_fix": "Al(OH)3\u00b73H2O | Amount: dopant fraction x=0.01 (target 1 mol% Al), with Li:(Ni+Mn):Al molar ratio 1.01:0.99:0.01 for Al\u2013NM90 powder mixture."
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "TiO2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section lists TiO2 as a dopant precursor used \u201cin the case of doped cathodes\u201d alongside other oxides/hydroxides (\u201cCo2O3, Al(OH)3\u00b73H2O, TiO2, Nb2O5, Ta2O5, WO3 or MoO3\u201d). However, the text does not provide a mass, volume, or explicit amount of TiO2; instead it gives only the target molar ratio/dopant fraction (x=0.01 for doped materials) without specifying a concrete TiO2 quantity. Therefore, 'TiO2 | Amount: Not specified in text' is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Nb2O5",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly specifies the amount of Nb2O5 used as the Nb dopant source during synthesis: in Methods, the precursor was mixed with LiOH\u00b7H2O and \u201c(in the case of doped cathodes) \u2026 Nb2O5 \u2026 to achieve a Li:(Ni+Mn):X molar ratio of 1.01:1\u2212x:x, where x=0.01 for the doped cathode materials (X=\u2026 Nb \u2026)\u201d. This corresponds to 1 mol% Nb dopant (x = 0.01), so the amount is specified and the extracted \u201cNot specified in text\u201d is incorrect.",
+        "suggested_fix": "Nb2O5 | Amount: used to provide 1 mol% dopant (x=0.01) in Li:(Ni+Mn):X molar ratio 1.01:1\u2212x:x (i.e., 1 mol% Nb via Nb2O5 in synthesis)."
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Ta2O5",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.83,
+        "reasoning": "The Methods section explicitly lists Ta2O5 as a dopant precursor used to prepare Ta\u2013NM90: \u201c(in the case of doped cathodes) Co2O3, Al(OH)3\u00b73H2O, TiO2, Nb2O5, Ta2O5, WO3 or MoO3 \u2026 to achieve a Li:(Ni+Mn):X molar ratio of 1.01:1\u2212x:x, where \u2026 x = 0.01 for the doped cathode materials (X = \u2026 Ta \u2026).\u201d However, the paper does not provide an explicit mass/grams/volume amount of Ta2O5 added; it only specifies the molar ratio/dopant level (1 mol% relative to transition metals). Therefore, \u201cTa2O5 | Amount: Not specified in text\u201d is supported under the null-handling rule for missing explicit amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "WO3",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "WO3 is explicitly mentioned in the Methods as a dopant precursor (\u201c...Co2O3, Al(OH)3\u00b73H2O, TiO2, Nb2O5, Ta2O5, WO3 or MoO3...\u201d) and the dopant level is explicitly given as x = 0.01 (1 mol%) for doped cathode materials. Therefore, the amount is specified in the text and the extraction claim \u201cAmount: Not specified in text\u201d is incorrect.",
+        "suggested_fix": "WO3 | Amount: used as W dopant precursor at x = 0.01 (1 mol%) in Li(Ni0.89Mn0.1W0.01)O2 synthesis (Li:(Ni+Mn):X = 1.01:1\u2212x:x; x=0.01)."
+      }
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "MoO3",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.83,
+        "reasoning": "The paper explicitly states MoO3 is used as a dopant source in the Methods, but it also provides the quantitative dopant amount: doped cathodes use x = 0.01 in the Li:(Ni+Mn):X molar ratio (1.01:1\u2212x:x), corresponding to 1 mol% dopant. Therefore, the claim 'Amount: Not specified in text' is contradicted by the text.",
+        "suggested_fix": "MoO3 | Amount: 1 mol% (x = 0.01 dopant level; Li:(Ni+Mn):Mo molar ratio 1.01:0.99:0.01 for Mo\u2013NM90 synthesis)"
+      }
+    },
+    {
+      "chemical_id": "chem_15",
+      "name": "O2",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "calcination atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section states: \u201cThe reactor was continuously purged with inert N2 gas to remove any O2.\u201d This explicitly mentions O2 but does not provide any quantitative amount (no concentration, flow rate, partial pressure, etc.). Therefore the extracted identity (O2) is present and the extractor correctly noted the amount as not specified.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Co-precipitation of (Ni0.9Mn0.1)(OH)2 precursor",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ],
+              "concentration": "2.0 M",
+              "ratio_note": "Ni:Mn = 90:10"
+            },
+            "notes": "Aqueous metal sulfate solution prepared",
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "atmosphere": "ambient",
+            "pressure": {
+              "value": null,
+              "unit": ""
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.72,
+              "reasoning": "The Methods section explicitly states that the precursor was \u201cmixed with LiOH\u00b7H2O \u2026 and (in the case of doped cathodes) Co2O3, Al(OH)3\u00b73H2O, TiO2, Nb2O5, Ta2O5, WO3 or MoO3\u2026\u201d. This supports that a synthesis operation involved mixing. The paper does not provide an explicit step labeled exactly \u201cmix\u201d as a standalone operation name, but the described procedure clearly includes mixing as an operation.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "pump",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ],
+              "destination": "batch reactor (47 L)"
+            },
+            "notes": "Into reactor containing water, NH4OH, NaOH; reactor purged with N2",
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "atmosphere": "N2 (chem_6)",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.83,
+              "reasoning": "The paper\u2019s Methods section explicitly states that the aqueous starting solution and additional NaOH/NH4OH solutions \u201cwere pumped into a reactor\u201d during co-precipitation synthesis (\u201cThis aqueous solution was pumped into a reactor\u2026\u201d, \u201cwere pumped separately into the reactor.\u201d). This supports the synthesis operation being a pump-based addition/feeding step.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "pump",
+            "parameters": {
+              "inputs": [
+                "chem_4"
+              ],
+              "concentration": "4.0 M",
+              "molar_ratio": "NaOH:TM = 2:1"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Pumped separately",
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.83,
+              "reasoning": "The Methods section explicitly states that the aqueous solution and other reagents were \u201cpumped into a reactor\u201d and that NaOH and NH4OH were \u201cpumped separately into the reactor\u201d during co-precipitation synthesis. This supports that a pump operation was used in the synthesis process.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "pump",
+            "parameters": {
+              "inputs": [
+                "chem_3"
+              ],
+              "concentration": "10.5 M",
+              "molar_ratio": "NH4OH:TM = 1.2:1"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.78,
+              "reasoning": "The Methods section explicitly describes solutions being \u201cpumped into a reactor\u201d and NaOH/NH4OH being \u201cpumped separately into the reactor\u201d during co-precipitation synthesis (\u201cThis aqueous solution was pumped into a reactor\u2026 Simultaneously\u2026 were pumped separately into the reactor.\u201d). This supports the presence of a pumping operation in the synthesis procedure.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "precipitate",
+            "parameters": {},
+            "notes": "Formation of hydroxide precursor",
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.86,
+              "reasoning": "The paper describes the precursor synthesis explicitly as being done \u201cvia the co-precipitation method\u201d and states \u201cThe formed precursor was washed, filtered and vacuum dried\u2026\u201d. It does not explicitly use the operation term \u201cprecipitate\u201d (as a synthesis operation) anywhere in the provided text. Therefore the extracted value is not explicitly supported, even though precipitation/co-precipitation is the underlying method.",
+              "suggested_fix": "co-precipitation (co-precipitation method)"
+            }
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": [
+                "chem_5"
+              ]
+            },
+            "notes": "",
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.96,
+              "reasoning": "The Methods section explicitly states: \u201cThe formed precursor was washed, filtered and vacuum dried at 110\u2009\u00b0C.\u201d This directly supports the synthesis operation \u2018wash\u2019 occurring during precursor processing.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The Methods section explicitly states: \u201cThe formed precursor was washed, filtered and vacuum dried at 110 \u00b0C.\u201d This describes a filtration step during synthesis, supporting the extracted synthesis operation \u201cfilter.\u201d",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "temperature": {
+                "value": 383,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "vacuum dried",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.88,
+              "reasoning": "The Methods section explicitly states: \u201cThe formed precursor was washed, filtered and vacuum dried at 110\u2009\u00b0C.\u201d This supports the synthesis operation being a drying step (\u201cdry\u201d).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.93,
+            "reasoning": "The Methods section explicitly states: \u201cThe reactor was continuously purged with inert N2 gas to remove any O2,\u201d describing the synthesis environment (inert nitrogen atmosphere) during precursor co-precipitation. This supports the extracted synthesis atmosphere as N2 (at least for the precursor synthesis step).",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Lithiation and doping mix",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "precursor_from_step_1",
+                "chem_7",
+                "dopant_oxide"
+              ]
+            },
+            "notes": "Li:(Ni+Mn):X = 1.01:1\u2212x:x, x=0 or 0.01",
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.78,
+              "reasoning": "The Methods section explicitly describes mixing steps in the synthesis: the precursor was \"mixed with LiOH\u00b7H2O\" and dopant sources to achieve a target molar ratio, and earlier the reactor contains deionized water/NH4OH/NaOH with solutions pumped in. This supports that a key synthesis operation is mixing.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calcination to form final cathode oxides",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "temperature": {
+                "value": 1043,
+                "unit": "K"
+              },
+              "atmosphere": "O2",
+              "heating_rate": {
+                "value": 2,
+                "unit": "K min-1"
+              },
+              "cooling_rate": {
+                "value": 2,
+                "unit": "K min-1"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Tube furnace",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.95,
+              "reasoning": "The Methods section explicitly states: \u201cThe powder mixtures were calcined in a tube furnace \u2026 at 770\u2009\u00b0C under an O2 atmosphere\u2026\u201d. This directly supports that a calcination step (i.e., \u2018calcine\u2019) was part of the synthesis operation.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2 (chem_15)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.96,
+            "reasoning": "The Methods section explicitly states that the powder mixtures were calcined \u201cat 770\u2009\u00b0C under an O2 atmosphere,\u201d which directly specifies the synthesis atmosphere as O2. It also notes the reactor was purged with inert N2 to remove O2 during precursor co-precipitation, but the key calcination/synthesis step is under O2.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Co-precipitation of hydroxide precursor (Ni0.9Mn0.1)(OH)2",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The Methods section explicitly states: \u201c(Ni0.9Mn0.1)(OH)2 (cathode material precursor) was synthesized via the co-precipitation method\u2026\u201d. This directly supports the extracted workflow step \u201cCo-precipitation of hydroxide precursor (Ni0.9Mn0.1)(OH)2.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Mixing precursor with LiOH\u00b7H2O and dopant oxides",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The Methods section explicitly states that to prepare each cathode material, the precursor ((Ni0.9Mn0.1)(OH)2) was mixed with LiOH\u00b7H2O and, for doped cathodes, dopant oxides (Co2O3, TiO2, Nb2O5, Ta2O5, WO3, MoO3; also Al source Al(OH)3\u00b73H2O). This directly supports the workflow step described as mixing precursor with LiOH\u00b7H2O and dopant oxides (noting one dopant uses a hydroxide hydrate rather than an oxide).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Calcination at 770 \u00b0C under O2 to yield final Li(Ni0.9Mn0.1Xx)O2 cathode material",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.83,
+          "reasoning": "The paper does state that the powder mixtures were calcined at 770\u0000C under an O2 atmosphere (Methods, Page 8). However, the extracted value adds details not stated: it claims this calcination step yields the final Li(Ni0.9Mn0.1Xx)O2 cathode material, and it uses a generic formula Li(Ni0.9Mn0.1Xx)O2. In the Methods, the products are explicitly listed as Li(Ni0.9Mn0.1)O2 (x=0) and specific doped compositions Li(Ni0.89Mn0.1X0.01)O2 (X = Co, Al, Ti, Nb, Ta, W, Mo), not Li(Ni0.9Mn0.1Xx)O2. Also, the workflow includes other steps (precursor synthesis, mixing with LiOH\u001b7H2O and dopant sources, then calcination), so the standalone statement \"calcination ... to yield final ...\" is an overgeneralized timeline claim not explicitly phrased in the text.",
+          "suggested_fix": "Powder mixtures were calcined in a tube furnace at 770 \u0000C under an O2 atmosphere (heating/cooling rate: 2 \u0000C min\u001b91) to prepare NM90 and doped cathodes (e.g., Li(Ni0.9Mn0.1)O2 and Li(Ni0.89Mn0.1X0.01)O2, X = Co/Al/Ti/Nb/Ta/W/Mo)."
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Calcination duration not specified",
+        "excerpt": "The powder mixtures were calcined in a tube furnace... at 770 \u00b0C under an O2 atmosphere (heating and cooling rate: 2 \u00b0C min\u22121).",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "In the Methods section, the synthesis step states: \u201cThe powder mixtures were calcined in a tube furnace \u2026 at 770 \u00b0C under an O2 atmosphere (heating and cooling rate: 2 \u00b0C min\u22121).\u201d No calcination holding time/duration (for example, \u2018for X h\u2019) is given anywhere in the provided full text. Therefore, the extracted issue \u201cCalcination duration not specified\u201d is supported by the document\u2019s omission.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Flow rates and precipitation time not provided",
+        "excerpt": "This aqueous solution was pumped into a reactor... Simultaneously, 4.0 M NaOH ... and 10.5 M NH4OH ... were pumped separately into the reactor.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "In the Methods section describing co-precipitation synthesis, the paper states that the metal sulfate solution and the 4.0 M NaOH / 10.5 M NH4OH solutions were \u201cpumped into the reactor\u201d (with molar ratios given), but it does not provide any numeric pumping flow rates (e.g., mL/min) nor any precipitation/reaction time or duration for the co-precipitation step. Therefore, the extracted workflow ambiguity (\u201cFlow rates and precipitation time not provided\u201d) is supported by the document\u2019s omission of those parameters.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu K\u03b1",
+        "2theta_range": "10\u2013130\u00b0",
+        "step": "0.02\u00b0"
+      },
+      "results": [],
+      "interpretation": "Used for crystal structure identification and Rietveld refinement",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly reports using XRD for crystal-structure characterization in the Methods (\u201cThe crystal structures\u2026 were characterized by XRD\u2026\u201d, with instrument and scan conditions) and discusses XRD-derived cation-mixing estimates plus in situ XRD. Therefore, Characterization: XRD is present in the source text, but the extracted value is an empty list ([]), which incorrectly implies no XRD characterization was used/reported.",
+        "suggested_fix": "Replace [] with an affirmative XRD entry, e.g., [\"XRD (Cu K\u03b1; Empyrean PANalytical; 2\u03b8=10\u2013130\u00b0, step 0.02\u00b0; Rietveld refinement FullProf)\", \"in situ XRD (PIXcel 1D detector)\"]"
+      }
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "primary particle morphology",
+          "value": "ultrafine grains (<500 nm) for Mo\u2013NM90",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results Fig. 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.88,
+        "reasoning": "The text explicitly states that reducing primary particle size to an ultrafine scale \u201c(<500 nm)\u201d is effective, and then discusses SEM results in relation to Fig. 2 showing that high-valence doped NM90 (including Mo\u2013NM90) has \u201cmuch more refined and elongated\u201d primary particles (pages 3\u20134; Fig. 2b includes Mo\u2013NM90 SEM). This supports the claim that Mo\u2013NM90 exhibits ultrafine-grained/refined primary particle morphology consistent with <500 nm ultrafine grains, although the paper does not directly quantify Mo\u2013NM90 primary particle size as <500 nm in Fig. 2 caption itself.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TEM/SAED",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "cation ordering",
+          "value": "enhanced in Mo\u2013NM90",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results Fig. 4"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly states that cation ordering is enhanced in Mo\u2013NM90. In the Abstract (page 1): \u201cEnhanced cation ordering induced by the presence of Mo6+\u2026\u201d. In the main text (page 6): \u201c...confirming the enhanced cation ordering of the Mo\u2013NM90 cathode.\u201d This is also consistent with TEM/SAED/FFT discussion around Fig. 4d\u2013e showing clear superlattice diffraction spots for charged Mo\u2013NM90 indicating it is largely cation ordered. The alleged provenance \u2018Results Fig. 4\u2019 is broadly consistent with the Fig. 4 discussion, though the most direct wording also appears outside the figure caption (and in the abstract).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "DSC",
+      "parameters": {
+        "heating_rate": "5 K min-1",
+        "temperature_range": "323\u2013623 K"
+      },
+      "results": [],
+      "interpretation": "Thermal stability of Mo\u2013NM90 exceeds Co\u2013NM90",
+      "prov": [
+        "Supplementary Fig. 16"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.74,
+        "reasoning": "The paper explicitly reports that differential scanning calorimetry (DSC) was performed and refers to results in \u201cSupplementary Fig. 16\u201d (thermal stability comparison), and the Methods section describes the DSC procedure (instrument, sample mass, electrolyte volume, temperature range, heating rate). Therefore, the characterization method \u201cDSC\u201d is present in the source text. The extracted value is an empty list ([]), which implies no DSC characterization was reported, and that is contradicted by the document.",
+        "suggested_fix": "Indicate that DSC characterization was performed. For example: [\"DSC (differential scanning calorimetry)\"], with details if needed: charged to 4.4 V; 7 mg sample + 100 \u00b5L electrolyte; 5 \u00b0C/min; 50\u2013350 \u00b0C; DSC 214 Polyma (Netzsch); results shown in Supplementary Fig. 16."
+      }
+    },
+    {
+      "method": "ICP-OES",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Elemental compositions confirmed",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly states in the Methods/Analytical approach that chemical compositions were determined by ICP-OES (\"inductively coupled plasma-optical emission spectrometry (ICP-OES; Optima 8300, PerkinElmer)\"). Therefore, the extracted value as an empty list ([]) is not supported; ICP-OES is indeed used/reported.",
+        "suggested_fix": "[\"ICP-OES (inductively coupled plasma\u2013optical emission spectrometry; Optima 8300, PerkinElmer)\"]"
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Oxidation states of dopants confirmed",
+      "prov": [
+        "Supplementary Fig. 4"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.83,
+        "reasoning": "The paper explicitly states that XPS was used to confirm dopant oxidation states and cites \u201cSupplementary Fig. 4\u201d for the XPS analysis (\u201cconfirmed by X-ray photoelectron spectroscopy (XPS) analysis (Supplementary Fig. 4)\u201d). The Methods also describe XPS instrumentation. Therefore, Characterization: XPS is present in the study, but the extracted value is an empty list, which is inconsistent with the document text.",
+        "suggested_fix": "Indicate that XPS characterization was performed (e.g., [\"XPS\"], or a boolean flag such as true). If the field expects details, note that XPS was used to confirm oxidation states of dopants (Supplementary Fig. 4)."
+      }
+    },
+    {
+      "method": "GITT",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li+ diffusion slows during H2\u2192H3 transition",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Supplementary Fig. 11"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly states: \u201cThe Li+ diffusion coefficient, estimated using the galvanostatic intermittent titration technique (GITT), shows that Li+ diffusion slows during the H2 \u2192 H3 phase transition (Supplementary Fig. 11).\u201d This directly supports the extracted metric \u201cLi+ diffusion slows during H2\u2192H3 transition.\u201d Although the extracted value/unit fields are blank, the qualitative claim is clearly supported by the text and the cited Supplementary Fig. 11.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical capacity measurement",
+        "results": [
+          {
+            "equation": "",
+            "value": 234,
+            "unit": "mAh g-1",
+            "notes": "Mo\u2013NM90 delivers at 4.4 V",
+            "prov": [
+              "Abstract"
+            ]
+          },
+          {
+            "equation": "",
+            "value": 86,
+            "unit": "%",
+            "notes": "Capacity retention after 1,000 cycles for Mo\u2013NM90 full cell with modified electrolyte",
+            "prov": [
+              "Abstract",
+              "Results Fig. 5b"
+            ]
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The paper explicitly lists multiple analysis/characterization methods under the \u201cAnalytical approach\u201d section (Methods), including ICP-OES, XPS, XRD (with Rietveld refinement), SEM, TEM/SAED/HR-TEM, DSC, PPMS magnetic measurements, in situ XRD, scanning transmission X-ray microscopy (STXM-XAS), and ToF-SIMS. Since the extracted value for \u201cAnalysis Method\u201d is blank, it is not supported by the source text (the information is present and should have been extracted).",
+          "suggested_fix": "Analytical approach includes: ICP-OES; XPS; XRD (Cu K\u03b1) with Rietveld refinement (FullProf); SEM (with cross-sectional polisher); ImageJ particle size analysis; micro-compression testing; TEM (Cs-corrected) incl. SAED/HR-TEM (FIB-prepared foils); DSC; PPMS magnetization; in situ XRD; STXM with XAS (Ni2+/Ni3+ mapping, MANTiS fitting); calendar ageing with ICP-OES; ToF-SIMS depth profiling."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 234,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1000,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.93,
+      "reasoning": "The paper explicitly reports performance after \u201c1,000 cycles\u201d (full cell capacity retention after 1,000 cycles; also mentioned in the abstract and Fig. 5 discussion). Thus a cycle-life value of 1000 cycles is directly supported by the source text.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

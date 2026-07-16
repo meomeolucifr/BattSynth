@@ -1,0 +1,396 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Methods to obtain excellent capacity retention in LiCoO2 cycled to 4.5 V",
+    "doi": "10.1016/j.electacta.2003.10.019",
+    "authors": ["Zhaohui Chen", "J.R. Dahn"],
+    "journal": "Electrochimica Acta",
+    "year": 2004
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["Li-ion battery", "positive electrode", "oxide coating", "capacity retention"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiCoO2 coated with ZrO2 (Sample A)",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "positive electrode material",
+      "prov": ["Section 2.1, Fig. 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiCoO2 coated with Al2O3 (Sample B)",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "positive electrode material",
+      "prov": ["Section 2.1, Fig. 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiCoO2 coated with SiO2 (Sample C)",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "positive electrode material",
+      "prov": ["Section 2.1, Fig. 1"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Heat-treated LiCoO2 (550 °C in air)",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "positive electrode material",
+      "prov": ["Section 5, Fig. 12"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Ground LiCoO2 (fresh surface)",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "positive electrode material",
+      "prov": ["Section 5, Fig. 11"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Commercial powders: FMC Lot #010301, #00642, #00643, #611061",
+      "prov": ["Throughout text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "ZrO2",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "coating material",
+        "category": "inorganic oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "<5 wt % of final coated sample",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "coating material",
+        "category": "inorganic oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "<5 wt % of final coated sample",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "SiO2",
+      "molecular_formula": "SiO2",
+      "ontology": {
+        "role": "coating material",
+        "category": "inorganic oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "<5 wt % of final coated sample",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "in EC/DEC (1:2 v/v)",
+      "prov": ["Section 6, Fig. 15"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium bis(oxalato)borate (LiBOB)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 0.7,
+        "unit": "M"
+      },
+      "notes": "in EC/DEC (1:2 v/v)",
+      "prov": ["Section 6, Fig. 15"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "degradation agent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used for 1-week exposure test",
+      "prov": ["Section 5, Fig. 12"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Oxide coating of LiCoO2 via polymeric precursor route",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2/chem_3/chem_4"]
+            },
+            "notes": "LiCoO2 mixed with respective metal-oxide polymeric precursor (<5 wt %)."
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 823,
+              "unit": "K"
+            },
+            "notes": "Heated in air >550 °C to decompose precursor and form oxide coating (nanocrystalline for ZrO2; amorphous for Al2O3/SiO2)."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.1", "Fig. 2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Mechanical grinding to expose fresh LiCoO2 surfaces",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "notes": "Auto-grinder used to break particles and generate fresh surfaces."
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 5, Fig. 11"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heat-treatment of LiCoO2 to regenerate fresh surface",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "temperature": {
+              "value": 823,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Typical treatment at 550 °C in air; variants at 800 °C or 950 °C for 3 h also reported."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air"
+        },
+        "prov": ["Section 5, Fig. 12", "Fig. 14"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Coating LiCoO2 with thin oxide layer via precursor decomposition"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Optional mechanical grinding to create fresh surfaces"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Optional heat-treatment to 550–950 °C to refresh surface chemistry"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact heating duration for 550 °C treatment not specified",
+        "excerpt": "heat-treated (550◦C) LiCoO2 ..."
+      },
+      {
+        "issue": "Precise weight percentages for oxide coatings only given as '<5%'",
+        "excerpt": "Each coated sample consists of less than 5% oxide by weight."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "mode": "in situ and ex situ"
+      },
+      "results": [
+        {
+          "metric": "lattice constant change (c-axis)",
+          "value": "no suppression compared to un-coated sample",
+          "unit": ""
+        },
+        {
+          "metric": "presence of ZrO2 (111) peak",
+          "value": 30,
+          "unit": "degree 2θ"
+        }
+      ],
+      "interpretation": "Coating does not create zero-strain behavior; ZrO2 layer identified as nanocrystalline.",
+      "prov": ["Fig. 1", "Fig. 8"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface morphology",
+          "value": "Sample A covered by nano-particles; samples B & C smooth",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 3"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "coating thickness",
+          "value": 10,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Confirms nano-scale ZrO2 coating",
+      "prov": ["Fig. 4"]
+    },
+    {
+      "method": "EDS mapping",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "elemental distribution",
+          "value": "Uniform Si or Al on particle surfaces",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates amorphous oxide layers for samples B & C",
+      "prov": ["Fig. 5"]
+    },
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {
+        "upper_cut_off": 4.5,
+        "lower_cut_off": 3.6,
+        "current_density": 47,
+        "current_unit": "mA g-1"
+      },
+      "results": [
+        {
+          "metric": "capacity after 140 cycles (sample B)",
+          "value": 175,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "initial capacity (un-coated, 4.5 V)",
+          "value": 190,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity after 100 cycles (un-coated, 4.5 V)",
+          "value": 130,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Coated or heat-treated materials exhibit superior capacity retention.",
+      "prov": ["Fig. 6", "Fig. 9"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Differential capacity analysis",
+        "results": [
+          {
+            "equation": "",
+            "value": "Suppressed impedance growth observed for coated samples during cycling to 4.6 V",
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 175,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 140
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

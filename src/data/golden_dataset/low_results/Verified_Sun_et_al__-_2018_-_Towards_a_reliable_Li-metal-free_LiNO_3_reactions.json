@@ -1,0 +1,1166 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Towards a reliable Li-metal-free LiNO3-free Li-ion polysulphide full cell via parallel interface engineering",
+    "doi": "10.1039/c8ee00937f",
+    "authors": [
+      "Ju Sun",
+      "Jiaxing Liang",
+      "Junnan Liu",
+      "Wenyan Shi",
+      "Neeraj Sharma",
+      "Wei Lv",
+      "Ruitao Lv",
+      "Quan-Hong Yang",
+      "Rose Amal",
+      "Da-Wei Wang"
+    ],
+    "journal": "Energy & Environmental Science",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "Li\u2013S batteries",
+      "parallel interface engineering",
+      "hydrothermal carbon coating",
+      "Al\u2013Li alloy anode"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "hydrothermal carbon@carbon cloth (HTC\u2013CC)",
+      "molecular_formula": "",
+      "intended_role": "cathode current collector",
+      "prov": [
+        "Experimental methods \u2013 Hydrothermal surface coating of carbon cloth"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The field \u201cTarget Formula\u201d is blank in the extracted value, but the paper explicitly names multiple relevant chemical formulas in the cited section \u201cHydrothermal surface coating of carbon cloth\u201d, most notably D-glucose (C6H12O6 is implied but not written), sodium dodecyl sulphate (SDS), hydrochloric acid (HCl), and water, as well as the product name hydrothermal carbon@carbon cloth (HTC\u2013CC). Since the document does contain target/chemical identifiers in that section, leaving \u201cTarget Formula\u201d empty is not supported by the text.",
+        "suggested_fix": "Clarify what \u201cTarget Formula\u201d refers to. If it is the coating product, use \u201chydrothermal carbon@carbon cloth (HTC\u2013CC)\u201d (no explicit molecular formula given). If it is the precursor, list \u201cD-glucose\u201d (formula not explicitly written) or \u201csodium dodecyl sulphate (SDS)\u201d (formula not explicitly written). If you require an explicit formula present in the text, use \u201cHCl\u201d (2 M HCl)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Al\u2013Li alloy",
+      "molecular_formula": "",
+      "intended_role": "anode material",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the Al\u2013Li alloy"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank. The paper\u2019s Experimental Methods section \u201cPreparation of the Al\u2013Li alloy\u201d and surrounding text explicitly refer to the target material as an \u201cAl\u2013Li alloy\u201d (and elsewhere discusses the Li\u2013Al alloy system, including Li9Al4 theoretical capacity), but no explicit single chemical formula for the prepared alloy is given in the preparation description. Since the field is empty, it is not explicitly supported as-is.",
+        "suggested_fix": "If the intent is to capture the target material, use \u201cAl\u2013Li alloy\u201d (Li\u2013Al alloy). If a stoichiometric formula is required, it is not specified for the prepared alloy in the text."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "carbon cloth",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "8 mm disks (~0.5 cm2); mass 8 mg (CC), 10 mg (HTC\u2013CC) after processing",
+      "prov": [
+        "Experimental methods \u2013 Hydrothermal surface coating of carbon cloth"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.77,
+        "reasoning": "The paper explicitly identifies the chemical as \u201cCarbon cloth\u201d in the Experimental methods section (\u201cHydrothermal surface coating of carbon cloth\u201d). However, the amount of carbon cloth used is not given as a mass/volume in that procedure. The text later provides masses of punched disks (CC mass 8 mg; HTC\u2013CC mass 10 mg) and disk size, but that is not stated as an input \u2018amount\u2019 of carbon cloth for the coating step. Therefore, the extraction \u2018carbon cloth | Amount: Not specified in text\u2019 is supported under the null-handling rule (amount for the coating procedure is not specified).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "hydrochloric acid 2 M",
+      "molecular_formula": "HCl",
+      "ontology": {
+        "role": "washing agent",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used for 5\u00d7 sonication wash",
+      "prov": [
+        "Experimental methods \u2013 Hydrothermal surface coating of carbon cloth"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "In the Experimental methods section under \u201cHydrothermal surface coating of carbon cloth\u201d, the paper explicitly states: \u201cCarbon cloth \u2026 was firstly washed with 2 M HCl\u2026\u201d. This supports the chemical identity (hydrochloric acid) and concentration (2 M). The text does not specify a volume or mass amount of HCl used, only that the carbon cloth was washed/sonicated with 2 M HCl multiple times, so \u201cAmount: Not specified in text\u201d is also supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "washing solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used 2\u00d7 wash after acid; also solvent for glucose/SDS",
+      "prov": [
+        "Experimental methods \u2013 Hydrothermal surface coating of carbon cloth"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.85,
+        "reasoning": "The paper explicitly mentions \u201cdeionized water\u201d in the Hydrothermal surface coating of carbon cloth procedure (washing steps: \u201cdeionized water 2 times\u201d and later \u201cwashed with deionized water 5 times\u201d). Therefore, the chemical identity is supported. However, the extracted amount is marked \u201cNot specified in text,\u201d which is not correct because the text specifies water volume as \u201c50 mL water\u201d used to dissolve glucose and SDS during hydrothermal treatment (even though it doesn\u2019t explicitly say this 50 mL is deionized water). Since some quantitative amount for water is given, the claim that the amount is not specified is not supported.",
+        "suggested_fix": "deionized water | Amount: washing only (no volume given for DI-water wash steps); additionally, \u201c50 mL water\u201d is used in the hydrothermal mixture (water type not specified as deionized)."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "D-glucose",
+      "molecular_formula": "C6H12O6",
+      "ontology": {
+        "role": "carbon precursor",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 2.5,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental methods \u2013 Hydrothermal surface coating of carbon cloth"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "In the Experimental methods section under \u201cHydrothermal surface coating of carbon cloth\u201d, the paper explicitly states: \u201c2.5 g D-glucose (Sigma Aldrich) \u2026 were dissolved into 50 mL water\u2026\u201d. This directly supports the extracted chemical identity (D-glucose) and amount (2.5 g).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "sodium dodecyl sulfate",
+      "molecular_formula": "C12H25NaO4S",
+      "ontology": {
+        "role": "surfactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.0125,
+        "unit": "g"
+      },
+      "notes": "12.5 mg",
+      "prov": [
+        "Experimental methods \u2013 Hydrothermal surface coating of carbon cloth"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "In the 'Experimental methods \u2013 Hydrothermal surface coating of carbon cloth' section, the paper states: '2.5 g D-glucose ... and 12.5 mg sodium dodecyl sulphate (SDS, Sigma Aldrich) were dissolved into 50 mL water...' 12.5 mg equals 0.0125 g, directly supporting the extracted amount for sodium dodecyl sulfate.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "nitrogen gas",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "inorganic gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used during calcination at 800 \u00b0C",
+      "prov": [
+        "Experimental methods \u2013 Hydrothermal surface coating of carbon cloth"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.88,
+        "reasoning": "The paper explicitly states that calcination was performed \u201cat 800 \u00b0C under a N2 atmosphere for 4 h\u201d in the \u201cHydrothermal surface coating of carbon cloth\u201d experimental method, confirming the use of nitrogen gas (N2). The text does not specify any flow rate, pressure, volume, or other quantitative amount of N2, so \u201cAmount: Not specified in text\u201d is consistent with the document.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "lithium foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode/reactant",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used as anode for electrochemical alloying",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the Al\u2013Li alloy"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly states in the Experimental methods section under \u201cPreparation of the Al\u2013Li alloy\u201d that CR2032 coin cells were assembled \u201cwith lithium foil as an anode\u201d and aluminium foil as a cathode. However, no mass, thickness, area, or other quantitative amount of the lithium foil used for this alloy-preparation step is provided in the text (only the aluminium foil is described as \u201c15 mm\u201d). Therefore, the chemical identity (lithium foil) is supported and the amount being \u201cNot specified in text\u201d is also supported by omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "aluminium foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "cathode/alloy precursor",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "15 mm diameter",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the Al\u2013Li alloy"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.88,
+        "reasoning": "The paper explicitly states that coin cells were assembled with \u201caluminium foil (15 mm) as a cathode\u201d in the Preparation of the Al\u2013Li alloy section. Therefore, aluminium foil is supported as a chemical identity. However, the amount is specified (15 mm), so the extracted claim \u201cAmount: Not specified in text\u201d is contradicted by the source text.",
+        "suggested_fix": "aluminium foil | Amount: 15 mm (as cathode foil size in Al\u2013Li alloy preparation)"
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "1 M in EC/EMC for alloying",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the Al\u2013Li alloy"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly specifies the lithium hexafluorophosphate (LiPF6) electrolyte concentration as \u201c1 M LiPF6 in ethylene carbonate/ethyl methyl carbonate (EC/EMC, v/v = 1 : 1)\u201d in the \u201cPreparation of the Al\u2013Li alloy\u201d section. Therefore the claim that the amount is \u201cNot specified in text\u201d is contradicted by the document text.",
+        "suggested_fix": "lithium hexafluorophosphate (LiPF6) | Amount: 1 M (in EC/EMC, v/v = 1:1)"
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of EC/EMC (1:1 v/v) electrolyte",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the Al\u2013Li alloy"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.8,
+        "reasoning": "The paper explicitly mentions ethylene carbonate (EC) as a solvent component in the electrolyte used for Al\u2013Li alloy preparation: \u201c1 M LiPF6 in ethylene carbonate/ethyl methyl carbonate (EC/EMC, v/v = 1 : 1) was used as an electrolyte\u2026\u201d. This provides a quantitative ratio (v/v = 1:1) for EC in that electrolyte, so the statement \u201cAmount: Not specified in text\u201d is not accurate. No absolute volume/mass of EC is given, but a composition amount (volume ratio) is specified.",
+        "suggested_fix": "ethylene carbonate (EC) | Amount: present in electrolyte as EC/EMC (v/v = 1:1) (with 1 M LiPF6 in the solvent mixture)"
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "ethyl methyl carbonate",
+      "molecular_formula": "C4H8O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of EC/EMC (1:1 v/v) electrolyte",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the Al\u2013Li alloy"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly mentions ethyl methyl carbonate (EMC) as a component of the electrolyte used for Al\u2013Li alloy preparation: \u201c1 M LiPF6 in ethylene carbonate/ethyl methyl carbonate (EC/EMC, v/v = 1 : 1) was used as an electrolyte\u2026\u201d. However, the text does not specify an individual amount for EMC (only the EC/EMC volume ratio and the overall electrolyte concentration), so \u201cAmount: Not specified in text\u201d is accurate.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "washing solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "wash recovered Al\u2013Li alloy",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the Al\u2013Li alloy"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions dimethyl carbonate (DMC) in the Experimental methods section under \u201cPreparation of the Al\u2013Li alloy\u201d: after disassembling the coin cell, \u201cthe Al\u2013Li alloy was recovered, washing with dimethyl carbonate (DMC) to remove any residues.\u201d No volume/mass/concentration for DMC is provided anywhere in the text, so \u201cAmount: Not specified in text\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "lithium bis(trifluoromethane)sulfonimide (LiTFSI)",
+      "molecular_formula": "LiC2F6NO4S2",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "dissolved in TEGDME to make blank electrolyte",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states that the blank electrolyte was prepared by dissolving an appropriate amount of LiTFSI in TEGDME, but it does not leave the amount unspecified: later in the same Experimental section it specifies the cell uses \u201c20 \u03bcL blank electrolyte\u201d dropped on the separator. Therefore, the extracted claim \u201cAmount: Not specified in text\u201d is contradicted by the text.",
+        "suggested_fix": "lithium bis(trifluoromethane)sulfonimide (LiTFSI) | Amount: 20 \u03bcL of the blank electrolyte (LiTFSI in TEGDME) added to the separator. (Salt concentration/grams of LiTFSI not specified; described only as an \u2018appropriate amount\u2019.)"
+      }
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "triethylene glycol dimethyl ether",
+      "molecular_formula": "C8H18O4",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "solvent for electrolyte and catholyte",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper explicitly identifies triethylene glycol dimethyl ether (TEGDME) as the solvent used to prepare the electrolyte (\u201cLiTFSI \u2026 in triethylene glycol dimethyl ether (TEGDME, 99%, Sigma Aldrich)\u201d). However, the extraction claims the amount is \u201cNot specified in text,\u201d which is incorrect because the electrolyte concentration is specified as 1 M LiTFSI in TEGDME. While the volume of TEGDME is not explicitly given, an amount/concentration for the electrolyte formulation is provided, so \u201camount not specified\u201d is not supported.",
+        "suggested_fix": "triethylene glycol dimethyl ether (TEGDME) | Amount: used as solvent for 1 M LiTFSI electrolyte (concentration specified; solvent volume not specified)"
+      }
+    },
+    {
+      "chemical_id": "chem_15",
+      "name": "lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used to prepare Li2S4 catholyte",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly states that lithium sulfide (Li2S) is used to prepare the lithium polysulphide (Li2S4) catholyte: \u201ccertain amounts of lithium sulphide (Li2S\u2026 ) and sublimed sulphur \u2026 were mixed\u2026\u201d. However, it does not provide a numeric mass, molar amount, or specific quantity for Li2S\u2014only \u201ccertain amounts\u201d and later the final catholyte concentration (1 M Li2S4) based on sulphur amount. Therefore the extracted identity is correct and the amount is indeed not specified.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_16",
+      "name": "sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "sublimed sulfur, used with Li2S",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper discusses sulphur extensively (e.g., \u201csublimed sulphur (Sigma Aldrich)\u201d used with Li2S to make Li2S4 catholyte), so the chemical identity \u2018sulfur\u2019 is present. However, no explicit mass/amount of sulphur is given\u2014only \u201ccertain amounts of lithium sulphide (Li2S) and sublimed sulphur were mixed\u2026\u201d and the final catholyte concentration \u201c1 M \u2026 Li2S4\u201d with molarity based on sulphur amount. Thus the extractor is correct that the sulphur amount is not specified in the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_17",
+      "name": "lithium polysulfide (Li2S4) catholyte",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "catholyte",
+        "category": "mixture"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "1 M solution in TEGDME",
+      "prov": [
+        "Experimental methods \u2013 Preparation of the electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly identifies the catholyte as Li2S4 (lithium polysulphide). However, the text *does* specify an amount used in the full cell assembly: \u201c12 mL 1 M Li2S4 was loaded onto the HTC\u2013CC current collector\u201d (and also mentions a 2 M Li2S4 solution for soaking tests). Therefore the extracted claim \u201cAmount: Not specified in text\u201d is contradicted by the Experimental methods section.",
+        "suggested_fix": "Chemical identity: lithium polysulphide (Li2S4) catholyte. Amount: 12 mL of 1 M Li2S4 loaded onto the HTC\u2013CC current collector (full cell assembly). (Additionally: 2 M Li2S4 used for soaking tests; 20 mL blank electrolyte added separately.)"
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pre-treatment of carbon cloth",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ],
+              "times": 5
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "sonication in 2 M HCl",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes washing steps in multiple synthesis/preparation procedures, supporting the presence of a 'wash' operation. Examples include: carbon cloth 'was firstly washed with 2 M HCl' and later 'washed with deionized water 5 times' (Experimental methods, Hydrothermal surface coating of carbon cloth). Also, after discharging and disassembling the coin cell, the Al\u2013Li alloy was recovered and 'washing with dimethyl carbonate (DMC)' (Preparation of the Al\u2013Li alloy). Therefore, 'wash' is a supported synthesis operation in the document.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_3"
+              ],
+              "times": 2
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly describes washing steps as part of synthesis/preparation procedures. Examples include: carbon cloth was \"firstly washed\" with 2 M HCl and deionized water (Experimental methods, Hydrothermal surface coating of carbon cloth); the hydrothermal product was \"washed with deionized water 5 times\"; the Al\u2013Li alloy was recovered by \"washing with dimethyl carbonate (DMC)\"; and soaked samples were \"washed\" with TEGDME solvent. Therefore, the synthesis operation \"wash\" is supported by the source text.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.35,
+              "reasoning": "The paper contains multiple instances of \u201cdried\u201d (e.g., \u201cdried at 80 \u00b0C\u2026\u201d, \u201cdried under vacuum overnight\u201d), but it does not use \u201cdry\u201d as a standalone named synthesis operation. The extracted value is too vague/oversimplified relative to the explicit procedures described (specific drying temperatures, durations, and vacuum conditions).",
+              "suggested_fix": "Specify the drying operation as written in the Experimental methods, e.g., \u201cdried at 80 \u00b0C for 12 h / overnight\u201d and/or \u201cdried under vacuum overnight\u201d (depending on which step is being captured)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods \u2013 Hydrothermal surface coating of carbon cloth"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Hydrothermal coating with glucose",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5",
+                "chem_3"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "50 mL water",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.78,
+              "reasoning": "The paper explicitly describes materials being \u201cdissolved\u201d during synthesis steps, e.g., \u201c2.5 g D-glucose ... and 12.5 mg sodium dodecyl sulphate ... were dissolved into 50 mL water\u201d (Hydrothermal surface coating of carbon cloth) and \u201cThe blank electrolyte was prepared by dissolving ... LiTFSI ... in TEGDME\u201d (Preparation of the electrolyte...). Thus the synthesis operation \u2018dissolve\u2019 is supported by the text.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "ultrasonicate",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ],
+              "additional": []
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "to obtain homogeneous solution",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes using sonication/ultrasonication as part of the synthesis/preparation steps: (1) carbon cloth washed with 2 M HCl \"through sonication 5 times\"; and (2) glucose and SDS were dissolved in water with the carbon cloth \"by ultrasonication to get a homogenous solution\" (Experimental methods, Hydrothermal surface coating of carbon cloth). These are ultrasonic processing operations consistent with the extracted synthesis operation \"ultrasonicate.\"",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "transfer",
+            "parameters": {
+              "container": "100 mL Teflon autoclave"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper uses the term \u201ctransferred\u201d only to describe moving a solution into a Teflon autoclave (\u201cthe solution was transferred to a 100 mL Teflon autoclave\u201d) and does not describe a distinct synthesis operation explicitly labeled as \u201ctransfer\u201d (as a named operation step). Therefore, the extracted synthesis operation value \u201ctransfer\u201d is not explicitly supported as an operation type in the document.",
+              "suggested_fix": "If the field is meant to capture an explicit handling step, use: \u201csolution was transferred to a 100 mL Teflon autoclave\u201d (hydrothermal coating step). Otherwise, leave as Not specified/None."
+            }
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 463,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 900,
+              "unit": "min"
+            },
+            "notes": "hydrothermal reaction",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.78,
+              "reasoning": "The paper describes multiple synthesis/processing steps (e.g., hydrothermal treatment, calcination, drying, stirring at 60 \u00b0C), so \u201cheat\u201d alone is not explicitly stated as the synthesis operation nor is it an adequate/explicit single operation label in the text. The document uses the specific term \u201cheated\u201d (e.g., autoclave heated at 190 \u00b0C for 15 h; calcined at 800 \u00b0C for 4 h), but does not explicitly define the synthesis operation generically as \u201cheat.\u201d",
+              "suggested_fix": "Specify the concrete thermal operations described, e.g., \u201chydrothermal heating (190 \u00b0C, 15 h)\u201d and/or \u201ccalcination (800 \u00b0C, N2, 4 h)\u201d (also drying at 80 \u00b0C, stirring at 60 \u00b0C overnight)."
+            }
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": [
+                "chem_3"
+              ],
+              "times": 5
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly describes multiple washing steps as part of synthesis/preparation procedures, e.g., carbon cloth was \u201cfirstly washed with 2 M HCl\u2026\u201d and later samples were \u201cwashed with deionized water 5 times,\u201d and the Al\u2013Li alloy was recovered by \u201cwashing with dimethyl carbonate (DMC).\u201d Therefore, the synthesis operation 'wash' is supported by the full text.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "overnight",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.86,
+              "reasoning": "The paper does include drying steps (e.g., carbon cloth \u201cwas dried at 80 \u00b0C\u2026for 12 h\u201d; hydrothermal sample \u201cdried at 80 \u00b0C overnight\u201d; soaked samples \u201cdried under vacuum overnight\u201d), but it does not state a standalone synthesis operation labeled simply as \u201cdry\u201d nor indicate drying as the sole/primary operation. Therefore the extracted value is too vague and not explicitly supported as written.",
+              "suggested_fix": "Specify the actual drying operation(s), e.g., \u201cdried at 80 \u00b0C for 12 h\u201d (carbon cloth) / \u201cdried at 80 \u00b0C overnight\u201d (hydrothermal carbon-coated sample) / \u201cdried under vacuum overnight\u201d (recovered/washed electrodes)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods \u2013 Hydrothermal surface coating of carbon cloth"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calcination to form HTC\u2013CC",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ]
+            },
+            "temperature": {
+              "value": 1073,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "notes": "under N2 atmosphere",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The paper explicitly describes a calcination step in the synthesis/processing of the carbon cloth material: after hydrothermal reaction and drying, \"This was then calcined at 800 \u00b0C under a N2 atmosphere for 4 h\" to produce HTC\u2013CC, and also notes that the washed carbon cloth (CC) was \"also calcined\" under the same conditions. Therefore, the synthesis operation 'calcine' is supported by the source text.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.95,
+            "reasoning": "The paper explicitly states the calcination step was performed \u201cat 800 \u00b0C under a N2 atmosphere for 4 h\u201d during preparation of HTC\u2013CC (Experimental methods, Hydrothermal surface coating of carbon cloth). This supports the synthesis atmosphere being N2.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental methods \u2013 Hydrothermal surface coating of carbon cloth"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Electrochemical alloying to produce Al\u2013Li alloy",
+        "operations": [
+          {
+            "action": "assemble_cell",
+            "parameters": {
+              "anode": "chem_7",
+              "cathode": "chem_8",
+              "electrolyte": [
+                "chem_9",
+                "chem_10",
+                "chem_11"
+              ],
+              "separator": "Celgard 2500"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "CR2032 coin type",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes assembling coin cells/full cells in multiple places, supporting the synthesis/operation step of cell assembly. Examples include: \u201cCR2032-type coin cells\u2026were assembled\u201d (Preparation of the Al\u2013Li alloy) and \u201cThe Al\u2013Li|HTC\u2013CC full cell was assembled in a glove box\u201d (Electrochemical measurements of the full cell), including step-by-step loading of catholyte, separator, electrolyte, and placing the Al\u2013Li alloy anode. This matches the operation 'assemble_cell'.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "electrochemical_discharge",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "to alloy Li into Al foil",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.68,
+              "reasoning": "The paper describes Al\u2013Li alloy fabrication via an electrochemical alloying method in a coin cell followed by \u201cAfter discharge, the coin cell was disassembled and the Al\u2013Li alloy was recovered\u2026\u201d. It also discusses discharge in the full cell. However, the document never uses or defines a synthesis operation termed \u201celectrochemical_discharge\u201d as a specific named synthesis step. The relevant synthesis operation is electrochemical alloying (electrochemical lithiation) of Al foil, not \u201celectrochemical discharge\u201d as an operation label.",
+              "suggested_fix": "electrochemical_alloying (electrochemical lithiation of Al foil to form Al\u2013Li alloy; performed by discharging a Li|Al coin cell)"
+            }
+          },
+          {
+            "action": "disassemble",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The paper explicitly uses the term \u201cdisassembled\u201d as an operation step during synthesis/preparation of the Al\u2013Li alloy: \u201cAfter discharge, the coin cell was disassembled and the Al\u2013Li alloy was recovered\u2026\u201d (Page 3, Preparation of the Al\u2013Li alloy). This supports the extracted synthesis operation \u201cdisassemble\u201d (format/tense variation only).",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": [
+                "chem_12"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "remove residues",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes washing steps in the Experimental methods, e.g., carbon cloth was \u201cwashed with 2 M HCl\u2026 and deionized water\u2026\u201d, the hydrothermal product was \u201cwashed with deionized water 5 times\u201d, the Al\u2013Li alloy was recovered with \u201cwashing with dimethyl carbonate (DMC)\u201d, and multiple samples were \u201cwashed with TEGDME solvent three times\u201d. Therefore, the synthesis operation 'wash' is supported by the document text.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar-filled glove box",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The paper explicitly states: \"All procedures were done inside an Ar-filled glove box\" in the Experimental methods section under \"Preparation of the electrolyte and catholyte for the Li-ion\u2013polysulfide full cell\". This directly supports the extracted synthesis atmosphere as an Ar-filled glove box.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental methods \u2013 Preparation of the Al\u2013Li alloy"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Preparation of 1 M Li2S4 catholyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_15",
+                "chem_16",
+                "chem_14"
+              ]
+            },
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "stirred overnight to obtain 1 M Li2S4",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.83,
+              "reasoning": "The paper describes multiple synthesis/processing actions (e.g., washed, dissolved, mixed, stirred, ultrasonication, transferred, heated, calcined, assembled). It does mention \u201cLi2S and sulphur were mixed in TEGDME solution and stirred at 60 \u00b0C overnight\u201d during catholyte preparation, but it does not specify a standalone or primary \u201cSynthesis Operation\u201d simply as \u201cmix.\u201d The extracted value is too vague and not explicitly stated as the synthesis operation field value.",
+              "suggested_fix": "If the field expects a specific operation term from the procedure, use a more specific phrase supported by the text, e.g., \u201cmixed (Li2S and sulphur in TEGDME) and stirred at 60 \u00b0C overnight\u201d (catholyte preparation), or list the main operations for the relevant synthesis (e.g., ultrasonication, hydrothermal treatment, calcination)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glove box",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.92,
+            "reasoning": "The paper mentions an inert-gas environment only as an \u201cAr-filled glove box\u201d for electrolyte/catholyte preparation, full-cell assembly, and in situ coin-cell construction (Experimental section, Page 3). It does not state that the overall synthesis atmosphere (e.g., for hydrothermal coating or calcination) was in an \u201cAr glove box\u201d; instead, calcination is explicitly \u201cunder a N2 atmosphere\u201d (Page 2). Therefore, labeling the synthesis atmosphere as \u201cAr glove box\u201d is not supported as a general synthesis condition.",
+            "suggested_fix": "If the field refers to handling/assembly atmosphere: \u201cAll procedures were done inside an Ar-filled glove box.\u201d If it refers to thermal treatment atmosphere: \u201cCalcined at 800 \u00b0C under a N2 atmosphere.\u201d"
+          }
+        },
+        "prov": [
+          "Experimental methods \u2013 Preparation of the electrolyte"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Acid washing and drying of carbon cloth",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly describes acid washing and drying of the carbon cloth in the Experimental methods section: carbon cloth was washed with 2 M HCl via sonication (5 times) and deionized water (2 times), then dried at 80 \u00b0C for 12 h to remove water. This matches the extracted workflow timeline step 'Acid washing and drying of carbon cloth.'",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Hydrothermal glucose coating on carbon cloth",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The paper explicitly describes a hydrothermal surface coating of carbon cloth using D-glucose in the section titled \u201cHydrothermal surface coating of carbon cloth,\u201d where carbon cloth is treated in an aqueous glucose solution in a Teflon autoclave at 190 \u00b0C for 15 h, producing a glucose-derived hydrothermal carbon coating (HTC\u2013CC). This supports the extracted workflow step \u201cHydrothermal glucose coating on carbon cloth.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "High-temperature N2 calcination to form HTC\u2013CC",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The paper explicitly describes that after hydrothermal treatment, the sample was \"calcined at 800 \u00b0C under a N2 atmosphere for 4 h to produce the hydrothemal carbon@carbon cloth (HTC\u2013CC) product.\" This is a high-temperature N2 calcination step used to form HTC\u2013CC, matching the extracted workflow timeline item.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Electrochemical alloying of Al foil with Li to form Al\u2013Li alloy",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly describes preparing an Al\u2013Li alloy by an electrochemical method using Al foil (cathode) and Li foil (anode) in a coin cell\u2014i.e., electrochemical alloying of Al foil with Li to form an Al\u2013Li alloy. This appears in the Experimental Methods under \u201cPreparation of the Al\u2013Li alloy\u201d and is reiterated in the Results/Discussion (interface stability section) stating they used an electrochemical alloying method to prepare the Al\u2013Li alloy from 20 \u00b5m thick Al foil.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Synthesis of Li2S4 catholyte",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.72,
+          "reasoning": "The paper describes how the Li2S4 catholyte was synthesized (mix Li2S and S in TEGDME, stir at 60 \u00b0C overnight, yielding 1 M Li2S4), but it does not present this as a dated/ordered \u201cworkflow timeline\u201d step or provide an explicit timeline entry labeled as such. The extracted value is a topic/step name rather than an actual timeline statement from the text.",
+          "suggested_fix": "If the field is meant to capture the synthesis step (not a timeline), use: \u201cLi2S and sublimed S were mixed in TEGDME and stirred at 60 \u00b0C overnight to form 1 M Li2S4 catholyte.\u201d If it must be a timeline, extract the explicit timing: \u201cstirred at 60 \u00b0C overnight.\u201d"
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Undefined amounts and durations for several washing/drying steps",
+        "excerpt": "sonication 5 times and deionized water 2 times",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The paper explicitly states a washing procedure with ambiguous amounts/durations: carbon cloth was \u201cwashed with 2 M HCl through sonication 5 times and deionized water 2 times\u201d but does not specify the volume of HCl/water per wash, the sonication time per cycle, or other detailed conditions. This supports the flagged workflow ambiguity and matches the excerpt. The text does provide a drying temperature and duration elsewhere (80 \u00b0C for 12 h; later \u2018overnight\u2019), but the washing steps remain underspecified as described.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Exact concentration of LiTFSI in blank electrolyte not provided",
+        "excerpt": "The blank electrolyte was prepared by dissolving an appropriate amount of bis(trifluoromethane)sulfonimide lithium salt (LiTFSI) in triethylene glycol dimethyl ether",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The paper states: \u201cThe blank electrolyte was prepared by dissolving an appropriate amount of \u2026 LiTFSI \u2026 in \u2026 TEGDME\u201d (Experimental methods, Page 3). Nowhere in the provided full text is a numerical LiTFSI concentration (e.g., 1 M) given for the blank electrolyte; only the Li2S4 catholyte is specified as \u201cFinally, 1 M brown-red Li2S4 catholyte was fabricated.\u201d Therefore, the extracted issue that the exact LiTFSI concentration is not provided is supported by the document.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "BET surface area analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface area",
+          "value": 1445,
+          "unit": "m2 g-1",
+          "sample": "CC"
+        },
+        {
+          "metric": "surface area",
+          "value": 686,
+          "unit": "m2 g-1",
+          "sample": "HTC\u2013CC"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results \u2013 porosity measurement (Fig. S3)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly reports the BET surface areas in the Results and discussion section (porosity evolution probed by N2 adsorption\u2013desorption, Fig. S3): \u201cThe Brunauer\u2013Emmett\u2013Teller (BET) surface area for HTC\u2013CC dropped to 686 m2 g\u22121 with respect to 1445 m2 g\u22121 for CC.\u201d This supports both extracted entries (CC = 1445 m2 g\u22121; HTC\u2013CC = 686 m2 g\u22121).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "I(D)/I(G)",
+          "value": 1.59,
+          "unit": "",
+          "sample": "CC"
+        },
+        {
+          "metric": "I(D)/I(G)",
+          "value": 1.4,
+          "unit": "",
+          "sample": "HTC\u2013CC"
+        },
+        {
+          "metric": "La (graphitic crystallite size)",
+          "value": 2.77,
+          "unit": "nm",
+          "sample": "CC"
+        },
+        {
+          "metric": "La (graphitic crystallite size)",
+          "value": 3.1,
+          "unit": "nm",
+          "sample": "HTC\u2013CC"
+        }
+      ],
+      "interpretation": "HTC\u2013CC exhibits higher graphitization and fewer defects",
+      "prov": [
+        "Figure 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Supported by the Raman spectroscopy discussion around Fig. 3 and associated text. The paper explicitly states I(D)/I(G) values: HTC\u2013CC = 1.4 and CC = 1.59, and reports the calculated planar microcrystalline (La) sizes: HTC\u2013CC = 3.1 nm and CC = 2.77 nm (described as \u201cplanar microcrystalline size\u201d/\u201ccarbon (sp2) microcrystal size\u201d, derived from the Tuinstra\u2013Koenig relation). These correspond to the extracted metrics and samples.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Electrochemical testing (galvanostatic)",
+      "parameters": {
+        "rate": "0.2C"
+      },
+      "results": [
+        {
+          "metric": "initial capacity",
+          "value": 1050,
+          "unit": "mAh g-1",
+          "sample": "Al\u2013Li|HTC\u2013CC full cell"
+        },
+        {
+          "metric": "capacity at 100th cycle",
+          "value": 500,
+          "unit": "mAh g-1",
+          "sample": "Al\u2013Li|HTC\u2013CC full cell"
+        }
+      ],
+      "interpretation": "Stable capacity with nearly 100% coulombic efficiency",
+      "prov": [
+        "Results \u2013 paragraph describing full cell performance"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The text explicitly reports full-cell gravimetric capacities for the Li-ion polysulphide full cell using an Al\u2013Li alloy anode and HTC\u2013CC cathode/current collector: it states the cell \u201cexhibited a high gravimetric capacity of 1050 mA h g\u22121 at 0.2C \u2026 and preserved 500 mA h g\u22121 capacity \u2026 at the 100th cycle.\u201d These correspond to the extracted \u2018initial capacity\u2019 (1050 mAh g\u22121) and \u2018capacity at 100th cycle\u2019 (500 mAh g\u22121) for the Al\u2013Li|HTC\u2013CC full cell.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Rate performance test",
+      "parameters": {
+        "rate": "2C"
+      },
+      "results": [
+        {
+          "metric": "capacity",
+          "value": 250,
+          "unit": "mAh g-1",
+          "sample": "Al\u2013Li|HTC\u2013CC full cell at 2C"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 7c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly reports the rate performance for the Al\u2013Li|HTC\u2013CC full cell: in the discussion of Fig. 7c it states, \u201ca sulphur capacity of 250 mA h g\u22121 can be obtained at a 2C rate\u201d for the Al\u2013Li|HTC\u2013CC cell. This directly matches the extracted value (capacity = 250 mAh g\u22121 at 2C for Al\u2013Li|HTC\u2013CC full cell). The value is supported by the text even though the provenance is given as Figure 7c; the numerical value appears in the paragraph describing Fig. 7c.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical impedance spectroscopy (EIS)",
+        "results": [
+          {
+            "metric": "Ohmic resistance (HTC\u2013CC cell after activation)",
+            "value": null,
+            "unit": "ohm"
+          },
+          {
+            "metric": "Interfacial resistance (HTC\u2013CC)",
+            "value": 90,
+            "unit": "ohm"
+          },
+          {
+            "metric": "Interfacial resistance (CC)",
+            "value": 180,
+            "unit": "ohm"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.72,
+          "reasoning": "The paper describes multiple analysis/characterization methods (e.g., SEM/EDS, XRD including in situ synchrotron XRD, XPS, Raman spectroscopy, N2 adsorption\u2013desorption/BET, electrochemical tests like EIS and CV), but there is no single explicit field or statement giving a consolidated value for \u201cAnalysis Method\u201d. Since the extracted value is blank/empty, it is not supported as a correct extraction under the null-handling rule (the document does contain analysis methods).",
+          "suggested_fix": "Populate \u201cAnalysis Method\u201d with the methods explicitly listed in the paper, e.g.: SEM (with EDS mapping), XRD (PANalytical Empyrean II; in situ synchrotron XRD at Australian Synchrotron), XPS, Raman spectroscopy, N2 adsorption\u2013desorption (BET), electrochemical testing (galvanostatic cycling, CV, EIS)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 1050,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.86,
+      "reasoning": "The paper explicitly reports performance \u201cat the 100th cycle\u201d multiple times. On Page 2 it states the full cell \u201cpreserved 500 mA h g\u22121 capacity with nearly 100% coulombic efficiency at the 100th cycle.\u201d On Page 10/Fig. 8 caption and accompanying text it further discusses cycling stability \u201cduring 100 cycles\u201d and that capacity is retained \u201cat the 100th cycle.\u201d Thus, a cycle life value of 100 (cycles) is supported by the document text as the demonstrated cycling duration/benchmark reported.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T10:00:00Z",
+    "source_file": "Energy_Environ_Sci_2018_11_2509_excerpt.txt",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "High-rate lithium–sulfur batteries promoted by reduced graphene oxide coating",
+    "doi": "10.1039/c2cc17912a",
+    "authors": [
+      "Nianwu Li",
+      "Mingbo Zheng",
+      "Hongling Lu",
+      "Zibo Hu",
+      "Chenfei Shen",
+      "Xiaofeng Chang",
+      "Guangbin Ji",
+      "Jieming Cao",
+      "Yi Shi"
+    ],
+    "journal": "Chemical Communications",
+    "year": 2012
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium–sulfur battery", "graphene", "nanocomposite"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "TG–S nanocomposite",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Page 4107"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "RGO–TG–S nanocomposite",
+      "molecular_formula": "",
+      "intended_role": "final product",
+      "prov": ["Page 4107"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "graphite oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4107"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "thermally exfoliated graphene (TG)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "support",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4107"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "sulfur",
+      "molecular_formula": "S8",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "sublimed sulfur",
+      "prov": ["Page 4107"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "sodium thiosulfate",
+      "molecular_formula": "Na2S2O3",
+      "ontology": {
+        "role": "reducing agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4107"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "graphene oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4107"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "hydrochloric acid",
+      "molecular_formula": "HCl",
+      "ontology": {
+        "role": "acid",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 4107"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "reduced graphene oxide (RGO)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "coating material",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4107"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Thermal exfoliation of graphite oxide to obtain TG.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "product": "chem_2"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Thermal treatment as per previous report.",
+            "prov": ["Page 4107"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4107"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Infusion of sulfur into TG to form TG–S nanocomposite.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"]
+            },
+            "notes": "",
+            "prov": ["Page 4107"]
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"]
+            },
+            "temperature": {
+              "value": 423,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 600,
+              "unit": "min"
+            },
+            "notes": "Melted sulfur diffuses into TG.",
+            "prov": ["Page 4107"]
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["intermediate TG–S (target_1)"]
+            },
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "External sulfur sublimed.",
+            "prov": ["Page 4107"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4107"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Coating TG–S with reduced graphene oxide to yield RGO–TG–S nanocomposite.",
+        "operations": [
+          {
+            "action": "reduce",
+            "parameters": {
+              "inputs": ["chem_5", "chem_4"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Na2S2O3 used to reduce graphene oxide to RGO.",
+            "prov": ["Page 4107"]
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_6"],
+              "to": "reaction mixture"
+            },
+            "notes": "Additional sulfur generated on RGO after HCl addition.",
+            "prov": ["Page 4107"]
+          },
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["target_1", "chem_7"]
+            },
+            "notes": "RGO binds to sulfur and TG–S forming final nanocomposite.",
+            "prov": ["Page 4107"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4107"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of thermally exfoliated graphene (TG) from graphite oxide."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Loading sulfur into TG to make TG–S nanocomposite."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Liquid-phase reduction/coating to create RGO–TG–S nanocomposite."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing quantities and atmosphere details",
+        "excerpt": "In the experiments, the TG was prepared by thermally treating graphite oxide based on our previous report."
+      },
+      {
+        "issue": "No explicit temperature for reduction step",
+        "excerpt": "Na2S2O3 was used as a reducing agent to reduce graphene oxide."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "sulfur peak presence",
+          "value": "none observed in TG–S",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Sulfur highly dispersed within TG.",
+      "prov": ["Figure 2a"]
+    },
+    {
+      "method": "BET surface area",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface area TG",
+          "value": 598,
+          "unit": "m2 g-1"
+        },
+        {
+          "metric": "pore volume TG",
+          "value": 2.61,
+          "unit": "cm3 g-1"
+        },
+        {
+          "metric": "surface area TG–S",
+          "value": 13,
+          "unit": "m2 g-1"
+        },
+        {
+          "metric": "pore volume TG–S",
+          "value": 0.06,
+          "unit": "cm3 g-1"
+        }
+      ],
+      "interpretation": "Pores filled with sulfur.",
+      "prov": ["Fig. S1a"]
+    },
+    {
+      "method": "Thermogravimetric analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "sulfur content TG–S",
+          "value": 67,
+          "unit": "%"
+        },
+        {
+          "metric": "sulfur content RGO–TG–S",
+          "value": 63,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. S3"]
+    },
+    {
+      "method": "Galvanostatic charge/discharge",
+      "parameters": {
+        "current_density": "0.2 A g-1"
+      },
+      "results": [
+        {
+          "metric": "capacity RGO–TG–S after 2 cycles",
+          "value": 1290,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity RGO–TG–S after 100 cycles",
+          "value": 928,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity TG–S after 2 cycles",
+          "value": 767,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity TG–S after 100 cycles",
+          "value": 421,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "coulombic efficiency RGO–TG–S",
+          "value": 100.0,
+          "unit": "%"
+        },
+        {
+          "metric": "coulombic efficiency TG–S",
+          "value": 92.7,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "RGO coating improves capacity retention and efficiency.",
+      "prov": ["Fig. 3a", "Fig. 3b"]
+    },
+    {
+      "method": "Rate capability test",
+      "parameters": {
+        "current_density": "6.4 A g-1"
+      },
+      "results": [
+        {
+          "metric": "capacity at 6.4 A g-1",
+          "value": 794,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "High capacity maintained at high rate.",
+      "prov": ["Fig. 4a", "Fig. 4b"]
+    },
+    {
+      "method": "Long-term cycling",
+      "parameters": {
+        "current_density": "1.6 A g-1"
+      },
+      "results": [
+        {
+          "metric": "capacity after 2 cycles",
+          "value": 1064,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity after 200 cycles",
+          "value": 667,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "coulombic efficiency",
+          "value": 96,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Excellent cycling stability.",
+      "prov": ["Fig. 4c"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 667,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T12:00:00Z",
+    "source_file": "input_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Crystal structure and phase transitions of the lithium ionic conductor Li3PS4",
+    "doi": "10.1016/j.ssi.2010.10.001",
+    "authors": [
+      "Kenji Homma",
+      "Masao Yonemura",
+      "Takeshi Kobayashi",
+      "Miki Nagao",
+      "Masaaki Hirayama",
+      "Ryoji Kanno"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid electrolyte", "lithium ionic conductor", "thio-LISICON", "Li3PS4"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "intended_role": "product",
+      "prov": ["Page 54 (\"The X-ray diffraction pattern of the sample synthesized at 773 K for 5 days … indicated … γ-phase\")"],
+      "notes": "γ-phase obtained at 773 K; β- and α-phases accessible by heating"
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Purity ≥99.9%",
+      "prov": ["Experimental section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Purity ≥99%",
+      "prov": ["Experimental section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in glove box and during impedance measurement",
+      "prov": ["Experimental section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "gold paste",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrode material",
+        "category": "other"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Applied to both sides of pellet for AC-impedance",
+      "prov": ["Experimental section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Weighing and mixing of precursors",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "Stoichiometric ratio to form Li3PS4",
+            "prov": ["Experimental section"]
+          },
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "atmosphere": "argon",
+            "notes": "Performed in Ar-filled glove box",
+            "prov": ["Experimental section"]
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Sealing and heat treatment",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {
+              "inputs": ["mixture from step_1"]
+            },
+            "notes": "Placed into quartz tube",
+            "prov": ["Experimental section"]
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 773,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 7200,
+              "unit": "min"
+            },
+            "notes": "Fixed reaction temperature; produces γ-Li3PS4",
+            "prov": ["Page 54"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Slow cooling",
+        "operations": [
+          {
+            "action": "cool",
+            "parameters": {},
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Slowly cooled to room temperature inside quartz tube",
+            "prov": ["Experimental section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of Li2S & P2S5 mixture under Ar"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Sealed-tube heating at 773 K for 5 days to form γ-Li3PS4"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Slow cooling to ambient temperature"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact precursor molar amounts not specified",
+        "excerpt": "\"These were weighed, mixed in appropriate molar ratios in an argon-filled glove box\""
+      },
+      {
+        "issue": "Cooling rate unspecified",
+        "excerpt": "\"the quartz tube was slowly cooled to room temperature\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Powder X-ray Diffraction (XRD)",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "instrument": "Rigaku RU-200B",
+        "step_size": "0.03° 2θ",
+        "scan_range": "10°–60° 2θ",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "γ-Li3PS4 confirmed; new diffraction lines distinct from previously reported Li3PS4",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Experimental section", "Page 54"]
+    },
+    {
+      "method": "High-temperature synchrotron XRD",
+      "parameters": {
+        "beamline": "SPring-8 BL02B2",
+        "wavelength": "0.601806 Å",
+        "step_size": "0.01° 2θ",
+        "scan_range": "3°–70° 2θ",
+        "temperature_range": "297–906 K"
+      },
+      "results": [
+        {
+          "metric": "phase transitions",
+          "value": "γ→β at 573 K (heating), β→α at 746 K; on cooling α→γ at 573 K",
+          "unit": "K"
+        },
+        {
+          "metric": "lattice parameters γ-phase (297 K)",
+          "value": "a=7.70829 Å, b=6.53521 Å, c=6.1365 Å",
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameters β-phase (637 K)",
+          "value": "a=12.8190 Å, b=8.2195 Å, c=6.1236 Å",
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 54-56", "Figure 1", "Table 1", "Table 3"]
+    },
+    {
+      "method": "Differential Thermal Analysis (DTA)",
+      "parameters": {
+        "heating_rate": "10 °C/min"
+      },
+      "results": [
+        {
+          "metric": "endothermic peak",
+          "value": "573 K (γ→β)",
+          "unit": "K"
+        },
+        {
+          "metric": "endothermic peak",
+          "value": "758 K (β→α)",
+          "unit": "K"
+        },
+        {
+          "metric": "exothermic peak",
+          "value": "573 K (α→γ on cooling)",
+          "unit": "K"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "AC Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "100 Hz–1 MHz",
+        "temperature_range": "300–600 K",
+        "electrodes": "gold paste blocking",
+        "preheating": "433 K for 180 min under vacuum"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (γ-phase, 298 K)",
+          "value": 3.0e-7,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy (γ-phase)",
+          "value": 21.3,
+          "unit": "kJ mol-1"
+        },
+        {
+          "metric": "ionic conductivity (β-phase, 500 K)",
+          "value": 3.0e-2,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy (β-phase)",
+          "value": 15.5,
+          "unit": "kJ mol-1"
+        }
+      ],
+      "interpretation": "β-phase exhibits significantly higher ionic conductivity",
+      "prov": ["Page 55", "Figure 3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Rietveld refinement",
+        "results": [
+          {
+            "equation": "",
+            "value": "Rwp=5.41% (γ-phase 297 K); Rwp=6.19% (β-phase 637 K)",
+            "unit": "%"
+          }
+        ],
+        "prov": ["Table 1", "Table 3", "Figures 4 & 6"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-23T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

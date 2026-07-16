@@ -1,0 +1,201 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "State estimation methodologies for lithium-sulfur battery management systems",
+    "doi": "10.1016/B978-0-12-819676-2.00006-2",
+    "authors": ["Faten Ayadi", "Daniel J. Auger", "Abbas Fotouhi", "Neda Shateri"],
+    "journal": "Lithium-Sulfur Batteries (Book Chapter)",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["lithium-sulfur batteries", "battery management systems", "state of charge estimation"]
+  },
+  "targets": [],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "char_1",
+        "description": "Mixed-pulse discharge test on 3.4 Ah Li-S pouch cell at 293 K with current pulses of 0.29 A, 1.45 A and 2.90 A (Fig. 13.12A)."
+      },
+      {
+        "step_ref": "char_2",
+        "description": "NEDC-based discharge profile on 3.4 Ah Li-S cell at 296 K using Kepco BOP100-10MG source/sink (Fig. 13.12B)."
+      },
+      {
+        "step_ref": "char_3",
+        "description": "UDDS drive-cycle discharge tests on 3.4 Ah Li-S cell at 303 K with maximum current ≈1.2 A; repeated cycles until full discharge (Fig. 13.18)."
+      },
+      {
+        "step_ref": "char_4",
+        "description": "MLTB drive-cycle test on 19 Ah Li-S cell at 298 K for SVM classifier validation (Fig. 13.21)."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Performance values reported as averages or ranges without exact data points for every test condition.",
+        "excerpt": "\"the hybrid technique can converge to the right value of SOC from any initial condition, and it can keep going in a limited bound around it.\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Pulse discharge test",
+      "parameters": {
+        "current_pulses": ["0.29 A", "1.45 A", "2.90 A"],
+        "temperature": {"value": 293, "unit": "K"}
+      },
+      "results": [
+        {
+          "metric": "RMSE (SoC, EKF)",
+          "value": 0.0114,
+          "unit": "",
+          "notes": "Initial SoC = 1; mixed-pulse profile; Table 13.1"
+        },
+        {
+          "metric": "RMSE (SoC, UKF)",
+          "value": 0.0347,
+          "unit": "",
+          "notes": "Initial SoC = 1; mixed-pulse profile; Table 13.1"
+        },
+        {
+          "metric": "RMSE (SoC, PF)",
+          "value": 0.0576,
+          "unit": "",
+          "notes": "Initial SoC = 1; mixed-pulse profile; Table 13.1"
+        }
+      ],
+      "interpretation": "UKF showed fastest convergence and lowest overall error among Bayesian filters for fully-charged initial state.",
+      "prov": ["Fig. 13.12A", "Table 13.1"]
+    },
+    {
+      "method": "NEDC drive-cycle discharge test",
+      "parameters": {
+        "temperature": {"value": 296, "unit": "K"}
+      },
+      "results": [
+        {
+          "metric": "RMSE (SoC, EKF)",
+          "value": 0.0217,
+          "unit": "",
+          "notes": "Initial SoC = 1; Table 13.1"
+        },
+        {
+          "metric": "RMSE (SoC, UKF)",
+          "value": 0.0280,
+          "unit": "",
+          "notes": "Initial SoC = 1; Table 13.1"
+        },
+        {
+          "metric": "RMSE (SoC, PF)",
+          "value": 0.0195,
+          "unit": "",
+          "notes": "Initial SoC = 1; Table 13.1"
+        }
+      ],
+      "interpretation": "Particle Filter marginally outperformed Kalman variants under NEDC for initial full SoC.",
+      "prov": ["Fig. 13.12B", "Table 13.1"]
+    },
+    {
+      "method": "UDDS drive-cycle test",
+      "parameters": {
+        "temperature": {"value": 303, "unit": "K"},
+        "max_current": {"value": 1.2, "unit": "A"}
+      },
+      "results": [
+        {
+          "metric": "Average SoC estimation error (ANFIS)",
+          "value": 7.1,
+          "unit": "%",
+          "notes": "Test 1; Table 13.5"
+        },
+        {
+          "metric": "Maximum SoC estimation error (ANFIS)",
+          "value": 20.9,
+          "unit": "%",
+          "notes": "Test 1; Table 13.5"
+        }
+      ],
+      "interpretation": "ANFIS estimator showed acceptable mean accuracy but large peak errors; hybrid ANFIS+Coulomb counting reduced mean error to 4 %.",
+      "prov": ["Fig. 13.18", "Table 13.5", "Table 13.6"]
+    },
+    {
+      "method": "MLTB drive-cycle test",
+      "parameters": {
+        "battery_capacity": {"value": 19, "unit": "Ah"},
+        "temperature": {"value": 298, "unit": "K"}
+      },
+      "results": [
+        {
+          "metric": "Testing accuracy (SVM, soft clustering)",
+          "value": 93,
+          "unit": "%",
+          "notes": "Using inputs VOC/R0/Rp/Cp at 25 °C; Table 13.7"
+        }
+      ],
+      "interpretation": "SVM classifier achieved up to 93 % soft-clustering accuracy; hybrid SVM+Coulomb counting reduced max SoC error to 2.63 %.",
+      "prov": ["Fig. 13.21", "Table 13.7", "Table 13.9"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Root-mean-squared error calculation",
+        "results": [
+          {
+            "equation": "RMSE = sqrt[ Σ(SoC_true – SoC_est)^2 / n ]",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": ["Eq. 13.20"]
+      },
+      {
+        "method_name": "Hybrid estimation weighting",
+        "results": [
+          {
+            "equation": "SoC_H = (W1·SoC_ANFIS + W2·SoC_CC)/(W1+W2)",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": ["Eq. 13.23"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

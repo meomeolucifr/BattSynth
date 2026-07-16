@@ -1,0 +1,154 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Magnetically active lithium-ion batteries towards battery performance improvement",
+    "doi": "10.1016/j.isci.2021.102691",
+    "authors": [
+      "Carlos M. Costa",
+      "Karla J. Merazzo",
+      "Renato Gonçalves",
+      "Charles Amos",
+      "Senentxu Lanceros-Méndez"
+    ],
+    "journal": "iScience",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["lithium-ion battery", "magnetic field", "magnetohydrodynamics"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Magnetically aligned graphite electrode",
+      "molecular_formula": "",
+      "intended_role": "electrode (anode)",
+      "prov": ["Page 11, Figure 6"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "α-Fe2O3/NC anode under magnetic field",
+      "molecular_formula": "",
+      "intended_role": "electrode (anode)",
+      "prov": ["Page 15, Ganguly et al., 2020 reference"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 11, Figure 6"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "α-Fe2O3",
+      "molecular_formula": "Fe2O3",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 15"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "No explicit synthesis procedures or quantitative reagent amounts provided in text.",
+        "excerpt": "Processing with a pulsed MF produces a more compact and smooth surface composed of Co3O4 microspheres containing numerous nanograins (Rahman et al., 2009)."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_rate": "1C"
+      },
+      "results": [
+        {
+          "metric": "specific capacity",
+          "value": 100,
+          "unit": "mAh g-1",
+          "associated_target": "target_1"
+        }
+      ],
+      "interpretation": "Magnetic alignment tripled capacity versus non-aligned electrode at same rate.",
+      "prov": ["Page 11, Figure 6"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": "50 mA g-1"
+      },
+      "results": [
+        {
+          "metric": "specific capacity (1st discharge)",
+          "value": 1700,
+          "unit": "mAh g-1",
+          "associated_target": "target_2"
+        },
+        {
+          "metric": "specific capacity (baseline without field, 1st discharge)",
+          "value": 1500,
+          "unit": "mAh g-1",
+          "associated_target": "target_2"
+        }
+      ],
+      "interpretation": "Application of magnetic field increased first-cycle capacity and coulombic efficiency.",
+      "prov": ["Page 15"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-14T11:32:00Z",
+    "source_file": "iScience_2021_Magnetic_LIB_review",
+    "processing_time": null
+  }
+}

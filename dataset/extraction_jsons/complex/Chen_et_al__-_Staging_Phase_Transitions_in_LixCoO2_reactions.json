@@ -1,0 +1,661 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Staging Phase Transitions in Li xCoO2",
+    "doi": "10.1149/1.1519850",
+    "authors": [
+      "Zhaohui Chen",
+      "Zhonghua Lu",
+      "J. R. Dahn"
+    ],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2002
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis_and_electrochemistry",
+    "tags": [
+      "LiCoO2",
+      "Al2O3 coating",
+      "in situ XRD",
+      "stage-two phase",
+      "Li-ion cathode"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Al2O3-coated LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "product",
+      "prov": [
+        "Page A1604 – Experimental, Coating LiCoO2 with Al2O3"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li0.12CoO2 (H1-3 phase)",
+      "molecular_formula": "Li0.12CoO2",
+      "intended_role": "intermediate_phase",
+      "prov": [
+        "Page A1607 – Rietveld refinement results"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page A1605 – Coating LiCoO2 with Al2O3"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "aluminum oxide, polymeric precursor",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "coating_precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 20,
+        "unit": "mL"
+      },
+      "notes": "Alfa Aesar",
+      "prov": [
+        "Page A1605 – Coating LiCoO2 with Al2O3"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "3-glycidoxypropyltrimethoxysilane",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "surfactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.05,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page A1605 – Coating LiCoO2 with Al2O3"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Super S carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive_additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": 0.05,
+        "unit": "g"
+      },
+      "notes": "MMM Carbon",
+      "prov": [
+        "Page A1605 – Electrode preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Kynar 2801 (PVDF-HFP)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 0.125,
+        "unit": "g"
+      },
+      "notes": "Elf-Atochem",
+      "prov": [
+        "Page A1605 – Electrode preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "acetone",
+      "molecular_formula": "C3H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 1.5,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page A1605 – Electrode preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "dibutyl phthalate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "plasticizer",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.2,
+        "unit": "g"
+      },
+      "notes": "DBP",
+      "prov": [
+        "Page A1605 – Electrode preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "diethyl ether",
+      "molecular_formula": "C4H10O",
+      "ontology": {
+        "role": "washing_solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "anhydrous",
+      "prov": [
+        "Page A1605 – Electrode preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte_salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1 M in EC:DEC",
+      "prov": [
+        "Page A1605 – Electrochemical testing"
+      ]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "ethyl carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "electrolyte_solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "33 vol %",
+      "prov": [
+        "Page A1605 – Electrochemical testing"
+      ]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "diethyl carbonate",
+      "molecular_formula": "C5H10O3",
+      "ontology": {
+        "role": "electrolyte_solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "67 vol %",
+      "prov": [
+        "Page A1605 – Electrochemical testing"
+      ]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "foil",
+      "prov": [
+        "Page A1605 – Electrochemical testing"
+      ]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "glove box",
+      "prov": [
+        "Page A1605 – Electrochemical testing"
+      ]
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "helium",
+      "molecular_formula": "He",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "glove box & sample holder",
+      "prov": [
+        "Page A1605 – Ex situ XRD"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Coating of LiCoO2 with Al2O3 precursor",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ],
+              "method": "magnetic stirring"
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Added 20 mL aluminum oxide polymeric precursor to 2 g LiCoO2"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_3"
+              ]
+            },
+            "timepoint": "during mixing",
+            "notes": "0.05 g surfactant added"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page A1605 – Coating LiCoO2 with Al2O3"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Separation of coated powder",
+        "operations": [
+          {
+            "action": "centrifuge",
+            "parameters": {
+              "inputs": [
+                "output_step_1"
+              ]
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Page A1605 – Coating LiCoO2 with Al2O3"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Drying of separated powder",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "output_step_2"
+              ]
+            },
+            "temperature": {
+              "value": 373.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "to evaporate solvents"
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Page A1605 – Coating LiCoO2 with Al2O3"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Final calcination",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "output_step_3"
+              ]
+            },
+            "temperature": {
+              "value": 823.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Page A1605 – Coating LiCoO2 with Al2O3"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Electrode slurry preparation",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5",
+                "chem_6",
+                "chem_7",
+                "output_step_4"
+              ],
+              "method": "extensive mixing"
+            },
+            "notes": "500 mg active material + 50 mg carbon + 125 mg binder with solvents"
+          },
+          {
+            "action": "spread",
+            "parameters": {},
+            "notes": "slurry spread on glass plate using notch bar"
+          },
+          {
+            "action": "evaporate",
+            "parameters": {
+              "inputs": [
+                "film"
+              ]
+            },
+            "notes": "solvent evaporation"
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Page A1605 – Electrode preparation"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Electrode disk fabrication and washing",
+        "operations": [
+          {
+            "action": "punch",
+            "parameters": {
+              "diameter": {
+                "value": 13,
+                "unit": "mm"
+              }
+            },
+            "notes": "dry film punched into disks"
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": [
+                "chem_8"
+              ],
+              "repetitions": "several"
+            },
+            "notes": "remove DBP"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 373.15,
+              "unit": "K"
+            },
+            "notes": "air drying"
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Page A1605 – Electrode preparation"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Stir LiCoO2 with Al2O3 precursor and surfactant 3 h"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Centrifuge to separate coated powder"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Dry at 373 K for 12 h"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Calcine at 823 K for 3 h to obtain Al2O3-coated LiCoO2"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Prepare slurry with additives and solvents, coat on glass, evaporate"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Punch disks, wash with diethyl ether, dry at 373 K"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact composition and amount of Al2O3 coating not quantified",
+        "excerpt": "Based on mass balances during synthesis, we estimate the coated material to be less than 5% by weight compared to LiCoO2."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD (in situ)",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "scan_range": "17–71° 2θ",
+        "step_size": "0.05°",
+        "scan_time": {
+          "value": 240,
+          "unit": "min"
+        }
+      },
+      "results": [
+        {
+          "metric": "phase_transition_voltage",
+          "value": 4.55,
+          "unit": "V"
+        },
+        {
+          "metric": "phase_transition_voltage",
+          "value": 4.63,
+          "unit": "V"
+        },
+        {
+          "metric": "observed_phases",
+          "value": "O3 → H1-3 → O1 (reversible)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Two reversible phase transitions during charge/discharge",
+      "prov": [
+        "Figures 3 & 4"
+      ]
+    },
+    {
+      "method": "XRD (ex situ)",
+      "parameters": {
+        "scan_range": "8–71° 2θ",
+        "step_size": "0.05°",
+        "scan_time_per_scan": {
+          "value": 60,
+          "unit": "min"
+        },
+        "lattice_constants": {
+          "a": 2.8193,
+          "c": 27.035,
+          "unit": "Å"
+        }
+      },
+      "results": [
+        {
+          "metric": "space_group",
+          "value": "R-3m",
+          "unit": ""
+        },
+        {
+          "metric": "Li_site_occupancy",
+          "value": 0.24,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms H1-3 (stage-two) structure for Li0.12CoO2",
+      "prov": [
+        "Figure 6",
+        "Table II"
+      ]
+    },
+    {
+      "method": "dQ/dV analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "peak_positions_charge",
+          "value": "4.55 / 4.63",
+          "unit": "V"
+        },
+        {
+          "metric": "charge_capacity_first_cycle",
+          "value": 270,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Electrochemical detection of phase transitions; coated sample shows reversibility",
+      "prov": [
+        "Figure 2",
+        "Figure 1"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Rietveld refinement",
+        "results": [
+          {
+            "equation": "",
+            "value": 5.7,
+            "unit": "%",
+            "metric": "R_B"
+          },
+          {
+            "equation": "",
+            "value": 17.55,
+            "unit": "%",
+            "metric": "R_wp"
+          }
+        ],
+        "prov": [
+          "Table II"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 270,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T08:19:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

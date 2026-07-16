@@ -1,0 +1,773 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Dopant Distribution in Co-Free High-Energy Layered Cathode Materials",
+    "doi": "10.1021/acs.chemmater.9b03603",
+    "authors": [
+      "Linqin Mu",
+      "Rui Zhang",
+      "Wang Hay Kan",
+      "Yan Zhang",
+      "Luxi Li",
+      "Chunguang Kuai",
+      "Benjamin Zydlewski",
+      "Muhammad Mominur Rahman",
+      "Cheng-Jun Sun",
+      "Sami Sainio",
+      "Maxim Avdeev",
+      "Dennis Nordlund",
+      "Huolin L. Xin",
+      "Feng Lin"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": ["LiNiO2", "dual-doping", "battery cathode", "Mg/Ti doping", "Co-free cathode"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNiO2",
+      "molecular_formula": "LiNiO2",
+      "intended_role": "product",
+      "prov": ["Experimental Methods", "Results"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Mg/Ti dual-doped LiNiO2",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Experimental Methods", "Results"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Nickel(II) sulfate hexahydrate",
+      "molecular_formula": "NiSO4·6H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 0.1,
+        "unit": "mol"
+      },
+      "notes": "Dissolved in 100 mL water for baseline LNO",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Magnesium sulfate heptahydrate",
+      "molecular_formula": "MgSO4·7H2O",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 0.002,
+        "unit": "M"
+      },
+      "notes": "In 100 mL solution for Mg/Ti-LNO",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Titanium oxysulfate",
+      "molecular_formula": "TiOSO4",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 0.002,
+        "unit": "M"
+      },
+      "notes": "In 100 mL solution for Mg/Ti-LNO",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Sodium hydroxide",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "base",
+        "category": "inorganic base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "NaOH/NH3·H2O solution, NaOH:NH3 molar ratio 1.2",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ammonium hydroxide",
+      "molecular_formula": "NH3·H2O",
+      "ontology": {
+        "role": "complexing agent",
+        "category": "solution"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "NaOH/NH3·H2O mixed solution, ratio 1.2",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "mL"
+      },
+      "notes": "Solvent for transition-metal solution",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium hydroxide",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "lithium source",
+        "category": "inorganic base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mixed with dried precursor before calcination",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "N-methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Solvent for electrode slurry",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Acetylene carbon",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "mass%"
+      },
+      "notes": "In cathode composite",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Poly(vinylidene difluoride)",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "mass%"
+      },
+      "notes": "In cathode composite",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "In EC/EMC with 2 wt % VC",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Ethyl methyl carbonate",
+      "molecular_formula": "C4H8O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Experimental Methods"]
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "Vinylene carbonate",
+      "molecular_formula": "C3H2O3",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "organic additive"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "mass%"
+      },
+      "notes": "In electrolyte",
+      "prov": ["Experimental Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of transition-metal solution for baseline LNO",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_6"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "0.1 mol NiSO4·6H2O dissolved in 100 mL water"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of NaOH/NH3 starting and base solutions",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5", "chem_6"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "NaOH/NH3 molar ratio 1.2; starting solution 40 mL, base solution 100 mL; pH adjusted to 11.0"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Coprecipitation of precursor at 55 °C",
+        "operations": [
+          {
+            "action": "pump",
+            "parameters": {
+              "inputs": ["step_1", "step_2"]
+            },
+            "temperature": {
+              "value": 328,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Feed rate ∼2 mL min-1; pH maintained at 11.0 ± 0.2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Isolation and drying of baseline precursor",
+        "operations": [
+          {
+            "action": "filter",
+            "parameters": {
+              "inputs": ["step_3"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Washed with deionized water"
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["step_3"]
+            },
+            "temperature": {
+              "value": 378,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Vacuum oven overnight"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Methods"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Lithiation and calcination for LiNiO2",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["step_4", "chem_7"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "LiOH thoroughly mixed with precursor"
+          },
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["step_4"]
+            },
+            "temperature": {
+              "value": 733,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "First stage under 2 L min-1 air flow"
+          },
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["step_4"]
+            },
+            "temperature": {
+              "value": 948,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "notes": "Second stage under 2 L min-1 air flow to obtain LiNiO2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Methods"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Preparation of transition-metal solution for Mg/Ti-LNO",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_6"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "0.096 M NiSO4·6H2O, 0.002 M MgSO4·7H2O, 0.002 M TiOSO4 in 100 mL water"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Methods"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Coprecipitation, isolation, and drying of Mg/Ti-precursor (conditions identical to steps 2–4)",
+        "operations": [
+          {
+            "action": "refer",
+            "parameters": {
+              "inputs": ["step_2", "step_3", "step_4"]
+            },
+            "notes": "Same parameters as baseline but using dopant-containing solution"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental Methods"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Lithiation and calcination for Mg/Ti-LNO",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["step_7", "chem_7"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          },
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["step_7"]
+            },
+            "temperature": {
+              "value": 733,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "First stage under 2 L min-1 air flow"
+          },
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["step_7"]
+            },
+            "temperature": {
+              "value": 973,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "notes": "Second stage at 700 °C to obtain Mg/Ti-LNO"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "NiSO4·6H2O dissolved to form transition-metal solution"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Alkaline starting and base solutions prepared"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Coprecipitation under N2 at 55 °C producing precursor"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Precursor filtered, washed, and vacuum-dried"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Lithiation with LiOH and two-step calcination yielding LiNiO2"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Dopant-containing transition-metal solution prepared"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Coprecipitation and drying of Mg/Ti-doped precursor"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Lithiation and calcination yielding Mg/Ti dual-doped LiNiO2"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Amount of LiOH not specified",
+        "excerpt": "The dried precursor was then mixed with LiOH thoroughly"
+      },
+      {
+        "issue": "Exact composition of Mg/Ti dual-doped LiNiO2 not explicitly given",
+        "excerpt": "For the Mg/Ti-LiNiO2, the transition-metal solution (0.096 M NiSO4·6H2O, 0.002 M MgSO4·7H2O, and 0.002 M TiOSO4...)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Synchrotron XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase",
+          "value": "layered (R3̅m)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Pure layered phase verified for both materials",
+      "prov": ["Figure S1", "Results"]
+    },
+    {
+      "method": "BET surface area",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface area LNO",
+          "value": 1.1,
+          "unit": "m2 g-1"
+        },
+        {
+          "metric": "surface area Mg/Ti-LNO",
+          "value": 0.3,
+          "unit": "m2 g-1"
+        }
+      ],
+      "interpretation": "Dual doping forms denser particles",
+      "prov": ["Results"]
+    },
+    {
+      "method": "Neutron diffraction with Rietveld refinement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ni on Li sites",
+          "value": 4,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Mg2+ and Ti4+ occupy Ni sites",
+      "prov": ["Figure 1b", "Results"]
+    },
+    {
+      "method": "Soft X-ray absorption spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ni oxidation state (pristine)",
+          "value": "<3",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Ni slightly reduced from +3; Ti present as Ti4+ with no TiO2 impurity",
+      "prov": ["Figure 1a"]
+    },
+    {
+      "method": "EELS mapping",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ti enrichment depth",
+          "value": 3,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Ti enriched at particle surface; Mg homogeneous",
+      "prov": ["Figure 1e-g"]
+    },
+    {
+      "method": "X-ray fluorescence microscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ni concentration on Li anode (relative)",
+          "value": "≈10× lower",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Mg/Ti-LNO suppresses Ni dissolution",
+      "prov": ["Figure 3a,b"]
+    },
+    {
+      "method": "Differential scanning calorimetry",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "exothermic peak Mg/Ti-LNO",
+          "value": 219.9,
+          "unit": "°C"
+        },
+        {
+          "metric": "exothermic peak LNO",
+          "value": 210,
+          "unit": "°C"
+        }
+      ],
+      "interpretation": "Dual doping improves thermal stability",
+      "prov": ["Figure 3f"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical testing",
+        "results": [
+          {
+            "metric": "discharge capacity at C/10 (Mg/Ti-LNO)",
+            "value": 208,
+            "unit": "mAh g-1"
+          },
+          {
+            "metric": "capacity retention after 50 cycles at C/10",
+            "value": 95,
+            "unit": "%"
+          },
+          {
+            "metric": "specific energy at C/10",
+            "value": 780,
+            "unit": "Wh kg-1"
+          },
+          {
+            "metric": "capacity retention after 300 cycles at 1C",
+            "value": 85,
+            "unit": "%"
+          }
+        ]
+      },
+      {
+        "method_name": "GITT",
+        "results": [
+          {
+            "metric": "Li⁺ diffusion coefficient range",
+            "value": "10^-10 to 10^-11",
+            "unit": "cm2 s-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 208,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 300
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-13T14:30:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

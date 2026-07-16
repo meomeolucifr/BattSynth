@@ -1,0 +1,221 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Large Space-Charge Effects in a Nanostructured Proton Conductor",
+    "doi": "10.1002/adfm.201000692",
+    "authors": [
+      "Lucas A. Haverkate",
+      "Wing K. Chan",
+      "Fokko M. Mulder"
+    ],
+    "journal": "Advanced Functional Materials",
+    "year": 2010
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "nanoionics",
+      "space-charge",
+      "proton conductor",
+      "TiO2",
+      "CsHSO4"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "TiO2–CsHSO4 nanocomposite",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Page 4107–4108 (text)"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "TiO2 anatase",
+      "molecular_formula": "TiO2",
+      "ontology": {
+        "role": "acceptor phase",
+        "category": "inorganic oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 4107–4108"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "CsHSO4",
+      "molecular_formula": "CsHSO4",
+      "ontology": {
+        "role": "proton donor / solid acid",
+        "category": "inorganic acid salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 4107–4108"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "H+",
+      "molecular_formula": "H",
+      "ontology": {
+        "role": "mobile ion",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "protons inserted into TiO2",
+      "prov": [
+        "Throughout text"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "No explicit synthesis procedure described in provided text chunk",
+        "excerpt": "The text discusses properties of TiO2–CsHSO4 composites but does not specify preparation steps."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT (PW91 GGA, PAW)",
+      "parameters": {
+        "plane_wave_cutoff": "450 eV",
+        "supercell_TiO2": "72 formula units",
+        "supercell_CsHSO4": "32 formula units"
+      },
+      "results": [
+        {
+          "metric": "proton insertion energy into TiO2",
+          "value": -6.82,
+          "unit": "eV"
+        },
+        {
+          "metric": "proton removal energy from CsHSO4",
+          "value": 5.9,
+          "unit": "eV"
+        },
+        {
+          "metric": "net formation enthalpy (proton transfer CsHSO4→TiO2)",
+          "value": -1.0,
+          "unit": "eV"
+        },
+        {
+          "metric": "neutral hydrogen insertion energy into TiO2",
+          "value": 3.0,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Proton insertion is energetically favored over neutral hydrogen insertion.",
+      "prov": [
+        "Figure 8",
+        "Pages 4112–4114"
+      ]
+    },
+    {
+      "method": "Neutron diffraction",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "hydrogen concentration in TiO2",
+          "value": 1e21,
+          "unit": "cm-3"
+        },
+        {
+          "metric": "fraction of available sites filled",
+          "value": 10,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "High proton occupancy consistent with giant space-charge effect.",
+      "prov": [
+        "Pages 4107–4108"
+      ]
+    },
+    {
+      "method": "Space-charge modelling",
+      "parameters": {
+        "particle_size_TiO2": "7 nm",
+        "ΔGF": "-1.0 eV",
+        "temperature": "300 K"
+      },
+      "results": [
+        {
+          "metric": "electric potential drop across interface",
+          "value": 1.4,
+          "unit": "eV"
+        },
+        {
+          "metric": "interfacial proton fraction in TiO2",
+          "value": 0.77,
+          "unit": ""
+        },
+        {
+          "metric": "penetration depth in TiO2",
+          "value": 0.2,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Model reproduces experimental proton fractions and predicts strong interfacial space-charge layers.",
+      "prov": [
+        "Figure 10",
+        "Page 4113"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-11T18:35:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

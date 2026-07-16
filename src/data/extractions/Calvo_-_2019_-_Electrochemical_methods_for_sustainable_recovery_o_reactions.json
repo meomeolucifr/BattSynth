@@ -1,0 +1,409 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Electrochemical methods for sustainable recovery of lithium from natural brines and battery recycling",
+    "doi": "10.1016/j.coelec.2019.04.010",
+    "authors": ["Ernesto Julio Calvo"],
+    "journal": "Current Opinion in Electrochemistry",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["lithium extraction", "electrochemical recovery", "natural brine", "battery recycling"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "intended_role": "product",
+      "prov": ["Figure 1", "Text section describing high-purity LiCl recovery (<1 V)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li1-xMn2O4 (LMO)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "cathode",
+        "category": "insertion electrode"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Electrode area 0.2 cm² (Figure 1)",
+      "prov": ["Figure 1", "Text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Polypyrrole (PPy)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "anode",
+        "category": "conductive polymer electrode"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Figure 1", "Text"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Natural brine",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "feedstock",
+        "category": "solution"
+      },
+      "amount": {
+        "value": 6,
+        "unit": "mL"
+      },
+      "notes": "Contains ~0.18 M LiCl and 5 M NaCl (Table 1)",
+      "prov": ["Figure 1", "Table 1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Dilute LiCl recovery solution",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "recovery electrolyte",
+        "category": "solution"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Concentration not specified for PPy/LMO system",
+      "prov": ["Text"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiMn2O4",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "anode",
+        "category": "insertion electrode"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Fully lithiated electrode in double-LMO cell",
+      "prov": ["Figure 3"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "KCl solution",
+      "molecular_formula": "KCl",
+      "ontology": {
+        "role": "recovery electrolyte",
+        "category": "solution"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "0.1 M KCl (Figure 3)",
+      "prov": ["Figure 3"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Assembly of undivided electrochemical cell with Li-deficient Li1-xMn2O4 cathode and PPy anode immersed in natural brine.",
+        "operations": [
+          {
+            "action": "immerse",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "External resistor connected; electrode area 0.2 cm²; electrolyte volume 6 mL."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1", "Text"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Spontaneous lithium uptake: Li+ intercalation into Li1-xMn2O4 and Cl- exchange at PPy, generating current that decays over time.",
+        "operations": [
+          {
+            "action": "intercalate",
+            "parameters": {
+              "electrode": "chem_1",
+              "ion": "Li+"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Current recorded across external resistor."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1", "Equations 3-4"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Electrodes rinsed and cell electrolyte replaced with dilute LiCl recovery solution.",
+        "operations": [
+          {
+            "action": "rinse",
+            "parameters": {
+              "electrode": ["chem_1", "chem_2"]
+            },
+            "notes": ""
+          },
+          {
+            "action": "exchange_electrolyte",
+            "parameters": {
+              "from": "chem_3",
+              "to": "chem_4"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Text"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Release step: reversed polarity (<1 V) to desorb Li+ and Cl- from electrodes into recovery electrolyte, yielding high-purity LiCl.",
+        "operations": [
+          {
+            "action": "electrolysis",
+            "parameters": {
+              "potential": {
+                "value": null,
+                "unit": "V",
+                "upper_limit": 1
+              },
+              "current": {
+                "value": null,
+                "unit": "A"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Text"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Assembly of double-LMO cell separated by an anion exchange membrane: Li1-xMn2O4 electrode in natural brine; LiMn2O4 electrode in 0.1 M KCl.",
+        "operations": [
+          {
+            "action": "assemble_cell",
+            "parameters": {
+              "cathode": "chem_1",
+              "anode": "chem_5",
+              "separator": "anion exchange membrane",
+              "electrolytes": ["chem_3", "chem_6"]
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 3"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Discharge at 50 mA enabling lithium transfer from brine to recovery side until cell voltage reaches 0 V.",
+        "operations": [
+          {
+            "action": "galvanostatic_discharge",
+            "parameters": {
+              "current": {
+                "value": 0.05,
+                "unit": "A"
+              }
+            },
+            "notes": "Initial brine LiCl 0.18 M; concentration in recovery side increases up to 1.34 M when ΔEcell = 0."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 3", "Text"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Cell setup with LMO/PPy electrodes in natural brine."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Spontaneous LiCl uptake (intercalation and anion exchange)."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Electrolyte exchange to recovery solution."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Controlled release of LiCl into recovery electrolyte."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Setup of double-LMO membrane cell."
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Galvanostatic extraction at 50 mA until ΔEcell = 0."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing duration and exact potential values for several electrochemical steps.",
+        "excerpt": "“while the release of LiCl into the recovery electrolyte takes place ... under a potential difference of less than 1 V.”"
+      },
+      {
+        "issue": "No explicit masses of electrodes provided.",
+        "excerpt": "“Electrode area 0.2 cm2 and electrolyte volume 6 mL.”"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Na+ intercalation in LMO lattice",
+          "value": "not detected",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Sodium does not enter the LMO structure during lithium extraction.",
+      "prov": ["Text citing Ref 35"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Na+ surface adsorption",
+          "value": "observed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Na+ adsorbs on LMO surface, blocking Li+ sites.",
+      "prov": ["Text citing Ref 35"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Blocking effect confirmation",
+          "value": "confirmed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Text citing Ref 36"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Energy consumption estimation",
+        "results": [
+          {
+            "equation": "",
+            "value": 144,
+            "unit": "Wh kg-1",
+            "notes": "Energy required per kg of Li recovered for FePO4/Ag system (Text)."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-07T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

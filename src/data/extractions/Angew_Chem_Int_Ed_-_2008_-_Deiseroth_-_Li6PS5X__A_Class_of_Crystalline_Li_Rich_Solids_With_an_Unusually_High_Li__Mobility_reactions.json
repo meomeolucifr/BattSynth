@@ -1,0 +1,422 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Li6PS5X: A Class of Crystalline Li-Rich Solids With an Unusually High Li+ Mobility",
+    "doi": "10.1002/anie.200703900",
+    "authors": [
+      "Hans-Jörg Deiseroth",
+      "Shiao-Tong Kong",
+      "Hellmut Eckert",
+      "Julia Vannahme",
+      "Christof Reiner",
+      "Torsten Zaiß",
+      "Marc Schlosser"
+    ],
+    "journal": "Angewandte Chemie International Edition",
+    "year": 2008
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "inorganic_synthesis",
+    "tags": ["solid electrolyte", "argyrodite", "lithium ion conductor"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "product",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li6PS5Br",
+      "molecular_formula": "Li6PS5Br",
+      "intended_role": "product",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li6PS5I",
+      "molecular_formula": "Li6PS5I",
+      "intended_role": "product",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "stoichiometric amount",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "stoichiometric amount",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used for Li6PS5Cl synthesis; stoichiometric",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiBr",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used for Li6PS5Br synthesis; stoichiometric",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiI",
+      "molecular_formula": "LiI",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used for Li6PS5I synthesis; stoichiometric",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Ar, <1 ppm H2O, <1 ppm O2",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mix stoichiometric Li2S, P2S5, and LiX under inert atmosphere.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "intimate mixing under Ar atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (<1 ppm H2O, <1 ppm O2)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Press the mixed powders into pellets.",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heat the pellets to form crystalline Li6PS5X.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 10080,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 823.15,
+              "unit": "K"
+            },
+            "notes": "heated to 550°C for 7 days"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Select single crystals in glove box and seal in capillaries.",
+        "operations": [
+          {
+            "action": "select",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "performed inside glove box"
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "sealed X-ray capillaries"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "inert glove box",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Stoichiometric mixing of precursors under Ar."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pellet formation."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "High-temperature reaction at 823 K for 7 days to crystallize Li6PS5X."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Isolation of single crystals for characterization."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometric masses not provided",
+        "excerpt": "stoichiometric mixtures of Li2S, P2S5, and LiX"
+      },
+      {
+        "issue": "Conductivity reported as range without precise value",
+        "excerpt": "specific Li-ion conductivities in the range 10−2 to 10−3 S cm−1"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "single-crystal X-ray diffraction",
+      "parameters": {
+        "radiation": "Mo Kα (λ = 71.073 pm)",
+        "temperature": 296,
+        "unit_cell": {
+          "system": "cubic",
+          "space_group": "F4̅3m (No. 216)"
+        }
+      },
+      "results": [
+        {
+          "target": "target_1",
+          "metric": "lattice parameter a",
+          "value": 985.9,
+          "unit": "pm",
+          "prov": ["Experimental Section"]
+        },
+        {
+          "target": "target_2",
+          "metric": "lattice parameter a",
+          "value": 998.8,
+          "unit": "pm",
+          "prov": ["Experimental Section"]
+        },
+        {
+          "target": "target_3",
+          "metric": "lattice parameter a",
+          "value": 1014.5,
+          "unit": "pm",
+          "prov": ["Experimental Section"]
+        }
+      ],
+      "interpretation": "All compounds adopt the cubic argyrodite structure.",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "method": "impedance spectroscopy",
+      "parameters": {
+        "temperature": 298
+      },
+      "results": [
+        {
+          "target": "",
+          "metric": "Li-ion conductivity",
+          "value": 1e-2,
+          "unit": "S cm-1",
+          "prov": ["Main Text"]
+        },
+        {
+          "target": "",
+          "metric": "Li-ion conductivity",
+          "value": 1e-3,
+          "unit": "S cm-1",
+          "prov": ["Main Text"]
+        }
+      ],
+      "interpretation": "High Li-ion conductivity demonstrated for Li6PS5X series.",
+      "prov": ["Main Text"]
+    },
+    {
+      "method": "7Li NMR spectroscopy",
+      "parameters": {
+        "temperature_range": "140-300 K"
+      },
+      "results": [
+        {
+          "target": "target_1",
+          "metric": "static linewidth (140-160 K)",
+          "value": 6000,
+          "unit": "Hz",
+          "prov": ["Figure 2"]
+        },
+        {
+          "target": "target_3",
+          "metric": "static linewidth (140-160 K)",
+          "value": 6000,
+          "unit": "Hz",
+          "prov": ["Figure 2"]
+        }
+      ],
+      "interpretation": "Line-narrowing indicates highest Li-ion mobility for Li6PS5Br.",
+      "prov": ["Figure 2"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-07-31T00:00:00Z",
+    "source_file": "input_text",
+    "processing_time": null
+  }
+}

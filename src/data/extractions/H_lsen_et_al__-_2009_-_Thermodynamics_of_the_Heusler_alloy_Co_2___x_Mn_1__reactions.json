@@ -1,0 +1,301 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Thermodynamics of the Heusler alloy Co2−xMn1+xSi: A combined density functional theory and cluster expansion study",
+    "doi": "10.1103/PhysRevB.79.094407",
+    "authors": [
+      "Björn Hülsen",
+      "Matthias Scheffler",
+      "Peter Kratzer"
+    ],
+    "journal": "Physical Review B",
+    "year": 2009
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational materials study",
+    "tags": ["Heusler alloy", "DFT", "cluster expansion", "Monte Carlo"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Co2MnSi",
+      "molecular_formula": "Co2MnSi",
+      "intended_role": "primary material studied",
+      "prov": ["Page 2, Figure 1", "Table I"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Co2−xMn1+xSi",
+      "molecular_formula": "",
+      "intended_role": "compositionally variable alloy",
+      "prov": ["Title", "Throughout text"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Co2Mn4Si2",
+      "molecular_formula": "Co2Mn4Si2",
+      "intended_role": "predicted ordered ground state",
+      "prov": ["Page 5, Section C", "Figure 6"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Cobalt",
+      "molecular_formula": "Co",
+      "ontology": {
+        "role": "element/reservoir",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section II.B"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Manganese",
+      "molecular_formula": "Mn",
+      "ontology": {
+        "role": "element/reservoir",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section II.B"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Silicon",
+      "molecular_formula": "Si",
+      "ontology": {
+        "role": "element/reservoir",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section II.B"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Co3Si",
+      "molecular_formula": "Co3Si",
+      "ontology": {
+        "role": "reference reservoir compound",
+        "category": "intermetallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section II.B"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Mn3Si",
+      "molecular_formula": "Mn3Si",
+      "ontology": {
+        "role": "reference reservoir compound",
+        "category": "intermetallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section II.B"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Co2MnSi",
+      "molecular_formula": "Co2MnSi",
+      "ontology": {
+        "role": "compound under study",
+        "category": "intermetallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_1",
+        "description": "Density functional theory (FP-LAPW, GGA-PBE) calculations on various Co, Mn, Si configurations."
+      },
+      {
+        "step_ref": "comp_2",
+        "description": "Construction of cluster expansions (energy CE and moment CE) using 60 DFT-calculated structures."
+      },
+      {
+        "step_ref": "comp_3",
+        "description": "Ground-state search and Monte Carlo simulations based on energy CE to evaluate thermodynamic stability."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (FP-LAPW, GGA-PBE)",
+      "parameters": {
+        "lattice_constant": {
+          "value": 5.629,
+          "unit": "Å"
+        },
+        "k_point_mesh": "12×12×12 for 4-atom cell; 6×6×6 for 32-atom cell",
+        "plane_wave_cutoff": {
+          "value": 15.5,
+          "unit": "Ry"
+        }
+      },
+      "results": [
+        {
+          "metric": "spin_gap",
+          "value": 0.35,
+          "unit": "eV"
+        },
+        {
+          "metric": "band_gap",
+          "value": 0.84,
+          "unit": "eV"
+        },
+        {
+          "metric": "total_spin_moment",
+          "value": 5.00,
+          "unit": "μB per formula unit"
+        }
+      ],
+      "interpretation": "Ideal Co2MnSi predicted to be half-metallic.",
+      "prov": ["Table I"]
+    },
+    {
+      "method": "Cluster Expansion (energy CE)",
+      "parameters": {
+        "figures_used": "9 pairs, 6 triplets",
+        "cross_validation_score": {
+          "value": 5.8,
+          "unit": "meV per atom"
+        }
+      },
+      "results": [
+        {
+          "metric": "predicted_ground_states",
+          "value": "L21 Co2MnSi; Co2Mn4Si2; Co2Mn10Si4; CoMn11Si4",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 5, Fig. 5", "Section C"]
+    },
+    {
+      "method": "Cluster Expansion (moment CE)",
+      "parameters": {
+        "cross_validation_score": {
+          "value": 0.05,
+          "unit": "μB per atom"
+        }
+      },
+      "results": [
+        {
+          "metric": "extended_Slater_Pauling_rule",
+          "value": "Mtot = NV − 24 nSi / per unit cell",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Rule holds for Mn content 25–60%.",
+      "prov": ["Section D", "Table III"]
+    },
+    {
+      "method": "Monte Carlo simulation",
+      "parameters": {
+        "cell_size": "6144 Co/Mn sites",
+        "temperature_range": "300–1400 K"
+      },
+      "results": [
+        {
+          "metric": "Co-Mn swap concentration at 1000 K",
+          "value": 0.001,
+          "unit": "fraction"
+        },
+        {
+          "metric": "phase_separation_temperature Co2Mn4Si2",
+          "value": 320,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Stoichiometric Co2MnSi remains highly ordered up to 1000 K; Co2Mn4Si2 decomposes above ~320 K.",
+      "prov": ["Figures 9 & 10"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Formation energy calculation",
+        "results": [
+          {
+            "equation": "Ef = (E(a,b) − a/3 E(Co3Si) − b/3 E(Mn3Si))/(a+b)",
+            "value": null,
+            "unit": "eV per atom"
+          }
+        ]
+      },
+      {
+        "method_name": "Extended Slater-Pauling verification",
+        "results": [
+          {
+            "equation": "Mtot = NV − 24 nSi",
+            "value": null,
+            "unit": "μB"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T05:12:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

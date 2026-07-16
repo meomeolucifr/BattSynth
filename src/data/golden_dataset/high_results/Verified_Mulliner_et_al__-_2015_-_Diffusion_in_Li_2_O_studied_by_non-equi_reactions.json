@@ -1,0 +1,291 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Diffusion in Li2O studied by non-equilibrium molecular dynamics for 873 < T / K < 1603",
+    "doi": "10.1039/c5cp02628h",
+    "authors": [
+      "Alexander D. Mulliner",
+      "Philippe C. Aeberhard",
+      "Peter D. Battle",
+      "William I. F. David",
+      "Keith Refson"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "diffusion",
+      "Li2O",
+      "molecular dynamics",
+      "superionic conductor"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2O",
+      "molecular_formula": "Li2O",
+      "intended_role": "material under study",
+      "prov": [
+        "Page 21470\u221221475"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly identifies the material as lithium oxide, Li2O. The title states \u201cDiffusion in Li2O\u2026\u201d and the introduction begins \u201cLithium oxide, Li2O\u2026\u201d. Therefore the extracted Target Formula = Li2O is directly supported by the source text (within pages 21470\u201321475).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Material investigated in MD/NEMD simulations.",
+      "prov": [
+        "Page 21470\u221221475"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly studies lithium oxide, Li2O, repeatedly stating the chemical identity (e.g., title: \u201cDiffusion in Li2O\u2026\u201d and Introduction: \u201cLithium oxide, Li2O\u2026\u201d). However, the text contains no explicit statement of an amount (e.g., mass, moles, concentration, loading, or composition fraction) for Li2O; it discusses simulation supercells (e.g., 128 formula units) and temperatures but not an experimental/chemical amount. Therefore \u201cLi2O | Amount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "FF-NEMD simulation",
+      "parameters": {
+        "temperature": 1273,
+        "simulation_time": {
+          "value": 500,
+          "unit": "ps"
+        },
+        "supercell": "2\u00d72\u00d72 (128 formula units)",
+        "colour_field_direction": "[001]"
+      },
+      "results": [
+        {
+          "metric": "log D_Li",
+          "value": -6.18,
+          "error": 0.03,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "Table 1 explicitly lists the FF-NEMD lithium self-diffusion coefficient at 1273 K as \u201clog DLi/cm2 s\u22121 = \u22126.18 \u00b1 0.03\u201d (simulation time 500 ps). This matches the extracted metric (log D_Li), value (\u22126.18), error (0.03), and unit (cm2 s\u22121).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "FF-MD simulation",
+      "parameters": {
+        "temperature": 1273,
+        "simulation_time": {
+          "value": 500,
+          "unit": "ps"
+        }
+      },
+      "results": [
+        {
+          "metric": "log D_Li",
+          "value": -5.96,
+          "error": 0.05,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Table 1 explicitly reports the FF-MD lithium self-diffusion coefficient at 1273 K as \u201clog DLi/cm2 s\u22121 = \u22125.96 \u00b1 0.05\u201d (simulation time 500 ps). This matches the extracted metric (log D_Li), value (-5.96), error (0.05), and unit (cm2 s\u22121).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "DFT-NEMD simulation",
+      "parameters": {
+        "temperature": 1273,
+        "simulation_time": {
+          "value": 50,
+          "unit": "ps"
+        },
+        "functional": "PBE"
+      },
+      "results": [
+        {
+          "metric": "log D_Li",
+          "value": -6.02,
+          "error": 0.08,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "Table 1 (on page 3 of the provided text) explicitly lists the DFT-NEMD lithium self-diffusion coefficient at 1273 K as log D_Li = \u22126.02 \u00b1 0.08 with units cm^2 s^\u22121, matching the extracted metric/value/error/unit. The alleged provenance \u201cTable 1\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Experimental measurement (Oishi et al.)",
+      "parameters": {
+        "temperature": 1312
+      },
+      "results": [
+        {
+          "metric": "log D_Li",
+          "value": -6.23,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1 reference"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Table 1 explicitly lists the experimental value from Oishi et al. as \u201cOishi et al. \u22126.23\u201d under the header \u201clog DLi/cm2 s\u22121\u201d. This directly supports the extracted metric log D_Li = \u22126.23 with unit cm^2 s\u22121 (noting the table formats it as log(DLi / (cm^2 s\u22121))). The provenance \u2018Table 1\u2019 is correct.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius fit using equation (2)",
+        "results": [
+          {
+            "data_source": "FF-NEMD",
+            "parameter": "k1",
+            "value": -4.81,
+            "error": 0.13,
+            "unit": ""
+          },
+          {
+            "data_source": "FF-NEMD",
+            "parameter": "k2",
+            "value": 2.91,
+            "error": 0.8,
+            "unit": ""
+          },
+          {
+            "data_source": "FF-NEMD",
+            "parameter": "DE1",
+            "value": 26.9,
+            "error": 1.5,
+            "unit": "kJ mol-1"
+          },
+          {
+            "data_source": "FF-NEMD",
+            "parameter": "DE2",
+            "value": 100,
+            "error": 6.7,
+            "unit": "kJ mol-1"
+          },
+          {
+            "data_source": "Experimental (Oishi et al.)",
+            "parameter": "k1",
+            "value": -3.25,
+            "error": 0.13,
+            "unit": ""
+          },
+          {
+            "data_source": "Experimental (Oishi et al.)",
+            "parameter": "k2",
+            "value": 5.43,
+            "error": 0.8,
+            "unit": ""
+          },
+          {
+            "data_source": "Experimental (Oishi et al.)",
+            "parameter": "DE1",
+            "value": 37.2,
+            "error": 1.0,
+            "unit": "kJ mol-1"
+          },
+          {
+            "data_source": "Experimental (Oishi et al.)",
+            "parameter": "DE2",
+            "value": 134,
+            "error": 6.7,
+            "unit": "kJ mol-1"
+          }
+        ],
+        "prov": [
+          "Table 2"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly states the analysis methods used to obtain diffusion coefficients: NEMD coefficients were extracted using the method of Aeberhard et al. (ref 21) and MD coefficients using the Einstein\u2013Sutherland relation (Results and discussion, page 3). Table 2 contains fitted parameters from fitting diffusion coefficients to eqn (2), not an \u201canalysis method.\u201d Therefore a blank value is not supported by the source text (the method is specified).",
+          "suggested_fix": "Non-equilibrium molecular dynamics (NEMD) with diffusion coefficients computed via linear response theory (colour-field method; Aeberhard et al.21); equilibrium MD diffusion via the Einstein\u2013Sutherland relation; diffusion data also fitted to eqn (2) (two-mechanism Arrhenius-type fit) to obtain parameters in Table 2."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-06T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

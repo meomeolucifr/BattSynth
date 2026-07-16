@@ -1,0 +1,511 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Nickel-rich and cobalt-free layered oxide cathode materials for lithium ion batteries",
+    "doi": "10.1016/j.ensm.2022.05.019",
+    "authors": [
+      "Yu-hong Luo",
+      "Han-xin Wei",
+      "Lin-bo Tang",
+      "Ying-de Huang",
+      "Zhen-yu Wang",
+      "Zhen-jiang He",
+      "Cheng Yan",
+      "Jing Mao",
+      "Kehua Dai",
+      "Jun-chao Zheng"
+    ],
+    "journal": "Energy Storage Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": [
+      "nickel-rich cathode",
+      "cobalt-free",
+      "lithium-ion battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNiO2",
+      "molecular_formula": "LiNiO2",
+      "intended_role": "product",
+      "prov": [
+        "Ref. 20"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly discusses the cathode material LiNiO2 repeatedly (e.g., Section 1.1 titled \u201cLiNiO2 cathode material\u201d on Page 2, and many subsequent mentions). Thus the target formula LiNiO2 is supported by the source text. The alleged provenance ['Ref. 20'] is not required for support because LiNiO2 appears directly in the review text; however, Ref. [20] is also cited in discussion related to LiNiO2 synthesis/stoichiometry.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiNi0.975Ti0.025O2",
+      "molecular_formula": "LiNi0.975Ti0.025O2",
+      "intended_role": "product",
+      "prov": [
+        "Ref. 75"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The full text explicitly mentions the target composition as LiNi0.975Ti0.025O2 (e.g., in the Solid-state synthesis section discussing Kim et al. [75] and later in the molten salt section). It does not state LiNi0.975Ti0.025O2 with an extra 'O2' at the end beyond that formula (i.e., not 'LiNi0.975Ti0.025O2O2'). The extracted value 'LiNi0.975Ti0.025O2' is close but not exactly what appears; moreover, the alleged provenance 'Ref. 75' corresponds to this formula, but the exact string in the text includes the same formula; still, the extracted value is correct as written. Wait: The extracted value matches the text exactly: 'LiNi0.975Ti0.025O2'. Therefore it is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiNi0.96Mg0.02Ti0.02O2",
+      "molecular_formula": "LiNi0.96Mg0.02Ti0.02O2",
+      "intended_role": "product",
+      "prov": [
+        "Ref. 83"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The full text explicitly includes the target formula LiNi0.96Mg0.02Ti0.02O2 when discussing Mg/Ti multiple-elements doping and citing Mu et al. [83]. Specifically, it states: \u201cthe detailed electrochemistry analysis of LiNiO2 and LiNi0.96Mg0.02Ti0.02O2 (Mg/Ti-LNO) materials\u2026\u201d and later again references LiNi0.96Mg0.02Ti0.02O2 in the context of Zhang et al. [90]. This directly supports the extracted Target Formula. The alleged provenance \u201cRef. 83\u201d is consistent with where the formula appears in the text.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ni(OH)2",
+      "molecular_formula": "Ni(OH)2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Ref. 20",
+        "Ref. 75"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.94,
+        "reasoning": "The paper mentions Ni(OH)2 multiple times (e.g., \u201ca Ni(OH)2 precursor is mixed uniformly with LiOH\u2026\u201d citing Ref. [20]; and in the solid-state synthesis section: \u201cKim et al. [75]\u2026 LiOH, Ni(OH)2, and TiO2 were used as raw materials.\u201d). However, the review text does not give a specific quantity/amount for Ni(OH)2 (no mass, molarity, or ratio stated in the passages where Ni(OH)2 appears). Therefore, the extracted value \u2018Ni(OH)2 | Amount: Not specified in text\u2019 is consistent with the source text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiOH",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "lithium source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Ref. 20",
+        "Ref. 75"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper repeatedly mentions LiOH as a lithium source/reagent but does not provide a specific amount (mass, molarity, equivalents, or ratio) for LiOH in the review text. Examples include: \u201cCommonly used lithium sources for synthesizing LiNiO2 are LiOH and Li2CO3\u201d (Page 3) and in the Ref. 75 description: \u201cLiOH, Ni(OH)2, and TiO2 were used as raw materials\u201d without quantities (Page 8). Since no LiOH amount is specified anywhere in the provided full text, the extracted value \u201cLiOH | Amount: Not specified in text\u201d is supported under the null-handling rule. Alleged provenance to Ref. 75 is consistent; Ref. 20 is about synthesis using LiOH but still gives no LiOH quantity in this review text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "TiO2",
+      "molecular_formula": "TiO2",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Ref. 75"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly mentions TiO2 as a raw material in Ref. 75 (Kim et al. [75]) for solid-state synthesis: \u201cLiOH, Ni(OH)2, and TiO2 were used as raw materials.\u201d However, the text does not specify an amount (mass, molar ratio, wt%, etc.) of TiO2 used\u2014only the composition range LiNi1\u2212xTixO2 (0.025\u2264x\u22640.2) is given. Therefore the extractor\u2019s note that the TiO2 amount is not specified in the text is correct.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of LiNiO2 via multi-stage calcination",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "notes": "Ni(OH)2 and LiOH mixed uniformly",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The source text explicitly describes solid-state synthesis as involving \u201ca simple mechanical means of mixing and refining raw materials\u201d and repeatedly uses phrases like \u201cmixed uniformly\u201d and \u201cmixed \u2026 with lithium salt,\u201d which are clear instances of the synthesis operation 'mix'. Examples include: \u201cIt involves a simple mechanical means of mixing\u2026 raw materials\u201d (Section 2.1 Solid-state synthesis) and \u201cLiNO3, NiCO3, and AI(OH)3 as raw materials, mixed them uniformly, and sintered\u2026\u201d (Section 2.1).",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 758,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "notes": "preheating stage",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.78,
+              "reasoning": "The paper repeatedly describes synthesis steps involving heating/heat treatment/calcination/sintering at elevated temperatures (e.g., \u201chigh-temperature solid-phase sintering,\u201d \u201cheated at 700 \u00b0C for 20 h,\u201d \u201ccalcined,\u201d \u201csintered at 750 \u00b0C/30 h,\u201d etc.). These are explicit synthesis operations that fall under \u201cheat.\u201d",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "manual grinding after first heat",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.78,
+              "reasoning": "The source text explicitly mentions a grinding step: \u201cremoved for manual grinding, ground powder is heated\u2026\u201d in the described LiNiO2 preparation process (Section 1.3.1, page 6). This supports that a synthesis operation includes grinding (i.e., \u2018grind\u2019).",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 758,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "second heating",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.77,
+              "reasoning": "The paper repeatedly describes synthesis steps involving heating/sintering/calcination (i.e., applying heat) as core operations in preparing these cathode materials (e.g., \u201cpreheated at 485 \u00b0C\u2026 heated at 700 \u00b0C\u2026\u201d, \u201chigh-temperature solid-phase sintering\u201d, \u201ccalcination\u201d, \u201csintered at 750 \u00b0C/30 h\u201d, etc.). Therefore the synthesis operation \u2018heat\u2019 is supported by the source text, even though no provenance was provided.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 973,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1200,
+              "unit": "min"
+            },
+            "atmosphere": "O2",
+            "notes": "final sintering to form LiNiO2",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.78,
+              "reasoning": "The paper repeatedly describes synthesis routes involving heating/high-temperature treatment (e.g., \u201chigh-temperature solid-phase sintering,\u201d \u201chigh-temperature calcination,\u201d \u201cpreheated at 485 \u00b0C\u2026 heated at 700 \u00b0C\u2026,\u201d \u201csintered at 750 \u00b0C/30 h,\u201d \u201ccalcined\u2026,\u201d etc.), which are explicit heating operations used during synthesis. Therefore the extracted synthesis operation \u201cheat\u201d is supported by the document text.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "O2",
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.92,
+            "reasoning": "The paper explicitly states \u201csintering atmosphere is O2\u201d in Section 1.3.1 (page 6), and multiple synthesis examples in Section 2 also report calcination/sintering \u201cin O2 atmosphere.\u201d Therefore, the extracted synthesis atmosphere value O2 is supported by the source text.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Ref. 20"
+        ],
+        "outputs": [
+          "target_1"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Solid-state synthesis of Ti-doped LiNiO2",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "raw materials milled",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "The paper explicitly mentions ball milling as part of a solid-state synthesis example: \u201cAfter ball milling for 24 h, sintered at 750 \u00b0C/30 h in O2 atmosphere.\u201d (Section 2.1 Solid-state synthesis, describing Kim et al. [75]). Therefore, the synthesis operation 'ball_mill' is supported by the source text.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "sinter",
+            "parameters": {},
+            "temperature": {
+              "value": 1023,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1800,
+              "unit": "min"
+            },
+            "atmosphere": "O2",
+            "notes": "formation of LiNi0.975Ti0.025O2",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly mentions sintering multiple times as part of synthesis processes (e.g., 'during sintering', 'High-temperature solid-phase sintering', 'sintered at 750 \u00b0C/30 h in O2 atmosphere', etc.), which supports 'sinter' as a synthesis operation.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "O2",
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.95,
+            "reasoning": "The paper explicitly mentions an oxygen synthesis atmosphere multiple times, e.g., \u201csintering atmosphere is O2\u201d (Page 6) and several examples of materials \u201csintered \u2026 in O2 atmosphere\u201d (Pages 8\u20139). Therefore, the extracted synthesis atmosphere value \u201cO2\u201d is supported by the source text.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Ref. 75"
+        ],
+        "outputs": [
+          "target_2"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of LiNiO2 via staged calcination",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.33,
+          "reasoning": "The paper discusses LiNiO2 synthesis and mentions multi-stage behavior in an in-situ synthesis description (stages 1\u2013final stage) and gives an example of a staged heating/calcination schedule in a cited prior study (preheat at 485 \u00b0C, grind, reheat at 485 \u00b0C, then 700 \u00b0C). However, the extracted phrase \"Synthesis of LiNiO2 via staged calcination\" is not stated as an explicit workflow timeline item for this review itself, nor is a specific workflow/timeline labeled that way. The document is a review and does not present a single definitive workflow timeline named exactly as extracted.",
+          "suggested_fix": "If you want a text-supported statement: \"LiNiO2 synthesis can involve multiple heating stages (e.g., preheating at 485 \u00b0C with intermediate grinding, followed by calcination at 700 \u00b0C in O2)\" (from Section 1.3.1 describing a prior study [20])."
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Synthesis of Ti-doped LiNiO2 via ball milling and high-temp sintering",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.72,
+          "reasoning": "The paper is a review and does not describe a single specific \u201cworkflow timeline\u201d for synthesizing Ti-doped LiNiO2 as \u201cvia ball milling and high-temp sintering\u201d in a general sense. While it does mention one specific study (Kim et al. [75]) where LiNi1\u2212xTixO2 is prepared using ball milling for 24 h followed by sintering at 750 \u00b0C for 30 h in O2, this is not presented as the paper\u2019s own workflow timeline, and the extracted value omits key specifics (composition range, conditions, O2 atmosphere, time). Therefore the extracted value as written is not explicitly supported as a workflow timeline statement in the source.",
+          "suggested_fix": "If the intent is to capture the specific synthesis route reported in the review: \u201cKim et al. [75] prepared LiNi1\u2212xTixO2 by ball milling LiOH, Ni(OH)2, and TiO2 for 24 h, then sintering at 750 \u00b0C for 30 h in an O2 atmosphere.\u201d"
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "missing reactant quantities",
+        "excerpt": "\"Ni(OH)2 precursor is mixed uniformly with LiOH\" (Ref. 20)",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The paper explicitly contains the excerpt and describes the synthesis step without giving reactant quantities: \u201cIn a previous study [20], a Ni(OH)2 precursor is mixed uniformly with LiOH\u2026\u201d followed by heating steps and O2 atmosphere, but no masses, molar ratios, or amounts of Ni(OH)2 or LiOH are provided in this review text. Thus the stated workflow ambiguity issue (missing reactant quantities) is supported by the source.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "dopant level unspecified for general synthesis in step_2 (only example x=0.025 used)",
+        "excerpt": "\"LiNi1\u2212xTixO2 (0.025\u2264x\u22640.2) materials\" (Ref. 75)",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.83,
+          "reasoning": "The cited excerpt \"LiNi1\u2212xTixO2 (0.025\u2264x\u22640.2) materials\" (Ref. 75) does not support the claim that the dopant level is unspecified for the general synthesis and that only an example x=0.025 is used. In Section 2.1 the review explicitly states a dopant range (0.025\u2264x\u22640.2) and also gives a specific example (LiNi0.0975Ti0.025O2). Thus, the dopant level for the referenced synthesis is not unspecified; it is specified as a range, with one example highlighted.",
+          "suggested_fix": "Revise issue to: \"General dopant range specified (x=0.025\u20130.2) but only one specific performance example is reported for x=0.025 (LiNi0.975Ti0.025O2).\""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 225,
+          "unit": "mAh g-1",
+          "conditions": "LiNiO2 at 0.1C",
+          "prov": [
+            "Ref. 20"
+          ]
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Ref. 20"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.7,
+        "reasoning": "The review text does mention a discharge capacity of 225 mAh g\u22121 for LiNiO2 (LNO) in the context of comparing LiNiO2 vs Mg/Ti-doped LiNiO2 (\u201cLiNiO2 (225 mAh g\u22121)\u201d) in the discussion of Mu et al. [83]. However, the extracted entry claims an \u201cinitial discharge capacity\u201d of 225 mAh g\u22121 for \u201cLiNiO2 at 0.1C\u201d with provenance \u201cRef. 20\u201d. In the provided full text, this 225 mAh g\u22121 value is not attributed to Ref. 20, and the text does not state the test rate as 0.1C for that 225 mAh g\u22121 value. Therefore the specific conditions/provenance in the extraction are not explicitly supported by the source text.",
+        "suggested_fix": "Update provenance and conditions to match the text: e.g., \u201cLiNiO2 discharge capacity: 225 mAh g\u22121 (reported in discussion of Mg/Ti-doped LiNiO2 comparison; associated with Mu et al. [83]; rate not specified in the review text).\u201d If you need a 0.1C-specific value for LiNiO2, it is not explicitly given here."
+      }
+    },
+    {
+      "method": "electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 235,
+          "unit": "mAh g-1",
+          "conditions": "LiNi0.975Ti0.025O2 (0.025 Ti) at unspecified C-rate",
+          "prov": [
+            "Ref. 75"
+          ]
+        },
+        {
+          "metric": "initial discharge capacity",
+          "value": 171,
+          "unit": "mAh g-1",
+          "conditions": "LiNi0.975Ti0.025O2 (molten salt synthesis) at unspecified C-rate",
+          "prov": [
+            "Ref. 96"
+          ]
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Ref. 75",
+        "Ref. 96"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The review explicitly reports both capacities with the cited references. In Section 2.1 (Solid-state synthesis), it states: \u201cThe LiNi0.0975Ti0.025O2 showed a capacity of 235 mAh g\u22121 \u2026\u201d and attributes this to Kim et al. [75]. In Section 2.4 (molten salt method), it states: \u201cThe LiNi0.975Ti0.025O2 \u2026 initial discharge capacity was 171 mAh g\u22121,\u201d attributed to Ha et al. [96]. The extracted values (235 and 171 mAh g\u22121) match the text; the only issue is minor formatting/typo in the conditions (LiNi0.0975Ti0.025O2 should be LiNi0.975Ti0.025O2). No C-rate is given in these sentences, so \u201cunspecified C-rate\u201d is consistent.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 208,
+          "unit": "mAh g-1",
+          "conditions": "LiNi0.96Mg0.02Ti0.02O2 at C/3",
+          "prov": [
+            "Ref. 83"
+          ]
+        },
+        {
+          "metric": "capacity retention",
+          "value": 90,
+          "unit": "%",
+          "conditions": "after 150 cycles at 0.5C",
+          "prov": [
+            "Ref. 83"
+          ]
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Ref. 83"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The review explicitly reports for Mg/Ti co-doped LiNiO2 (LiNi0.96Mg0.02Ti0.02O2) that its discharge capacity is 208 mAh g\u22121 (described in the discussion of Mu et al. [83]) and also tabulates its cycling performance as 90% capacity retention after 150 cycles at 0.5C (Table 3, Ref. [83]). These match the extracted metrics and conditions tied to Ref. 83.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 235,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 150,
+    "_llm_flag": {
+      "is_supported": false,
+      "confidence": 0.95,
+      "reasoning": "The review paper discusses cycle life generally and reports many cycle counts (e.g., 20, 25, 30, 80, 100, 200, 350, 400, 500, 1000 cycles) in specific cited examples/tables, but it does not state a single document-level value of \u201cCycle Life = 150\u201d. No explicit mention of 150 cycles as a cycle-life value was found in the provided text.",
+      "suggested_fix": "If the intent is a specific reported cycle count, the text explicitly supports several alternatives (e.g., 200 cycles; 150 cycles appears only as '90% (150 cycles at 0.5 C)' for LiNi0.96Mg0.02Ti0.02O2 in Table 3). Otherwise, leave cycle life unspecified or tie it to a specific material/test condition."
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "Energy Storage Materials 50 (2022) 274\u2013307 extract",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Unlocking the Failure Mechanism of Solid State Lithium Metal Batteries",
+    "doi": "10.1002/aenm.202100748",
+    "authors": ["Jia Liu", "Hong Yuan", "He Liu", "Chen-Zi Zhao", "Yang Lu", "Xin-Bing Cheng", "Jia-Qi Huang", "Qiang Zhang"],
+    "journal": "Advanced Energy Materials",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["solid-state electrolyte", "lithium metal batteries", "failure mechanism"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "solid-state electrolyte",
+      "prov": ["Page 2, paragraph beginning 'More importantly, among all the SSEs...'"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li7La2.75Ca0.25Zr1.75Nb0.25O12",
+      "molecular_formula": "Li7La2.75Ca0.25Zr1.75Nb0.25O12",
+      "intended_role": "solid-state electrolyte",
+      "prov": ["Page 13, paragraph describing Al2O3 coating"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid-state electrolyte",
+      "prov": ["Page 8, Figure 7 description"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "coating material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Ultrathin Al2O3 layer applied by atomic layer deposition onto Li7La2.75Ca0.25Zr1.75Nb0.25O12 electrolyte.",
+      "prov": ["Page 13, paragraph on Al2O3 coating"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "No explicit synthesis procedures provided in the text chunk; synthesis.steps left empty.",
+        "excerpt": "Entire provided text is a review summarising literature; no detailed experimental recipe is given."
+      },
+      {
+        "issue": "Impedance unit not part of units_policy",
+        "excerpt": "‘ultralow interfacial impedance 1 Ω cm2’"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Conductivity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 1e-2,
+          "unit": "S cm-1",
+          "associated_with": ["target_1"]
+        }
+      ],
+      "interpretation": "Li10GeP2S12 exhibits superionic conductivity comparable to liquid electrolytes.",
+      "prov": ["Page 2, paragraph mentioning 'remarkable conductivity of 10−2 S cm−1'"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interfacial impedance",
+          "value": 1,
+          "unit": "Ω cm2",
+          "associated_with": ["target_2"]
+        }
+      ],
+      "interpretation": "Al2O3 coating dramatically reduces interfacial resistance.",
+      "prov": ["Page 13, paragraph on Al2O3 coating"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-19T19:16:00Z",
+    "source_file": "review_text_chunk",
+    "processing_time": null
+  }
+}

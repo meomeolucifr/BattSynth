@@ -1,0 +1,137 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recently advances and perspectives of anode-free rechargeable batteries",
+    "doi": "10.1016/j.nanoen.2020.105344",
+    "authors": ["Yuan Tian", "Yongling An", "Chuanliang Wei", "Huiyu Jiang", "Shenglin Xiong", "Jinkui Feng", "Yitai Qian"],
+    "journal": "Nano Energy",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["anode-free batteries", "electrolyte optimization", "current collector"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "PEO-coated Cu current collector",
+      "molecular_formula": "",
+      "intended_role": "modified current collector",
+      "prov": ["Page 7, Fig. 6a-c description"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "poly(ethylene oxide)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "coating precursor",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used to form nanosized porous membrane on Cu via spin coating.",
+      "prov": ["Page 7, Fig. 6a description"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Cu foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 7, Fig. 6a description"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Spin coating PEO onto Cu foil to form uniform coating",
+        "operations": [
+          {
+            "action": "spin_coat",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": 2,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Spinning time mentioned as 120 s for thick uniform coating."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 7, Fig. 6a"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of PEO-coated Cu current collector via spin coating for 120 s."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing solvent/composition details for PEO spin-coating solution.",
+        "excerpt": "\"Assegie et al. [70] modified Cu current collector with a nanosized PEO porous polymer membrane by spin coating approach.\""
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-18T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

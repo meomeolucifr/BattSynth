@@ -1,0 +1,465 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Ionic Conductivity of Li4SiO4, Li4GeO4, and Their Solid Solutions",
+    "doi": "",
+    "authors": [
+      "Ian M. Hodge",
+      "Malcolm D. Ingram",
+      "Anthony R. West"
+    ],
+    "journal": "Journal of the American Ceramic Society",
+    "year": 1976
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis_study",
+    "tags": ["solid electrolyte", "lithium silicate", "lithium germanate", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li4SiO4",
+      "molecular_formula": "Li4SiO4",
+      "intended_role": "electrolyte product",
+      "prov": ["Page 361 Experimental Procedure"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li4GeO4",
+      "molecular_formula": "Li4GeO4",
+      "intended_role": "electrolyte product",
+      "prov": ["Page 361 Experimental Procedure"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li4(Si0.67Ge0.33)O4",
+      "molecular_formula": "",
+      "intended_role": "electrolyte product",
+      "prov": ["Page 361 Experimental Procedure"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "reagent-grade",
+      "prov": ["Experimental Procedure"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "silicon dioxide",
+      "molecular_formula": "SiO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "crushed quartz crystal",
+      "prov": ["Experimental Procedure"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "germanium dioxide",
+      "molecular_formula": "GeO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "electronic-grade",
+      "prov": ["Experimental Procedure"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "gold foil",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "electrode material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used for electrodes and boats",
+      "prov": ["Experimental Procedure"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "gold paste",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder/electrode paste",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Hanovia Liquid Gold paste 8177",
+      "prov": ["Experimental Procedure"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Initial calcination to remove CO2",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "temperature": {
+                "value": 873,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Mixtures of 2–3 g reacted in Au foil boats; first heated at 600 °C to drive off CO2",
+            "prov": ["Experimental Procedure"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Procedure"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-temperature reaction to form Li4SiO4, Li4GeO4 or solid solution",
+        "operations": [
+          {
+            "action": "heat_treatment",
+            "parameters": {
+              "inputs": ["step_1"],
+              "temperature": {
+                "value": 1073,
+                "upper_value": 1173,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": 1440,
+              "upper_value": 2880,
+              "unit": "min"
+            },
+            "notes": "Final firing at 800–900 °C for 1–2 days in Au foil boats; completeness checked by X-ray powder methods",
+            "prov": ["Experimental Procedure"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Procedure"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Cold pressing of pellets",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 6895,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Rectangular pellets 6 × 6 × 2–10 mm pressed at ≈100 000 psi",
+            "prov": ["Experimental Procedure"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 6895,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Procedure"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Sintering of some pellets to improve strength",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature": {
+                "value": 1173,
+                "upper_value": 1273,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": 1440,
+              "upper_value": 4320,
+              "unit": "min"
+            },
+            "notes": "Some pellets heated at 900–1000 °C for 1–3 days",
+            "prov": ["Experimental Procedure"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Procedure"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Hot pressing of Li4SiO4 sample",
+        "operations": [
+          {
+            "action": "hot_press",
+            "parameters": {
+              "temperature": {
+                "value": 1123,
+                "unit": "K"
+              },
+              "pressure": {
+                "value": 276,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Pressed into cylinder ≈6 mm diameter and ≈10 mm long",
+            "prov": ["Experimental Procedure"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 276,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Procedure"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Attachment of Au electrodes",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["chem_5"],
+              "temperature": {
+                "value": 873,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": 30,
+              "upper_value": 60,
+              "unit": "min"
+            },
+            "notes": "Gold paste applied; Au foil attached; assembly fired at 600 °C for 0.5–1 h",
+            "prov": ["Experimental Procedure"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Procedure"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Initial decarbonation of mixed precursors"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Solid-state reaction to form target electrolyte phases"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Pellet fabrication by cold pressing"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Optional sintering for densification"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Hot pressing to obtain dense Li4SiO4 sample"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Electrode attachment and firing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometric ratios of Li2CO3, SiO2, and GeO2 not provided",
+        "excerpt": "Mixtures (2 to 3 g) were reacted…"
+      },
+      {
+        "issue": "Duration of initial 600 °C calcination not stated",
+        "excerpt": "initially at 600°C to drive off CO2"
+      },
+      {
+        "issue": "Atmosphere during synthesis steps not explicitly detailed (likely air)",
+        "excerpt": "Mixtures were reacted in Au foil boats"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "AC impedance / admittance spectroscopy",
+      "parameters": {
+        "frequency_range": "100 Hz – 5 MHz",
+        "temperature_range": "373–1079 K",
+        "atmosphere": "flowing dried CO2-free N2"
+      },
+      "results": [
+        {
+          "metric": "conductivity_range",
+          "value": "1e-8 to 1e-10 Ω^-1 cm^-1 at 373 K; up to 100 Ω^-1 cm^-1 at 973 K",
+          "unit": "",
+          "notes": "All electrolytes showed strong temperature dependence"
+        }
+      ],
+      "interpretation": "True dc conductivities obtained by identifying frequency-independent plateaus",
+      "prov": ["Abstract", "Results section"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "composition": "Li4SiO4 (low-T region)",
+            "activation_energy": {
+              "value": 17.86,
+              "unit": "kcal mol-1"
+            },
+            "lnA": 4.321,
+            "temperature_range": "364–597 K"
+          },
+          {
+            "composition": "Li4SiO4 (high-T region)",
+            "activation_energy": {
+              "value": 20.95,
+              "unit": "kcal mol-1"
+            },
+            "lnA": 7.918,
+            "temperature_range": "641–1079 K"
+          },
+          {
+            "composition": "Li4(Si0.83Ge0.17)O4 (low-T)",
+            "activation_energy": {
+              "value": 17.25,
+              "unit": "kcal mol-1"
+            },
+            "lnA": 4.664,
+            "temperature_range": "374–575 K"
+          },
+          {
+            "composition": "Li4(Si0.83Ge0.17)O4 (high-T)",
+            "activation_energy": {
+              "value": 24.64,
+              "unit": "kcal mol-1"
+            },
+            "lnA": 10.61,
+            "temperature_range": "632–1032 K"
+          },
+          {
+            "composition": "Li4(Si0.67Ge0.33)O4 (low-T)",
+            "activation_energy": {
+              "value": 16.68,
+              "unit": "kcal mol-1"
+            },
+            "lnA": 5.768,
+            "temperature_range": "361–682 K"
+          },
+          {
+            "composition": "Li4GeO4",
+            "activation_energy": {
+              "value": 20.80,
+              "unit": "kcal mol-1"
+            },
+            "lnA": 6.095,
+            "temperature_range": "374–890 K"
+          }
+        ],
+        "prov": ["Table I"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,430 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Insights into the Performance Limits of the Li7P3S11 Superionic Conductor: A Combined First-Principles and Experimental Study",
+    "doi": "10.1021/acsami.6b00833",
+    "authors": ["Iek-Heng Chu", "Han Nguyen", "Sunny Hy", "Yuh-Chieh Lin", "Zhenbin Wang", "Zihan Xu", "Zhi Deng", "Ying Shirley Meng", "Shyue Ping Ong"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "experimental study",
+    "tags": ["superionic conductor", "solid electrolyte", "Li7P3S11", "spark plasma sintering", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "70Li2S·30P2S5 glass",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Page Experimental Methods – Synthesis"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li7P3S11 glass-ceramic",
+      "molecular_formula": "Li7P3S11",
+      "intended_role": "product",
+      "prov": ["Page Experimental Methods – Synthesis", "Figure 2c"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Sigma-Aldrich, 99.98 %",
+      "prov": ["Experimental Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Sigma-Aldrich, 99 %",
+      "prov": ["Experimental Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "flowing argon gas during SPS",
+      "prov": ["Experimental Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Iridium",
+      "molecular_formula": "Ir",
+      "ontology": {
+        "role": "coating",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "7 s sputter coat at 8 µA for SEM",
+      "prov": ["Experimental Methods – Characterization"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of 70Li2S·30P2S5 glass",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "Stoichiometric amounts corresponding to 70Li2S·30P2S5"
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "vessel": "quartz ampoule"
+            }
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 973,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 240,
+                "unit": "min"
+              }
+            }
+          },
+          {
+            "action": "quench",
+            "parameters": {
+              "to_temperature": {
+                "value": 298,
+                "unit": "K"
+              },
+              "medium": "ice water"
+            }
+          },
+          {
+            "action": "grind",
+            "parameters": {
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "notes": "agate mortar and pestle"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Methods – Synthesis"],
+        "outputs": ["target_1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Cold-press sintering to form Li7P3S11 glass-ceramic",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "vessel": "quartz ampoule",
+              "inputs": ["target_1"]
+            }
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 573,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 120,
+                "unit": "min"
+              }
+            }
+          },
+          {
+            "action": "quench",
+            "parameters": {
+              "to_temperature": {
+                "value": 298,
+                "unit": "K"
+              },
+              "medium": "ice water"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Methods – Synthesis"],
+        "outputs": ["target_2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Spark-plasma sintering (SPS) densification to form Li7P3S11 glass-ceramic",
+        "operations": [
+          {
+            "action": "load",
+            "parameters": {
+              "inputs": ["target_1"],
+              "container": "10 mm WC dies lined with graphite"
+            }
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 10,
+                "unit": "MPa"
+              },
+              "type": "preload"
+            }
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 573,
+                "unit": "K"
+              },
+              "rate": "100 K/min",
+              "duration": {
+                "value": 5,
+                "unit": "min"
+              }
+            }
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 300,
+                "unit": "MPa"
+              },
+              "rate": "100 MPa/min",
+              "duration": {
+                "value": 5,
+                "unit": "min"
+              }
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (chem_3)",
+          "pressure": {
+            "value": 300,
+            "unit": "MPa"
+          }
+        },
+        "prov": ["Experimental Methods – Synthesis"],
+        "outputs": ["target_2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Formation of precursor glass powder"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Cold-press heat treatment giving porous Li7P3S11 pellet"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Spark-plasma sintering yielding densified Li7P3S11 pellet"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses or molar amounts of Li2S and P2S5 not specified",
+        "excerpt": "\"Stoichiometric amounts of these chemicals were mixed\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {
+        "coating": "Ir sputter, 7 s, 8 µA",
+        "voltage": "20 kV"
+      },
+      "results": [
+        {
+          "metric": "morphology (cold-pressed)",
+          "value": "highly granular with open pores",
+          "unit": ""
+        },
+        {
+          "metric": "morphology (SPS)",
+          "value": "smooth, dense surfaces",
+          "unit": ""
+        }
+      ],
+      "interpretation": "SPS process reduces porosity and grain boundaries",
+      "prov": ["Figure 2a", "Figure 2b"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "scan_range": "10°–70° 2θ"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "Li7P3S11 phase present in both cold-pressed and SPS samples",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2c"]
+    },
+    {
+      "method": "DSC",
+      "parameters": {
+        "temperature_range": "RT–673 K",
+        "scan_rate": "10 K min-1",
+        "atmosphere": "Ar"
+      },
+      "results": [
+        {
+          "metric": "glass transition temperature Tg",
+          "value": 518,
+          "unit": "K"
+        },
+        {
+          "metric": "crystallization temperature Tc",
+          "value": 553,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Indicates formation of Li7P3S11 crystalline phase above Tc",
+      "prov": ["Figure 4b"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {
+        "frequency_range": "1 MHz–1 Hz",
+        "ac_voltage": "25 mV",
+        "temperature": "298–453 K"
+      },
+      "results": [
+        {
+          "sample": "cold-pressed",
+          "metric": "room-temperature ionic conductivity",
+          "value": 1.3,
+          "unit": "mS cm-1"
+        },
+        {
+          "sample": "cold-pressed",
+          "metric": "activation energy Ea",
+          "value": 0.209,
+          "unit": "eV"
+        },
+        {
+          "sample": "SPS",
+          "metric": "room-temperature ionic conductivity",
+          "value": 11.6,
+          "unit": "mS cm-1"
+        },
+        {
+          "sample": "SPS",
+          "metric": "activation energy Ea",
+          "value": 0.180,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Densification via SPS markedly improves conductivity",
+      "prov": ["Results – Crystal Structure and Characterization section"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis (experimental)",
+        "results": [
+          {
+            "equation": "σ = σ0 exp(−Ea/RT)",
+            "value": {
+              "cold_pressed_Ea": 0.209,
+              "SPS_Ea": 0.180
+            },
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Figure 8a"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-27T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

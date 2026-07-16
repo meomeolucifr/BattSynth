@@ -1,0 +1,907 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "An ultrastable lithium metal anode enabled by designed metal fluoride spansules",
+    "doi": "10.1126/sciadv.aaz3112",
+    "authors": [
+      "Huadong Yuan",
+      "Jianwei Nai",
+      "He Tian",
+      "Zhijin Ju",
+      "Wenkui Zhang",
+      "Yujing Liu",
+      "Xinyong Tao",
+      "Xiong Wen (David) Lou"
+    ],
+    "journal": "Science Advances",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": [
+      "metal fluoride spansules",
+      "lithium metal anode",
+      "core-shell microcubes"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "NaMg(Mn)F3 nanocubes (NMMF)",
+      "molecular_formula": "NaMg(Mn)F3",
+      "intended_role": "intermediate",
+      "prov": [
+        "Materials and Methods (Fabrication of NMMF)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly states the spansules are made of \u201cNaMg(Mn)F3@C core@shell microstructures\u201d (Page 1) and refers to the fluoride additive as \u201cNaMg(Mn)F3 (NMMF)\u201d (Page 1). In Materials and Methods, \u201cFabrication of NMMF\u201d describes synthesis of NMMF from Mg acetate, Mn acetate, and NaF, consistent with the NaMg(Mn)F3 target formula. Although XRD later indicates the fluoride component comprises two phases (NaMgF3 and NaMnF3), the target formula NaMg(Mn)F3 is directly used in the text as the designed/target composition (NMMF).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Carbon-coated NaMg(Mn)F3 core@shell microcubes (NMMF@C)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Materials and Methods (Fabrication of NMMF@C)"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the spansule material as \u201cNaMg(Mn)F3@C\u201d (carbon-coated NaMg(Mn)F3, abbreviated NMMF@C) and describes NMMF as a composite of two phases: NaMgF3 and NaMnF3. However, the extracted value for \u201cTarget Formula\u201d is blank, so it is not supported as-is.",
+        "suggested_fix": "NaMg(Mn)F3@C (NMMF@C); where NMMF is a composite of NaMgF3 and NaMnF3."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Magnesium acetate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 6.4,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": [
+        "Fabrication of NMMF"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "In the paper\u2019s METHODS section under \u201cFabrication of NMMF,\u201d it explicitly states: \u201c6.4 mmol of magnesium acetate and 1.6 mmol of manganese acetate were successively dissolved\u2026\u201d. This directly supports the extracted chemical identity (magnesium acetate) and amount (6.4 mmol).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Manganese acetate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.6,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": [
+        "Fabrication of NMMF"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "In the MATERIALS AND METHODS section under \u201cFabrication of NMMF,\u201d the paper explicitly states: \u201c6.4 mmol of magnesium acetate and 1.6 mmol of manganese acetate were successively dissolved\u2026\u201d. This directly supports the extracted chemical identity (manganese acetate) and the amount (1.6 mmol).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sodium fluoride",
+      "molecular_formula": "NaF",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 28,
+        "unit": "mmol"
+      },
+      "notes": "0.028 mol",
+      "prov": [
+        "Fabrication of NMMF"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "In the Materials and Methods section under \u201cFabrication of NMMF,\u201d the paper explicitly states: \u201c40 ml of aqueous solution dissolved with 0.028 mol of sodium fluoride was added\u2026\u201d. 0.028 mol equals 28 mmol, matching the extracted amount for sodium fluoride.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "mL"
+      },
+      "notes": "used in initial dissolution; additional 20 mL in coating step",
+      "prov": [
+        "Fabrication of NMMF",
+        "Fabrication of NMMF@C"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.62,
+        "reasoning": "The paper\u2019s \u201cFabrication of NMMF\u201d section states a mixed solution containing **10 ml of water and 10 ml of ethanol**. However, the extracted value claims **Water | Amount: 10 mL** for alleged provenance **['Fabrication of NMMF', 'Fabrication of NMMF@C']**. In \u201cFabrication of NMMF@C,\u201d water is **20 ml** (deionized water) and ethanol is **40 ml**, not 10 mL. Thus, 10 mL water is supported only for Fabrication of NMMF, not for both listed sections.",
+        "suggested_fix": "Either (a) change provenance to only 'Fabrication of NMMF' for 'Water | Amount: 10 mL', or (b) if provenance must include 'Fabrication of NMMF@C', update to 'Deionized water | Amount: 20 mL' (and ethanol 40 mL) for that section."
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "mL"
+      },
+      "notes": "used in initial dissolution; additional 40 mL in coating step",
+      "prov": [
+        "Fabrication of NMMF",
+        "Fabrication of NMMF@C"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "In the \u201cMATERIALS AND METHODS \u2013 Fabrication of NMMF\u201d section, the paper states that magnesium acetate and manganese acetate were dissolved in a mixed solution containing \u201c10 ml of water and 10 ml of ethanol,\u201d explicitly supporting Ethanol | Amount: 10 mL. (Also, in \u201cFabrication of NMMF@C,\u201d ethanol appears as 40 mL, but the extracted 10 mL ethanol is still explicitly present for NMMF fabrication.)",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Ammonia solution (28 wt%)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "catalyst",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.2,
+        "unit": "g"
+      },
+      "notes": "28 wt% NH3 in water",
+      "prov": [
+        "Fabrication of NMMF@C"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "In the MATERIALS AND METHODS section under \u201cFabrication of NMMF@C,\u201d the paper explicitly states: \u201cThen, 1.2 g of ammonia solution (28 wt %), 0.2 g of resorcinol, and 0.2 g of formaldehyde (37 wt %) were successively added\u2026\u201d. This directly supports the extracted chemical identity and amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Resorcinol",
+      "molecular_formula": "C6H6O2",
+      "ontology": {
+        "role": "monomer",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.2,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Fabrication of NMMF@C"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "In the Materials and Methods section under \u201cFabrication of NMMF@C,\u201d the paper explicitly states: \u201cThen, 1.2 g of ammonia solution (28 wt %), 0.2 g of resorcinol, and 0.2 g of formaldehyde (37 wt %) were successively added\u2026\u201d This directly supports the extracted value Resorcinol | Amount: 0.2 g. (It also appears in Fig. 2A caption as resorcinol-formaldehyde resin coating step.)",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Formaldehyde (37 wt%)",
+      "molecular_formula": "CH2O",
+      "ontology": {
+        "role": "monomer",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.2,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Fabrication of NMMF@C"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "In the MATERIALS AND METHODS section under \u201cFabrication of NMMF@C,\u201d the text explicitly states: \u201c...0.2 g of formaldehyde (37 wt %) were successively added...\u201d. This directly supports the extracted chemical identity (formaldehyde, 37 wt%) and amount (0.2 g).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used during carbonization",
+      "prov": [
+        "Fabrication of NMMF@C"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly states that NMMF@C was obtained after carbonization \u201cat 800\u00b0C in Ar atmosphere,\u201d and multiple procedures (cryo-TEM transfer, coin cell assembly) are described as performed in an \u201cAr-filled glove box.\u201d However, no quantitative amount/flow rate/pressure of argon is provided anywhere in the provided text. Therefore, the identification of argon with amount 'Not specified in text' is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of mixed metal solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ],
+              "solvents": [
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "6.4 mmol Mg acetate and 1.6 mmol Mn acetate dissolved in 10 mL water + 10 mL ethanol",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.73,
+              "reasoning": "The paper describes synthesis steps such as \u201cdissolved into a mixed solution\u201d and dispersion in solvent, but it does not explicitly list a synthesis operation named exactly \u201cdissolve\u201d as a standalone operation label. The term appears only as part of sentences (e.g., \u201cwere ... dissolved into ...\u201d), so the extracted value as a discrete operation is not explicitly stated in the document text.",
+              "suggested_fix": "If the field expects the verb used in the procedure, use: \u201cdissolved (into a mixed solution of water/ethanol)\u201d or \u201cdispersed\u201d (for NMMF@C step)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fabrication of NMMF"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Precipitation of NMMF nanocubes",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_3"
+              ],
+              "amount": {
+                "value": 28,
+                "unit": "mmol"
+              },
+              "solvent": "water",
+              "volume": {
+                "value": 40,
+                "unit": "mL"
+              },
+              "mode": "dropwise"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "NaF aqueous solution added dropwise under stirring",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper\u2019s METHODS and synthesis descriptions use operations like \u201cadded dropwise,\u201d \u201cdispersed,\u201d \u201cdissolved,\u201d \u201cwashed,\u201d \u201cdried,\u201d and \u201ccarbonization.\u201d While the verb \u201cadded\u201d appears (e.g., \u201cwas added dropwise,\u201d \u201cwere successively added\u201d), there is no explicit field/value statement identifying the overall \u201cSynthesis Operation\u201d as exactly \u201cadd\u201d as a standalone extracted value. Thus the extracted value is too generic/underspecified relative to the text.",
+              "suggested_fix": "If the field is meant to capture a specific step/operation, use an explicit operation phrase from the text, e.g., \u201cadded dropwise\u201d (NaF solution added dropwise) or \u201csuccessively added\u201d (ammonia solution, resorcinol, formaldehyde)."
+            }
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.88,
+              "reasoning": "The paper explicitly describes \u201cstirring\u201d as part of the synthesis procedure in the Materials and Methods section. For example: \u201c...was added dropwise into the above solution with continuous stirring. After stirring for 60 min...\u201d and \u201c...dispersed ... via ultrasonication and stirring... mechanically stirred for 12 hours...\u201d. These statements support that a synthesis operation used is stirring (i.e., 'stir').",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "age",
+            "parameters": {},
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "maintained for 24 h",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper\u2019s synthesis-related steps are described as precipitation, coating with resin, and carbonization (e.g., in the Materials and Methods section: dissolving precursors, dropwise addition, stirring, maintaining 24 hours, centrifugation, drying, coating, and carbonization). Nowhere in the text is a synthesis operation explicitly listed as or described by the word/value \"age\". Therefore the extracted value appears to be an unsupported/hallucinated operation (or a mis-extraction from phrases like \u201cmaintained for 24 hours at room temperature,\u201d which is not labeled as \u201cage\u201d).",
+              "suggested_fix": "Replace \"age\" with a supported operation such as \"stirring\" / \"maintaining (24 hours at room temperature)\" / \"precipitation\" / \"centrifugation\" / \"drying\" / \"carbonization\" (depending on the intended schema)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fabrication of NMMF"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Isolation and drying of NMMF",
+        "operations": [
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "collect precipitate",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly states multiple times that the as-obtained NMMF and NMMF@Resin products were \"collected\"/\"isolated\" by centrifugation during synthesis. Examples: in \u201cFabrication of NMMF\u201d it says \u201cThe as-obtained NMMF was collected through centrifugation\u2026\u201d, and in \u201cFabrication of NMMF@C\u201d it says \u201c...were isolated by centrifugation...\u201d. Therefore, the synthesis operation 'centrifuge' is supported by the source text.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "solvents": [
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.78,
+              "reasoning": "The paper explicitly describes washing steps during synthesis/sample preparation, supporting the presence of a 'wash' synthesis operation. Examples: in 'Fabrication of NMMF' the product was 'collected through centrifugation, washed with water and ethanol'; in 'Fabrication of NMMF@C' the resin-coated cubes were 'washed using deionized water and ethanol several times'; and in 'Cryo-TEM sample preparation process' samples were 'washed using dioxolane'.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 333.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "notes": "dry at 60\u00b0C for 6 h",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly states the product was \"finally dried at 60\u00b0C for 6 hours\" in the Materials and Methods section (Fabrication of NMMF), which supports the synthesis operation \"dry\" (drying step). It also mentions samples were \"washed ... and dried\" during cryo-TEM sample preparation, further corroborating drying as an operation.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fabrication of NMMF"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Coating NMMF with resorcinol\u2013formaldehyde resin",
+        "operations": [
+          {
+            "action": "disperse",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ],
+              "amount": {
+                "value": 0.1,
+                "unit": "g"
+              },
+              "solvents": [
+                "chem_4",
+                "chem_5"
+              ],
+              "volume": {
+                "value": 60,
+                "unit": "mL"
+              }
+            },
+            "notes": "20 mL water + 40 mL ethanol",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.74,
+              "reasoning": "The paper describes synthesis steps such as dissolving precursors, adding NaF solution dropwise with stirring, precipitation, centrifugation/washing, drying, and dispersing NMMF nanoparticles in water/ethanol via ultrasonication and stirring (Materials and Methods). However, it does not explicitly list a synthesis operation literally named \"disperse\" as a standalone operation; the closest explicit wording is \"dispersed ... via ultrasonication and stirring.\" Therefore the extracted value \"disperse\" is not explicitly supported as written.",
+              "suggested_fix": "dispersed (100 mg NMMF nanoparticles dispersed in water/ethanol via ultrasonication and stirring)"
+            }
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_6",
+                "chem_7",
+                "chem_8"
+              ]
+            },
+            "notes": "1.2 g NH3 sol, 0.2 g resorcinol, 0.2 g formaldehyde added successively",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.72,
+              "reasoning": "The paper text does not explicitly state a synthesis operation labeled \"add\" as a standalone operation. While the Methods section uses phrases like \"was added dropwise\" and \"were successively added\" (e.g., adding NaF solution; adding ammonia/resorcinol/formaldehyde), the extracted value \"add\" is too generic and not presented as the specific operation name in the document.",
+              "suggested_fix": "Use a more specific phrasing supported by the text, e.g., \"added dropwise\" (NaF solution) and/or \"successively added\" (ammonia solution, resorcinol, formaldehyde)."
+            }
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "mechanical stirring for 12 h",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes synthesis steps involving stirring, e.g., during NMMF fabrication: NaF solution was added dropwise \u201cwith continuous stirring,\u201d followed by \u201cAfter stirring for 60 min\u2026\u201d. NMMF@C fabrication also states the dispersion was prepared \u201cvia ultrasonication and stirring\u201d and then \u201cmechanically stirred for 12 hours.\u201d Thus, the synthesis operation \u2018stir\u2019 is supported by the source text (Materials and Methods section).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fabrication of NMMF@C"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Isolation of NMMF@Resin",
+        "operations": [
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "notes": "isolate coated particles",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes collecting the synthesized NMMF/NMMF@Resin products by centrifugation: \u201cThe as-obtained NMMF was collected through centrifugation\u2026\u201d and \u201cwere isolated by centrifugation\u2026\u201d. This supports that a centrifuge/centrifugation step is part of the synthesis operations.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "solvents": [
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes \u201cwashed with water and ethanol\u201d during synthesis. In Materials and Methods (Fabrication of NMMF): \u201cThe as-obtained NMMF was collected through centrifugation, washed with water and ethanol to remove impurities\u2026\u201d and in Fabrication of NMMF@C: \u201c\u2026isolated by centrifugation and washed using deionized water and ethanol several times.\u201d This supports the presence of a washing operation.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fabrication of NMMF@C"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Carbonization to obtain NMMF@C",
+        "operations": [
+          {
+            "action": "carbonize",
+            "parameters": {
+              "temperature": {
+                "value": 1073.15,
+                "unit": "K"
+              },
+              "atmosphere": "Ar",
+              "heating_rate": {
+                "value": 5,
+                "unit": "K min-1"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly describes the synthesis of NMMF@C spansules as including a carbonization step. In the Results section it states the method includes \u201cprecipitation of fluorides (NMMF), coating with resin, and carbonization,\u201d and Fig. 2 caption notes \u201ccarbonization at high temperature.\u201d The Materials and Methods further specifies \u201cAfter the carbonization process at 800\u00b0C in Ar atmosphere\u2026 the NMMF@C sample was obtained.\u201d Therefore, the synthesis operation 'carbonize' is supported.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.93,
+            "reasoning": "The paper explicitly states that the NMMF@C sample was obtained \u201cafter the carbonization process at 800\u00b0C in Ar atmosphere\u201d (Materials and Methods: Fabrication of NMMF@C), indicating argon was the synthesis atmosphere (at least for the carbonization step). It also notes coin cells were assembled in an Ar-filled glove box, but the key synthesis-atmosphere statement is the Ar carbonization atmosphere.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Fabrication of NMMF@C"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dissolution of metal acetates",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The paper\u2019s workflow/timeline includes dissolution of magnesium acetate and manganese acetate during NMMF synthesis (\u201c6.4 mmol of magnesium acetate and 1.6 mmol of manganese acetate were successively dissolved\u2026\u201d in Materials and Methods). However, it does not mention a step described as \u201cDissolution of metal acetates\u201d as a labeled workflow timeline item, and the metal acetates are not pluralized broadly beyond Mg and Mn acetates. The extracted value is too generic and not explicitly stated as a workflow timeline entry in the text.",
+          "suggested_fix": "If the intent is to capture a specific workflow step, use: \u201c6.4 mmol magnesium acetate and 1.6 mmol manganese acetate were successively dissolved in 10 mL water + 10 mL ethanol (Fabrication of NMMF).\u201d"
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Fluoride precipitation and aging",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper describes the synthesis workflow for NMMF@C as \u201cprecipitation of fluorides (NMMF), coating with resin, and carbonization\u201d (Results, p.2) and provides detailed synthesis steps (Materials and Methods, p.7). It does not describe a workflow step explicitly named \u201cfluoride precipitation and aging\u201d as a timeline item. While precipitation is mentioned and there is a 24-hour room-temperature hold (which could be interpreted as aging), the combined phrase \u201cFluoride precipitation and aging\u201d is not explicitly stated as a workflow timeline element in the text.",
+          "suggested_fix": "If a workflow timeline item is needed, use wording consistent with the text, e.g., \u201cprecipitation of fluorides (NMMF), resin coating, and carbonization.\u201d If specifically capturing the hold/aging step, use \u201cstirring for 60 min, then maintained for 24 hours at room temperature\u201d (Fabrication of NMMF, Materials and Methods)."
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Isolation and drying of NMMF",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.87,
+          "reasoning": "The paper describes synthesis steps for NMMF and NMMF@C, including collection by centrifugation, washing, and drying (e.g., \u201cfinally dried at 60\u00b0C for 6 hours\u201d), but it does not explicitly present a workflow timeline item labeled \u201cIsolation and drying of NMMF.\u201d The closest supported text is procedural details in \u201cFabrication of NMMF,\u201d not a timeline entry.",
+          "suggested_fix": "If the intent is to capture the workflow step, use wording directly supported by the Methods: \u201cThe as-obtained NMMF was collected through centrifugation, washed with water and ethanol, and dried at 60\u00b0C for 6 hours.\u201d"
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Resin coating of NMMF",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper explicitly describes the synthesis steps as including \u201ccoating with resin\u201d of the NMMF (Page 2, Results) and provides detailed procedure where \u201cNMMF nanocubes coated with resorcinol-formaldehyde resin (NMMF@Resin) were isolated\u2026\u201d (Page 7, Materials and Methods). However, the extracted value \u201cResin coating of NMMF\u201d is presented as a Workflow Timeline item; the source text does not frame this as part of a timeline/workflow sequence section\u2014only as a synthesis step within methods/characterization. Thus it is not explicitly supported as a \u2018Workflow Timeline\u2019 entry, though the action itself is supported.",
+          "suggested_fix": "If the field must be \u2018Workflow Timeline\u2019, use wording like: \u201cSynthesis step: NMMF precipitation \u2192 resorcinol\u2013formaldehyde resin coating (NMMF@Resin) \u2192 carbonization to obtain NMMF@C.\u201d If the value is meant to capture a fabrication step (not timeline), keep: \u201cNMMF was coated with resorcinol\u2013formaldehyde resin (NMMF@Resin) before carbonization.\u201d"
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Isolation of NMMF@Resin",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.94,
+          "reasoning": "The Methods section under \u201cFabrication of NMMF@C\u201d explicitly states: \u201cthe obtained NMMF nanocubes coated with resorcinol-formaldehyde resin (NMMF@Resin) were isolated by centrifugation and washed\u2026\u201d. This supports the workflow timeline step \u201cIsolation of NMMF@Resin.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Carbonization to form NMMF@C",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The paper explicitly states that NMMF@C microcubes were synthesized by \u201cprecipitation of fluorides (NMMF), coating with resin, and carbonization\u201d (Results, p.2). It also details that after \u201cthe carbonization process at 800\u00b0C in Ar atmosphere\u2026 the NMMF@C sample was obtained\u201d (Materials and Methods, p.7). Thus, carbonization is indeed a workflow step to form NMMF@C.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phases",
+          "value": "orthorhombic NaMgF3 and NaMnF3",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2B"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Supported. In the Results section under \u201cCharacterization of the obtained NMMF@C spansules,\u201d the text explicitly states: \u201cThe powder x-ray diffraction (XRD) pattern \u2026 (Fig. 2B) indicates that the fluoride component is a composite and made of two phases, that is, the orthorhombic phases of NaMgF3 \u2026 and NaMnF3 \u2026.\u201d This matches the extracted phases and the cited provenance (Fig. 2B).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "FESEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": 500,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2C"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states in the Results section (\u201cCharacterization of the obtained NMMF@C spansules\u201d) that the FESEM image shows NMMF cubes with \u201can average size of ~500 nm (Fig. 2C).\u201d This supports the extracted FESEM particle size value of 500 nm (approximate).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TEM/HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interplanar distance",
+          "value": 0.34,
+          "unit": "nm"
+        },
+        {
+          "metric": "shell thickness",
+          "value": 30,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2E",
+        "Fig. 2F"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Supported by the text describing Fig. 2E and Fig. 2F. The paper states: HRTEM image shows an interplanar distance of 3.4 \u00c5 (inset of Fig. 2E), which equals 0.34 nm. It also states the shell thickness is determined to be ~30 nm (Fig. 2F).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "ICP-MS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "dissolution rate",
+          "value": 0.06,
+          "unit": "wt% h-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "fig. S8",
+        "table S1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The main text explicitly states: \u201cThe results show that the mass loss of the NMMF@C is nearly linear as a function of time, with a calculated mass loss rate of ~0.06 weight % (wt %) h\u22121,\u201d and ties this to ICP-MS/dissolution behavior investigation referencing \u201cfig. S8 and table S1.\u201d This supports a dissolution (mass loss) rate of ~0.06 wt% h\u22121.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cryo-TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "SEI structure",
+          "value": "LiF-rich bilayer",
+          "unit": ""
+        },
+        {
+          "metric": "presence of metallic Na, Mg, Mn grains",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 4"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "Fig. 4 (cryo-TEM/HRTEM) supports that the SEI on NMMF@C-modified Cu exhibits a *bilayered* structure with Li2O-based inner/outer layers and that LiF nanograins are detected in the inner SEI layer; it is also stated that the SEI is LiF-rich compared to bare Cu. However, the extracted phrase \"LiF-rich bilayer\" is not explicitly stated in the text: the bilayer is described as Li2O-involved/ordered laminar Li2O, with LiF present as nanograins in the inner layer. Fig. 4 also explicitly supports the presence of metallic Na, Mg, and Mn nanograins (M layer confirmation), but the extracted entry leaves the value blank.",
+        "suggested_fix": "Update SEI structure to something explicitly supported, e.g., \"Li2O-involved bilayer SEI with LiF nanograins (LiF-rich SEI compared to bare Cu)\". For metallic grains, set value to \"Metallic Na, Mg, and Mn nanograins detected (M layer)\" (unit: none)."
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Coulombic efficiency measurement",
+        "results": [
+          {
+            "value": 98,
+            "unit": "%",
+            "notes": "maintained for >1000 cycles at 2 mA cm\u22122"
+          }
+        ],
+        "prov": [
+          "Fig. 5A"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.83,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is empty, but the paper explicitly states multiple analysis/characterization methods. For the alleged provenance (Fig. 5A), the text describes Fig. 5A as \u201cCE versus cycle number\u201d data from coin cells, i.e., an electrochemical Coulombic efficiency measurement (plating/stripping test). Therefore, the field should not be blank.",
+          "suggested_fix": "Electrochemical Coulombic efficiency (CE) measurement (Li plating/stripping; CE vs cycle number plot in Fig. 5A)."
+        }
+      },
+      {
+        "method_name": "Full cell capacity retention",
+        "results": [
+          {
+            "value": 130,
+            "unit": "mAh g-1",
+            "notes": "after 500 cycles at 1 C for NCM811/NMMF@C-Li"
+          }
+        ],
+        "prov": [
+          "Fig. 6C"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.9,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank. Figure 6C (and surrounding text) describes long-term cycling performance of full cells (capacity vs. cycle number), which implies galvanostatic cycling tests, but the field is not explicitly stated as an analysis method in Fig. 6C. Elsewhere the paper explicitly names methods (e.g., cryo-TEM, FESEM, XRD, XPS, EIS, ICP-MS), but none are identified as the \u201canalysis method\u201d for Fig. 6C specifically, and a blank value is not a valid explicitly supported extraction.",
+          "suggested_fix": "If the intent is to capture the method behind Fig. 6C, use: \u201cGalvanostatic charge/discharge cycling (battery cycling test) at 1 C (full cell)\u201d (as described in the paragraph referencing Fig. 6C). Otherwise, provide an explicit method name present in the text (e.g., \u201ccryo-TEM\u201d, \u201cFESEM\u201d, etc.) with correct provenance."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 130,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1000,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.95,
+      "reasoning": "The paper explicitly reports cycling over 1000 cycles. Page 1 states: \u201chigh Coulombic efficiency of 98% for over 1000 cycles at a current density of 2 mA cm\u22122.\u201d Page 5 similarly states: \u201cachieves a high CE of 98% for more than 1000 cycles\u201d at 2 mA cm\u22122. Thus the extracted Cycle Life value of 1000 cycles is supported (as a \u2018more than/over 1000\u2019 figure).",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "Yuan_et_al_SciAdv_2020_eaaz3112.pdf",
+    "processing_time": null
+  }
+}

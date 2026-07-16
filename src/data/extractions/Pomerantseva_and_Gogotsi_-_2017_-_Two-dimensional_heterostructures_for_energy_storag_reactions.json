@@ -1,0 +1,375 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Two-dimensional heterostructures for energy storage",
+    "doi": "10.1038/nenergy.2017.89",
+    "authors": ["Ekaterina Pomerantseva", "Yury Gogotsi"],
+    "journal": "Nature Energy",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "perspective",
+    "tags": ["2D materials", "heterostructure electrodes", "energy storage"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "MoS2/NDG single-layer heterostructure",
+      "molecular_formula": "",
+      "intended_role": "heterostructured electrode material",
+      "prov": ["Page 4, paragraph beginning “For example, a single-layer MoS2/NDG heterostructure…”"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "MoS2/rGO free-standing composite paper",
+      "molecular_formula": "",
+      "intended_role": "heterostructured electrode material",
+      "prov": ["Page 5, paragraph beginning “For example, heterostructured free-standing paper composed of acid-exfoliated MoS2 sheets…”"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "MoS2/rGO heterostructure (hydrothermal)",
+      "molecular_formula": "",
+      "intended_role": "heterostructured electrode material",
+      "prov": ["Page 4, paragraph beginning “Furthermore, a 2D MoS2/rGO heterostructure was prepared using hydrothermal treatment…”"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Molybdenum disulfide",
+      "molecular_formula": "MoS2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as exfoliated nanoflakes or sheets",
+      "prov": ["Multiple locations (Pages 3–5)"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Dopamine",
+      "molecular_formula": "C8H11NO2",
+      "ontology": {
+        "role": "functionalization agent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4, same paragraph as target_1 synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Protective atmosphere during annealing",
+      "prov": ["Page 4, same paragraph as target_1 synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Reduced graphene oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "component",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 5, paragraph on free-standing paper"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Phosphomolybdic acid",
+      "molecular_formula": "H3PMo12O40",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4, paragraph on hydrothermal MoS2/rGO"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Graphene oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4, paragraph on hydrothermal MoS2/rGO"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "L-cysteine",
+      "molecular_formula": "C3H7NO2S",
+      "ontology": {
+        "role": "sulfur source / additive",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4, paragraph on hydrothermal MoS2/rGO"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Aqueous dispersion used in vacuum-assisted filtration",
+      "prov": ["Page 5, paragraph on free-standing paper"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Electrostatic self-assembly of dopamine on exfoliated MoS2 nanoflakes, followed by annealing to form MoS2/NDG heterostructure",
+        "operations": [
+          {
+            "action": "self-assemble",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Electrostatic assembly mentioned; no quantitative conditions provided."
+          },
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["product of previous operation"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "notes": "Atmosphere: argon (chem_3)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4, paragraph beginning “For example, a single-layer MoS2/NDG heterostructure…”"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Fabrication of MoS2/rGO free-standing composite paper via vacuum-assisted filtration and thermal reduction",
+        "operations": [
+          {
+            "action": "vacuum-filter",
+            "parameters": {
+              "inputs": ["chem_1", "chem_4", "chem_8"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Homogeneous aqueous dispersion filtered to form paper"
+          },
+          {
+            "action": "thermal_reduce",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Performed at unspecified elevated temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5, paragraph on free-standing paper"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Hydrothermal synthesis of MoS2/rGO heterostructure from phosphomolybdic acid, GO and L-cysteine",
+        "operations": [
+          {
+            "action": "hydrothermal_treat",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6", "chem_7"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "No specific hydrothermal parameters provided"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4, paragraph on hydrothermal MoS2/rGO"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Formation of MoS2/NDG heterostructure via self-assembly and annealing"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of free-standing MoS2/rGO paper by filtration and reduction"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Hydrothermal synthesis of MoS2/rGO heterostructure"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing duration for annealing and self-assembly",
+        "excerpt": "“followed by annealing at 600 °C in argon” (no time specified)"
+      },
+      {
+        "issue": "Unspecified temperature for thermal reduction",
+        "excerpt": "“followed by thermal reduction at elevated temperatures”"
+      },
+      {
+        "issue": "No hydrothermal parameters given",
+        "excerpt": "“prepared using hydrothermal treatment of phosphomolybdic acid,  GO and l-cysteine”"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Interlayer spacing measurement (unspecified, likely XRD)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interlayer spacing of pure MoS2",
+          "value": 0.62,
+          "unit": "nm"
+        },
+        {
+          "metric": "interlayer spacing in NDG/MoS2 heterostructure",
+          "value": 0.99,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Expanded spacing facilitates ion diffusion",
+      "prov": ["Page 3–4, paragraph beginning “For example, the interlayer distance between MoS2 layers expanded…”"]
+    },
+    {
+      "method": "Strain estimation (unspecified)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "average strain due to lattice mismatch",
+          "value": 0.1,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Interface-induced strain affects lithium storage pathway",
+      "prov": ["Page 4, paragraph beginning “Moreover, it was shown that the average strain of ~0.1% …”"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T08:05:00Z",
+    "source_file": "Excerpt_NatureEnergy2017_17089.txt",
+    "processing_time": null
+  }
+}

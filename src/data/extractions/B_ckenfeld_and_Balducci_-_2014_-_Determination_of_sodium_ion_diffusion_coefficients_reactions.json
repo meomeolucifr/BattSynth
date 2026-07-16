@@ -1,0 +1,861 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Determination of sodium ion diffusion coefficients in sodium vanadium phosphate",
+    "doi": "10.1007/s10008-013-2342-6",
+    "authors": [
+      "Nils Böckenfeld",
+      "Andrea Balducci"
+    ],
+    "journal": "Journal of Solid State Electrochemistry",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "sodium ion battery",
+      "NaSICON",
+      "diffusion coefficient",
+      "sol–gel synthesis",
+      "Na3V2(PO4)3"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Carbon-coated Na3V2(PO4)3",
+      "molecular_formula": "Na3V2(PO4)3",
+      "intended_role": "active material",
+      "prov": [
+        "Experimental methods – NVP synthesis and characterization"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "NH4VO3",
+      "molecular_formula": "NH4VO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "molar ratio 2 in precursor mixture",
+      "prov": [
+        "Experimental methods – NVP synthesis"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "NaOH",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "molar ratio 3 in precursor mixture",
+      "prov": [
+        "Experimental methods – NVP synthesis"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "NH4H2PO4",
+      "molecular_formula": "NH4H2PO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "molar ratio 3 in precursor mixture",
+      "prov": [
+        "Experimental methods – NVP synthesis"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Citric acid",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reducing_agent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of reducing/chelating agent mixture, ratio 2",
+      "prov": [
+        "Experimental methods – NVP synthesis"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Oxalic acid",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reducing_agent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of reducing/chelating agent mixture, ratio 6",
+      "prov": [
+        "Experimental methods – NVP synthesis"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Experimental methods – NVP synthesis"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective_gas",
+        "category": "inert_gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "constant flow during sintering",
+      "prov": [
+        "Experimental methods – NVP synthesis"
+      ]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Super C65 carbon",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive_additive",
+        "category": "carbon_material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "10 wt% in electrode",
+      "prov": [
+        "Experimental methods – Electrode preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Polyvinylidene fluoride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "5 wt% in electrode",
+      "prov": [
+        "Experimental methods – Electrode preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "KOH",
+      "molecular_formula": "KOH",
+      "ontology": {
+        "role": "etchant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "5 wt% solution used to etch aluminum foil",
+      "prov": [
+        "Experimental methods – Electrode preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "NaPF6",
+      "molecular_formula": "NaPF6",
+      "ontology": {
+        "role": "electrolyte_salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "in propylene carbonate",
+      "prov": [
+        "Experimental methods – Electrochemistry"
+      ]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Propylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 120,
+        "unit": "μL"
+      },
+      "notes": "electrolyte solvent volume on separator",
+      "prov": [
+        "Experimental methods – Electrochemistry"
+      ]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Sodium metal",
+      "molecular_formula": "Na",
+      "ontology": {
+        "role": "counter_electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as counter and reference electrode",
+      "prov": [
+        "Experimental methods – Electrochemistry"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dissolution of NH4VO3 and organic acids in water",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_4",
+                "chem_5",
+                "chem_6"
+              ]
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "NH4VO3 and mixture of citric and oxalic acid dissolved at 80 °C",
+            "prov": [
+              "Experimental methods – NVP synthesis"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods – NVP synthesis"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of second precursor solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_2",
+                "chem_3",
+                "chem_6"
+              ]
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "NaOH and NH4H2PO4 dissolved at 80 °C",
+            "prov": [
+              "Experimental methods – NVP synthesis"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods – NVP synthesis"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Combination and stirring to form gel",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "step_2"
+              ]
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Solution containing NaOH and NH4H2PO4 added to first solution",
+            "prov": [
+              "Experimental methods – NVP synthesis"
+            ]
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "stirred until dark green gel formed",
+            "prov": [
+              "Experimental methods – NVP synthesis"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods – NVP synthesis"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Drying of gel precursor",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "dried for 24 h under ambient atmosphere",
+            "prov": [
+              "Experimental methods – NVP synthesis"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods – NVP synthesis"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Grinding of dried gel",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "ground with agate mortar",
+            "prov": [
+              "Experimental methods – NVP synthesis"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods – NVP synthesis"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "First sintering under argon",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {},
+            "temperature": {
+              "value": 573,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "notes": "heating rate 5 °C min-1",
+            "prov": [
+              "Experimental methods – NVP synthesis"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods – NVP synthesis"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Grinding after first sintering",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "",
+            "prov": [
+              "Experimental methods – NVP synthesis"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods – NVP synthesis"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Second sintering under argon to obtain product",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {},
+            "temperature": {
+              "value": 1023,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "heating rate 10 °C min-1, yields carbon-coated Na3V2(PO4)3",
+            "prov": [
+              "Experimental methods – NVP synthesis"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods – NVP synthesis"
+        ]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Etching of aluminum foil current collector",
+        "operations": [
+          {
+            "action": "etch",
+            "parameters": {
+              "inputs": [
+                "chem_10"
+              ]
+            },
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 0.5,
+              "unit": "min"
+            },
+            "notes": "5 wt% KOH solution used",
+            "prov": [
+              "Experimental methods – Electrode preparation"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods – Electrode preparation"
+        ]
+      },
+      {
+        "step_id": "step_10",
+        "description": "Preparation of composite electrode slurry and coating",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "target_1",
+                "chem_8",
+                "chem_9"
+              ]
+            },
+            "notes": "composition 85 wt% NVP, 10 wt% Super C65, 5 wt% PVDF",
+            "prov": [
+              "Experimental methods – Electrode preparation"
+            ]
+          },
+          {
+            "action": "coat",
+            "parameters": {},
+            "notes": "cast onto etched aluminum foil, area 1.13 cm2, active mass 1.5 mg",
+            "prov": [
+              "Experimental methods – Electrode preparation"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental methods – Electrode preparation"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Initial dissolution of vanadium precursor and organic acids"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of sodium and phosphate solution"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Combination of solutions and gel formation"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Drying of gel precursor"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Grinding of dried gel"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "First calcination at 573 K under argon"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Re-grinding of precursor"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Final calcination at 1023 K under argon producing carbon-coated NVP"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Etching aluminum foil current collector with KOH"
+      },
+      {
+        "step_ref": "step_10",
+        "description": "Preparation and coating of composite electrode slurry"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "2theta_range": "10°–60°",
+        "step_size": "0.0197°"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "rhombohedral Na3V2(PO4)3",
+          "unit": ""
+        }
+      ],
+      "interpretation": "phase-pure NVP confirmed",
+      "prov": [
+        "Figure 1a"
+      ]
+    },
+    {
+      "method": "SEM",
+      "parameters": {
+        "voltage": "3 keV",
+        "magnifications": "×1,000 and ×25,000"
+      },
+      "results": [
+        {
+          "metric": "particle size",
+          "value": "10–20",
+          "unit": "μm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1c–d"
+      ]
+    },
+    {
+      "method": "CHN combustion analysis",
+      "parameters": {
+        "sample_mass": "20 mg",
+        "temperature": "1050 K",
+        "atmosphere": "oxygen"
+      },
+      "results": [
+        {
+          "metric": "carbon content",
+          "value": 11.5,
+          "unit": "wt%"
+        },
+        {
+          "metric": "nitrogen content",
+          "value": "<1",
+          "unit": "wt%"
+        },
+        {
+          "metric": "hydrogen content",
+          "value": "<1",
+          "unit": "wt%"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Experimental methods – CHN analysis"
+      ]
+    },
+    {
+      "method": "BET N2 adsorption",
+      "parameters": {
+        "points": 7
+      },
+      "results": [
+        {
+          "metric": "specific surface area",
+          "value": 2.25,
+          "unit": "m2 g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1b"
+      ]
+    },
+    {
+      "method": "Galvanostatic charge–discharge",
+      "parameters": {
+        "potential_range": "3.0–4.0 V vs Na/Na+",
+        "current_density": "1 C",
+        "cycles": 100
+      },
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 92,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity after 100 cycles",
+          "value": 85,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention",
+          "value": 92,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 2"
+      ]
+    },
+    {
+      "method": "C-rate performance test",
+      "parameters": {
+        "potential_range": "3.0–4.0 V vs Na/Na+",
+        "C_rates": "0.1–5 C"
+      },
+      "results": [
+        {
+          "metric": "capacity_0.1C",
+          "value": 95,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity_2C",
+          "value": 79,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity_5C",
+          "value": 44,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 3"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic Intermittent Titration Technique (GITT)",
+        "results": [
+          {
+            "metric": "apparent diffusion coefficient",
+            "value": "6×10−13–2×10−15",
+            "unit": "cm2 s-1"
+          }
+        ],
+        "prov": [
+          "Figure 4"
+        ]
+      },
+      {
+        "method_name": "Cyclic Voltammetry (Randles–Sevcik)",
+        "results": [
+          {
+            "metric": "apparent diffusion coefficient at 3.41 V",
+            "value": 1.5e-13,
+            "unit": "cm2 s-1"
+          },
+          {
+            "metric": "apparent diffusion coefficient at 3.35 V",
+            "value": 1.2e-13,
+            "unit": "cm2 s-1"
+          }
+        ],
+        "prov": [
+          "Figure 5"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 96,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A comprehensive review of sodium layered oxides: powerful cathodes for Na-ion batteries",
+    "doi": "10.1039/c4ee03192j",
+    "authors": [
+      "Man Huon Han",
+      "Elena Gonzalo",
+      "Gurpreet Singh",
+      "Teófilo Rojo"
+    ],
+    "journal": "Energy & Environmental Science",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review_article",
+    "tags": ["Na-ion battery", "layered oxides", "cathode materials"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na0.7MnO2 nanoplate (P2-phase)",
+      "molecular_formula": "Na0.7MnO2",
+      "intended_role": "cathode_material",
+      "prov": ["Page 86"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Carbon-coated NaCrO2",
+      "molecular_formula": "NaCrO2",
+      "intended_role": "cathode_material",
+      "prov": ["Page 85"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na2/3Fe1/2Mn1/2O2 (P2-phase)",
+      "molecular_formula": "Na0.67Fe0.5Mn0.5O2",
+      "intended_role": "cathode_material",
+      "prov": ["Page 94"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "0.5Li2MnO3·0.5LiMn0.42Ni0.42Co0.16O2 (Na-rich after Na insertion)",
+      "molecular_formula": "",
+      "intended_role": "cathode_material",
+      "prov": ["Page 98"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "sodium azide",
+      "molecular_formula": "NaN3",
+      "ontology": {
+        "role": "sacrificial_additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "proposed as a Na source in cathode mixes",
+      "prov": ["Page 95"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "No explicit quantitative synthesis procedures provided; synthesis steps therefore omitted.",
+        "excerpt": "Typical Na layered oxides can be synthesized ... ease of synthesis."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle length",
+          "value": 500,
+          "unit": "nm"
+        },
+        {
+          "metric": "particle width",
+          "value": 200,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "uniform nanoplates",
+      "prov": ["Page 86"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": {
+          "value": 20,
+          "unit": "mA g-1"
+        },
+        "voltage_window": "4.5–2.0 V"
+      },
+      "results": [
+        {
+          "metric": "discharge capacity",
+          "value": 163,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 86"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": {
+          "value": 180,
+          "unit": "mA g-1"
+        },
+        "voltage_window": "4.5–2.0 V"
+      },
+      "results": [
+        {
+          "metric": "discharge capacity",
+          "value": 125,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "rate capability of Na0.7MnO2 nanoplates",
+      "prov": ["Page 86"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": {
+          "value": 5,
+          "unit": "mA g-1"
+        },
+        "voltage_window": "2.6–3.4 V"
+      },
+      "results": [
+        {
+          "metric": "charge capacity",
+          "value": 135,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "discharge capacity",
+          "value": 116,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "carbon-coated NaCrO2",
+      "prov": ["Page 85"]
+    },
+    {
+      "method": "Capacity retention test",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "capacity fade per cycle (coated)",
+          "value": 0.16,
+          "unit": "%"
+        },
+        {
+          "metric": "capacity fade per cycle (uncoated)",
+          "value": 0.32,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "carbon coating improves stability",
+      "prov": ["Page 85"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": {
+          "value": 12,
+          "unit": "mA g-1"
+        },
+        "voltage_window": "4.2–1.5 V"
+      },
+      "results": [
+        {
+          "metric": "reversible capacity",
+          "value": 190,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "P2-Na2/3Fe1/2Mn1/2O2 performance",
+      "prov": ["Page 94"]
+    },
+    {
+      "method": "Energy density calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "energy density",
+          "value": 520,
+          "unit": "mWh g-1"
+        }
+      ],
+      "interpretation": "comparable to LiFePO4",
+      "prov": ["Page 94"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": {
+          "value": 5,
+          "unit": "mA g-1"
+        },
+        "voltage_window": "4.5–1.7 V"
+      },
+      "results": [
+        {
+          "metric": "discharge capacity",
+          "value": 239,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Na-rich layered oxide after Na insertion",
+      "prov": ["Page 98"]
+    },
+    {
+      "method": "Average voltage determination",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "average voltage",
+          "value": 2.75,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 98"]
+    },
+    {
+      "method": "Energy density calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "energy density",
+          "value": 644,
+          "unit": "Wh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 98"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-03-21T00:00:00Z",
+    "source_file": "review_na_layered_oxides_2015.txt",
+    "processing_time": null
+  }
+}

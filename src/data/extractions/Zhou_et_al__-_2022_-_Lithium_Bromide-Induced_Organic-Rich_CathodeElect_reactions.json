@@ -1,0 +1,462 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium Bromide-Induced Organic-Rich Cathode/Electrolyte Interphase for High-Voltage and Flame-Retardant All-Solid-State Lithium Batteries",
+    "doi": "10.1021/acsami.2c05016",
+    "authors": [
+      "Hang-Yu Zhou",
+      "Shuai-Shuai Yan",
+      "Jun Li",
+      "Hao Dong",
+      "Pan Zhou",
+      "Lei Wan",
+      "Xiao-Xia Chen",
+      "Wei-Li Zhang",
+      "Ying-Chun Xia",
+      "Pei-Can Wang",
+      "Bao-Guo Wang",
+      "Kai Liu"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid polymer electrolyte",
+      "flame retardant",
+      "all-solid-state battery",
+      "high voltage"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Br-FRPE solid electrolyte membrane",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Experimental Section: Preparation of SPE Membranes",
+        "Figure 1"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "PEO/LiTFSI solid electrolyte membrane",
+      "molecular_formula": "",
+      "intended_role": "comparative product",
+      "prov": [
+        "Experimental Section: Preparation of SPE Membranes"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Poly(ethylene oxide)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer matrix",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 1.80,
+        "unit": "g"
+      },
+      "notes": "EO:Li molar ratio 10:1",
+      "prov": [
+        "Experimental Section"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium bis(trifluoromethanesulfonimide)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "lithium salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.20,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental Section"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Decabromodiphenyl ethane",
+      "molecular_formula": "C14H4Br10",
+      "ontology": {
+        "role": "additive",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.90,
+        "unit": "g"
+      },
+      "notes": "brominated flame retardant",
+      "prov": [
+        "Experimental Section"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Anhydrous acetonitrile",
+      "molecular_formula": "C2H3N",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "volume not specified",
+      "prov": [
+        "Experimental Section"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Silica",
+      "molecular_formula": "SiO2",
+      "ontology": {
+        "role": "filler",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10 wt % relative to polymer in some membranes used for battery tests",
+      "prov": [
+        "Experimental Section"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mixing of PEO and LiTFSI in acetonitrile",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_4"]
+            },
+            "equipment": "Thinky mixer",
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "molar ratio EO:Li = 10:1"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental Section"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Ultrasonic dispersion after addition of DBDPE",
+        "operations": [
+          {
+            "action": "ultrasonic_dispersion",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental Section"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Casting and solvent removal",
+        "operations": [
+          {
+            "action": "cast",
+            "parameters": {
+              "inputs": []
+            },
+            "equipment": "PTFE substrate",
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 343,
+              "unit": "K"
+            },
+            "notes": "vacuum oven"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental Section"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Hot pressing to obtain membrane",
+        "operations": [
+          {
+            "action": "hot_press",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 373,
+              "unit": "K"
+            },
+            "notes": "thickness controlled ~80 μm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental Section"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "PEO and LiTFSI mixed in acetonitrile"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "DBDPE added and mixture ultrasonicated 2 h"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Mixture cast on PTFE and dried 24 h at 70 °C under vacuum"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Dried film hot-pressed at 100 °C to form Br-FRPE membrane (~80 μm)"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Volume of acetonitrile solvent not specified",
+        "excerpt": "PEO (1.80 g) and LiTFSI (1.20 g) were added into anhydrous acetonitrile, followed by mixing..."
+      },
+      {
+        "issue": "Hot-press duration not given",
+        "excerpt": "Subsequently, the Br-FRPE solid electrolyte membrane was obtained through the hot press process at 100 °C."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {
+        "temperature": [
+          {
+            "value": 298,
+            "unit": "K"
+          },
+          {
+            "value": 333,
+            "unit": "K"
+          }
+        ]
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 1.06e-5,
+          "unit": "S cm-1",
+          "conditions": "298 K"
+        },
+        {
+          "metric": "ionic conductivity",
+          "value": 1.66e-4,
+          "unit": "S cm-1",
+          "conditions": "333 K"
+        },
+        {
+          "metric": "Arrhenius activation energy",
+          "value": 0.23,
+          "unit": "eV",
+          "conditions": ""
+        }
+      ],
+      "interpretation": "Higher conductivity and lower activation energy than PEO/LiTFSI",
+      "prov": [
+        "Results: Figure S1, S2, Table S1"
+      ]
+    },
+    {
+      "method": "Differential Scanning Calorimetry (DSC)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "decomposition temperature onset",
+          "value": 433,
+          "unit": "K",
+          "conditions": "PEO/LiTFSI"
+        },
+        {
+          "metric": "thermal stability limit",
+          "value": 573,
+          "unit": "K",
+          "conditions": "Br-FRPE shows stability up to this temp"
+        }
+      ],
+      "interpretation": "Br-FRPE exhibits superior thermal stability",
+      "prov": [
+        "Figure 5a"
+      ]
+    },
+    {
+      "method": "Cone calorimeter",
+      "parameters": {
+        "heat_flux": {
+          "value": 35,
+          "unit": "kW m-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "peak heat release rate",
+          "value": 25.2,
+          "unit": "kW m-2",
+          "conditions": "Br-FRPE"
+        },
+        {
+          "metric": "total heat release",
+          "value": 1.0,
+          "unit": "MJ m-2",
+          "conditions": "Br-FRPE"
+        }
+      ],
+      "interpretation": "Br-FRPE shows 69.9% lower peak HRR and 54.5% lower THR than PEO/LiTFSI",
+      "prov": [
+        "Figure 5b,c,e"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic cycling (Li/SPE/NCM811 cells)",
+        "results": [
+          {
+            "description": "average reversible capacity over first 150 cycles at 0.2 C (4.3 V cutoff)",
+            "value": 155.8,
+            "unit": "mAh g-1"
+          },
+          {
+            "description": "capacity retention at 150th cycle (4.3 V cutoff)",
+            "value": 80.6,
+            "unit": "%"
+          },
+          {
+            "description": "average Coulombic efficiency (first 150 cycles, 4.3 V)",
+            "value": 99.5,
+            "unit": "%"
+          },
+          {
+            "description": "average reversible capacity over first 150 cycles at 0.5 C (4.5 V cutoff)",
+            "value": 151.4,
+            "unit": "mAh g-1"
+          },
+          {
+            "description": "capacity retention at 150th cycle (4.5 V cutoff)",
+            "value": 83.0,
+            "unit": "%"
+          }
+        ],
+        "prov": [
+          "Abstract",
+          "Figure 2c,e,f"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 155.8,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 150
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-09T00:00:00Z",
+    "source_file": "Provided text excerpt",
+    "processing_time": null
+  }
+}

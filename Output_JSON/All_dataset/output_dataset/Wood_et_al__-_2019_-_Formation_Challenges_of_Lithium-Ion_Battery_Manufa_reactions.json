@@ -1,0 +1,457 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Formation Challenges of Lithium-Ion Battery Manufacturing",
+    "doi": "10.1016/j.joule.2019.11.002",
+    "authors": [
+      "David L. Wood III",
+      "Jianlin Li",
+      "Seong Jin An"
+    ],
+    "journal": "Joule",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research_article",
+    "tags": [
+      "lithium-ion batteries",
+      "formation protocol",
+      "SEI/CEI"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "1.5 Ah graphite/LiNi0.5Mn0.3Co0.2O2 pouch cell",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Page 2886, Figure 1 caption",
+        "Page 2886, Figure 2 caption",
+        "Page 2887, Figure 3 caption"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "anode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page 2886"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiNi0.5Mn0.3Co0.2O2",
+      "molecular_formula": "LiNi0.5Mn0.3Co0.2O2",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Also referred to as NMC532 in text.",
+      "prov": [
+        "Page 2886"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.2,
+        "unit": "M"
+      },
+      "notes": "",
+      "prov": [
+        "Page 2886"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of 3:7 weight ratio EC:DEC solvent mixture",
+      "prov": [
+        "Page 2886"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "diethyl carbonate",
+      "molecular_formula": "C5H10O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of 3:7 weight ratio EC:DEC solvent mixture",
+      "prov": [
+        "Page 2886"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Typical SEI formation: First electrode wetting",
+        "operations": [
+          {
+            "action": "soak",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5", "chem_3"]
+            },
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Duration reported as 6–24 h; 360 min corresponds to lower bound."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 2885"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Typical SEI formation: 1–2 formation cycles at 0.1–0.2C",
+        "operations": [
+          {
+            "action": "electrochemical_cycle",
+            "parameters": {
+              "cycle_count": "1–2",
+              "c_rate": "0.1–0.2C"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 2885"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Typical SEI formation: Second electrode wetting",
+        "operations": [
+          {
+            "action": "soak",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5", "chem_3"]
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Duration reported as 12–24 h; 720 min corresponds to lower bound."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 2885"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Typical SEI formation: 1–2 formation cycles at 0.2–0.5C",
+        "operations": [
+          {
+            "action": "electrochemical_cycle",
+            "parameters": {
+              "cycle_count": "1–2",
+              "c_rate": "0.2–0.5C"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 2885"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Typical SEI formation: Third electrolyte wetting at elevated temperature",
+        "operations": [
+          {
+            "action": "soak",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5", "chem_3"]
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 313,
+              "unit": "K"
+            },
+            "notes": "Duration reported as 12–24 h; temperature range 313–333 K (40–60 °C); lower bound captured."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 2885"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "ORNL ultra-fast formation protocol",
+        "operations": [
+          {
+            "action": "electrochemical_charge",
+            "parameters": {
+              "c_rate": "high (not specified)",
+              "voltage_limit": "up to 4.2 V"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Fast first charge."
+          },
+          {
+            "action": "electrochemical_cycle",
+            "parameters": {
+              "cycle_count": "multiple",
+              "voltage_window": "3.9–4.2 V",
+              "depth": "300 mV shallow cycling"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "electrochemical_discharge",
+            "parameters": {
+              "c_rate": "fast (not specified)"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Fast full discharge to complete formation."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Figure 1 caption, Page 2886"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Initial electrode wetting at room temperature"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Slow formation cycles (0.1–0.2C)"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Second electrode wetting at room temperature"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Moderate formation cycles (0.2–0.5C)"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Final electrolyte wetting at 40–60 °C"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Ultra-fast 14 h formation with fast charge, shallow top-of-charge cycling, and fast discharge"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact C-rates and durations for ultra-fast formation steps not specified",
+        "excerpt": "A combination of high rates during the first charge and shallow cycling within a window of about 300 mV near the full state of charge ... The shallow cycling is followed by a full fast discharge to complete the formation cycle"
+      },
+      {
+        "issue": "Durations provided as ranges for wetting steps",
+        "excerpt": "first electrode wetting for 6–24 h ... second electrode wetting for 12–24 h ... third electrolyte wetting for 12–24 h"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "galvanostatic cycling",
+      "parameters": {
+        "current_rate": "1C/1C",
+        "cycle_count": "200–300"
+      },
+      "results": [
+        {
+          "metric": "capacity retention",
+          "value": "identical across protocols",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Ultra-fast formation delivers long-term cycling performance equivalent to baseline slow formation.",
+      "prov": [
+        "Figure 3, Page 2887"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Capacity comparison",
+        "results": [
+          {
+            "description": "Rated capacity after formation (baseline slow protocol)",
+            "value": 168,
+            "unit": "mAh g-1",
+            "prov": "Figure 2, Page 2886"
+          },
+          {
+            "description": "Rated capacity after fastest 14 h formation protocol",
+            "value": 146,
+            "unit": "mAh g-1",
+            "prov": "Figure 2, Page 2886"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 146,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

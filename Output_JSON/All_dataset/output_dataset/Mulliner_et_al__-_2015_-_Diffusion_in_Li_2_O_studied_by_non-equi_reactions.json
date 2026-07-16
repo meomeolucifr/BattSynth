@@ -1,0 +1,249 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Diffusion in Li2O studied by non-equilibrium molecular dynamics for 873 < T / K < 1603",
+    "doi": "10.1039/c5cp02628h",
+    "authors": [
+      "Alexander D. Mulliner",
+      "Philippe C. Aeberhard",
+      "Peter D. Battle",
+      "William I. F. David",
+      "Keith Refson"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "diffusion",
+      "Li2O",
+      "molecular dynamics",
+      "superionic conductor"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2O",
+      "molecular_formula": "Li2O",
+      "intended_role": "material under study",
+      "prov": [
+        "Page 21470−21475"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Material investigated in MD/NEMD simulations.",
+      "prov": [
+        "Page 21470−21475"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "FF-NEMD simulation",
+      "parameters": {
+        "temperature": 1273,
+        "simulation_time": {
+          "value": 500,
+          "unit": "ps"
+        },
+        "supercell": "2×2×2 (128 formula units)",
+        "colour_field_direction": "[001]"
+      },
+      "results": [
+        {
+          "metric": "log D_Li",
+          "value": -6.18,
+          "error": 0.03,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "method": "FF-MD simulation",
+      "parameters": {
+        "temperature": 1273,
+        "simulation_time": {
+          "value": 500,
+          "unit": "ps"
+        }
+      },
+      "results": [
+        {
+          "metric": "log D_Li",
+          "value": -5.96,
+          "error": 0.05,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "method": "DFT-NEMD simulation",
+      "parameters": {
+        "temperature": 1273,
+        "simulation_time": {
+          "value": 50,
+          "unit": "ps"
+        },
+        "functional": "PBE"
+      },
+      "results": [
+        {
+          "metric": "log D_Li",
+          "value": -6.02,
+          "error": 0.08,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "method": "Experimental measurement (Oishi et al.)",
+      "parameters": {
+        "temperature": 1312
+      },
+      "results": [
+        {
+          "metric": "log D_Li",
+          "value": -6.23,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1 reference"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius fit using equation (2)",
+        "results": [
+          {
+            "data_source": "FF-NEMD",
+            "parameter": "k1",
+            "value": -4.81,
+            "error": 0.13,
+            "unit": ""
+          },
+          {
+            "data_source": "FF-NEMD",
+            "parameter": "k2",
+            "value": 2.91,
+            "error": 0.80,
+            "unit": ""
+          },
+          {
+            "data_source": "FF-NEMD",
+            "parameter": "DE1",
+            "value": 26.9,
+            "error": 1.5,
+            "unit": "kJ mol-1"
+          },
+          {
+            "data_source": "FF-NEMD",
+            "parameter": "DE2",
+            "value": 100,
+            "error": 6.7,
+            "unit": "kJ mol-1"
+          },
+          {
+            "data_source": "Experimental (Oishi et al.)",
+            "parameter": "k1",
+            "value": -3.25,
+            "error": 0.13,
+            "unit": ""
+          },
+          {
+            "data_source": "Experimental (Oishi et al.)",
+            "parameter": "k2",
+            "value": 5.43,
+            "error": 0.80,
+            "unit": ""
+          },
+          {
+            "data_source": "Experimental (Oishi et al.)",
+            "parameter": "DE1",
+            "value": 37.2,
+            "error": 1.0,
+            "unit": "kJ mol-1"
+          },
+          {
+            "data_source": "Experimental (Oishi et al.)",
+            "parameter": "DE2",
+            "value": 134,
+            "error": 6.7,
+            "unit": "kJ mol-1"
+          }
+        ],
+        "prov": [
+          "Table 2"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-06T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

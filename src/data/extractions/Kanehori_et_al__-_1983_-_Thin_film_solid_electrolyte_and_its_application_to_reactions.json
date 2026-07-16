@@ -1,0 +1,524 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "THIN FILM SOLID ELECTROLYTE AND ITS APPLICATION TO SECONDARY LITHIUM CELL",
+    "doi": "",
+    "authors": [
+      "Keiichi Kanehori",
+      "Kazunobu Matsumoto",
+      "Katsuki Miyauchi",
+      "Tetsuichi Kudo"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 1983
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": ["thin film", "solid electrolyte", "secondary lithium cell", "CVD", "rf-sputtering"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3.6Si0.6P0.4O4 amorphous thin film",
+      "molecular_formula": "Li3.6Si0.6P0.4O4",
+      "intended_role": "electrolyte",
+      "prov": ["Page 1445-1446"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "TiS2 thin film cathode",
+      "molecular_formula": "TiS2",
+      "intended_role": "cathode",
+      "prov": ["Page 1445-1447"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li / Li3.6Si0.6P0.4O4 / TiS2 thin film cell",
+      "molecular_formula": "",
+      "intended_role": "battery cell",
+      "prov": ["Page 1445"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "TiCl4",
+      "molecular_formula": "TiCl4",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "0.1% in He for film(A); 0.6% in Ar for film(B)",
+      "prov": ["Page 1446-1447"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "H2S",
+      "molecular_formula": "H2S",
+      "ontology": {
+        "role": "sulfurizing agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "3.0% in He for film(A); 3.6% in Ar for film(B)",
+      "prov": ["Page 1446-1447"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "He",
+      "molecular_formula": "He",
+      "ontology": {
+        "role": "carrier gas",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Dilution gas for film(A)",
+      "prov": ["Page 1446"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Ar",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "carrier gas",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Dilution gas for film(B) and sputtering gas (Ar/O2 = 60/40)",
+      "prov": ["Page 1446"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "O2",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "reactive gas",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Part of sputtering gas mixture (Ar/O2 = 60/40)",
+      "prov": ["Page 1446"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Li3.6Si0.6P0.4O4 powder",
+      "molecular_formula": "Li3.6Si0.6P0.4O4",
+      "ontology": {
+        "role": "sputter target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 1446"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "sputter target additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referred to as \"Li_O pellets\" in text",
+      "prov": ["Page 1446"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Vacuum evaporated to form anode film",
+      "prov": ["Page 1446"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "P2O5",
+      "molecular_formula": "P2O5",
+      "ontology": {
+        "role": "desiccant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Placed in sealed desiccator during electrochemical measurements",
+      "prov": ["Page 1446"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1A",
+        "description": "CVD deposition of TiS2 film(A)",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "substrate": "silica glass",
+              "duration": {
+                "value": 420,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 723,
+                "unit": "K"
+              },
+              "pressure": {
+                "value": 0.06,
+                "unit": "bar"
+              },
+              "gas_composition": "0.1% TiCl4, 3.0% H2S in He"
+            },
+            "notes": "Low pressure CVD; film thickness 1.0 μm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "low pressure reactive gas",
+          "pressure": {
+            "value": 0.06,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1446-1447"]
+      },
+      {
+        "step_id": "step_1B",
+        "description": "CVD deposition of TiS2 film(B)",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_4"],
+              "substrate": "silica glass",
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 723,
+                "unit": "K"
+              },
+              "pressure": {
+                "value": 0.006,
+                "unit": "bar"
+              },
+              "gas_composition": "0.6% TiCl4, 3.6% H2S in Ar"
+            },
+            "notes": "Low pressure CVD; film thickness 3.7 μm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "low pressure reactive gas",
+          "pressure": {
+            "value": 0.006,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1446-1447"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "RF-sputtering of Li3.6Si0.6P0.4O4 electrolyte film onto TiS2 cathode",
+        "operations": [
+          {
+            "action": "sputter",
+            "parameters": {
+              "inputs": ["chem_6", "chem_7", "chem_4", "chem_5"],
+              "pressure": {
+                "value": 0.00003,
+                "unit": "bar"
+              },
+              "gas_composition": "Ar/O2 = 60/40",
+              "substrate_temperature": {
+                "value": 373,
+                "unit": "K",
+                "upper_limit": true
+              }
+            },
+            "notes": "Amorphous electrolyte film; thickness 2–4 μm depending on cell"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar/O2 plasma",
+          "pressure": {
+            "value": 0.00003,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1446"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Vacuum evaporation of Li anode film",
+        "operations": [
+          {
+            "action": "evaporate",
+            "parameters": {
+              "inputs": ["chem_8"],
+              "pressure": {
+                "value": 0.0001,
+                "unit": "bar"
+              }
+            },
+            "notes": "Li film thickness 4 μm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "high vacuum",
+          "pressure": {
+            "value": 0.0001,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1446"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1A",
+        "description": "Prepare TiS2 cathode film(A) by low pressure CVD"
+      },
+      {
+        "step_ref": "step_1B",
+        "description": "Prepare TiS2 cathode film(B) by modified low pressure CVD"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "RF-sputter Li3.6Si0.6P0.4O4 electrolyte film onto TiS2 cathode"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Vacuum evaporate Li anode film to complete thin film cell"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear chemical formula in text",
+        "excerpt": "\"Li_O pellets\" (Page 1446)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Complex impedance spectroscopy",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 5e-7,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy for conduction",
+          "value": 50,
+          "unit": "kJ mol-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 1446"]
+    },
+    {
+      "method": "Wagner polarization",
+      "parameters": {
+        "temperature": {
+          "value": 365,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "electronic conductivity",
+          "value": 5e-12,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "Li+ transference number",
+          "value": 1.0,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 1446"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "small, narrow plate-like crystals intersecting each other; width 0.5–3 μm, thickness <0.1 μm",
+          "unit": ""
+        },
+        {
+          "metric": "porosity",
+          "value": 65,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2", "Page 1446"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "preferred orientation film(A)",
+          "value": "(101), (100), (001) peaks",
+          "unit": ""
+        },
+        {
+          "metric": "preferred orientation film(B)",
+          "value": "(110) peak only",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 1", "Page 1447"]
+    },
+    {
+      "method": "Current pulse method",
+      "parameters": {
+        "pulse_current_density": {
+          "value": "0.45–4.5",
+          "unit": "mA cm-2"
+        },
+        "pulse_duration": {
+          "value": 0.14,
+          "unit": "s"
+        }
+      },
+      "results": [
+        {
+          "metric": "DLi in TiS2 film(A)",
+          "value": 4e-13,
+          "unit": "cm2 s-1"
+        },
+        {
+          "metric": "DLi in TiS2 film(B)",
+          "value": 1.1e-11,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 1447"]
+    },
+    {
+      "method": "V-I characterization",
+      "parameters": {
+        "temperature": {
+          "value": 303,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "internal resistance (4x4 mm2 cell)",
+          "value": 12000,
+          "unit": "ohm"
+        },
+        {
+          "metric": "short circuit current density",
+          "value": 1.3,
+          "unit": "mA cm-2"
+        },
+        {
+          "metric": "activation energy (internal resistance)",
+          "value": 40,
+          "unit": "kJ mol-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 1448"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Cycling performance evaluation",
+        "results": [
+          {
+            "description": "Shallow discharge (20% depth) at 16 μA cm-2 for 2000 cycles resulted in 20% capacity decrease",
+            "value": 2000,
+            "unit": "cycles"
+          },
+          {
+            "description": "Deep discharge (75% depth) at 6 μA cm-2 for 200 cycles resulted in 10% capacity decrease",
+            "value": 200,
+            "unit": "cycles"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 2000
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

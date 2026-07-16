@@ -1,0 +1,192 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Shell Model for Atomistic Simulation of Lithium Diffusion in Mixed Mn/Ti Oxides",
+    "doi": "10.1021/jp506025k",
+    "authors": [
+      "Sebastien Kerisit",
+      "Anne M. Chaka",
+      "Timothy C. Droubay",
+      "Eugene S. Ilton"
+    ],
+    "journal": "Journal of Physical Chemistry C",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["molecular dynamics", "Li diffusion", "rutile", "Mn/Ti oxides"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li_xMn_1−yTi_yO_2 (rutile)",
+      "molecular_formula": "",
+      "intended_role": "simulation subject",
+      "prov": ["Article main text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium ion",
+      "molecular_formula": "Li+",
+      "ontology": {
+        "role": "diffusing species",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Article main text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Titanium oxide (rutile TiO2 units in lattice)",
+      "molecular_formula": "TiO2",
+      "ontology": {
+        "role": "lattice cation",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Article main text"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Manganese oxide (MnO2 units in lattice)",
+      "molecular_formula": "MnO2",
+      "ontology": {
+        "role": "lattice cation",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Article main text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "No experimental synthesis steps described; study is fully computational.",
+        "excerpt": "Atoms are represented as point-charge particles ... molecular dynamics simulations were performed ..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Molecular Dynamics (MD) Simulation",
+      "parameters": {
+        "ensemble": "NPT",
+        "temperatures": ["300 K", "350 K", "400 K", "450 K", "500 K"],
+        "pressure": "0 bar",
+        "time_step": "0.2 fs",
+        "simulation_duration": "10 ns (production) + 0.333 min (20 ps) equilibration"
+      },
+      "results": [
+        {
+          "metric": "Li self-diffusion coefficient (infinite dilution, TiO2)",
+          "value": null,
+          "unit": "cm2 s-1",
+          "notes": "Values derived but not explicitly listed"
+        },
+        {
+          "metric": "Activation energy for Li diffusion in TiO2",
+          "value": 0.04,
+          "unit": "eV",
+          "notes": "",
+          "prov": ["Figure 3"]
+        },
+        {
+          "metric": "Activation energy for Li diffusion in MnO2",
+          "value": 0.08,
+          "unit": "eV",
+          "notes": "",
+          "prov": ["Figure 3"]
+        }
+      ],
+      "interpretation": "Activation energies depend on Mn/Ti arrangement and Li concentration.",
+      "prov": ["Computational Methods section", "Results and Discussion"]
+    },
+    {
+      "method": "Potential of Mean Force (PMF) Calculation",
+      "parameters": {
+        "spacing": "0.123 Å along [001]",
+        "frozen_atom": "one Ti atom fixed"
+      },
+      "results": [
+        {
+          "metric": "Free energy barrier (configuration 1)",
+          "value": 0.06,
+          "unit": "eV",
+          "prov": ["Figure 4"]
+        },
+        {
+          "metric": "Free energy barrier (configuration 2)",
+          "value": 0.18,
+          "unit": "eV",
+          "prov": ["Figure 4"]
+        }
+      ],
+      "interpretation": "Alternating Mn/Ti rows destabilize one of the Li sites, increasing activation energy.",
+      "prov": ["Figure 4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius Analysis",
+        "results": [
+          {
+            "equation": "ln(D) = ln(D0) - Ea/(kT)",
+            "value": null,
+            "unit": "",
+            "notes": "Used to derive activation energies and pre-exponential factors for various compositions."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T23:05:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

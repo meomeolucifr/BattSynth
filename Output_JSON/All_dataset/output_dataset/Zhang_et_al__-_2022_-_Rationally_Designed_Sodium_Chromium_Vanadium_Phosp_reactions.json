@@ -1,0 +1,395 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Rationally Designed Sodium Chromium Vanadium Phosphate Cathodes with Multi-Electron Reaction for Fast-Charging Sodium-Ion Batteries",
+    "doi": "10.1002/aenm.202201065",
+    "authors": [
+      "Wei Zhang",
+      "Yulun Wu",
+      "Zhenming Xu",
+      "Huangxu Li",
+      "Ming Xu",
+      "Jianwei Li",
+      "Yuhang Dai",
+      "Wei Zong",
+      "Ruwei Chen",
+      "Liang He",
+      "Zhian Zhang",
+      "Dan J. L. Brett",
+      "Guanjie He",
+      "Yanqing Lai",
+      "Ivan P. Parkin"
+    ],
+    "journal": "Advanced Energy Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["sodium-ion batteries", "NASICON", "multi-electron cathode"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na3Cr0.5V1.5(PO4)3",
+      "molecular_formula": "Na3Cr0.5V1.5(PO4)3",
+      "intended_role": "product",
+      "prov": ["Page 2"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "VC/C-G (rGO supported Na3Cr0.5V1.5(PO4)3)",
+      "molecular_formula": "Na3Cr0.5V1.5(PO4)3 + C",
+      "intended_role": "product",
+      "prov": ["Page 2"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "VC/C (carbon-coated Na3Cr0.5V1.5(PO4)3)",
+      "molecular_formula": "Na3Cr0.5V1.5(PO4)3 + C",
+      "intended_role": "product",
+      "prov": ["Page 2"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Na3Cr0.5V1.5(PO4)3",
+      "molecular_formula": "Na3Cr0.5V1.5(PO4)3",
+      "ontology": {
+        "role": "active_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "reduced graphene oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive_additive",
+        "category": "carbon_material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Forms 3D interconnected conductive network.",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "carbon (amorphous)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "coating",
+        "category": "carbon_material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Derived from pyrolysis of organic compounds during sintering.",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "sodium metal",
+      "molecular_formula": "Na",
+      "ontology": {
+        "role": "counter_electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as anode in CR2032 coin cells.",
+      "prov": ["Page 4"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Sol-gel synthesis of carbon-coated Na3Cr0.5V1.5(PO4)3 (VC/C).",
+        "operations": [
+          {
+            "action": "sol-gel preparation",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Details in Supporting Information, not provided in main text."
+          },
+          {
+            "action": "sinter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Pyrolysis of organics yields amorphous carbon coating."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Introduction of reduced graphene oxide to obtain VC/C-G composite.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_2", "target_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Forms rGO layer around particles, reducing particle size."
+          },
+          {
+            "action": "dry/sinter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2", "Page 3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of carbon-coated Na3Cr0.5V1.5(PO4)3 via sol-gel and pyrolysis."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Integration of reduced graphene oxide to form VC/C-G composite."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis parameters (precursor amounts, temperatures, times).",
+        "excerpt": "\"VC/C and VC/C-G were prepared by a common sol-gel approach (synthesis details could be found in Supporting Information).\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD (Rietveld refinement)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Rwp",
+          "value": 3.86,
+          "unit": "%",
+          "sample": "VC/C-G"
+        },
+        {
+          "metric": "Rwp",
+          "value": 3.99,
+          "unit": "%",
+          "sample": "VC/C"
+        }
+      ],
+      "interpretation": "Both samples crystallize in rhombohedral NASICON structure (space group R-3c).",
+      "prov": ["Page 2"]
+    },
+    {
+      "method": "TGA",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "carbon content",
+          "value": 10.3,
+          "unit": "%",
+          "sample": "VC/C-G"
+        },
+        {
+          "metric": "carbon content",
+          "value": 9.5,
+          "unit": "%",
+          "sample": "VC/C"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 3"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ID/IG ratio",
+          "value": 0.93,
+          "unit": "",
+          "sample": "VC/C-G"
+        },
+        {
+          "metric": "ID/IG ratio",
+          "value": 0.89,
+          "unit": "",
+          "sample": "VC/C"
+        }
+      ],
+      "interpretation": "Higher ratio indicates improved electronic conductivity for VC/C-G.",
+      "prov": ["Page 3"]
+    },
+    {
+      "method": "TEM/HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": null,
+          "unit": "µm",
+          "notes": "VC/C-G: 0.1–1 µm; VC/C: 4 µm"
+        }
+      ],
+      "interpretation": "rGO coating reduces particle size and provides 3D electron pathways.",
+      "prov": ["Page 3"]
+    },
+    {
+      "method": "GITT",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Na+ diffusion coefficient range",
+          "value": "1e-11–1e-8",
+          "unit": "cm2 s-1",
+          "sample": "VC/C-G"
+        }
+      ],
+      "interpretation": "High diffusion coefficient supports excellent rate capability.",
+      "prov": ["Page 5"]
+    },
+    {
+      "method": "DFT calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "band gap",
+          "value": 1.41,
+          "unit": "eV",
+          "sample": "Na3Cr0.5V1.5(PO4)3"
+        },
+        {
+          "metric": "Na+ diffusion barrier",
+          "value": 0.194,
+          "unit": "eV",
+          "sample": "Na3Cr0.5V1.5(PO4)3"
+        }
+      ],
+      "interpretation": "Narrow band gap and low diffusion barrier explain fast kinetics and multi-electron activation.",
+      "prov": ["Page 6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical performance testing",
+        "results": [
+          {
+            "metric": "specific capacity at 0.2 C",
+            "value": 176,
+            "unit": "mAh g-1",
+            "sample": "VC/C-G"
+          },
+          {
+            "metric": "energy density",
+            "value": 470,
+            "unit": "Wh kg-1",
+            "sample": "VC/C-G"
+          },
+          {
+            "metric": "capacity after 1000 cycles at 20 C",
+            "value": null,
+            "unit": "mAh g-1",
+            "notes": "Capacity retention described qualitatively; exact value not provided."
+          },
+          {
+            "metric": "time to 80% SOC at 5 C charge",
+            "value": 11,
+            "unit": "min",
+            "sample": "VC/C-G"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 176,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1000
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T18:34:00Z",
+    "source_file": "advenergymat_2022_12_2201065.pdf (text excerpt)",
+    "processing_time": null
+  }
+}

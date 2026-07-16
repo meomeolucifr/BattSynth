@@ -1,0 +1,449 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "The intrinsic behavior of lithium fluoride in solid electrolyte interphases on lithium",
+    "doi": "10.1073/pnas.1911017116",
+    "authors": [
+      "Mingfu He",
+      "Rui Guo",
+      "Gustavo M. Hobold",
+      "Haining Gao",
+      "Betar M. Gallant"
+    ],
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["Li metal anode", "solid electrolyte interphase", "lithium fluoride"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiF-enriched SEI on Li (ex situ)",
+      "molecular_formula": "LiF",
+      "intended_role": "product",
+      "prov": ["Page 74, Fig. 2A-D"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiF-enriched SEI on Li (in situ)",
+      "molecular_formula": "LiF",
+      "intended_role": "product",
+      "prov": ["Page 76, Fig. 4A-E"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Foils mechanically polished prior to reaction",
+      "prov": ["Page 73, paragraph starting 'To fabricate ex situ layers'"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Nitrogen trifluoride",
+      "molecular_formula": "NF3",
+      "ontology": {
+        "role": "fluorinating reagent",
+        "category": "inorganic gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Gas at ~20 psi used to form LiF layer",
+      "prov": ["Page 73, Fig. 2A"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "inert atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glovebox atmosphere during polishing and reaction",
+      "prov": ["Page 73, paragraph starting 'To fabricate ex situ layers'"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium bis(fluorosulfonyl)amide",
+      "molecular_formula": "LiFSI",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 7,
+        "unit": "M"
+      },
+      "notes": "Dissolved in FEC for in situ SEI formation",
+      "prov": ["Page 76, paragraph starting 'Given the importance of in situ modification'"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Fluoroethylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent/additive",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Solvent for 7 M LiFSI and 5 wt % additive in carbonate electrolyte",
+      "prov": ["Page 73, paragraph mentioning 'fluoroethylene carbonate (FEC) (25–28)'"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Baseline electrolyte in EC:DEC (1/1 vol/vol)",
+      "prov": ["Page 74, Fig. 2F"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanical polishing of lithium foils under argon atmosphere",
+        "operations": [
+          {
+            "action": "polish",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Performed in Ar glovebox"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 73, paragraph starting 'To fabricate ex situ layers'"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Press polished Li foils onto stainless-steel spacers",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 73, paragraph starting 'Li foils were mechanically polished'"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Fluorination of Li foils with NF3 to form ex situ LiF layer",
+        "operations": [
+          {
+            "action": "expose",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 448,
+              "unit": "K"
+            },
+            "notes": "Home-built reactor, NF3 at ~20 psi (~1.38 bar)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "NF3",
+          "pressure": {
+            "value": 1.38,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 73, Fig. 2A-B"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Formation of in situ LiF SEI by galvanostatic cycling in 7 M LiFSI/FEC electrolyte",
+        "operations": [
+          {
+            "action": "galvanostatic cycle",
+            "parameters": {
+              "inputs": ["chem_1", "chem_4", "chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "10 cycles; asymmetric Cu–Li cell for TEM sample"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 76, Fig. 4A-F"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Polishing Li foils under inert atmosphere"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pressing polished Li onto spacers"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "High-temperature NF3 treatment to grow LiF layer (ex situ SEI)"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Electrochemical cycling in fluorinated electrolyte to form in situ LiF SEI"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact NF3 pressure and flow rate not specified; only '~20 psi' reported",
+        "excerpt": "\"subjected to varying reaction conditions under NF3 atmosphere at ∼20 psi inside an Ar glovebox.\" (Page 73)"
+      },
+      {
+        "issue": "Duration of electrochemical cycling for in situ SEI formation not explicitly given (only '10 cycles')",
+        "excerpt": "\"cycling in an asymmetric Cu–Li cell using 7 M LiFSI/FEC for 10 cycles\" (Page 76)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray photoelectron spectroscopy (XPS)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "F atomic percentage after 16 h at 298 K",
+          "value": 1.5,
+          "unit": "%"
+        },
+        {
+          "metric": "Elemental N content after reaction at 448 K 1 h",
+          "value": 0.3,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "High fluorine content corresponds to LiF formation; nitrogen released as N2",
+      "prov": ["Page 73, Fig. 2B and text"]
+    },
+    {
+      "method": "Scanning Electron Microscopy (SEM)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Film thickness (cross-section)",
+          "value": 50,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Conformal LiF coverage at 175 °C; porous films at 190 °C",
+      "prov": ["Page 73, Fig. 2C-D"]
+    },
+    {
+      "method": "X-ray Diffraction (XRD)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Average grain size",
+          "value": 40,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Polycrystalline LiF confirmed",
+      "prov": ["Page 73, text referencing SI Appendix Fig. S4"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Additional interfacial resistance due to LiF layer",
+          "value": 500,
+          "unit": "ohm"
+        },
+        {
+          "metric": "Estimated ionic conductivity of LiF layer",
+          "value": 1e-9,
+          "unit": "S/cm"
+        }
+      ],
+      "interpretation": "LiF layer impedes Li⁺ transport compared to native SEI",
+      "prov": ["Page 74, Fig. 2G-H"]
+    },
+    {
+      "method": "Scanning Transmission Electron Microscopy (STEM)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Total SEI thickness (in situ)",
+          "value": 40,
+          "unit": "nm"
+        },
+        {
+          "metric": "Crystalline inner LiF layer thickness",
+          "value": 8,
+          "unit": "nm"
+        },
+        {
+          "metric": "Amorphous outer layer thickness",
+          "value": 32,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Two-layer structure with crystalline LiF inner layer identified via FFT (d=2.03 Å)",
+      "prov": ["Page 76, Fig. 4A-E"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": "0.2 mA/cm2",
+        "capacity_per_cycle": "1 mAh/cm2"
+      },
+      "results": [
+        {
+          "metric": "Initial plating overpotential for LiF/Li",
+          "value": -0.6,
+          "unit": "V"
+        },
+        {
+          "metric": "Initial plating overpotential for untreated Li",
+          "value": -0.32,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Higher overpotential indicates higher resistance through LiF layer",
+      "prov": ["Page 75, Fig. 3A"]
+    },
+    {
+      "method": "Coulombic efficiency measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Coulombic efficiency during first 10 cycles in 7 M LiFSI/FEC",
+          "value": 91,
+          "unit": "%"
+        },
+        {
+          "metric": "Peak Coulombic efficiency range",
+          "value": 97,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "High efficiencies require continuous presence of fluorinated electrolyte",
+      "prov": ["Page 76, Fig. 4F"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Impedance-based ionic conductivity estimation",
+        "results": [
+          {
+            "equation": "σ = L / (R · A)",
+            "value": 1e-9,
+            "unit": "S/cm"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

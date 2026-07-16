@@ -1,0 +1,428 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Multilayered Si Nanoparticle/Reduced Graphene Oxide Hybrid as a High-Performance Lithium-Ion Battery Anode",
+    "doi": "10.1002/adma.201302757",
+    "authors": ["Jingbo Chang", "Xingkang Huang", "Guihua Zhou", "Shumao Cui", "Peter B. Hallac", "Junwei Jiang", "Patrick T. Hurley", "Junhong Chen"],
+    "journal": "Advanced Materials",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium-ion battery", "anode", "silicon nanoparticles", "reduced graphene oxide", "dip-coating"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Multilayered Si/RGO electrode on Ni foam",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Figure 1", "Text Page 758-760"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Si NP electrode (without RGO) on Ni foam",
+      "molecular_formula": "",
+      "intended_role": "comparative product",
+      "prov": ["Figure 3b", "Text Page 760"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Graphene oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "carbon material"
+      },
+      "amount": null,
+      "notes": "Used as 1 mg mL-1 suspension in ethanol",
+      "prov": ["Text Page 758-759"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": null,
+      "notes": "Solvent for GO and Si NP suspensions (1 mg mL-1)",
+      "prov": ["Text Page 758-759"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Silicon nanoparticles",
+      "molecular_formula": "Si",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": null,
+      "notes": "Average diameter ~100 nm; used as 1 mg mL-1 dispersion in ethanol",
+      "prov": ["Text Page 758-760"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Nitrogen gas",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "drying gas",
+        "category": "gas"
+      },
+      "amount": null,
+      "notes": "Flow rate 0.1 L min-1 during drying after each dip",
+      "prov": ["Text Page 758-759"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Nickel foam",
+      "molecular_formula": "Ni",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal current collector"
+      },
+      "amount": null,
+      "notes": "Porous, pore size ~300 μm; thickness 0.28 mm; diameter 12.7 mm",
+      "prov": ["Experimental Section Page 763"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Argon gas",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective gas",
+        "category": "gas"
+      },
+      "amount": null,
+      "notes": "Flow rate 0.6 L min-1 during heat treatment",
+      "prov": ["Text Page 759"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Hydrogen gas",
+      "molecular_formula": "H2",
+      "ontology": {
+        "role": "reducing gas",
+        "category": "gas"
+      },
+      "amount": null,
+      "notes": "Flow rate 0.2 L min-1 during heat treatment",
+      "prov": ["Text Page 759"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Deposition of GO layer onto Ni foam via dip-coating",
+        "operations": [
+          {
+            "action": "immerse",
+            "parameters": {
+              "inputs": ["chem_5", "chem_1", "chem_2"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "time": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Ni foam immersed in GO suspension (1 mg mL-1 in ethanol)"
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "time": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Immediate drying with N2 flow 0.1 L min-1"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient with N2 drying",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1b", "Text Page 758-759"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Deposition of Si NP layer onto GO-coated Ni foam",
+        "operations": [
+          {
+            "action": "immerse",
+            "parameters": {
+              "inputs": ["chem_3", "chem_2"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "time": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "GO-coated Ni foam soaked in Si NP dispersion (1 mg mL-1 in ethanol)"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "time": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Dried after extraction (method not specified)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1c", "Text Page 758-759"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Layer-by-layer repetition to form alternating GO and Si NP films",
+        "operations": [
+          {
+            "action": "repeat",
+            "parameters": {
+              "cycle_count": null
+            },
+            "notes": "Alternating Steps 1 and 2 until desired multilayer (e.g., 10 Si layers, 13 GO layers)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 1d", "Text Page 759-760"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Thermal reduction/annealing to convert GO to RGO",
+        "operations": [
+          {
+            "action": "heat_treat",
+            "parameters": {
+              "inputs": ["chem_6", "chem_7"]
+            },
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "time": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "Tube furnace under Ar (0.6 L min-1) and H2 (0.2 L min-1)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar/H2 (3:1) flowing",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1e", "Text Page 759"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "GO deposition on Ni foam"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Si NP deposition on GO layer"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Alternating deposition to build multilayers"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Thermal reduction to obtain final Si/RGO electrode"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {
+        "instrument": "Hitachi S-4800",
+        "acceleration_voltage_kV": 10
+      },
+      "results": [
+        {
+          "metric": "Ni foam pore size",
+          "value": 300,
+          "unit": "µm"
+        },
+        {
+          "metric": "RGO film thickness",
+          "value": 8,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Interconnected 3D porous structure and layered Si/RGO morphology confirmed",
+      "prov": ["Figure 2a-e", "Experimental Section Page 763"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength_nm": 632.8,
+        "laser_power_mW": 8.8
+      },
+      "results": [
+        {
+          "metric": "D-band peak",
+          "value": 1327,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "G-band peak",
+          "value": 1597,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Si peak",
+          "value": 518,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Presence of RGO with defects and crystalline Si confirmed",
+      "prov": ["Figure 2f"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ohmic resistance",
+          "value": 0.25,
+          "unit": "Ohm"
+        },
+        {
+          "metric": "Charge transfer resistance",
+          "value": 1.3,
+          "unit": "Ohm"
+        }
+      ],
+      "interpretation": "Low resistance indicates good electronic conductivity",
+      "prov": ["Figure 4b"]
+    },
+    {
+      "method": "Galvanostatic charge/discharge",
+      "parameters": {
+        "voltage_window_V": "0.01–2.0",
+        "current_density_mA_g": 120
+      },
+      "results": [
+        {
+          "metric": "Reversible capacity",
+          "value": 2300,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "High capacity compared to graphite benchmark",
+      "prov": ["Figure 3a"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Rate capability test",
+        "results": [
+          {
+            "rate_C": 0.05,
+            "capacity": 2198,
+            "unit": "mAh g-1"
+          },
+          {
+            "rate_C": 10,
+            "capacity": 700,
+            "unit": "mAh g-1"
+          }
+        ],
+        "prov": ["Figure 3c-d"]
+      },
+      {
+        "method_name": "Cycle life test",
+        "results": [
+          {
+            "cycles": 152,
+            "capacity_retention_percent": 87,
+            "final_capacity": 630,
+            "unit": "mAh g-1"
+          },
+          {
+            "cycles": 300,
+            "capacity": 765,
+            "unit": "mAh g-1"
+          }
+        ],
+        "prov": ["Figure 3d-e"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 2300,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 152
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

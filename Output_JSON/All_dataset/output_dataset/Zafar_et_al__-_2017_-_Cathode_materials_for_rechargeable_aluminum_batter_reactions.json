@@ -1,0 +1,249 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Cathode materials for rechargeable aluminum batteries: current status and progress",
+    "doi": "10.1039/c7ta00282c",
+    "authors": [
+      "Zahid Ali Zafar",
+      "Sumair Imtiaz",
+      "Rameez Razaq",
+      "Shengnan Ji",
+      "Taizhong Huang",
+      "Zhaoliang Zhang",
+      "Yunhui Huang",
+      "James A. Anderson"
+    ],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["rechargeable aluminum batteries", "cathode materials", "ionic liquids"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Room-temperature chloroaluminate ionic liquid electrolyte",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Page 5648 –5650, text describing “AlCl3 and 1-ethyl-3-methyl-imidazolium chloride ([EMIm]Cl) … molar ratio 1.3 : 1”"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Aluminum trichloride",
+      "molecular_formula": "AlCl3",
+      "ontology": {
+        "role": "electrolyte component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "mixed with EMImCl at 1.3:1 molar ratio to prepare RTIL electrolyte",
+      "prov": ["Page 5648"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "1-ethyl-3-methylimidazolium chloride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrolyte component",
+        "category": "ionic liquid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "mixed with AlCl3 at 1.3:1 molar ratio",
+      "prov": ["Page 5648"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sodium chloride",
+      "molecular_formula": "NaCl",
+      "ontology": {
+        "role": "electrolyte component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "mixed with AlCl3 (1.63:1 molar ratio) for alkali chloroaluminate melt electrolyte",
+      "prov": ["Page 5649"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Graphene foam (3D-GF)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "cathode material",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as cathode in RTIL electrolyte",
+      "prov": ["Page 5650 –5651"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of chloroaluminate room-temperature ionic liquid (RTIL) electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "molar_ratio": "1.3:1 (AlCl3:[EMIm]Cl)"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Produces RTIL used for rechargeable aluminum battery studies"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5648 –5649"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of alkali chloroaluminate melt electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3"],
+              "molar_ratio": "1.63:1 (AlCl3:NaCl)"
+            },
+            "temperature": {
+              "value": 393,
+              "unit": "K",
+              "notes": "Text states operation temperature 120 °C"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5649 –5650"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "RTIL electrolyte prepared by mixing AlCl3 and EMImCl (1.3:1)."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Alkali chloroaluminate electrolyte prepared from AlCl3 and NaCl at 120 °C."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing quantitative amounts and exact mixing procedure",
+        "excerpt": "“… composed of AlCl3 and 1-ethyl-3-methylimidazolium chloride [EMIm]Cl (AlCl3/[EMIm]Cl = 1.3 by mole).”"
+      },
+      {
+        "issue": "Temperature only mentioned qualitatively in text",
+        "excerpt": "“… working at 120 °C.”"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology change of carbon paper cathode",
+          "value": "volume expansion evident after 20 cycles",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Shows intercalation of large [AlxCly]− anions causes structural expansion.",
+      "prov": ["Figure 1a,b (Page 5648)"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical cycling",
+        "results": [
+          {
+            "equation": "",
+            "value": 84.55,
+            "unit": "mAh g-1",
+            "notes": "Discharge capacity of Al/graphite paper battery at 50 mA g−1 up to 50 cycles"
+          },
+          {
+            "equation": "",
+            "value": 60,
+            "unit": "mAh g-1",
+            "notes": "Stable capacity of 3D-GF at 12 000 mA g−1 over 4000 cycles"
+          }
+        ],
+        "prov": ["Page 5648 –5651"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

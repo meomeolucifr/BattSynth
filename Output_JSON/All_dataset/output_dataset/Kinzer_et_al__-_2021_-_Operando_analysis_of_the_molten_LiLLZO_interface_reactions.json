@@ -1,0 +1,414 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Operando analysis of the molten Li|LLZO interface: Understanding how the physical properties of Li affect the critical current density",
+    "doi": "10.1016/j.matt.2021.04.016",
+    "authors": ["Bryan Kinzer", "Andrew L. Davis", "Thorben Krauskopf", "Hannah Hartmann", "William S. LePage", "Eric Kazyak", "Jürgen Janek", "Neil P. Dasgupta", "Jeff Sakamoto"],
+    "journal": "Matter",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid-state batteries", "LLZO", "molten lithium", "critical current density"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ta-doped LLZO",
+      "molecular_formula": "Li6.5La3Ta0.5Zr1.5O12",
+      "intended_role": "solid electrolyte",
+      "prov": ["LLZO synthesis and pre-conditioning"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Al-doped LLZO",
+      "molecular_formula": "Li6.25La3Al0.25Zr2O12",
+      "intended_role": "solid electrolyte (porosity study)",
+      "prov": ["LLZO synthesis and pre-conditioning"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["LLZO synthesis and pre-conditioning"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum(III) oxide",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["LLZO synthesis and pre-conditioning"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconium oxide (nano)",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["LLZO synthesis and pre-conditioning"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Tantalum(V) oxide",
+      "molecular_formula": "Ta2O5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["LLZO synthesis and pre-conditioning"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used during hot-pressing and heat-treatment",
+      "prov": ["LLZO synthesis and pre-conditioning"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as molten/solid electrode in electrochemical tests",
+      "prov": ["Operando optical Li cycling cell"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Powder mixing and milling of precursor oxides and carbonate",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Combined powders milled; milling details not specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["LLZO synthesis and pre-conditioning"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Calcination of milled powder",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1273,
+              "unit": "K"
+            },
+            "notes": "Under flowing dry air on MgO boat"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "dry air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["LLZO synthesis and pre-conditioning"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Hot-press sintering of calcined LLZO powder",
+        "operations": [
+          {
+            "action": "hot press",
+            "parameters": {
+              "inputs": ["step_2"]
+            },
+            "duration": {
+              "value": 40,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1498,
+              "unit": "K"
+            },
+            "pressure": {
+              "value": 470,
+              "unit": "bar"
+            },
+            "notes": "Rapid induction hot-pressing under flowing Ar"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": 470,
+            "unit": "bar"
+          }
+        },
+        "prov": ["LLZO synthesis and pre-conditioning"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Cutting and mechanical polishing of hot-pressed LLZO disks",
+        "operations": [
+          {
+            "action": "cut",
+            "parameters": {},
+            "notes": "Cut into 12.7 mm diameter, 1.3 ± 0.3 mm thick disks"
+          },
+          {
+            "action": "polish",
+            "parameters": {},
+            "notes": "Wet-polished to 0.1 µm finish with diamond paste"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["LLZO synthesis and pre-conditioning"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Surface heat-treatment to remove contaminants",
+        "operations": [
+          {
+            "action": "heat treat",
+            "parameters": {
+              "inputs": ["step_4"]
+            },
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 673,
+              "unit": "K"
+            },
+            "notes": "Under Ar atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["LLZO synthesis and pre-conditioning"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Milling precursor powders"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Calcination at 1273 K for 240 min"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Hot-press sintering at 1498 K, 470 bar for 40 min under Ar"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Disk cutting and polishing"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Final Ar heat-treatment at 673 K for 240 min"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Amounts of precursor powders not specified",
+        "excerpt": "LLZO powders ... were prepared through solid-state reaction synthesis using the following precursor powders..."
+      },
+      {
+        "issue": "Milling parameters (time, rpm) not given",
+        "excerpt": "The combined powders were milled and subsequently calcined..."
+      },
+      {
+        "issue": "Al-LLZO synthesis details deferred to previous work",
+        "excerpt": "\"synthesized using a high-temperature sintering approach as described in a previous work\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Operando optical microscopy",
+      "parameters": {
+        "temperature": 468,
+        "current_sweep_rate": "2 mA cm-2 s-1"
+      },
+      "results": [
+        {
+          "metric": "critical current density",
+          "value": 530,
+          "unit": "mA cm-2",
+          "error": "±140"
+        }
+      ],
+      "interpretation": "Step change in CCD across Li melting point attributed to Li mechanical properties",
+      "prov": ["Figures 2, 4", "Text"]
+    },
+    {
+      "method": "FIB-SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "subsurface cracking and Li extrusion observation",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Cracks act as Li filament pathways; lower viscosity molten Li forms secondary droplets",
+      "prov": ["Figure 3"]
+    },
+    {
+      "method": "Operando SEM",
+      "parameters": {
+        "current": "2-10 mA"
+      },
+      "results": [
+        {
+          "metric": "Li extrusion events at pores",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Molten Li flows through pores; solid Li shows limited extrusion and more cracking",
+      "prov": ["Videos S2–S4", "Figures 5,6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Linear sweep amperometry",
+        "results": [
+          {
+            "equation": "",
+            "value": 530,
+            "unit": "mA cm-2",
+            "notes": "CCD at 468 K for molten Li|LLZO"
+          }
+        ],
+        "prov": ["Figure 2", "Text"]
+      },
+      {
+        "method_name": "Mechanical modeling (Perzyna creep)",
+        "results": [
+          {
+            "equation": "η = (1/√3) * ε̇^(1−1/m) * A_c^(−1/m) * exp(Q_c/(mRT))",
+            "value": null,
+            "unit": "",
+            "notes": "Derived solid-Li pseudoviscosity across strain rates"
+          }
+        ],
+        "prov": ["Derivation section"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

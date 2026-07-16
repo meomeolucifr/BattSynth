@@ -1,0 +1,95 @@
+======================================================================
+VERIFICATION AUDIT SUMMARY REPORT
+======================================================================
+
+Total files analyzed: 63
+Total _llm_flag annotations: 1515
+  Supported (is_supported=True): 975 (64.4%)
+  Unsupported (is_supported=False): 540 (35.6%)
+
+CONTRADICTION DETECTION:
+  Clear contradictions (reasoning says supported, verdict says false): 124
+  Mixed contradictions (reasoning has both support + non-support): 23
+  False positive suspects (reasoning says unsupported, verdict says true): 53
+  Total contradictions: 147
+  Contradiction rate: 9.7%
+
+PER-GROUP BREAKDOWN:
+
+  HIGH group (362 flags):
+    Supported: 250 (69.1%)
+    Unsupported: 112 (30.9%)
+    Contradictions: 27 clear + 5 mixed = 32
+    Contradiction rate: 8.8%
+
+  LOW group (1153 flags):
+    Supported: 725 (62.9%)
+    Unsupported: 428 (37.1%)
+    Contradictions: 97 clear + 18 mixed = 115
+    Contradiction rate: 10.0%
+
+PER-SECTION BREAKDOWN:
+  analysis            :   63 flags,    0 supported (  0.0%),  13 contradictions ( 20.6%)
+  characterization    :  208 flags,  164 supported ( 78.8%),  13 contradictions (  6.2%)
+  chemicals           :  440 flags,  309 supported ( 70.2%),  51 contradictions ( 11.6%)
+  final_outcomes      :   29 flags,   21 supported ( 72.4%),   0 contradictions (  0.0%)
+  synthesis           :  316 flags,  193 supported ( 61.1%),  28 contradictions (  8.9%)
+  targets             :  192 flags,  106 supported ( 55.2%),  23 contradictions ( 12.0%)
+  workflow            :  267 flags,  182 supported ( 68.2%),  19 contradictions (  7.1%)
+
+CONFIDENCE CALIBRATION (confidence bin -> actual support rate):
+  Confidence 0.2:    6 flags,    0 supported (  0.0% actual support rate)
+  Confidence 0.3:    7 flags,    0 supported (  0.0% actual support rate)
+  Confidence 0.4:    2 flags,    0 supported (  0.0% actual support rate)
+  Confidence 0.5:    1 flags,    0 supported (  0.0% actual support rate)
+  Confidence 0.6:   25 flags,    3 supported ( 12.0% actual support rate)
+  Confidence 0.7:   80 flags,    9 supported ( 11.2% actual support rate)
+  Confidence 0.8:  185 flags,   54 supported ( 29.2% actual support rate)
+  Confidence 0.9:  803 flags,  537 supported ( 66.9% actual support rate)
+  Confidence 1.0:  406 flags,  372 supported ( 91.6% actual support rate)
+
+PER-FILE CONTRADICTION SUMMARY (sorted by contradiction count):
+  [LOW] Yazdani_et_al__-_2021_-_Heterointerface_Effects_on_Lithium-I: 8/52 contradictions (15%)
+  [LOW] Yuan_et_al__-_2020_-_An_ultrastable_lithium_metal_anode_enab: 8/39 contradictions (21%)
+  [LOW] Zhang_et_al__-_2018_-_Lithiophilic-lithiophobic_gradient_int: 8/53 contradictions (15%)
+  [HIGH] Kim_et_al__-_2024_-_Fluorine-Substituted_Lithium_Chloride_So: 7/23 contradictions (30%)
+  [LOW] Assegie_et_al__-_2018_-_Polyethylene_oxide_film_coating_enha: 6/39 contradictions (15%)
+  [LOW] Chang_et_al__-_2014_-_Rechargeable_LiBr_battery_a_promising_: 6/33 contradictions (18%)
+  [LOW] Park_et_al__-_2022_-_Introducing_high-valence_elements_into_: 6/44 contradictions (14%)
+  [LOW] Sun_et_al__-_2018_-_Towards_a_reliable_Li-metal-free_LiNO_3 : 6/50 contradictions (12%)
+  [LOW] Ji_et_al__-_2019_-_Lithium_intercalation_into_bilayer_graphe: 5/39 contradictions (13%)
+  [LOW] Li_et_al__-_2024_-_Constructing_static_two-electron_lithium-: 5/33 contradictions (15%)
+  [LOW] Ma_and_Xu_-_2022_-_Enhanced_critical_current_density_of_Garn: 5/41 contradictions (12%)
+  [LOW] Nguyen_et_al__-_2021_-_Polypeptide_organic_radical_batteries: 5/58 contradictions (9%)
+  [LOW] Sha_et_al__-_2013_-_Solid_lithium_electrolyte-Li4Ti5O12_comp: 5/46 contradictions (11%)
+  [HIGH] An_et_al__-_2016_-_The_state_of_understanding_of_the_lithium: 4/14 contradictions (29%)
+  [LOW] Duquesnoy_et_al__-_2020_-_Data-driven_assessment_of_electrod: 4/23 contradictions (17%)
+  [LOW] Luo_et_al__-_A_chemically_stabilized_sulfur_cathode_for_lean: 4/33 contradictions (12%)
+  [LOW] Ren_et_al__-_2015_-_Direct_observation_of_lithium_dendrites_: 4/31 contradictions (13%)
+  [LOW] Takahashi_et_al__-_2013_-_All-solid-state_lithium_battery_wi: 4/48 contradictions (8%)
+  [LOW] Wang_et_al__-_2021_-_Carbon_materials_for_ion-intercalation_: 4/31 contradictions (13%)
+  [HIGH] Barbosa_et_al__-_2021_-_Metal_organic_frameworks_and_zeolite: 3/10 contradictions (30%)
+  [HIGH] Cheenicode_Kabeer_et_al__-_2017_-_First-Principles_Study_of_: 3/14 contradictions (21%)
+  [HIGH] Sj_lin_et_al__-_2023_-_Accelerated_Workflow_for_Antiperovski: 3/26 contradictions (12%)
+  [LOW] Cherkashinin_et_al__-_2019_-_Performance_of_Li-Ion_Batteries: 3/42 contradictions (7%)
+  [LOW] Yang_et_al__-_2019_-_Aqueous_Li-ion_battery_enabled_by_halog: 3/40 contradictions (8%)
+  [HIGH] Huang_et_al__-_2021_-_Deep_potential_generation_scheme_and_s: 2/5 contradictions (40%)
+  [HIGH] Radjendirane_et_al__-_2024_-_Overview_of_Inorganic_Electroly: 2/10 contradictions (20%)
+  [LOW] Boulineau_et_al__-_2012_-_Mechanochemical_synthesis_of_Li-ar: 2/30 contradictions (7%)
+  [LOW] Kim_et_al__-_2014_-_Novel_transition-metal-free_cathode_for_: 2/35 contradictions (6%)
+  [LOW] Marchiori_et_al__-_2020_-_Understanding_the_Electrochemical_: 2/15 contradictions (13%)
+  [LOW] Su_et_al__-_2024_-_A_scalable_Li-Al-Cl_stratified_structure_: 2/40 contradictions (5%)
+  [LOW] Yu_et_al__-_2020_-_Tuning_ionic_conductivity_and_electrode_c: 2/26 contradictions (8%)
+  [LOW] Zhang_et_al__-_2022_-_Compositionally_complex_doping_for_zer: 2/49 contradictions (4%)
+  [HIGH] de_Klerk_and_Wagemaker_-_2018_-_Space-Charge_Layers_in_All-S: 1/7 contradictions (14%)
+  [HIGH] Hunter_and_Beyerlein_-_2014_-_Stacking_fault_emission_from_g: 1/11 contradictions (9%)
+  [HIGH] Jalem_et_al__-_2018_-_Bayesian-Driven_First-Principles_Calcu: 1/21 contradictions (5%)
+  [HIGH] Lee_et_al__-_2020_-_Fe_2_CS_2_MXene_a_promising             : 1/10 contradictions (10%)
+  [HIGH] Scharf_et_al__-_2022_-_Bridging_nano-_and_microscale_X-ray_t: 1/6 contradictions (17%)
+  [HIGH] Tian_et_al__-_2020_-_Recently_advances_and_perspectives_of_a: 1/6 contradictions (17%)
+  [HIGH] Yu_and_Manthiram_-_2018_-_Electrode_electrolyte_interfaces_i: 1/10 contradictions (10%)
+  [HIGH] Zhu_et_al__-_2015_-_Origin_of_Outstanding_Stability_in_the_L: 1/21 contradictions (5%)
+  [LOW] Liu_et_al__-_2021_-_In_situ_formation_of_a_Li_3_N-ri        : 1/35 contradictions (3%)
+  [LOW] Luo_et_al__-_2022_-_Nickel-rich_and_cobalt-free_layered_oxid: 1/23 contradictions (4%)
+  [LOW] Senevirathne_et_al__-_2013_-_A_new_crystalline_LiPON_electro: 1/33 contradictions (3%)
+  [LOW] Shin_et_al__-_2015_-_Synergistic_multi-doping_effects_on_the: 1/33 contradictions (3%)

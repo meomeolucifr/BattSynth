@@ -1,0 +1,197 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "High power lithium ion battery materials by computational design",
+    "doi": "",
+    "authors": ["Stefan Adams", "R. Prasada Rao"],
+    "journal": "Physica Status Solidi A",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["lithium-ion batteries", "bond valence method", "computational design"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiFeSO4F",
+      "molecular_formula": "LiFeSO4F",
+      "intended_role": "LIB cathode material",
+      "prov": ["Page 1749, Paragraph 2"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiVPO4F",
+      "molecular_formula": "LiVPO4F",
+      "intended_role": "LIB cathode material",
+      "prov": ["Page 1749, Paragraph 2"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiFeSO4F",
+      "molecular_formula": "LiFeSO4F",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 1749, Paragraph 2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "EMI-TFSI",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "ionic liquid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "1-ethyl-3-methylimidazolium bis(trifluoromethanesulfonyl)imide",
+      "prov": ["Page 1749, Paragraph 2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as anode in cell testing",
+      "prov": ["Page 1749, Paragraph 2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Ionothermal synthesis of LiFeSO4F in EMI-TFSI",
+        "operations": [
+          {
+            "action": "ionothermal_synthesis",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "LiFeSO4F formed; detailed conditions not provided"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1749, Paragraph 2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ionothermal synthesis of LiFeSO4F using EMI-TFSI ionic liquid"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis parameters such as temperature, duration, and quantities",
+        "excerpt": "LiFeSO4F ... became accessible only via ionothermal synthesis in EMI-TFSI."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "AC conductivity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 300,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 1e-10,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.99,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 1749, Paragraph 2"]
+    },
+    {
+      "method": "Electrochemical charge–discharge (C1 rate)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "specific capacity",
+          "value": 85,
+          "unit": "%",
+          "notes": "Percentage of theoretical capacity (151 mAh g-1)"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 1749, Paragraph 2"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 128,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "input_text_chunk",
+    "processing_time": null
+  }
+}

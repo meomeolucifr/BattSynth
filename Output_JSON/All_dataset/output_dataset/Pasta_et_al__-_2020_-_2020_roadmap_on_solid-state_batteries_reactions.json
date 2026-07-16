@@ -1,0 +1,283 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "2020 roadmap on solid-state batteries",
+    "doi": "10.1088/2515-7655/ab95f4",
+    "authors": ["Mauro Pasta","David Armstrong","Zachary L. Brown","Junfu Bu","Martin R Castell","Peiyu Chen","Alan Cocks","Serena A Corr","Edmund J Cussen","Ed Darnbrough","Vikram Deshpande","Christopher Doerrer","Matthew S Dyer","Hany El-Shinawi","Norman Fleck","Patrick Grant","Georgina L. Gregory","Chris Grovenor","Laurence J Hardwick","John T S Irvine","Hyeon Jeong Lee","Guanchen Li","Emanuela Liberti","Innes McClelland","Charles Monroe","Peter D Nellist","Paul R Shearing","Elvis Shoko","Weixin Song","Dominic Spencer Jolly","Christopher I Thomas","Stephen J Turrell","Mihkel Vestli","Charlotte K. Williams","Yundong Zhou","Peter G Bruce"],
+    "journal": "Journal of Physics: Energy",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["solid-state battery","electrolyte","thin film","spray deposition"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl film",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid electrolyte layer",
+      "prov": ["Page section 14, Figure 17 caption"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Composite cathode (LiCoO2/LLZTO)",
+      "molecular_formula": "",
+      "intended_role": "cathode",
+      "prov": ["Page section 14, Figure 16 caption"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in binder-free spray-deposited layers",
+      "prov": ["Fig. 17 caption"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "isopropanol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Solvent for Li6PS5Cl dissolution/re-precipitation",
+      "prov": ["Section 14 text describing dissolution in isopropanol"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Fig. 16 caption"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Ta-doped LLZO (LLZTO)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Li7La3Zr2O12 doped with Ta",
+      "prov": ["Fig. 16 caption"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "sintering aid",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "5 wt % in both cathode and electrolyte layers",
+      "prov": ["Fig. 16 caption"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Spray deposition and re-precipitation of Li6PS5Cl layers to form a 60 µm electrolyte film",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1","chem_2"]
+            },
+            "notes": "Li6PS5Cl dissolved in isopropanol"
+          },
+          {
+            "action": "spray_deposit",
+            "parameters": {
+              "repetitions": 30
+            },
+            "notes": "Each spray leads to in-situ re-precipitation forming individual layers"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 17 caption"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Fabrication of composite cathode followed by electrolyte layering",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_3","chem_4","chem_5"]
+            },
+            "notes": "Composite contains LiCoO2, LLZTO, carbon (not detailed), binder and Al2O3"
+          },
+          {
+            "action": "spray_deposit",
+            "parameters": {
+              "layers": 3
+            },
+            "notes": "Three spray layers form the composite cathode"
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "mode": "pressureless"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Each layer sintered; exact temps/times not specified"
+          },
+          {
+            "action": "spray_deposit",
+            "parameters": {
+              "layers": 3
+            },
+            "notes": "Three LLZTO electrolyte layers sprayed onto cathode"
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "mode": "pressureless"
+            },
+            "notes": "Conditions not provided"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 16 caption"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Build binder-free Li6PS5Cl solid electrolyte film via 30-cycle spray deposition."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Create composite LiCoO2/LLZTO cathode and overlay LLZTO electrolyte layers by sequential spray and pressureless sintering."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing sintering parameters",
+        "excerpt": "Each layer was pressureless-sintered for the temperature/time indicated.",
+        "prov": "Figure 16 caption"
+      },
+      {
+        "issue": "No quantitative solvent or precursor amounts given for Li6PS5Cl spray process",
+        "excerpt": "binder-free sulphide film comprising 30 individual sulphide layers that were sprayed and re-precipitated in situ from an isopropanol/Li6PS5Cl mixture",
+        "prov": "Section 14 text"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "stack_pressure": {
+          "value": 400,
+          "unit": "MPa",
+          "notes": "Uniaxial clamping during measurement"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 1,
+          "unit": "S cm-1",
+          "notes": "Approximate from Nyquist; calculated for 60 µm Li6PS5Cl film",
+          "prov": ["Fig. 17 caption"]
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 17 caption"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-03T12:00:00Z",
+    "source_file": "provided_text_chunk.txt",
+    "processing_time": null
+  }
+}

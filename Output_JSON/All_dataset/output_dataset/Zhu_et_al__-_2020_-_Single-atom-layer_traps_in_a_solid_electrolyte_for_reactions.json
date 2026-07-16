@@ -1,0 +1,534 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Single-atom-layer traps in a solid electrolyte for lithium batteries",
+    "doi": "10.1038/s41467-020-15544-x",
+    "authors": ["Feng Zhu", "Md Shafiq ul Islam", "Lin Zhou", "Zhenqi Gu", "Ting Liu", "Xinchao Wang", "Jun Luo", "Ce-Wen Nan", "Yifei Mo", "Cheng Ma"],
+    "journal": "Nature Communications",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid electrolyte", "LLTO", "ionic conductivity", "electron microscopy", "defects"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li0.33La0.56TiO3 ceramic (LLTO)",
+      "molecular_formula": "Li0.33La0.56TiO3",
+      "intended_role": "product",
+      "prov": ["Methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium nitrate",
+      "molecular_formula": "LiNO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum nitrate hexahydrate",
+      "molecular_formula": "La(NO3)3·6H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Tetrabutyl titanate",
+      "molecular_formula": "Ti(OC4H9)4",
+      "ontology": {
+        "role": "reactant",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Acetylacetone",
+      "molecular_formula": "C5H8O2",
+      "ontology": {
+        "role": "chelating agent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethylene glycol monomethyl ether",
+      "molecular_formula": "C3H8O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dissolve LiNO3 and La(NO3)3·6H2O in ethylene glycol monomethyl ether.",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_5"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Mix the above solution with tetrabutyl titanate and acetylacetone.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Dry the resulting gel.",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 343,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Drying at 70 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Calcine the dried gel.",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {},
+            "temperature": {
+              "value": 1173,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "notes": "900 °C for 6 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Ball mill the calcined powder.",
+        "operations": [
+          {
+            "action": "ball mill",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "12 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Press the milled powder into a pellet.",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Sinter the pellet.",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {},
+            "temperature": {
+              "value": 1623,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "notes": "1350 °C for 6 h; pellets buried in powder of same composition to compensate Li loss"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Anneal the sintered pellet.",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "temperature": {
+              "value": 1073,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 4320,
+              "unit": "min"
+            },
+            "notes": "800 °C for 3 days"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Initial dissolution of nitrates in solvent"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Chelation and precursor mixing"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Gel drying"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "High-temperature calcination"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Powder homogenization by ball milling"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Pellet pressing"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "High-temperature sintering with powder burial"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Post-sinter annealing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Chemical quantities not specified",
+        "excerpt": "Stoichiometric amount of LiNO3 and La(NO3)3·6H2O were dissolved..."
+      },
+      {
+        "issue": "Atmosphere during heat treatments not provided",
+        "excerpt": "sintered at 1350 °C for 6 h"
+      },
+      {
+        "issue": "Pressure conditions during synthesis absent",
+        "excerpt": "pressed into a pellet"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase",
+          "value": "tetragonal perovskite, phase-pure",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results", "Methods"]
+    },
+    {
+      "method": "Inductively Coupled Plasma Spectroscopy (ICP)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li:La:Ti ratio",
+          "value": "0.325:0.552:1",
+          "unit": ""
+        }
+      ],
+      "interpretation": "close to nominal 0.33:0.56:1",
+      "prov": ["Results"]
+    },
+    {
+      "method": "DC conductivity",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 3.55e-5,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity (AC)",
+          "value": null,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Agree well with literature values",
+      "prov": ["Results"]
+    },
+    {
+      "method": "Scanning Transmission Electron Microscopy (STEM)",
+      "parameters": {
+        "voltage": "200 kV"
+      },
+      "results": [
+        {
+          "metric": "observation",
+          "value": "Single-atom-layer traps (SALTs) ubiquitous; defects form closed loops",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results", "Figure 1"]
+    },
+    {
+      "method": "Energy Dispersive X-ray Spectroscopy (EDX)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "La content in SALT",
+          "value": "negligible",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "Electron Energy Loss Spectroscopy (EELS)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li enrichment factor in SALT",
+          "value": 2.06,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Ab initio molecular dynamics (AIMD)",
+        "results": [
+          {
+            "equation": "",
+            "value": "Li-ion diffusion within SALT markedly slower than in bulk LLTO (MSD data at 2000 K)",
+            "unit": ""
+          }
+        ]
+      },
+      {
+        "method_name": "Nudged Elastic Band (NEB) calculations",
+        "results": [
+          {
+            "equation": "",
+            "value": "Migration barriers in SALT: 0.8–1.2 eV; β-Li2TiO3 reference: 0.49–0.53 eV",
+            "unit": "eV"
+          }
+        ]
+      },
+      {
+        "method_name": "Geometric Phase Analysis (GPA)",
+        "results": [
+          {
+            "equation": "",
+            "value": "εxx strain localized at defect; no misfit dislocations observed",
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

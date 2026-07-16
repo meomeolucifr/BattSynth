@@ -1,0 +1,239 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Li–O2 and Li–S batteries with high energy storage",
+    "doi": "10.1038/NMAT3191",
+    "authors": ["Peter G. Bruce", "Stefan A. Freunberger", "Laurence J. Hardwick", "Jean-Marie Tarascon"],
+    "journal": "Nature Materials",
+    "year": 2012
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["lithium–oxygen battery", "lithium–sulfur battery", "energy storage"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Non-aqueous Li–O2 battery cell",
+      "molecular_formula": "",
+      "intended_role": "electrochemical energy-storage device",
+      "prov": ["Page 20–24"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Aqueous Li–O2 battery cell",
+      "molecular_formula": "",
+      "intended_role": "electrochemical energy-storage device",
+      "prov": ["Page 24–25"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li–S battery cell",
+      "molecular_formula": "",
+      "intended_role": "electrochemical energy-storage device",
+      "prov": ["Page 25–27"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Fig. 1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "cathode reactant",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Fig. 1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "cathode reactant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Fig. 1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium peroxide",
+      "molecular_formula": "Li2O2",
+      "ontology": {
+        "role": "discharge product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 20"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium hydroxide",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "discharge product (aqueous cell)",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 24"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "discharge product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 25"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "No explicit experimental synthesis procedures provided in the text chunk; synthesis.steps left empty.",
+        "excerpt": "The review discusses battery chemistries but does not report detailed step-by-step experimental syntheses."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Galvanostatic discharge test",
+      "parameters": {
+        "current_density": "",
+        "basis": "per gram of carbon cathode"
+      },
+      "results": [
+        {
+          "metric": "specific capacity",
+          "value": 5360,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "operation time",
+          "value": 56,
+          "unit": "day"
+        }
+      ],
+      "interpretation": "High capacity reported for non-aqueous Li–O2 cell with hydrophobic ionic liquid electrolyte.",
+      "prov": ["Page 22, ref. 52"]
+    },
+    {
+      "method": "Solubility-based capacity estimate",
+      "parameters": {
+        "electrolyte": "aqueous",
+        "LiOH_saturation": 5.3,
+        "unit": "M"
+      },
+      "results": [
+        {
+          "metric": "specific capacity",
+          "value": 170,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Limited capacity when LiOH reaches saturation in aqueous Li–O2 cell.",
+      "prov": ["Page 24"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical energy calculation",
+        "results": [
+          {
+            "equation": "Based on cell reaction mass/volume",
+            "value": 3505,
+            "unit": "Wh kg-1",
+            "notes": "Theoretical specific energy for non-aqueous Li–O2 cell"
+          },
+          {
+            "equation": "",
+            "value": 2567,
+            "unit": "Wh kg-1",
+            "notes": "Theoretical specific energy for Li–S cell"
+          },
+          {
+            "equation": "",
+            "value": 3582,
+            "unit": "Wh kg-1",
+            "notes": "Theoretical specific energy for aqueous Li–O2 cell"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 5360,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-06T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Fe2CS2 MXene: a promising electrode for Al-ion batteries",
+    "doi": "10.1039/c9nr08906c",
+    "authors": ["Sangjin Lee", "Sung Chul Jung", "Young-Kyu Han"],
+    "journal": "Nanoscale",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["MXene", "Al-ion battery", "DFT", "diffusion", "capacity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Fe2CS2",
+      "molecular_formula": "Fe2CS2",
+      "intended_role": "electrode material",
+      "prov": ["Page 5324", "Title", "Results section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Fe2CS2",
+      "molecular_formula": "Fe2CS2",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "MXene electrode candidate",
+      "prov": ["Page 5324", "Fig. 1a"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ti2CO2",
+      "molecular_formula": "Ti2CO2",
+      "ontology": {
+        "role": "comparative material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Reference MXene",
+      "prov": ["Page 5324", "Fig. 1a"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ti2CS2",
+      "molecular_formula": "Ti2CS2",
+      "ontology": {
+        "role": "comparative material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 5326"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Fe2CO2",
+      "molecular_formula": "Fe2CO2",
+      "ontology": {
+        "role": "comparative material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 5326"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Al",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "carrier ion",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "fcc Al reference for intercalation energy",
+      "prov": ["Page 5327"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density Functional Theory (DFT)",
+        "results": [
+          {
+            "metric": "Formation energy of Ti2CO2",
+            "value": -2.04,
+            "unit": "eV per atom",
+            "prov": ["Fig. 1b"]
+          },
+          {
+            "metric": "Formation energy of Fe2CS2",
+            "value": -1.11,
+            "unit": "eV per atom",
+            "prov": ["Fig. 1b"]
+          }
+        ]
+      },
+      {
+        "method_name": "Climbing-Image Nudged Elastic Band (CINEB)",
+        "results": [
+          {
+            "metric": "Al-ion diffusion barrier in Ti2CO2",
+            "value": 0.76,
+            "unit": "eV",
+            "prov": ["Fig. 4b", "Table 2"]
+          },
+          {
+            "metric": "Al-ion diffusion barrier in Ti2CS2",
+            "value": 0.40,
+            "unit": "eV",
+            "prov": ["Fig. 4b", "Table 2"]
+          },
+          {
+            "metric": "Al-ion diffusion barrier in Fe2CO2",
+            "value": 0.71,
+            "unit": "eV",
+            "prov": ["Fig. 4b", "Table 2"]
+          },
+          {
+            "metric": "Al-ion diffusion barrier in Fe2CS2",
+            "value": 0.47,
+            "unit": "eV",
+            "prov": ["Fig. 4b", "Table 2"]
+          }
+        ]
+      },
+      {
+        "method_name": "Ab initio Molecular Dynamics (AIMD)",
+        "results": [
+          {
+            "metric": "Thermal stability of Fe2CS2 up to",
+            "value": 900,
+            "unit": "K",
+            "prov": ["Fig. 2a", "Fig. 2b"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 642,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

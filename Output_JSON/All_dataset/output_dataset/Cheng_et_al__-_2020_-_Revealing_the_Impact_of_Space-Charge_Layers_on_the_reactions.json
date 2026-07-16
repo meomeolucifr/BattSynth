@@ -1,0 +1,618 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Revealing the Impact of Space-Charge Layers on the Li-Ion Transport in All-Solid-State Batteries",
+    "doi": "10.1016/j.joule.2020.04.002",
+    "authors": ["Zhu Cheng", "Ming Liu", "Swapna Ganapathy", "Chao Li", "Zhaolong Li", "Xiaoyu Zhang", "Ping He", "Haoshen Zhou", "Marnix Wagemaker"],
+    "journal": "Joule",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials characterization study",
+    "tags": ["solid-state battery", "space-charge layer", "Li-ion transport", "NMR", "LAGP", "V2O5"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li1.5Al0.5Ge1.5(PO3)4",
+      "molecular_formula": "Li1.5Al0.5Ge1.5(PO3)4",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page 1312–1313"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiV2O5",
+      "molecular_formula": "LiV2O5",
+      "intended_role": "cathode material",
+      "prov": ["Page 1313"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li2V2O5",
+      "molecular_formula": "Li2V2O5",
+      "intended_role": "cathode material",
+      "prov": ["Page 1313"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li0.2V2O5",
+      "molecular_formula": "Li0.2V2O5",
+      "intended_role": "cathode material",
+      "prov": ["Page 1313"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li xV2O5–LAGP composite pellet",
+      "molecular_formula": "",
+      "intended_role": "interface study sample",
+      "prov": ["Page 1315"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "V2O5",
+      "molecular_formula": "V2O5",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 1312–1313"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 1312"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiV2O5",
+      "molecular_formula": "LiV2O5",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Produced by electrochemical lithiation",
+      "prov": ["Page 1313"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li2V2O5",
+      "molecular_formula": "Li2V2O5",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Produced by electrochemical lithiation",
+      "prov": ["Page 1313"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Li0.2V2O5",
+      "molecular_formula": "Li0.2V2O5",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Produced by electrochemical lithiation",
+      "prov": ["Page 1313"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Li1.5Al0.5Ge1.5(PO3)4",
+      "molecular_formula": "Li1.5Al0.5Ge1.5(PO3)4",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 1312"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "coating",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Coated on LAGP pellet surfaces",
+      "prov": ["Page 1312"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Electrochemical lithiation of V2O5 to obtain Li0.2V2O5",
+        "operations": [
+          {
+            "action": "discharge",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "current_rate": "0.05 C"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Rest 100 h (6000 min) after discharge",
+            "prov": ["Figure 1C"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1313"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Electrochemical lithiation of V2O5 to obtain LiV2O5",
+        "operations": [
+          {
+            "action": "discharge",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "current_rate": "0.05 C"
+            },
+            "duration": {
+              "value": 600,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Rest 100 h (6000 min) after discharge",
+            "prov": ["Figure 1D"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1313"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Electrochemical lithiation of V2O5 to obtain Li2V2O5",
+        "operations": [
+          {
+            "action": "discharge",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "current_rate": "0.05 C"
+            },
+            "duration": {
+              "value": 1200,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Rest 100 h (6000 min) after discharge",
+            "prov": ["Figure 1E"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1313"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Gold coating of LAGP pellet surfaces",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["chem_6", "chem_7"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Method not specified (likely sputtering)",
+            "prov": ["Page 1312"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1312"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Preparation of Li xV2O5–LAGP composite pellet",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4", "chem_5", "chem_6"],
+              "ratio_w_w": "4:1 (Li xV2O5 : LAGP)"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Ball milling followed by hand grinding",
+            "prov": ["Page 1315"]
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 100,
+                "unit": "MPa"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Page 1315"]
+          },
+          {
+            "action": "grind",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Pellet hand ground to powder for NMR rotor filling",
+            "prov": ["Page 1315"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1315"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "GITT measurement on LAGP/Li-metal cell",
+        "operations": [
+          {
+            "action": "charge",
+            "parameters": {
+              "current_density": "5 mA cm-2",
+              "cutoff_voltage": "4.6 V vs Li/Li+"
+            },
+            "duration": {
+              "value": 30,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Followed by 8 h rest (480 min)",
+            "prov": ["Figure 1A"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1312"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Discharge V2O5/Li cell 2 h to form Li0.2V2O5"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Discharge V2O5/Li cell 10 h to form LiV2O5"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Discharge V2O5/Li cell 20 h to form Li2V2O5"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Gold coating of LAGP pellet"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Mix Li xV2O5 with LAGP, press pellet, grind for NMR"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "GITT characterization of LAGP/Li cell"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Current rate definition",
+        "excerpt": "V2O5 was discharged at 0.05 C",
+        "prov": "Page 1313"
+      },
+      {
+        "issue": "Missing temperature information during lithiation and pressing",
+        "excerpt": "temperature not specified",
+        "prov": "Pages 1313, 1315"
+      },
+      {
+        "issue": "Gold coating method unspecified",
+        "excerpt": "LAGP pellet was coated with Au on both sides for the impedance measurements.",
+        "prov": "Page 1312"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "average crystallite size",
+          "value": 110,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Successful synthesis of NASICON LiGe2(PO4)3 structure for LAGP",
+      "prov": ["Figure S1A", "Page 1312"]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 0.12,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "High ionic conductivity of prepared LAGP",
+      "prov": ["Figure S1B", "Page 1312"]
+    },
+    {
+      "method": "GITT",
+      "parameters": {
+        "current_density": "5 mA cm-2",
+        "charge_time": "30 min",
+        "rest_time": "480 min"
+      },
+      "results": [
+        {
+          "metric": "equilibrium potential (LAGP)",
+          "value": 3,
+          "unit": "V vs Li/Li+"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1A", "Page 1312"]
+    },
+    {
+      "method": "NMR T2 relaxation",
+      "parameters": {
+        "temperature_range": "258–438 K"
+      },
+      "results": [
+        {
+          "metric": "activation energy (LiV2O5)",
+          "value": 0.17,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (Li2V2O5)",
+          "value": 0.08,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (Li0.2V2O5)",
+          "value": 0.13,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Comparable bulk Li-ion diffusivity among phases",
+      "prov": ["Figure 2D–2F", "Page 1314"]
+    },
+    {
+      "method": "2D NMR exchange",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "activation energy (space-charge-free interface)",
+          "value": 0.315,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (with space charge)",
+          "value": 0.515,
+          "unit": "eV"
+        },
+        {
+          "metric": "effective diffusion coefficient (LiV2O5-LAGP)",
+          "value": 1.0e-12,
+          "unit": "cm2 s-1"
+        },
+        {
+          "metric": "effective diffusion coefficient (Li2V2O5-LAGP)",
+          "value": 4.4e-14,
+          "unit": "cm2 s-1"
+        },
+        {
+          "metric": "exchange current density (LiV2O5-LAGP)",
+          "value": 0.77,
+          "unit": "mA cm-2"
+        },
+        {
+          "metric": "exchange current density (Li2V2O5-LAGP)",
+          "value": 0.41,
+          "unit": "mA cm-2"
+        },
+        {
+          "metric": "exchange current density (Li0.2V2O5-LAGP, max)",
+          "value": 0.13,
+          "unit": "mA cm-2"
+        },
+        {
+          "metric": "interface resistance (LiV2O5-LAGP)",
+          "value": 33,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "interface resistance (Li2V2O5-LAGP)",
+          "value": 63,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "interface resistance (Li0.2V2O5-LAGP)",
+          "value": 188,
+          "unit": "Ω cm2"
+        }
+      ],
+      "interpretation": "Space-charge layer significantly hinders Li-ion transport",
+      "prov": ["Figure 5A–5D", "Page 1317–1319"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Space-charge layer model calculation",
+        "results": [
+          {
+            "interface": "Li2V2O5-LAGP",
+            "metric": "space-charge layer thickness",
+            "value": 0.5,
+            "unit": "nm"
+          },
+          {
+            "interface": "Li0.2V2O5-LAGP",
+            "metric": "space-charge layer thickness",
+            "value": 0.7,
+            "unit": "nm"
+          },
+          {
+            "interface": "Li2V2O5-LAGP",
+            "metric": "calculated resistance",
+            "value": 0.0009,
+            "unit": "Ω cm2"
+          },
+          {
+            "interface": "Li0.2V2O5-LAGP",
+            "metric": "calculated resistance",
+            "value": 0.0061,
+            "unit": "Ω cm2"
+          }
+        ],
+        "prov": ["Figure 6A–6C", "Page 1319"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-27T23:33:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

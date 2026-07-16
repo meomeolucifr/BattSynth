@@ -1,0 +1,235 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Theoretical analysis of space charge layer formation at metal/ionic conductor interfaces",
+    "doi": "10.1016/j.ssi.2010.11.022",
+    "authors": [
+      "Shusuke Kasamatsu",
+      "Tomofumi Tada",
+      "Satoshi Watanabe"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "space charge",
+      "DFT",
+      "yttria stabilized zirconia",
+      "Poisson equation"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Yttria-stabilized zirconia (10 mol% Y2O3 in ZrO2)",
+      "molecular_formula": "",
+      "intended_role": "material under study",
+      "prov": [
+        "Page 21 (Computational methodology)"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "ZrO2",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "host lattice",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Equation (1)",
+        "Computational methodology"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Y2O3",
+      "molecular_formula": "Y2O3",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "mol%"
+      },
+      "notes": "10 mol% Y2O3 corresponding to 20% substitution of Zr4+ by Y3+",
+      "prov": [
+        "Page 21 (Methodology)"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "O2",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Partial pressures varied between 1 atm (oxidizing) and 1×10⁻²² atm (reducing)",
+      "prov": [
+        "Equations (7)",
+        "Figures 4–5"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "char_1",
+        "description": "First-principles DFT calculations of defect formation energies using VASP."
+      },
+      {
+        "step_ref": "char_2",
+        "description": "Self-consistent solution of one-dimensional Poisson equation to obtain space-charge profiles."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (VASP)",
+      "parameters": {
+        "plane_wave_cutoff": {
+          "value": 500,
+          "unit": "eV"
+        },
+        "k_point_mesh": "2×2×2 Monkhorst–Pack",
+        "supercell_size": "32 cubic ZrO2 units",
+        "functional": "GGA-PBE",
+        "smearing": "Gaussian",
+        "band_gap_correction": "CBM shifted to give 5 eV band gap",
+        "dielectric_constant": {
+          "value": 35.5,
+          "unit": ""
+        }
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": [
+        "Computational methodology section"
+      ]
+    },
+    {
+      "method": "Poisson equation simulation",
+      "parameters": {
+        "slab_thickness": {
+          "value": 10,
+          "unit": "nm"
+        },
+        "temperature_conditions": [
+          {
+            "value": 300,
+            "unit": "K"
+          },
+          {
+            "value": 1000,
+            "unit": "K"
+          }
+        ],
+        "oxygen_partial_pressures": [
+          {
+            "value": 1,
+            "unit": "atm"
+          },
+          {
+            "value": 1e-22,
+            "unit": "atm"
+          }
+        ],
+        "valence_band_offsets_evaluated": [
+          {
+            "value": 1,
+            "unit": "eV"
+          },
+          {
+            "value": 2,
+            "unit": "eV"
+          },
+          {
+            "value": 3,
+            "unit": "eV"
+          }
+        ]
+      },
+      "results": [
+        {
+          "metric": "Fermi level position (oxidizing)",
+          "value": 0.5,
+          "unit": "eV above VBM"
+        },
+        {
+          "metric": "Fermi level position (reducing)",
+          "value": 2.1,
+          "unit": "eV above VBM"
+        }
+      ],
+      "interpretation": "Space-charge polarity and width depend on ΔEF and ϕVBO; oxidizing atmospheres lead to negative space charge, reducing to positive.",
+      "prov": [
+        "Figures 4–5",
+        "Discussion section"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical calculation of defect concentrations",
+        "results": [
+          {
+            "equation": "n_D^q = N_D exp(−ΔG_f / k_B T) / (1+Σ exp(−ΔG_f / k_B T))",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T06:40:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

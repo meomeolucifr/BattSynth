@@ -1,0 +1,175 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Structure, Polarization, and Sum Frequency Generation Spectrum of Interfacial Water on Anatase TiO 2",
+    "doi": "10.1021/acs.jpclett.8b03103",
+    "authors": [
+      "Marcos F. Calegari Andrade",
+      "Hsin-Yu Ko",
+      "Roberto Car",
+      "Annabella Selloni"
+    ],
+    "journal": "The Journal of Physical Chemistry Letters",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "AIMD",
+      "SCAN functional",
+      "TiO2",
+      "interfacial water",
+      "SFG spectroscopy"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "analyte",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "82 molecules included in the simulation box",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "anatase TiO2",
+      "molecular_formula": "TiO2",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "5-layer slab containing 180 atoms used as surface in simulations",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "char_1",
+        "description": "Ab initio molecular dynamics (AIMD) simulation of the water–anatase (101) interface for 41 ps after 6 ps equilibration at 330 K using the SCAN functional."
+      },
+      {
+        "step_ref": "char_2",
+        "description": "Computation of vibrational sum frequency generation (SFG) spectra from AIMD trajectories, focusing on the 3000–3600 cm−1 OH stretching region."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Ab initio molecular dynamics (Car–Parrinello)",
+      "parameters": {
+        "density_functional": "SCAN meta-GGA",
+        "temperature": {
+          "value": 330,
+          "unit": "K"
+        },
+        "equilibration_time_ps": 6,
+        "production_time_ps": 41,
+        "time_step": "2 au",
+        "electron_mass_au": 100,
+        "plane_wave_cutoffs": "110/440 Ry (wavefunction/charge)",
+        "thermostat": "Nosé–Hoover chain",
+        "ensemble": "NVT",
+        "simulation_box": "10.4 Å × 11.4 Å × 36.8 Å along [1̅01],[010],[101]"
+      },
+      "results": [
+        {
+          "metric": "interfacial structure",
+          "value": "stable bilayer of intact water molecules with ice-like dynamics",
+          "unit": ""
+        },
+        {
+          "metric": "dipole moment enhancement of first-layer water",
+          "value": 20,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Strong interaction with surface Ti atoms induces enhanced dipole and slowed rotational/translational dynamics.",
+      "prov": ["Methods", "Figure 3a", "Figure 2e"]
+    },
+    {
+      "method": "Sum Frequency Generation (SFG) spectral simulation",
+      "parameters": {
+        "frequency_range_cm-1": "3000–3600",
+        "water_layers_included": "first and second solvation layers",
+        "scaling_factor": "applied to match experimental high-frequency intensity"
+      },
+      "results": [
+        {
+          "metric": "positive SFG peak",
+          "value": 3100,
+          "unit": "cm^-1"
+        },
+        {
+          "metric": "negative SFG peak",
+          "value": 3400,
+          "unit": "cm^-1"
+        }
+      ],
+      "interpretation": "Positive peak arises mainly from second-layer water with dipoles toward surface; negative peak from first-layer water with dipoles away from surface.",
+      "prov": ["Figure 4a", "Figure 4b"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Wannier-function dipole/polarizability analysis",
+        "results": [
+          {
+            "equation": "",
+            "value": "anisotropic polarizability and split lone-pair distances indicating charge-transfer to surface Ti sites",
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T18:13:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

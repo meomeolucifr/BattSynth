@@ -1,0 +1,246 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Progress and perspectives on halide lithium conductors for all-solid-state lithium batteries",
+    "doi": "10.1039/c9ee03828k",
+    "authors": [
+      "Xiaona Li",
+      "Jianwen Liang",
+      "Xiaofei Yang",
+      "Keegan R. Adair",
+      "Changhong Wang",
+      "Feipeng Zhao",
+      "Xueliang Sun"
+    ],
+    "journal": "Energy & Environmental Science",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["solid-state electrolyte", "halide", "lithium battery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3InCl6",
+      "molecular_formula": "Li3InCl6",
+      "intended_role": "solid-state electrolyte product",
+      "prov": ["Page 1443–1445, Fig. 8"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3InCl6·2H2O",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Page 1443–1445, Fig. 8"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 1443"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Indium(III) chloride",
+      "molecular_formula": "InCl3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 1443"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 1443"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of hydrated precursor Li3InCl6·xH2O by dissolving LiCl and InCl3 in water.",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Ambient conditions; product is a white Li3InCl6·xH2O solid"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1443", "Fig. 8a"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Dehydration of Li3InCl6·2H2O to obtain Li3InCl6.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["target_2"]
+            },
+            "temperature": {
+              "value": 473,
+              "unit": "K",
+              "notes": "200 °C stated in text"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Performed under vacuum"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1443", "Fig. 8a"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Solution formation of hydrated precursor."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Thermal dehydration to yield anhydrous Li3InCl6."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Quantities of reactants and duration not specified",
+        "excerpt": "Simply dissolving lithium chloride and indium chloride into water can obtain a white Li3InCl6·xH2O... Upon further heating at 200 °C under a vacuum, the Li3InCl6·2H2O ... converts to Li3InCl6."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "TGA",
+      "parameters": {
+        "temperature_range": "RT to 653 K",
+        "atmosphere": "N2"
+      },
+      "results": [
+        {
+          "metric": "water content",
+          "value": 2,
+          "unit": "mole H2O per formula unit"
+        }
+      ],
+      "interpretation": "Determined x=2 in Li3InCl6·xH2O",
+      "prov": ["Figure 8c"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "monoclinic Li3InCl6 confirmed after dehydration",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 8d"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": "RT"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 2.04e-3,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 1443", "Table 7"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T18:46:00Z",
+    "source_file": "provided_text_chunk.txt",
+    "processing_time": null
+  }
+}

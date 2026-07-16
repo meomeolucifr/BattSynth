@@ -1,0 +1,204 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "First-Principles Studies of Li Nucleation on Graphene",
+    "doi": "10.1021/jz500199d",
+    "authors": [
+      "Mingjie Liu",
+      "Alex Kutana",
+      "Yuanyue Liu",
+      "Boris I. Yakobson"
+    ],
+    "journal": "The Journal of Physical Chemistry Letters",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "Li-ion battery", "graphene", "lithium nucleation"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li clusters on graphene",
+      "molecular_formula": "",
+      "intended_role": "model_system",
+      "prov": ["Page 1225-1226"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "adsorbate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "graphene",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate",
+        "category": "allotrope"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "char_1",
+        "description": "DFT calculations with PW91 and HSE functionals using VASP; supercell sizes 5×5 to 9×9 graphene; plane-wave cutoff 400 eV; Γ-centered 3×3×1 K-point grid; vacuum 15 Å."
+      },
+      {
+        "step_ref": "char_2",
+        "description": "Macroscopic Wulff construction modelling of Li cluster formation energies using facet energies 29, 31, 35 meV/Å² and interface energy 14 meV/Å² (fitted 150 meV/Å² for small clusters)."
+      },
+      {
+        "step_ref": "char_3",
+        "description": "GW calculation for LiC6 band structure comparison."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (PW91, VASP)",
+      "parameters": {
+        "plane_wave_cutoff": {"value": 400, "unit": "eV"},
+        "k_point_grid": "Γ-centered 3×3×1",
+        "vacuum_gap": {"value": 15, "unit": "Å"},
+        "supercell_sizes": ["5×5", "6×6", "7×7", "8×8", "9×9"]
+      },
+      "results": [
+        {
+          "metric": "Li adsorption energy in LiC6 (PW91)",
+          "value": -0.95,
+          "unit": "eV atom-1"
+        },
+        {
+          "metric": "Li adsorption energy in LiC6 (HSE)",
+          "value": -0.92,
+          "unit": "eV atom-1"
+        }
+      ],
+      "interpretation": "PW91 slightly overbinds relative to HSE but difference small, validating PW91 use.",
+      "prov": ["Page 1225"]
+    },
+    {
+      "method": "DFT (surface energy calculations)",
+      "parameters": {
+        "facet_energies": {
+          "(100)": {"value": 29, "unit": "meV Å-2"},
+          "(110)": {"value": 31, "unit": "meV Å-2"},
+          "(111)": {"value": 35, "unit": "meV Å-2"}
+        },
+        "interface_energy_Li(100)/graphene": {"value": 14, "unit": "meV Å-2"}
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Page 1226"]
+    },
+    {
+      "method": "GW",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Charge transfer trend",
+          "value": "decreased charge transfer compared to PW91",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Qualitative charge transfer analysis remains valid.",
+      "prov": ["Page 1228"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Macroscopic cluster model (Wulff construction)",
+        "results": [
+          {
+            "equation": "ΔG(n)=E_s+γ_interface·A(100) - n·μ",
+            "value": null,
+            "unit": ""
+          },
+          {
+            "metric": "Effective interface energy (small clusters)",
+            "value": 150,
+            "unit": "meV Å-2"
+          }
+        ],
+        "prov": ["Page 1226-1227"]
+      },
+      {
+        "method_name": "Cluster nucleation barrier estimation",
+        "results": [
+          {
+            "metric": "Nucleation barrier at Li:C 1:6",
+            "value": 0.27,
+            "unit": "eV"
+          },
+          {
+            "metric": "Nucleation barrier at Li:C 1:24",
+            "value": 0.53,
+            "unit": "eV"
+          },
+          {
+            "metric": "Nucleation barrier at Li:C 1:72",
+            "value": 3.23,
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Table I, Page 1227"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T22:31:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

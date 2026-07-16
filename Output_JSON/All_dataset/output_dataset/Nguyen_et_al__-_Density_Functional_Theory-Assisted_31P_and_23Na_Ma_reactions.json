@@ -1,0 +1,241 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Density Functional Theory -Assisted 31P and 23Na Magic -Angle Spinning  Nuclear Magnetic Resonance Study of the Na3V2(PO4)2F3 – Na3V2(PO4)2FO2 Solid Solution: Unravel ing Its Local and Electronic Structure s",
+    "doi": "",
+    "authors": [
+      "Long H. B. Nguyen",
+      "Paula Sanz-Camacho",
+      "Thibault Broux",
+      "Jacob Olchowka",
+      "Christian Masquelier",
+      "Laurence Croguennec",
+      "Dany Carlier"
+    ],
+    "journal": "",
+    "year": null
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "supporting_information",
+    "tags": ["solid_state", "DFT", "ssNMR", "inorganic_materials", "sodium_ion_batteries"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na3V2(PO4)2F3",
+      "molecular_formula": "Na3V2(PO4)2F3",
+      "intended_role": "studied_material",
+      "prov": ["S-2", "S-3", "S-6", "S-10", "S-12", "S-14"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na3V2(PO4)2FO2",
+      "molecular_formula": "Na3V2(PO4)2FO2",
+      "intended_role": "studied_material",
+      "prov": ["S-4", "S-5", "S-10"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na3V2(PO4)2F2O",
+      "molecular_formula": "Na3V2(PO4)2F2O",
+      "intended_role": "studied_material",
+      "prov": ["S-7", "S-8", "S-11", "S-12", "S-13", "S-14"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Na3(VO)2(PO4)2F",
+      "molecular_formula": "Na3(VO)2(PO4)2F",
+      "intended_role": "studied_material",
+      "prov": ["S-14"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "H3PO4 85% aqueous solution",
+      "molecular_formula": "H3PO4",
+      "ontology": {
+        "role": "reference_standard",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as 0 ppm reference for 31P chemical shift",
+      "prov": ["S-12", "S-13"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "",
+        "description": "No synthesis procedures were described in the provided text chunk."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "characterization_id": "char_1",
+      "method": "Synchrotron X-ray powder diffraction",
+      "parameters": {
+        "data_source": "literature value cited",
+        "structure": "Na3V2(PO4)2F3"
+      },
+      "results": [
+        {
+          "metric": "unit_cell_parameters",
+          "value": {
+            "a": 9.02847,
+            "b": 9.04444,
+            "c": 10.74666,
+            "alpha": 90,
+            "beta": 90,
+            "gamma": 90,
+            "unit": "Å"
+          }
+        }
+      ],
+      "interpretation": "",
+      "prov": ["S-3"]
+    },
+    {
+      "characterization_id": "char_2",
+      "method": "DFT (GGA and GGA+U)",
+      "parameters": {
+        "models": ["GGA", "GGA+3 eV", "GGA+4 eV", "GGA+5 eV"]
+      },
+      "results": [
+        {
+          "sample": "Na3V2(PO4)2F3",
+          "GGA": {"a": 9.096, "b": 9.156, "c": 10.758, "unit": "Å"},
+          "GGA+3eV": {"a": 9.126, "b": 9.193, "c": 10.890, "unit": "Å"},
+          "GGA+4eV": {"a": 9.150, "b": 9.215, "c": 10.895, "unit": "Å"},
+          "GGA+5eV": {"a": 9.178, "b": 9.235, "c": 10.902, "unit": "Å"}
+        },
+        {
+          "sample": "Na3V2(PO4)2FO2",
+          "GGA": {"a": 9.092, "b": 9.092, "c": 10.624, "unit": "Å"},
+          "GGA+3eV": {"a": 9.138, "b": 9.138, "c": 10.591, "unit": "Å"},
+          "GGA+4eV": {"a": 9.152, "b": 9.152, "c": 10.587, "unit": "Å"},
+          "GGA+5eV": {"a": 9.167, "b": 9.167, "c": 10.569, "unit": "Å"}
+        }
+      ],
+      "interpretation": "",
+      "prov": ["S-3", "S-5"]
+    },
+    {
+      "characterization_id": "char_3",
+      "method": "31P ss-NMR (MAS)",
+      "parameters": {
+        "instrument": "Bruker Avance III 100 MHz",
+        "magnet_field": "2.4 T",
+        "MAS_rate": {"value": 30000, "unit": "Hz"},
+        "pulse_sequence": "Hahn echo",
+        "pi_over_2_pulse": {"value": 1.0, "unit": "µs"},
+        "recycle_delay": {"value": 0.2, "unit": "s"},
+        "offset_positions_ppm": [800, 2978, 5000]
+      },
+      "results": [
+        {
+          "metric": "relative_intensity_variation",
+          "value": "Changes observed with different offsets",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["S-12"]
+    },
+    {
+      "characterization_id": "char_4",
+      "method": "31P ss-NMR (MAS) – refocalization delay study",
+      "parameters": {
+        "instrument": "Bruker Avance III 100 MHz",
+        "magnet_field": "2.4 T",
+        "MAS_rate": {"value": 30000, "unit": "Hz"},
+        "d6_delay_range": {"min": 1, "max": 7, "unit": "s"}
+      },
+      "results": [
+        {
+          "metric": "relative_intensity_variation",
+          "value": "Intensity changes as d6 increased from 1 s to 7 s",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["S-13"]
+    },
+    {
+      "characterization_id": "char_5",
+      "method": "23Na ss-NMR (MAS)",
+      "parameters": {},
+      "results": [
+        {
+          "sample": "Na3V2(PO4)2F3",
+          "shifts_ppm": {
+            "Na1": {"experimental": 139.6, "GGA": "270–273", "GGA+3eV": 166, "GGA+4eV": 152, "GGA+5eV": 131},
+            "Na2": {"experimental": "205–258", "GGA": 133, "GGA+3eV": 118, "GGA+4eV": 102, "GGA+5eV": null}
+          }
+        },
+        {
+          "sample": "Na3V2(PO4)2FO2",
+          "shifts_ppm": {
+            "Na1": {"experimental": 80, "GGA": 77, "GGA+3eV": 6, "GGA+4eV": -31, "GGA+5eV": -65},
+            "Na2": {"experimental": 94, "GGA": 59, "GGA+3eV": 32, "GGA+4eV": 2, "GGA+5eV": null}
+          }
+        }
+      ],
+      "interpretation": "",
+      "prov": ["S-10"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Relative intensity comparison (23Na ss-NMR)",
+        "results": [
+          {
+            "sample_series": "Na3V2(PO4)2F3 – Na3(VO)2(PO4)2F solid solution",
+            "data": "See Table S5 for calculated vs observed relative intensities of Na(OV3+)2, Na(OV3+)(OV4+), Na(OV4+)2 sites"
+          }
+        ],
+        "prov": ["S-14"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T12:00:00Z",
+    "source_file": "supporting_information_section",
+    "processing_time": null
+  }
+}

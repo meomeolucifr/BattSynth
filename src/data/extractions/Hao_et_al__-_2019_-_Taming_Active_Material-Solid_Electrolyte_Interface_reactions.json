@@ -1,0 +1,588 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Taming Active Material-Solid Electrolyte Interfaces with Organic Cathode for All-Solid-State Batteries",
+    "doi": "10.1016/j.joule.2019.03.017",
+    "authors": ["Fang Hao", "Xiaowei Chi", "Yanliang Liang", "Ye Zhang", "Rong Xu", "Hua Guo", "Tanguy Terlier", "Hui Dong", "Kejie Zhao", "Jun Lou", "Yan Yao"],
+    "journal": "Joule",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["all-solid-state sodium batteries", "organic cathode", "pyrene-4,5,9,10-tetraone", "sulfide electrolyte"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na3PS4 glass-ceramic",
+      "molecular_formula": "Na3PS4",
+      "intended_role": "solid electrolyte",
+      "prov": ["Experimental Procedures"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "PTO micropellets (PTO-MP)",
+      "molecular_formula": "",
+      "intended_role": "cathode active material",
+      "prov": ["Experimental Procedures"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "PTO nanorods (PTO-NR)",
+      "molecular_formula": "",
+      "intended_role": "cathode active material",
+      "prov": ["Experimental Procedures"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Na2S",
+      "molecular_formula": "Na2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.02,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.98,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Pyrene-4,5,9,10-tetraone (PTO)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in multiple syntheses (bulk, MP, NR). Specific amounts detailed per step.",
+      "prov": ["Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Tetrahydrofuran",
+      "molecular_formula": "C4H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": 13,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "antisolvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 70,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "C65 carbon",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used at various weight percentages (0–33 wt %) in composite cathodes.",
+      "prov": ["Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Na15Sn4 alloy",
+      "molecular_formula": "Na15Sn4",
+      "ontology": {
+        "role": "anode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "mg"
+      },
+      "notes": "Used as counter electrode in cell assembly.",
+      "prov": ["Experimental Procedures"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used during ball milling and transfers.",
+      "prov": ["Experimental Procedures"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanochemical synthesis of amorphous Na3PS4 followed by heat treatment to obtain glass-ceramic Na3PS4.",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "container_volume": {
+                "value": 250,
+                "unit": "mL"
+              },
+              "atmosphere": "argon",
+              "rpm": 500,
+              "duration": {
+                "value": 120,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Stainless-steel jar with 2 × 15 mm and 20 × 10 mm balls.",
+            "prov": ["Experimental Procedures"]
+          },
+          {
+            "action": "heat_treat",
+            "parameters": {},
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 533,
+              "unit": "K"
+            },
+            "notes": "Vacuum heat treatment to crystallize glass-ceramic Na3PS4.",
+            "prov": ["Experimental Procedures"]
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": "vacuum"
+        },
+        "prov": ["Experimental Procedures"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of PTO micropellets (PTO-MP) by mechanical milling.",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "mass": {
+                "value": 0.2,
+                "unit": "g"
+              },
+              "container_volume": {
+                "value": 100,
+                "unit": "mL"
+              },
+              "rpm": 400,
+              "duration": {
+                "value": 600,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Agate milling jar.",
+            "prov": ["Experimental Procedures"]
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": ""
+        },
+        "prov": ["Experimental Procedures"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Synthesis of PTO nanorods (PTO-NR) via antisolvent precipitation.",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4"],
+              "mass": {
+                "value": 0.05,
+                "unit": "g"
+              },
+              "volume": {
+                "value": 13,
+                "unit": "mL"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "prov": ["Experimental Procedures"]
+          },
+          {
+            "action": "inject",
+            "parameters": {
+              "inputs": ["chem_5"],
+              "volume": {
+                "value": 70,
+                "unit": "mL"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Quick injection of PTO/THF solution into water.",
+            "prov": ["Experimental Procedures"]
+          },
+          {
+            "action": "sonicate",
+            "parameters": {},
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "prov": ["Experimental Procedures"]
+          },
+          {
+            "action": "centrifuge",
+            "parameters": {
+              "rpm": 10000
+            },
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Collect yellow precipitates.",
+            "prov": ["Experimental Procedures"]
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Vacuum drying overnight.",
+            "prov": ["Experimental Procedures"]
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": ""
+        },
+        "prov": ["Experimental Procedures"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Fabrication of PTO-Na3PS4-C composite cathode (2:7:1 by mass).",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_3", "target_1", "chem_6"],
+              "ratio_notes": "20 wt% PTO, 70 wt% Na3PS4, 10 wt% carbon"
+            },
+            "notes": "Manual mixing with agate mortar and pestle.",
+            "prov": ["Experimental Procedures"]
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": ""
+        },
+        "prov": ["Experimental Procedures"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Assembly of all-solid-state cell.",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["target_1"],
+              "mass": {
+                "value": 0.15,
+                "unit": "g"
+              },
+              "pressure": {
+                "value": 750,
+                "unit": "bar"
+              }
+            },
+            "notes": "Form electrolyte pellet in 13 mm PEEK die.",
+            "prov": ["Experimental Procedures"]
+          },
+          {
+            "action": "layer",
+            "parameters": {
+              "inputs": ["step_4", "chem_7"]
+            },
+            "notes": "5 mg composite cathode on one side, 100 mg Na15Sn4 on other side.",
+            "prov": ["Experimental Procedures"]
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 3750,
+                "unit": "bar"
+              }
+            },
+            "notes": "Final cold pressing of full stack.",
+            "prov": ["Experimental Procedures"]
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": 5,
+            "unit": "bar"
+          },
+          "atmosphere": "argon"
+        },
+        "prov": ["Experimental Procedures"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of Na3PS4 glass-ceramic electrolyte"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of PTO micropellets via milling"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Synthesis of PTO nanorods via antisolvent precipitation"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Formation of composite cathode with optimized carbon content"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Assembly of all-solid-state sodium cell for electrochemical testing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No experimental details provided for Na15Sn4 alloy synthesis",
+        "excerpt": "Na15Sn4 alloy ... was prepared following the literature."
+      },
+      {
+        "issue": "Duration of vacuum drying for PTO-NR not specified (\"overnight\")",
+        "excerpt": "\"vacuum drying overnight\""
+      },
+      {
+        "issue": "Exact weight of carbon in composite cathodes varies and not always specified numerically",
+        "excerpt": "composite cathodes with different carbon ratios (0, 5, 10, 20, 27, and 33 wt %) were prepared"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Nanoindentation",
+      "parameters": {
+        "max_depth": "1000 nm",
+        "tip": "Berkovich"
+      },
+      "results": [
+        {
+          "metric": "Young modulus of PTO",
+          "value": 4.2,
+          "unit": "GPa"
+        },
+        {
+          "metric": "Young modulus uncertainty",
+          "value": 0.2,
+          "unit": "GPa"
+        }
+      ],
+      "interpretation": "PTO exhibits low modulus beneficial for maintaining interfacial contact.",
+      "prov": ["Experimental Procedures"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "region": "S 2p"
+      },
+      "results": [
+        {
+          "metric": "Peak position of P–[S]n–P bond",
+          "value": 162.7,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Indicates reversible oxidation of Na3PS4 during charge.",
+      "prov": ["Figure 4E"]
+    },
+    {
+      "method": "ToF-SIMS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Detected species",
+          "value": "NaP2S6−, Na3P2S8−, CNa3P2S8−",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Formation/disappearance confirms reversible interfacial chemistry.",
+      "prov": ["Figure 4F"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "1 MHz–0.1 Hz",
+        "bias": "5 mV"
+      },
+      "results": [
+        {
+          "metric": "Warburg coefficient Aw range",
+          "value": "45–1897",
+          "unit": "Ω s^1/2"
+        }
+      ],
+      "interpretation": "Shows reversible interfacial resistance evolution.",
+      "prov": ["Figure 4A–C"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic cycling",
+        "results": [
+          {
+            "metric": "Specific capacity at 0.1 C (PTO-NR)",
+            "value": 322,
+            "unit": "mAh g-1"
+          },
+          {
+            "metric": "Specific capacity at 1 C (PTO-NR)",
+            "value": 200,
+            "unit": "mAh g-1"
+          },
+          {
+            "metric": "Specific energy",
+            "value": 587,
+            "unit": "Wh kg-1"
+          },
+          {
+            "metric": "Capacity retention after 500 cycles",
+            "value": 89,
+            "unit": "%"
+          }
+        ],
+        "prov": ["Figure 6D–I"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 322,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 500
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T20:26:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

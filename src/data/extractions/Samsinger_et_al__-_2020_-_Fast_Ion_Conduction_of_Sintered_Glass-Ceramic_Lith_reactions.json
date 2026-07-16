@@ -1,0 +1,421 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Fast Ion Conduction of Sintered Glass-Ceramic Lithium Ion Conductors Investigated by Impedance Spectroscopy and Coaxial Reflection Technique",
+    "doi": "10.1149/1945-7111/abc0a9",
+    "authors": [
+      "R. F. Samsinger",
+      "M. Letz",
+      "J. Schuhmacher",
+      "M. Schneider",
+      "A. Roters",
+      "D. Kienemund",
+      "H. Maune",
+      "A. Kwade"
+    ],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid electrolyte", "glass-ceramic", "impedance spectroscopy", "coaxial reflection"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LATP1 sintered disc",
+      "molecular_formula": "Li1.3Al0.3Ti1.7P3O12",
+      "intended_role": "solid electrolyte sample",
+      "prov": ["Page Experimental - Sample preparation"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LATP2 sintered disc",
+      "molecular_formula": "Li1.3Al0.3Ti1.7P3O12",
+      "intended_role": "solid electrolyte sample",
+      "prov": ["Page Experimental - Sample preparation"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LLZO sintered disc",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "solid electrolyte sample",
+      "prov": ["Page Experimental - Sample preparation"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LATP glass-ceramic powder",
+      "molecular_formula": "Li1.3Al0.3Ti1.7P3O12",
+      "ontology": {
+        "role": "starting material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Two batches: LATP1 (low amorphous phase), LATP2 (high amorphous phase); median particle size ≤1 μm",
+      "prov": ["Page Experimental - Sample preparation"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LLZO glass-ceramic powder",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "starting material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Median particle size ≤1 μm",
+      "prov": ["Page Experimental - Sample preparation"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "electrode coating",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "≈100 nm sputtered layer on sample surfaces",
+      "prov": ["Page Experimental - Measurement techniques"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Glove-box atmosphere for sample handling",
+      "prov": ["Page Experimental - Sample preparation"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Press powders to form green discs",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "diameter": {"value": 10, "unit": "mm"},
+              "thickness": {"value": [1, 2], "unit": "mm"}
+            },
+            "notes": "Powder batches pressed separately for LATP1, LATP2, LLZO"
+          }
+        ],
+        "conditions": {
+          "temperature": {"value": null, "unit": "K"},
+          "pressure": {"value": null, "unit": "bar"},
+          "time": {"value": null, "unit": "min"},
+          "atmosphere": ""
+        },
+        "prov": ["Page Experimental - Sample preparation"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Sinter pressed discs",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "notes": "Conditions described elsewhere; not specified in text"
+          }
+        ],
+        "conditions": {
+          "temperature": {"value": null, "unit": "K"},
+          "pressure": {"value": null, "unit": "bar"},
+          "time": {"value": null, "unit": "min"},
+          "atmosphere": ""
+        },
+        "prov": ["Page Experimental - Sample preparation"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Polish sintered discs",
+        "operations": [
+          {
+            "action": "polish",
+            "parameters": {
+              "inputs": ["step_2"],
+              "grit_sequence": ["#360", "#4000"]
+            },
+            "notes": "SiC sandpaper used"
+          }
+        ],
+        "conditions": {
+          "temperature": {"value": null, "unit": "K"},
+          "pressure": {"value": null, "unit": "bar"},
+          "time": {"value": null, "unit": "min"},
+          "atmosphere": ""
+        },
+        "prov": ["Page Experimental - Sample preparation"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Transfer and store samples in inert atmosphere",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {
+              "inputs": ["step_3"],
+              "to": "argon-filled glove box"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "temperature": {"value": null, "unit": "K"},
+          "pressure": {"value": null, "unit": "bar"},
+          "time": {"value": null, "unit": "min"}
+        },
+        "prov": ["Page Experimental - Sample preparation"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Sputter coat discs with gold electrodes",
+        "operations": [
+          {
+            "action": "sputter",
+            "parameters": {
+              "inputs": ["chem_3", "step_4"],
+              "thickness": {"value": 100, "unit": "nm"}
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {"value": null, "unit": "K"},
+          "pressure": {"value": null, "unit": "bar"},
+          "time": {"value": null, "unit": "min"},
+          "atmosphere": ""
+        },
+        "prov": ["Page Experimental - Measurement techniques"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Powders pressed into 10 mm discs"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Discs sintered to achieve densification"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Mechanical polishing of sintered discs"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Handling in argon glove box to avoid moisture/CO2 exposure"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Gold sputtering for electrical contact before measurements"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Sintering conditions (temperature, time, atmosphere) not specified",
+        "excerpt": "Afterwards the discs were sintered as described elsewhere.19,21"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase purity",
+          "value": "Only LTP phase (LATP1 & LATP2) and cubic LLZO phase; no detected impurities",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1, Structural analysis section"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "LATP1 microstructure",
+          "value": "neck growth with residual porosity, ~66–70 % relative density",
+          "unit": ""
+        },
+        {
+          "metric": "LATP2 microstructure",
+          "value": "dense structure with coarsened particles, ~100 % relative density",
+          "unit": ""
+        },
+        {
+          "metric": "LLZO microstructure",
+          "value": "relative density 95–97 %",
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2, Morphological analysis section"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {
+        "frequency_range": "0.1 Hz – 20 MHz",
+        "voltage_amplitude": "20 mV"
+      },
+      "results": [
+        {
+          "metric": "LATP1 grain-boundary conductivity",
+          "value": 5.04e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "LATP1 grain-core conductivity",
+          "value": 2.37e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "LATP2 grain-boundary conductivity",
+          "value": 9.49e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "LATP2 grain-core conductivity",
+          "value": 6.00e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "LLZO conductivity",
+          "value": 8.29e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "LATP1 relative permittivity",
+          "value": 73.78,
+          "unit": ""
+        },
+        {
+          "metric": "LATP2 relative permittivity",
+          "value": 106.17,
+          "unit": ""
+        },
+        {
+          "metric": "LLZO relative permittivity",
+          "value": 72.87,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Electrochemical performance section", "Table I"]
+    },
+    {
+      "method": "Coaxial Reflection Technique (CRT)",
+      "parameters": {
+        "frequency_range": "1 MHz – 3 GHz"
+      },
+      "results": [
+        {
+          "metric": "LATP1 grain-core conductivity",
+          "value": 2.15e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "LATP2 grain-core conductivity",
+          "value": 5.91e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "LLZO conductivity",
+          "value": 8.23e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "LATP1 relative permittivity",
+          "value": 32.20,
+          "unit": ""
+        },
+        {
+          "metric": "LATP2 relative permittivity",
+          "value": 76.83,
+          "unit": ""
+        },
+        {
+          "metric": "LLZO relative permittivity",
+          "value": 93.31,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Electrochemical performance section", "Table I"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Conductivity calculation from impedance",
+        "results": [
+          {
+            "equation": "σ = t/(R·A)",
+            "value": null,
+            "unit": "S cm-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T20:27:00Z",
+    "source_file": "input_text_chunk",
+    "processing_time": null
+  }
+}

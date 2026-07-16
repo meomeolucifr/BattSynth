@@ -1,0 +1,409 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Innovative application of ionic liquid to separate Al and cathode materials from spent high-power lithium-ion batteries",
+    "doi": "10.1016/j.jhazmat.2014.02.001",
+    "authors": ["Xianlai Zeng", "Jinhui Li"],
+    "journal": "Journal of Hazardous Materials",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_recycling",
+    "tags": ["lithium-ion batteries", "ionic liquid", "aluminum recovery", "cathode recycling"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Recycled aluminum foil",
+      "molecular_formula": "Al",
+      "intended_role": "product",
+      "prov": ["Page 53 Fig.4", "Section 3.3"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Recycled cathode material (LiCoO2)",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "product",
+      "prov": ["Page 54 Fig.5", "Section 3.3"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "1-Butyl-3-methylimidazolium tetrafluoroborate",
+      "molecular_formula": "C8H15BF4N2",
+      "ontology": {
+        "role": "solvent",
+        "category": "ionic liquid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Purity >99%",
+      "prov": ["Section 3.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Polyvinylidene fluoride (PVDF)",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Introduction"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "washing solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Salt solution",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "discharge medium",
+        "category": "solution"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for battery discharge; composition not specified",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium cobalt oxide",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Present in spent cathode; also recovered",
+      "prov": ["Section 3.3", "Fig.5"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Discharge spent high-power Li-ion batteries in salt solution to avoid short-circuiting and self-ignition.",
+        "operations": [
+          {
+            "action": "immerse",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Manual dismantling of discharged batteries to separate cathode assemblies containing Al foil and cathode material.",
+        "operations": [
+          {
+            "action": "manual_dismantle",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 3.4"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heated ionic liquid treatment to dissolve PVDF binder and detach cathode material from Al foil.",
+        "operations": [
+          {
+            "action": "heat_and_stir",
+            "parameters": {
+              "inputs": ["chem_1", "target_?"],
+              "stir_rate": {
+                "value": 300,
+                "unit": "rpm"
+              }
+            },
+            "duration": {
+              "value": 25,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 453,
+              "unit": "K"
+            },
+            "notes": "Cathode immersed in [BMIm][BF4]"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 3.3", "Fig.3", "Fig.4"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Cool the ionic liquid system and physically separate detached aluminum foil and cathode powder.",
+        "operations": [
+          {
+            "action": "cool",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "separate",
+            "parameters": {
+              "method": "mechanical collection"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.3"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Wash recovered materials with deionized water; reuse wash liquid containing ionic liquid.",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Washings filtered; IL recovered by evaporation"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.3", "Section 3.4"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Battery discharge in salt solution"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Manual dismantling to obtain cathode assemblies"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Heated IL treatment at 453 K for 25 min with 300 rpm stirring"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Cooling and physical separation of Al foil and cathode powder"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Washing recovered materials and recycling ionic liquid"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Salt solution composition and concentration not specified",
+        "excerpt": "all the samplings were first discharged through a salt solution"
+      },
+      {
+        "issue": "Volume or mass of ionic liquid not given",
+        "excerpt": "heated IL dismantling process"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "ICP",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Co content",
+          "value": 21.34,
+          "unit": "%",
+          "sample": "recycled cathode material"
+        },
+        {
+          "metric": "Li content",
+          "value": 5.35,
+          "unit": "%",
+          "sample": "recycled cathode material"
+        },
+        {
+          "metric": "P content",
+          "value": 0.35,
+          "unit": "%",
+          "sample": "recycled cathode material"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 54, Section 3.3"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "LiCoO2 present",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Fourier’s law modeling",
+        "results": [
+          {
+            "equation": "t1 = −85.0611 ln((172−T∞)/(25−T∞))",
+            "value": {
+              "175 °C": 5.83,
+              "180 °C": 4.17,
+              "185 °C": 3.33
+            },
+            "unit": "min",
+            "notes": "Predicted heat conduction times at different IL temperatures"
+          }
+        ],
+        "prov": ["Section 3.2", "Fig.2"]
+      },
+      {
+        "method_name": "Peel-off rate measurement",
+        "results": [
+          {
+            "metric": "Peel-off rate",
+            "value": 99,
+            "unit": "%",
+            "conditions": "453 K, 300 rpm, 25 min"
+          }
+        ],
+        "prov": ["Fig.4", "Section 3.3"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

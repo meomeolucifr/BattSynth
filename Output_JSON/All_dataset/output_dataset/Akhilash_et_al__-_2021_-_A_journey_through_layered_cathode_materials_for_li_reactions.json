@@ -1,0 +1,360 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A journey through layered cathode materials for lithium ion cells – From lithium cobalt oxide to lithium-rich transition metal oxides",
+    "doi": "10.1016/j.jallcom.2021.159239",
+    "authors": ["M. Akhilash", "P.S. Salini", "Bibin John", "T.D. Mercy"],
+    "journal": "Journal of Alloys and Compounds",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["lithium-ion batteries", "layered cathode materials"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "cathode material",
+      "prov": ["Page 4 (Section 5.1)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiNi0.8Co0.15Al0.05O2",
+      "molecular_formula": "LiNi0.8Co0.15Al0.05O2",
+      "intended_role": "cathode material",
+      "prov": ["Table 1, Page 4"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiNi1/3Mn1/3Co1/3O2",
+      "molecular_formula": "LiNi0.33Mn0.33Co0.33O2",
+      "intended_role": "cathode material",
+      "prov": ["Table 1, Page 4"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "LiNi0.8Mn0.1Co0.1O2",
+      "molecular_formula": "LiNi0.8Mn0.1Co0.1O2",
+      "intended_role": "cathode material",
+      "prov": ["Table 1, Page 4"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "LiMn2O4",
+      "molecular_formula": "LiMn2O4",
+      "intended_role": "cathode material",
+      "prov": ["Table 1, Page 4"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "intended_role": "cathode material",
+      "prov": ["Table 1, Page 4"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "lithium salt",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Specific lithium salt not specified in text.",
+      "prov": ["Page 4, Section 5.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "cobalt salt",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Specific cobalt salt not specified in text.",
+      "prov": ["Page 4, Section 5.1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Solid-state synthesis of LiCoO2",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Intimate mechanical grinding of lithium and cobalt salts."
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Heating at high temperatures (exact value not specified) to obtain LiCoO2."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4, Section 5.1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of LiCoO2 cathode via solid-state reaction."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis details (exact salts, temperature, duration).",
+        "excerpt": "\"…solid-state reaction which involves the intimate mechanical grinding of salts of lithium and cobalt followed by heating at high temperatures.\" (Page 4)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical performance (from Table 1)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Specific capacity (theoretical)",
+          "value": 274,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_1"
+        },
+        {
+          "metric": "Specific capacity (practical)",
+          "value": 140,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_1"
+        },
+        {
+          "metric": "Average discharge voltage",
+          "value": 3.9,
+          "unit": "V",
+          "conditions": "vs Li+/Li",
+          "associated_target": "target_1"
+        }
+      ],
+      "interpretation": "Performance metrics for LiCoO2 cathode.",
+      "prov": ["Table 1, Page 4"]
+    },
+    {
+      "method": "Electrochemical performance (from Table 1)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Specific capacity (theoretical)",
+          "value": 280,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_2"
+        },
+        {
+          "metric": "Specific capacity (practical)",
+          "value": 160,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_2"
+        },
+        {
+          "metric": "Average discharge voltage",
+          "value": 3.8,
+          "unit": "V",
+          "conditions": "vs Li+/Li",
+          "associated_target": "target_2"
+        }
+      ],
+      "interpretation": "Performance metrics for NCA cathode.",
+      "prov": ["Table 1, Page 4"]
+    },
+    {
+      "method": "Electrochemical performance (from Table 1)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Specific capacity (theoretical)",
+          "value": 275,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_3"
+        },
+        {
+          "metric": "Specific capacity (practical)",
+          "value": 160,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_3"
+        },
+        {
+          "metric": "Average discharge voltage",
+          "value": 3.8,
+          "unit": "V",
+          "conditions": "vs Li+/Li",
+          "associated_target": "target_3"
+        }
+      ],
+      "interpretation": "Performance metrics for NMC111 cathode.",
+      "prov": ["Table 1, Page 4"]
+    },
+    {
+      "method": "Electrochemical performance (from Table 1)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Specific capacity (theoretical)",
+          "value": 275,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_4"
+        },
+        {
+          "metric": "Specific capacity (practical)",
+          "value": 200,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_4"
+        },
+        {
+          "metric": "Average discharge voltage",
+          "value": 3.8,
+          "unit": "V",
+          "conditions": "vs Li+/Li",
+          "associated_target": "target_4"
+        }
+      ],
+      "interpretation": "Performance metrics for NMC811 cathode.",
+      "prov": ["Table 1, Page 4"]
+    },
+    {
+      "method": "Electrochemical performance (from Table 1)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Specific capacity (theoretical)",
+          "value": 148,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_5"
+        },
+        {
+          "metric": "Specific capacity (practical)",
+          "value": 120,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_5"
+        },
+        {
+          "metric": "Average discharge voltage",
+          "value": 4.0,
+          "unit": "V",
+          "conditions": "vs Li+/Li",
+          "associated_target": "target_5"
+        }
+      ],
+      "interpretation": "Performance metrics for LiMn2O4 cathode.",
+      "prov": ["Table 1, Page 4"]
+    },
+    {
+      "method": "Electrochemical performance (from Table 1)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Specific capacity (theoretical)",
+          "value": 170,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_6"
+        },
+        {
+          "metric": "Specific capacity (practical)",
+          "value": 150,
+          "unit": "mAh g-1",
+          "conditions": "",
+          "associated_target": "target_6"
+        },
+        {
+          "metric": "Average discharge voltage",
+          "value": 3.5,
+          "unit": "V",
+          "conditions": "vs Li+/Li",
+          "associated_target": "target_6"
+        }
+      ],
+      "interpretation": "Performance metrics for LiFePO4 cathode.",
+      "prov": ["Table 1, Page 4"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

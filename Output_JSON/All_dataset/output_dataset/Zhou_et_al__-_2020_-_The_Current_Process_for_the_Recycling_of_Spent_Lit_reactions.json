@@ -1,0 +1,342 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "The Current Process for the Recycling of Spent Lithium Ion Batteries",
+    "doi": "10.3389/fchem.2020.578044",
+    "authors": ["Li-Feng Zhou", "Dongrun Yang", "Tao Du", "He Gong", "Wen-Bin Luo"],
+    "journal": "Frontiers in Chemistry",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "mini review",
+    "tags": ["battery recycling", "hydrometallurgy", "leaching"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li and Co leachate (from LiCoO2 via HCl)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 3, paragraph starting 'Li et al. (2009)'"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li and Co leachate (from LiCoO2 via H2SO4/H2O2)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 3, paragraph starting 'Jha et al. (2013)'"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li, Co, Ni, Mn leachate (from LiNi1/3Co1/3Mn1/3O2 via citric acid)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 3, paragraph starting 'Chen X. et al. (2016)'"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Regenerated LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "intended_role": "regenerated cathode material",
+      "prov": ["Page 4, paragraph starting 'Chen J. et al. (2016)'"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "spent electrode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Spent cathode",
+      "prov": ["Multiple references"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "HCl",
+      "molecular_formula": "HCl",
+      "ontology": {
+        "role": "leachant",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "4 M solution used",
+      "prov": ["Page 3, Li et al. (2009)"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "H2SO4",
+      "molecular_formula": "H2SO4",
+      "ontology": {
+        "role": "leachant",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "2 M solution used",
+      "prov": ["Page 3, Jha et al. (2013)"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "H2O2",
+      "molecular_formula": "H2O2",
+      "ontology": {
+        "role": "reductant",
+        "category": "oxidizer/reductant"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "5 % v/v with H2SO4; 4 % v/v with H3PO4; 1.7 % v/v with HNO3",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiNi1/3Co1/3Mn1/3O2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "spent electrode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 3, Chen X. et al. (2016)"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Citric acid",
+      "molecular_formula": "C6H8O7",
+      "ontology": {
+        "role": "leachant",
+        "category": "organic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "concentration not provided",
+      "prov": ["Page 3, Chen X. et al. (2016)"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "spent electrode material / product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "soft-pack battery cathode",
+      "prov": ["Page 4, Chen J. et al. (2016)"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Acid leaching of spent LiCoO2 with hydrochloric acid",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "concentration": {"value": 4, "unit": "M"},
+              "solid_to_liquid_ratio": null
+            },
+            "duration": {"value": 120, "unit": "min"},
+            "temperature": {"value": 353, "unit": "K"},
+            "notes": "99% Co and 97% Li dissolution achieved"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 3, Li et al. (2009)"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Acid leaching of LiCoO2 with sulfuric acid assisted by hydrogen peroxide",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3", "chem_4"],
+              "concentration": {"value": 2, "unit": "M"},
+              "additive_percentage": {"value": 5, "unit": "% v/v H2O2"}
+            },
+            "duration": {"value": 60, "unit": "min"},
+            "temperature": {"value": 348, "unit": "K"},
+            "notes": "99.1% Li and 70% Co dissolution"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 3, Jha et al. (2013)"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Citric-acid leaching of LiNi1/3Co1/3Mn1/3O2 cathode material",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6"],
+              "concentration": {"value": null, "unit": "M"}
+            },
+            "duration": {"value": 120, "unit": "min"},
+            "temperature": {"value": 353, "unit": "K"},
+            "notes": "Recovered 99% Li, 93% Co, 91% Ni, 94% Mn"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 3, Chen X. et al. (2016)"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Thermal regeneration of spent LiFePO4 cathode material",
+        "operations": [
+          {
+            "action": "heat_treat",
+            "parameters": {
+              "inputs": ["chem_7"],
+              "heating_rate": null
+            },
+            "duration": {"value": null, "unit": "min"},
+            "temperature": {"value": 923, "unit": "K"},
+            "notes": "Heat treatment improved electrochemical performance to similar level as new material"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 4, Chen J. et al. (2016)"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Hydrochloric-acid leaching of LiCoO2"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Sulfuric-acid/H2O2 leaching of LiCoO2"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Citric-acid leaching of LiNi1/3Co1/3Mn1/3O2"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Thermal regeneration of LiFePO4"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing concentration of citric acid in step_3",
+        "excerpt": "Chen X. et al. (2016) reported the leaching performance using citric acid."
+      },
+      {
+        "issue": "Duration of heat treatment not specified in step_4",
+        "excerpt": "After heating treatment at 650◦C, the electrochemical performance was improved"
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Leaching efficiency measurement",
+        "results": [
+          {
+            "metric": "Co dissolution",
+            "value": 99,
+            "unit": "%",
+            "prov": ["step_1"]
+          },
+          {
+            "metric": "Li dissolution",
+            "value": 97,
+            "unit": "%",
+            "prov": ["step_1"]
+          },
+          {
+            "metric": "Li dissolution",
+            "value": 99.1,
+            "unit": "%",
+            "prov": ["step_2"]
+          },
+          {
+            "metric": "Co dissolution",
+            "value": 70,
+            "unit": "%",
+            "prov": ["step_2"]
+          },
+          {
+            "metric": "Li recovery",
+            "value": 99,
+            "unit": "%",
+            "prov": ["step_3"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-05T17:02:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Design of nano-structured heterogeneous solid ionic coatings through a multi-scale defect model",
+    "doi": "",
+    "authors": [
+      "Jie Pan",
+      "Qinglin Zhang",
+      "Xingcheng Xiao",
+      "Yang-Tse Cheng",
+      "Yue Qi"
+    ],
+    "journal": "",
+    "year": null
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "supporting_information",
+    "tags": ["solid_state_ionics", "defect_modeling"]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Phase for which defect profiles and conductivity are modeled",
+      "prov": ["Supporting Information S-2", "Supporting Information S-3"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiF",
+      "molecular_formula": "LiF",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Forms interface with Li2CO3",
+      "prov": ["Supporting Information S-3"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li⁺ interstitial (Li_i)",
+      "molecular_formula": "Li+",
+      "ontology": {
+        "role": "defect species",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mobile ionic defect considered in conductivity calculations",
+      "prov": ["Supporting Information S-2", "Supporting Information S-3"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "electron (e′)",
+      "molecular_formula": "e-",
+      "ontology": {
+        "role": "defect species",
+        "category": "electron"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Electronic defect included in charge neutrality",
+      "prov": ["Supporting Information S-2"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical modeling (Poisson-Boltzmann and Gouy-Chapman profiles)",
+        "results": [
+          {
+            "equation": "∂²φ(x)/∂x² = −e/ε_r (c_∞^{Li_i} e^{-eφ/k_BT} − c_∞^{e′} e^{eφ/k_BT})",
+            "label": "Eq. (S1)",
+            "prov": ["Supporting Information S-2"]
+          },
+          {
+            "equation": "λ_D = sqrt(ε_r RT / (2 F² c_∞^{Li_i}))",
+            "label": "Eq. (S3)",
+            "prov": ["Supporting Information S-2"]
+          },
+          {
+            "equation": "z(x) = [ (1 + J e^{-x}) / (1 - J e^{-x}) ]²,  J = (1 - z₀^{−1/2}) / (1 + z₀^{−1/2})",
+            "label": "Eq. (S4)",
+            "prov": ["Supporting Information S-2"]
+          },
+          {
+            "equation": "Δσ = z² F² D_{Li_i} / (RT) ΔC_{Li_i}",
+            "label": "Eq. (S7)",
+            "prov": ["Supporting Information S-3"]
+          },
+          {
+            "equation": "L_A/(2λ_D) = 2√{z*} [F(z*; π/2) − F(z*; arcsin√{z₀/z*})]",
+            "label": "Eq. (S10)",
+            "prov": ["Supporting Information S-3"]
+          },
+          {
+            "equation": "Δσ_{Li_i} = 4 λ_D / L_A  z² F² D_{Li_i} / (RT) c_∞^{Li_i} [(c_{x=0}^{Li_i} − c_{x=L_A/2}^{Li_i})]^{1/2}",
+            "label": "Eq. (S16)",
+            "prov": ["Supporting Information S-3"]
+          }
+        ],
+        "prov": ["Supporting Information S-2", "Supporting Information S-3"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

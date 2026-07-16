@@ -1,0 +1,639 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Electromotive force and huge magnetoresistance in magnetic tunnel junctions",
+    "doi": "10.1038/nature07879",
+    "authors": [
+      "Pham Nam Hai",
+      "Shinobu Ohya",
+      "Masaaki Tanaka",
+      "Stewart E. Barnes",
+      "Sadamichi Maekawa"
+    ],
+    "journal": "Nature",
+    "year": 2009
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and device fabrication",
+    "tags": [
+      "magnetic tunnel junction",
+      "MnAs nanoparticles",
+      "spin battery",
+      "magnetoresistance"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Zinc-blende MnAs nanoparticles embedded in GaAs matrix",
+      "molecular_formula": "MnAs (nanoparticle)",
+      "intended_role": "active magnetic nanomaterial",
+      "prov": ["Methods", "Figure 1a", "Figure 1b"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Magnetic tunnel junction stack: Hexagonal MnAs/GaAs/AlAs/GaAs:MnAs",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": ["Methods Summary", "Figure 1a"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "GaAs",
+      "molecular_formula": "GaAs",
+      "ontology": {
+        "role": "substrate/matrix/spacer",
+        "category": "semiconductor"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as p+ GaAs(001) substrate, 20 nm Be-doped GaAs buffer, and 1 nm GaAs spacer",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "MnAs",
+      "molecular_formula": "MnAs",
+      "ontology": {
+        "role": "ferromagnetic layer & nanoparticles",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Hexagonal NiAs-structure 20 nm film (top electrode) and zinc-blende nanoparticles (2–3 nm)",
+      "prov": ["Methods Summary", "Figure 1a", "Figure 1b"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Be-doped GaAs",
+      "molecular_formula": "GaAs:Be",
+      "ontology": {
+        "role": "buffer layer",
+        "category": "semiconductor"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "20 nm buffer layer grown at 580 °C",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Ga0.94Mn0.06As",
+      "molecular_formula": "Ga0.94Mn0.06As",
+      "ontology": {
+        "role": "precursor layer for nanoparticle formation",
+        "category": "semiconductor alloy"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "10 nm layer grown at 240 °C, later phase-separated",
+      "prov": ["Methods Summary", "Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "AlAs",
+      "molecular_formula": "AlAs",
+      "ontology": {
+        "role": "tunnel barrier",
+        "category": "semiconductor"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2.1 nm barrier grown by MBE",
+      "prov": ["Methods Summary"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Evaporated on top contact",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Insulating negative resist",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "photoresist",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Spin-coated for mesa fabrication",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Growth of Be-doped GaAs buffer layer on p+ GaAs(001) substrate",
+        "operations": [
+          {
+            "action": "grow",
+            "parameters": {
+              "technique": "molecular beam epitaxy",
+              "thickness": "20 nm",
+              "substrate": "p+ GaAs(001)"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 853.15,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Cooling substrate prior to further growth",
+        "operations": [
+          {
+            "action": "cool",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 513.15,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Growth of Ga0.94Mn0.06As layer",
+        "operations": [
+          {
+            "action": "grow",
+            "parameters": {
+              "technique": "molecular beam epitaxy",
+              "thickness": "10 nm",
+              "composition": "Ga0.94Mn0.06As"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 513.15,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Growth of AlAs tunnel barrier",
+        "operations": [
+          {
+            "action": "grow",
+            "parameters": {
+              "technique": "molecular beam epitaxy",
+              "thickness": "2.1 nm",
+              "material": "AlAs"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 513.15,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Methods Summary"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods Summary"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Growth of GaAs spacer layer",
+        "operations": [
+          {
+            "action": "grow",
+            "parameters": {
+              "technique": "molecular beam epitaxy",
+              "thickness": "1 nm",
+              "material": "GaAs"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 513.15,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Methods Summary"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods Summary"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Annealing to form zinc-blende MnAs nanoparticles via phase separation",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "duration": {
+              "value": 20,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 753.15,
+              "unit": "K"
+            },
+            "notes": "in MBE growth chamber",
+            "prov": ["Methods Summary", "Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Growth of 20 nm hexagonal NiAs-structure MnAs top electrode",
+        "operations": [
+          {
+            "action": "grow",
+            "parameters": {
+              "technique": "molecular beam epitaxy",
+              "thickness": "20 nm",
+              "material": "MnAs (NiAs-structure)"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 513.15,
+              "unit": "K"
+            },
+            "notes": "type-A orientation",
+            "prov": ["Methods Summary", "Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Post-growth annealing to improve top MnAs film quality",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 583.15,
+              "unit": "K"
+            },
+            "notes": "in growth chamber",
+            "prov": ["Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Fabrication of 200 µm diameter mesa diodes",
+        "operations": [
+          {
+            "action": "photolithography",
+            "parameters": {
+              "feature_size": "200 µm diameter"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "chemical etching used to define mesas",
+            "prov": ["Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_10",
+        "description": "Passivation and metallization",
+        "operations": [
+          {
+            "action": "spin coat",
+            "parameters": {
+              "material": "insulating negative resist"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "prov": ["Methods"]
+          },
+          {
+            "action": "open window",
+            "parameters": {
+              "feature_size": "180 µm diameter"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "prov": ["Methods"]
+          },
+          {
+            "action": "evaporate",
+            "parameters": {
+              "material": "Au electrode"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "prov": ["Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Be-doped GaAs buffer growth at 853 K"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Substrate cooled to 513 K"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Ga0.94Mn0.06As layer growth"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "AlAs tunnel barrier deposition"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "GaAs spacer deposition"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Annealing at 753 K for 20 min to form MnAs nanoparticles"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Hexagonal MnAs top electrode growth"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Post-growth anneal at 583 K for 10 min"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Mesa diode patterning by photolithography and etching"
+      },
+      {
+        "step_ref": "step_10",
+        "description": "Resist passivation and Au contact deposition"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Transmission Electron Microscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "nanoparticle diameter",
+          "value": "2–3",
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1b"]
+    },
+    {
+      "method": "Current–Voltage (I–V) measurement",
+      "parameters": {
+        "temperature": "3 K",
+        "magnetic_field": "10 kG"
+      },
+      "results": [
+        {
+          "metric": "electromotive force",
+          "value": 21,
+          "unit": "mV"
+        }
+      ],
+      "interpretation": "Shift of I–V curve indicates e.m.f.",
+      "prov": ["Figure 2a"]
+    },
+    {
+      "method": "Magnetoresistance measurement",
+      "parameters": {
+        "bias_voltage": "-1 mV",
+        "temperature": "3 K"
+      },
+      "results": [
+        {
+          "metric": "magnetoresistance ratio",
+          "value": 100000,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Huge MR due to e.m.f. and Coulomb blockade",
+      "prov": ["Figure 3b"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Coulomb blockade evaluation",
+        "results": [
+          {
+            "equation": "",
+            "value": 50,
+            "unit": "meV",
+            "note": "Coulomb energy U inferred from resistance vs voltage"
+          }
+        ],
+        "prov": ["Inset Figure 2a"]
+      },
+      {
+        "method_name": "Spin quantum number estimation",
+        "results": [
+          {
+            "equation": "E = 2 g μB S H / e with E = 21 mV, H = 10 kG",
+            "value": 200,
+            "unit": "",
+            "note": "Estimated S ≈ 200"
+          }
+        ],
+        "prov": ["Main text"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

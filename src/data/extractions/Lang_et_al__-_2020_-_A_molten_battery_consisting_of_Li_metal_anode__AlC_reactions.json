@@ -1,0 +1,473 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A molten battery consisting of Li metal anode, AlCl3-LiCl cathode and solid electrolyte",
+    "doi": "10.1016/j.ensm.2019.07.027",
+    "authors": [
+      "Jialiang Lang",
+      "Kai Liu",
+      "Yang Jin",
+      "Yuanzheng Long",
+      "Longhao Qi",
+      "Hui Wu",
+      "Yi Cui"
+    ],
+    "journal": "Energy Storage Materials",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and battery assembly",
+    "tags": [
+      "molten battery",
+      "solid electrolyte",
+      "LLZTO",
+      "AlCl3-LiCl cathode",
+      "lithium metal anode"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "AlCl3-LiCl||LLZTO||Li molten battery cell",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Article text Page 412-416"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "g"
+      },
+      "notes": "Mass used in puncturing experiment; molten at 483 K during operation",
+      "prov": [
+        "Page 413"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Aluminum chloride",
+      "molecular_formula": "AlCl3",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mixed with LiCl at 60:40 mole % to form molten cathode",
+      "prov": [
+        "Page 413"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "cathode component / secondary electrolyte",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mixed with AlCl3 (60:40 mole %)",
+      "prov": [
+        "Page 413"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li6.4La3Ta0.6Zr1.4O12 (LLZTO)",
+      "molecular_formula": "Li6.4La3Ta0.6Zr1.4O12",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "ceramic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Garnet-type ceramic tube, relative density 99 %",
+      "prov": [
+        "Page 413"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Aluminum",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal foil"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Foil thickness 35 µm; also participates in reversible deposition",
+      "prov": [
+        "Page 415"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Sodium chloride",
+      "molecular_formula": "NaCl",
+      "ontology": {
+        "role": "cost-reduction additive in cathode",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in LiCl:AlCl3:NaCl mixture (4:1:1 mole ratio) for discharge-state assembly",
+      "prov": [
+        "Page 414"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of molten salt cathode",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_2",
+                "chem_3"
+              ],
+              "mole_ratio": "60:40"
+            },
+            "temperature": {
+              "value": 483,
+              "unit": "K"
+            },
+            "notes": "AlCl3 and LiCl melted together to form a homogeneous molten salt cathode"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 413"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Assembly of molten battery cell",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "components": [
+                "stainless steel cylinder (negative current collector)",
+                "molten lithium (chem_1)",
+                "LLZTO tube (chem_4)",
+                "molten AlCl3-LiCl cathode (from step_1)",
+                "aluminum foil (chem_5) as positive current collector"
+              ]
+            },
+            "temperature": {
+              "value": 483,
+              "unit": "K"
+            },
+            "notes": "Both electrodes maintained molten during operation"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fig. 1a description"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Cell activation",
+        "operations": [
+          {
+            "action": "electrochemical cycling",
+            "parameters": {
+              "current_density": {
+                "value": 10,
+                "unit": "mA cm-2"
+              },
+              "capacity_limit": {
+                "value": 100,
+                "unit": "mAh g-1"
+              }
+            },
+            "temperature": {
+              "value": 483,
+              "unit": "K"
+            },
+            "notes": "Initial cycles performed to minimize interface side reactions"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 413"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Alternative discharge-state cathode preparation",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_3",
+                "chem_2",
+                "chem_6"
+              ],
+              "mole_ratio": "LiCl:AlCl3:NaCl = 4:1:1"
+            },
+            "temperature": {
+              "value": 483,
+              "unit": "K"
+            },
+            "notes": "Small amount of Li used only to wet LLZTO and current collector"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 414"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Formulation of molten AlCl3-LiCl cathode"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Assembly of full AlCl3-LiCl||LLZTO||Li cell at 483 K"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Electrochemical activation and initial cycling"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Preparation of cost-reduced LiCl-AlCl3-NaCl cathode (optional)"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact quantities of AlCl3 and LiCl for cathode mixture not stated",
+        "excerpt": "AlCl3-LiCl (60:40 mole %) as cathode"
+      },
+      {
+        "issue": "Atmosphere and assembly environment unspecified",
+        "excerpt": "The cell was assembled ... heating to 210 °C"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical impedance spectroscopy (EIS)",
+      "parameters": {
+        "temperature_range": "303–573 K"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 65,
+          "unit": "mS cm-1",
+          "condition": "at 483 K"
+        }
+      ],
+      "interpretation": "LLZTO exhibits high ionic conductivity suitable for high-temperature operation",
+      "prov": [
+        "Fig. 1d"
+      ]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase stability",
+          "value": "No obvious phase change after 100 cycles",
+          "unit": ""
+        }
+      ],
+      "interpretation": "LLZTO tube remains structurally stable during cycling",
+      "prov": [
+        "Fig. 1c"
+      ]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": "10 mA cm-2",
+        "temperature": "483 K",
+        "capacity_limit": "100 mAh g-1"
+      },
+      "results": [
+        {
+          "metric": "energy efficiency",
+          "value": 83,
+          "unit": "%"
+        },
+        {
+          "metric": "cycle_life",
+          "value": 100,
+          "unit": "cycles"
+        }
+      ],
+      "interpretation": "Stable operation over 800 h with negligible capacity fade",
+      "prov": [
+        "Fig. 2c–e"
+      ]
+    },
+    {
+      "method": "Rate capability test",
+      "parameters": {
+        "current_density_range": "5–40 mA cm-2",
+        "capacity_limit": "50 mAh g-1"
+      },
+      "results": [
+        {
+          "metric": "discharge plateau voltage at 5 mA cm-2",
+          "value": 1.65,
+          "unit": "V"
+        },
+        {
+          "metric": "discharge plateau voltage at 40 mA cm-2",
+          "value": 1.34,
+          "unit": "V"
+        },
+        {
+          "metric": "energy efficiency at 40 mA cm-2",
+          "value": 65,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Cell maintains acceptable efficiency up to 40 mA cm-2",
+      "prov": [
+        "Fig. 3a,b"
+      ]
+    },
+    {
+      "method": "SEM/EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface morphology changes",
+          "value": "Al particles (several µm to 30 µm) observed after 100 cycles",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Inhomogeneous Al deposition but no significant collector corrosion",
+      "prov": [
+        "Fig. 4"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Specific energy and cost estimation",
+        "results": [
+          {
+            "equation": "",
+            "value": 350,
+            "unit": "Wh kg-1",
+            "notes": "Based on weight of electrode materials"
+          },
+          {
+            "equation": "",
+            "value": 584.1,
+            "unit": "Wh L-1",
+            "notes": "Energy density per unit volume"
+          },
+          {
+            "equation": "",
+            "value": 11.6,
+            "unit": "USD kWh-1",
+            "notes": "Estimated material cost"
+          },
+          {
+            "equation": "",
+            "value": 686,
+            "unit": "Wh kg-1",
+            "notes": "Theoretical specific energy"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 200,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

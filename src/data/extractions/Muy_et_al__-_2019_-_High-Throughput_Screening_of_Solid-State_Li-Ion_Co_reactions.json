@@ -1,0 +1,302 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "High-Throughput Screening of Solid-State Li-Ion Conductors Using Lattice-Dynamics Descriptors",
+    "doi": "10.1016/j.isci.2019.05.036",
+    "authors": ["Sokseiha Muy", "Johannes Voss", "Roman Schlem", "Raimund Koerver", "Stefan J. Sedlmaier", "Filippo Maglia", "Peter Lamp", "Wolfgang G. Zeier", "Yang Shao-Horn"],
+    "journal": "iScience",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state electrolytes", "Li-ion conductors", "halide electrolytes"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3ErCl6",
+      "molecular_formula": "Li3ErCl6",
+      "intended_role": "product",
+      "prov": ["Page 278–279, Figure 8", "Transparent methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Erbium chloride",
+      "molecular_formula": "ErCl3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Anhydrous, 99.9 % purity; 2 wt % excess relative to total weighted mass",
+      "prov": ["Transparent methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Ultra-dry, 99.9 % purity; stoichiometric with ErCl3 (except 2 wt % excess ErCl3)",
+      "prov": ["Transparent methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconia milling media",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "process aid",
+        "category": "ceramic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "3 mm diameter balls; mass ratio media:powder = 30:1",
+      "prov": ["Transparent methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Initial mixing and hand grinding of precursors",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "equipment": "agate mortar"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Stoichiometric molar ratio with 2 wt % excess ErCl3"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Transparent methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-energy ball milling",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["step_1_output", "chem_3"],
+              "cycles": 297,
+              "cycle_details": "5 min milling + 15 min rest per cycle",
+              "manual_homogenization_every": 99
+            },
+            "duration": {
+              "value": 1485,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Powder periodically scraped from vial walls"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Transparent methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Crystallization anneal",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["step_2_output"]
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 823,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Transparent methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Manual mixing and grinding of LiCl and ErCl3 under Ar."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Ball-milling with ZrO2 media (297 cycles)."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Annealing milled powder at 550 °C for 1 h to obtain crystalline Li3ErCl6."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of LiCl and ErCl3 not specified.",
+        "excerpt": "Erbium chloride (ErCl3...) and lithium chloride (LiCl...) were mixed in the appropriate stoichiometric molar ratios, while adding approximately 2 wt% excess ErCl3..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray powder diffraction",
+      "parameters": {
+        "radiation": "Cu Kα (λ = 1.54051 Å)",
+        "scan_range": "10–90° 2θ",
+        "step_size": "0.026°",
+        "exposure_time_per_step_ball_milled": "150 s",
+        "exposure_time_per_step_crystalline": "425 s"
+      },
+      "results": [
+        {
+          "metric": "space_group",
+          "value": "P3m1",
+          "unit": "",
+          "sample": "crystalline"
+        },
+        {
+          "metric": "lattice_parameters",
+          "value": "a = b = 11.1693(2) Å, c = 6.0363(1) Å",
+          "unit": "Å",
+          "sample": "crystalline"
+        },
+        {
+          "metric": "impurity_content",
+          "value": 5,
+          "unit": "wt. %",
+          "sample": "crystalline",
+          "notes": "LiCl impurity"
+        },
+        {
+          "metric": "morphology",
+          "value": "broad, low-intensity reflections indicative of amorphous structure",
+          "unit": "",
+          "sample": "ball-milled"
+        }
+      ],
+      "interpretation": "Ball milling produced largely amorphous Li3ErCl6; annealing yielded crystalline phase with trigonal symmetry.",
+      "prov": ["Figure 8B", "Transparent methods"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "temperature_range": "233–333 K (reported values at 233 K and 298 K)",
+        "frequency_range": "7 MHz – 100 mHz",
+        "amplitude": "10 mV",
+        "electrodes": "Au sputtered (200 nm each side)",
+        "pellet_density": ">80 % theoretical (amorphous), >75 % (crystalline)"
+      },
+      "results": [
+        {
+          "metric": "ionic_conductivity",
+          "value": 0.3,
+          "unit": "mS cm-1",
+          "sample": "ball-milled",
+          "temperature": 298
+        },
+        {
+          "metric": "activation_energy",
+          "value": 0.41,
+          "unit": "eV",
+          "sample": "ball-milled"
+        },
+        {
+          "metric": "ionic_conductivity",
+          "value": 0.05,
+          "unit": "mS cm-1",
+          "sample": "crystalline",
+          "temperature": 298
+        },
+        {
+          "metric": "activation_energy",
+          "value": 0.48,
+          "unit": "eV",
+          "sample": "crystalline"
+        }
+      ],
+      "interpretation": "Ball-milling enhances Li-ion conductivity relative to crystalline sample, likely due to defect introduction.",
+      "prov": ["Figure 8C-D", "Transparent methods"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

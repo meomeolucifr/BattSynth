@@ -1,0 +1,454 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Layered reduced graphene oxide with nanoscale interlayer gaps as a stable host for lithium metal anodes",
+    "doi": "10.1038/NNANO.2016.32",
+    "authors": [
+      "Dingchang Lin",
+      "Yayuan Liu",
+      "Zheng Liang",
+      "Hyun-Wook Lee",
+      "Jie Sun",
+      "Haotian Wang",
+      "Kai Yan",
+      "Jin Xie",
+      "Yi Cui"
+    ],
+    "journal": "Nature Nanotechnology",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["lithium metal anode", "reduced graphene oxide", "nanocomposite"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "layered Li–rGO composite film",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 626 (abstract)", "Figure 1", "Methods – Electrodes synthesis"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "sparked rGO film",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Figure 1", "Methods – Electrodes synthesis"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "graphene oxide (GO) solution",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "g L-1"
+      },
+      "notes": "Concentration of commercial GO solution used for vacuum filtration",
+      "prov": ["Methods – Electrodes synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reactant",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Lithium foils melted to provide molten Li for spark reaction and infusion",
+      "prov": ["Methods – Electrodes synthesis"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of dense GO film via vacuum filtration",
+        "operations": [
+          {
+            "action": "filter",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "membrane_type": "anodic aluminum oxide (AAO)",
+              "membrane_diameter": "47 mm",
+              "membrane_pore_size": "0.2 µm"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Electrodes synthesis"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Drying of GO film",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["GO film from step_1"]
+            },
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "notes": "Vacuum oven"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Electrodes synthesis"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Transfer dried GO film into argon-filled glove box",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {
+              "inputs": ["dried GO film"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Glove box with sub-ppm O₂"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Electrodes synthesis"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Spark reaction: partial reduction of GO by contact with molten Li",
+        "operations": [
+          {
+            "action": "melt",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Lithium melted in stainless-steel pan"
+          },
+          {
+            "action": "contact",
+            "parameters": {
+              "inputs": ["molten Li", "GO film"]
+            },
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Spark reaction occurs within seconds generating porous rGO"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (glove box)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 1a", "Methods – Electrodes synthesis"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Pressing sparked rGO film to obtain smooth surfaces",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["sparked rGO film"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Between two stainless steel plates"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Electrodes synthesis"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Molten Li infusion into rGO to form layered Li–rGO composite",
+        "operations": [
+          {
+            "action": "infuse",
+            "parameters": {
+              "inputs": ["pressed rGO film", "molten Li"]
+            },
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1,
+              "unit": "min"
+            },
+            "notes": "Li spreads across film in <1 min; film turns silver"
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "inputs": ["Li-infused rGO film"]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Room temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (glove box)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 1d", "Methods – Electrodes synthesis"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "GO film preparation by vacuum filtration"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Dry GO film at 60 °C for 48 h"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Transfer into Ar glove box"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Spark reaction with molten Li to obtain porous rGO"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Pressing to smooth rGO surfaces"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Infuse molten Li to create layered Li–rGO composite"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact duration of spark reaction not given (described as 'within seconds')",
+        "excerpt": "the spark reaction occurs within seconds"
+      },
+      {
+        "issue": "Amount of lithium used not specified",
+        "excerpt": "Li foils were first melted ... the spark reaction ... Li then infused"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "Pristine GO densely stacked; sparked rGO shows nanogaps hundreds of nm; Li–rGO retains layered structure",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Spark reaction enlarges interlayer spacing; Li fills gaps",
+      "prov": ["Figure 2a–f"]
+    },
+    {
+      "method": "Nitrogen sorption BET",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface area (GO)",
+          "value": 8.0,
+          "unit": "m2 g-1"
+        },
+        {
+          "metric": "surface area (sparked rGO)",
+          "value": 394.3,
+          "unit": "m2 g-1"
+        }
+      ],
+      "interpretation": "Porosity greatly increased after spark reaction",
+      "prov": ["Supplementary Fig. 6"]
+    },
+    {
+      "method": "FTIR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "OH peak intensity",
+          "value": "almost undetectable after spark",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Removal of residual water/–OH groups",
+      "prov": ["Figure 2g"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "C–O–H signal reduction",
+          "value": "≈50%",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Selective removal of –OH groups; partial reduction",
+      "prov": ["Figure 2h,i"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {
+        "bias": "-3.4 V"
+      },
+      "results": [
+        {
+          "metric": "dimension change during Li deposition",
+          "value": "minimal",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Li deposits within rGO layers, limiting expansion",
+      "prov": ["Figure 3k,l"]
+    },
+    {
+      "method": "EELS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li K-edge appearance",
+          "value": "55 eV peak after deposition",
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Confirms Li presence between rGO layers",
+      "prov": ["Figure 3m"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical testing",
+        "results": [
+          {
+            "equation": "",
+            "value": 80,
+            "unit": "mV",
+            "notes": "Overpotential at 3 mA cm−2"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 3390,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 250
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

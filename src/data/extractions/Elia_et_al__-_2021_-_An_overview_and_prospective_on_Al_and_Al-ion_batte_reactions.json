@@ -1,0 +1,289 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "An overview and prospective on Al and Al-ion battery technologies",
+    "doi": "10.1016/j.jpowsour.2020.228870",
+    "authors": [
+      "Giuseppe Antonio Elia",
+      "Kostiantyn V. Kravchyk",
+      "Maksym V. Kovalenko",
+      "Joaquín Chacón",
+      "Alex Holland",
+      "Richard G.A. Wills"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["aluminum battery", "aqueous electrolyte", "chloroaluminate melt", "TiO2 nanotube", "treated aluminum"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "TiO2 nanotube array electrode",
+      "molecular_formula": "TiO2",
+      "intended_role": "electrode",
+      "prov": ["Section 2.1.1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "treated aluminum metal (T-Al)",
+      "molecular_formula": "Al",
+      "intended_role": "electrode",
+      "prov": ["Section 2.2"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Titanium foil",
+      "molecular_formula": "Ti",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section 2.1.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ammonium fluoride",
+      "molecular_formula": "NH4F",
+      "ontology": {
+        "role": "electrolyte component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section 2.1.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Section 2.1.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Ethylene glycol",
+      "molecular_formula": "C2H6O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Section 2.1.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "1-Ethyl-3-methylimidazolium chloride",
+      "molecular_formula": "C6H11N2Cl",
+      "ontology": {
+        "role": "ionic liquid component",
+        "category": "organic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Aluminum chloride",
+      "molecular_formula": "AlCl3",
+      "ontology": {
+        "role": "Lewis acid",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Aluminum metal foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section 2.2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of TiO2 nanotube arrays by anodization of Ti foil.",
+        "operations": [
+          {
+            "action": "anodize",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"],
+              "voltage": {"value": 60, "unit": "V"},
+              "duration": {"value": 30, "unit": "min"},
+              "counter_electrode": "graphite"
+            },
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "Electrolyte composed of NH4F/water/ethylene glycol.",
+            "prov": ["Section 2.1.1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Section 2.1.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Surface treatment of aluminum metal to create artificial interphase (T-Al).",
+        "operations": [
+          {
+            "action": "immerse",
+            "parameters": {
+              "inputs": ["chem_7", "chem_5", "chem_6"],
+              "molar_ratio": "1:1.3 (EMIMCl:AlCl3)"
+            },
+            "duration": {"value": null, "unit": "min"},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "Treatment in conventional chloroaluminate melt to partially remove Al2O3 layer.",
+            "prov": ["Section 2.2"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Section 2.2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Anodization of Ti foil yields TiO2 nanotube array electrode (target_1)."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Chloroaluminate melt treatment converts Al foil to treated aluminum electrode (target_2)."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No specific amounts or concentrations for NH4F, water, and ethylene glycol provided.",
+        "excerpt": "prepared TiO2 nanotubes through the anodization of Ti foil in an NH4F/water/ethylene glycol electrolyte at 60 V for 30 min at room temperature"
+      },
+      {
+        "issue": "Duration and temperature for aluminum treatment not specified.",
+        "excerpt": "Treating the Al metal with conventional chloroaluminate led to partial removal of the Al2O3 passivation layer"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate_range": "20–100 mV s-1",
+        "electrolyte": "1 M AlCl3 aqueous"
+      },
+      "results": [
+        {
+          "metric": "capacity",
+          "value": 75,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "coulombic efficiency",
+          "value": 90,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Reversible redox peaks indicating diffusion-limited Al3+ insertion in TiO2 nanotubes.",
+      "prov": ["Section 2.1.1"]
+    },
+    {
+      "method": "Galvanostatic cycling (symmetric cell)",
+      "parameters": {
+        "current_density": {"value": 0.2, "unit": "mA cm-2"},
+        "time_limit": {"value": 60, "unit": "min"},
+        "electrolyte": "1–2 m Al(CF3SO3)3 in H2O"
+      },
+      "results": [
+        {
+          "metric": "overvoltage",
+          "value": 0.2,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Flat voltage profiles suggest reversible Al stripping/deposition on treated Al electrodes.",
+      "prov": ["Figure 2, Section 2.2"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 75,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T12:00:00Z",
+    "source_file": "provided_text_chunk.txt",
+    "processing_time": null
+  }
+}

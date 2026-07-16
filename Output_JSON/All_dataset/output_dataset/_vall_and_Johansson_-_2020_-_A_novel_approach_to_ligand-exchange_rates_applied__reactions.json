@@ -1,0 +1,247 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A novel approach to ligand-exchange rates applied to lithium-ion battery and sodium-ion battery electrolytes",
+    "doi": "10.1063/5.0005397",
+    "authors": [
+      "Gustav Åvall",
+      "Patrik Johansson"
+    ],
+    "journal": "Journal of Chemical Physics",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "lithium-ion battery",
+      "sodium-ion battery",
+      "electrolyte",
+      "AIMD",
+      "ligand exchange"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used at solvent:salt ratios 20:1, 10:1, 5:1 in both PC and ACN; corresponding molarities stated in text.",
+      "prov": ["Methods, Page 2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sodium hexafluorophosphate",
+      "molecular_formula": "NaPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used at solvent:salt ratios 20:1, 10:1, 5:1 in both PC and ACN; corresponding molarities stated in text.",
+      "prov": ["Methods, Page 2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Propylene carbonate",
+      "molecular_formula": "C4H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Density range 1.2216–1.3028 g/cm3 for LiPF6 systems; 1.2443–1.3918 g/cm3 for NaPF6 systems.",
+      "prov": ["Methods, Page 2"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Acetonitrile",
+      "molecular_formula": "C2H3N",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Density range 0.84157–1.0081 g/cm3 for LiPF6 systems; 0.8866–1.1240 g/cm3 for NaPF6 systems.",
+      "prov": ["Methods, Page 2"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Car–Parrinello Molecular Dynamics (AIMD)",
+      "parameters": {
+        "time_step": {
+          "value": 0.0001,
+          "unit": "fs",
+          "notes": "4 a.u. time step"
+        },
+        "temperature": {
+          "value": 300,
+          "unit": "K"
+        },
+        "plane_wave_cutoff": {
+          "value": 70,
+          "unit": "Ry"
+        },
+        "thermostat": "Nosé–Hoover"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Method, Page 2"]
+    },
+    {
+      "method": "Radial Distribution Function (RDF)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li+ total coordination number in ACN (20:1)",
+          "value": 4.0,
+          "unit": ""
+        },
+        {
+          "metric": "Li+ total coordination number in ACN (10:1)",
+          "value": 4.3,
+          "unit": ""
+        },
+        {
+          "metric": "Li+ total coordination number in ACN (5:1)",
+          "value": 4.2,
+          "unit": ""
+        },
+        {
+          "metric": "Na+ total coordination number in ACN (20:1)",
+          "value": 4.7,
+          "unit": ""
+        },
+        {
+          "metric": "Na+ total coordination number in ACN (10:1)",
+          "value": 5.9,
+          "unit": ""
+        },
+        {
+          "metric": "Na+ total coordination number in ACN (5:1)",
+          "value": 5.9,
+          "unit": ""
+        },
+        {
+          "metric": "Li+ total coordination number in PC (20:1)",
+          "value": 3.8,
+          "unit": ""
+        },
+        {
+          "metric": "Li+ total coordination number in PC (10:1)",
+          "value": 3.6,
+          "unit": ""
+        },
+        {
+          "metric": "Li+ total coordination number in PC (5:1)",
+          "value": 3.6,
+          "unit": ""
+        },
+        {
+          "metric": "Na+ total coordination number in PC (20:1)",
+          "value": 5.7,
+          "unit": ""
+        },
+        {
+          "metric": "Na+ total coordination number in PC (10:1)",
+          "value": 6.0,
+          "unit": ""
+        },
+        {
+          "metric": "Na+ total coordination number in PC (5:1)",
+          "value": 7.0,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Higher coordination numbers for Na+ and increasing anion participation at higher salt concentrations.",
+      "prov": ["Table I, Page 4"]
+    },
+    {
+      "method": "Residence Time Analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Residence time of ACN in LiPF6 electrolyte (20:1)",
+          "value": 27.5,
+          "unit": "ps"
+        },
+        {
+          "metric": "Residence time of ACN in NaPF6 electrolyte (20:1)",
+          "value": 11.0,
+          "unit": "ps"
+        },
+        {
+          "metric": "Residence time of PC in LiPF6 electrolyte (10:1)",
+          "value": 22.1,
+          "unit": "ps"
+        },
+        {
+          "metric": "Residence time of PC in NaPF6 electrolyte (10:1)",
+          "value": 16.5,
+          "unit": "ps"
+        }
+      ],
+      "interpretation": "Ligand-exchange rates are 60–80% higher in Na+ systems compared to Li+ systems.",
+      "prov": ["Table II, Page 9; Discussion"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

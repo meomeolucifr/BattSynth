@@ -1,0 +1,601 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Benzene-centered tripodal diglycolamides: synthesis, metal ion extraction, luminescence spectroscopy, and DFT studies",
+    "doi": "10.1039/c6dt04034a",
+    "authors": ["Andrea Leoncini", "Seraj Ahmad Ansari", "Prasanta Kumar Mohapatra", "Anil Boda", "Sheikh Musharaf Ali", "Arijit Sengupta", "Jurriaan Huskens", "Willem Verboom"],
+    "journal": "Dalton Transactions",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["diglycolamide", "ligand synthesis", "solvent extraction", "actinides", "luminescence", "DFT"]
+  },
+  "targets": [
+    {
+      "target_id": "target_LI",
+      "compound_name": "Ligand LI (1,3,5-triethylbenzene-based tripodal DGA)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Scheme 1", "Experimental – Preparation of ligand LI"]
+    },
+    {
+      "target_id": "target_LII",
+      "compound_name": "Ligand LII (benzene-1,3,5-triamide-based tripodal DGA)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Scheme 2", "Experimental – Preparation of ligand LII"]
+    },
+    {
+      "target_id": "target_LIII",
+      "compound_name": "Ligand LIII (1,3,5-tris(3-aminopropoxy)benzene based tripodal DGA)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Scheme 1", "Experimental – Preparation of ligand LIII"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "1,3,5-tris(2-aminoethyl)-2,4,6-triethylbenzene",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.134,
+        "unit": "g"
+      },
+      "notes": "Used for LI synthesis (0.46 mmol)",
+      "prov": ["Experimental – Preparation of ligand LI"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "4-nitrophenyl 2-(2-(dioctylamino)-2-oxoethoxy)acetate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.696,
+        "unit": "g"
+      },
+      "notes": "1.45 mmol; used in multiple syntheses (LI, N-Boc-en-DGA, LIII)",
+      "prov": ["Experimental – Preparation of ligand LI"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "triethylamine",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "base",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.157,
+        "unit": "g"
+      },
+      "notes": "1.97 mmol, dry; used for LI synthesis",
+      "prov": ["Experimental – Preparation of ligand LI"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "toluene",
+      "molecular_formula": "C7H8",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 15,
+        "unit": "mL"
+      },
+      "notes": "dry, reflux",
+      "prov": ["Experimental – Preparation of ligand LI"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "1,3,5-tris(3-aminopropoxy)benzene tristrifluoroacetate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.216,
+        "unit": "g"
+      },
+      "notes": "0.34 mmol, used for LIII synthesis",
+      "prov": ["Experimental – Preparation of ligand LIII"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "triethylamine (for LIII)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "base",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.308,
+        "unit": "g"
+      },
+      "notes": "3.04 mmol",
+      "prov": ["Experimental – Preparation of ligand LIII"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "1,3,5-benzenetricarbonyl trichloride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.154,
+        "unit": "g"
+      },
+      "notes": "0.58 mmol",
+      "prov": ["Experimental – Preparation of ligand LII"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "en-DGA",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.707,
+        "unit": "g"
+      },
+      "notes": "1.77 mmol; prepared previously",
+      "prov": ["Experimental – Preparation of ligand LII"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "sodium hydroxide",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "base",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.420,
+        "unit": "g"
+      },
+      "notes": "10.5 mmol",
+      "prov": ["Experimental – Preparation of ligand LII"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "diethyl ether",
+      "molecular_formula": "C4H10O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "mL"
+      },
+      "notes": "for LII addition solvent",
+      "prov": ["Experimental – Preparation of ligand LII"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 8,
+        "unit": "mL"
+      },
+      "notes": "suspension medium for LII synthesis",
+      "prov": ["Experimental – Preparation of ligand LII"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "hydrochloric acid 10%",
+      "molecular_formula": "HCl",
+      "ontology": {
+        "role": "wash",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 30,
+        "unit": "mL"
+      },
+      "notes": "3×10 mL washes in LII work-up",
+      "prov": ["Experimental – Preparation of ligand LII"]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "magnesium sulfate",
+      "molecular_formula": "MgSO4",
+      "ontology": {
+        "role": "drying agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used to dry organic layers",
+      "prov": ["Experimental – Preparation of ligand LII"]
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "trifluoroacetic acid",
+      "molecular_formula": "C2HF3O2",
+      "ontology": {
+        "role": "deprotecting agent",
+        "category": "organic acid"
+      },
+      "amount": {
+        "value": 15,
+        "unit": "mL"
+      },
+      "notes": "used for Boc deprotection of N-Boc-en-DGA",
+      "prov": ["Experimental – en-DGA preparation"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Synthesis of Ligand LI",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "notes": "Reagents dissolved in dry toluene"
+          },
+          {
+            "action": "reflux",
+            "parameters": {},
+            "duration": {
+              "value": 900,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "purify",
+            "parameters": {
+              "method": "Amberlyst A21 column followed by preparative TLC (CH2Cl2/MeOH 91:9)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Preparation of ligand LI"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Synthesis of Ligand LIII",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_5", "chem_2", "chem_6"]
+            },
+            "notes": "Solvent and temperature not explicitly stated"
+          },
+          {
+            "action": "purify",
+            "parameters": {
+              "method": "Preparative TLC (CH2Cl2/MeOH 93:7)"
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental – Preparation of ligand LIII"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Preparation of N-Boc-en-DGA (intermediate)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["N-Boc-ethylenediamine", "chem_2", "triethylamine"]
+            },
+            "notes": "Same protocol as LI; detailed solvent not provided"
+          },
+          {
+            "action": "purify",
+            "parameters": {
+              "method": "Amberlyst A21 column"
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental – N-Boc-en-DGA"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Deprotection to en-DGA",
+        "operations": [
+          {
+            "action": "stir",
+            "parameters": {
+              "inputs": ["N-Boc-en-DGA", "chem_14"]
+            },
+            "duration": {
+              "value": 900,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            }
+          },
+          {
+            "action": "evaporate_solvent",
+            "parameters": {}
+          },
+          {
+            "action": "partition",
+            "parameters": {
+              "solvents": ["chem_10", "saturated NaHCO3 solution"]
+            }
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "reagent": "saturated NaHCO3",
+              "times": 2
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "agent": "chem_13"
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental – en-DGA"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Synthesis of Ligand LII",
+        "operations": [
+          {
+            "action": "suspend",
+            "parameters": {
+              "inputs": ["chem_8", "chem_9", "chem_11"]
+            }
+          },
+          {
+            "action": "add_dropwise",
+            "parameters": {
+              "reagent": "chem_7",
+              "solvent": "chem_10"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            }
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            }
+          },
+          {
+            "action": "separate_phases",
+            "parameters": {}
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "reagent": "chem_12",
+              "times": 3
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "agent": "chem_13"
+            }
+          },
+          {
+            "action": "evaporate_solvent",
+            "parameters": {}
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental – Preparation of ligand LII"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Completed synthesis and purification of Ligand LI (yield 86%)."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Completed synthesis and purification of Ligand LIII (yield 60%)."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Synthesised N-Boc-en-DGA intermediate (yield 83%)."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Deprotected N-Boc-en-DGA to en-DGA (yield 93%)."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Completed synthesis and purification of Ligand LII (yield 86%)."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing reaction solvent and temperature details for LIII synthesis",
+        "excerpt": "LIII was prepared in the same way as LI using ... Product was purified by preparative thin layer chromatography (CH2Cl2/MeOH 93 : 7) to yield the product as a colourless oil in 60% yield."
+      },
+      {
+        "issue": "Incomplete solvent details for N-Boc-en-DGA synthesis",
+        "excerpt": "N-Boc-en-DGA was prepared in the same way as LI ... The product was purified by elution through a column loaded with Amberlyst® A21"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "1H NMR",
+      "parameters": {
+        "frequency": "400 MHz",
+        "solvent": "CDCl3"
+      },
+      "results": [
+        {
+          "metric": "key shifts for LI",
+          "value": "δ 7.80, 4.25, 4.09 ppm etc.",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Distinct OCH2 signals confirming DGA attachment",
+      "prov": ["Experimental – Preparation of ligand LI"]
+    },
+    {
+      "method": "IR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "amide carbonyl stretch LI",
+          "value": 1645,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Experimental – Preparation of ligand LI"]
+    },
+    {
+      "method": "HRMS (ESI)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "m/z [M+K+H]2+ for LI",
+          "value": 674.5333,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Matches calculated 674.5350",
+      "prov": ["Experimental – Preparation of ligand LI"]
+    },
+    {
+      "method": "Luminescence spectroscopy",
+      "parameters": {
+        "excitation_range": "not specified",
+        "emission_range": "550–750 nm"
+      },
+      "results": [
+        {
+          "metric": "Lifetime τ (LI–Eu complex)",
+          "value": 1.33,
+          "unit": "ms"
+        },
+        {
+          "metric": "Water molecules in coordination sphere (LI–Eu)",
+          "value": 0,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Inner-sphere dehydration enhances extraction",
+      "prov": ["Figure 3", "Table 2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Solvent extraction distribution coefficients",
+        "results": [
+          {
+            "description": "Distribution coefficient for Eu3+ (3 M HNO3) with LI",
+            "value": 390,
+            "unit": ""
+          },
+          {
+            "description": "Distribution coefficient for Am3+ (3 M HNO3) with LI",
+            "value": 235,
+            "unit": ""
+          },
+          {
+            "description": "Separation factor DEu/DAm at 1 M HNO3 with LI",
+            "value": 9.46,
+            "unit": ""
+          }
+        ],
+        "prov": ["Table 1", "Fig. 2"]
+      },
+      {
+        "method_name": "DFT binding energy calculations",
+        "results": [
+          {
+            "equation": "ΔG_ext for Am3+ with LI",
+            "value": -32.08,
+            "unit": "kcal mol-1"
+          }
+        ],
+        "prov": ["Table 4"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": 86,
+      "unit": "%",
+      "notes": "Highest isolated yield among ligands (LI)."
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T10:00:00Z",
+    "source_file": "DaltonTrans_2017_46_1431_excerpt.txt",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,377 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "ELECTROCHEMICAL PROPERTIES OF LiBr.H,O",
+    "doi": "",
+    "authors": [
+      "W. I. ARCHER",
+      "R. D. ARMSTRONG"
+    ],
+    "journal": "",
+    "year": 1981
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "solid electrolyte",
+      "lithium ion conduction",
+      "electrochemistry"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Lithium bromide monohydrate pellet",
+      "molecular_formula": "LiBr·H2O",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Experimental"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium bromide monohydrate",
+      "molecular_formula": "LiBr·H2O",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "ultrapure, as received from Lancaster Synthesis",
+      "prov": [
+        "Experimental"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Stainless steel",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "blocking electrode for Li+",
+      "prov": [
+        "Experimental"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "non-blocking electrode for Li+",
+      "prov": [
+        "Experimental"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as purge atmosphere during measurements",
+      "prov": [
+        "Experimental"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pellet formation of LiBr·H2O under pressure",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ],
+              "pressure": {
+                "value": 1000,
+                "unit": "kg cm-2"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Pellet pressed between stainless steel plungers in dry air glove box (<10 ppm H2O)."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "dry air (<10 ppm H2O)",
+          "pressure": {
+            "value": 1000,
+            "unit": "kg cm-2"
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Assembly of s.s./LiBr·H2O/s.s. cell for impedance measurement",
+        "operations": [
+          {
+            "action": "assemble_cell",
+            "parameters": {
+              "electrodes": [
+                "chem_2",
+                "chem_2"
+              ],
+              "electrolyte": "target_1"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 293,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "dry air or nitrogen",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Assembly of Li/LiBr·H2O/Li cell for impedance and polarisation studies",
+        "operations": [
+          {
+            "action": "assemble_cell",
+            "parameters": {
+              "electrodes": [
+                "chem_3",
+                "chem_3"
+              ],
+              "electrolyte": "target_1"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 293,
+              "unit": "K"
+            },
+            "notes": "Measurements carried out under nitrogen atmosphere."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "nitrogen",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Pressed LiBr·H2O into solid pellet under 1000 kg cm-2 at room temperature."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Mounted pellet between two stainless steel electrodes for AC impedance spectroscopy."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Mounted pellet between two lithium electrodes for further electrochemical studies."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact conductivity value at 22°C given with unclear characters ('?z 3 x lo-* R-l cm-‘').",
+        "excerpt": "The conductivity of LiBr.H,O at 22°C is ?z 3 x lo-* R-l cm-‘."
+      },
+      {
+        "issue": "Units for pressure (kg cm-2) not converted per units_policy.",
+        "excerpt": "pressure of IOOOkgcm~‘"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "1 MHz – 1 Hz",
+        "instrument": "Solartron 1174 frequency response analyser",
+        "temperature": "293 K"
+      },
+      "results": [
+        {
+          "metric": "conductivity",
+          "value": 3e-8,
+          "unit": "S cm-1",
+          "conditions": "22°C, α-phase"
+        }
+      ],
+      "interpretation": "LiBr·H2O exhibits ionic (non-electronic) conductivity; stainless steel electrodes show blocking behaviour.",
+      "prov": [
+        "Figure 1",
+        "Experimental"
+      ]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "1 MHz – 1 Hz",
+        "temperature": "306 K"
+      },
+      "results": [
+        {
+          "metric": "conductivity",
+          "value": 1e-6,
+          "unit": "S cm-1",
+          "conditions": "33°C, β-phase"
+        }
+      ],
+      "interpretation": "Conductivity increases by ~2 orders of magnitude after α→β phase transition at 33°C.",
+      "prov": [
+        "Figure 3"
+      ]
+    },
+    {
+      "method": "DC polarization",
+      "parameters": {
+        "potential_increment": "10 mV",
+        "potential_range": "0–0.2 V",
+        "temperature": "308 K"
+      },
+      "results": [
+        {
+          "metric": "interfacial resistance",
+          "value": 0,
+          "unit": "",
+          "conditions": "Li/LiBr·H2O interface at 35°C"
+        }
+      ],
+      "interpretation": "Negligible interfacial resistance between lithium metal and electrolyte at initial contact.",
+      "prov": [
+        "Results discussion"
+      ]
+    },
+    {
+      "method": "Decomposition potential measurement",
+      "parameters": {
+        "temperature": "309.5 K",
+        "atmosphere": "N2"
+      },
+      "results": [
+        {
+          "metric": "open circuit potential",
+          "value": 2.5,
+          "unit": "V",
+          "conditions": "Li vs s.s."
+        },
+        {
+          "metric": "oxidation onset",
+          "value": 2.5,
+          "unit": "V",
+          "conditions": "Br− → Br2"
+        },
+        {
+          "metric": "reduction onset",
+          "value": 2.5,
+          "unit": "V",
+          "conditions": "H+ → H2"
+        }
+      ],
+      "interpretation": "Electrolyte decomposes above +2.5 V (Br2 evolution) and below +2.5 V (H2 evolution) vs Li/Li+.",
+      "prov": [
+        "Figure 4"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "ln R vs 1/T",
+            "value": "discontinuity at 33°C confirming α→β phase transition",
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-27T10:42:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

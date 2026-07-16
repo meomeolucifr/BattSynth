@@ -1,0 +1,575 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "High Li ion conductivity in strontium doped Li7La3Zr2O12 garnet",
+    "doi": "10.1016/j.ssi.2013.04.016",
+    "authors": [
+      "Alexandre Dumon",
+      "Mian Huang",
+      "Yang Shen",
+      "Ce-Wen Nan"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid electrolyte",
+      "garnet",
+      "Li ion conductivity",
+      "strontium doping"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Sr-doped Li7La3Zr2O12",
+      "molecular_formula": "Li7La3−xSrxZr2O12 (x ≤ 0.25)",
+      "intended_role": "product",
+      "prov": [
+        "Experimental section"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "product",
+      "prov": [
+        "Experimental section"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10 wt% excess added to compensate for volatilization during annealing",
+      "prov": [
+        "Experimental section"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum oxide",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Pre-treated at 1173 K for 12 h in air before use",
+      "prov": [
+        "Experimental section"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconium dioxide",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental section"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Strontium carbonate",
+      "molecular_formula": "SrCO3",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Added at 0.9–8.4 wt% relative to final LLZ composition",
+      "prov": [
+        "Experimental section"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used as milling medium",
+      "prov": [
+        "Experimental section"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Planetary ball milling of Li2CO3, La2O3, ZrO2 and SrCO3 in ethanol",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "duration": {
+              "value": 1080,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Ball-milling with agate balls"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental section",
+          "Fig. 2 caption"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "First calcination/annealing",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": [
+                "step_1"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1073,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Intermediate grinding of annealed powder",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": [
+                "step_2"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Second calcination/annealing",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": [
+                "step_3"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1223,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Cold isostatic pressing of powder",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "step_4"
+              ]
+            },
+            "pressure": {
+              "value": 200,
+              "unit": "bar"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Pellet size ≈9 mm diameter, 2 mm thickness"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 200,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Sintering of pressed pellets",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": [
+                "step_5"
+              ]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1473,
+              "unit": "K"
+            },
+            "notes": "Performed for 20–24 h in Al2O3 crucible; atmosphere: air"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Planetary ball milling of raw materials with ethanol"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "First annealing at 1073 K"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Grinding of intermediate product"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Second annealing at 1223 K"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Cold isostatic pressing at 200 MPa"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Final sintering at 1473 K for 20–24 h forming Sr-doped LLZ pellets"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Annealing durations at 1073 K and 1223 K not specified",
+        "excerpt": "The raw materials were ... annealed twice respectively at 1073 K and 1223 K with subsequent grounding after each step."
+      },
+      {
+        "issue": "Exact SrCO3 quantity per batch not provided (only final wt% in product)",
+        "excerpt": "LLZ bulk ceramic samples with addition of 0.9%, 1.7%, 2.6%, 4.2% and 8.4% in weight percentage of Sr were prepared..."
+      },
+      {
+        "issue": "Ball‐milling time not explicitly stated in procedure (18 h inferred from TG/DSC caption)",
+        "excerpt": "Thermal analysis ... after ball milling in ethanol for 18 h"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "TG/DSC",
+      "parameters": {
+        "temperature_range": "300–1473 K",
+        "heating_rate": "20 K/min",
+        "atmosphere": "flowing air 30 mL/min"
+      },
+      "results": [
+        {
+          "metric": "weight loss",
+          "value": 24,
+          "unit": "%",
+          "notes": "undoped LLZ total weight loss"
+        },
+        {
+          "metric": "weight loss",
+          "value": 26,
+          "unit": "%",
+          "notes": "1.7 wt% Sr-doped LLZ total weight loss"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2"
+      ]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα1"
+      },
+      "results": [
+        {
+          "metric": "lattice parameter a",
+          "value": 12.980,
+          "unit": "Å",
+          "notes": "1.7 wt% Sr-doped LLZ"
+        },
+        {
+          "metric": "lattice parameter a",
+          "value": 12.986,
+          "unit": "Å",
+          "notes": "8.4 wt% Sr-doped LLZ"
+        },
+        {
+          "metric": "phase",
+          "value": "cubic garnet",
+          "unit": "",
+          "notes": "All Sr-doped samples"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 3",
+        "Table 1"
+      ]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "grain size",
+          "value": 10,
+          "unit": "µm",
+          "notes": "undoped LLZ (10–30 µm)"
+        },
+        {
+          "metric": "grain size",
+          "value": 100,
+          "unit": "µm",
+          "notes": "Sr-doped LLZ (>100 µm)"
+        },
+        {
+          "metric": "relative density",
+          "value": 94,
+          "unit": "%",
+          "notes": "1.7 wt% Sr-doped LLZ"
+        },
+        {
+          "metric": "relative density",
+          "value": 92,
+          "unit": "%",
+          "notes": "8.4 wt% Sr-doped LLZ"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 7",
+        "Table 1"
+      ]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "40 Hz–110 MHz",
+        "temperature": "297 K"
+      },
+      "results": [
+        {
+          "metric": "total ionic conductivity",
+          "value": 2.10e-4,
+          "unit": "S/cm",
+          "notes": "undoped LLZ, 24 h sinter"
+        },
+        {
+          "metric": "total ionic conductivity",
+          "value": 5e-4,
+          "unit": "S/cm",
+          "notes": "1.7 wt% Sr-doped LLZ, 20–24 h sinter"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 4",
+        "Fig. 6"
+      ]
+    },
+    {
+      "method": "Arrhenius analysis",
+      "parameters": {
+        "temperature_range": "263–353 K"
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.31,
+          "unit": "eV",
+          "notes": "1.7 wt% Sr-doped LLZ"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.34,
+          "unit": "eV",
+          "notes": "undoped LLZ"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 5",
+        "Fig. 6"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Equivalent circuit fitting (Zview)",
+        "results": [
+          {
+            "equation": "(RbQb)(RgbQgb)Qel or (RtotQtot)Qel depending on sample",
+            "value": null,
+            "unit": "",
+            "notes": "Used to separate bulk and grain boundary resistances"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T16:20:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

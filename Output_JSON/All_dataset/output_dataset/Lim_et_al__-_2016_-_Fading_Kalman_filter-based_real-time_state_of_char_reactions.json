@@ -1,0 +1,198 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Fading Kalman filter-based real-time state of charge estimation in LiFePO4 battery-powered electric vehicles",
+    "doi": "10.1016/j.apenergy.2016.01.096",
+    "authors": [
+      "Kai Chin Lim",
+      "Hany Ayad Bastawrous",
+      "Van-Huan Duong",
+      "Khay Wai See",
+      "Peng Zhang",
+      "Shi Xue Dou"
+    ],
+    "journal": "Applied Energy",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "battery characterization/performance study",
+    "tags": ["LiFePO4", "state of charge", "battery management", "Kalman filter"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiFePO4 battery",
+      "molecular_formula": "LiFePO4",
+      "intended_role": "study subject",
+      "prov": ["Introduction", "Experimental setup"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium iron phosphate battery",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "material",
+        "category": "battery"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Nominal voltage 3.2 V; nominal capacity 40 Ah",
+      "prov": ["Experimental setup"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "char_1",
+        "description": "Pulse discharge test to generate dynamic OCV–SoC curve (0.5 C current pulses, rest periods 3 min and 4 h)"
+      },
+      {
+        "step_ref": "char_2",
+        "description": "Optimization of fading factor (α = 0.99993) for Fading Kalman Filter using genetic algorithms on pulse discharge data"
+      },
+      {
+        "step_ref": "char_3",
+        "description": "UDDS load profile experiment (10 consecutive cycles) for real-time SoC estimation validation"
+      },
+      {
+        "step_ref": "char_4",
+        "description": "Real vehicle driving cycle experiment (28 cycles) for further validation of SoC estimation"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Capacity unit mismatch with schema",
+        "excerpt": "A LiFePO4 battery with nominal voltage of 3.2 V and nominal capacity C of 40 Ah was chosen for the experiments."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Pulse discharge test",
+      "parameters": {
+        "current_amplitude": "0.5 C",
+        "rest_period_1": "3 min",
+        "rest_period_2": "4 h"
+      },
+      "results": [
+        {
+          "metric": "OCV–SoC curve",
+          "value": "constructed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Dynamic OCV–SoC curve combining 3 min and 4 h relaxation used for subsequent estimation",
+      "prov": ["Figure 4", "Section 4.2"]
+    },
+    {
+      "method": "UDDS driving cycle test",
+      "parameters": {
+        "number_of_cycles": 10
+      },
+      "results": [
+        {
+          "metric": "SoC estimation maximum error",
+          "value": 3,
+          "unit": "%"
+        },
+        {
+          "metric": "Terminal voltage estimation error",
+          "value": 15,
+          "unit": "mV"
+        }
+      ],
+      "interpretation": "FKF maintained SoC error <3 %, outperforming conventional KF (>9 %)",
+      "prov": ["Figure 7a", "Figure 8a", "Table 1"]
+    },
+    {
+      "method": "Real vehicle driving cycle test",
+      "parameters": {
+        "number_of_cycles": 28
+      },
+      "results": [
+        {
+          "metric": "SoC estimation maximum error",
+          "value": 2.887,
+          "unit": "%"
+        },
+        {
+          "metric": "Terminal voltage estimation error",
+          "value": 15,
+          "unit": "mV"
+        }
+      ],
+      "interpretation": "FKF maintained low SoC error while KF error exceeded 14 %",
+      "prov": ["Figure 7b", "Figure 8b", "Table 1"]
+    },
+    {
+      "method": "Genetic algorithm optimization",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Optimized fading factor (α)",
+          "value": 0.99993,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Minimized terminal voltage estimation error in FKF recursion",
+      "prov": ["Section 4.3", "Figure 5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Statistical error analysis",
+        "results": [
+          {
+            "equation": "RMS error calculations (see Table 1)",
+            "value": {
+              "UDDS_FKF": 0.681,
+              "RealCycle_FKF": 1.237,
+              "UDDS_KF": 6.110,
+              "RealCycle_KF": 9.608
+            },
+            "unit": "%"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T18:54:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

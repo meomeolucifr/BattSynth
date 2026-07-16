@@ -1,0 +1,366 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Bayesian-Driven First-Principles Calculations for Accelerating Exploration of Fast Ion Conductors for Rechargeable Battery Application",
+    "doi": "10.1038/s41598-018-23852-y",
+    "authors": [
+      "Randy Jalem",
+      "Kenta Kanamori",
+      "Ichiro Takeuchi",
+      "Masanobu Nakayama",
+      "Hisatsugu Yamasaki",
+      "Toshiya Saito"
+    ],
+    "journal": "Scientific Reports",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational screening",
+    "tags": [
+      "DFT",
+      "Bayesian optimization",
+      "solid electrolyte",
+      "tavorite"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiScSbO4I",
+      "molecular_formula": "LiScSbO4I",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 3"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "NaErAsO4Cl",
+      "molecular_formula": "NaErAsO4Cl",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 3"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiMgSO4F",
+      "molecular_formula": "LiMgSO4F",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 7"
+      ]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "LiMgSeO4Cl",
+      "molecular_formula": "LiMgSeO4Cl",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 7"
+      ]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "LiZrGeO4F",
+      "molecular_formula": "LiZrGeO4F",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 7"
+      ]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "NaHfSiO4F",
+      "molecular_formula": "NaHfSiO4F",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 7"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiScSbO4I",
+      "molecular_formula": "LiScSbO4I",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "NaErAsO4Cl",
+      "molecular_formula": "NaErAsO4Cl",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiMgSO4F",
+      "molecular_formula": "LiMgSO4F",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 7"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiMgSeO4Cl",
+      "molecular_formula": "LiMgSeO4Cl",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 7"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiZrGeO4F",
+      "molecular_formula": "LiZrGeO4F",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 7"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "NaHfSiO4F",
+      "molecular_formula": "NaHfSiO4F",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 7"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_step_1",
+        "description": "DFT geometry optimization of tavorite-type AMXO4Z compounds."
+      },
+      {
+        "step_ref": "comp_step_2",
+        "description": "Nudged elastic band (NEB) calculations to obtain ion migration energy Eb."
+      },
+      {
+        "step_ref": "comp_step_3",
+        "description": "Bayesian optimization-driven iterative selection of new compositions for DFT evaluation."
+      },
+      {
+        "step_ref": "comp_step_4",
+        "description": "Convex hull phase stability calculations to obtain thermodynamic stability energy Ed."
+      },
+      {
+        "step_ref": "comp_step_5",
+        "description": "Density of states calculations for electronic band gap estimation."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT-NEB",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.104,
+          "unit": "eV",
+          "sample_id": "chem_1"
+        },
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.116,
+          "unit": "eV",
+          "sample_id": "chem_2"
+        },
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.200,
+          "unit": "eV",
+          "sample_id": "chem_3"
+        },
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.282,
+          "unit": "eV",
+          "sample_id": "chem_4"
+        },
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.246,
+          "unit": "eV",
+          "sample_id": "chem_5"
+        },
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.254,
+          "unit": "eV",
+          "sample_id": "chem_6"
+        }
+      ],
+      "interpretation": "Lower Eb indicates potentially faster Li/Na ion conduction.",
+      "prov": [
+        "Pages 3-7"
+      ]
+    },
+    {
+      "method": "DFT-Convex hull",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Thermodynamic stability energy (Ed)",
+          "value": 0.035,
+          "unit": "eV atom-1",
+          "sample_id": "chem_3"
+        },
+        {
+          "metric": "Thermodynamic stability energy (Ed)",
+          "value": 0.098,
+          "unit": "eV atom-1",
+          "sample_id": "chem_4"
+        },
+        {
+          "metric": "Thermodynamic stability energy (Ed)",
+          "value": 0.091,
+          "unit": "eV atom-1",
+          "sample_id": "chem_5"
+        },
+        {
+          "metric": "Thermodynamic stability energy (Ed)",
+          "value": 0.085,
+          "unit": "eV atom-1",
+          "sample_id": "chem_6"
+        }
+      ],
+      "interpretation": "Ed < 0.1 eV/atom suggests experimental synthesizability.",
+      "prov": [
+        "Page 7"
+      ]
+    },
+    {
+      "method": "DFT-DOS",
+      "parameters": {
+        "functional": "PBE"
+      },
+      "results": [
+        {
+          "metric": "Band gap",
+          "value": 4.177,
+          "unit": "eV",
+          "sample_id": "chem_5"
+        },
+        {
+          "metric": "Band gap",
+          "value": 4.876,
+          "unit": "eV",
+          "sample_id": "chem_6"
+        }
+      ],
+      "interpretation": "Wide band gaps indicate low electronic conductivity, suitable for solid electrolytes.",
+      "prov": [
+        "Figure 8b,c"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Bayesian optimization",
+        "results": [
+          {
+            "equation": "",
+            "value": 0.9,
+            "unit": "",
+            "description": "Probability of recovering optimal compound after ~30% of search space evaluated."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

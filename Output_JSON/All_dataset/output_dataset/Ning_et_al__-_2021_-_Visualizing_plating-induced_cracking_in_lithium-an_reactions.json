@@ -1,0 +1,497 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Visualizing plating-induced cracking in lithium-anode solid-electrolyte cells",
+    "doi": "10.1038/s41563-021-00967-8",
+    "authors": [
+      "Ziyang Ning",
+      "Dominic Spencer Jolly",
+      "Guanchen Li",
+      "Robin De Meyere",
+      "Shengda D. Pu",
+      "Yang Chen",
+      "Jitti Kasemchainan",
+      "Johannes Ihli",
+      "Chen Gong",
+      "Boyang Liu",
+      "Dominic L. R. Melvin",
+      "Anne Bonnin",
+      "Oxana Magdysyuk",
+      "Paul Adamson",
+      "Gareth O. Hartley",
+      "Charles W. Monroe",
+      "T. James Marrow",
+      "Peter G. Bruce"
+    ],
+    "journal": "Nature Materials",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid-state battery", "Li6PS5Cl", "argyrodite electrolyte", "in situ XCT", "dendrite propagation"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl electrolyte disc",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid electrolyte",
+      "prov": ["Methods – Synthesis of Li6PS5Cl"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Ground with P2S5 and LiCl in stoichiometric ratio",
+      "prov": ["Methods – Synthesis of Li6PS5Cl"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Ground with Li2S and LiCl in stoichiometric ratio",
+      "prov": ["Methods – Synthesis of Li6PS5Cl"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Ground with Li2S and P2S5 in stoichiometric ratio",
+      "prov": ["Methods – Synthesis of Li6PS5Cl"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glovebox atmosphere (O2 and H2O <1 ppm)",
+      "prov": ["Methods – Synthesis of Li6PS5Cl"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "ZrO2 balls",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "milling media",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 50,
+        "unit": "g"
+      },
+      "notes": "10-mm diameter",
+      "prov": ["Methods – Synthesis of Li6PS5Cl"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "graphite foil",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "support",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Disc placed on foil during sintering",
+      "prov": ["Methods – Synthesis of Li6PS5Cl"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "50 µm thick foil punched into 2 mm discs",
+      "prov": ["Methods – Li/Li6PS5Cl/Li cell assembly"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Grinding of precursors in argon glovebox",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Ground together in stoichiometric ratio under Ar (O2 and H2O <1 ppm)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (O2/H2O <1 ppm)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis of Li6PS5Cl"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Ball milling of precursor powder",
+        "operations": [
+          {
+            "action": "ball mill",
+            "parameters": {
+              "inputs": ["step_1"],
+              "media": "chem_5"
+            },
+            "duration": {
+              "value": 14,
+              "unit": "h"
+            },
+            "speed": {
+              "value": 600,
+              "unit": "rpm"
+            },
+            "notes": "1 g powder + 50 g ZrO2 balls, Planetary Micro Mill"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis of Li6PS5Cl"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Cold pressing of ball-milled powder into disc",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["step_2"],
+              "die_diameter": "5 mm"
+            },
+            "pressure": {
+              "value": 1,
+              "unit": "t"
+            },
+            "notes": "Uniaxial load"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis of Li6PS5Cl"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "High-temperature sintering at 600 °C",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["step_3"],
+              "support": "chem_6"
+            },
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Disc placed on graphite foil inside pre-heated furnace then cooled to RT"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (inside glovebox furnace)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis of Li6PS5Cl"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Re-grinding, pressing and annealing at 300 °C",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["step_4"]
+            },
+            "notes": ""
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["ground powder"],
+              "die_diameter": "5 mm"
+            },
+            "pressure": {
+              "value": 1,
+              "unit": "t"
+            },
+            "notes": ""
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["pressed disc"]
+            },
+            "temperature": {
+              "value": 573,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "notes": "Followed by cooling to room temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis of Li6PS5Cl"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Assembly of Li/Li6PS5Cl/Li symmetric cell",
+        "operations": [
+          {
+            "action": "assemble cell",
+            "parameters": {
+              "electrolyte": "target_1",
+              "electrodes": ["chem_7", "chem_7"]
+            },
+            "pressure": {
+              "value": null,
+              "unit": "bar"
+            },
+            "notes": "Li foil (50 µm) punched to 2 mm discs pressed on both sides; polymer ring used to define footprint"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Li/Li6PS5Cl/Li symmetric cell assembly and cycling"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Galvanostatic cycling / activation",
+        "operations": [
+          {
+            "action": "galvanostatic cycle",
+            "parameters": {
+              "current_density": "1.25 mA cm-2",
+              "capacity_per_cycle": "0.5 mAh cm-2"
+            },
+            "pressure": {
+              "value": 7,
+              "unit": "MPa"
+            },
+            "notes": "Performed with Gamry Reference 600+ potentiostat"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 7,
+            "unit": "MPa"
+          }
+        },
+        "prov": ["Figure 1a, Methods – Li/Li6PS5Cl/Li symmetric cell assembly and cycling"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Grinding Li2S, P2S5, LiCl under Ar"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Ball-milling precursor powder at 600 rpm for 14 h"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Pressing powder into 5 mm disc under 1 t"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Sintering disc at 600 °C, cool to RT"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Grind, re-press, anneal at 300 °C for 15 min"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Assemble Li/Li6PS5Cl/Li symmetric cell"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Galvanostatic cycling under 7 MPa at 1.25 mA cm-2"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of Li2S, P2S5, and LiCl not specified (only stoichiometric ratio).",
+        "excerpt": "Li2S, P2S5 and LiCl ... were ground together in the ratio corresponding to the stoichiometry of Li6PS5Cl."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Powder X-ray diffraction",
+      "parameters": {
+        "instrument": "Rigaku Miniflex",
+        "radiation": "Cu Kα1",
+        "atmosphere": "N2 glovebox (<1 ppm O2/H2O)"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods – Powder X-ray diffraction"]
+    },
+    {
+      "method": "Phase-contrast synchrotron XCT",
+      "parameters": {
+        "beam_energy": "35 keV",
+        "pixel_size": "1.63 µm",
+        "field_of_view": "4.2 × 3.5 mm²",
+        "exposure_time": "200 ms",
+        "projections": 3570
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods – In situ phase-contrast synchrotron XCT"]
+    },
+    {
+      "method": "Synchrotron XCT–diffraction mapping",
+      "parameters": {
+        "beam_energy": "54 keV",
+        "spot_size": "100 × 100 µm²",
+        "grid": "40 × 40"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods – In situ synchrotron XCT–diffraction mapping"]
+    },
+    {
+      "method": "Scanning Electron Microscopy",
+      "parameters": {
+        "instrument": "Zeiss Merlin",
+        "sample_prep": "Ultrasonic cutter cross-section"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods – Cross-sectional scanning electron microscopy"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "0.1 MHz – 0.1 Hz",
+        "amplitude": "10 mV"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods – EIS measurements"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,949 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Enhanced critical current density of Garnet Li7La3Zr2O12 solid electrolyte by incorporation of LiBr",
+    "doi": "10.1016/j.electacta.2022.139986",
+    "authors": [
+      "Xiaoning Ma",
+      "Youlong Xu"
+    ],
+    "journal": "Electrochimica Acta",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "solid-state electrolyte",
+      "LLZO",
+      "LiBr doping",
+      "critical current density"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "xLiBr\u2013LLZO pellet",
+      "molecular_formula": "",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly gives the nominal composition as \u201cx LiBr\u2013LLZO\u201d where LLZO is Li7La3Zr2O12 and x = 0.00\u20130.25 mol (Experimental section, p.2), and also reports an ICP-derived stoichiometry for the prepared 0.15 sample: \u201c0.136LiBr\u2013Li6.88La2.92Zr1.97O12\u201d (p.5). However, the extracted value for \u201cTarget Formula\u201d is blank, so there is no stated formula to verify against the text.",
+        "suggested_fix": "Provide the target formula as stated in the text, e.g., nominal: Li7La3Zr2O12 (LLZO) or xLiBr\u2013LLZO (x = 0\u20130.25); for the optimized sample: 0.15LiBr\u2013LLZO (nominal) and ICP-derived: 0.136LiBr\u2013Li6.88La2.92Zr1.97O12."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "0.15LiBr\u2013LLZO pellet",
+      "molecular_formula": "",
+      "intended_role": "optimized solid electrolyte",
+      "prov": [
+        "Abstract",
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the garnet electrolyte as cubic Li7La3Zr2O12 (LLZO) and discusses LiBr-added variants (xLiBr\u2013LLZO). However, the extracted value for \u201cTarget Formula\u201d is blank, and no blank/empty target formula is supported by the text. The document provides multiple explicit compositions (e.g., Li7La3Zr2O12; xLiBr\u2013LLZO; and an ICP-derived stoichiometry 0.136LiBr\u2013Li6.88La2.92Zr1.97O12), so the target formula is in fact specified.",
+        "suggested_fix": "Li7La3Zr2O12 (LLZO) (for the base garnet). If the target is the optimized LiBr-added electrolyte, use 0.15LiBr\u2013LLZO; if a concrete measured formula is required, use 0.136LiBr\u2013Li6.88La2.92Zr1.97O12 (ICP-OES)."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hydroxide monohydrate",
+      "molecular_formula": "LiOH\u00b7H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10% excess used to compensate Li loss",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "In the Experimental section (2.1), the paper explicitly lists the starting material as \u201cLiOH\u2022H2O (Aladdin, 99.9%)\u201d, i.e., lithium hydroxide monohydrate, but it does not provide a specific mass, molar amount, or volume for LiOH\u2022H2O (it only states \u201cStoichiometric amounts\u201d and \u201c10% LiOH\u2022H2O in excess\u201d). Therefore, the identity is supported and the extractor\u2019s \u201cAmount: Not specified in text\u201d is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum oxide",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Pre-dried 900 \u00b0C 12 h",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.97,
+        "reasoning": "The Experimental section explicitly lists the starting materials and includes lanthanum as La2O3 (lanthanum oxide), and it specifies that stoichiometric amounts were used (with 10% excess LiOH\u00b7H2O). Therefore, the claim that the amount of lanthanum oxide is \u201cNot specified in text\u201d is incorrect: while the exact mass is not given, the amount is specified qualitatively as stoichiometric for the nominal compositions xLiBr\u2013LLZO (x = 0.00\u20130.25 mol).",
+        "suggested_fix": "Lanthanum oxide (La2O3) | Amount: stoichiometric amount (for nominal xLiBr\u2013LLZO compositions; La2O3 dried at 900 \u00b0C for 12 h)."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconium dioxide",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper\u2019s Experimental section lists the starting materials as LiOH\u00b7H2O, La2O3, ZrO2, Al2O3, and anhydrous LiBr. It does not mention \u201czirconium dioxide\u201d by name; it uses the formula \u201cZrO2\u201d. Therefore the chemical identity as written (\u201cZirconium dioxide\u201d) is not explicitly present in the text, although it is the same compound as ZrO2. The \u201cAmount: Not specified in text\u201d part is also incorrect because the text states \u201cStoichiometric amounts of \u2026 ZrO2 \u2026 were used\u201d and gives nominal compositions xLiBr\u2013LLZO with x values, meaning the amount is specified qualitatively (stoichiometric) even if no gram/mole numbers are provided.",
+        "suggested_fix": "Chemical identity: ZrO2 (zirconium dioxide). Amount: stoichiometric amount (no explicit mass given); nominal compositions xLiBr\u2013LLZO with x = 0.00, 0.05, 0.10, 0.15, 0.20, 0.25 mol."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Aluminium oxide",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.96,
+        "reasoning": "The Experimental section explicitly lists Al2O3 (aluminum oxide) as a starting material: \u201cLiOH\u00b7H2O\u2026, La2O3\u2026, ZrO2\u2026, Al2O3\u2026, and anhydrous LiBr\u2026 were used as the starting materials.\u201d Therefore, the chemical identity is correct, but the claim \u201cAmount: Not specified in text\u201d is not supported because the text states \u201cStoichiometric amounts of \u2026 Al2O3 \u2026 were used\u201d (i.e., an amount is specified qualitatively as stoichiometric, and composition is given as x LiBr\u2013LLZO with x in mol plus 10% excess LiOH\u00b7H2O). No explicit numeric mass/moles for Al2O3 is provided, but it is still not accurate to say the amount is entirely \u2018not specified\u2019.",
+        "suggested_fix": "Aluminium oxide (Al2O3) | Amount: stoichiometric amount used as starting material (no explicit numeric quantity given)."
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium bromide",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "sintering aid",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "x = 0.00\u20130.25 mol; optimum 0.15 mol",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper clearly identifies the chemical as lithium bromide (LiBr) (e.g., Abstract: \u201cwe introduce lithium bromide (LiBr)\u2026\u201d, and Experimental section: \u201canhydrous LiBr\u201d). However, there is no single fixed mass/volume amount of LiBr given; instead LiBr content is specified as a variable molar fraction in the nominal composition x LiBr\u2013LLZO with x = 0.00\u20130.25 mol (and examples such as 0.15 mol). Thus, the extraction \u201cLiBr | Amount: Not specified in text\u201d is supported in the sense that no explicit standalone quantity (e.g., grams or mL) of LiBr is provided.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Isopropanol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used for ball-milling and polishing fluid",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.78,
+        "reasoning": "The Experimental section states the powders were ball milled in isopropanol for 20 h, confirming the chemical identity (isopropanol). However, the text does not provide a quantity/volume for isopropanol\u2014only that it was the milling medium and later used as polishing fluid (\u201cisopropyl alcohol as the polishing fluid\u201d)\u2014so \u201cAmount: Not specified in text\u201d is consistent with the document\u2019s omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Ethanol (anhydrous)",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "cleaning solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper mentions use of ethanol explicitly as \u201canhydrous ethanol\u201d for cleaning (\u201cAfter polishing, the contaminants on the surface of the pellets were cleaned with anhydrous ethanol.\u201d, Experimental section 2.1). No volume/mass/concentration of ethanol is given anywhere in the provided text. Therefore, the identity (anhydrous ethanol) is supported and the extracted note that the amount is not specified is also supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "current collector coating",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Ultrathin layer deposited by sputtering",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly mentions gold (Au) as an ultrathin layer deposited on both sides of the x LiBr\u2013LLZO pellets by magnetron sputtering (\u201can ultrathin layer of gold (Au) was deposited\u2026 under \u223c40 mA for 5 min\u201d). Therefore, the amount/condition is specified in the text and the extracted value \u201cAmount: Not specified\u201d is incorrect.",
+        "suggested_fix": "Gold (Au) ultrathin layer deposited on both sides of x LiBr\u2013LLZO pellets by magnetron sputtering at ~40 mA for 5 min (thickness not specified)."
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Melted onto electrolyte at 250 \u00b0C",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper repeatedly references metallic lithium used as electrodes (e.g., \u201cSymmetric Li | x LiBr\u2013LLZO | Li cells were prepared using two Li-metal disks as electrodes\u201d and \u201ccoin 2032-type cells were assembled with \u2026 a metallic Li anode\u201d), confirming the chemical identity as lithium metal. However, no mass, thickness, area, or other quantitative amount of lithium metal is provided\u2014only that Li-metal disks were used and melted at 250 \u00b0C. Therefore \u201cAmount: Not specified in text\u201d is correctly extracted.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "25 \u03bcL liquid electrolyte in EC/DMC 1:1",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly states in the Experimental section (cell assembly description) that a liquid electrolyte was used: \u201c25 \u03bcL (1 M LiPF6 dissolved in ethyl carbonate and dimethyl carbonate; 1:1 in volume)\u201d. This directly supports the extracted chemical identity (LiPF6) and amount/concentration (1 M).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Ethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of liquid electrolyte",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper does mention a liquid electrolyte component using \u201cethyl carbonate\u201d in the Experimental section (Page 3): \u201c1 M LiPF6 dissolved in ethyl carbonate and dimethyl carbonate; 1:1 in volume\u201d. However, the extracted chemical identity is given as \u201cEthyl carbonate\u201d (as if a standalone chemical), while the text specifies a solvent mixture of ethyl carbonate + dimethyl carbonate (1:1 by volume) containing 1 M LiPF6. Additionally, an amount is in fact specified for the liquid electrolyte: 25 \u03bcL was applied. Therefore, the claim \u201cAmount: Not specified in text\u201d is contradicted by the source text.",
+        "suggested_fix": "Ethyl carbonate (in mixture with dimethyl carbonate, 1:1 v/v; solvent for 1 M LiPF6); Amount: 25 \u03bcL liquid electrolyte applied to wet the cathode/electrolyte interface."
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of liquid electrolyte",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly mentions dimethyl carbonate as part of the liquid electrolyte composition used to wet the cathode/electrolyte interface: \u201c25 \u03bcL (1 M LiPF6 dissolved in ethyl carbonate and dimethyl carbonate; 1:1 in volume)\u201d (Experimental section, quasi-solid-state battery assembly). Thus, dimethyl carbonate is supported, but the amount is specified (25 \u03bcL of the liquid electrolyte, with DMC present at 1:1 v/v with ethyl carbonate).",
+        "suggested_fix": "Dimethyl carbonate (DMC) | Amount: present in 25 \u03bcL liquid electrolyte (1 M LiPF6 in ethyl carbonate:DMC = 1:1 v/v)"
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Lithium iron phosphate",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 70,
+        "unit": "mass%"
+      },
+      "notes": "Particle size 1\u20135 \u03bcm",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The paper discusses LiFePO4 (LFP) cathodes and specifies the cathode slurry composition as \u201c70-wt% LFP\u201d (Page 3, Section 2.2). However, it does not state \u201c70 mass%\u201d as a general chemical amount for lithium iron phosphate outside the slurry recipe, and the extracted field/provenance suggests an \u201cExperimental section\u201d chemical identity/amount entry rather than a cathode formulation detail. The only 70% value tied to LiFePO4 is explicitly 70 wt% in the cathode slurry composition, not \u201cmass%\u201d of the overall system/material.",
+        "suggested_fix": "Lithium iron phosphate (LiFePO4) | Amount: 70 wt% (in LFP cathode slurry formulation; slurry comprised 70-wt% LFP, 15-wt% carbon black, 15-wt% PVDF binder)."
+      }
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "Carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "15 wt% in LFP slurry; 15 wt% in NCM slurry",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly mentions carbon black as a component of both cathode slurries (LFP and NCM): \u201c15-wt% carbon black\u201d (Page 3, Section 2.2). However, the prompt\u2019s field asks for \u201cChemical Identity and Amount\u201d for carbon black, and while the amount is specified as 15 wt% in the cathode formulation, it is not specified as an absolute mass/volume (e.g., grams or mg) nor as an amount in the LLZO electrolyte composition. Thus the extractor\u2019s claim that the amount is \u201cNot specified in text\u201d can be considered supported only if the intended amount is an absolute quantity rather than wt%.",
+        "suggested_fix": "If the desired amount is the formulation fraction, update to: \u201cCarbon black | Amount: 15 wt% (in both LFP and NCM cathode slurries).\u201d"
+      }
+    },
+    {
+      "chemical_id": "chem_15",
+      "name": "Poly(vinylidene fluoride)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "15 wt% in LFP slurry; 10 wt% in NCM slurry",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly identifies poly(vinylidene fluoride) (PVDF) as the binder used in the cathode slurry formulations (Page 3, Section 2.2: \u201c15-wt% binder (poly(vinylidene fluoride), PVDF)\u201d for LFP and \u201c10-wt% binder PVDF\u201d for NCM). However, there is no standalone amount given for PVDF beyond these wt% proportions within the slurry compositions (no mass in grams, moles, or total PVDF used). Thus, the chemical identity is supported and the statement that the absolute amount is not specified in the text is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_16",
+      "name": "N-Methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 1.7,
+        "unit": "mL"
+      },
+      "notes": "For LFP slurry; 1.4 mL for NCM slurry",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The Experimental section (cell assembly) explicitly states: \u201cLiFePO4 (LFP) cathode slurry comprised ... and 1.7-mL N-methylpyrrolidinone (NMP).\u201d This supports the extracted chemical identity (N-methyl-2-pyrrolidone / NMP) and amount (1.7 mL).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_17",
+      "name": "LiNi0.8Co0.1Mn0.1O2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 75,
+        "unit": "mass%"
+      },
+      "notes": "Particle size 8\u201312 \u03bcm",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper does mention the cathode material LiNi0.8Co0.1Mn0.1O2 (NCM) and describes the NCM cathode slurry composition as containing 75-wt% NCM powders (with other components carbon black 15-wt% and PVDF binder 10-wt%). However, it never states an amount of \u201c75 mass%\u201d for LiNi0.8Co0.1Mn0.1O2 alone in a general sense; the 75-wt% applies specifically to the NCM cathode slurry formulation. The extracted value omits that context, making the claim unsupported as written under 'Chemical Identity and Amount'.",
+        "suggested_fix": "LiNi0.8Co0.1Mn0.1O2 (NCM) cathode slurry comprised 75 wt% NCM powders (with 15 wt% carbon black and 10 wt% PVDF binder)."
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Ball milling of precursor oxides with LiBr",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4",
+                "chem_5",
+                "chem_6"
+              ],
+              "duration": {
+                "value": 1200,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "10% excess LiOH\u00b7H2O; isopropanol as milling medium",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly states that the starting materials \u201cwere adequately ball milled in isopropanol for 20 h\u201d in the Experimental section (Preparation and characterization of x LiBr\u2013LLZO). This directly supports the synthesis operation being ball milling.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Drying and calcination to form xLiBr\u2013LLZO powders",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.83,
+              "reasoning": "The paper describes the preparation via solid-state reaction with steps including ball milling in isopropanol, drying the prepared slurry, calcination, pressing pellets, sintering, polishing, and cleaning. While it does mention the slurry was \u201cdried,\u201d it does not state a synthesis operation simply as \u201cdry\u201d (nor clearly identify \u201cdrying\u201d as the key/sole operation being extracted). Thus the extracted value is not explicitly supported as a standalone synthesis operation in the document.",
+              "suggested_fix": "If the field is meant to capture a specific operation mentioned in the synthesis, use: \u201cdried the prepared slurry\u201d (followed by \u201ccalcinated at 900 \u00b0C for 9 h\u201d, \u201cpressed into pellets\u201d, \u201csintered at 1160 \u00b0C for 4 h\u201d, etc.)."
+            }
+          },
+          {
+            "action": "calcine",
+            "parameters": {},
+            "temperature": {
+              "value": 1173.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 540,
+              "unit": "min"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.88,
+              "reasoning": "The paper explicitly describes a heat-treatment step where the dried slurry was \u201ccalcinated at 900 \u00b0C for 9 h to obtain x LiBr\u2013LLZO powders\u201d (Experimental section 2.1). This supports the synthesis operation being a calcination step (spelled \u2018calcinated\u2019 in the text).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.74,
+            "reasoning": "The paper does not state that the synthesis/sintering atmosphere was air. It mentions specific steps in different environments: (1) TGA was performed \u201cin air\u201d (a characterization condition, not synthesis), and (2) after Au deposition, pellets were transferred to an argon-filled glove box for cell assembly. The calcination/sintering steps (900 \u00b0C calcination; 1160 \u00b0C sintering) do not specify an atmosphere. Therefore, assigning the overall \u201cSynthesis Atmosphere\u201d as \u201cair\u201d is not explicitly supported.",
+            "suggested_fix": "Not specified (sintering/calcination atmosphere not stated). If the field is intended to capture measurement atmosphere for TGA, then it should be 'air' for TGA only."
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Pellet pressing and high-temperature sintering",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Pressure not specified",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The Experimental section explicitly states: \u201cThe x LiBr\u2013LLZO powders were pressed into pellets and sintered\u2026\u201d. This directly supports that a synthesis operation used is pressing (i.e., \u2018press\u2019).",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "sinter",
+            "parameters": {},
+            "temperature": {
+              "value": 1433.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly describes a sintering step in the synthesis. In the Experimental section (2.1), it states the powders were pressed into pellets and \u201csintered at 1160 \u25e6C for 4 h,\u201d and also references \u201cthe volatilization of lithium during the sintering process.\u201d Therefore the synthesis operation 'sinter' is supported.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Mechanical polishing and cleaning of pellets",
+        "operations": [
+          {
+            "action": "polish",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Abrasive papers 180\u20133000 mesh with isopropanol",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.96,
+              "reasoning": "The paper explicitly states that the obtained x LiBr\u2013LLZO pellets \u201cwere polished to a thickness of 1.4 mm using coarse and fine abrasive papers \u2026\u201d in the Experimental section (Preparation and characterization). This directly supports the synthesis operation being \u201cpolish.\u201d",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "clean",
+            "parameters": {
+              "inputs": [
+                "chem_7"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.78,
+              "reasoning": "The paper describes preparation steps (ball milling, drying, calcination, pressing, sintering, polishing, cleaning with anhydrous ethanol) but does not list a synthesis operation explicitly called \"clean\". The word \"clean\" is not used as a named operation; only \"cleaned with anhydrous ethanol\" appears as part of post-polishing treatment.",
+              "suggested_fix": "If the field is meant to capture a named operation, use \"polish\" or \"cleaned with anhydrous ethanol\" (post-polishing surface cleaning). If it is meant to capture a generic step label, it is not explicitly specified in the text."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Precursor mixing and milling",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper\u2019s Experimental section describes the process as a two-step solid-state reaction: starting materials were ball milled in isopropanol for 20 h, then dried and calcined (900 \u00b0C, 9 h), then powders pressed into pellets and sintered (1160 \u00b0C, 4 h). While ball milling (mixing) is mentioned, the text does not describe a distinct step called \u201cprecursor mixing and milling\u201d as a workflow timeline item, and it includes additional key steps beyond mixing/milling.",
+          "suggested_fix": "If the workflow timeline item is meant to capture the first processing step, use: \u201cStarting materials ball milled in isopropanol for 20 h (with 10% excess LiOH\u00b7H2O), then dried and calcined at 900 \u00b0C for 9 h; pressed and sintered at 1160 \u00b0C for 4 h.\u201d"
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Calcination to obtain xLiBr\u2013LLZO powders",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The workflow step \"Calcination to obtain xLiBr\u2013LLZO powders\" is explicitly stated in the Experimental section (2.1): \"The prepared slurry was dried and calcinated at 900 \u25e6C for 9 h to obtain x LiBr\u2013LLZO powders.\" Therefore the extracted workflow timeline item is supported by the paper text.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Pellet formation and sintering to dense electrolyte",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper does describe pressing powders into pellets and sintering at 1160 \u00b0C for 4 h to obtain dense LLZO-based electrolytes (Experimental section 2.1), but the extracted phrase \u201cPellet formation and sintering to dense electrolyte\u201d is not explicitly stated as a workflow timeline step/label in the document. It is an accurate paraphrase of the preparation procedure, yet not a verbatim or explicitly designated \u2018workflow timeline\u2019 entry.",
+          "suggested_fix": "If the field must reflect an explicit step from the text, use: \u201cx LiBr\u2013LLZO powders were pressed into pellets and sintered at 1160 \u00b0C for 4 h.\u201d"
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Post-processing of pellets",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.78,
+          "reasoning": "The paper explicitly describes post-processing steps applied to the sintered pellets: \u201cThe obtained x LiBr\u2013LLZO pellets were polished to a thickness of 1.4 mm\u2026 After polishing, the contaminants on the surface of the pellets were cleaned with anhydrous ethanol.\u201d This corresponds to a workflow stage of post-processing of pellets.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometric masses of reactants not provided",
+        "excerpt": "Stoichiometric amounts of LiOH\u00b7H2O, La2O3, ZrO2, Al2O3 and anhydrous LiBr \u2026 were used",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "Supported. In the Experimental section (2.1), the paper states only that \u201cStoichiometric amounts of LiOH\u00b7H2O, La2O3, ZrO2, Al2O3 and anhydrous LiBr \u2026 were used\u201d and gives processing details plus \u201c10% LiOH\u00b7H2O in excess,\u201d but it does not provide the exact stoichiometric masses (e.g., grams) of each reactant. Thus the identified workflow ambiguity (missing exact masses) is correct.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Pressing pressure not specified",
+        "excerpt": "The x LiBr\u2013LLZO powders were pressed into pellets",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "In the Experimental section (2.1), the paper states: \u201cThe x LiBr\u2013LLZO powders were pressed into pellets and sintered at 1160 \u25e6C for 4 h.\u201d No pressing pressure, uniaxial/CIP method, dwell time, or tooling details are provided anywhere else in the text. Thus the extracted issue (\u201cPressing pressure not specified\u201d) is supported by the document\u2019s omission of that parameter.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu-K\u03b1 (\u03bb=1.5418 \u00c5)",
+        "voltage": "40 kV",
+        "current": "40 mA"
+      },
+      "results": [
+        {
+          "metric": "phase",
+          "value": "cubic garnet",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results Fig.2a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "Supported. In the discussion of Fig. 2a (XRD), the text states that all diffraction peaks match the standard Li-garnet phase pattern and explicitly concludes: \u201cNo impurity peaks were found\u2026 indicating that the sintering conditions are suitable for preparing pure cubic LLZO electrolyte.\u201d It also notes the space group Ia-3d (cubic garnet structure). This directly supports the extracted XRD phase as cubic garnet.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "wavelength": "532 nm"
+      },
+      "results": [
+        {
+          "metric": "bands confirm cubic phase",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results Fig.2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly states that Raman spectroscopy confirms the cubic-phase garnet structure: in Results/Discussion section 3.1 describing Fig. 2b, it says \u201cRaman analysis results further confirmed that x LiBr\u2013LLZO electrolytes are cubic-phase garnet.\u201d This matches the extracted metric that Raman bands confirm cubic phase (even though no specific peak positions are extracted).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "1 MHz\u20131 Hz",
+        "amplitude": "10 mV",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 0.000762,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.286,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Highest conductivity at x=0.15",
+      "prov": [
+        "Results Fig.2c",
+        "Fig.2d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Supported by the paper text tied to Fig. 2c and Fig. 2d/Arrhenius analysis. The document explicitly states: (1) total ionic conductivity at 25 \u00b0C for 0.15 LiBr\u2013LLZO is 7.62 \u00d7 10\u22124 S cm\u22121 (reported in the Abstract and again in Results/Discussion near Fig. 2c). This equals 0.000762 S cm\u22121. (2) activation energy for 0.15 LiBr\u2013LLZO is 0.286 eV (stated near Fig. 2d: \u201cshowed the lowest activation energy of 0.286 eV\u201d).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "relative density",
+          "value": 96.27,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Dense microstructure for 0.15LiBr\u2013LLZO",
+      "prov": [
+        "Results Fig.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports that the 0.15 LiBr\u2013LLZO sample achieved a relative density of 96.27%. This appears in the abstract (Page 1) and again in the Results/Discussion describing Fig. 3: \u201c0.15 LiBr\u2013LLZO achieved the highest density of 96.27%.\u201d Thus the extracted SEM characterization metric/value is supported by the text, and the alleged provenance to Fig. 3 is consistent (the statement is in the Fig. 3 discussion on Page 4).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "CCD measurement (galvanostatic)",
+      "parameters": {
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "critical current density",
+          "value": 1.0,
+          "unit": "mA cm-2"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results Fig.5c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly reports a critical current density (CCD) of 1.0 mA cm\u22122 for the symmetric Li | 0.15LiBr\u2013LLZO | Li cell at 25 \u00b0C. This appears in the abstract (Page 1) and again in the CCD discussion describing Fig. 5c: \u201cthe CCD value of 0.15 LiBr\u2013LLZO electrolyte was determined to be 1.0 mA cm\u22122 at 25 \u00b0C.\u201d The extracted value matches exactly. The alleged provenance \u2018Results Fig.5c\u2019 is consistent with the text description of Fig. 5c.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Battery cycling",
+      "parameters": {
+        "cell": "Li|0.15LiBr\u2013LLZO|LFP",
+        "current_density": "0.3 C"
+      },
+      "results": [
+        {
+          "metric": "capacity retention after 300 cycles",
+          "value": 89.7,
+          "unit": "%"
+        },
+        {
+          "metric": "specific capacity after 300 cycles",
+          "value": 141.1,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results Fig.6e"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly reports the Li|0.15LiBr\u2013LLZO|LFP quasi-solid-state battery performance after 300 cycles: \u201cdelivered 141.1 mAh g\u22121 and the capacity retention reached 89.7%\u201d in the Results/Discussion section describing Fig. 6e, and the same values also appear in the abstract and conclusion. These directly match the extracted metrics (specific capacity after 300 cycles = 141.1 mAh g\u22121; capacity retention after 300 cycles = 89.7%).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "\u03c3T = A exp(-Ea/kT)",
+            "value": 0.286,
+            "unit": "eV"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.9,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank. The paper explicitly describes multiple analysis/characterization methods (e.g., TGA, XRD, Raman, XPS, SEM, TEM, ICP\u2013OES) and electrochemical testing methods (EIS, CV, LSV, galvanostatic cycling). Therefore, leaving this field empty is not supported by the source text (the information is present).",
+          "suggested_fix": "Analysis methods used include: TGA; XRD (Cu-K\u03b1) and Rietveld refinement; Raman spectroscopy; XPS; density by Archimedes method; SEM (cross-sectional); TEM/HRTEM with EDS mapping and FFT; ICP\u2013OES; electrochemical tests including EIS, CV, LSV, and galvanostatic cycling (CCD and long-term cycling) in symmetric Li|electrolyte|Li cells and full cells."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 141.1,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 300,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.95,
+      "reasoning": "The paper explicitly reports performance after \u201c300 cycles\u201d for the quasi-solid-state Li | LiFePO4 cell with 0.15LiBr\u2013LLZO electrolyte: the abstract states \u201ccapacity retention \u2026 after 300 cycles,\u201d and Results/Fig. 6e reiterates \u201cthe battery steadily went through 300 cycles.\u201d This supports a cycle life value of 300 cycles.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T10:49:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

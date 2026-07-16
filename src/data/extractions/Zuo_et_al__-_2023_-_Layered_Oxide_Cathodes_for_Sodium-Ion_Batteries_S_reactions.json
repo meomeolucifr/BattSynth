@@ -1,0 +1,267 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Layered Oxide Cathodes for Sodium-Ion Batteries: Storage Mechanism, Electrochemistry, and Techno-economics",
+    "doi": "10.1021/acs.accounts.2c00690",
+    "authors": ["Wenhua Zuo", "Alessandro Innocenti", "Maider Zarrabeitia", "Dominic Bresser", "Yong Yang", "Stefano Passerini"],
+    "journal": "Accounts of Chemical Research",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review_article",
+    "tags": ["sodium-ion batteries", "layered oxides", "electrolyte", "techno-economics"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na0.67Al0.05Mn0.95O2",
+      "molecular_formula": "Na0.67Al0.05Mn0.95O2",
+      "intended_role": "cathode material",
+      "prov": ["Page 285, Key Reference 2"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na0.67Al0.10Mn0.90O2",
+      "molecular_formula": "Na0.67Al0.10Mn0.90O2",
+      "intended_role": "cathode material",
+      "prov": ["Page 285, Key Reference 2"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na0.67Al0.20Mn0.80O2",
+      "molecular_formula": "Na0.67Al0.20Mn0.80O2",
+      "intended_role": "cathode material",
+      "prov": ["Page 285, Key Reference 2"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "F-14F electrolyte",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Figure 4 caption, Page 289"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sodium bis(fluorosulfonyl)imide",
+      "molecular_formula": "NaFSI",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "mol%",
+        "basis": "total electrolyte"
+      },
+      "notes": "",
+      "prov": ["Figure 4 caption, Page 289"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "N-butyl-N-methylpyrrolidinium bis(fluorosulfonyl)imide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "ionic liquid solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referred to as Pyr14FSI",
+      "prov": ["Figure 4 caption, Page 289"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "N-methyl-N-propylpyrrolidinium bis(fluorosulfonyl)imide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "ionic liquid solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referred to as Pyr13FSI",
+      "prov": ["Figure 4 caption, Page 289"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Sodium oxalate",
+      "molecular_formula": "Na2C2O4",
+      "ontology": {
+        "role": "sacrificial salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mentioned for Na compensation strategy",
+      "prov": ["Page 292"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of F-14F electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "ratio": "10 mol% NaFSI in Pyr14FSI"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 4 caption, Page 289"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Electrolyte preparation for sodium-ion battery testing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No detailed synthetic conditions (temperature, time) for cathode materials",
+        "excerpt": "The obtained pure P2-type Na0.67AlxMn1−xO2 (x=0.05,0.1,and 0.2) materials show good structural stability and promising performance."
+      },
+      {
+        "issue": "No explicit amounts of solvents or detailed procedure for electrolyte preparation beyond mol% ratio",
+        "excerpt": "F-14F: 10 mol % NaFSI in N-butyl-N-methylpyrrolidinium bis(fluorosulfonyl)imide (Pyr14FSI)."
+      },
+      {
+        "issue": "Capacity values described qualitatively (e.g., >3000 cycles) without numerical capacity",
+        "excerpt": "The obtained shale-like material exhibits outstanding rate capability and cycling stability (>3000 cycles)."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "samples": ["F-13F electrolyte", "F-14F electrolyte"]
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 1e-3,
+          "unit": "S cm-1",
+          "interpretation": "both electrolytes exhibit conductivity above 10^-3 S/cm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 4a, Page 289"]
+    },
+    {
+      "method": "Electrochemical stability window",
+      "parameters": {
+        "electrolytes": ["F-13F", "F-14F", "F-14T", "F-14FT"]
+      },
+      "results": [
+        {
+          "metric": "anodic stability (F-13F)",
+          "value": 4.89,
+          "unit": "V"
+        },
+        {
+          "metric": "anodic stability (F-14F)",
+          "value": 4.72,
+          "unit": "V"
+        },
+        {
+          "metric": "anodic stability (F-14T)",
+          "value": 4.97,
+          "unit": "V"
+        },
+        {
+          "metric": "anodic stability (F-14FT)",
+          "value": 4.95,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "F-13F shows highest stability among single-IL systems; mixed IL slightly higher.",
+      "prov": ["Figure 4c, Page 289"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "cell": "Na0.6Ni0.22Al0.11Mn0.66O2 // Na",
+        "electrolyte": "F-14F",
+        "voltage_window": "1.5–4.0 V"
+      },
+      "results": [],
+      "interpretation": "Profiles shown but no numerical capacity values stated.",
+      "prov": ["Figure 4d, Page 289"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Cost analysis",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": ">3000"
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-03-15T12:00:00Z",
+    "source_file": "acs.accounts.2c00690_section",
+    "processing_time": 0.35
+  }
+}

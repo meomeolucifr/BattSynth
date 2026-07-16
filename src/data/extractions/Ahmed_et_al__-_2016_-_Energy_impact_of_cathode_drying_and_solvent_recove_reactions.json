@@ -1,0 +1,518 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Energy impact of cathode drying and solvent recovery during lithium-ion battery manufacturing",
+    "doi": "10.1016/j.jpowsour.2016.04.102",
+    "authors": [
+      "Shabbir Ahmed",
+      "Paul A. Nelson",
+      "Kevin G. Gallagher",
+      "Dennis W. Dees"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "lithium-ion battery",
+      "cathode drying",
+      "NMP recovery",
+      "process energy analysis"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Dried cathode coating on aluminum foil",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 170"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Recovered N-methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "intended_role": "recovered solvent",
+      "prov": ["Page 171"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal oxide (e.g., LiMn2O4 or LiaNixMnyCozO2)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "94 wt % of dried cathode solids",
+      "prov": ["Page 169"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Carbon black (acetylene black, graphite)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "3 wt % of dried cathode solids",
+      "prov": ["Page 169"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Polyvinylidene difluoride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "3 wt % of dried cathode solids; dissolved in NMP",
+      "prov": ["Page 169"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "N-methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "4.134 × 10⁶ kg year⁻¹ evaporated in plant; purchase price 3.20 $/kg",
+      "prov": ["Table 1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "coolant/condensate",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 170"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Aluminum foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 169"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dry mixing of cathode solids",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "mass_ratio": "94:3:3"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 169"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of binder solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "PVDF dissolved in NMP"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 169"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Slurry formation",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["step_1", "step_2"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Water soluble slurry"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 169"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Coating slurry onto aluminum foil",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["step_3", "chem_6"],
+              "method": "slot die coating"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Both sides coated; dried thickness <80 µm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 169"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Drying to evaporate NMP",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["step_4"],
+              "air_flow": "37 m3 s⁻¹"
+            },
+            "temperature": {
+              "value": 413,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Dryer exit air contains 1150 ppm NMP"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "hot air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 170"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Air-to-air heat exchange with dryer exhaust",
+        "operations": [
+          {
+            "action": "heat_exchange",
+            "parameters": {
+              "heat_load": "2700 kW"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Recovers sensible heat before condensation"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Table 2"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Condensation of NMP and water",
+        "operations": [
+          {
+            "action": "condense",
+            "parameters": {
+              "temperature_out": 279,
+              "unit": "K"
+            },
+            "temperature": {
+              "value": 279,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Condenser cooling load 3508 kW"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Table 2"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Distillation to separate NMP",
+        "operations": [
+          {
+            "action": "distill",
+            "parameters": {
+              "temperature_max": 523,
+              "unit": "K"
+            },
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Heat load 394 kW; 99 % NMP recovery"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Table 1", "Table 2"]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Zeolite adsorption and regeneration",
+        "operations": [
+          {
+            "action": "adsorb",
+            "parameters": {
+              "inputs": ["chem_4"],
+              "zeolite_capacity": "0.001 g NMP g⁻¹"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "Cycle time 2 h; 85 % NMP recovery"
+          },
+          {
+            "action": "regenerate",
+            "parameters": {},
+            "temperature": {
+              "value": 323,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Make-up air heated >50 °C to desorb NMP"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 170", "Table 1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dry-mix cathode solids"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Dissolve PVDF in NMP"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Form slurry"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Coat slurry on Al foil"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Dry coated foil to remove NMP"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Recover heat from dryer exhaust"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Condense NMP and water"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Distill condensate to recover NMP"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Adsorb residual NMP on zeolite and regenerate"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No explicit quantities for solids mixing",
+        "excerpt": "polymeric binder such as polyvinylidene difluoride (PVDF) typically in an approximate mass ratio of 94:3:3 in the dried state"
+      },
+      {
+        "issue": "Thickness unit ambiguous",
+        "excerpt": "The dried coating thicknesses are typically less than 80 mm"
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Process energy calculation",
+        "results": [
+          {
+            "metric": "Energy demand per kg NMP",
+            "value": 10.2,
+            "unit": "kWh"
+          },
+          {
+            "metric": "Energy demand per 10 kWh battery pack",
+            "value": 421,
+            "unit": "kWh"
+          }
+        ],
+        "prov": ["Page 171"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T16:15:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

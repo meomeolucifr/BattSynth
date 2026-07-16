@@ -1,0 +1,269 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Predicting the Na+ Ion Transport Properties of NaSICON  Materials  Using Density Functional Theory and Kinetic Monte Carlo",
+    "doi": "",
+    "authors": [
+      "Judith Schuett",
+      "Antonia S. Kuhn",
+      "Steffen Neitzel-Grieshammer"
+    ],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "NaSICON",
+      "ionic conductivity",
+      "DFT",
+      "CI-NEB",
+      "Kinetic Monte Carlo"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na1+xZr2SixP3−xO12",
+      "molecular_formula": "",
+      "intended_role": "material under study",
+      "prov": [
+        "Supporting Information Page 1"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na1+xHf2SixP3−xO12",
+      "molecular_formula": "",
+      "intended_role": "material under study",
+      "prov": [
+        "Supporting Information Page 1"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na1+xSn2SixP3−xO12",
+      "molecular_formula": "",
+      "intended_role": "material under study",
+      "prov": [
+        "Supporting Information Page 1"
+      ]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_step_1",
+        "description": "DFT lattice relaxation of Na1M2P3O12 (M = Zr4+, Hf4+, Sn4+) primitive rhombohedral cells with 42 atoms using plane-wave cutoff 520 eV."
+      },
+      {
+        "step_ref": "comp_step_2",
+        "description": "Calculation of Na2–Na2 and Na2–Si4+ pair interaction energies by introducing defect pairs and evaluating energies at various separations."
+      },
+      {
+        "step_ref": "comp_step_3",
+        "description": "DFPT evaluation of Born effective charges and relative permittivity for cells containing additional Na+ and/or Si4+ ions."
+      },
+      {
+        "step_ref": "comp_step_4",
+        "description": "CI-NEB calculations with five images to obtain migration energy profiles for 80°, 90°, and 180° Na+ migration paths in compositions with x = 0 and x = 3."
+      },
+      {
+        "step_ref": "comp_step_5",
+        "description": "Kinetic Monte Carlo simulations (10×10×10 supercell) to compute ionic conductivities over 450–700 K for 0.01 ≤ x ≤ 2.8 without explicit pair interactions."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT lattice relaxation",
+      "parameters": {
+        "energy_cutoff": {
+          "value": 520,
+          "unit": "eV"
+        }
+      },
+      "results": [
+        {
+          "metric": "lattice parameter a increase with cation size",
+          "value": "",
+          "unit": ""
+        },
+        {
+          "metric": "cell volume V increase with cation size",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Larger M-cation Shannon radius leads to expanded lattice.",
+      "prov": [
+        "Figure S2"
+      ]
+    },
+    {
+      "method": "Electric field conductivity calculation",
+      "parameters": {
+        "electric_field_strength": {
+          "value": 1e7,
+          "unit": "V m-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "σ vs Ex trend",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure S1"
+      ]
+    },
+    {
+      "method": "DFPT",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Born effective charge q̅B,Na2 (Zr system)",
+          "value": 1.02,
+          "unit": "e"
+        },
+        {
+          "metric": "Relative permittivity ε̅r (Zr system with two Na+)",
+          "value": 11.12,
+          "unit": "A s V−1 m−1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table S4"
+      ]
+    },
+    {
+      "method": "CI-NEB",
+      "parameters": {
+        "images": 5
+      },
+      "results": [
+        {
+          "metric": "migration energy profile M=Zr4+, x=0, 90°",
+          "value": "",
+          "unit": "eV"
+        },
+        {
+          "metric": "presence of mid-Na site local minimum (M = Zr4+, x=3, 180°)",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Larger cations enable mid-Na site stabilization, potentially facilitating Na+ migration.",
+      "prov": [
+        "Figure S3"
+      ]
+    },
+    {
+      "method": "Kinetic Monte Carlo",
+      "parameters": {
+        "temperature_range": "450-700 K",
+        "cell_size": "10×10×10"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity vs substitution x (M = Zr4+)",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Conductivity maxima shift slightly among different M cations; Sn4+ shows lower values due to higher migration barriers.",
+      "prov": [
+        "Figure S11",
+        "Figure S12"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Pair interaction energy computation",
+        "results": [
+          {
+            "equation": "",
+            "value": "",
+            "unit": "",
+            "notes": "Na2–Na2 pair energies range 0.00–0.38 eV depending on distance and M-cation."
+          },
+          {
+            "equation": "",
+            "value": "",
+            "unit": "",
+            "notes": "Na2–Si pair energies range −0.78–0.00 eV depending on distance and M-cation."
+          }
+        ],
+        "prov": [
+          "Table S1",
+          "Table S2"
+        ]
+      },
+      {
+        "method_name": "Relative configurational energy evaluation",
+        "results": [
+          {
+            "value": -0.23,
+            "unit": "eV",
+            "notes": "Zr system smallest P5+–VNa distance."
+          },
+          {
+            "value": -0.26,
+            "unit": "eV",
+            "notes": "Hf system smallest P5+–VNa distance."
+          },
+          {
+            "value": -1.18,
+            "unit": "eV",
+            "notes": "Sn system smallest P5+–VNa distance."
+          }
+        ],
+        "prov": [
+          "Table S3"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

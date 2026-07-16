@@ -1,0 +1,377 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "High liquid–liquid extraction selectivity of Fe(II) and Pb(II) with TD-DFT theoretical calculations of long chain acid pyrazole- and triazole-based ligands",
+    "doi": "10.1080/23312009.2016.1230359",
+    "authors": [
+      "Morad Lamsayah",
+      "Mohamed Khoutoul",
+      "Abdelilah Takfaoui",
+      "Rachid Touzani"
+    ],
+    "journal": "Cogent Chemistry",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "synthetic study",
+    "tags": [
+      "pyrazole ligands",
+      "triazole ligands",
+      "liquid–liquid extraction",
+      "heavy metals"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_L1",
+      "compound_name": "11-(((3,5-dimethyl-1H-pyrazol-1-yl)methyl)amino)undecanoic acid",
+      "molecular_formula": "H-pyrazol-1-yl",
+      "intended_role": "product",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "target_id": "target_L2",
+      "compound_name": "11-(Bis((3,5-dimethyl-1H-pyrazol-1-yl)methyl)amino)undecanoic acid",
+      "molecular_formula": "CH3Pz",
+      "intended_role": "product",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "target_id": "target_L3",
+      "compound_name": "11-(Bis((1H-1,2,4-triazol-1-yl)methyl)amino)undecanoic acid",
+      "molecular_formula": "H-pyrazol-1-yl",
+      "intended_role": "product",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "target_id": "target_L4",
+      "compound_name": "11-(Bis((1H-pyrazol-1-yl)methyl)amino)undecanoic acid",
+      "molecular_formula": "H-pyrazol-1-yl",
+      "intended_role": "product",
+      "prov": [
+        "Page 4"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "(3,5-dimethyl-1H-pyrazol-1-yl)methanol",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "(1H-pyrazol-1-yl)methanol",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "(1H-1,2,4-triazol-1-yl)methanol",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "11-aminoundecanoic acid",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "acetonitrile",
+      "molecular_formula": "C2H3N",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Condensation to form ligands L1–L4",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_1/chem_2/chem_3"
+              ],
+              "solvent": "chem_5"
+            },
+            "notes": "One equivalent of each reactant"
+          },
+          {
+            "action": "heat_reflux",
+            "parameters": {},
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Described as 'heated under reflux for 4 h' (Page 3)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 3"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of ligands L1–L4 via condensation in acetonitrile under reflux for 4 h."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact quantities of reactants and solvent volume are not provided.",
+        "excerpt": "by condensation of one equivalent of ... with one equivalent of 11 aminoundecanoic acid in acetonitrile and the mixture was heated under reflux for 4 h."
+      },
+      {
+        "issue": "Reflux temperature not specified; assumed room-temperature solvent boiling point.",
+        "excerpt": "mixture was heated under reflux for 4 h."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "FTIR",
+      "parameters": {
+        "technique": "KBr pellet"
+      },
+      "results": [
+        {
+          "metric": "C=O stretch (L1)",
+          "value": 1732,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "C=N stretch (L1)",
+          "value": 1508,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "method": "1H NMR",
+      "parameters": {
+        "frequency": "300.14 MHz",
+        "solvent": "CDCl3"
+      },
+      "results": [
+        {
+          "metric": "δ(N–CH2–N) for L1",
+          "value": 4.87,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "method": "13C NMR",
+      "parameters": {
+        "frequency": "75.47 MHz",
+        "solvent": "CDCl3"
+      },
+      "results": [
+        {
+          "metric": "C=O carbon (L1)",
+          "value": 178.24,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "method": "Mass Spectrometry (ESI)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "m/z (L1) [M+Na]+",
+          "value": 332.02,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Page 4"
+      ]
+    },
+    {
+      "method": "Melting Point",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "mp (L3)",
+          "value": 52,
+          "unit": "°C"
+        },
+        {
+          "metric": "mp (L4)",
+          "value": 46,
+          "unit": "°C"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Page 4"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Atomic Absorption Spectroscopy",
+        "results": [
+          {
+            "metric": "Extraction efficiency of Fe(II) with L2",
+            "value": 97.28,
+            "unit": "%"
+          },
+          {
+            "metric": "Extraction efficiency of Pb(II) with L3",
+            "value": 91.62,
+            "unit": "%"
+          }
+        ],
+        "prov": [
+          "Page 1"
+        ]
+      },
+      {
+        "method_name": "Back-extraction study",
+        "results": [
+          {
+            "metric": "Fe(II) recovery with H2SO4 using L3",
+            "value": 92.12,
+            "unit": "%"
+          },
+          {
+            "metric": "Pb(II) recovery with HNO3 using L3",
+            "value": 85.66,
+            "unit": "%"
+          }
+        ],
+        "prov": [
+          "Page 9"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

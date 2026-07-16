@@ -1,0 +1,416 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium ion conduction mechanism in LiInI4 studied by single crystal 7Li NMR",
+    "doi": "10.1016/j.ssi.2011.02.020",
+    "authors": [
+      "Koji Yamada",
+      "Shoji Matsuyama",
+      "Yasumasa Tomita",
+      "Yohei Yamane"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "inorganic solid-state synthesis and characterization",
+    "tags": ["LiInI4", "solid electrolyte", "single crystal", "NMR", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiInI4 single crystal",
+      "molecular_formula": "LiInI4",
+      "intended_role": "product",
+      "prov": ["Section 2.1 Sample preparation"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Indium",
+      "molecular_formula": "In",
+      "ontology": {
+        "role": "reactant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section 2.1 Sample preparation"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Iodine",
+      "molecular_formula": "I2",
+      "ontology": {
+        "role": "reactant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section 2.1 Sample preparation"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Indium(III) iodide",
+      "molecular_formula": "InI3",
+      "ontology": {
+        "role": "intermediate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Synthesized from elements, purified by distillation, refined by Bridgman technique.",
+      "prov": ["Section 2.1 Sample preparation"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium iodide",
+      "molecular_formula": "LiI",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Dried at 523 K for 1440 min in vacuo.",
+      "prov": ["Section 2.1 Sample preparation"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiInI4",
+      "molecular_formula": "LiInI4",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Final single crystal obtained by Bridgman growth from melt.",
+      "prov": ["Section 2.1 Sample preparation"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Synthesis of InI3 from elemental indium and iodine in a side-arm flask, followed by distillation purification.",
+        "operations": [
+          {
+            "action": "react",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Side-arm flask; no quantitative details provided."
+          },
+          {
+            "action": "distill",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Purification step."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1 Sample preparation"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Refinement of InI3 single crystal using Bridgman technique.",
+        "operations": [
+          {
+            "action": "bridgman_growth",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1 Sample preparation"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Drying of LiI in vacuo.",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "Original text: 'ca 250 °C for one day in vacuo.'"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1 Sample preparation"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Growth of LiInI4 single crystal from the melt using a Bridgman furnace.",
+        "operations": [
+          {
+            "action": "bridgman_growth",
+            "parameters": {
+              "inputs": ["chem_5"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Synthesized from melt; specific starting composition not stated."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1 Sample preparation"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Elemental synthesis and purification of InI3."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Single-crystal refinement of InI3 by Bridgman."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Vacuum drying of LiI at 523 K for 24 h."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Bridgman growth of LiInI4 single crystal from melt."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Starting composition for LiInI4 growth not specified.",
+        "excerpt": "\"Single crystal of LiInI4 was synthesized from the melt using a Bridgman furnace\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Powder XRD",
+      "parameters": {
+        "instrument": "Bruker D8",
+        "analysis": "Rietveld (RIETAN)"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameter_a",
+          "value": 8.2680,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice_parameter_b",
+          "value": 7.4425,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice_parameter_c",
+          "value": 15.0765,
+          "unit": "Å"
+        },
+        {
+          "metric": "beta_angle",
+          "value": 92.67,
+          "unit": "degree"
+        }
+      ],
+      "interpretation": "Confirmed monoclinic LiInI4 (space group P21/c).",
+      "prov": ["Section 2.1 Sample preparation"]
+    },
+    {
+      "method": "DSC",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "exothermic_peak",
+          "value": 340,
+          "unit": "K"
+        },
+        {
+          "metric": "melting_point",
+          "value": 510,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "No intrinsic phase transition; peak at 340 K attributed to surface hydrate.",
+      "prov": ["Section 3.1 DSC measurement"]
+    },
+    {
+      "method": "Complex Impedance",
+      "parameters": {
+        "frequency_range": "4 Hz–1 MHz",
+        "electrodes": "SUS304",
+        "pressure_applied": "1 t/cm2 (≈981 bar)"
+      },
+      "results": [
+        {
+          "metric": "activation_energy",
+          "value": 71,
+          "unit": "kJ mol-1"
+        }
+      ],
+      "interpretation": "Bulk ionic conductivity of LiInI4.",
+      "prov": ["Section 3.2 Complex impedance measurement"]
+    },
+    {
+      "method": "7Li NMR",
+      "parameters": {
+        "magnetic_field": "6.4 T",
+        "frequency": "104.5 MHz"
+      },
+      "results": [
+        {
+          "metric": "activation_energy_motional_narrowing",
+          "value": 37,
+          "unit": "kJ mol-1"
+        },
+        {
+          "metric": "activation_energy_site_exchange",
+          "value": 73,
+          "unit": "kJ mol-1"
+        },
+        {
+          "metric": "site_exchange_onset_temperature",
+          "value": 380,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Observed coalescence of satellite transitions indicating Li+ site exchange.",
+      "prov": ["Section 3.3 7Li NMR"]
+    },
+    {
+      "method": "115In NMR",
+      "parameters": {
+        "magnetic_field": "6.4 T",
+        "frequency": "59.1 MHz"
+      },
+      "results": [],
+      "interpretation": "No phase transition detected between 300–420 K.",
+      "prov": ["Section 3.3 115In NMR"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Conductivity calculation from NMR exchange rates",
+        "results": [
+          {
+            "equation": "σ = n·d^2·(ze)^2·k_ex /(k_B·T)",
+            "value": null,
+            "unit": "S cm-1",
+            "notes": "Calculated conductivities matched impedance data."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

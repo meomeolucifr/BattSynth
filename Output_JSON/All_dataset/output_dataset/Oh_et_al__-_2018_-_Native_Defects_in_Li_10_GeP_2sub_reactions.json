@@ -1,0 +1,197 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Native Defects in Li10GeP2S12 and Their Effect on Lithium Diffusion",
+    "doi": "10.1021/acs.chemmater.8b01163",
+    "authors": [
+      "Kyungbae Oh",
+      "Donghee Chang",
+      "Byungju Lee",
+      "Do-Hoon Kim",
+      "Gabin Yoon",
+      "Inchul Park",
+      "Byunghoon Kim",
+      "Kisuk Kang"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["solid electrolyte", "defects", "lithium diffusion", "AIMD", "DFT"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page 4995 (Abstract)", "Figure 1"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Ab initio molecular dynamics (AIMD)",
+      "parameters": {
+        "temperature_range": "500-1300 K",
+        "time_step": "2 fs",
+        "supercell": "2×2×1",
+        "ensemble": "NVT (Nosé–Hoover)",
+        "simulation_time": "50-200 ps"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods section, Page 4997"]
+    },
+    {
+      "method": "Density Functional Theory (DFT)",
+      "parameters": {
+        "functional": "PBE (GGA)",
+        "cutoff_energy": "520 eV",
+        "k_points": "4×4×2 (1×1×1 cell)",
+        "relaxation_force_threshold": "0.02 eV Å-1"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods section, Page 4996"]
+    },
+    {
+      "method": "Hybrid DFT (HSE06)",
+      "parameters": {
+        "mixing_parameter": "0.25",
+        "range_separation": "0.2",
+        "cutoff_energy": "340 eV",
+        "k_points": "2×2×1 (1×1×1 cell)"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods section, Page 4996"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Ionic conductivity and activation energy from AIMD",
+        "results": [
+          {
+            "sample": "pristine Li10GeP2S12",
+            "defect_type": "none",
+            "ionic_conductivity": {
+              "value": 34,
+              "unit": "mS cm-1"
+            },
+            "activation_energy": {
+              "value": 0.19,
+              "unit": "eV"
+            },
+            "prov": ["Table 1, Page 5000"]
+          },
+          {
+            "sample": "Pa configurational defect",
+            "defect_type": "Pa",
+            "ionic_conductivity": {
+              "value": 70,
+              "unit": "mS cm-1"
+            },
+            "activation_energy": {
+              "value": 0.16,
+              "unit": "eV"
+            },
+            "prov": ["Table 1, Page 5000"]
+          },
+          {
+            "sample": "Pc configurational defect",
+            "defect_type": "Pc",
+            "ionic_conductivity": {
+              "value": 87,
+              "unit": "mS cm-1"
+            },
+            "activation_energy": {
+              "value": 0.15,
+              "unit": "eV"
+            },
+            "prov": ["Table 1, Page 5000"]
+          },
+          {
+            "sample": "PGe+ substitution defect",
+            "defect_type": "PGe+",
+            "ionic_conductivity": {
+              "value": 75,
+              "unit": "mS cm-1"
+            },
+            "activation_energy": {
+              "value": 0.16,
+              "unit": "eV"
+            },
+            "prov": ["Table 1, Page 5000"]
+          },
+          {
+            "sample": "VLi− (lithium vacancy)",
+            "defect_type": "VLi−",
+            "ionic_conductivity": {
+              "value": 22,
+              "unit": "mS cm-1"
+            },
+            "activation_energy": {
+              "value": 0.20,
+              "unit": "eV"
+            },
+            "prov": ["Table 1, Page 5000"]
+          },
+          {
+            "sample": "Li_i+ (interstitial Li)",
+            "defect_type": "Li_i+",
+            "ionic_conductivity": {
+              "value": 47,
+              "unit": "mS cm-1"
+            },
+            "activation_energy": {
+              "value": 0.18,
+              "unit": "eV"
+            },
+            "prov": ["Table 1, Page 5000"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-01T00:00:00Z",
+    "source_file": "provided_text",
+    "processing_time": null
+  }
+}

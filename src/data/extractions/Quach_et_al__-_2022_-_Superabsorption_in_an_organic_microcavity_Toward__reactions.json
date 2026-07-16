@@ -1,0 +1,403 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Superabsorption in an organic microcavity: Toward a quantum battery",
+    "doi": "10.1126/sciadv.abk3160",
+    "authors": ["James Q. Quach", "Kirsty E. McGhee", "Lucia Ganzer", "Dominic M. Rouse", "Brendon W. Lovett", "Erik M. Gauger", "Jonathan Keeling", "Giulio Cerullo", "David G. Lidzey", "Tersilla Virgili"],
+    "journal": "Science Advances",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis",
+    "tags": ["microcavity", "organic semiconductor", "quantum battery", "Lumogen-F orange", "DBR"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Lumogen-F orange (LFO) microcavity",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Materials and Methods: Device fabrication (Page 5-6)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lumogen-F orange",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "active_material",
+        "category": "organic dye"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used at 0.5, 1, 5, and 10 % by mass relative to polystyrene",
+      "prov": ["Page 2, Device structure", "Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Polystyrene",
+      "molecular_formula": "(C8H8)n",
+      "ontology": {
+        "role": "matrix",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "25 mg/mL solution in dichloromethane",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Dichloromethane",
+      "molecular_formula": "CH2Cl2",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Silicon dioxide",
+      "molecular_formula": "SiO2",
+      "ontology": {
+        "role": "mirror_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in DBR layers",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Niobium pentoxide",
+      "molecular_formula": "Nb2O5",
+      "ontology": {
+        "role": "mirror_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in DBR layers",
+      "prov": ["Materials and Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Fabrication of bottom DBR mirror",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5"],
+              "method": "thermal evaporation and ion-assisted electron beam deposition",
+              "pairs": 10
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Performed by Helia Photonics Ltd.",
+            "prov": ["Materials and Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of LFO/PS solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_2", "chem_1", "chem_3"],
+              "concentration_PS": {
+                "value": 25,
+                "unit": "mg mL-1"
+              },
+              "LFO_mass_percent": [0.5, 1, 5, 10]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "",
+            "prov": ["Materials and Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Spin coating of active layer",
+        "operations": [
+          {
+            "action": "spin_coat",
+            "parameters": {
+              "input": "solution from step_2",
+              "substrate": "bottom DBR",
+              "film_thickness": {
+                "value": 185,
+                "unit": "nm"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "",
+            "prov": ["Materials and Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Deposition of top DBR mirror",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5"],
+              "method": "electron beam deposition",
+              "pairs": 8
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Top DBR reflectivity >99% in spectral region of interest",
+            "prov": ["Materials and Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials and Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Bottom distributed Bragg reflector fabrication"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of dye–polymer solution in dichloromethane"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Spin coating active layer onto bottom DBR"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Deposition of top DBR to complete microcavity"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing spin-coating parameters (speed/time)",
+        "excerpt": "Each LFO solution was then spin coated on top of the bottom DBR to produce a thin film with an approximate thickness of 185 nm."
+      },
+      {
+        "issue": "Exact amounts of LFO and PS not specified",
+        "excerpt": "Solutions of LFO dissolved in PS (25 mg/ml) in dichloromethane were prepared at 0.5, 1, 5, and 10% concentration by mass."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "UV-Vis absorption and photoluminescence spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "absorption_peak",
+          "value": 526,
+          "unit": "nm"
+        },
+        {
+          "metric": "emission_peak",
+          "value": 534,
+          "unit": "nm"
+        },
+        {
+          "metric": "photoluminescence_quantum_yield",
+          "value": 60,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 2, Device structure"]
+    },
+    {
+      "method": "Angle-dependent reflectivity",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Rabi_splitting",
+          "value": 100,
+          "unit": "meV"
+        },
+        {
+          "metric": "cavity_reflectivity",
+          "value": 99,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "method": "Ultrafast transient absorption/reflectivity spectroscopy",
+      "parameters": {
+        "pump_wavelength_range_nm": "500-620",
+        "pulse_duration_fs": 20
+      },
+      "results": [
+        {
+          "metric": "instrument_response_time",
+          "value": 20,
+          "unit": "fs"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Experimental setup, Page 2-3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Ultrafast energy storage measurements (Table 1)",
+        "results": [
+          {
+            "experiment": "A1",
+            "number_of_molecules": 1.60e11,
+            "rise_time_ps": 0.094,
+            "Emax_eV": 0.108,
+            "Pmax_eV_ps": 0.791
+          },
+          {
+            "experiment": "A2",
+            "number_of_molecules": 8.1e10,
+            "rise_time_ps": 0.120,
+            "Emax_eV": 0.076,
+            "Pmax_eV_ps": 0.412
+          },
+          {
+            "experiment": "A3",
+            "number_of_molecules": 1.6e10,
+            "rise_time_ps": 0.118,
+            "Emax_eV": 0.011,
+            "Pmax_eV_ps": 0.060
+          },
+          {
+            "experiment": "B1",
+            "number_of_molecules": 1.6e9,
+            "rise_time_ps": 0.114,
+            "Emax_eV": 0.184,
+            "Pmax_eV_ps": 1.008
+          },
+          {
+            "experiment": "B2",
+            "number_of_molecules": 2.1e9,
+            "rise_time_ps": 0.105,
+            "Emax_eV": 0.037,
+            "Pmax_eV_ps": 0.221
+          }
+        ],
+        "prov": ["Table 1, Page 4"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T10:30:00Z",
+    "source_file": "Quach_et_al_2022_SciAdv.txt",
+    "processing_time": null
+  }
+}

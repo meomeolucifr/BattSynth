@@ -1,0 +1,171 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Relevance of solid electrolytes for lithium-based batteries: A realistic view",
+    "doi": "10.1007/s10832-017-0091-0",
+    "authors": ["Bettina V. Lotsch", "Joachim Maier"],
+    "journal": "Journal of Electroceramics",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["solid electrolyte", "lithium battery", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page 133–135, Section 3.2"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li10SnP2S12",
+      "molecular_formula": "Li10SnP2S12",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page 134–135, Section 3.2"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "intended_role": "solid electrolyte",
+      "prov": ["Table 1, Page 138"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "No explicit experimental synthesis procedure provided; review text only discusses materials broadly.",
+        "excerpt": "The tetragonal LSiPS is not accessible in phase-pure form by a conventional solid-state synthesis. Instead, the main phase obtained between 573 and 1023 K is the orthorhombic thio-LISICON modification..."
+      },
+      {
+        "issue": "Range values for conductivity without exact single number.",
+        "excerpt": "between 4 and 7 × 10−3 S/cm with EA being 0.23–0.25 eV"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "temperature": {"value": 298, "unit": "K"}
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 1.2e-2,
+          "unit": "S cm-1",
+          "sample_id": "target_1"
+        }
+      ],
+      "interpretation": "LGPS conductivity comparable to liquid electrolytes.",
+      "prov": ["Page 133, reference [2]"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "temperature": {"value": 298, "unit": "K"}
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (range)",
+          "value": [4e-3, 7e-3],
+          "unit": "S cm-1",
+          "sample_id": "target_2"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 134"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "temperature": {"value": 298, "unit": "K"}
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 0.16,
+          "unit": "mS cm-1",
+          "sample_id": "target_3"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 1, Page 138"]
+    },
+    {
+      "method": "Activation energy determination (Arrhenius)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.249,
+          "unit": "eV",
+          "sample_id": "target_1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 1, Page 138"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical window analysis",
+        "results": [
+          {
+            "sample_id": "target_1",
+            "metric": "reduction potential vs Li/Li+",
+            "value": 1.71,
+            "unit": "V"
+          },
+          {
+            "sample_id": "target_1",
+            "metric": "oxidation potential vs Li/Li+",
+            "value": 2.15,
+            "unit": "V"
+          }
+        ],
+        "prov": ["Table 1, Page 138"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T04:28:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,498 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Dendrite-Suppressed Lithium Plating from a Liquid Electrolyte via Wetting of Li3N",
+    "doi": "10.1002/aenm.201700732",
+    "authors": ["Kyusung Park", "John B. Goodenough"],
+    "journal": "Advanced Energy Materials",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": ["lithium metal anode", "Li3N coating", "dendrite suppression"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3N-modified Li electrode",
+      "molecular_formula": "",
+      "intended_role": "modified electrode",
+      "prov": ["Figure 1", "Experimental Section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Al2O3-modified Li electrode",
+      "molecular_formula": "",
+      "intended_role": "comparative modified electrode",
+      "prov": ["Figure 1", "Experimental Section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium nitride",
+      "molecular_formula": "Li3N",
+      "ontology": {
+        "role": "coating material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "commercial powder, ground in Ar-filled glove box",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Aluminum oxide",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "coating material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "commercial powder, dried at 120 °C",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "substrate / anode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "fresh foil",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "in carbonate solvent blend",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of 1:1 EC/DEC blend",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Diethylene carbonate",
+      "molecular_formula": "C5H10O4",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of 1:1 EC/DEC blend",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "glove box atmosphere",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Grinding Li3N powder to expose fresh surface",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "notes": "performed in Ar-filled glove box"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Drying Al2O3 powder to remove surface moisture",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "temperature": {
+              "value": 393,
+              "unit": "K"
+            },
+            "notes": "120 °C as reported"
+          }
+        ],
+        "conditions": {
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Forming Li3N-modified Li electrode",
+        "operations": [
+          {
+            "action": "load",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3"]
+            },
+            "notes": "a few mg Li3N powder placed on fresh Li foil"
+          },
+          {
+            "action": "roll-press",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3"]
+            },
+            "notes": ""
+          },
+          {
+            "action": "rub",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "notes": "excess powder removed gently"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1", "Experimental Section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Forming Al2O3-modified Li electrode (comparative)",
+        "operations": [
+          {
+            "action": "load",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"]
+            },
+            "notes": "a few mg Al2O3 powder placed on fresh Li foil"
+          },
+          {
+            "action": "roll-press",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"]
+            },
+            "notes": ""
+          },
+          {
+            "action": "rub",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "notes": "excess powder removed gently"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Electrolyte preparation",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5", "chem_6"]
+            },
+            "notes": "1 M LiPF6 in 1:1 EC/DEC blend, no additives"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepared Li3N powder by grinding under Ar"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Dried Al2O3 powder at 120 °C"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Fabricated Li3N-modified Li electrode via roll-pressing and rubbing"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Fabricated Al2O3-modified Li electrode via roll-pressing and rubbing"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Prepared carbonate-based liquid electrolyte (1 M LiPF6 in EC/DEC)"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact quantities of powders and pressing force not specified",
+        "excerpt": "Then a few mg of Al2O3 or Li3N powder was loaded on fresh Li foil, and the powder was roll-pressed."
+      },
+      {
+        "issue": "Drying time for Al2O3 not given",
+        "excerpt": "Commercial Al2O3 powder (Alfa Aesar) was used after drying at 120 °C to remove surface moisture."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {
+        "radiation": "Cu Kα"
+      },
+      "results": [
+        {
+          "metric": "phase purity confirmation",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "method": "Scanning Electron Microscopy (SEM)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology of Li deposition on bare Li at 1 mA cm−2",
+          "value": "large coarse dendrites",
+          "unit": ""
+        },
+        {
+          "metric": "morphology of Li deposition on bare Li at 4 mA cm−2",
+          "value": "small densely populated dendrites (~0.5 µm diameter)",
+          "unit": ""
+        },
+        {
+          "metric": "morphology on Al2O3-modified Li at 4 mA cm−2",
+          "value": "high density smaller dendrites (0.1–0.2 µm diameter)",
+          "unit": ""
+        },
+        {
+          "metric": "morphology on Li3N-modified Li",
+          "value": "3D interconnected Li network without 1D dendrites",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Li3N layer promotes isotropic growth via wetting",
+      "prov": ["Figure 2", "Figure 3"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {
+        "frequency_range": "1 MHz–1 Hz"
+      },
+      "results": [
+        {
+          "metric": "R_SEI + R_CT (bare Li, cycle 1)",
+          "value": 300,
+          "unit": "Ω"
+        },
+        {
+          "metric": "R_SEI + R_CT (bare Li, cycle 20)",
+          "value": 70,
+          "unit": "Ω"
+        },
+        {
+          "metric": "R_SEI + R_CT (Li3N-modified, cycle 1)",
+          "value": 35,
+          "unit": "Ω"
+        },
+        {
+          "metric": "R_SEI + R_CT (Li3N-modified, cycle 20)",
+          "value": 43,
+          "unit": "Ω"
+        },
+        {
+          "metric": "R_SEI + R_CT (Al2O3-modified, cycle 1)",
+          "value": 130,
+          "unit": "Ω"
+        },
+        {
+          "metric": "R_SEI + R_CT (Al2O3-modified, cycle 20)",
+          "value": 103,
+          "unit": "Ω"
+        }
+      ],
+      "interpretation": "Li3N coating lowers interfacial resistance",
+      "prov": ["Figure 5b"]
+    },
+    {
+      "method": "Galvanostatic charge/discharge",
+      "parameters": {
+        "current_densities": "0.1–4 mA cm−2"
+      },
+      "results": [
+        {
+          "metric": "Initial nucleation polarization (bare Li, 1 mA cm−2)",
+          "value": -0.42,
+          "unit": "V vs Li+/Li"
+        },
+        {
+          "metric": "Initial nucleation polarization (bare Li, 2 mA cm−2)",
+          "value": -0.53,
+          "unit": "V vs Li+/Li"
+        },
+        {
+          "metric": "Initial nucleation polarization (bare Li, 4 mA cm−2)",
+          "value": -0.64,
+          "unit": "V vs Li+/Li"
+        },
+        {
+          "metric": "Growth overpotential (bare Li, after 3 mAh cm−2 at 1 mA cm−2)",
+          "value": -0.082,
+          "unit": "V vs Li+/Li"
+        },
+        {
+          "metric": "Initial nucleation polarization (Al2O3 symmetric cell)",
+          "value": -2.71,
+          "unit": "V"
+        },
+        {
+          "metric": "Discharge voltage (Li3N symmetric cell, 1 h, cycle 1)",
+          "value": -0.045,
+          "unit": "V"
+        },
+        {
+          "metric": "Discharge voltage (Li3N symmetric cell, 1 h, cycle 45)",
+          "value": -0.074,
+          "unit": "V"
+        },
+        {
+          "metric": "Discharge voltage (Li3N symmetric cell, 1 h, cycle 90)",
+          "value": -0.102,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Li3N layer reduces nucleation overpotential and maintains low growth polarization",
+      "prov": ["Figure 2", "Figure 5a", "Figure 5c"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-23T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

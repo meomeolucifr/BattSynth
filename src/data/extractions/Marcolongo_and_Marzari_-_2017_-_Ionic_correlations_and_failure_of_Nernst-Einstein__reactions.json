@@ -1,0 +1,229 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Ionic correlations and failure of Nernst-Einstein relation in solid-state electrolytes",
+    "doi": "10.1103/PhysRevMaterials.1.025402",
+    "authors": [
+      "Aris Marcolongo",
+      "Nicola Marzari"
+    ],
+    "journal": "Physical Review Materials",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid-state electrolyte",
+      "Li10GeP2S12",
+      "ionic conductivity",
+      "first-principles molecular dynamics"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "studied_material",
+      "prov": [
+        "Throughout text"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "mobile_ion",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Diffusing species in LGPS",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "host_matrix_component",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Germanium",
+      "molecular_formula": "Ge",
+      "ontology": {
+        "role": "host_matrix_component",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Phosphorus",
+      "molecular_formula": "P",
+      "ontology": {
+        "role": "host_matrix_component",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_1",
+        "description": "Preparation of simulation cell using experimental crystallographic positions, equilibration via Nosé-Hoover thermostat, followed by microcanonical Car-Parrinello molecular dynamics up to 500 ps with 4.0 a.u. time step."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "First-principles molecular dynamics (Car-Parrinello)",
+      "parameters": {
+        "electronic_mass": {
+          "value": 300,
+          "unit": "amu"
+        },
+        "kinetic_energy_cutoff": {
+          "value": 60,
+          "unit": "Ry"
+        },
+        "time_step": {
+          "value": 4.0,
+          "unit": "a.u."
+        },
+        "trajectory_length": {
+          "value": 500,
+          "unit": "ps"
+        }
+      },
+      "results": [
+        {
+          "metric": "charge diffusion coefficient to tracer diffusion coefficient ratio (Haven ratio)",
+          "value": 0.4,
+          "unit": "",
+          "notes": "Approximate isotropic corrected value; direction-dependent values range 0.3–0.4",
+          "prov": [
+            "Figure 4"
+          ]
+        },
+        {
+          "metric": "ionic conductivity (experimental reference)",
+          "value": 12,
+          "unit": "mS cm-1",
+          "notes": "Experimental bulk ionic conductivity of LGPS at ambient temperature",
+          "prov": [
+            "Introduction"
+          ]
+        },
+        {
+          "metric": "activation energy (tracer diffusion)",
+          "value": 0.18,
+          "unit": "eV",
+          "notes": "Activation energy derived from Arrhenius plot; uncertainty ±0.02 eV",
+          "prov": [
+            "Results"
+          ]
+        },
+        {
+          "metric": "activation energy (charge diffusion)",
+          "value": 0.17,
+          "unit": "eV",
+          "notes": "Uncertainty ±0.01 eV",
+          "prov": [
+            "Results"
+          ]
+        }
+      ],
+      "interpretation": "Charge diffusion coefficient is ~2.5 times larger than tracer diffusion coefficient, indicating strong ionic correlations.",
+      "prov": [
+        "Figures 3 and 4"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Linear response theory",
+        "results": [
+          {
+            "equation": "Dσ = Dtr + (1/6) Σ_{j≠0} ∫⟨vj(t)v0(0)⟩ dt",
+            "value": null,
+            "unit": "",
+            "notes": "Derivation leads to inequality 0 ≤ Dσ ≤ Neff Dtr",
+            "prov": [
+              "Theory section"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,706 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Heterointerface Effects on Lithium-Induced Phase Transitions in Intercalated MoS2",
+    "doi": "10.1021/acsami.0c21495",
+    "authors": [
+      "Sajad Yazdani",
+      "Joshua V. Pondick",
+      "Aakash Kumar",
+      "Milad Yarali",
+      "John M. Woods",
+      "David J. Hynek",
+      "Diana Y. Qiu",
+      "Judy J. Cha"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemical study",
+    "tags": ["MoS2", "hBN", "heterostructure", "lithium intercalation", "phase transition"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "hBN–MoS2–hBN heterostructure device",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Methods – Heterostructure Assembly and Device Fabrication"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Molybdenum disulfide",
+      "molecular_formula": "MoS2",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Exfoliated flakes from bulk MoS2 crystal",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Hexagonal boron nitride",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Exfoliated flakes from bulk hBN crystal",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "0.38 mm thick ribbon pressed onto Cu foil",
+      "prov": ["Electrochemical Cell Fabrication"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "In 50/50 v/v EC/DEC",
+      "prov": ["Electrochemical Cell Fabrication"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 50,
+        "unit": "volume %"
+      },
+      "notes": "Part of electrolyte (EC/DEC 50/50 v/v)",
+      "prov": ["Electrochemical Cell Fabrication"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Diethyl carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 50,
+        "unit": "volume %"
+      },
+      "notes": "Part of electrolyte (EC/DEC 50/50 v/v)",
+      "prov": ["Electrochemical Cell Fabrication"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Chromium",
+      "molecular_formula": "Cr",
+      "ontology": {
+        "role": "adhesion layer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "nm"
+      },
+      "notes": "Thermally evaporated",
+      "prov": ["Device Fabrication"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "electrode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "nm"
+      },
+      "notes": "Thermally evaporated; also thick edge cover layer",
+      "prov": ["Device Fabrication"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Potassium hydroxide",
+      "molecular_formula": "KOH",
+      "ontology": {
+        "role": "etchant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "M"
+      },
+      "notes": "≈30 µL used to etch SiO2 during transfer",
+      "prov": ["Heterostructure Assembly"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Polypropylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "transfer polymer",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 13,
+        "unit": "wt %"
+      },
+      "notes": "Solution in anisole, spin-coated on epoxy droplet",
+      "prov": ["Heterostructure Assembly"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Epoxy (DP100Plus)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "support medium",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "≈0.5 mm hemispherical droplet cured on glass slide",
+      "prov": ["Heterostructure Assembly"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Polymethyl methacrylate (PMMA A3)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "mask",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Spin-coated 4000 rpm 2 min",
+      "prov": ["Edge-exposed Device Fabrication"]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Hydrogen silsesquioxane (HSQ)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "hard mask",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Spin-coated 3000 rpm",
+      "prov": ["Edge-exposed Device Fabrication"]
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "plasma etchant gas",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 20,
+        "unit": "sccm"
+      },
+      "notes": "Used 15 s at 50 W RF",
+      "prov": ["Edge-exposed Device Fabrication"]
+    },
+    {
+      "chemical_id": "chem_15",
+      "name": "Trifluoromethane",
+      "molecular_formula": "CHF3",
+      "ontology": {
+        "role": "plasma etchant gas",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 40,
+        "unit": "sccm"
+      },
+      "notes": "Used with 4 sccm O2 at 60 W RF for 2 min",
+      "prov": ["Edge-exposed Device Fabrication"]
+    },
+    {
+      "chemical_id": "chem_16",
+      "name": "Anisole",
+      "molecular_formula": "C7H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Solvent for 13 wt % PPC solution",
+      "prov": ["Heterostructure Assembly"]
+    },
+    {
+      "chemical_id": "chem_17",
+      "name": "Chloroform",
+      "molecular_formula": "CHCl3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used overnight to dissolve PPC",
+      "prov": ["Heterostructure Assembly"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Exfoliation of MoS2 and hBN onto pre-cleaned SiO2/Si substrates",
+        "operations": [
+          {
+            "action": "exfoliate",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "Substrates sonicated in acetone and isopropyl alcohol, treated with O2 plasma prior to exfoliation"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Heterostructure Assembly"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of epoxy/PPC pickup stamp",
+        "operations": [
+          {
+            "action": "cure",
+            "parameters": {
+              "inputs": ["chem_11"],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "notes": "≈0.5 mm hemispherical droplet cured on glass slide"
+          },
+          {
+            "action": "spin coat",
+            "parameters": {
+              "inputs": ["chem_10"],
+              "speed": "3000 rpm",
+              "duration": {
+                "value": 2,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 363,
+                "unit": "K"
+              }
+            },
+            "notes": "13 wt % PPC in anisole"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods – Heterostructure Assembly"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Pickup of exfoliated flakes using PPC stamp and KOH etching",
+        "operations": [
+          {
+            "action": "etch",
+            "parameters": {
+              "inputs": ["chem_9"],
+              "volume": {
+                "value": 0.03,
+                "unit": "mL"
+              },
+              "concentration": {
+                "value": 2,
+                "unit": "M"
+              }
+            },
+            "notes": "Etched top SiO2 few Å to release flakes"
+          },
+          {
+            "action": "rinse",
+            "parameters": {},
+            "notes": "Deionized water rinse to remove KOH"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods – Heterostructure Assembly"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Release and stacking of flakes to form hBN–MoS2–hBN heterostructure",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 368,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 5,
+                "unit": "min"
+              }
+            },
+            "notes": "Melt PPC (95–100 °C) to release flake onto target substrate"
+          },
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_17"],
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "PPC dissolved in chloroform overnight"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods – Heterostructure Assembly"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Deposition of metal contacts",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_7", "chem_8"],
+              "thickness": "10 nm Cr / 100 nm Au",
+              "method": "thermal evaporation"
+            },
+            "notes": "Patterned by electron beam lithography"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Device Fabrication"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Edge exposure via lithography and reactive ion etching (optional variant)",
+        "operations": [
+          {
+            "action": "spin coat",
+            "parameters": {
+              "inputs": ["chem_12"],
+              "speed": "4000 rpm",
+              "duration": {
+                "value": 2,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 453,
+                "unit": "K"
+              }
+            },
+            "notes": ""
+          },
+          {
+            "action": "spin coat",
+            "parameters": {
+              "inputs": ["chem_13"],
+              "speed": "3000 rpm"
+            },
+            "notes": ""
+          },
+          {
+            "action": "develop",
+            "parameters": {
+              "duration": {
+                "value": 4,
+                "unit": "min"
+              }
+            },
+            "notes": "MF-312 developer"
+          },
+          {
+            "action": "plasma etch",
+            "parameters": {
+              "inputs": ["chem_14"],
+              "flow_rate": "20 sccm",
+              "power": "50 W",
+              "duration": {
+                "value": 0.25,
+                "unit": "min"
+              }
+            },
+            "notes": "O2 plasma to remove PMMA"
+          },
+          {
+            "action": "reactive ion etch",
+            "parameters": {
+              "inputs": ["chem_14", "chem_15"],
+              "flow_rate": "4 sccm O2 / 40 sccm CHF3",
+              "power": "60 W",
+              "duration": {
+                "value": 2,
+                "unit": "min"
+              }
+            },
+            "notes": "Edge etching of heterostructure"
+          },
+          {
+            "action": "clean",
+            "parameters": {
+              "inputs": ["acetone"]
+            },
+            "notes": "Mask removal"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Edge-exposed Device Fabrication"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Edge covering with thick Au layer (optional variant)",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_8"],
+              "method": "thermal evaporation",
+              "notes": "Covers heterostructure edges to block Li diffusion"
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods – Li diffusion pathways study"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Assembly of sealed electrochemical microreactor",
+        "operations": [
+          {
+            "action": "attach",
+            "parameters": {},
+            "notes": "Device mounted on glass slide; Au contacts wire-bonded to copper tape"
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "inputs": ["chem_11"]
+            },
+            "notes": "Glass top cover epoxied on three sides"
+          },
+          {
+            "action": "insert",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "notes": "Li metal pressed onto Cu foil inserted as reference/counter electrode"
+          },
+          {
+            "action": "fill",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5", "chem_6"]
+            },
+            "notes": "Cell filled with 1 M LiPF6 in EC/DEC (50/50)"
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "inputs": ["chem_11"]
+            },
+            "notes": "Fourth side sealed to form airtight cell"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Electrochemical Cell Fabrication"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Exfoliation of starting crystals"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of pickup stamp"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "KOH-assisted pickup of flakes"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Stacking to build hBN–MoS2–hBN heterostructure"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Metal contact deposition"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Optional edge exposure via RIE"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Optional edge covering with Au"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Electrochemical microreactor assembly"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified epoxy curing temperature",
+        "excerpt": "a hemispherical droplet of epoxy ... was cured on a glass slide"
+      },
+      {
+        "issue": "No explicit amount for Au edge-cover thickness",
+        "excerpt": "covering the edges with a thick layer of gold"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength": "633 nm",
+        "laser_power": "3–7.5 mW",
+        "grating": "1800 lines/mm",
+        "exposures": "15 × 5 s"
+      },
+      "results": [
+        {
+          "metric": "phase transition voltage (room temperature)",
+          "value": 1.0,
+          "unit": "V vs Li/Li+"
+        },
+        {
+          "metric": "phase transition voltage (60 °C heterostructure)",
+          "value": null,
+          "unit": "V vs Li/Li+",
+          "notes": "No transition at 1.1 V up to 60 °C"
+        },
+        {
+          "metric": "phase transition temperature at 1.1 V (bare MoS2)",
+          "value": 333,
+          "unit": "K"
+        },
+        {
+          "metric": "phase transition temperature at 1.1 V (heterostructure)",
+          "value": 373,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Raman peak evolution (E2g, A1g suppressed; J1, J2 appear) indicates 2H to 1T′ transition.",
+      "prov": ["Figures 2e; 3b; 3d; 4b; 4e"]
+    },
+    {
+      "method": "Optical microscopy (in situ)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Visual darkening corresponding to phase change",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figures 2c, 2d, 3a, 3c, 4a, 4d"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density Functional Theory",
+        "results": [
+          {
+            "equation": "",
+            "value": 100,
+            "unit": "mJ m-2",
+            "notes": "Intercalated Li stabilizes 1T–MoS2–hBN interface over 2H by ~100 mJ m−2"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

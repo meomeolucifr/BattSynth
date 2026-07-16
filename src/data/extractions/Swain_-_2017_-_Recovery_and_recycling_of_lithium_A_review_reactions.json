@@ -1,0 +1,360 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recovery and recycling of lithium: A review",
+    "doi": "10.1016/j.seppur.2016.08.031",
+    "authors": ["Basudev Swain"],
+    "journal": "Separation and Purification Technology",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["lithium recovery", "brine processing", "battery recycling"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "lithium aluminate precipitate",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 393"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "intended_role": "product",
+      "prov": ["Page 393", "Page 394"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "lithium hydroxide",
+      "molecular_formula": "LiOH",
+      "intended_role": "product",
+      "prov": ["Page 395"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Aluminum chloride hexahydrate",
+      "molecular_formula": "AlCl3·6H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Added at 30–40 g L-1 during lithium aluminate precipitation",
+      "prov": ["Page 393"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Brine (end brine/dead sea brine)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "feedstock",
+        "category": "mixture"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Contains LiCl along with Na, K, Mg, Ca salts",
+      "prov": ["Page 393"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sodium carbonate",
+      "molecular_formula": "Na2CO3",
+      "ontology": {
+        "role": "precipitant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Pages 393-394"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Calcium hydroxide",
+      "molecular_formula": "Ca(OH)2",
+      "ontology": {
+        "role": "precipitant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.25,
+        "unit": "g"
+      },
+      "notes": "Used in pressure leaching, yielded 98 % lithium extraction",
+      "prov": ["Page 392"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Hydrochloric acid",
+      "molecular_formula": "HCl",
+      "ontology": {
+        "role": "acid",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used for pH adjustment and stripping",
+      "prov": ["Pages 393-395"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lime",
+      "molecular_formula": "CaO",
+      "ontology": {
+        "role": "precipitant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used to remove Mg and Ca as hydroxides/gypsum",
+      "prov": ["Page 393"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Precipitation of lithium as lithium aluminate from brine",
+        "operations": [
+          {
+            "action": "precipitate",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "pH": "6.8–7.0",
+              "duration": {
+                "value": 180,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 298,
+                "unit": "K"
+              }
+            },
+            "notes": "AlCl3·6H2O dosage 30–40 g L-1; room temperature; target lithium extraction ~90 %",
+            "prov": ["Page 393"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 393"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Carbonation to obtain lithium carbonate from purified brine",
+        "operations": [
+          {
+            "action": "precipitate",
+            "parameters": {
+              "inputs": ["chem_3", "chem_2"],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "notes": "Addition of soda ash after concentration of solution to precipitate Li2CO3",
+            "prov": ["Page 393"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 393"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Salar de Uyuni brine treatment and lithium carbonate precipitation",
+        "operations": [
+          {
+            "action": "precipitate",
+            "parameters": {
+              "inputs": ["chem_6"],
+              "notes": "Removal of Mg and Ca as Mg(OH)2 and gypsum"
+            },
+            "prov": ["Page 393"]
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 353,
+                "unit": "K"
+              },
+              "temperature_upper": {
+                "value": 363,
+                "unit": "K"
+              }
+            },
+            "notes": "Brine heated before Li2CO3 precipitation",
+            "prov": ["Page 393"]
+          },
+          {
+            "action": "precipitate",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "temperature": {
+                "value": 353,
+                "unit": "K"
+              }
+            },
+            "notes": "Formation of 99.55 % pure crystalline Li2CO3",
+            "prov": ["Page 393"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 393"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Production of lithium hydroxide via electro–electrodialysis with bipolar membranes",
+        "operations": [
+          {
+            "action": "electrodialysis",
+            "parameters": {
+              "current_density": "30 mA cm-2",
+              "feed_concentration": "0.18 M"
+            },
+            "notes": "Cost-effective operation; preliminary precipitation gives 98 % pure Li2CO3, followed by conversion to LiOH",
+            "prov": ["Page 395"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 395"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Lithium aluminate precipitation from brine"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Carbonation to Li2CO3"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Brine purification and high-purity Li2CO3 recovery"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Electro-electrodialysis to produce LiOH"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact amounts of reagents and volumes not specified",
+        "excerpt": "The optimum amount of AlCl3·6H2O (30–40 g L−1) was added to the brine."
+      },
+      {
+        "issue": "No explicit pressure information for any step",
+        "excerpt": "Higher temperature have an adverse effect, the best yields was obtained at room temperature"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Purity determination",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "purity",
+          "value": 99.55,
+          "unit": "%",
+          "sample": "Li2CO3"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 393"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Lithium extraction efficiency evaluation",
+        "results": [
+          {
+            "metric": "lithium extraction",
+            "value": 90,
+            "unit": "%",
+            "notes": "Lithium aluminate precipitation from end brine"
+          },
+          {
+            "metric": "lithium extraction",
+            "value": 98,
+            "unit": "%",
+            "notes": "Pressure leaching with 1.25 g L−1 Ca(OH)2"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-15T12:00:00Z",
+    "source_file": "input_text_chunk.txt",
+    "processing_time": null
+  }
+}

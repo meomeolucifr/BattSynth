@@ -1,0 +1,420 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "NaSICON: A promising solid electrolyte for solid ‐state sodium batteries",
+    "doi": "10.1002/idm2.12044",
+    "authors": ["Chi Li", "Rui Li", "Kaining Liu", "Rui Si", "Zhizhen Zhang", "Yong-Sheng Hu"],
+    "journal": "Interdisciplinary Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["solid electrolyte", "NaSICON", "sodium batteries", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na3Zr2Si2PO12",
+      "molecular_formula": "Na3Zr2Si2PO12",
+      "intended_role": "solid electrolyte",
+      "prov": ["Section 2.1, paragraph 3"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na3.4Zr1.9Zn0.1Si2.2P0.8O12",
+      "molecular_formula": "Na3.4Zr1.9Zn0.1Si2.2P0.8O12",
+      "intended_role": "solid electrolyte",
+      "prov": ["Section 2.1, paragraph 4"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na3.3Zr1.9Nb0.1Si2.4P0.6O12",
+      "molecular_formula": "Na3.3Zr1.9Nb0.1Si2.4P0.6O12",
+      "intended_role": "solid electrolyte",
+      "prov": ["Section 2.1, paragraph 6"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "NaF",
+      "molecular_formula": "NaF",
+      "ontology": {
+        "role": "additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used up to 50 mol% relative to NaSICON composition",
+      "prov": ["Section 2.2, paragraph 2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "ZnO",
+      "molecular_formula": "ZnO",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Source of Zn2+ for Zr substitution",
+      "prov": ["Section 2.1, paragraph 4"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Nb2O5",
+      "molecular_formula": "Nb2O5",
+      "ontology": {
+        "role": "dopant precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Source of Nb5+ for Zr substitution",
+      "prov": ["Section 2.1, paragraph 6"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Na metal",
+      "molecular_formula": "Na",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section 4.1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Conventional solid-state reaction to prepare Na3Zr2Si2PO12 (NZSP)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_4?"]  },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Precursors not explicitly listed in text"
+          },
+          {
+            "action": "sinter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 1473,
+              "unit": "K"
+            },
+            "notes": "Typical high-temperature sintering (~1200 °C) to ensure high density; original unit °C",
+            "prov": ["Section 2.2, paragraph 1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.2, paragraph 1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Zn2+ substitution and oxygen-atmosphere sintering for Na3.4Zr1.9Zn0.1Si2.2P0.8O12",
+        "operations": [
+          {
+            "action": "dope",
+            "parameters": {
+              "dopant": "chem_2",
+              "target_ratio": "0.1 Zn relative to Zr"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          },
+          {
+            "action": "sinter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Sintered in oxygen atmosphere; increases density",
+            "prov": ["Section 2.2, paragraph 1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.2, paragraph 1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Nb5+ substitution in NaSICON to yield Na3.3Zr1.9Nb0.1Si2.4P0.6O12",
+        "operations": [
+          {
+            "action": "dope",
+            "parameters": {
+              "dopant": "chem_3",
+              "target_ratio": "0.1 Nb relative to Zr"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          },
+          {
+            "action": "sinter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Solution-assisted solid-state reaction; exact temperature not specified",
+            "prov": ["Section 2.1, paragraph 6"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.1, paragraph 6"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Liquid-phase sintering with NaF additive",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "additive": "chem_1",
+              "ratio": "up to 50 mol% relative to NaSICON"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          },
+          {
+            "action": "sinter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Forms binder-like Na–Si–P–O–F glass; enhances density",
+            "prov": ["Section 2.2, paragraph 2"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.2, paragraph 2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Baseline synthesis of undoped NaSICON via high-temperature sintering"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Zn-doping under oxygen to enhance conductivity and densification"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Nb-doping using solution-assisted solid-state reaction for record conductivity"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Liquid-phase sintering with NaF to improve grain boundary conductivity"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing precursor details and exact sintering times",
+        "excerpt": "NaSICON materials synthesized via conventional solid-state reaction generally require a high-temperature sintering procedure (typically ca. 1200 °C )"
+      },
+      {
+        "issue": "Undefined sintering temperature for Zn- and Nb-doped samples",
+        "excerpt": "sintered in the oxygen environment ... Solution-assisted solid-state reaction method"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 0.67,
+          "unit": "mS cm-1",
+          "sample": "Na3Zr2Si2PO12"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Section 2.1, paragraph 1"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 5.27,
+          "unit": "mS cm-1",
+          "sample": "Na3.4Zr1.9Zn0.1Si2.2P0.8O12"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Section 2.1, paragraph 4"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 5.5,
+          "unit": "mS cm-1",
+          "sample": "Na3.3Zr1.9Nb0.1Si2.4P0.6O12"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Section 2.1, paragraph 6"]
+    },
+    {
+      "method": "Symmetric cell plating/stripping",
+      "parameters": {
+        "temperature": 298,
+        "current_density": 0.2,
+        "unit_current": "mA cm-2"
+      },
+      "results": [
+        {
+          "metric": "critical current density",
+          "value": 0.2,
+          "unit": "mA cm-2",
+          "sample": "Na|Na3Zr2Si2PO12|Na at RT"
+        },
+        {
+          "metric": "critical current density",
+          "value": 2.0,
+          "unit": "mA cm-2",
+          "sample": "Na|Na3Zr2Si2PO12|Na at 353 K"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Section 4.1, Figure 3C–E"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT thermodynamic window calculation",
+        "results": [
+          {
+            "equation": "stability window 1.11–3.41 V vs Na/Na+",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 113,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 10000
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T15:07:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": 27.0
+  }
+}

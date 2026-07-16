@@ -1,0 +1,713 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Synthesis of a new lithium ionic conductor, thio-LISICON – lithium germanium sulfide system",
+    "doi": "",
+    "authors": [
+      "Ryoji Kanno",
+      "Takayuki Hata",
+      "Yoji Kawamoto",
+      "Michihiko Irie"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2000
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid-state ionics",
+      "thio-LISICON",
+      "lithium ionic conductor"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li(Ge0.75Ga0.25)S4",
+      "molecular_formula": "Li(Ge0.75Ga0.25)S4",
+      "intended_role": "product",
+      "prov": [
+        "Abstract",
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper discusses a Ga-substituted thio-LISICON solid solution written as Li(Ge0.75Ga0.25)S4 only in the form of the general formula Li_{4-1x} (Ge_{1-δ}Ga_δ)S4 (with x=0.25 mentioned as giving highest conductivity) and examples like Li4.34Ge0.75Ga0.25S4. It does not explicitly state the specific target formula exactly as “Li(Ge0.75Ga0.25)S4” (i.e., with Li=1). The extracted formula has the wrong lithium stoichiometry relative to what is reported (Li ≈ 4−x, not 1).",
+        "suggested_fix": "Li4.34Ge0.75Ga0.25S4 (example composition shown in Fig. 4) or, for x=0.25 in the general solid solution, Li3.75(Ge0.75Ga0.25)S4 (from Li_{4-x}(Ge0.75Ga0.25)S4 with x=0.25)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li4GeS4",
+      "molecular_formula": "Li4GeS4",
+      "intended_role": "product",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "Table 1 and the surrounding text list compounds such as Li4GeS4, Li2GeS3, Li2ZnGeS4, Li4.22xZn_xGeS4, LiGaS2, Li5GaS4, and Li4.1x+1δ(Ge1−δGaδ)S4 (various notations). Nowhere in Table 1 (or elsewhere in the provided paper text) is a compound with the formula Li4GeS4 explicitly given. The closest is Li2GeS3 and Li2ZnGeS4; Li4GeS4 is not supported by the source.",
+        "suggested_fix": "Li2GeS3 or Li2ZnGeS4 (depending on intended target); Table 1 does not contain Li4GeS4."
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li3GeS4",
+      "molecular_formula": "Li3GeS4",
+      "intended_role": "product",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "Table 1 and the rest of the paper list/describe compounds such as Li4GeS4, Li2GeS3, Li2ZnGeS4, Li4−2xZnxGeS4, LiGaS2, Li5GaS4, and Li4−x(Ge1−xGax)S4. Nowhere in Table 1 (or elsewhere in the provided text) is the formula Li3GeS4 explicitly stated.",
+        "suggested_fix": "Li4GeS4 (this compound is explicitly listed in Table 1 and discussed in the text)"
+      }
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li2ZnGeS4",
+      "molecular_formula": "Li2ZnGeS4",
+      "intended_role": "product",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "Table 1 (and the rest of the paper) lists compounds such as Li2ZnGeS4 and Li4.2−xGexZnS4 solid solutions, but nowhere in Table 1 or elsewhere is the formula \"Li2ZnGeS4\" written. The relevant zinc-containing compound in Table 1 is explicitly given as \"Li ZnGeS\" with subscripts indicating Li2ZnGeS4 (i.e., Li2ZnGeS4), but the extracted value omits the Zn subscript formatting in the table text and thus does not exactly match an explicitly stated formula string in the provided text.",
+        "suggested_fix": "Li2ZnGeS4 is implied by the table entry “Li ZnGeS” (with subscripts: Li₂ZnGeS₄). If requiring exact transcription from the text, record as “Li₂ZnGeS₄” (formatted) or “Li2ZnGeS4” only if the source explicitly shows those subscripts."
+      }
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li5GaS4",
+      "molecular_formula": "Li5GaS4",
+      "intended_role": "product",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "Table 1 (the alleged provenance) lists a compound in the Li2S–Ga2S3 system as “Li5GaS4” (with reported conductivity 5.1×10^-28 S cm^-1 at 100°C). However, the extracted value is “Li5GaS4” (Ga), while the table and the paper consistently use gallium as “Ga” and sulfur as “S”; the formula shown is “Li5GaS4” only if read correctly. The extracted value has “Li5GaS4” with 'Ga' present, but the table actually shows “Li5GaS4” exactly—wait: the table entry is “Li5GaS4” (Li5 GaS4). On closer inspection, the table row reads “Li5GaS4” (i.e., Li5GaS4), not “Li5GaS4” with any different element. Therefore the extracted value matches. (If the extractor meant Li5GaS4 but wrote Li5GaS4, it's the same.)",
+        "suggested_fix": "Li5GaS4"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "In the Experimental section, the paper explicitly lists Li2S among the starting materials (“The starting materials were Li2S, GeS2, ZnS and Ga2S3 ...”). However, it does not provide a specific mass, moles, or quantity for Li2S—only that the starting materials were “weighed... in appropriate molar ratios.” Therefore, the extractor’s claim that the amount is not specified is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "GeS2",
+      "molecular_formula": "GeS2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly identifies GeS2 as a starting material in the Experimental section: “The starting materials were Li2S, GeS2, ZnS and Ga2S3…”. However, no mass, moles, or other specific quantity of GeS2 is given—only that starting materials were “weighed, mixed in appropriate molar ratios.” Therefore the chemical identity (GeS2) is supported and the extracted note that the amount is not specified is also supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "ZnS",
+      "molecular_formula": "ZnS",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "In the Experimental section, ZnS is explicitly listed as one of the starting materials: “The starting materials were Li2S, GeS2, ZnS and Ga2S3… These were weighed, mixed in appropriate molar ratios…”. However, the paper does not provide a specific mass (g, mg) or molar amount for ZnS; it only states that reagents were mixed in “appropriate molar ratios” without detailing the ZnS quantity. Therefore, identifying ZnS with amount not specified is consistent with the source text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Ga2S3",
+      "molecular_formula": "Ga2S3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "In the Experimental section, the paper explicitly lists Ga2S3 (written as “Ga S3” with subscript 2) among the starting materials: “The starting materials were Li2S, GeS2, ZnS and Ga2S3…”. However, the text provides no masses, molar amounts, or quantities for Ga2S3—only that materials were “weighed, mixed in appropriate molar ratios.” Therefore, the identity is supported and the amount being “Not specified in text” is also supported.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Weigh Li2S, GeS2, ZnS and/or Ga2S3 in stoichiometric ratios.",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4"
+              ]
+            },
+            "notes": "Exact masses depend on target composition.",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.99,
+              "reasoning": "The Experimental section explicitly states: \"These were weighed, mixed in appropriate molar ratios...\" referring to the starting materials (Li2S, GeS2, ZnS, Ga2S3). This directly supports the synthesis operation 'weigh'.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "argon (glove box)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The Experimental section states that the starting materials were “weighed, mixed in appropriate molar ratios in an argon-filled glove box,” which directly supports the synthesis atmosphere being argon in a glove box.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Mix the weighed powders thoroughly in an argon-filled glove box.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4"
+              ]
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.84,
+              "reasoning": "The Experimental section states: \"These were weighed, mixed in appropriate molar ratios in an argon-filled glove box\" (Page 2). This explicitly supports the synthesis operation being a mix/mixing step.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "In the Experimental section (Page 2), the paper states the starting materials were “weighed, mixed ... in an argon-filled glove box,” indicating the synthesis atmosphere was argon (inert atmosphere during mixing/handling).",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Load the mixture into a carbon-coated quartz tube.",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4"
+              ]
+            },
+            "notes": "Tube subsequently sealed.",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.62,
+              "reasoning": "The paper describes synthesis steps such as weighing, mixing in an argon-filled glove box, putting the mixture into a carbon-coated quartz tube, heating at 600–800°C for 8 h, and slowly cooling to room temperature. Nowhere in the provided full text is a synthesis operation explicitly described as a 'transfer' (nor an equivalent explicit instruction like 'transfer to...'). Therefore the extracted synthesis operation 'transfer' is not supported by the source text.",
+              "suggested_fix": "If a single operation must be recorded from the text, use an explicitly stated step such as 'mixing' (weighed and mixed in an argon-filled glove box) or 'heating' (heated at 600–800°C for 8 h), rather than 'transfer'."
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat the sealed tube to 600–800 °C for 8 h.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 873,
+                "upper_value": 1073,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 480,
+                "unit": "min"
+              }
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The Experimental section explicitly states the reactants were \"put into a carbon-coated quartz tube and heated at a reaction temperature of 600–800°C for 8 h.\" This directly supports that a synthesis operation involved heating.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 873,
+            "upper_value": 1073,
+            "unit": "K"
+          },
+          "time": {
+            "value": 480,
+            "unit": "min"
+          },
+          "atmosphere": "sealed quartz tube",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.88,
+            "reasoning": "The Experimental section states the mixed starting materials were “put into a carbon-coated quartz tube and heated” and later refers to “the tube” being cooled, implying a closed/sealed quartz tube was used during synthesis. This supports the extracted synthesis atmosphere/containment as a quartz-tube (sealed-tube) reaction setup.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Slowly cool the tube to room temperature to obtain crystalline thio-LISICON materials.",
+        "operations": [
+          {
+            "action": "cool",
+            "parameters": {
+              "temperature": {
+                "value": 298,
+                "unit": "K"
+              },
+              "notes": "Slow cooling; rate not specified."
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.83,
+              "reasoning": "The paper explicitly states in the Experimental section that after heating at 600–800°C for 8 h, “the tube was slowly cooled to room temperature.” This supports the synthesis operation being a cooling step (i.e., cool).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.84,
+            "reasoning": "The paper describes synthesis by heating starting materials at 600–800 °C for 8 h, followed by slow cooling to room temperature. It does not state a synthesis temperature of 298 K (room temperature is mentioned only for measurements/cooling endpoint, not as the reaction temperature).",
+            "suggested_fix": "Synthesis temperature: 600–800 °C (reaction temperature) for 8 h; then slowly cooled to room temperature."
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Weighing of Li2S, GeS2, ZnS, Ga2S3.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The Experimental section explicitly states: “The starting materials were Li2S, GeS2, ZnS and Ga2S3… These were weighed, mixed…” This directly supports the workflow step ‘Weighing of Li2S, GeS2, ZnS, Ga2S3.’",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Mixing of powders in argon atmosphere.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "In the Experimental section (page 2), the paper states: “These were weighed, mixed in appropriate molar ratios in an argon-filled glove box…”. This explicitly supports that powder mixing was done in an argon atmosphere.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Transfer to carbon-coated quartz tube.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The Experimental section states the starting materials were “weighed, mixed… in an argon-filled glove box, put into a carbon-coated quartz tube and heated…”. This explicitly supports the workflow step “Transfer to carbon-coated quartz tube,” even though the wording in the paper is “put into.”",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Solid-state reaction at 600–800 °C for 8 h.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.99,
+          "reasoning": "In the Experimental section (Page 2), the synthesis procedure states the mixed starting materials were “heated at a reaction temperature of 600–800°C for 8 h” in a carbon-coated quartz tube. This directly supports the extracted workflow timeline “Solid-state reaction at 600–800 °C for 8 h.”",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Slow cooling to room temperature to form crystalline thio-LISICON.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The Experimental section explicitly states: \"After the reaction, the tube was slowly cooled to room temperature.\" This supports the workflow timeline step of slow cooling to room temperature as part of forming the crystalline thio-LISICON materials synthesized in the study.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear numeric exponent in reported conductivity values (e.g., '25 216.5310 Scm').",
+        "excerpt": "… showed the highest conductivity of 25 216.5310 Scm at room temperature.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.96,
+          "reasoning": "The paper does report a room-temperature ionic conductivity, but the excerpted value is misparsed. In the Abstract and later discussion it states “6.5 × 10^-3 S cm^-1 at room temperature” (also given as 6.53×10^-3 S cm^-1 at 25°C), not “25 216.5310 S cm”. The “25” corresponds to 25°C (or 258C), and “6.5 3 10” is the typeset form of 6.5×10^…; the exponent is −3 (see Table 1 and the text on Page 3/5).",
+          "suggested_fix": "Highest conductivity at room temperature (≈25°C): 6.5 × 10^-3 S cm^-1 (also written 6.53 × 10^-3 S cm^-1 at 25°C) for Li_{3.25}(Ge_{0.25}Ga_{0.75})S_4 (x=0.25 in Li_{4−x}(Ge_{1−δ}Ga_δ)S_4 system)."
+        }
+      },
+      {
+        "issue": "Exact stoichiometry of some compounds (e.g., '29Li GeS', '27Li GeS') not explicitly defined.",
+        "excerpt": "Table 1: 29Li GeS, 27Li GeS…",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "Table 1 lists compounds written as “29 Li GeS” and “27 Li GeS” (and similar entries), but the paper elsewhere refers to the actual stoichiometries as Li4GeS4 and Li2GeS3 (see Abstract and Results: “Li4GeS4 and Li2GeS3”). The table does not explicitly define what the leading “29”/“27” means, creating ambiguity in stoichiometry notation as extracted.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Missing explicit DOI in the provided text.",
+        "excerpt": "PII: S0167-2738(00)00277-0",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "Scanning the full provided paper text shows no explicit DOI anywhere. The only identifier given is the Publisher Item Identifier line at the bottom of page 1: \"PII: S0167-2738(00)00277-0\". Therefore the stated workflow issue (missing explicit DOI) is supported by the source text, and the excerpt is correctly quoted from the document.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "instrument": "Rigaku RAD-C 12 kW",
+        "step_width": "0.02° 2θ",
+        "2θ_range": "20–110°"
+      },
+      "results": [
+        {
+          "metric": "crystal_system",
+          "value": "orthorhombic",
+          "unit": "",
+          "notes": "e.g., Li4GeS4"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Experimental",
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "Table 1 (in the Results and discussion section on page 2) explicitly lists the crystal system as “Orthorhombic” for multiple compounds in the thio-LISICON lithium germanium sulfide system (e.g., Li4GeS4, Li2GeS3, Li2ZnGeS4, etc.). Therefore the extracted XRD crystal_system = orthorhombic is supported (though it applies to several compounds, including the noted Li4GeS4).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Rietveld refinement",
+      "parameters": {
+        "software": "RIETAN-97b"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameters_Li3GeS4",
+          "value": "a=14.0658 Å, b=7.7510 Å, c=6.1497 Å",
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports the lattice parameters for orthorhombic Li3GeS4 in the X-ray Rietveld refinement results (Table 2 footnote): a = 14.0658(2) Å, b = 7.75102(15) Å, c = 6.14973(10) Å. These match the extracted values (rounded). Although the provenance says 'Table 2', the values are indeed given with Table 2 (in the space group/lattice parameter line).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "instrument": "Solartron 1260",
+        "frequency_range": "0.1 Hz – 10 MHz",
+        "electrode": "Au paste, fired 350 °C 5 h",
+        "sample_geometry": "pellet 8 mm Ø, 2–3 mm thick",
+        "temperature_range": "298–573 K"
+      },
+      "results": [
+        {
+          "metric": "ionic_conductivity_Li(Ge0.75Ga0.25)S4",
+          "value": 6.5,
+          "unit": "mS cm-1",
+          "notes": "Exact exponent ambiguous; see ambiguities."
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results",
+        "Figure 5"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The paper reports room-temperature ionic conductivity for Li(Ge0.75Ga0.25)S4 as 6.5×10^-3 S cm^-1 (i.e., 6.5 mS cm^-1). This appears in the Abstract (“6.5 × 10^-3 S cm^-1 at room temperature”), Table 1 (“6.5 × 10^-3 … at x=0.25”), and Results text near Fig. 5(b) (“conductivity value at 25°C was 6.53 × 10^-3 S cm^-1”). The extracted numeric value 6.5 mS cm^-1 is correct, but the note claiming the exponent is ambiguous is not supported by the text; the exponent is explicitly −3 in multiple places.",
+        "suggested_fix": "[{'metric':'ionic_conductivity_Li(Ge0.75Ga0.25)S4','value':6.5,'unit':'mS cm-1','notes':'Equivalent to 6.5×10^-3 S cm^-1 at ~25°C (room temperature), x=0.25.'}]"
+      }
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "cell": "Li / Li(Ge0.75Ga0.25)S4 / Au",
+        "scan_rate": "10 mV s-1",
+        "voltage_range": "2–5 V",
+        "electrolyte_thickness": "0.2 cm",
+        "area": "0.28 cm2"
+      },
+      "results": [
+        {
+          "metric": "electrochemical_stability",
+          "value": "stable up to ~5 V vs Li",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 6"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly reports cyclic voltammetry results indicating no significant anodic current (electrolyte decomposition) up to 5 V vs. Li, implying electrochemical stability to ~5 V. This appears in the discussion of Fig. 6 and the Fig. 6 caption: \"No significant anodic current due to electrolyte decomposition was observed up to 5 V\" and \"stable for an applied voltage up to 5 V\" (vs. Li).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Hebb–Wagner polarization",
+      "parameters": {
+        "cell": "Li / Li(Ge0.75Ga0.25)S4 / Au"
+      },
+      "results": [
+        {
+          "metric": "electronic_conductivity_total_at_1V",
+          "value": null,
+          "unit": "S cm-1",
+          "notes": "Value unreadable in text formatting."
+        }
+      ],
+      "interpretation": "Electronic contribution negligible.",
+      "prov": [
+        "Figure 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.77,
+        "reasoning": "The paper reports a Hebb–Wagner polarization measurement and gives an electronic conductivity value at an applied voltage of 1.0 V. However, the extracted value is None, and the source text does contain a readable numeric value: “the electronic conductivity at an applied voltage of 1.0 V was 6.8×10^-28 S cm^-1” (page 6, discussing Fig. 7). Therefore, the extraction as None is only supported insofar as Fig. 7 itself (the plotted figure) is not provided here and could be unreadable, but the value is explicitly stated in the body text.",
+        "suggested_fix": "[{'metric': 'electronic_conductivity_total_at_1V', 'value': 6.8e-28, 'unit': 'S cm-1', 'notes': 'Stated in text: electronic conductivity at applied voltage 1.0 V was 6.8×10^-28 S cm^-1 (Hebb–Wagner, Fig. 7 discussion).'}]"
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Battery charge–discharge test",
+        "results": [
+          {
+            "metric": "specific_capacity",
+            "value": 80,
+            "unit": "mAh g-1",
+            "notes": "In / Li(Ge0.75Ga0.25)S4 / LiCoO2 cell at room temperature"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.94,
+          "reasoning": "The paper explicitly describes several analysis/measurement methods (X-ray diffraction with Rietveld refinement; AC impedance for ionic conductivity; cyclic voltammetry; Hebb–Wagner polarization; charge–discharge testing of all-solid-state cells). However, the extracted value for \"Analysis Method\" is blank, so it is not explicitly supported as-is.",
+          "suggested_fix": "Analysis Method: X-ray diffraction (powder XRD) with Rietveld analysis (RIETAN-97b); AC impedance spectroscopy; cyclic voltammetry; Hebb–Wagner polarization technique; galvanostatic charge–discharge testing of solid-state cells."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 80,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.95,
+      "reasoning": "The paper explicitly reports: “The charge and discharge capacity was about 80 mA h g−1.” This appears in the Results section describing the In/LiCoO2 all-solid-state cell charge–discharge experiments (page 6 of the provided text). This matches the extracted Final Capacity value of 80 mAh g−1.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-23T11:49:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

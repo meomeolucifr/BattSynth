@@ -1,0 +1,338 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Investigation of material, chemical, and electrochemical properties of Li10SiP2S12-xOx and Li10[SnySi1-y]P2S12-xOx solid electrolytes",
+    "doi": "",
+    "authors": ["Kwang-Hyun Kim"],
+    "journal": "",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "PhD dissertation",
+    "tags": ["solid-state electrolyte", "LGPS", "sulfide", "oxygen substitution", "tin substitution"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10SiP2S12-xOx (LSiPSO)",
+      "molecular_formula": "",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 39", "Section 2.1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li10[SnySi1-y]P2S12-xOx (LSnSiPSO)",
+      "molecular_formula": "",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 76", "Section 3.1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Section 2.2.1", "Section 3.3.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Section 2.2.1", "Section 3.3.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "SiS2",
+      "molecular_formula": "SiS2",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "prepared in house",
+      "prov": ["Section 2.2.1", "Section 3.3.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "SnS2",
+      "molecular_formula": "SnS2",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "prepared in house; only for LSnSiPSO",
+      "prov": ["Section 3.3.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "SiO2",
+      "molecular_formula": "SiO2",
+      "ontology": {"role": "oxygen source", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Section 2.2.1", "Section 3.3.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "P2O5",
+      "molecular_formula": "P2O5",
+      "ontology": {"role": "oxygen source", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Section 2.2.1", "Section 3.3.1"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "glovebox atmosphere",
+      "prov": ["Section 2.2.1"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "glovebox atmosphere",
+      "prov": ["Section 2.2.1"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "CsI",
+      "molecular_formula": "CsI",
+      "ontology": {"role": "matrix", "category": "inorganic"},
+      "amount": {"value": 100, "unit": "mg"},
+      "notes": "FT-IR pellet matrix",
+      "prov": ["Section 2.2.3"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Silver paste",
+      "molecular_formula": "",
+      "ontology": {"role": "electrode", "category": "conductive paste"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "blocking electrode for impedance",
+      "prov": ["Section 2.2.4"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {"role": "electrode", "category": "metal"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "foil 0.1–0.5 mm thick",
+      "prov": ["Section 4.3.1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanical ball milling of precursors",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_5", "chem_6", "chem_4"],
+              "speed": {"value": 1725, "unit": "min-1", "notes": "rpm"},
+              "duration": {"value": 60, "unit": "min"}
+            },
+            "notes": "Stainless-steel pot and 10 mm ball under N2 atmosphere",
+            "prov": ["Section 2.2.1", "Section 3.3.1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Section 2.2.1", "Section 3.3.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pellet pressing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {"value": 13, "unit": "MPa"}
+            },
+            "notes": "rectangular bar pellets, done in Ar glovebox",
+            "prov": ["Section 2.2.1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar"
+        },
+        "prov": ["Section 2.2.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Ampoule sealing",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "atmosphere": "vacuum",
+              "pressure": {"value": 1e-4, "unit": "bar"}
+            },
+            "notes": "pellets sealed in evacuated silica ampoules",
+            "prov": ["Section 2.2.1"]
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.2.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Solid-state reaction (crystallization)",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature_profile": [
+                {"value": 298, "unit": "K", "note": "start"},
+                {"value": 823, "unit": "K", "rate": "1 K min-1"},
+                {"value": 823, "unit": "K", "hold": {"value": 2880, "unit": "min"}}
+              ]
+            },
+            "notes": "followed by cooling to RT at 1 K min-1",
+            "prov": ["Section 2.2.1", "Section 3.3.1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed vacuum",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Section 2.2.1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Pellet preparation for electrochemical tests",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {"value": 900, "unit": "psi"},
+              "duration": {"value": 10, "unit": "min"}
+            },
+            "notes": "powders pressed into 13 mm diameter discs ~0.7 mm thick",
+            "prov": ["Section 4.3.2"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar"
+        },
+        "prov": ["Section 4.3.2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Mechanochemical mixing of precursors"},
+      {"step_ref": "step_2", "description": "Cold pressing into pellets"},
+      {"step_ref": "step_3", "description": "Vacuum sealing in quartz"},
+      {"step_ref": "step_4", "description": "Heat treatment at 823 K for 48 h"},
+      {"step_ref": "step_5", "description": "Preparation of dense pellets for testing"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometric masses not reported",
+        "excerpt": "Starting materials, Li2S, P2S5, SiS2, SnS2, and SiO2, were massed out in stoichiometric amounts."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "PXRD",
+      "parameters": {
+        "radiation": "Cu Kα (λ=1.5406 Å)",
+        "range": "10–90° 2θ",
+        "step": "0.01°"
+      },
+      "results": [
+        {"metric": "phases identified", "value": "LGPS-like, β-Li3PS4, Li3PO4, Li4SiS4, Li7PS6"}
+      ],
+      "interpretation": "Phase purification increases LGPS-like fraction with O and Sn doping.",
+      "prov": ["Figures 2.6", "3.5"]
+    },
+    {
+      "method": "Raman",
+      "parameters": {"laser": "488 nm", "range": "100–3200 cm-1"},
+      "results": [],
+      "interpretation": "Oxy-sulfide PS4-zOz units observed.",
+      "prov": ["Figure 2.4", "Figure 3.3"]
+    },
+    {
+      "method": "FT-IR",
+      "parameters": {"range": "400–4000 cm-1"},
+      "results": [],
+      "interpretation": "P–O and P–S bonds confirmed; no Si–O observed.",
+      "prov": ["Figure 2.5", "Figure 3.4"]
+    },
+    {
+      "method": "MAS NMR",
+      "parameters": {"nuclei": "31P, 29Si, 119Sn"},
+      "results": [
+        {"metric": "31P units", "value": "PS4, PS4-zOz, PO4 populations"},
+        {"metric": "29Si units", "value": "SiS4 in LGPS and Li4SiS4"},
+        {"metric": "119Sn units", "value": "SnS4 and disordered Sn"}
+      ],
+      "interpretation": "O selectively bonds to P; Sn at 4d stabilizes structure.",
+      "prov": ["Figures 2.10-2.15", "Figures 3.10-3.18"]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {"frequency_range": "0.1–10^7 Hz", "temperature_range": "203–298 K"},
+      "results": [
+        {"metric": "ionic conductivity (x=0.7)", "value": 3.1e-3, "unit": "S cm-1"}
+      ],
+      "interpretation": "Conductivity maximized at O content x=0.7 for LSiPSO.",
+      "prov": ["Figure 2.3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {"equation": "σ=σ0 exp(-Ea/RT)", "value": 26.3, "unit": "kJ mol-1", "notes": "example for LSn0.2SiPSO0.3"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-13T12:00:00Z",
+    "source_file": "thesis_excerpt.txt",
+    "processing_time": 0.5
+  }
+}

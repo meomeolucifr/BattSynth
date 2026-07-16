@@ -1,0 +1,244 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Feasible approaches for anode-free lithium-metal batteries as next generation energy storage systems",
+    "doi": "10.1016/j.ensm.2023.02.040",
+    "authors": ["Chang-Heum Jo", "Kee-Sun Sohn", "Seung-Taek Myung"],
+    "journal": "Energy Storage Materials",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review_article",
+    "tags": ["anode-free lithium-metal batteries", "electrolytes", "current-collector modification", "artificial SEI"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Al2O3-coated Cu current collector",
+      "molecular_formula": "Al2O3",
+      "intended_role": "artificial_SEI_layer",
+      "prov": ["Page 480, Fig. 8a"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Sn-Cu foil current collector",
+      "molecular_formula": "",
+      "intended_role": "modified_current_collector",
+      "prov": ["Page 479, Fig. 7b"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "3D porous Cu foil",
+      "molecular_formula": "",
+      "intended_role": "modified_current_collector",
+      "prov": ["Page 479-480, Fig. 7c"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiTFSI",
+      "ontology": {"role": "salt", "category": "electrolyte_salt"},
+      "amount": {"value": 1.86, "unit": "M"},
+      "notes": "Dissolved in ethylene carbonate (EC)",
+      "prov": ["Page 476, Fig. 4a"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {"role": "solvent", "category": "carbonate_solvent"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Page 476, Fig. 4a"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium difluoro(oxalato)borate",
+      "molecular_formula": "LiBF2C2O4",
+      "ontology": {"role": "salt", "category": "electrolyte_salt"},
+      "amount": {"value": 1, "unit": "M"},
+      "notes": "Used with 0.2 M LiBF4 in FEC/DEC (1:2 v/v)",
+      "prov": ["Page 476-477, Fig. 4b"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium tetrafluoroborate",
+      "molecular_formula": "LiBF4",
+      "ontology": {"role": "salt", "category": "electrolyte_salt"},
+      "amount": {"value": 0.2, "unit": "M"},
+      "notes": "In FEC/DEC (1:2 v/v)",
+      "prov": ["Page 476-477, Fig. 4b"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Fluoroethylene carbonate",
+      "molecular_formula": "C3H3FO3",
+      "ontology": {"role": "solvent", "category": "carbonate_solvent"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Part of FEC/DEC mixture",
+      "prov": ["Page 476-477, Fig. 4b"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Diethyl carbonate",
+      "molecular_formula": "C5H10O3",
+      "ontology": {"role": "solvent", "category": "carbonate_solvent"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Part of FEC/DEC mixture 1:2 v/v",
+      "prov": ["Page 476-477, Fig. 4b"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium bis(fluorosulfonyl)imide",
+      "molecular_formula": "LiFSI",
+      "ontology": {"role": "salt", "category": "electrolyte_salt"},
+      "amount": {"value": 3, "unit": "M"},
+      "notes": "In DME solvent for ether electrolyte",
+      "prov": ["Page 483-484, section 4.1.1"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "1,2-Dimethoxyethane",
+      "molecular_formula": "C4H10O2",
+      "ontology": {"role": "solvent", "category": "ether_solvent"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Page 483-484, section 4.1.1"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Lithium nitrate",
+      "molecular_formula": "LiNO3",
+      "ontology": {"role": "additive", "category": "electrolyte_additive"},
+      "amount": {"value": 0.2, "unit": "M"},
+      "notes": "Added to 1 M LiDFOB in EC/DMC",
+      "prov": ["Page 478, Fig. 6b"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Potassium nitrate",
+      "molecular_formula": "KNO3",
+      "ontology": {"role": "additive", "category": "electrolyte_additive"},
+      "amount": {"value": 0.5, "unit": "M"},
+      "notes": "Added to 1 M LiPF6 electrolyte",
+      "prov": ["Page 477-478, Fig. 6a"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Atomic layer deposition of Al2O3 on Cu foil to form 15 nm artificial SEI layer.",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {"inputs": ["chem_1", "Cu foil"]},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "Thickness reported as 15 nm."
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 480, Fig. 8a"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pretreatment of copper foil with tin to prepare Sn-Cu current collector.",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {"inputs": ["Sn"], "onto": "Cu foil"},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 479, Fig. 7b"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Formation of 3D porous Cu current collector by chemical treatment of planar Cu.",
+        "operations": [
+          {
+            "action": "etch",
+            "parameters": {"inputs": ["Cu foil"]},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "Procedure schematic in Fig. 7c."
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 479-480, Fig. 7c"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Al2O3 coating on Cu"},
+      {"step_ref": "step_2", "description": "Sn pretreatment on Cu"},
+      {"step_ref": "step_3", "description": "Creation of porous Cu collector"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing processing parameters",
+        "excerpt": "Cui’s group coated a 15-nm-thick Al2O3 layer on a copper current collector (Fig. 8a). No deposition conditions (temperature, time) provided."
+      },
+      {
+        "issue": "Undefined etching details for 3D Cu collector",
+        "excerpt": "Fig. 7c: 'procedures to prepare a 3D porous Cu foil from a planar Cu foil' without chemical or time specifics."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {"metric": "Li morphology on Cu after cycling", "value": "dense columnar", "unit": ""}
+      ],
+      "interpretation": "Highly concentrated LiTFSI-EC electrolyte produced dense Li deposits.",
+      "prov": ["Page 476, Fig. 4a-2"]
+    },
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {"current_density": "1 mA cm-2", "capacity": "3.5 mAh cm-2"},
+      "results": [
+        {"metric": "capacity_retention", "value": 50, "unit": "%"},
+        {"metric": "LIRR", "value": 97.7, "unit": "%"}
+      ],
+      "interpretation": "Cell with 1.86 M LiTFSI-EC maintained 50 % capacity after 30 cycles.",
+      "prov": ["Page 476, Fig. 4a-1"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {"value": null, "unit": "%"},
+    "capacity": {"value": null, "unit": "mAh g-1"},
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-02T13:59:00Z",
+    "source_file": "Energy Storage Materials 57 (2023) 471–496 (text extract)",
+    "processing_time": null
+  }
+}

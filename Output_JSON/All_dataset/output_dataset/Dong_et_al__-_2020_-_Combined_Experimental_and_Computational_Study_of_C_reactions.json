@@ -1,0 +1,620 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Combined Experimental and Computational Study of Ce-Doped La3Zr2Li7O12 Garnet Solid-State Electrolyte",
+    "doi": "10.1021/acs.chemmater.9b03526",
+    "authors": ["Bo Dong", "Stephen R. Yeandel", "Pooja Goddard", "Peter R. Slater"],
+    "journal": "Chemistry of Materials",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis study",
+    "tags": ["solid-state electrolyte", "garnet", "Ce-doping", "Li-ion batteries"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "product",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li7La3Zr1.875Ce0.125O12",
+      "molecular_formula": "Li7La3Zr1.875Ce0.125O12",
+      "intended_role": "product",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li7La3Zr1.75Ce0.25O12",
+      "molecular_formula": "Li7La3Zr1.75Ce0.25O12",
+      "intended_role": "product",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "15–20% excess added to compensate Li loss",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "lithium nitrate",
+      "molecular_formula": "LiNO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "cerium(IV) oxide",
+      "molecular_formula": "CeO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "lanthanum(III) oxide",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "zirconium(IV) oxide",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "hexane",
+      "molecular_formula": "C6H14",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used during planetary ball milling",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "gold paste",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrode coating",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "printed on pellet surfaces for impedance measurements",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "glovebox atmosphere during cell assembly",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "lithium metal foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "38 µm thickness",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "stainless steel",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "working electrode",
+        "category": "substrate"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pre-dry lithium carbonate",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 453.15,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pre-dry lanthanum oxide and zirconium oxide",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1173.15,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Mix and grind stoichiometric reagents with excess Li2CO3",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "intimately ground; Li2CO3 used with 15–20% excess"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Initial calcination",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 923.15,
+              "unit": "K"
+            },
+            "notes": "heating rate 5 K/min"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Planetary ball milling with hexane",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["chem_6"]
+            },
+            "duration": {
+              "value": 30,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "ZrO2 containers and balls"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Pellet pressing and final sintering",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "pressed into pellets and placed onto ZrO2 supports"
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1273.15,
+              "unit": "K"
+            },
+            "notes": "1000–1050 °C (1273–1323 K) for 12 h in air; heating rate 5 K/min"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Additional sintering for impedance samples",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1323.15,
+              "unit": "K"
+            },
+            "notes": "in dry N2, pellets surrounded by mother powder"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2 (dry)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Apply gold contacts",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["chem_7"]
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1123.15,
+              "unit": "K"
+            },
+            "notes": "Au paste printed on both pellet sides"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dry Li2CO3 at 180 °C"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Dry La2O3 and ZrO2 at 900 °C"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Grind stoichiometric mix with excess Li2CO3"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Initial calcination at 650 °C for 12 h"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Ball milling with hexane for 30 min"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Pelletize and final sinter at 1000–1050 °C for 12 h"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Secondary sintering for impedance samples at 1050 °C for 4 h"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Apply Au electrodes at 850 °C for 1 h"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Use of LiNO3 not explicitly described in synthesis steps",
+        "excerpt": "LiNO3 (99.99%, Sigma-Aldrich) ... were used as reagents."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {
+        "instrument": "Bruker D8",
+        "radiation": "Cu Kα",
+        "2θ_range": "15–80°",
+        "step_size": "0.02°"
+      },
+      "results": [
+        {
+          "metric": "phase transition temperature (LLZO tetragonal→cubic)",
+          "value": 998.15,
+          "unit": "K"
+        },
+        {
+          "metric": "phase transition temperature (LLZCO25 tetragonal→cubic)",
+          "value": 598.15,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Ce doping lowers tetragonal–cubic transition temperature",
+      "prov": ["Figure 5", "Experimental Section"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "instrument": "HP 4192",
+        "voltage": "100 mV",
+        "frequency_range": "1–1e7 Hz"
+      },
+      "results": [
+        {
+          "metric": "bulk conductivity (LLZCO25, 50 °C)",
+          "value": 1.2e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy (LLZCO25)",
+          "value": 0.29,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Ce-doped sample shows ~1.5 orders higher conductivity than undoped",
+      "prov": ["Figure 8", "Results"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy (EIS)",
+      "parameters": {
+        "instrument": "Solartron 1260",
+        "voltage": "100 mV",
+        "frequency_range": "1–1e7 Hz"
+      },
+      "results": [
+        {
+          "metric": "interfacial resistance (Li//LLZO//Li)",
+          "value": 2100,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "interfacial resistance (Li//LLZCO25//Li)",
+          "value": 388,
+          "unit": "Ω cm2"
+        }
+      ],
+      "interpretation": "Ce doping greatly reduces interfacial resistance with Li metal",
+      "prov": ["Figure 11"]
+    },
+    {
+      "method": "Cyclic voltammetry (CV)",
+      "parameters": {
+        "instrument": "Biologic SP150",
+        "scan_rate": "1 mV s-1",
+        "voltage_range": "-0.4–4 V vs Li/Li+"
+      },
+      "results": [
+        {
+          "metric": "reduction peak (LLZCO25)",
+          "value": 0.395,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Additional peak attributed to Ce redox processes",
+      "prov": ["Figure 10"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations (VASP, PBEsol/HSE06)",
+        "results": [
+          {
+            "equation": "",
+            "value": 0.36,
+            "unit": "V",
+            "notes": "Calculated Ce4+/Ce3+ redox voltage (furthest Li insertion)"
+          },
+          {
+            "equation": "",
+            "value": 0.43,
+            "unit": "V",
+            "notes": "Calculated Ce4+/Ce3+ redox voltage (nearest Li insertion)"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": "190 h"
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T18:35:00Z",
+    "source_file": "input_text_chunk",
+    "processing_time": null
+  }
+}

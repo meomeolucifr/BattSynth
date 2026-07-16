@@ -1,0 +1,292 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recycling of cathode material from spent lithium-ion batteries: Challenges and future perspectives",
+    "doi": "10.1016/j.jhazmat.2022.128312",
+    "authors": ["Tirath Raj", "Kuppam Chandrasekhar", "Amradi Naresh Kumar", "Pooja Sharma", "Ashok Pandey", "Min Jang", "Byong-Hun Jeon", "Sunita Varjani", "Sang-Hyoun Kim"],
+    "journal": "Journal of Hazardous Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review_article_extraction",
+    "tags": ["battery recycling", "hydrometallurgy", "alkali leaching", "cobalt recovery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "cobalt oxalate",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 8, Table 1, Chen et al., 2011b"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2 cathode powder",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "feedstock",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "spent lithium-ion battery cathode material",
+      "prov": ["Page 8, Table 1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "sodium hydroxide",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "reagent",
+        "category": "inorganic base"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "wt%"
+      },
+      "notes": "",
+      "prov": ["Page 8, Table 1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "sulfuric acid",
+      "molecular_formula": "H2SO4",
+      "ontology": {
+        "role": "leaching agent",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": 4,
+        "unit": "M"
+      },
+      "notes": "",
+      "prov": ["Page 8, Table 1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "hydrogen peroxide",
+      "molecular_formula": "H2O2",
+      "ontology": {
+        "role": "reducing_agent",
+        "category": "oxidizer"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "vol%"
+      },
+      "notes": "",
+      "prov": ["Page 8, Table 1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "2-ethylhexyl phosphonic acid mono-2-ethylhexyl ester",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "extractant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used in saponification purification",
+      "prov": ["Page 8, Table 1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "oxalic acid",
+      "molecular_formula": "H2C2O4",
+      "ontology": {
+        "role": "precipitating_agent",
+        "category": "organic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 8, Table 1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Alkali leaching of LiCoO2 cathode powder",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 358,
+              "unit": "K"
+            },
+            "notes": "5 wt% NaOH solution used"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 8, Table 1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Acid leaching of residue for metal recovery",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "4 M H2SO4 with 10% v/v H2O2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 8, Table 1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Purification and precipitation of cobalt oxalate",
+        "operations": [
+          {
+            "action": "extract",
+            "parameters": {
+              "inputs": ["chem_5"]
+            },
+            "notes": "saponification extraction to purify Co(II)"
+          },
+          {
+            "action": "precipitate",
+            "parameters": {
+              "inputs": ["chem_6"]
+            },
+            "notes": "Co(II) precipitated as cobalt oxalate"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 8, Table 1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Spent cathode material is leached in 5 wt% NaOH at 358 K for 120 min."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Solid is acid-leached with 4 M H2SO4 + 10 vol% H2O2 to dissolve Co and Li."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Co(II) purified via phosphonic extractant and precipitated with oxalic acid to yield cobalt oxalate."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Leaching time and temperature for acid leaching step not specified.",
+        "excerpt": "4MH2SO4 + 10% v/v H2O2 effectively recovered ~95% Co and 96% Li."
+      },
+      {
+        "issue": "Exact quantities of extractant and oxalic acid not provided.",
+        "excerpt": "Co(II) was purified via saponification with 2-ethylhexyl phosphonic acid mono-2-ethylhexyl ester and was then selectively precipitated from leached liquor, yielding 93% cobalt oxalate with ≈99.9% purity."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Purity assay",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "product purity",
+          "value": 99.9,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 8, Table 1"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Yield calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": 93,
+            "unit": "%"
+          }
+        ],
+        "prov": ["Page 8, Table 1"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": 93,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-25T13:34:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

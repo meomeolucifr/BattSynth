@@ -1,0 +1,178 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Nondilute diffusion from ﬁrst principles: Li diffusion in Li xTiS 2",
+    "doi": "10.1103/PhysRevB.78.104306",
+    "authors": [
+      "Anton Van der Ven",
+      "John C. Thomas",
+      "Qingchuan Xu",
+      "Benjamin Swoboda",
+      "Dane Morgan"
+    ],
+    "journal": "Physical Review B",
+    "year": 2008
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["Li diffusion", "cluster expansion", "kinetic Monte Carlo", "DFT", "intercalation compound"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li_xTiS2",
+      "molecular_formula": "Li_xTiS2",
+      "intended_role": "host / study material",
+      "prov": ["Article title and throughout text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li_xTiS2",
+      "molecular_formula": "Li_xTiS2",
+      "ontology": {
+        "role": "intercalation host",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["General text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "",
+        "description": ""
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (LDA-PAW)",
+      "parameters": {
+        "supercell_size": "24 formula units (2√3a × 2√3a × c)",
+        "k_point_grid": "3 × 3 × 1"
+      },
+      "results": [
+        {
+          "metric": "Predicted c-lattice parameter at x = 1",
+          "value": 6.06,
+          "unit": "Å"
+        },
+        {
+          "metric": "Experimental c-lattice parameter at x = 1 (for comparison)",
+          "value": 6.2,
+          "unit": "Å"
+        },
+        {
+          "metric": "Predicted c-lattice parameter at x = 0",
+          "value": 5.48,
+          "unit": "Å"
+        },
+        {
+          "metric": "Experimental c-lattice parameter at x = 0 (for comparison)",
+          "value": 5.7,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "LDA underestimates the c-lattice parameter compared with experiment.",
+      "prov": ["Text: 'equilibrium c-lattice parameters predicted by LDA...'"]
+    },
+    {
+      "method": "Nudged Elastic Band (NEB)",
+      "parameters": {
+        "environment": "supercell with 24 Li_xTiS2 units"
+      },
+      "results": [
+        {
+          "metric": "Energy difference octahedral → tetrahedral (isolated vacancy)",
+          "value": 0.70,
+          "unit": "eV"
+        },
+        {
+          "metric": "Barrier to leave tetrahedral site (isolated vacancy)",
+          "value": 0.015,
+          "unit": "eV"
+        },
+        {
+          "metric": "Energy difference between tetrahedral sites (paths I vs II in divacancy)",
+          "value": 0.38,
+          "unit": "eV"
+        },
+        {
+          "metric": "Barrier to leave tetrahedral site (divacancy path II)",
+          "value": 0.15,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Lower migration barriers occur when the hop end-point belongs to a divacancy.",
+      "prov": ["Fig. 6 and related text"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Kinetic Monte Carlo simulation",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": "",
+            "description": "Diffusion coefficient varies by several orders of magnitude with Li concentration, reaching a maximum near x = 0.5 (Fig. 8)."
+          }
+        ]
+      },
+      {
+        "method_name": "Grand Canonical Monte Carlo (thermodynamic factor)",
+        "results": [
+          {
+            "equation": "",
+            "value": 10,
+            "unit": "",
+            "description": "Thermodynamic factor ranges ~10-20 for most Li concentrations, diverging near stoichiometric limits (Fig. 5)."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-07T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

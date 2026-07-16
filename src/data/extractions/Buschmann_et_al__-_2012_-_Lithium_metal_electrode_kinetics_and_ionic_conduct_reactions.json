@@ -1,0 +1,468 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium metal electrode kinetics and ionic conductivity of the solid lithium ion conductors “Li7La3Zr2O12” and Li7−xLa3Zr2−xTaxO12 with garnet-type structure",
+    "doi": "10.1016/j.jpowsour.2012.01.094",
+    "authors": ["Henrik Buschmann", "Stefan Berendts", "Boris Mogwitz", "Jürgen Janek"],
+    "journal": "Journal of Power Sources",
+    "year": 2012
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid electrolyte", "garnet", "lithium ion conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "t1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 238-240"]
+    },
+    {
+      "target_id": "t2",
+      "compound_name": "Li6.625La3Zr1.625Ta0.375O12 (29 mol% Al)",
+      "molecular_formula": "Li6.625La3Zr1.625Ta0.375O12",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 238-241"]
+    },
+    {
+      "target_id": "t3",
+      "compound_name": "Li6La3ZrTaO12",
+      "molecular_formula": "Li6La3ZrTaO12",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 238-241"]
+    },
+    {
+      "target_id": "t4",
+      "compound_name": "Li5.5La3Zr0.5Ta1.5O12",
+      "molecular_formula": "Li5.5La3Zr0.5Ta1.5O12",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 238-240"]
+    },
+    {
+      "target_id": "t5",
+      "compound_name": "Li6.5La3Zr1.5Ta0.5O12",
+      "molecular_formula": "Li6.5La3Zr1.5Ta0.5O12",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 238-240"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "c1",
+      "name": "LiOH",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used with 10–15 wt% excess",
+      "prov": ["Page 238"]
+    },
+    {
+      "chemical_id": "c2",
+      "name": "ZrO2",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "99.9% purity",
+      "prov": ["Page 238"]
+    },
+    {
+      "chemical_id": "c3",
+      "name": "La2O3",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Dried at 1173 K for 12 h",
+      "prov": ["Page 238"]
+    },
+    {
+      "chemical_id": "c4",
+      "name": "Ta2O5",
+      "molecular_formula": "Ta2O5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 238"]
+    },
+    {
+      "chemical_id": "c5",
+      "name": "γ-Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "1.7 wt% relative to garnet for Al-doped samples",
+      "prov": ["Page 238"]
+    },
+    {
+      "chemical_id": "c6",
+      "name": "2-propanol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used for ball milling dispersion",
+      "prov": ["Page 238"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "s1",
+        "description": "Mixing and ball milling of starting materials in excess LiOH with solvent",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["c1", "c2", "c3", "c4", "c5"],
+              "atmosphere": "air"
+            },
+            "notes": "Stoichiometric amounts with 10–15 wt% LiOH excess"
+          },
+          {
+            "action": "mill",
+            "parameters": {
+              "duration": {
+                "value": 360,
+                "unit": "min"
+              },
+              "speed": {
+                "value": 200,
+                "unit": "rpm"
+              },
+              "solvent": "c6"
+            },
+            "notes": "Planetary ball mill"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 238"]
+      },
+      {
+        "step_id": "s2",
+        "description": "First calcination for Ta-substituted samples",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 1223,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air"
+        },
+        "prov": ["Page 238-239"]
+      },
+      {
+        "step_id": "s3",
+        "description": "Grinding and second calcination to finish phase formation",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "Regrinding of powders"
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 1273,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air"
+        },
+        "prov": ["Page 238-239"]
+      },
+      {
+        "step_id": "s4",
+        "description": "Pelletizing, isostatic pressing, and sintering",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 3000,
+                "unit": "bar"
+              }
+            },
+            "notes": "Isostatic pressing"
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature": {
+                "value": 1273,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 1200,
+                "unit": "min"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air"
+        },
+        "prov": ["Page 239"]
+      },
+      {
+        "step_id": "s5",
+        "description": "Alternative high-temperature calcination/sintering for Al-doped LLZO (Ta-free)",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 1503,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "Final calcination/sintering step"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air"
+        },
+        "prov": ["Page 238"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "s1",
+        "description": "Precursor mixing and milling"
+      },
+      {
+        "step_ref": "s2",
+        "description": "Initial calcination of Ta-substituted compositions"
+      },
+      {
+        "step_ref": "s3",
+        "description": "Phase formation completion"
+      },
+      {
+        "step_ref": "s4",
+        "description": "Pellet formation and sintering"
+      },
+      {
+        "step_ref": "s5",
+        "description": "High-temperature sintering route for Al-doped LLZO"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear unit symbol “/H9262A” in exchange current density values",
+        "excerpt": "higher exchange current density of i0=  240  /H9262A  cm−2",
+        "prov": ["Page 236-241"]
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα1,2",
+        "range": "10–90° 2θ",
+        "step_width": "0.02° 2θ",
+        "instrument": "Siemens D500"
+      },
+      "results": [
+        {
+          "metric": "phase",
+          "value": "cubic garnet structure (Ia-3d)",
+          "unit": ""
+        },
+        {
+          "metric": "lattice parameter trend",
+          "value": "linear decrease with Ta content",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 238-240"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "7 MHz – 1 Hz",
+        "amplitude": "20 mV",
+        "temperature_range": "-40°C to 100°C"
+      },
+      "results": [
+        {
+          "metric": "conductivity_Li6.625La3Zr1.625Ta0.375O12",
+          "value": 5.2e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation_energy_Li6.625La3Zr1.625Ta0.375O12",
+          "value": 0.41,
+          "unit": "eV"
+        },
+        {
+          "metric": "conductivity_Li7La3Zr2O12",
+          "value": 3.5e-4,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 239-240"]
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "sweep_rate": "1 mV s-1",
+        "potential_window": "±0.1 V vs Li",
+        "temperature_range": "-20°C to 50°C"
+      },
+      "results": [
+        {
+          "metric": "exchange_current_density_Li6.625La3Zr1.625Ta0.375O12",
+          "value": 240,
+          "unit": "µA cm-2"
+        },
+        {
+          "metric": "exchange_current_density_Li7La3Zr2O12",
+          "value": 18,
+          "unit": "µA cm-2"
+        },
+        {
+          "metric": "exchange_current_density_Li6La3ZrTaO12",
+          "value": 46,
+          "unit": "µA cm-2"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 240-242"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "ln(1/RpT) = ln A - Ea/RT",
+            "value": null,
+            "unit": ""
+          },
+          {
+            "metric": "activation_energy_Rp_Li6.625La3Zr1.625Ta0.375O12",
+            "value": 0.44,
+            "unit": "eV"
+          },
+          {
+            "metric": "activation_energy_Rp_Li7La3Zr2O12",
+            "value": 0.41,
+            "unit": "eV"
+          },
+          {
+            "metric": "activation_energy_Rp_Li6La3ZrTaO12",
+            "value": 0.46,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-30T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

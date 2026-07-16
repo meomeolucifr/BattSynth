@@ -1,0 +1,413 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Tetragonal Li10GeP2S12 and Li7GePS8 – exploring the Li ion dynamics in LGPS Li electrolytes",
+    "doi": "",
+    "authors": [
+      "Alexander Kuhn",
+      "Viola Duppel",
+      "Bettina V. Lotsch"
+    ],
+    "journal": "Energy & Environmental Science",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "solid electrolyte study",
+    "tags": [
+      "Li-ion conductor",
+      "LGPS",
+      "solid electrolyte"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "product",
+      "prov": [
+        "S2 – Details of the Rietveld refinements"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li7GePS8",
+      "molecular_formula": "Li7GePS8",
+      "intended_role": "product",
+      "prov": [
+        "S2 – Details of the Rietveld refinements"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inorganic gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Inert atmosphere for all preparation and analysis steps",
+      "prov": [
+        "S1 - Experimental Details"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "electrode material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Li-blocking Au electrodes sputtered on pellet surfaces",
+      "prov": [
+        "S1 - Experimental Details"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Press powdered sample into pellets",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "target_1",
+                "target_2"
+              ],
+              "pellet_diameter": {
+                "value": 8,
+                "unit": "mm"
+              },
+              "pellet_thickness": {
+                "value": "1.5–3",
+                "unit": "mm"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": [
+              "S1 - Experimental Details"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "chem_1",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "S1 - Experimental Details"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Anneal pressed pellets",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": [
+                "target_1",
+                "target_2"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": [
+              "S1 - Experimental Details"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "chem_1",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "S1 - Experimental Details"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Sputter Li-blocking Au electrodes on annealed pellet surfaces",
+        "operations": [
+          {
+            "action": "sputter",
+            "parameters": {
+              "inputs": [
+                "chem_2"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": [
+              "S1 - Experimental Details"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "chem_1",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "S1 - Experimental Details"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Powdered Li10GeP2S12 or Li7GePS8 pressed into pellets (8 mm × 1.5–3 mm) under Ar."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pellets annealed under Ar (conditions not specified)."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Li-blocking Au electrodes sputtered onto both pellet faces."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Annealing conditions (temperature, time) not specified",
+        "excerpt": "annealed pellet s."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Mo Kα1",
+        "geometry": "Debye–Scherrer",
+        "instrument": "STOE Stadi P",
+        "monochromator": "Ge(111)"
+      },
+      "results": [
+        {
+          "sample": "Li10GeP2S12",
+          "metric": "lattice parameters",
+          "value": "a = b = 8.7136(20) Å, c = 12.6072(30) Å",
+          "unit": "Å"
+        },
+        {
+          "sample": "Li7GePS8",
+          "metric": "lattice parameters",
+          "value": "a = b = 8.71825(48) Å, c = 12.65972(71) Å",
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "S2 – Details of the Rietveld refinements"
+      ]
+    },
+    {
+      "method": "TEM",
+      "parameters": {
+        "acceleration_voltage": {
+          "value": 300,
+          "unit": "kV"
+        },
+        "instrument": "Philips CM30 ST"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": [
+        "S1 - Experimental Details"
+      ]
+    },
+    {
+      "method": "31P MAS NMR",
+      "parameters": {
+        "probe": "Bruker 4 mm MAS",
+        "rotation_rate": {
+          "value": 12,
+          "unit": "kHz"
+        },
+        "field_strength": {
+          "value": 9.4,
+          "unit": "T"
+        }
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": [
+        "S1 - Experimental Details"
+      ]
+    },
+    {
+      "method": "7Li PFG NMR",
+      "parameters": {
+        "probe": "Bruker Diff60",
+        "pulse_sequence": "stimulated echo with two gradient pulses",
+        "fields": [
+          {
+            "value": 9.4,
+            "unit": "T"
+          },
+          {
+            "value": 4.7,
+            "unit": "T"
+          }
+        ]
+      },
+      "results": [
+        {
+          "metric": "mean Li jump rate at 298 K",
+          "value": 1e9,
+          "unit": "s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "S5 – Details of the 7Li NMR relaxometry study"
+      ]
+    },
+    {
+      "method": "7Li NMR relaxometry",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.22,
+          "unit": "eV"
+        },
+        {
+          "metric": "attempt frequency",
+          "value": 2e12,
+          "unit": "s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "S5 – Details of the 7Li NMR relaxometry study"
+      ]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "instrument": "Novocontrol Alpha Analyzer",
+        "temperature_range": "168–498 K",
+        "equivalent_circuit": "Rs(CPE)gb(CPE)bulk(CPE)electrode"
+      },
+      "results": [
+        {
+          "metric": "conductivity at 298 K",
+          "value": 7,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "bulk/total activation energy",
+          "value": 0.22,
+          "unit": "eV"
+        },
+        {
+          "metric": "grain boundary activation energy",
+          "value": 0.30,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "S6 – Impedance spectroscopy"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius fit (NMR and impedance)",
+        "results": [
+          {
+            "equation": "σ = σ0 exp(-Ea/kT)",
+            "Ea_bulk": {
+              "value": 0.22,
+              "unit": "eV"
+            },
+            "Ea_gb": {
+              "value": 0.30,
+              "unit": "eV"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-07T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

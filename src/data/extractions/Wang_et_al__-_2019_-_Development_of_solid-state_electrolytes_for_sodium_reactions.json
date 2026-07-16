@@ -1,0 +1,220 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Development of solid-state electrolytes for sodium-ion battery –A short review",
+    "doi": "10.1016/j.nanoms.2019.02.007",
+    "authors": [
+      "Yumei Wang",
+      "Shufeng Song",
+      "Chaohe Xu",
+      "Ning Hu",
+      "Janina Molenda",
+      "Li Lu"
+    ],
+    "journal": "Nano Materials Science",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review_article",
+    "tags": [
+      "solid-state electrolyte",
+      "sodium-ion battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "cubic Na3PS4 electrolyte",
+      "molecular_formula": "Na3PS4",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Page 92"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na3PS4 glass-ceramic electrolyte",
+      "molecular_formula": "Na3PS4",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Page 92"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na3SbS4 electrolyte",
+      "molecular_formula": "Na3SbS4",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Page 93"
+      ]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "NZSP (Na3Zr2Si2PO12)",
+      "molecular_formula": "Na3Zr2Si2PO12",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Page 95"
+      ]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Tilde (~) and special font (‘/C04’) used to denote orders of magnitude; exact numeric value assumed as 1×10^-4 S/cm for “~10/C04 S/cm”.",
+        "excerpt": "cubic Na3PS4 ... (~10/C04S/cm)"
+      },
+      {
+        "issue": "Range given for activation energy without individual point values.",
+        "excerpt": "activation energy for hopping (19–27 kJ/mol)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 1e-4,
+          "unit": "S cm-1",
+          "sample_id": "target_1"
+        }
+      ],
+      "interpretation": "Room-temperature conductivity for cubic Na3PS4.",
+      "prov": [
+        "Page 92"
+      ]
+    },
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 3.3e-4,
+          "unit": "S cm-1",
+          "sample_id": "target_2"
+        }
+      ],
+      "interpretation": "Mid-range of 2.0–4.6×10^-4 S cm-1 reported for Na3PS4 glass-ceramic.",
+      "prov": [
+        "Page 92"
+      ]
+    },
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 3e-3,
+          "unit": "S cm-1",
+          "sample_id": "target_3"
+        }
+      ],
+      "interpretation": "Highest reported value for tetragonal Na3SbS4.",
+      "prov": [
+        "Page 93"
+      ]
+    },
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 6.7e-4,
+          "unit": "S cm-1",
+          "sample_id": "target_4"
+        }
+      ],
+      "interpretation": "Benchmark conductivity for NZSP.",
+      "prov": [
+        "Page 95"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Activation energy determination (Arrhenius)",
+        "results": [
+          {
+            "equation": "Arrhenius fit to σ(T)",
+            "value": 19,
+            "unit": "kJ mol-1",
+            "sample_id": "target_2"
+          },
+          {
+            "equation": "Arrhenius fit to σ(T)",
+            "value": 27,
+            "unit": "kJ mol-1",
+            "sample_id": "target_2"
+          }
+        ],
+        "prov": [
+          "Page 92"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T18:43:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

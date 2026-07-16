@@ -1,0 +1,451 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Study on lithium intercalation into MoS2",
+    "doi": "",
+    "authors": [
+      "Nobuyuki Imanishi",
+      "Mie Toyoda",
+      "Yasuo Takeda",
+      "Osamu Yamamoto"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 1992
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium intercalation", "MoS2", "electrochemistry", "cathode material"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li1.12MoS2",
+      "molecular_formula": "Li1.12MoS2",
+      "intended_role": "product",
+      "prov": ["Page 334, Experimental"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "expanded LiMoS2",
+      "molecular_formula": "LiMoS2",
+      "intended_role": "electrochemical discharge product",
+      "prov": ["Figures 3,4,5"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "1T-MoS2",
+      "molecular_formula": "MoS2",
+      "intended_role": "phase-transformed product",
+      "prov": ["Page 336, Figure 7"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "MoS2",
+      "molecular_formula": "MoS2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "g"
+      },
+      "notes": "average particle size 10 µm; also 0.1 g pressed for cell",
+      "prov": ["Page 334, Experimental"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "n-butyllithium (1.6 M in hexane)",
+      "molecular_formula": "C4H9Li",
+      "ontology": {
+        "role": "lithiation reagent",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": 40,
+        "unit": "mL"
+      },
+      "notes": "concentration 1.6 M",
+      "prov": ["Page 334, Experimental"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "hexane (n-hexane)",
+      "molecular_formula": "C6H14",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used as reaction medium and washing solvent",
+      "prov": ["Page 334, Experimental"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiClO4",
+      "molecular_formula": "LiClO4",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "1 M in PC/DME (1:1) or 1 M in DME",
+      "prov": ["Page 334, Experimental"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "propylene carbonate",
+      "molecular_formula": "C4H6O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "part of PC/DME (1:1 v/v) electrolyte",
+      "prov": ["Page 334, Experimental"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "1,2-dimethoxyethane",
+      "molecular_formula": "C4H10O2",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used neat or with PC",
+      "prov": ["Page 334, Experimental"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "sheet, 0.34 mm thickness",
+      "prov": ["Page 334, Experimental"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "operations in Ar dry box",
+      "prov": ["Page 334, Experimental"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Drying MoS2 powder",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 423,
+              "unit": "K"
+            },
+            "notes": "dried for several days prior to use"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 334, Experimental"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Chemical lithiation of MoS2 with n-butyllithium",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": 4320,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "stirred at room temperature"
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "dried under vacuum at room temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 334, Experimental"],
+        "outputs": ["target_1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Cathode tablet preparation",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "0.1 g MoS2 pressed into 8 mm diameter tablet"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 100,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 334, Experimental"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Coin cell assembly for electrochemical tests",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["chem_7", "chem_4", "chem_5", "chem_6"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "CR2025 cell; electrolyte either PC/DME (1:1) or DME"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 334, Experimental"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Pre-drying MoS2 powder"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Chemical lithiation to produce Li1.12MoS2"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Formation of cathode pellet"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Assembly of coin-type electrochemical cell"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Undefined drying time at 150°C",
+        "excerpt": "The powder was dried at 150’ C for several days before use."
+      },
+      {
+        "issue": "Room temperature not specified numerically",
+        "excerpt": "mixed and stirred ... at room temperature for three days."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Atomic absorption analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Lithium content",
+          "value": 1.12,
+          "unit": "ratio (Li/Mo)"
+        }
+      ],
+      "interpretation": "Product composition determined as Li1.12MoS2",
+      "prov": ["Page 334, Experimental"]
+    },
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "instrument": "Rigaku Rotaflex RU-200B"
+      },
+      "results": [
+        {
+          "metric": "d-spacing expanded phase",
+          "value": 14.31,
+          "unit": "Å"
+        },
+        {
+          "metric": "phase identification",
+          "value": "expanded LiMoS2 and 1T-MoS2 detected",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Lithium intercalation causes interlayer expansion and 2H→1T phase transition",
+      "prov": ["Figures 3,5"]
+    },
+    {
+      "method": "Electrochemical galvanostatic cycling",
+      "parameters": {
+        "current_density": "200 µA cm-2",
+        "voltage_range": "0.9–3.5 V"
+      },
+      "results": [
+        {
+          "metric": "First discharge capacity (PC/DME)",
+          "value": 170,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "First cycle efficiency (PC/DME)",
+          "value": 13,
+          "unit": "%"
+        },
+        {
+          "metric": "First cycle efficiency (DME)",
+          "value": 53,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Cycling efficiency strongly depends on solvent; DME electrolyte shows improved reversibility",
+      "prov": ["Figure 2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "XRD simulation (RIETAN)",
+        "results": [
+          {
+            "equation": "Structure simulation for 1T-MoS2 (space group P3m1)",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": ["Page 336, Figure 7"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 170,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T00:15:00Z",
+    "source_file": "provided_text",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,495 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recycling LiCoO2 with methanesulfonic acid for regeneration of lithium-ion battery electrode materials",
+    "doi": "10.1016/j.jpowsour.2019.226828",
+    "authors": [
+      "Bin Wang",
+      "Xin-Ye Lin",
+      "Yuanyuan Tang",
+      "Qiang Wang",
+      "Michael K.H. Leung",
+      "Xiao-Ying Lu"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "journal_article",
+    "tags": ["lithium-ion battery", "recycling", "hydrometallurgy", "methanesulfonic acid"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Co3O4 microcubes",
+      "molecular_formula": "Co3O4",
+      "intended_role": "product",
+      "prov": ["Section 2.3", "Fig. 5"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiCoO2 micro/nanostructures",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "product",
+      "prov": ["Section 2.3", "Fig. 5"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Methanesulfonic acid",
+      "molecular_formula": "CH4O3S",
+      "ontology": {
+        "role": "leaching agent",
+        "category": "organic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Typical concentration 1 M (range 0.5–2 M)",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Hydrogen peroxide",
+      "molecular_formula": "H2O2",
+      "ontology": {
+        "role": "oxidant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Typical 0.9 vol %",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiCoO2 (waste powder)",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "feedstock",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Solid-to-liquid ratio typically 20 g L-1",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ammonia (concentrated)",
+      "molecular_formula": "NH3",
+      "ontology": {
+        "role": "pH adjuster",
+        "category": "base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2–4 mL added",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Urea",
+      "molecular_formula": "CH4N2O",
+      "ontology": {
+        "role": "precipitating agent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2–4 g added",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Diallyldimethylammonium chloride",
+      "molecular_formula": "C8H16ClN",
+      "ontology": {
+        "role": "structure directing reagent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "g"
+      },
+      "notes": "65 wt % solution",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "lithium source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in solid-state lithiation",
+      "prov": ["Section 2.3"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Leaching of waste LiCoO2 with MSA/H2O2",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"],
+              "acid_concentration": {"value": 1, "unit": "M"},
+              "H2O2_concentration": {"value": 0.9, "unit": "vol%"},
+              "solid_liquid_ratio": {"value": 20, "unit": "g L-1"},
+              "temperature": {"value": 343, "unit": "K"},
+              "duration": {"value": 60, "unit": "min"},
+              "stirring": "magnetic"
+            },
+            "notes": "250 mL three-neck flask with condenser",
+            "prov": ["Section 2.1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Hydrothermal precipitation of Co precursor from leachate",
+        "operations": [
+          {
+            "action": "adjust_pH",
+            "parameters": {
+              "inputs": ["chem_5"],
+              "volume_added": {"value": null, "unit": "mL"}
+            },
+            "notes": "2–4 mL concentrated ammonia",
+            "prov": ["Section 2.3"]
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_6", "chem_7"]
+            },
+            "notes": "2–4 g urea, 5 g DADMAC",
+            "prov": ["Section 2.3"]
+          },
+          {
+            "action": "hydrothermal_treatment",
+            "parameters": {
+              "temperature": {"value": 423, "unit": "K"},
+              "duration": {"value": 720, "unit": "min"}
+            },
+            "notes": "60 mL Teflon-lined autoclave",
+            "prov": ["Section 2.3"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Section 2.3"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Filtration, washing, and drying of precursor",
+        "operations": [
+          {
+            "action": "filter",
+            "parameters": {},
+            "notes": "vacuum-assisted",
+            "prov": ["Section 2.3"]
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "solvents": ["chem_3", "ethanol"]
+            },
+            "notes": "",
+            "prov": ["Section 2.3"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Section 2.3"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Calcination to obtain Co3O4",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "temperature": {"value": 773, "unit": "K"},
+              "duration": {"value": 120, "unit": "min"}
+            },
+            "notes": "in air",
+            "prov": ["Section 2.3"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Section 2.3"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Solid-state lithiation to regenerate LiCoO2",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["target_1", "chem_8"]
+            },
+            "notes": "",
+            "prov": ["Section 2.3"]
+          },
+          {
+            "action": "calcine",
+            "parameters": {
+              "temperature": {"value": 1173, "unit": "K"},
+              "duration": {"value": 720, "unit": "min"}
+            },
+            "notes": "oxygen atmosphere",
+            "prov": ["Section 2.3"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Section 2.3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Leaching LiCoO2 waste with MSA/H2O2 to obtain metal-rich leachate"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Precipitation of Co precursor via hydrothermal treatment"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Isolation and purification of precursor"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Calcination to form Co3O4 anode material"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Solid-state lithiation with Li2CO3 to regenerate LiCoO2 cathode material"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact volumes and masses for ammonia and urea range given, not fixed",
+        "excerpt": "\"concentrated ammonia (Aladdin®) of 2–4 mL, followed by addition of 2–4 g urea\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "Co3O4 confirmed; LiCoO2 confirmed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 5"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "Co3O4 cube-like 20–25 μm; LiCoO2 agglomerated nanoparticles ~200 nm",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 5"]
+    },
+    {
+      "method": "TEM/HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "d-spacing Co3O4",
+          "value": 0.24,
+          "unit": "nm"
+        },
+        {
+          "metric": "d-spacing LiCoO2",
+          "value": 0.20,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 6"]
+    },
+    {
+      "method": "BET",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface area Co3O4",
+          "value": 4.5,
+          "unit": "m2 g-1"
+        },
+        {
+          "metric": "surface area LiCoO2",
+          "value": 2.1,
+          "unit": "m2 g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. S10"]
+    },
+    {
+      "method": "BJH",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "pore size Co3O4",
+          "value": 25,
+          "unit": "nm"
+        },
+        {
+          "metric": "pore size LiCoO2",
+          "value": 15.2,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. S10"]
+    },
+    {
+      "method": "TGA",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "weight loss CoCO3 → Co3O4",
+          "value": 35,
+          "unit": "wt%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. S9"]
+    },
+    {
+      "method": "Galvanostatic charge-discharge",
+      "parameters": {
+        "current_density": {"value": 0.2, "unit": "C"}
+      },
+      "results": [
+        {
+          "metric": "Co3O4 capacity after 200 cycles",
+          "value": 1467,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "LiCoO2 capacity after 200 cycles",
+          "value": 119,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 7"]
+    },
+    {
+      "method": "Rate capability test",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Co3O4 capacity at 3 C",
+          "value": 295,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "LiCoO2 capacity at 3 C",
+          "value": 103,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 7"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-23T11:30:00Z",
+    "source_file": "Journal_of_Power_Sources_436_2019_226828.pdf",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,502 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "The Detrimental Effects of Carbon Additives in Li10GeP2S12-Based Solid-State Batteries",
+    "doi": "10.1021/acsami.7b11530",
+    "authors": [
+      "Wenbo Zhang",
+      "Thomas Leichtweiß",
+      "Sean P. Culver",
+      "Raimund Koerver",
+      "Dyuman Das",
+      "Dominik A. Weber",
+      "Wolfgang G. Zeier",
+      "Jürgen Janek"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state battery", "thiophosphate electrolyte", "carbon additive"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Experimental Section – Solid Electrolyte"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.08,
+        "unit": "g"
+      },
+      "notes": "Amount used to press pellet for each cell",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiNb0.5Ta0.5O3-coated LiCoO2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in 70:30 wt% mixture with LGPS",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ketjenblack",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "BET surface area 1454 m2/g; used 2–6 mg in composites",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Denkablack",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "BET 68 m2/g; 2–6 mg used",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Graphite (SFG-44)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "BET 5.5 m2/g; 2–6 mg used",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "C65",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "BET 62 m2/g; 2 mg (1.9 wt %) to 6 mg (5.7 wt %)",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Super P Li",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "BET 62 m2/g; 2–6 mg used",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Indium",
+      "molecular_formula": "In",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Foil, 8 mm diameter, 0.125 mm thickness",
+      "prov": ["Cell Assembly"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pelletizing LGPS solid electrolyte",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "force": {
+                "value": 1,
+                "unit": "ton",
+                "notes": "cold press"
+              }
+            },
+            "duration": {
+              "value": 1,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "LGPS powder (80 mg) filled in 10 mm PEEK die"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Cell Assembly"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of cathode mixture (c-LCO + LGPS)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_2", "chem_1"],
+              "ratio_wt": "70:30"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Weight ratio corresponds to volume ratio 49:51"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Cell Assembly"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Addition of carbon additive and grinding",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_3/chem_4/chem_5/chem_6/chem_7"],
+              "mass": {
+                "value": [0.002, 0.004, 0.006],
+                "unit": "g"
+              }
+            },
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Hand-ground to homogenize composite"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Cell Assembly"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Forming composite cathode layer on LGPS pellet",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["step_3 output"],
+              "force": {
+                "value": 3.5,
+                "unit": "ton"
+              }
+            },
+            "duration": {
+              "value": 2,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "10 mg composite (8.41 mg cm−2 LCO) pressed onto pellet"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Cell Assembly"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Attaching indium anode",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_8"],
+              "force": {
+                "value": 1.5,
+                "unit": "ton"
+              }
+            },
+            "duration": {
+              "value": 2,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Indium foil (8 mm Ø) pressed on opposite side of pellet"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Cell Assembly"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Applying stack pressure in cell casing",
+        "operations": [
+          {
+            "action": "torque",
+            "parameters": {
+              "value": 10,
+              "unit": "N m"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Equivalent to ~70 MPa (~700 bar) stack pressure"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 700,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Cell Assembly"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "LGPS pellet preparation"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Mixing c-LCO with LGPS"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Incorporating carbon additives"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Pressing composite cathode onto pellet"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Adding indium anode"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Final assembly under constant pressure"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "LGPS synthesis details not provided",
+        "excerpt": "The solid electrolyte Li10GeP2S12 used in this work was synthesized via a solid-state route in an ampule under vacuum. The detailed procedure has been previously described elsewhere."
+      },
+      {
+        "issue": "Pressing force in tons not directly convertible to pressure without area; approximations used",
+        "excerpt": "pressed with 1 ton for 1 min"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Conductivity measurement (impedance)",
+      "parameters": {
+        "medium": "",
+        "temperature": null
+      },
+      "results": [
+        {
+          "metric": "total ionic conductivity",
+          "value": 5e-3,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Experimental Section – Solid Electrolyte"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "7 MHz – 10 mHz",
+        "amplitude": "10 mV"
+      },
+      "results": [
+        {
+          "metric": "interfacial resistance R2 (with 5.7 wt% C65)",
+          "value": 154,
+          "unit": "Ω"
+        },
+        {
+          "metric": "capacitance associated with R2",
+          "value": 14.1,
+          "unit": "μF"
+        }
+      ],
+      "interpretation": "Large interfacial resistance attributed to carbon-containing SE/cathode interface",
+      "prov": ["Figure 3", "Table S3"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα (λ1=1.5406 Å, λ2=1.5444 Å)",
+        "scan_range": "10–80° 2θ",
+        "step_size": "0.026°",
+        "time_per_step": "300 s"
+      },
+      "results": [],
+      "interpretation": "New unidentified phases detected after cycling with carbon additive",
+      "prov": ["Experimental Section – XRD", "Supporting Information Figure S12"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "source": "Al Kα, 100 W",
+        "pass_energy_detail": "23.5 eV",
+        "pass_energy_survey": "187.6 eV"
+      },
+      "results": [
+        {
+          "metric": "presence of elemental sulfur (S 2p3/2 at ~164.5 eV) after 100 cycles with 5.7 wt% C65",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Carbon enhances LGPS oxidation producing S0 and oxide species",
+      "prov": ["Figure 4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical cycling analysis",
+        "results": [
+          {
+            "description": "Carbon-free cell retained 80% of initial capacity after 100 cycles at 0.1 C",
+            "value": 80,
+            "unit": "%"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "extracted_text_chunk",
+    "processing_time": null
+  }
+}

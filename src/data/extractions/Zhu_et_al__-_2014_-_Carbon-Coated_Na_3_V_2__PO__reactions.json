@@ -1,0 +1,444 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Carbon-Coated Na3V2(PO4)3 Embedded in Porous Carbon Matrix: An Ultrafast Na-Storage Cathode with the Potential of Outperforming Li Cathodes",
+    "doi": "10.1021/nl500548a",
+    "authors": [
+      "Changbao Zhu",
+      "Kepeng Song",
+      "Peter A. van Aken",
+      "Joachim Maier",
+      "Yan Yu"
+    ],
+    "journal": "Nano Letters",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "journal article",
+    "tags": [
+      "sodium-ion batteries",
+      "cathode",
+      "nanocomposite",
+      "carbon coating",
+      "NASICON"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "(C@NVP)@pC nanocomposite",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Abstract",
+        "Results and Discussion"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "VO(C5H7O2)2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "vanadium precursor (vanadyl acetylacetonate)",
+      "prov": [
+        "Results and Discussion"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "tetraethylene glycol",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "also acts as reducing and capping agent (TEG)",
+      "prov": [
+        "Results and Discussion"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Figure 2a description"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "hydrogen",
+      "molecular_formula": "H2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "mixed with Ar during 650 °C annealing",
+      "prov": [
+        "Figure 2a description"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Na3V2(PO4)3",
+      "molecular_formula": "Na3V2(PO4)3",
+      "ontology": {
+        "role": "intermediate/product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "core active material within composite",
+      "prov": [
+        "Abstract"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Polyol synthesis generating amorphous NVP/C core–shell particles",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "temperature": {
+                "value": 593,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "precursor solution heated at 320 °C; VO(C5H7O2)2 decomposes (~280 °C) forming amorphous Na3V2(PO4)3/C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Results and Discussion"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Crystallization annealing",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "temperature": {
+                "value": 923,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "650 °C in Ar/H2 atmosphere to obtain phase-pure crystalline Na3V2(PO4)3"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar/H2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Figure 2a description"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Conductivity-enhancing heat treatment",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "temperature": {
+                "value": 1073,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "800 °C in Ar to improve carbon conductivity and finalize (C@NVP)@pC structure"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Figure 2a description"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Polyol processing at 320 °C"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Annealing at 650 °C in Ar/H2 to crystallize NVP"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Second annealing at 800 °C in Ar to enhance conductivity"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Reaction times not specified",
+        "excerpt": "a description of the detailed procedure can be found in the Experimental Section of the Supporting Information"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase",
+          "value": "phase-pure Na3V2(PO4)3 (NASICON, R3̅c)",
+          "unit": ""
+        },
+        {
+          "metric": "cell parameter a",
+          "value": 8.72168,
+          "unit": "Å"
+        },
+        {
+          "metric": "cell parameter c",
+          "value": 21.80768,
+          "unit": "Å"
+        },
+        {
+          "metric": "RBragg",
+          "value": 8.21,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 2a"
+      ]
+    },
+    {
+      "method": "Nitrogen adsorption/desorption",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface area (BET)",
+          "value": 175,
+          "unit": "m2 g-1"
+        },
+        {
+          "metric": "pore size (BJH mean)",
+          "value": 3.6,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "mesoporous carbon matrix",
+      "prov": [
+        "Figure 2b"
+      ]
+    },
+    {
+      "method": "Raman",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "D band",
+          "value": 1339,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "G band",
+          "value": 1593,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "ID/IG",
+          "value": 0.939,
+          "unit": ""
+        }
+      ],
+      "interpretation": "high sp2 carbon content",
+      "prov": [
+        "Supporting Information Figure S3"
+      ]
+    },
+    {
+      "method": "TEM/HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "grain size after 650 °C",
+          "value": 20,
+          "unit": "nm"
+        },
+        {
+          "metric": "grain size after 800 °C",
+          "value": 60,
+          "unit": "nm"
+        },
+        {
+          "metric": "carbon layer thickness",
+          "value": 2,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "well-dispersed nanoparticles with thin carbon coating",
+      "prov": [
+        "Figures 2c, 2d, 3"
+      ]
+    },
+    {
+      "method": "Elemental analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "carbon content",
+          "value": 17,
+          "unit": "wt %"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results and Discussion"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge/discharge",
+        "results": [
+          {
+            "metric": "capacity at 1 C",
+            "value": 104,
+            "unit": "mAh g-1"
+          },
+          {
+            "metric": "capacity at 200 C",
+            "value": 44,
+            "unit": "mAh g-1"
+          }
+        ],
+        "prov": [
+          "Figure 4a",
+          "Figure 4b"
+        ]
+      },
+      {
+        "method_name": "Cycling test",
+        "results": [
+          {
+            "metric": "capacity after 1000 cycles at 100 C",
+            "value": 51,
+            "unit": "mAh g-1"
+          },
+          {
+            "metric": "Coulombic efficiency after 1000 cycles",
+            "value": 98,
+            "unit": "%"
+          }
+        ],
+        "prov": [
+          "Figure 4c"
+        ]
+      },
+      {
+        "method_name": "Randles–Sevcik analysis",
+        "results": [
+          {
+            "metric": "apparent Na+ diffusion coefficient",
+            "value": 1.0e-10,
+            "unit": "cm2 s-1"
+          }
+        ],
+        "prov": [
+          "Supporting Information Figure S10"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 104,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1000
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

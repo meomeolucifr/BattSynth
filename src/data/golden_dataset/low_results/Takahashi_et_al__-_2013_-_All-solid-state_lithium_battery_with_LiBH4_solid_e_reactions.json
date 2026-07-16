@@ -1,0 +1,817 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "All-solid-state lithium battery with LiBH4 solid electrolyte",
+    "doi": "10.1016/j.jpowsour.2012.10.079",
+    "authors": [
+      "Kuniaki Takahashi",
+      "Kazuto Hattori",
+      "Toshihiro Yamazaki",
+      "Kazunori Takada",
+      "Motoaki Matsuo",
+      "Shinichi Orimo",
+      "Hideki Maekawa",
+      "Hitoshi Takamura"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "experimental study",
+    "tags": [
+      "all-solid-state battery",
+      "solid electrolyte",
+      "thin film",
+      "pulsed laser deposition"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Bulk-type all-solid-state cell (Li | LiBH4 | LiCoO2)",
+      "molecular_formula": "",
+      "intended_role": "electrochemical device",
+      "prov": [
+        "Experimental §2.1",
+        "Results §3.1"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3PO4-coated LiCoO2 thin-film cathode",
+      "molecular_formula": "",
+      "intended_role": "cathode",
+      "prov": [
+        "Experimental §2.2",
+        "Results §3.2"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Thin-film all-solid-state cell (Li | LiBH4 | Li3PO4-LiCoO2)",
+      "molecular_formula": "",
+      "intended_role": "electrochemical device",
+      "prov": [
+        "Experimental §2.2",
+        "Results §3.3"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium borohydride",
+      "molecular_formula": "LiBH4",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as electrolyte powder; mixed with LiCoO2 at 1:10 (wt)",
+      "prov": [
+        "Experimental §2.1"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium cobalt oxide",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Powder (D10, Toda Kogyo); mixed with LiBH4 10:1 (wt)",
+      "prov": [
+        "Experimental §2.1"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Foil, ϕ9 mm, >99 % purity",
+      "prov": [
+        "Experimental §2.1"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium phosphate",
+      "molecular_formula": "Li3PO4",
+      "ontology": {
+        "role": "intermediate layer / solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as PLD target and 25 nm coating",
+      "prov": [
+        "Experimental §2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium oxide",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "lithium source additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mixed with LiCoO2 target at 100:15 (wt) to compensate Li loss",
+      "prov": [
+        "Experimental §2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Silicon wafer",
+      "molecular_formula": "Si",
+      "ontology": {
+        "role": "substrate",
+        "category": "substrate"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Coated with Pt and Ti layers",
+      "prov": [
+        "Experimental §2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Platinum",
+      "molecular_formula": "Pt",
+      "ontology": {
+        "role": "current collector layer",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Sputtered on Si wafer",
+      "prov": [
+        "Experimental §2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Titanium",
+      "molecular_formula": "Ti",
+      "ontology": {
+        "role": "adhesion layer",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Between Si and Pt",
+      "prov": [
+        "Experimental §2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "process gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used at 10 Pa for LiCoO2 PLD and 1 Pa for Li3PO4 PLD",
+      "prov": [
+        "Experimental §2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "inert atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used during cell assembly",
+      "prov": [
+        "Experimental §2.1"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Hand-mill cathode mixture",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_2", "chem_1"],
+              "ratio_wt": "10:1"
+            },
+            "notes": "LiCoO2 powder (D10) and LiBH4 powder"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental §2.1"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Press cathode and electrolyte powders into two-layer pellet",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["cathode mixture", "chem_1"],
+              "diameter": "10 mm",
+              "thickness": "1 mm"
+            },
+            "pressure": {
+              "value": 3000,
+              "unit": "kgf cm-2"
+            },
+            "notes": "Original pressure 3 ton cm-2"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental §2.1"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Attach lithium foil anode and seal cell",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["chem_3", "pellet from step_2"]
+            },
+            "notes": "Li foil (ϕ9 mm) placed on LiBH4 side under Ar atmosphere"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental §2.1"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat sealed cell to activate electrolyte",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["assembled cell"],
+              "temperature": {
+                "value": 393,
+                "unit": "K"
+              }
+            },
+            "notes": "120 °C where LiBH4 shows high conductivity"
+          }
+        ],
+        "conditions": {
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental §2.1"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Prepare LiCoO2 PLD target",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_2", "chem_5"],
+              "ratio_wt": "100:15"
+            },
+            "notes": ""
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["mixed powder"],
+              "pressure": {
+                "value": 2500,
+                "unit": "bar"
+              }
+            },
+            "notes": "Cold isostatic pressing (250 MPa)"
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature": {
+                "value": 1123,
+                "unit": "K"
+              },
+              "time": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "notes": "12 h at 850 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental §2.2"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Prepare Li3PO4 PLD target",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_4"],
+              "pressure": {
+                "value": 2500,
+                "unit": "bar"
+              }
+            },
+            "notes": "CIP 250 MPa"
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature": {
+                "value": 1373,
+                "unit": "K"
+              },
+              "time": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "notes": "12 h at 1100 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental §2.2"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Deposit LiCoO2 thin film by PLD",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["LiCoO2 target", "substrate with chem_6/chem_7/chem_8"],
+              "method": "PLD",
+              "laser_energy": "300 mJ",
+              "frequency": "10 Hz",
+              "substrate_temperature": {
+                "value": 573,
+                "unit": "K"
+              },
+              "oxygen_pressure": "10 Pa",
+              "distance": "45 mm",
+              "film_thickness": "250 nm"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2",
+          "pressure": {
+            "value": 0.0001,
+            "unit": "bar"
+          },
+          "temperature": {
+            "value": 573,
+            "unit": "K"
+          }
+        },
+        "prov": [
+          "Experimental §2.2"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Deposit 25 nm Li3PO4 coating by PLD",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["Li3PO4 target", "LiCoO2 film"],
+              "method": "PLD",
+              "laser_energy": "150 mJ",
+              "frequency": "5 Hz",
+              "substrate_temperature": {
+                "value": 298,
+                "unit": "K"
+              },
+              "oxygen_pressure": "1 Pa",
+              "distance": "45 mm",
+              "film_thickness": "25 nm"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2",
+          "pressure": {
+            "value": 0.00001,
+            "unit": "bar"
+          },
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          }
+        },
+        "prov": [
+          "Experimental §2.2"
+        ]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Assemble thin-film all-solid-state cell",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["chem_3", "LiBH4 electrolyte", "Li3PO4-LiCoO2 cathode film"]
+            },
+            "notes": "Process same as bulk-type cell assembly under Ar"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          }
+        },
+        "prov": [
+          "Experimental §2.2"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare cathode mixture for bulk cell"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Compress powders into two-layer pellet"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Attach Li foil anode and seal cell"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Thermal activation of LiBH4 electrolyte"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Fabricate LiCoO2 PLD target"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Fabricate Li3PO4 PLD target"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Deposit LiCoO2 thin film onto Pt/Ti/Si"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Deposit Li3PO4 intermediate layer"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Assemble thin-film all-solid-state battery"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Non-standard pressure unit for pellet pressing",
+        "excerpt": "pressed ... under a pressure of 3 ton cm−2"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "ac_voltage": "100 mV",
+        "frequency_range": "1 MHz – 0.1 Hz",
+        "temperature": ""
+      },
+      "results": [
+        {
+          "metric": "electrolyte resistance",
+          "value": 60,
+          "unit": "Ω"
+        },
+        {
+          "metric": "interfacial resistance (bulk cell, 1st cycle)",
+          "value": 350,
+          "unit": "Ω"
+        },
+        {
+          "metric": "interfacial resistance (bulk cell, 10th cycle)",
+          "value": 1150,
+          "unit": "Ω"
+        },
+        {
+          "metric": "interfacial resistance (thin film cell with Li3PO4)",
+          "value": 20,
+          "unit": "Ω"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results §3.1",
+        "Results §3.3",
+        "Fig. 1",
+        "Fig. 3"
+      ]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "film morphology",
+          "value": "dense, no pinholes/cracks",
+          "unit": ""
+        },
+        {
+          "metric": "LiCoO2 grain size",
+          "value": 100,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2a"
+      ]
+    },
+    {
+      "method": "SPM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface roughness Li3PO4 layer",
+          "value": 7.26,
+          "unit": "nm"
+        },
+        {
+          "metric": "surface roughness LiCoO2 before coating",
+          "value": 1.99,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2b"
+      ]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu-Kα"
+      },
+      "results": [
+        {
+          "metric": "orientation",
+          "value": "c-axis oriented LiCoO2 with 003, 006, 009 reflections",
+          "unit": ""
+        },
+        {
+          "metric": "Li3PO4 crystallization temperature",
+          "value": 1023,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results §3.2"
+      ]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength": "632.8 nm"
+      },
+      "results": [
+        {
+          "metric": "LiCoO2 Eg band",
+          "value": 482,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "LiCoO2 A1g band",
+          "value": 593,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Co3O4/CoO(OH) bands after cycling",
+          "value": "360, 590, 680, 820",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Formation of Co3O4 and CoO(OH) indicates reaction between charged LiCoO2 and LiBH4",
+      "prov": [
+        "Fig. 5"
+      ]
+    },
+    {
+      "method": "Galvanostatic charge–discharge",
+      "parameters": {
+        "current_density": "0.05–0.1 mA (0.065–0.13 mA cm-2)",
+        "voltage_window": "3.0 – 4.2 V"
+      },
+      "results": [
+        {
+          "metric": "initial charge capacity (bulk cell)",
+          "value": 157,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "initial discharge capacity (bulk cell)",
+          "value": 68,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "discharge capacity after 10 cycles (bulk cell)",
+          "value": 18,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "initial discharge capacity (thin film cell with Li3PO4)",
+          "value": 89,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention after 30 cycles",
+          "value": 97,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Results §3.1",
+        "Results §3.3",
+        "Fig. 4"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Thermodynamic estimation",
+        "results": [
+          {
+            "equation": "Li0.5CoO2 + 1/8 LiBH4 → 1/4 Co3O4 + 1/4 CoO(OH) + 1/8 LiBO2 + 1/4 Li2O + 1/8 H2",
+            "value": "",
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 89,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 30
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

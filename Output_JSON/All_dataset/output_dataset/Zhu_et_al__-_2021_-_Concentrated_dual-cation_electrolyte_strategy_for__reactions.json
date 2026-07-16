@@ -1,0 +1,356 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Concentrated dual-cation electrolyte strategy for aqueous zinc-ion batteries",
+    "doi": "10.1039/d1ee01472b",
+    "authors": ["Yunpei Zhu", "Jun Yin", "Xueli Zheng", "Abdul-Hamid Emwas", "Yongjiu Lei", "Omar F. Mohammed", "Yi Cui", "Husam N. Alshareef"],
+    "journal": "Energy & Environmental Science",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research_article",
+    "tags": ["aqueous zinc-ion battery", "dual-cation electrolyte", "sodium vanadate cathode", "water-in-salt"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "HCZE electrolyte",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Page 4465"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na2V6O16·nH2O nanofibers (NVO)",
+      "molecular_formula": "Na2V6O16·nH2O",
+      "intended_role": "cathode",
+      "prov": ["Page 4465", "Page 4468"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Zinc perchlorate",
+      "molecular_formula": "Zn(ClO4)2",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.5,
+        "unit": "M"
+      },
+      "notes": "Stated as 0.5 m (mol kg-1 H2O) in text",
+      "prov": ["Page 4465"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sodium perchlorate",
+      "molecular_formula": "NaClO4",
+      "ontology": {
+        "role": "supporting salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 18,
+        "unit": "M"
+      },
+      "notes": "Stated as 18 m (mol kg-1 H2O) in text",
+      "prov": ["Page 4465"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Zinc sulfate",
+      "molecular_formula": "ZnSO4",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "M"
+      },
+      "notes": "Used as comparative electrolyte (2 M)",
+      "prov": ["Page 4466"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Zinc metal",
+      "molecular_formula": "Zn",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Foil format",
+      "prov": ["Page 4464"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Titanium foil",
+      "molecular_formula": "Ti",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as working electrode in CE tests",
+      "prov": ["Page 4465"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of concentrated dual-cation electrolyte (HCZE)",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Room-temperature dissolution to reach 0.5 m Zn(ClO4)2 and 18 m NaClO4"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 4465"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Synthesis of Na2V6O16·nH2O nanofibers via dissolution–recrystallization",
+        "operations": [
+          {
+            "action": "dissolution-recrystallization",
+            "parameters": {},
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Room-temperature scalable process; batch size reported as 100 g using 1 L reactor"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 4465", "Page 4468"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Electrolyte preparation"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Cathode material synthesis"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact reactant amounts for NVO synthesis not provided",
+        "excerpt": "we develop a room-temperature, scalable dissolution–recrystallization method to prepare Na2V6O16·nH2O nanofibers as an efficient cathode"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Viscosity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "viscosity",
+          "value": 8.16,
+          "unit": "mPa s"
+        }
+      ],
+      "interpretation": "Low viscosity compared to classical water-in-salt electrolytes",
+      "prov": ["Page 4465"]
+    },
+    {
+      "method": "Conductivity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 98.5,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "High ionic conductivity of HCZE",
+      "prov": ["Page 4465"]
+    },
+    {
+      "method": "Coulombic efficiency test (Ti/Zn cell)",
+      "parameters": {
+        "current_density": "0.4 mA cm-2"
+      },
+      "results": [
+        {
+          "metric": "average coulombic efficiency",
+          "value": 98.2,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "High reversibility of Zn plating/stripping in HCZE",
+      "prov": ["Page 4465"]
+    },
+    {
+      "method": "Galvanostatic charge–discharge",
+      "parameters": {
+        "current_density": "0.1–4 A g-1"
+      },
+      "results": [
+        {
+          "metric": "capacity at 0.1 A g-1",
+          "value": 253,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity at 4 A g-1",
+          "value": 94,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Decent rate capability of NVO/HCZE cell",
+      "prov": ["Page 4470"]
+    },
+    {
+      "method": "Cycling stability test",
+      "parameters": {
+        "current_density": "4 A g-1",
+        "cycles": 2000
+      },
+      "results": [
+        {
+          "metric": "capacity retention",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Nearly no capacity decay over 2000 cycles; CE >99%",
+      "prov": ["Page 4470"]
+    },
+    {
+      "method": "Self-discharge test",
+      "parameters": {
+        "rest_time": "21600 min"
+      },
+      "results": [
+        {
+          "metric": "capacity retention after 15 days",
+          "value": 80.9,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Low self-discharge rate",
+      "prov": ["Page 4470"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Molecular dynamics simulation",
+        "results": [
+          {
+            "description": "ClO4- dominated first solvation shell of Zn2+ at high concentration",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      },
+      {
+        "method_name": "Density functional theory",
+        "results": [
+          {
+            "equation": "Adsorption energy H2O on ZnCl2 = −0.87 eV",
+            "value": -0.87,
+            "unit": "eV"
+          },
+          {
+            "equation": "Adsorption energy H2O on Zn = −0.04 eV",
+            "value": -0.04,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 253,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 2000
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T08:49:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

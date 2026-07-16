@@ -1,0 +1,772 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Facile in Situ Preparation of Graphitic-C3N4@carbon Paper As an Efficient Metal-Free Cathode for Nonaqueous Li−O2 Battery",
+    "doi": "10.1021/acsami.5b01727",
+    "authors": [
+      "Jin Yi",
+      "Kaiming Liao",
+      "Chaofeng Zhang",
+      "Tao Zhang",
+      "Fujun Li",
+      "Haoshen Zhou"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "Li-O2 battery",
+      "cathode synthesis",
+      "graphitic carbon nitride",
+      "metal-free catalyst"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "graphitic-carbon nitride@carbon paper",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": [
+        "Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.83,
+        "reasoning": "The paper explicitly gives material names/formulas such as graphitic-carbon nitride (g-C3N4) and graphitic-C3N4@carbon paper (GCN@CP) in Section 2.1 and elsewhere, but the provided Extracted Value for “Target Formula” is blank/empty. An empty value is not explicitly supported as the target formula; instead, the target material is clearly identified in the text.",
+        "suggested_fix": "g-C3N4@carbon paper (GCN@CP) (i.e., graphitic-C3N4 on carbon paper)"
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "bulk graphitic carbon nitride",
+      "molecular_formula": "C3N4",
+      "intended_role": "comparison catalyst",
+      "prov": [
+        "Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly identifies the target material as graphitic carbon nitride, denoted g-C3N4 (e.g., Introduction: “Graphitic-carbon nitride, hereafter referred to as g-C3N4”; Experimental Section 2.1: “graphitic-C3N4@carbon paper”). This directly supports the target formula C3N4 (as part of g-C3N4).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "N-methylpyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 2.85,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "In Experimental Section 2.1 (Preparation of Cathode), the text explicitly states: “a gelating solution was prepared by mixing 2.85 g of N-methylpyrrolidone (NMP) …”. This directly supports the extracted chemical identity (N-methylpyrrolidone) and amount (2.85 g).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "polyvinylidene fluoride",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 0.15,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "In Experimental Section 2.1 (Preparation of Cathode), the text states that a gelating solution was prepared by mixing “2.85 g of N-methylpyrrolidone (NMP) with 0.15 g of polyvinylidene fluoride (PVDF) ...”. This explicitly supports the extracted chemical identity (polyvinylidene fluoride) and amount (0.15 g).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "guanidine hydrochloride",
+      "molecular_formula": "CH5N3·HCl",
+      "ontology": {
+        "role": "precursor",
+        "category": "organic salt"
+      },
+      "amount": {
+        "value": 0.2,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "In Experimental Section 2.1 (Preparation of Cathode), the text explicitly states that the gelating solution was prepared by mixing 2.85 g NMP with 0.15 g PVDF and 0.2 g of guanidine hydrochloride (GundCl). This directly supports the extracted identity and amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "carbon paper",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the substrate material as carbon paper in Experimental Section 2.1: “Carbon papers were dipped in the above solution… Finally, the GCN@CPs were obtained…”. No quantitative amount/mass/area of carbon paper used in the dipping/calcination step is given anywhere in Section 2.1 (only amounts for NMP, PVDF, and guanidine hydrochloride are specified). Thus, 'carbon paper | Amount: Not specified in text' is consistent with the source.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as flowing gas during calcination",
+      "prov": [
+        "Experimental Section 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "Section 2.1 explicitly states the samples were calcined “under Ar flow,” confirming the chemical identity is argon (Ar). However, no quantitative amount/flow rate/pressure of Ar is provided anywhere in the supplied text, so “Amount: Not specified in text” is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "dimethyl sulfoxide",
+      "molecular_formula": "C2H6OS",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used in DMSO-0.5 M LiClO4 electrolyte",
+      "prov": [
+        "Experimental Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.82,
+        "reasoning": "The paper explicitly specifies DMSO as part of the electrolyte in Section 2.3: “an electrolyte (DMSO-0.5 M LiClO4...)”. Therefore, the amount is not “not specified”; it is given as DMSO with 0.5 M LiClO4 (a concentration specification).",
+        "suggested_fix": "dimethyl sulfoxide (DMSO) | Amount: electrolyte specified as “DMSO–0.5 M LiClO4” (i.e., 0.5 M LiClO4 in DMSO)"
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "lithium perchlorate",
+      "molecular_formula": "LiClO4",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.5,
+        "unit": "M"
+      },
+      "notes": "in DMSO",
+      "prov": [
+        "Experimental Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "In Experimental Section 2.3 (Electrochemical Investigation), the electrolyte is explicitly stated as “DMSO-0.5 M LiClO4…”, i.e., lithium perchlorate at 0.5 M concentration. This directly supports the extracted value (chemical identity: lithium perchlorate; amount: 0.5 M).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "10 mm diameter foil",
+      "prov": [
+        "Experimental Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.66,
+        "reasoning": "The paper explicitly specifies the presence and size of the lithium metal anode in Experimental Section 2.3: “comprising a Li metal anode (Φ 10 mm)”. Therefore, the statement “Amount: Not specified in text” is not correct. While no mass is given, a quantitative amount/size (diameter) is provided, so the text does not fully omit the amount information.",
+        "suggested_fix": "lithium metal anode | Amount: Φ 10 mm (diameter)"
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "reactant gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "purity 99.9%",
+      "prov": [
+        "Experimental Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "In Experimental Section 2.3, oxygen is identified as the cell gas: “O2 (purity, 99.9%).” No amount (e.g., pressure, flow rate, volume, or moles) of oxygen is specified; it only states the coin cells had “7 holes exposed to O2” and were held in a 650 mL chamber (chamber volume, not O2 amount). Therefore, recording oxygen with amount “Not specified in text” is consistent with the source.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Prepare gelating solution by mixing NMP, PVDF and guanidine hydrochloride with stirring until transparent.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "notes": "stirred until transparent",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The Experimental Section explicitly describes a mixing step: “a gelating solution was prepared by mixing 2.85 g of N-methylpyrrolidone (NMP) with 0.15 g of polyvinylidene fluoride (PVDF) and 0.2 g of guanidine hydrochloride (GundCl)…”. This supports the synthesis operation being ‘mix’.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": [
+          "Experimental Section 2.1"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Dip carbon papers into the gelating solution.",
+        "operations": [
+          {
+            "action": "dip",
+            "parameters": {
+              "inputs": [
+                "chem_4"
+              ]
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The Experimental Section explicitly states: “Carbon papers were dipped in the above solution…”, which directly supports the synthesis operation being a dip (dip-coating/immersion).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": [
+          "Experimental Section 2.1"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Dry the dipped carbon papers to remove solvent.",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [
+                "chem_4"
+              ]
+            },
+            "temperature": {
+              "value": 373,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.88,
+              "reasoning": "The Experimental Section explicitly includes a drying step: “Carbon papers were dipped in the above solution and dried at 100 °C for 2 h to remove the solvent.” This supports that a synthesis operation is drying (\"dry\").",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 373,
+            "unit": "K"
+          },
+          "time": {
+            "value": 120,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "",
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.9,
+            "reasoning": "The paper does not report a synthesis temperature of 373 K. In the Experimental Section, the carbon papers are dried at 100 °C for 2 h (which equals 373 K), but the actual synthesis/calcination step to obtain g-C3N4@carbon paper is \"calcination at 550 °C for 3 h under Ar flow\". Thus 373 K corresponds to a drying temperature, not the synthesis temperature.",
+            "suggested_fix": "If the field is truly \"Synthesis Temperature\" for GCN@CP formation: 550 °C (823 K). If the intent was \"Drying temperature\": 100 °C (373 K)."
+          }
+        },
+        "prov": [
+          "Experimental Section 2.1"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Calcine the dried samples to obtain GCN@CP.",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": [
+                "chem_4"
+              ]
+            },
+            "temperature": {
+              "value": 823,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "notes": "under Ar flow",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.96,
+              "reasoning": "The Experimental Section explicitly states: “Finally, the GCN@CPs were obtained after calcination at 550 °C for 3 h under Ar flow.” This directly supports that a synthesis operation performed is calcination (i.e., ‘calcine’).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 823,
+            "unit": "K"
+          },
+          "time": {
+            "value": 180,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "Ar",
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The Experimental Section explicitly states the samples were calcined “at 550 °C for 3 h under Ar flow,” which specifies an argon atmosphere during synthesis/calcination (preparation of GCN@CP and bulk g-C3N4 under same conditions).",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental Section 2.1"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Prepare bulk g-C3N4 by solid-state method using guanidine hydrochloride and calcination at 550 °C for 3 h under Ar.",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": [
+                "chem_3"
+              ]
+            },
+            "temperature": {
+              "value": 823,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "notes": "solid-state, Ar flow",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.96,
+              "reasoning": "The Experimental Section explicitly states: “Finally, the GCN@CPs were obtained after calcination at 550 °C for 3 h under Ar flow.” This is a calcination (calcine) synthesis operation used to obtain the material.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 823,
+            "unit": "K"
+          },
+          "time": {
+            "value": 180,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "Ar",
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The Experimental Section explicitly states: “the GCN@CPs were obtained after calcination at 550 °C for 3 h under Ar flow,” which specifies argon as the synthesis/calcination atmosphere.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental Section 2.1"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Gelating solution preparation",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.74,
+          "reasoning": "The workflow/timeline step “Gelating solution preparation” is explicitly described in the Experimental Section (2.1 Preparation of Cathode): “a gelating solution was prepared by mixing 2.85 g of N-methylpyrrolidone (NMP) with 0.15 g of polyvinylidene fluoride (PVDF) and 0.2 g of guanidine hydrochloride (GundCl) followed with stirring until the formation of transparent gelating solution.” This directly supports the extracted workflow step, even though no provenance was provided.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Substrate dipping",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The Experimental Section explicitly describes a substrate dipping step: “Carbon papers were dipped in the above solution and dried at 100 °C for 2 h...” This directly supports the workflow timeline item “Substrate dipping.”",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Drying of dipped substrates",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The workflow includes a drying step after dipping the carbon papers: \"Carbon papers were dipped in the above solution and dried at 100 °C for 2 h to remove the solvent\" (Experimental Section 2.1, Preparation of Cathode). This explicitly supports the timeline item \"Drying of dipped substrates.\"",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Calcination to form GCN@CP",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The workflow step “Calcination to form GCN@CP” is explicitly described in the Experimental Section (2.1 Preparation of Cathode): after dipping and drying, “the GCN@CPs were obtained after calcination at 550 °C for 3 h under Ar flow.” This directly supports that calcination is the formation step for GCN@CP.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Bulk g-C3N4 synthesis for comparison",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The paper explicitly describes preparing bulk graphitic-C3N4 as a comparison sample: Experimental Section 2.1 states, “For comparsion, the bulk graphitic-C3N4 was obtained through the solid-state method under the same calcination conditions only using GundCl as precursor.” This supports the workflow step “Bulk g-C3N4 synthesis for comparison.”",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Amount of carbon paper not specified",
+        "excerpt": "Carbon papers were dipped in the above solution",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "In the Experimental Section 2.1, the paper states: “Carbon papers were dipped in the above solution and dried…”. It provides the solution composition (2.85 g NMP, 0.15 g PVDF, 0.2 g guanidine hydrochloride) and processing conditions, but nowhere specifies the amount/number/mass/area of carbon paper used for dipping. Thus the identified ambiguity (“Amount of carbon paper not specified”) is supported by the text’s omission.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Ar flow rate and pressure not provided",
+        "excerpt": "calcination at 550 °C for 3 h under Ar flow",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The Experimental Section states: “the GCN@CPs were obtained after calcination at 550 °C for 3 h under Ar flow.” No Ar flow rate or pressure values are provided anywhere else in the full text. Thus the claimed workflow ambiguity (missing Ar flow rate/pressure) is supported by omission.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Solid-state method details (mixing, atmosphere) for bulk g-C3N4 unclear",
+        "excerpt": "bulk graphitic-C3N4 was obtained through the solid-state method under the same calcination conditions only using GundCl as precursor",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.83,
+          "reasoning": "The paper explicitly states: “For comparsion, the bulk graphitic-C3N4 was obtained through the solid-state method under the same calcination conditions only using GundCl as precursor.” (Experimental Section 2.1, Page 2). It does not provide any additional solid-state synthesis details for the bulk g-C3N4 (e.g., grinding/mixing procedure, pelletizing, crucible/covering, heating ramp, or atmosphere beyond “same calcination conditions,” which were 550 °C for 3 h under Ar flow for GCN@CP). Thus, the reported workflow ambiguity about missing solid-state method details is supported by the text itself.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα (λ = 1.54 Å)"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": [
+        "Experimental Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.88,
+        "reasoning": "The paper explicitly includes XRD as part of structural characterization: Section 2.2 states that XRD patterns were recorded on a Bruker D8 diffractometer using Cu Kα radiation (λ = 1.54 Å), and Figures 2a/2b (and 4d) present XRD patterns. Therefore, the extracted value of an empty list ([]) for \"Characterization: XRD\" is not supported by the text; XRD is clearly specified and used.",
+        "suggested_fix": "XRD was performed (Bruker D8 X-ray diffractometer, Cu Kα radiation, λ = 1.54 Å); XRD patterns shown in Fig. 2 and Fig. 4d."
+      }
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "toroidal Li2O2 (~300 nm) observed after discharge",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 4"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The source text explicitly states in the SEM discussion of Figure 4 that after discharge, the Li2O2 discharge products “have a toroidal morphology with diameter of ∼300 nm” (Page 4, referring to Figure 4b). This directly supports the extracted morphology value “toroidal Li2O2 (~300 nm) observed after discharge.”",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ID/IG ratio for GCN@CP",
+          "value": 1.02,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 2c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper text describing Figure 2c (Raman spectra) explicitly states: “The relative ID/IG values for carbon paper and GCN@CP are 0.99 and 1.02, respectively…”, which directly supports an ID/IG ratio of 1.02 for GCN@CP. Although the alleged provenance is Figure 2c, the numeric value is given in the main text accompanying Figure 2c (Page 3).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "source": "Al Kα, 14 kV, 250 W"
+      },
+      "results": [
+        {
+          "metric": "elements detected",
+          "value": "C, N, O",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 2d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The text describing Figure 2d (XPS spectra of GCN@CP) explicitly states: “C, N, and a small amount of O … are detected in the XPS survey spectrum of GCN@CP, as given in Figure 2d.” This directly supports the extracted elements detected as C, N, O.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Galvanostatic discharge/charge",
+      "parameters": {
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "capacity (GCN@CP, whole electrode)",
+          "value": 460,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity (CP)",
+          "value": 60,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 3a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The text explicitly states: “a discharge capacity of about 60 and 460 mAh/g is achieved for CP and GCN@CP” under the comparison “based on the mass of the whole electrodes.” This corresponds to capacity (GCN@CP, whole electrode) = 460 mAh g−1 and capacity (CP) = 60 mAh g−1. While the alleged provenance is Figure 3a, the numeric values are supported in the main text (Page 3) describing that figure.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical performance comparison",
+        "results": [
+          {
+            "equation": "",
+            "value": 0.95,
+            "unit": "V",
+            "description": "Voltage gap at 200 mA g-1 for GCN@CP"
+          },
+          {
+            "equation": "",
+            "value": 1.58,
+            "unit": "V",
+            "description": "Voltage gap at 2000 mA g-1 for GCN@CP"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper explicitly describes multiple analysis/characterization methods (XRD, SEM, Raman spectroscopy, XPS) and electrochemical testing (galvanostatic discharge/charge). However, the extracted value for “Analysis Method” is blank/empty, which is not a correct capture of the document’s stated methods.",
+          "suggested_fix": "Analysis methods reported include: XRD (Bruker D8, Cu Kα), SEM (JSM-6700F), Raman spectroscopy (Micro Raman spectrophotometer Ventuno21, JASCO), XPS (PerkinElmer PHI 5300), and galvanostatic discharge/charge testing (Hokuto system)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 460,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.83,
+      "reasoning": "The paper explicitly reports cycling performance reaching 100 cycles: the abstract states “capacity retention of more than 100 cycles,” and the main text states “good cyclic performance with negligible decay during 100 cycles” (page 4, discussing Figure 3d). Thus a cycle life value of 100 cycles is supported (though the text also suggests >100 cycles in the abstract).",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

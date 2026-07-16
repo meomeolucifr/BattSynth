@@ -1,0 +1,209 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Structure and Dynamics of Fluorophosphate Na-Ion Battery Cathodes",
+    "doi": "10.1021/acs.chemmater.6b01989",
+    "authors": [
+      "Stephen T. Dacek",
+      "William D. Richards",
+      "Daniil A. Kitchaev",
+      "Gerbrand Ceder"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational_study",
+    "tags": [
+      "sodium-ion battery",
+      "fluorophosphate cathode",
+      "DFT",
+      "AIMD"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "NaₓV₂(PO₄)₂O₂yF₃₋₂y (0≤x≤4, 0≤y≤1)",
+      "molecular_formula": "",
+      "intended_role": "cathode_material",
+      "prov": [
+        "Abstract",
+        "Introduction"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na₃V₂(PO₄)₂F₃",
+      "molecular_formula": "",
+      "intended_role": "cathode_material",
+      "prov": [
+        "Throughout text"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "NaV₂(PO₄)₂F₃",
+      "molecular_formula": "",
+      "intended_role": "desodiated_cathode",
+      "prov": [
+        "Section 3.1"
+      ]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "char_1",
+        "description": "DFT calculations to determine ground‐state structures, voltages and phase stability."
+      },
+      {
+        "step_ref": "char_2",
+        "description": "Ab-initio molecular dynamics simulations to evaluate Na diffusion and extract activation energies."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Voltage offset",
+        "excerpt": "…the true voltage of the material is expected to be consistently 0.4 V higher than the computed voltage…"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (PBE+U)",
+      "parameters": {
+        "U_eff": {
+          "value": 3.1,
+          "unit": "eV"
+        },
+        "energy_cutoff": {
+          "value": 520,
+          "unit": "eV"
+        },
+        "k_point_spacing": {
+          "value": 0.25,
+          "unit": "1/Å"
+        },
+        "pseudopotential": "PAW",
+        "software": "VASP"
+      },
+      "results": [
+        {
+          "metric": "computed voltage plateau (0≤x≤1)",
+          "value": 4.9,
+          "unit": "V"
+        },
+        {
+          "metric": "theoretical capacity",
+          "value": 243,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "High voltage of V⁴⁺/V⁵⁺ redox (~5 V after offset) may limit electrolyte stability.",
+      "prov": [
+        "Methods",
+        "Figure 1"
+      ]
+    },
+    {
+      "method": "Ab-initio Molecular Dynamics",
+      "parameters": {
+        "ensemble": "NVT",
+        "thermostat": "Nose–Hoover",
+        "time_step": {
+          "value": 0.002,
+          "unit": "ps",
+          "notes": "2 fs"
+        },
+        "thermostat_period": {
+          "value": 80,
+          "unit": "fs"
+        }
+      },
+      "results": [
+        {
+          "metric": "Na diffusion activation energy at x=3",
+          "value": 811,
+          "unit": "meV"
+        },
+        {
+          "metric": "Na diffusion activation energy at x=2",
+          "value": 556,
+          "unit": "meV"
+        },
+        {
+          "metric": "Na diffusion activation energy at x=1",
+          "value": 353,
+          "unit": "meV"
+        }
+      ],
+      "interpretation": "Activation energy peaks at ordered stoichiometries due to defect formation energies.",
+      "prov": [
+        "Table 3",
+        "Section 3.3"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Convex hull calculation",
+        "results": [
+          {
+            "equation": "Energy vs composition hull (Figure 1a)",
+            "value": null,
+            "unit": "",
+            "notes": "Stable phases at x=0,1,2,3,4 identified"
+          }
+        ]
+      },
+      {
+        "method_name": "Arrhenius fit",
+        "results": [
+          {
+            "equation": "D = D0 exp(-Ea/kT)",
+            "value": null,
+            "unit": "",
+            "notes": "Used to extrapolate AIMD diffusivities to room temperature"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 126,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T14:30:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

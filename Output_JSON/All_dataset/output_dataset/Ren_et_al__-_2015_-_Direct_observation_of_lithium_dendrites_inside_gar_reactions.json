@@ -1,0 +1,496 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Direct observation of lithium dendrites inside garnet-type lithium-ion solid electrolyte",
+    "doi": "10.1016/j.elecom.2015.05.001",
+    "authors": [
+      "Yaoyu Ren",
+      "Yang Shen",
+      "Yuanhua Lin",
+      "Ce-Wen Nan"
+    ],
+    "journal": "Electrochemistry Communications",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid electrolyte", "garnet", "lithium dendrite"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6.75La3Zr1.75Ta0.25O12 sintered pellet (LLZTO)",
+      "molecular_formula": "Li6.75La3Zr1.75Ta0.25O12",
+      "intended_role": "electrolyte",
+      "prov": ["Experimental"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hydroxide monohydrate",
+      "molecular_formula": "LiOH·H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric amount with 10 wt.% excess",
+      "prov": ["Experimental"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum oxide",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric amount",
+      "prov": ["Experimental"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconium dioxide",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric amount",
+      "prov": ["Experimental"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Tantalum(V) oxide",
+      "molecular_formula": "Ta2O5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric amount",
+      "prov": ["Experimental"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Aluminium oxide",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "sintering aid",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.15,
+        "unit": "mmol"
+      },
+      "notes": "0.15 mol per mol LLZTO",
+      "prov": ["Experimental"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "2-Propanol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used as milling medium",
+      "prov": ["Experimental"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Medium for Archimedes density measurement and to dissolve lithium in leaching test",
+      "prov": ["Experimental"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as electrode plates in Li/LLZTO/Li cells",
+      "prov": ["Experimental"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "electrode",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Sputtered electrodes for impedance measurements",
+      "prov": ["Experimental"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mixing of precursor oxides and sintering aid",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5"]
+            },
+            "notes": "Stoichiometric amounts; LiOH·H2O used with 10 wt.% excess; Al2O3 added as 0.15 mol per mol LLZTO"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Calcination of mixed powder",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "temperature": {
+              "value": 1173.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Ball milling and drying",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["step_2", "chem_6"]
+            },
+            "duration": {
+              "value": 780,
+              "unit": "min"
+            },
+            "notes": "Planetary ball mill in 2-propanol"
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["step_3"]
+            },
+            "notes": "Drying after milling"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": ["Experimental"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Pellet formation",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["step_3"]
+            },
+            "notes": "Pressed into pellets"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": ["Experimental"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Sintering of pellets",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": ["step_4"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K",
+              "range": {
+                "from": 1323.15,
+                "to": 1423.15,
+                "unit": "K"
+              }
+            },
+            "notes": "Sintered in alumina crucibles at 1050–1150 °C; resulting samples named LLZTO-1050, LLZTO-1075, LLZTO-1100, LLZTO-1150"
+          }
+        ],
+        "conditions": {
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Raw material mixing with sintering aid"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Calcination at 900 °C for 6 h"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Ball milling in 2-propanol and drying"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Pressing into green pellets"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Sintering at 1050–1150 °C to obtain dense LLZTO electrolytes"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Amounts of individual reactants not specified",
+        "excerpt": "stoichiometric amounts of LiOH · H2O (with 10 wt.% excess), La 2O3, Zr O2, and Ta 2O5 were mixed together"
+      },
+      {
+        "issue": "Sintering time not specified",
+        "excerpt": "sintered in alumina crucibles at various temperatures from 1050 to 1150 oC"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "ICP-OES",
+      "parameters": {
+        "instrument": "VARIN VISTA-MPX"
+      },
+      "results": [
+        {
+          "metric": "La/Al atomic ratio",
+          "value": "3.00/0.39",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Close to nominal 3.00/0.30; slight Al increase attributed to crucible contamination",
+      "prov": ["Experimental"]
+    },
+    {
+      "method": "Archimedes density",
+      "parameters": {
+        "medium": "ethanol"
+      },
+      "results": [],
+      "interpretation": "Relative density correlated with sintering temperature",
+      "prov": ["Experimental"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Lattice parameters used to calculate theoretical density",
+      "prov": ["Experimental"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "cell": "Au/LLZTO/Au",
+        "frequency_range": "100 Hz–110 MHz",
+        "instrument": "Agilent 4294A"
+      },
+      "results": [],
+      "interpretation": "High-frequency semicircle corresponds to pellet resistance",
+      "prov": ["Experimental"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "cell": "Li/LLZTO/Li",
+        "frequency_range": "1 Hz–8 MHz",
+        "instrument": "Zahner IM6"
+      },
+      "results": [
+        {
+          "metric": "Dendrite resistance r3",
+          "value": 22.5,
+          "unit": "Ω"
+        }
+      ],
+      "interpretation": "Resistance attributed to lithium dendrite path",
+      "prov": ["Results"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {
+        "mode": "SE and BSE",
+        "instrument": "JSM-7001F JEOL"
+      },
+      "results": [
+        {
+          "metric": "Morphology",
+          "value": "Dark regions corresponding to lithium dendrites observed along grain boundaries and pores",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Direct visual evidence of dendrite growth through interconnected pores",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "EDX line scan",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Elemental distribution",
+          "value": "Decrease of La, Zr, Ta, O across dark region; indicates Li enrichment",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms lithium presence in dendritic regions",
+      "prov": ["Figure 2f"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Rosso model calculation",
+        "results": [
+          {
+            "equation": "r3 from Z′0 or Z′∞",
+            "value": 22.5,
+            "unit": "Ω"
+          },
+          {
+            "equation": "Diameter estimation using resistivity 9.28×10^-6 Ω·cm",
+            "value": 2.3,
+            "unit": "µm"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T11:51:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

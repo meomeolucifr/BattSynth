@@ -1,0 +1,936 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Polyethylene oxide film coating enhances lithium cycling efficiency of an anode-free lithium-metal battery",
+    "doi": "10.1039/c7nr09058g",
+    "authors": [
+      "Addisu Alemayehu Assegie",
+      "Ju-Hsiang Cheng",
+      "Li-Ming Kuo",
+      "Wei-Nien Su",
+      "Bing-Joe Hwang"
+    ],
+    "journal": "Nanoscale",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "PEO coating",
+      "anode-free lithium metal battery",
+      "electrochemistry",
+      "dendrite suppression"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "PEO-coated copper electrode (Cu@PEO)",
+      "molecular_formula": "",
+      "intended_role": "modified current collector",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.74,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank, but the paper does specify chemical formulas/material identities used in the study (e.g., polyethylene oxide (PEO) coating; LiTFSI, LiNO3, DME/DOL electrolyte; LiFePO4 cathode; LiPF6 in EC/DEC comparator). Since the document contains explicit formulas/chemical identifiers, a blank value is not supported as 'missing information'.",
+        "suggested_fix": "If \u201cTarget Formula\u201d refers to the main target material/system, use a specific identifier such as \u201cPolyethylene oxide (PEO)\u201d (for the coating) or the full-cell configuration \u201cCu@PEO/LiFePO4\u201d (anode-free full cell). If it refers to electrolyte: \u201c1 M LiTFSI in DME/DOL (1/1, v/v) with 2 wt% LiNO3.\u201d"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Polyethylene oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "coating polymer",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 0.1,
+        "unit": "g"
+      },
+      "notes": "Molecular weight 8\u00d710^6 g mol-1",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The Experimental section (\u201cFabrication of PEO-coated electrode\u201d) explicitly states: \u201cA 0.1 g sample of polyethylene oxide \u2026 was dissolved\u2026\u201d. This directly supports the extracted value \u2018Polyethylene oxide | Amount: 0.1 g\u2019.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used in 1/1 v/v mixture with ethanol",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.72,
+        "reasoning": "The paper explicitly mentions water as part of the solvent used to dissolve PEO in the Experimental section: \u201cA 0.1 g sample of polyethylene oxide \u2026 was dissolved in a mixture of water/ethanol (1/1, v/v)\u2026\u201d. Thus, water is present and its proportion in that mixture is specified (1/1 v/v). The extracted statement that the amount is \u201cNot specified in text\u201d is therefore not accurate.",
+        "suggested_fix": "Water | Amount: present as part of water/ethanol mixture (1/1, v/v) used to dissolve 0.1 g PEO (stirred 24 h)."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used in 1/1 v/v mixture with water",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.74,
+        "reasoning": "The paper explicitly mentions ethanol as part of the solvent mixture used to dissolve PEO: \u201cA 0.1 g sample of polyethylene oxide \u2026 was dissolved in a mixture of water/ethanol (1/1, v/v) \u2026\u201d (Experimental section). Thus, ethanol is present, but the text does provide an amount in the form of a mixing ratio (1/1, v/v). Therefore, the claim \u201cAmount: Not specified in text\u201d is not accurate.",
+        "suggested_fix": "Ethanol | Amount: used in water/ethanol mixture at 1/1 (v/v) (for dissolving 0.1 g PEO)."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Copper foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Diameters 16 mm (Li/Cu tests) & 13 mm (full-cell tests)",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly identifies the chemical as copper foil (e.g., \u201cPre-cut copper foils with diameters of 16 mm and 13 mm were used\u2026\u201d and multiple references to \u201cbare copper electrode/copper foil\u201d). However, it does not specify the mass, thickness, purity, or supplier of the copper foil anywhere in the provided text. Therefore, the extracted statement \u201cCopper foil | Amount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Hydrochloric acid (dilute)",
+      "molecular_formula": "HCl",
+      "ontology": {
+        "role": "cleaning agent",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to remove surface oxide from copper",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.87,
+        "reasoning": "The Experimental section explicitly mentions hydrochloric acid as used to remove the oxide layer: \"An oxide layer on the copper electrodes was removed by washing with deionized water in dilute HCl...\" No concentration, volume, molarity, or other quantitative amount of HCl is provided anywhere in the text, so the extractor\u2019s note \"Amount: Not specified in text\" is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Acetone",
+      "molecular_formula": "C3H6O",
+      "ontology": {
+        "role": "rinse solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions acetone in the Experimental section as part of the copper-foil cleaning/rinsing procedure (\u201c...subsequent rinsing with deionized water and acetone.\u201d). However, no volume/mass/concentration of acetone is provided anywhere in the text; it is only referenced as a rinse solvent. Therefore, the extracted statement \u201cAcetone | Amount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiC2F6NO4S2",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "lithium salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "In DME/DOL (1/1 v/v) electrolyte",
+      "prov": [
+        "Electrochemical testing"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states the ether-based electrolyte composition includes \u201c1 M LiTFSI\u201d (lithium bis(trifluoromethanesulfonyl)imide). This appears in the abstract (Page 1: \u201celectrolyte comprising 1 M LiTFSI...\u201d) and again in the Electrochemical testing/Experimental section (e.g., Page 3: \u201c\u223c60 \u00b5L of 1 M lithium bis(trifluoromethanesulphonyl)imide (LiTFSI) ... as the electrolyte\u201d, and Page 11 Experimental section: \u201celectrolyte comprised 1 M lithium bis(trifluoromethanesulfonyl)imide (LiTFSI) ...\u201d). Therefore the extracted chemical identity and amount are supported, regardless of the alleged provenance label.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "1,2-Dimethoxyethane",
+      "molecular_formula": "C4H10O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "ether"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Electrolyte solvent (1/1 v/v with DOL)",
+      "prov": [
+        "Electrochemical testing"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly includes 1,2-dimethoxyethane (DME) as part of the electrolyte solvent system (e.g., \u201cDME/DOL (1/1, v/v)\u201d and \u201c1,3-dioxolane and 1,2-dimethoxyethane (1/1, v/v)\u201d). However, there is no standalone amount given for DME by itself; it is only specified as a 1:1 (v/v) mixture with DOL, without reporting an absolute volume or mass of DME. Therefore, the extracted claim that the chemical is present and its amount is not specified (as an absolute quantity) is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "1,3-Dioxolane",
+      "molecular_formula": "C3H6O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "ether"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Electrolyte solvent (1/1 v/v with DME)",
+      "prov": [
+        "Electrochemical testing"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The document explicitly mentions 1,3-dioxolane (DOL) as part of the electrolyte solvent mixture (e.g., \u201cLiTFSI in 1,3-dioxolane and 1,2-dimethoxyethane (1/1, v/v) with 2 wt% LiNO3\u201d and \u201cDME/DOL (1/1, v/v)\u201d), but it does not provide an absolute amount for 1,3-dioxolane. Therefore, the chemical identity is supported, but the overall extracted entry as written (\u201c1,3-Dioxolane | Amount: Not specified in text\u201d) is not correct for the combined field, because the text *does* specify a relative amount (1/1 v/v) for DOL within the solvent mixture.",
+        "suggested_fix": "1,3-Dioxolane (DOL) | Amount: DME/DOL = 1/1 (v/v) in electrolyte (absolute volume not specified; electrolyte volume ~60 \u00b5L is given for the whole electrolyte)."
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Lithium nitrate",
+      "molecular_formula": "LiNO3",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "lithium salt"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "wt%"
+      },
+      "notes": "",
+      "prov": [
+        "Electrochemical testing"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly states the ether-based electrolyte comprises \u201c1 M LiTFSI, DME/DOL (1/1, v/v) and 2 wt% LiNO3,\u201d appearing in the abstract (Page 1) and repeated in the Electrochemical testing section (e.g., Fig. 4 caption and Experimental section). This supports the chemical identity (lithium nitrate, LiNO3) and the amount (2 wt%).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "lithium salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Used in EC/DEC electrolyte (comparison)",
+      "prov": [
+        "Electrochemical testing"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The paper specifies the ether-based electrolyte as \u201c1 M LiTFSI in DME/DOL (1/1, v/v) with 2 wt% LiNO3\u201d for electrochemical testing. Lithium hexafluorophosphate (LiPF6) is only mentioned as a comparative carbonate electrolyte (1 M LiPF6 in EC/DEC (1/1, v/v)), not lithium hexafluorophosphate. No occurrence of \u201clithium hexafluorophosphate\u201d is found; the correct name for LiPF6 is lithium hexafluorophosphate, not hexafluorophosphate (which would correspond to PF6\u2212 as an anion, typically in LiPF6). Therefore the extracted value \u201cLithium hexafluorophosphate | Amount: 1 M\u201d is not explicitly supported as written.",
+        "suggested_fix": "Lithium hexafluorophosphate (LiPF6) | Amount: 1 M (in EC/DEC (1/1, v/v), used as a comparative carbonate electrolyte)."
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "carbonate"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "In 1/1 v/v mixture with DEC",
+      "prov": [
+        "Electrochemical testing"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper\u2019s electrochemical testing section does mention ethylene carbonate (EC), specifically in the carbonate electrolyte formulation \u201c1 M LiPF6 and EC/DEC (1/1, v/v)\u201d and also references \u201cLiPF6 in EC/DEC (1/1, v/v)\u201d. Therefore, the statement that the amount is \u201cNot specified in text\u201d is not correct because EC\u2019s proportion is explicitly given as part of a 1:1 (v/v) solvent mixture with DEC. (No standalone mass/volume of EC is given, but the ratio is specified.)",
+        "suggested_fix": "Ethylene carbonate (EC) | Amount: EC/DEC = 1/1 (v/v) in the carbonate electrolyte (with 1 M LiPF6)."
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Diethyl carbonate",
+      "molecular_formula": "C5H10O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "carbonate"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "In 1/1 v/v mixture with EC",
+      "prov": [
+        "Electrochemical testing"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.94,
+        "reasoning": "The paper text lists electrolyte components such as LiTFSI in DME/DOL with LiNO3 (ether-based) and LiPF6 in EC/DEC (carbonate-based), but it never mentions diethyl carbonate as a chemical used. DEC appears only as part of the solvent pair \u201cEC/DEC\u201d, i.e., ethyl methyl carbonate is not present; rather, \u201cDEC\u201d here refers to diethyl carbonate, but the full chemical name \u201cdiethyl carbonate\u201d is not explicitly written in the text. Therefore the extracted chemical identity \u201cDiethyl carbonate\u201d is not explicitly supported as written, and the claim that its amount is not specified is also not supported in that form (the text specifies the carbonate electrolyte as 1 M LiPF6 in EC/DEC (1/1, v/v)).",
+        "suggested_fix": "If mapping abbreviations is allowed: \u201cEC/DEC (1/1, v/v) | Amount: not standalone; used as solvent mixture with EC at 1/1 (v/v) in electrolyte containing 1 M LiPF6.\u201d If strictly requiring explicit naming: remove \u201cDiethyl carbonate\u201d and instead record \u201cEC/DEC (1/1, v/v) solvent mixture (for 1 M LiPF6 carbonate electrolyte).\u201d"
+      }
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mass loading ~4.5 mg cm-2, 80 wt% in cathode slurry",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions use of an LiFePO4 cathode in the anode-free full-cell configuration (e.g., \u201cintegrating it with an LiFePO4 cathode into a full-cell configuration (Cu@PEO/LiFePO4)\u201d and multiple later references to \u201cCu@PEO/LFP\u201d and \u201cBCu/LFP\u201d). However, the text does not specify an explicit amount of LiFePO4 used as a chemical reagent; it only describes the LiFePO4 electrode formulation and gives a cathode mass loading (~4.5 mg cm\u22122) without stating the absolute amount of LiFePO4. Thus, the extractor\u2019s \u2018Amount: Not specified in text\u2019 is supported by the document\u2019s omission of a specific LiFePO4 amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_15",
+      "name": "Super P carbon",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10 wt% in cathode slurry",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the conductive carbon as \u201cconductive carbon black (Super P)\u201d in the Experimental section when describing the LiFePO4 cathode slurry. However, no explicit amount for Super P alone is given (e.g., in grams or mg); only a component ratio is provided: active material : Super P : PVDF = 80 : 10 : 10 by weight (and overall mass loading ~4.5 mg cm\u22122 for the electrode). Therefore, the extractor\u2019s statement that the chemical identity is Super P carbon and the amount is not specified is supported, since an absolute amount is indeed not provided in the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_16",
+      "name": "Polyvinylidene fluoride",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10 wt% in cathode slurry",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper does not mention polyvinylidene fluoride (PVDF) as a chemical used on the Cu@PEO anode modification; instead the anode coating uses polyethylene oxide (PEO). PVDF is mentioned in the Experimental section only as a binder component for preparing the LiFePO4 cathode slurry (\u201cPVDF binder \u2026 weight ratio 80 : 10 : 10\u201d). Therefore the extracted chemical identity is incorrect, and the associated 'amount not specified' claim is moot because PVDF is not the relevant chemical for the described PEO coating (and for the cathode, PVDF amount is specified by ratio).",
+        "suggested_fix": "Polyethylene oxide (PEO) | Amount: 0.1 g (dissolved in water/ethanol 1/1 v/v) for the spin-coating solution. If the field is meant for cathode components: PVDF binder | Amount: 10 wt% (active:Super P:PVDF = 80:10:10)."
+      }
+    },
+    {
+      "chemical_id": "chem_17",
+      "name": "Sodium hydroxide (dilute)",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "surface treatment",
+        "category": "inorganic base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to treat Al foil for cathode",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper\u2019s Experimental section describes removing the oxide layer from copper by washing with deionized water in dilute HCl, and separately describes treating aluminum foil with a dilute NaOH solution. It does not mention using sodium hydroxide for the copper preparation, nor does it mention sodium hydroxide as a chemical identity needing an amount in the context implied by the extraction. Therefore the extracted chemical identity (sodium hydroxide) and its claimed absence of amount are not supported for the copper/PEO electrode prep; NaOH appears only for Al foil treatment without a specified concentration/amount.",
+        "suggested_fix": "Dilute NaOH solution (used to treat aluminum foil); amount/concentration not specified. (Copper oxide layer removal used dilute HCl, not NaOH.)"
+      }
+    },
+    {
+      "chemical_id": "chem_18",
+      "name": "Aluminum foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "cathode current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.75,
+        "reasoning": "The paper explicitly mentions aluminum foil in the Experimental section (\u201cAluminum foil was first treated with a dilute NaOH solution\u2026\u201d), so the chemical identity is supported. However, the text does not present the amount of aluminum foil used (no mass, thickness, area beyond being used as current collector for the cathode), so the extracted combined field \u201cAluminum foil | Amount: Not specified in text\u201d is partially correct. If this field requires both identity and amount together, it should not be marked fully supported as written because it asserts a specific chemical while also claiming the amount is unspecified; the amount part is supported but the overall field may need separation into identity vs amount.",
+        "suggested_fix": "Chemical: Aluminum foil. Amount: Not specified in text."
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of PEO solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "0.1 g PEO dissolved in water/ethanol 1:1 v/v, stirred to form viscous solution",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The Experimental section explicitly states that polyethylene oxide (PEO) was \u201cdissolved in a mixture of water/ethanol (1/1, v/v) and stirred for 24 h to form a viscous solution,\u201d which is a synthesis/preparation operation corresponding to \u201cdissolve.\u201d",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Copper foil cleaning",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Oxide layer removed with dilute HCl",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.83,
+              "reasoning": "The paper explicitly describes a washing step during electrode preparation: \u201cAn oxide layer on the copper electrodes was removed by washing with deionized water in dilute HCl and subsequent rinsing with deionized water and acetone.\u201d It also describes washing harvested anodes for SEM: \u201cwashed with an anhydrous dimethyl ether solvent to remove remnant electrolyte.\u201d Therefore the synthesis/processing operation 'wash' is supported by the source text.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "rinse",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_2",
+                "chem_6"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Subsequent rinsing with deionized water and acetone",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes a rinsing step during electrode preparation: after washing the copper electrodes with deionized water in dilute HCl, it states \u201csubsequent rinsing with deionized water and acetone\u201d (Experimental section, Fabrication of PEO-coated electrode). This supports the synthesis/processing operation being a rinse.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [
+                "chem_4"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Air dry before coating",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.82,
+              "reasoning": "The paper explicitly describes a drying step in the synthesis/fabrication of the PEO-coated electrode: after spin coating, the film-coated copper foil was placed in a vacuum oven at 60 \u00b0C and dried to remove remnant solvent (\u201cvacuum oven\u2026 dried to remove any remnant solvent\u201d). This supports the synthesis operation being \u2018dry\u2019.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Spin-coating PEO film onto copper",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "step_1"
+              ]
+            },
+            "duration": {
+              "value": 2,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Spin speed 4000 rpm; thickness tuned 30-120 s",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper repeatedly describes a copper electrode being \"coated\" with a polyethylene oxide (PEO) film (e.g., title: \"Polyethylene oxide film coating...\"; Page 2: \"we designed a PEO film coating on a copper electrode\"; Experimental section: \"modified ... by spin coating with a polyethylene oxide (PEO) solution\"). This supports the synthesis operation as a coating step (i.e., 'coat').",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Vacuum oven drying of coated electrode",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "notes": "Vacuum oven at 60 \u00b0C until solvent removed",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.78,
+              "reasoning": "The paper does mention drying steps (e.g., \u201cplaced directly into a vacuum oven at 60 \u00b0C and dried to remove any remnant solvent\u201d; also \u201cdried copper electrodes\u201d), but it does not explicitly label a synthesis/processing operation simply as \u201cdry\u201d nor present \u201cdry\u201d as a standalone operation name. Thus the extracted value is too generic and not explicitly stated as the synthesis operation.",
+              "suggested_fix": "vacuum-oven drying at 60 \u00b0C (after spin coating) to remove remnant solvent"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.83,
+            "reasoning": "The paper describes drying the PEO-coated copper foil in a vacuum oven at 60 \u00b0C, and cell assembly in an Ar-filled glove box (O2/H2O < 1 ppm). However, it does not state that the synthesis/fabrication atmosphere was vacuum overall; vacuum is only used as a drying step, while the controlled atmosphere for handling/assembly is argon. Therefore 'vacuum' as the synthesis atmosphere is not explicitly supported.",
+            "suggested_fix": "argon-filled glove box (O2/H2O < 1 ppm); vacuum oven used for drying at 60 \u00b0C (post-coating drying step)"
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Glovebox storage",
+        "operations": [
+          {
+            "action": "store",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ]
+            },
+            "duration": {
+              "value": 960,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Overnight in Argon glovebox (<1 ppm O2/H2O)",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.92,
+              "reasoning": "The paper\u2019s Experimental section and methods describe fabrication steps (spin coating, drying in vacuum oven, transfer to glove box, kept overnight before cell assembly). Nowhere does it list a synthesis operation explicitly as \u201cstore\u201d (or \u201cstored\u201d) as a distinct operation; the closest phrase is \u201ckept overnight,\u201d which is not explicitly labeled as a storage step/value. Therefore the extracted value \u201cstore\u201d is not explicitly supported by the text.",
+              "suggested_fix": "If the field expects a storage/holding operation, the closest explicit wording is: \u201ckept overnight (in an argon-filled glove box) before cell assembly.\u201d Otherwise, leave as Not specified."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.96,
+            "reasoning": "The paper explicitly states that the PEO-modified electrode was transferred to an \u201cargon-filled glove box\u201d and that \u201cAll the cell assembly was carried out inside an Ar-filled glove box,\u201d indicating Ar was the inert atmosphere used during synthesis/fabrication and assembly steps.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare viscous PEO solution in water/ethanol",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The Experimental section explicitly states: \u201cA 0.1 g sample of polyethylene oxide \u2026 was dissolved in a mixture of water/ethanol (1/1, v/v) and stirred for 24 h to form a viscous solution.\u201d This supports the workflow step \u201cPrepare viscous PEO solution in water/ethanol.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Clean copper foils with dilute HCl, rinse, dry",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The Experimental section explicitly states the copper foil cleaning procedure: oxide layer removed by washing with deionized water in dilute HCl, followed by rinsing with deionized water and acetone, then drying. This supports the extracted step \u201cClean copper foils with dilute HCl, rinse, dry\u201d (though it omits the acetone rinse detail).",
+          "suggested_fix": "Clean copper foils by washing with deionized water in dilute HCl, then rinse with deionized water and acetone, and dry."
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Spin-coat PEO solution onto copper at 4000 rpm",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.88,
+          "reasoning": "The paper explicitly states that a rough copper surface was coated with a PEO solution using spin coating at a constant speed of 4000 rpm (\u201cA rough copper surface \u2026 was coated with a PEO solution using spin coating at a constant speed of 4000 rpm.\u201d). The Experimental section further confirms typical spin-coating parameters of 4000 rpm for depositing the PEO film onto copper foil. Therefore, the workflow step \u201cSpin-coat PEO solution onto copper at 4000 rpm\u201d is supported.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Vacuum-dry coated electrodes at 333 K",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The Experimental section explicitly states that immediately after spin coating, the film-coated copper foil was placed into a vacuum oven at 60 \u00b0C to dry/remove remnant solvent. 60 \u00b0C corresponds to 333 K, matching the extracted value 'Vacuum-dry coated electrodes at 333 K'.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Store electrodes overnight in Ar glovebox",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The Experimental section explicitly states: \u201cThe oven-dried PEO-modified current collector/electrode was transferred to an argon-filled glove box and kept overnight before cell assembly\u2026\u201d. This supports the workflow timeline step of storing electrodes overnight in an Ar glovebox (though it is specifically after drying the PEO-coated electrode/current collector).",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified solvent volume for PEO solution",
+        "excerpt": "0.1 g sample of polyethylene oxide (molecular weight 8 \u00d7 106 g mol\u22121) was dissolved in a mixture of water/ethanol (1/1, v/v)",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "In the Experimental section under \u201cFabrication of PEO-coated electrode\u201d, the paper states: \u201cA 0.1 g sample of polyethylene oxide \u2026 was dissolved in a mixture of water/ethanol (1/1, v/v) \u2026\u201d. It specifies the polymer mass and solvent mixture ratio but does not give the solvent volume (or concentration) used to make the PEO solution. Therefore the identified workflow ambiguity (unspecified solvent volume) is supported by the text omission, and the excerpt is accurate as written.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {
+        "accelerating_voltage_kV": "10-15"
+      },
+      "results": [
+        {
+          "metric": "film thickness",
+          "value": 0.2,
+          "unit": "\u00b5m"
+        }
+      ],
+      "interpretation": "Uniform nanoscale PEO film achieved at 4000 rpm, 120 s spin",
+      "prov": [
+        "Fig. S1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly reports that the PEO film thickness decreases with increased spin-coating time, reaching \u201c200 nm\u201d at 120 s, citing Fig. S1b\u2013e (\u201c\u2026decreasing trend from 1.5 \u00b5m to 1.03 \u00b5m, 0.75 \u00b5m and 200 nm\u2026\u201d). 200 nm equals 0.2 \u00b5m, matching the extracted SEM film thickness value.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "1 MHz\u201310 mHz",
+        "amplitude": "5 mV"
+      },
+      "results": [
+        {
+          "metric": "voltage hysteresis after cycling",
+          "value": 0.03,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Low interfacial resistance for Cu@PEO electrode",
+      "prov": [
+        "Fig. 4d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly reports that the voltage hysteresis for the modified copper electrode \u201cremained stable at an average value of 30 mV\u201d (described in the discussion of Fig. 4d, and reiterated in the Conclusions: \u201cstable voltage hysteresis of \u223c30 mV\u201d). 30 mV equals 0.03 V, matching the extracted value for voltage hysteresis after cycling.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "CV",
+      "parameters": {
+        "scan_rate": "0.1 mV s-1",
+        "potential_range": "3.0\u20133.8 V vs Li+/Li"
+      },
+      "results": [
+        {
+          "metric": "peak current (Cu@PEO/LFP)",
+          "value": 2.88,
+          "unit": "mA"
+        },
+        {
+          "metric": "polarization (Cu@PEO/LFP)",
+          "value": 0.34,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Faster Li+ diffusion with PEO-modified anode",
+      "prov": [
+        "Fig. 6d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper\u2019s full text explicitly states (in the discussion of Fig. 6d and Table S2) that for the Cu@PEO/LFP full cell, the peak current is 2.88 mA (\u201cmodified electrode displayed a higher peak current value of 2.88 mA\u201d) and that the polarization for the PEO-modified copper anode with LFP is 340 mV (\u201cpolarizations\u2026were 340, 400 and 410 mV\u201d), which corresponds to 0.34 V. These match the extracted values and units (mA; V).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic cycling",
+        "results": [
+          {
+            "description": "Average coulombic efficiency of Cu@PEO electrode over 200 cycles",
+            "value": 100,
+            "unit": "%"
+          },
+          {
+            "description": "First-cycle charge capacity of Cu@PEO/LFP cell at 0.2 C",
+            "value": 158,
+            "unit": "mAh g-1"
+          },
+          {
+            "description": "Capacity retention of Cu@PEO/LFP after 200 cycles at 0.2 C",
+            "value": 30,
+            "unit": "%"
+          }
+        ],
+        "prov": [
+          "Fig. 4a",
+          "Fig. 7a"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.72,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly describes multiple analysis/characterization methods (e.g., SEM, EIS, CV, optical imaging, AFM) and even defines/uses them in the text and figure captions. Fig. 4a is a coulombic efficiency cycling plot (galvanostatic cycling), and Fig. 7a is full-cell cycling performance (galvanostatic charge\u2013discharge); neither supports a blank/unspecified analysis method.",
+          "suggested_fix": "Analysis Method: galvanostatic charge\u2013discharge/cycling (coulombic efficiency vs cycle number) for Fig. 4a and Fig. 7a. More broadly, the study uses SEM, EIS, CV, optical imaging, and AFM."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 158,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.9,
+      "reasoning": "The paper explicitly reports cycling over 200 cycles. In the abstract (Page 1) it states the modified electrode had stable cycling with average coulombic efficiency ~100% over 200 cycles, and the full cell showed performance at the 200th cycle. In the main text (Page 5) it again states the average coulombic efficiency approximated ~100% over 200 cycles. Therefore, a cycle life value of 200 is directly supported by the document text.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-28T12:00:00Z",
+    "source_file": "Nanoscale_2018_10_6125.pdf",
+    "processing_time": null
+  }
+}

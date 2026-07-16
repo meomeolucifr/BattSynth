@@ -1,0 +1,614 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Current and future lithium-ion battery manufacturing",
+    "doi": "10.1016/j.isci.2021.102332",
+    "authors": [
+      "Yangtao Liu",
+      "Ruihan Zhang",
+      "Jun Wang",
+      "Yan Wang"
+    ],
+    "journal": "iScience",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "perspective",
+    "tags": ["lithium-ion batteries", "manufacturing process", "cost analysis"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "67-Ah LiNi0.6Mn0.2Co0.2O2/graphite lithium-ion battery cell",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 2, Table 1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "N-methyl-2-pyrrolidone",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Abbreviated as NMP; used in cathode slurry",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Polyvinylidene fluoride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Abbreviated as PVDF; dissolved in NMP for cathode slurry",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Styrene-butadiene rubber",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Abbreviated as SBR; used in anode slurry",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Carboxymethyl cellulose",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Abbreviated as CMC; used with SBR in anode slurry",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Solvent for anode slurry; harmless vapor exhausted",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Aluminum foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for cathode",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Copper foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for anode",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "LiNi0.6Mn0.2Co0.2O2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Cathode active material (NMC622)",
+      "prov": ["Page 3, Table 1 caption"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Anode active material",
+      "prov": ["Page 1"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "LiPF6",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mentioned in relation to moisture reaction",
+      "prov": ["Page 8"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of cathode and anode slurries",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_8", "chem_2", "chem_1", "chem_9", "chem_3", "chem_4", "chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Active material, conductive additive and binder mixed with solvent to form uniform slurry"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Coating and drying of electrodes",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["step_1"],
+              "substrate": ["chem_6", "chem_7"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Slot-die coating on both sides of current collector at 35–80 m min-1 (throughput)"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Solvent evaporated; NMP recovery with 20–30 % loss"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calendering to adjust electrode density and porosity",
+        "operations": [
+          {
+            "action": "calender",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Slitting and stamping of electrodes",
+        "operations": [
+          {
+            "action": "cut",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "80–150 m min-1 throughput for slitting"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 2", "Table 1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Vacuum drying to remove residual moisture",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "method": "vacuum"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Cell assembly: stacking/winding with separator in dry room",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Electrodes and separator stacked or wound; performed in low-humidity dry room"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Tab welding",
+        "operations": [
+          {
+            "action": "weld",
+            "parameters": {
+              "method": "ultrasonic"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Al and Cu tabs welded to collectors"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Electrolyte filling and sealing",
+        "operations": [
+          {
+            "action": "fill",
+            "parameters": {
+              "inputs": ["chem_10"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Cell enclosure filled before final sealing"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Electrochemical formation and aging",
+        "operations": [
+          {
+            "action": "charge_discharge",
+            "parameters": {
+              "voltage_start": 1.5,
+              "voltage_unit": "V",
+              "rate_initial": "C/20"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Voltage gradually increased; process lasts up to several weeks with intermittent degassing"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Slurry mixing of active material, binders and solvent"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Coating on current collector followed by drying and solvent recovery"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Calendering to attain desired electrode density"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Electrode slitting/stamping to cell dimensions"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Vacuum drying to lower moisture content"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Assembly of electrodes with separator in dry room"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Ultrasonic welding of tabs"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Electrolyte filling and final sealing"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Electrochemical formation cycles and aging"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No specific quantities or temperatures provided for slurry mixing and drying.",
+        "excerpt": "\"the solvent. The common organic solvent (NMP) for cathode slurry is toxic...\""
+      },
+      {
+        "issue": "Duration for formation described only as 'up to several weeks'",
+        "excerpt": "\"this step normally lasts several weeks\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "capacity retention",
+          "value": 90,
+          "unit": "%",
+          "notes": "4 mAh cm-2 dry-coated NMC111/graphite full cell after 1,500 cycles"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Cost, throughput and energy analysis (Table 1)",
+        "results": [
+          {
+            "process": "Slurry mixing",
+            "annual_cost_$": 7396000,
+            "cost_%": 7.91,
+            "throughput": "30 min–5 h",
+            "energy_kWh_per_cell": 0.11,
+            "energy_%": 0.83
+          },
+          {
+            "process": "Coating/drying",
+            "annual_cost_$": 13984000,
+            "cost_%": 14.96,
+            "throughput": "35–80 m/min",
+            "energy_kWh_per_cell": 0.18,
+            "energy_%": 1.36
+          },
+          {
+            "process": "Solvent recovery",
+            "annual_cost_$": 4296000,
+            "cost_%": 4.60,
+            "throughput": "NA",
+            "energy_kWh_per_cell": 6.22,
+            "energy_%": 46.84
+          },
+          {
+            "process": "Calendering",
+            "annual_cost_$": 4849000,
+            "cost_%": 5.19,
+            "throughput": "60–100 m/min",
+            "energy_kWh_per_cell": 0.38,
+            "energy_%": 2.86
+          },
+          {
+            "process": "Slitting",
+            "annual_cost_$": 2891000,
+            "cost_%": 3.09,
+            "throughput": "80–150 m/min",
+            "energy_kWh_per_cell": 0.71,
+            "energy_%": 5.35
+          },
+          {
+            "process": "Vacuum drying",
+            "annual_cost_$": 2990000,
+            "cost_%": 3.20,
+            "throughput": "12–30 h",
+            "energy_kWh_per_cell": null,
+            "energy_%": null
+          },
+          {
+            "process": "Stacking",
+            "annual_cost_$": 8086000,
+            "cost_%": 8.65,
+            "throughput": "NA",
+            "energy_kWh_per_cell": 0.77,
+            "energy_%": 5.80
+          },
+          {
+            "process": "Welding",
+            "annual_cost_$": 6864000,
+            "cost_%": 7.34,
+            "throughput": "NA",
+            "energy_kWh_per_cell": 0.25,
+            "energy_%": 1.88
+          },
+          {
+            "process": "Enclosing",
+            "annual_cost_$": 11636000,
+            "cost_%": 12.45,
+            "throughput": "depends on cell design",
+            "energy_kWh_per_cell": 0.69,
+            "energy_%": 5.20
+          },
+          {
+            "process": "Formation/aging",
+            "annual_cost_$": 30482750,
+            "cost_%": 32.61,
+            "throughput": "1.5–3 weeks",
+            "energy_kWh_per_cell": 0.07,
+            "energy_%": 0.53
+          },
+          {
+            "process": "Dry room",
+            "annual_cost_$": null,
+            "cost_%": null,
+            "throughput": "NA",
+            "energy_kWh_per_cell": 3.9,
+            "energy_%": 29.37
+          }
+        ],
+        "prov": ["Table 1"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1500
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-02T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

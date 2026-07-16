@@ -1,0 +1,223 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Thermal stabilities of delithiated olivine MPO4 (M = Fe, Mn) cathodes investigated using first principles calculations",
+    "doi": "10.1016/j.elecom.2010.01.010",
+    "authors": [
+      "Shyue Ping Ong",
+      "Anubhav Jain",
+      "Geoffroy Hautier",
+      "Byoungwoo Kang",
+      "Gerbrand Ceder"
+    ],
+    "journal": "Electrochemistry Communications",
+    "year": 2010
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "thermal stability",
+      "olivine cathodes",
+      "density functional theory"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiMnPO4",
+      "molecular_formula": "LiMnPO4",
+      "intended_role": "cathode material",
+      "prov": ["Introduction", "Abstract"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "intended_role": "cathode material",
+      "prov": ["Introduction", "Abstract"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "MnPO4",
+      "molecular_formula": "MnPO4",
+      "intended_role": "charged cathode",
+      "prov": ["Abstract", "Results"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "FePO4",
+      "molecular_formula": "FePO4",
+      "intended_role": "charged cathode",
+      "prov": ["Abstract", "Results"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "O2",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "gas product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Results"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Mn2P2O7",
+      "molecular_formula": "Mn2P2O7",
+      "ontology": {
+        "role": "decomposition product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Results"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Fe7(PO4)6",
+      "molecular_formula": "Fe7(PO4)6",
+      "ontology": {
+        "role": "decomposition product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Results"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Fe3(P2O7)2",
+      "molecular_formula": "Fe3P2O7",
+      "ontology": {
+        "role": "decomposition product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Results"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Temperature range given without single value",
+        "excerpt": "MnPO4 decomposes at temperatures of around 150–200 °C"
+      },
+      {
+        "issue": "Temperature range given without single value",
+        "excerpt": "delithiated FePO4 which has been shown to be stable for temperatures up to 500–600 °C"
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density functional theory (DFT) calculations",
+        "results": [
+          {
+            "metric": "critical oxygen chemical potential for FePO4 reduction",
+            "value": -1.72,
+            "unit": "eV",
+            "notes": "",
+            "prov": ["Results"]
+          },
+          {
+            "metric": "critical temperature for FePO4 reduction (under air)",
+            "value": 973,
+            "unit": "K",
+            "notes": "approximate value converted from 700 °C",
+            "prov": ["Results"]
+          },
+          {
+            "metric": "critical oxygen chemical potential for MnPO4 reduction",
+            "value": -0.83,
+            "unit": "eV",
+            "notes": "",
+            "prov": ["Results"]
+          },
+          {
+            "metric": "critical temperature for MnPO4 reduction (under air)",
+            "value": 643,
+            "unit": "K",
+            "notes": "approximate value converted from 370 °C",
+            "prov": ["Results"]
+          },
+          {
+            "metric": "O2 evolved per mole of FePO4 on initial reduction",
+            "value": 0.1,
+            "unit": "mol mol-1",
+            "notes": "",
+            "prov": ["Results"]
+          },
+          {
+            "metric": "O2 evolved per mole of MnPO4 on initial reduction",
+            "value": 0.25,
+            "unit": "mol mol-1",
+            "notes": "",
+            "prov": ["Results"]
+          },
+          {
+            "metric": "theoretical capacity of LiFePO4",
+            "value": 170,
+            "unit": "mAh g-1",
+            "notes": "cited value",
+            "prov": ["Introduction"]
+          }
+        ],
+        "prov": ["Methodology", "Results"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 170,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T03:36:33Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

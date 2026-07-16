@@ -1,0 +1,238 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "First-principles investigation of phase stability in LixCoO2",
+    "doi": "",
+    "authors": [
+      "A. Van der Ven",
+      "M. K. Aydinol",
+      "G. Ceder",
+      "G. Kresse",
+      "J. Hafner"
+    ],
+    "journal": "Physical Review B",
+    "year": 1998
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "phase diagram",
+      "DFT",
+      "cluster expansion",
+      "battery cathode"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LixCoO2 (O3 host)",
+      "molecular_formula": "",
+      "intended_role": "studied material",
+      "prov": ["Page 2976-2984"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LixCoO2 (O1 host)",
+      "molecular_formula": "",
+      "intended_role": "studied material",
+      "prov": ["Page 2977-2979"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LixCoO2 (H1-3 host)",
+      "molecular_formula": "",
+      "intended_role": "studied material",
+      "prov": ["Page 2977-2982"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Cobalt",
+      "molecular_formula": "Co",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiCoO2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reference compound",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2977"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "CoO2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reference compound",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2977"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_1",
+        "description": "First-principles total-energy calculations using VASP with ultrasoft pseudopotentials; plane-wave cutoff 600 eV; LDA exchange-correlation (Ceperley–Alder/Perdew–Zunger); k-point sampling via Monkhorst–Pack; structures fully relaxed."
+      },
+      {
+        "step_ref": "comp_2",
+        "description": "Construction of cluster expansions (19-term for O3 host; 5-term for H1-3 host) fitted to calculated formation energies."
+      },
+      {
+        "step_ref": "comp_3",
+        "description": "Grand-canonical Monte Carlo simulations (3888 cells for O3, 900 cells for H1-3) to obtain finite-temperature free energies and phase diagram."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Simulated X-ray powder diffraction",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "peak splitting of (104)",
+          "value": "",
+          "unit": "",
+          "notes": "Pattern for ordered phase at x=0.5 matches experimental splitting."
+        }
+      ],
+      "interpretation": "Supports Li ordering in rows at x=0.5.",
+      "prov": ["Page 2979"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT total-energy calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": 40,
+            "unit": "meV per formula unit",
+            "notes": "O1 more stable than O3 at x=0."
+          },
+          {
+            "equation": "",
+            "value": 5,
+            "unit": "meV per formula unit",
+            "notes": "Energy difference between two x=0.5 orderings."
+          }
+        ],
+        "prov": ["Page 2977-2979"]
+      },
+      {
+        "method_name": "Monte Carlo simulation",
+        "results": [
+          {
+            "metric": "Order–disorder transition temperature (x=0.5)",
+            "value": 433,
+            "unit": "K",
+            "notes": "Calculated; experimentally 333 K."
+          },
+          {
+            "metric": "Order–disorder transition temperature (x=0.33)",
+            "value": 353,
+            "unit": "K",
+            "notes": "Predicted."
+          },
+          {
+            "metric": "Order–disorder transition temperature (H1-3, x=0.166)",
+            "value": 403,
+            "unit": "K",
+            "notes": "Second-order transition."
+          }
+        ],
+        "prov": ["Page 2982-2983"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

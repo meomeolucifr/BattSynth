@@ -1,0 +1,148 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "An advanced model framework for solid electrolyte intercalation batteries",
+    "doi": "10.1039/c0cp02473b",
+    "authors": [
+      "Manuel Landstorfer",
+      "Stefan Funken",
+      "Timo Jacob"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "theoretical_modeling",
+    "tags": [
+      "solid electrolyte",
+      "intercalation battery",
+      "Poisson–Nernst–Planck",
+      "numerical simulation"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Maximum ion concentration within electrolyte reported as 166.8 mol L-1.",
+      "prov": ["Section 3.1"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Formatting ambiguity in reported interfacial capacitance units.",
+        "excerpt": "C_A = ... = 136 :65 mFc m/C02"
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Numerical simulation (Finite Element Method solving modified Poisson–Nernst–Planck equations)",
+        "results": [
+          {
+            "metric": "maximum ion concentration",
+            "value": 166.8,
+            "unit": "mol L-1",
+            "prov": ["Section 3.1"]
+          },
+          {
+            "metric": "space charge region width (anode side)",
+            "value": 0.6,
+            "unit": "nm",
+            "prov": ["Section 3.1", "Fig. 6"]
+          },
+          {
+            "metric": "space charge region width (cathode side)",
+            "value": 0.3,
+            "unit": "nm",
+            "prov": ["Section 3.1", "Fig. 6"]
+          },
+          {
+            "metric": "intermediate layer potential drop (anode)",
+            "value": 0.67,
+            "unit": "V",
+            "prov": ["Section 3.1"]
+          },
+          {
+            "metric": "intermediate layer potential drop (cathode)",
+            "value": -0.67,
+            "unit": "V",
+            "prov": ["Section 3.1"]
+          },
+          {
+            "metric": "potential drop anode to bulk electrolyte",
+            "value": 2.62,
+            "unit": "V",
+            "prov": ["Section 3.1"]
+          },
+          {
+            "metric": "potential drop cathode to bulk electrolyte",
+            "value": 1.39,
+            "unit": "V",
+            "prov": ["Section 3.1"]
+          },
+          {
+            "metric": "interfacial capacitance (anode/electrolyte)",
+            "value": 136.65,
+            "unit": "mF cm-2",
+            "prov": ["Section 3.1"]
+          },
+          {
+            "metric": "interfacial capacitance (cathode/electrolyte)",
+            "value": 370.81,
+            "unit": "mF cm-2",
+            "prov": ["Section 3.1"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Two-dimensional V2C@Se (MXene) composite cathode material for high-performance rechargeable aluminum batteries",
+    "doi": "10.1016/j.ensm.2022.01.019",
+    "authors": [
+      "Wenrong Lv",
+      "Gaohong Wu",
+      "Xiaoxiao Li",
+      "Jianling Li",
+      "Zhanyu Li"
+    ],
+    "journal": "Energy Storage Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "MXene",
+      "aluminum battery",
+      "cathode",
+      "V2C",
+      "selenium composite"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "V2C (MXene)",
+      "molecular_formula": "V2C",
+      "intended_role": "intermediate",
+      "prov": [
+        "Page 139, Fig.1 description"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "V2C@Se composite",
+      "molecular_formula": "V2C@Se",
+      "intended_role": "final product",
+      "prov": [
+        "Page 138 Abstract",
+        "Page 139 Fig.1 description"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "V2AlC",
+      "molecular_formula": "V2AlC",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page 139 Fig.1 description"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Hydrochloric acid (concentrated)",
+      "molecular_formula": "HCl",
+      "ontology": {
+        "role": "etchant",
+        "category": "acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "concentrated",
+      "prov": [
+        "Page 138 Abstract",
+        "Page 139 Fig.1 description"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium fluoride",
+      "molecular_formula": "LiF",
+      "ontology": {
+        "role": "etchant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page 138 Abstract",
+        "Page 139 Fig.1 description"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Selenium",
+      "molecular_formula": "Se",
+      "ontology": {
+        "role": "dopant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page 138 Abstract",
+        "Page 139 Fig.1 description"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Selective etching of Al layers from V2AlC to obtain multilayer V2C.",
+        "operations": [
+          {
+            "action": "etch",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Etching performed with LiF and concentrated HCl solution"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 139 Fig.1 description"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Calcination of V2C with selenium to form V2C@Se composite.",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": [
+                "target_1",
+                "chem_4"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Temperature higher than selenium melting point (217 °C)."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 139 Fig.1 description"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Etching V2AlC with LiF/HCl to produce V2C."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Calcining V2C with Se (>217 °C) to obtain V2C@Se."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing quantitative synthesis parameters (amounts, exact temperature, time).",
+        "excerpt": "the preparation process ... V2C powder was calcined with selenium at a temperature higher than the melting point (217 °C) of Selenium."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "BET surface area",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface area",
+          "value": 7.6,
+          "unit": "m2 g-1",
+          "sample": "V2C"
+        },
+        {
+          "metric": "surface area",
+          "value": 5.3,
+          "unit": "m2 g-1",
+          "sample": "V2C@Se"
+        }
+      ],
+      "interpretation": "Reduction in surface area indicates removal of functional groups.",
+      "prov": [
+        "Fig. S1, Page 139"
+      ]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "peak disappearance",
+          "value": "",
+          "unit": "",
+          "sample": "V2C@Se",
+          "notes": "(002) peak of V2C disappears; selenium peaks dominate"
+        }
+      ],
+      "interpretation": "Confirms Se incorporation and structural change.",
+      "prov": [
+        "Page 139 Fig.1(b)"
+      ]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interlayer spacing",
+          "value": 1.08,
+          "unit": "nm",
+          "sample": "V2C"
+        },
+        {
+          "metric": "interlayer spacing",
+          "value": 0.97,
+          "unit": "nm",
+          "sample": "V2C@Se"
+        }
+      ],
+      "interpretation": "Se doping reduces spacing and orders lattice.",
+      "prov": [
+        "Page 139 Fig.1(f-i)"
+      ]
+    },
+    {
+      "method": "Electrochemical discharge test",
+      "parameters": {
+        "current_density": {
+          "value": 1,
+          "unit": "A g-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 208.8,
+          "unit": "mAh g-1",
+          "sample": "V2C"
+        },
+        {
+          "metric": "initial discharge capacity",
+          "value": 402.5,
+          "unit": "mAh g-1",
+          "sample": "V2C@Se"
+        },
+        {
+          "metric": "capacity after 1000 cycles",
+          "value": 31.5,
+          "unit": "mAh g-1",
+          "sample": "V2C"
+        },
+        {
+          "metric": "capacity after 1000 cycles",
+          "value": 119.8,
+          "unit": "mAh g-1",
+          "sample": "V2C@Se"
+        }
+      ],
+      "interpretation": "Se incorporation enhances capacity retention.",
+      "prov": [
+        "Page 140 Fig.2(a,b,f)"
+      ]
+    },
+    {
+      "method": "CV",
+      "parameters": {
+        "scan_rate": {
+          "value": 2,
+          "unit": "mV s-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "redox peaks",
+          "value": "",
+          "unit": "",
+          "sample": "V2C",
+          "notes": "A1/A2 at 1.60/1.70 V; B1/B2 at 1.75/2.20 V"
+        },
+        {
+          "metric": "redox peaks",
+          "value": "",
+          "unit": "",
+          "sample": "V2C@Se",
+          "notes": "First pair 1.55/1.90 V; second pair 1.75/2.23 V"
+        }
+      ],
+      "interpretation": "Indicates V and Se redox activity.",
+      "prov": [
+        "Page 140 Fig.2(g)"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations",
+        "results": [
+          {
+            "equation": "Eads = E[AlCl4]-/Al + Esubstrate - E[AlCl4]-/Al+substrate",
+            "value": -1.8,
+            "unit": "eV",
+            "notes": "Adsorption energy of [AlCl4]- on V2CSe"
+          },
+          {
+            "equation": "",
+            "value": 0.21,
+            "unit": "eV",
+            "notes": "Diffusion barrier of [AlCl4]- on V2CSe"
+          }
+        ],
+        "prov": [
+          "Page 142 Fig.6"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 402.5,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1000
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-27T12:00:00Z",
+    "source_file": "Energy Storage Materials 46 (2022) 138–146",
+    "processing_time": null
+  }
+}

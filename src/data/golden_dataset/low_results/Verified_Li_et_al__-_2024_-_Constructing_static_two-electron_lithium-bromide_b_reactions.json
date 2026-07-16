@@ -1,0 +1,765 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Constructing static two-electron lithium-bromide battery",
+    "doi": "10.1126/sciadv.adl0587",
+    "authors": [
+      "Xinliang Li",
+      "Yanlei Wang",
+      "Junfeng Lu",
+      "Pei Li",
+      "Zhaodong Huang",
+      "Guojin Liang",
+      "Hongyan He",
+      "Chunyi Zhi"
+    ],
+    "journal": "Science Advances",
+    "year": 2024
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "lithium-bromide battery",
+      "two-electron redox",
+      "TBABr3 cathode",
+      "electrolyte tailoring"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "TBABr3 cathode",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of TBABr3 cathodes"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.97,
+        "reasoning": "The field 'Target Formula' has an empty extracted value, but the paper explicitly states the cathode active material is tetrabutylammonium tribromide with formula TBABr3 (and also refers to tribromide as Br3\u2212). In Materials and Methods (\u201cFabrication of TBABr3 cathodes\u201d), the target material is clearly TBABr3. Therefore, leaving the value blank is not supported by the source text.",
+        "suggested_fix": "TBABr3 (tetrabutylammonium tribromide)"
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Cl\u207b-saturated electrolyte (CLE2)",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of Cl-saturated electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.76,
+        "reasoning": "The paper\u2019s \u201cFabrication of Cl-saturated electrolyte\u201d section specifies the electrolyte composition and LiCl concentration (e.g., 1.0 M LiTFSI in DME:DOL=1:1 with 2% LiNO3; LiCl ~0.04 M) and names the products as CLE0/CLE1/CLE2, but it does not explicitly state any single \u201cTarget Formula\u201d for the Cl-saturated electrolyte. Since the extracted value is blank, there is no value to verify as supported by the text.",
+        "suggested_fix": "If the intended target is the CLE2 electrolyte formulation, extract explicitly as: CLE2 = 1.0 M LiTFSI in DME:DOL (1:1 vol%) + 2% LiNO3 + LiCl (Cl\u2212-saturated; ~0.04 M LiCl in the supernatant)."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Tetrabutylammonium tribromide",
+      "molecular_formula": "TBABr3",
+      "ontology": {
+        "role": "active material",
+        "category": "organic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used in cathode slurry; 7 parts by weight in 7:2:1 mixture",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of TBABr3 cathodes"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.84,
+        "reasoning": "The paper explicitly identifies tetrabutylammonium tribromide (TBABr3) as the cathode active material (e.g., Introduction and Materials section: \u201celectrochemically active tetrabutylammonium tribromide (TBABr3) cathode\u201d; \u201cMaterials: TBABr3 (Aladdin, >99%)\u201d). However, no specific amount of TBABr3 reagent used in a synthesis/batch is given. The Methods only provide the electrode slurry composition (7:2:1 ratio) and the resulting cathode mass loading (~1.5 mg cm\u22122), but not a standalone \u2018amount of TBABr3\u2019 value. Therefore, the extractor\u2019s 'Amount: Not specified in text' is consistent with the document content.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Polyvinylidene fluoride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "2 parts by weight in 7:2:1 mixture",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of TBABr3 cathodes"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.8,
+        "reasoning": "The paper explicitly lists polyvinylidene fluoride (PVDF) as a binder in the Materials section and states it is mixed with TBABr3 and carbon black at a weight ratio of 7:2:1 during \u201cFabrication of TBABr3 cathodes.\u201d This provides an explicit amount for PVDF (2 parts by weight out of 10 total, i.e., 20 wt% of the solids mixture). Therefore, the extracted claim \u201cAmount: Not specified in text\u201d is contradicted by the text.",
+        "suggested_fix": "Polyvinylidene fluoride (PVDF) binder | Amount: PVDF is used in the cathode slurry at a TBABr3:PVDF:carbon black weight ratio of 7:2:1 (PVDF = 2 parts by weight; 20 wt% of the solids mixture)."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Carbon black (Ketjen black EC-600JD)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "1 part by weight in 7:2:1 mixture",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of TBABr3 cathodes"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.83,
+        "reasoning": "The paper explicitly lists the chemical identity \u201ccarbon black (Ketjen black EC-600JD, Azko Nobel)\u201d in the Materials section. However, the amount is in fact specified indirectly in \u201cFabrication of TBABr3 cathodes\u201d: the active material (TBABr3), PVDF, and carbon black are mixed at a weight ratio of 7:2:1, which implies carbon black is 1 part out of 10 total (10 wt% of the solids). Therefore, the extracted claim \u201cAmount: Not specified in text\u201d is not correct.",
+        "suggested_fix": "Carbon black (Ketjen black EC-600JD) | Amount: included at a 7:2:1 (TBABr3:PVDF:carbon black) weight ratio, i.e., 10 wt% of the electrode solids (carbon black = 1/10 by weight)."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "N-methylpyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used as slurry solvent",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of TBABr3 cathodes"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly lists N-methylpyrrolidone (NMP) in the Materials section and mentions it as the solvent used to fabricate TBABr3 cathodes (\u201c...in N-methylpyrrolidone solvent.\u201d). However, no volume/mass/molarity amount for NMP is provided anywhere in the provided full text; only the solid component weight ratio (7:2:1) is given. Therefore, the extracted statement that the amount is not specified is correct. (Provenance is slightly off: NMP appears in both 'Materials' and 'Fabrication of TBABr3 cathodes'.)",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiTFSI",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.0,
+        "unit": "M"
+      },
+      "notes": "in DME:DOL 1:1 v/v base electrolyte",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of Cl-saturated electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states the electrolyte contains **1.0 M LiTFSI** (lithium bis(trifluoromethanesulfonyl)imide) in DME:DOL = 1:1 (with optional LiNO3 additives). This appears in the Results (Page 2) and again in Materials and Methods under \u201cFabrication of Cl-saturated electrolyte\u201d (Page 8). The extracted chemical identity matches (LiTFSI), but the requested field is \u201cChemical Identity and Amount,\u201d and the text does not present it as \u201cLithium bis(trifluoromethanesulfonyl)imide | Amount: 1.0 M\u201d as a standalone entry; rather it is clearly part of a full electrolyte formulation. Also, in the Cl-saturated electrolyte section, additional solutes are present (LiNO3 at 2% in E2 and LiCl ~0.04 M). Therefore, the extraction is incomplete/misleading for the stated provenance context.",
+        "suggested_fix": "Electrolyte composition (E2/CLE2 context): **1.0 M LiTFSI in DME:DOL (1:1 v/v)** + **2% LiNO3**; for Cl-saturated (CLE2), additionally **LiCl ~0.04 M** (prepared by saturation/decanting)."
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "1,2-Dimethoxyethane",
+      "molecular_formula": "C4H10O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "50 vol % of base electrolyte",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of Cl-saturated electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.94,
+        "reasoning": "The paper explicitly states that the electrolyte is based on dimethoxyethane (DME) and 1,3-dioxolane (DOL) (e.g., \u201c1.0 M LiTFSI in dimethoxyethane (DME) + 1,3-dioxolane (DOL) = 1:1 volume % \u2026\u201d and later \u201c1.0 M LiTFSI in DME: DOL = 1:1 volume % \u2026\u201d). Thus, the chemical identity is supported as DME (which is 1,2-dimethoxyethane). However, the extracted claim \u201cAmount: Not specified in text\u201d is not supported because the text specifies the amount/ratio as DME:DOL = 1:1 (volume %) as part of the electrolyte formulation (and also gives 1.0 M LiTFSI, plus LiNO3 % and ~0.04 M LiCl for the Cl-saturated electrolyte).",
+        "suggested_fix": "1,2-Dimethoxyethane (DME) | Amount: present as solvent in electrolyte at DME:DOL = 1:1 (v/v) (with 1.0 M LiTFSI in the solvent mixture; LiNO3 at 0\u20132% depending on E0/E1/E2; and LiCl in Cl-saturated electrolyte ~0.04 M)."
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "1,3-Dioxolane",
+      "molecular_formula": "C3H6O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "50 vol % of base electrolyte",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of Cl-saturated electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies 1,3-dioxolane (DOL) as a component of the electrolyte: \u201c1.0 M LiTFSI in dimethoxyethane (DME) + 1,3-dioxolane (DOL) = 1:1 volume % \u2026\u201d (Page 2) and again in Materials and Methods under \u201cFabrication of Cl-saturated electrolyte\u201d (Page 8). However, no standalone amount for DOL (e.g., mL, g, or mol) is given\u2014only the DME:DOL solvent ratio (1:1 v/v) within the overall electrolyte description. Thus the chemical identity is supported and the extractor is correct that an explicit absolute amount is not specified.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Lithium nitrate",
+      "molecular_formula": "LiNO3",
+      "ontology": {
+        "role": "additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.02,
+        "unit": "M"
+      },
+      "notes": "2 % w/w relative to electrolyte (E2 composition)",
+      "prov": [
+        "Main Text \u2013 Electrolyte descriptions"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper discusses electrolytes E0/E1/E2 containing 1.0 M LiTFSI in DME:DOL with LiNO3 additive specified as 1% or 2% (by percentage, not molarity), and Cl\u2212 introduced via LiCl with concentration ~0.04 M in the Cl-saturated electrolytes (CLE0/1/2). Nowhere does the text mention lithium nitrate at 0.02 M. Thus the extracted value (LiNO3 | 0.02 M) is not explicitly supported by the source text.",
+        "suggested_fix": "Lithium nitrate (LiNO3) additive is given as 1% (E1) or 2% (E2) in 1.0 M LiTFSI in DME:DOL (1:1 vol%), not as 0.02 M. If a molarity is needed from the text, LiCl is ~0.04 M (Cl\u2212 source)."
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "chloride source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.04,
+        "unit": "M"
+      },
+      "notes": "final concentration in CLE2; added in excess then filtered",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of Cl-saturated electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "In the Materials and Methods section under \u201cFabrication of Cl-saturated electrolyte\u201d (page 8), the paper states: \u201cThe concentration of LiCl was about 0.04 M.\u201d This explicitly supports the extracted chemical identity (lithium chloride, LiCl) and amount (0.04 M).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "glovebox atmosphere during electrolyte preparation",
+      "prov": [
+        "Materials and Methods \u2013 Fabrication of Cl-saturated electrolyte"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "Argon (Ar) is indeed mentioned in the paper (e.g., \u201cAr-filled glovebox\u201d for electrolyte preparation and multiple tests; also TGA in Ar atmosphere). However, the field/extracted value is \u201cArgon | Amount: Not specified in text\u201d with provenance pointing to \u201cFabrication of Cl-saturated electrolyte.\u201d That specific section does not list an argon amount; it only states the work was done in an Ar-filled glovebox. Importantly, the Cl-saturated electrolyte itself is made by adding LiCl to commercial electrolytes, and Ar is not a chemical component added in any quantity. Therefore, treating Ar as a \u2018Chemical Identity and Amount\u2019 entry for the electrolyte is not explicitly supported by the text as a reagent/component (and no amount is given).",
+        "suggested_fix": "If the intent is atmosphere/handling conditions: \u201cArgon (Ar) atmosphere: Ar-filled glovebox (no amount specified).\u201d If the intent is electrolyte composition: remove Argon; list LiCl (~0.04 M) and the base electrolyte (1.0 M LiTFSI in DME:DOL 1:1 with 2% LiNO3 for CLE2)."
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of TBABr3 cathode slurry and electrode",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4"
+              ],
+              "ratio_by_weight": "7:2:1 (TBABr3:PVDF:carbon black)"
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "vigorous stirring",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly uses the synthesis operation verb \u201cmix\u201d in the Materials and Methods section under \u201cFabrication of TBABr3 cathodes\u201d: \u201cFirst, mix the active material (TBABr3 powders), polyvinylidene fluoride, and carbon black...\u201d This directly supports the extracted value \u201cmix.\u201d",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "coat",
+            "parameters": {
+              "substrate": "carbon cloth"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.87,
+              "reasoning": "The paper describes cathode fabrication steps as \u201cpoured on carbon cloth substrates\u201d (casting/coating a slurry), but it never explicitly uses the synthesis operation term \u201ccoat\u201d (or \u201ccoating/coated\u201d as an action) for the electrode fabrication. Other occurrences of \u201ccoated\u201d in the document refer to unrelated contexts (e.g., a cited \u201ccarbon coated membrane\u201d in references). Therefore the extracted value \u201ccoat\u201d is not explicitly supported by the source text.",
+              "suggested_fix": "If this field requires an explicitly stated operation, use wording present in the text such as \u201cpour (slurry) on carbon cloth substrates\u201d / \u201ccast slurry on carbon cloth\u201d, or leave as Not specified if only exact term matches are allowed."
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": 4320,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 343,
+              "unit": "K"
+            },
+            "notes": "vacuum-assisted drying; original temp 70 \u00b0C",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.76,
+              "reasoning": "The paper explicitly describes a drying step during electrode fabrication: \u201cthe electrode experienced a vacuum-assisted drying process at 70\u00b0C for 72 hours\u201d (Materials and Methods, \u201cFabrication of TBABr3 cathodes\u201d). This supports that a drying (\u201cdry\u201d) synthesis operation is part of the procedure.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Materials and Methods \u2013 Fabrication of TBABr3 cathodes"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of Cl-saturated electrolyte (CLE2)",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_9",
+                "chem_5",
+                "chem_6",
+                "chem_7",
+                "chem_8"
+              ],
+              "details": "excess LiCl added to E2 electrolyte"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "performed in Ar-filled glovebox",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.9,
+              "reasoning": "The paper text does not specify a singular \u201cSynthesis Operation\u201d as \u201cadd.\u201d While the Methods section contains phrases like \u201cLiCl powders were slowly added\u2026\u201d and \u201cintroducing saturated Cl\u2212 anions\u2026 in the form of LiCl into the E2 electrolyte,\u201d these are specific procedural steps within electrolyte fabrication rather than an explicitly stated categorical field value of \u201cSynthesis Operation: add.\u201d The extracted value is therefore not explicitly supported as a standalone field entry.",
+              "suggested_fix": "If the field is meant to capture an operation verb from the synthesis procedure, a supported phrasing would be: \u201cslowly added (LiCl powders to electrolyte)\u201d or \u201cmix (active material, binder, carbon black)\u201d; otherwise mark as Not specified/NA depending on the schema."
+            }
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "vigorous stirring",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes a stirring step during cathode fabrication: \u201cAfter vigorously stirring for 1 hour, a homogeneous slurry was obtained...\u201d (Materials and Methods, Fabrication of TBABr3 cathodes). It also mentions \u201cfollowed by vigorous stirring for 48 hours\u201d during electrolyte fabrication, further supporting that stirring is a synthesis/processing operation used.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "settle",
+            "parameters": {},
+            "duration": {
+              "value": 4320,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "allow excess LiCl to precipitate",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.97,
+              "reasoning": "The paper does not mention a synthesis operation described as \u201csettle\u201d or \u201csettling.\u201d In the Materials and Methods, relevant steps include \u201cvigorously stirring,\u201d \u201cleft for 72 hours to precipitate the excess LiCl crystal,\u201d and \u201cthe supernatant was extracted,\u201d but no explicit use of the term \u201csettle\u201d appears anywhere in the provided full text.",
+              "suggested_fix": "If the intended operation refers to the electrolyte preparation step, a text-supported phrasing would be: \u201cleft for 72 hours to precipitate excess LiCl; supernatant extracted.\u201d"
+            }
+          },
+          {
+            "action": "separate",
+            "parameters": {
+              "method": "decant supernatant"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "supernatant used as CLE2",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.78,
+              "reasoning": "The paper discusses fabrication steps such as mixing, stirring, drying, adding LiCl to electrolyte, precipitating, and extracting supernatant, but it never explicitly describes a synthesis operation termed \"separate\" (nor a separation step labeled as such). While there is a step where the supernatant is extracted after LiCl precipitation, the document does not use the word \"separate\" or identify the synthesis operation with that label.",
+              "suggested_fix": "If this field is meant to capture a named operation, it is not explicitly specified. If the intent is to capture the electrolyte-preparation action, a closer text-supported operation would be \"extract supernatant after precipitation\" (or \"precipitate excess LiCl and extract supernatant\")."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.73,
+            "reasoning": "The paper mentions Ar atmosphere only for characterization/safety contexts (e.g., TGA performed in Ar atmosphere; electrolyte preparation and cell assembly in an Ar-filled glovebox). It does not explicitly state that the synthesis/fabrication atmosphere for the material/cathode itself was Ar (e.g., during TBABr3 cathode fabrication/drying or any material synthesis step). Therefore, assigning the field 'Synthesis Atmosphere' as 'Ar' is not explicitly supported.",
+            "suggested_fix": "Not specified (paper only notes Ar-filled glovebox for handling/assembly and Ar atmosphere for TGA measurement)."
+          }
+        },
+        "prov": [
+          "Materials and Methods \u2013 Fabrication of Cl-saturated electrolyte"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Fabrication of TBABr3 cathode",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper does explicitly include a section titled \u201cFabrication of TBABr3 cathodes\u201d describing how the TBABr3 cathode was made (mix TBABr3/PVDF/carbon black 7:2:1 in NMP, stir 1 hour, coat on carbon cloth, vacuum-dry 70\u00b0C for 72 hours; mass loading ~1.5 mg cm\u22122). However, the extracted value \u201cWorkflow Timeline: Fabrication of TBABr3 cathode\u201d is not a timeline value (no timing/sequence or date marker is given as a workflow timeline entry), but rather a workflow step title/topic. Therefore it is not correctly extracted as a \u2018timeline\u2019 datum.",
+          "suggested_fix": "If the field is meant to capture a workflow step, use: \u201cFabrication of TBABr3 cathodes: mix TBABr3/PVDF/carbon black (7:2:1) in NMP, stir 1 h, coat on carbon cloth, vacuum-dry 70\u00b0C for 72 h; mass loading ~1.5 mg cm\u22122.\u201d If the field must be a timeline, extract the explicit durations/temperatures: \u201cstirring for 1 hour; vacuum-assisted drying at 70\u00b0C for 72 hours.\u201d"
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of Cl-saturated electrolyte (CLE2)",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The paper explicitly describes fabrication/preparation of a Cl\u2212-saturated electrolyte and names the resulting electrolyte \u201cCLE2.\u201d In the Materials and Methods section it states: \u201cFabrication of Cl\u2212-saturated electrolyte\u2026 excessive LiCl powders were slowly added\u2026 vigorous stirring for 48 hours\u2026 left for 72 hours to precipitate\u2026 supernatant was extracted as the target product\u2026 denoted as CLE0, CLE1, and CLE2.\u201d Earlier in Results it also states they \u201cintroduced saturated Cl\u2212 anions\u2026 into the E2 electrolyte\u2026 (denoted CLE2).\u201d This supports the workflow step \u201cPreparation of Cl-saturated electrolyte (CLE2).\u201d",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of TBABr3, PVDF, and carbon black not specified",
+        "excerpt": "mix the active material (TBABr3 powders), polyvinylidene fluoride, and carbon black with a weight ratio of 7:2:1",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "In the \u201cFabrication of TBABr3 cathodes\u201d section, the paper states: \u201cmix the active material (TBABr3 powders), polyvinylidene fluoride, and carbon black with a weight ratio of 7:2:1 in N-methylpyrrolidone solvent.\u201d This provides only the *ratio* and does not give the *exact masses* of TBABr3, PVDF, or carbon black used. While a mass loading (~1.5 mg cm\u22122) is reported for the cathode, it still does not specify the individual component masses for the slurry. Therefore, the extraction that exact masses are not specified is supported.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Amount of LiCl described as 'excessive' without specific value",
+        "excerpt": "excessive LiCl powders were slowly added to different commercial electrolytes",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper does contain the phrase \"excessive LiCl powders were slowly added to different commercial electrolytes\" (Materials and Methods, Fabrication of Cl-saturated electrolyte), which supports that the initial addition was described qualitatively (excess LiCl added then excess precipitated). However, the extracted issue claims the amount is unspecified; the text *does* provide a quantitative value for the resulting dissolved LiCl concentration: \"The concentration of LiCl was about 0.04 M.\" Therefore, it is not accurate to say no specific value is given for LiCl amount/concentration overall\u2014only the *added mass* is not specified.",
+          "suggested_fix": "Revise to: \"LiCl was added in excess to saturate the electrolyte; after precipitation, the supernatant had a LiCl concentration of ~0.04 M (added mass not specified).\""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM with EDX mapping",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Br distribution",
+          "value": "homogeneous",
+          "unit": ""
+        },
+        {
+          "metric": "Br mass fraction",
+          "value": 50,
+          "unit": "wt%"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Main Text \u2013 Fig. 1B"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly states that SEM with EDX elemental mapping showed a homogeneous Br distribution in TBABr3 powder: \u201cEDX spectroscopy elemental mapping revealed a homogeneous distribution of elemental Br in TBABr3 powder (Fig. 1B \u2026).\u201d It also explicitly gives the Br mass fraction: \u201cQuantitative analysis indicated that the mass fraction of Br elemental in TBABr3 was approximately 50 weight %.\u201d Both statements appear in the main text (page 2) and refer to Fig. 1B, matching the extracted metrics and values.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TGA",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "thermal stability temperature",
+          "value": 473,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "TBABr3 stable up to 200 \u00b0C",
+      "prov": [
+        "Main Text \u2013 TGA discussion"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.82,
+        "reasoning": "The paper\u2019s TGA statement says: \u201cTBABr3 was capable of maintaining its weight up to 200\u00b0C\u201d (Page 2). 200\u00b0C corresponds to ~473 K, but the text does not explicitly report 473 K. Since the extracted value is given in Kelvin (473 K) rather than the explicitly stated 200\u00b0C, it is a unit-converted/inferred value rather than directly supported as written.",
+        "suggested_fix": "Report the thermal stability temperature as 200 \u00b0C (explicitly stated), or if Kelvin is required, note it as ~473 K converted from 200 \u00b0C."
+      }
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate": "2 mV s-1"
+      },
+      "results": [
+        {
+          "metric": "redox peaks Br\u2212/Br3\u2212",
+          "value": "3.42/3.55",
+          "unit": "V"
+        },
+        {
+          "metric": "redox peaks Br+/Br0",
+          "value": "3.68/3.85",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Two-electron redox verified",
+      "prov": [
+        "Fig. 2C"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Page 4 (Fig. 2C description in main text) explicitly states: \u201ctwo pairs of prominent redox peaks were observed at 3.42/3.55 V and 3.68/3.85 V, coinciding with the reversible redox reaction of Br\u2212 and Br+, respectively.\u201d This matches the extracted CV redox peak values for Br\u2212/Br3\u2212 (3.42/3.55 V) and Br+/Br0 (3.68/3.85 V). Alleged provenance \u2018Fig. 2C\u2019 is consistent with the text describing Fig. 2C.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Galvanostatic charge-discharge",
+      "parameters": {
+        "current_density": "1 A g-1"
+      },
+      "results": [
+        {
+          "metric": "discharge capacity",
+          "value": 653,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "voltage plateau",
+          "value": 3.8,
+          "unit": "V"
+        },
+        {
+          "metric": "energy density",
+          "value": 2180,
+          "unit": "Wh kg-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 4C"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The document explicitly reports all three metrics together: discharge capacity of 653 mAh g\u22121 (based on Br content), a voltage plateau at 3.8 V, and energy density of 2180 Wh kg\u22121 (also expressed as Wh kg\u22121Br). These appear in the abstract/intro (page 1) and are reiterated in the electrochemical performance discussion tied to Fig. 4 (page 6): \u201cat 1 A g\u22121, the cell discharge capacity reached 653 mAh g\u22121Br\u2026 Consequently, the energy density reached 2180 Wh kg\u22121Br\u201d and \u201cA voltage plateau of up to 3.8 V\u2026\u201d. While the alleged provenance cites Fig. 4C, the numeric values are supported in the main text associated with Fig. 4 (and earlier).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "charge transfer resistance CLE2",
+          "value": 149.6,
+          "unit": "ohm"
+        }
+      ],
+      "interpretation": "Lower Rct with Cl\u2212 addition",
+      "prov": [
+        "fig. S12"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper text explicitly states: \u201cAs shown in fig. S12, the charge transfer resistance (Rct) for CLE2 was estimated at 149.6 ohm\u2026\u201d in the EIS discussion (Page 5). This directly supports the extracted metric/value/unit (charge transfer resistance CLE2 = 149.6 ohm).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Br+ signal (binding energy)",
+          "value": 71.8,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Confirms Br+ formation",
+      "prov": [
+        "Fig. 5A"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper\u2019s Results section describing ex situ XPS explicitly states: \u201cFitted peaks also appeared at 71.8 and 73.1 eV \u2026 ascribed to positive Br+ cations\u201d and refers to this as shown in Fig. 5A. Thus, a Br+ XPS signal at 71.8 eV is directly supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "In situ Raman",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Br+-Clx peak",
+          "value": "260\u2013290",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Reversible Br+-Cl\u22122 formation",
+      "prov": [
+        "Fig. 5C"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The source text explicitly states (in the paragraph describing Fig. 5C) that in situ Raman shows \u201ca new Raman peak emerged at 260 to 290 cm\u22121 when the voltage reached 3.6 V.\u201d This directly supports the extracted Br+-Clx peak position range of 260\u2013290 cm\u22121 and matches the alleged provenance (Fig. 5C).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT cohesive energy calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": 1.85,
+            "unit": "eV",
+            "notes": "Highest cohesive energy for BrCl2 product"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.35,
+          "reasoning": "The paper explicitly describes multiple analysis/characterization methods (e.g., SEM with EDX elemental mapping, thermogravimetric analysis (TGA), ex situ XPS, in situ Raman spectroscopy, electrochemical impedance spectroscopy (EIS), linear sweep voltammetry (LSV), cyclic voltammetry (CV), galvanostatic charge-discharge (GCD), galvanostatic intermittent titration technique (GITT), and DFT calculations). However, the Extracted Value field for \u201cAnalysis Method\u201d is blank, so there is no specific extracted method to verify against the text.",
+          "suggested_fix": "Populate the field with the analysis methods stated in the paper, e.g., \"SEM-EDX; TGA; XPS; in situ Raman; EIS (including in situ EIS); CV; LSV; GCD; GITT; DFT (VASP)\"."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 653,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1000,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.98,
+      "reasoning": "The paper explicitly states the battery stability/cycle life as 1000 cycles in multiple places: Page 1 notes \"the battery functioning for 1000 cycles\" and Page 5 reports reversible operation \"more than 1000 cycles\" with Fig. 4A describing prolonged cycling. Thus the extracted Cycle Life value of 1000 is supported.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

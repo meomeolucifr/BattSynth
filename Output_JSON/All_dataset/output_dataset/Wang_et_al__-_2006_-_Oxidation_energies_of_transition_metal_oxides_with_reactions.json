@@ -1,0 +1,152 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Oxidation energies of transition metal oxides within the GGA+U framework",
+    "doi": "10.1103/PhysRevB.73.195107",
+    "authors": [
+      "Lei Wang",
+      "Thomas Maxisch",
+      "Gerbrand Ceder"
+    ],
+    "journal": "Physical Review B",
+    "year": 2006
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "DFT",
+      "GGA",
+      "GGA+U",
+      "transition metal oxides",
+      "oxidation energies"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "O2",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "oxidant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2, Computational methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (GGA)",
+      "parameters": {
+        "energy_cutoff": {
+          "value": 550,
+          "unit": "eV"
+        },
+        "k_point_mesh": "chosen to converge total energy within 3 meV per formula unit"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Page 2, Computational methods"]
+    },
+    {
+      "method": "DFT (GGA+U)",
+      "parameters": {
+        "U_eff": "varied (0–~6 eV depending on transition metal)",
+        "energy_cutoff": {
+          "value": 550,
+          "unit": "eV"
+        }
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Page 3, Equation (1) and Figure 2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "O2 binding energy calculation (GGA)",
+        "results": [
+          {
+            "equation": "",
+            "value": -6.02,
+            "unit": "eV",
+            "prov": ["Page 3, Results"]
+          },
+          {
+            "equation": "",
+            "value": -5.23,
+            "unit": "eV",
+            "notes": "experimental",
+            "prov": ["Page 3, Results"]
+          }
+        ]
+      },
+      {
+        "method_name": "O2 binding error correction",
+        "results": [
+          {
+            "equation": "",
+            "value": -1.36,
+            "unit": "eV per O2",
+            "prov": ["Page 3, Figure 1 inset"]
+          }
+        ]
+      },
+      {
+        "method_name": "Convergence criterion",
+        "results": [
+          {
+            "metric": "total energy convergence",
+            "value": 3,
+            "unit": "meV per formula unit",
+            "prov": ["Page 2, Computational methods"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

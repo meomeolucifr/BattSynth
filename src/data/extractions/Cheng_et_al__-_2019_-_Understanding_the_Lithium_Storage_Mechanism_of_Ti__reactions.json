@@ -1,0 +1,366 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Understanding the Lithium Storage Mechanism of Ti3C2Tx MXene",
+    "doi": "10.1021/acs.jpcc.8b10790",
+    "authors": ["Renfei Cheng", "Tao Hu", "Hui Zhang", "Chunmei Wang", "Minmin Hu", "Jinxing Yang", "Cong Cui", "Tianjia Guang", "Changji Li", "Chao Shi", "Pengxiang Hou", "Xiaohui Wang"],
+    "journal": "Journal of Physical Chemistry C",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis_and_evaluation",
+    "tags": ["MXene", "lithium-ion batteries", "Ti3C2Tx", "calcination", "electrochemistry"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ti3C2Tx MXene (pristine)",
+      "molecular_formula": "Ti3C2Tx",
+      "intended_role": "product",
+      "prov": ["Section 2.2", "Page 1100"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "NH3–Ti3C2Tx",
+      "molecular_formula": "Ti3C2Tx (NH3 treated)",
+      "intended_role": "product",
+      "prov": ["Section 2.3", "Page 1100"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Ar(H2)–Ti3C2Tx",
+      "molecular_formula": "Ti3C2Tx (Ar/H2 treated)",
+      "intended_role": "product",
+      "prov": ["Section 2.3", "Page 1100"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Ar(H2O)–Ti3C2Tx",
+      "molecular_formula": "Ti3C2Tx (humid Ar treated)",
+      "intended_role": "product",
+      "prov": ["Section 2.3", "Page 1100"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Titanium powder",
+      "molecular_formula": "Ti",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "99%, −300 mesh",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Aluminum powder",
+      "molecular_formula": "Al",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "99%, D50 = 10 μm",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Graphite powder",
+      "molecular_formula": "C",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "99%, D90 = 6.5 μm",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Hydrofluoric acid",
+      "molecular_formula": "HF",
+      "ontology": {"role": "etchant", "category": "acid"},
+      "amount": {"value": 10, "unit": "mL"},
+      "notes": "6 M aqueous solution prepared from 40% HF",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "99.999% purity; also humidified or mixed with H2",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Hydrogen",
+      "molecular_formula": "H2",
+      "ontology": {"role": "atmosphere_component", "category": "gas"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "5% H2 in Ar mixture",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Ammonia",
+      "molecular_formula": "NH3",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "99.999% purity",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Ti3AlC2",
+      "molecular_formula": "Ti3AlC2",
+      "ontology": {"role": "precursor", "category": "MAX phase"},
+      "amount": {"value": 1.0, "unit": "g"},
+      "notes": "monolith form",
+      "prov": ["Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "N-Methyl-2-pyrrolidinone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "99.8%",
+      "prov": ["Section 2.5"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Polyvinylidene fluoride",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {"role": "binder", "category": "polymer"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Section 2.5"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of Ti3AlC2 monolith",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_1", "chem_2", "chem_3"]},
+            "notes": ""
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {"value": 1673, "unit": "K"},
+            "duration": {"value": 90, "unit": "min"},
+            "atmosphere": "Ar",
+            "notes": ""
+          }
+        ],
+        "conditions": {"pressure": {"value": null, "unit": ""}, "atmosphere": "Ar (flow)"},
+        "prov": ["Section 2.2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Etching to obtain Ti3C2Tx MXene",
+        "operations": [
+          {
+            "action": "etch",
+            "parameters": {"inputs": ["chem_9", "chem_4"]},
+            "duration": {"value": 10080, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "1.0 g Ti3AlC2 in 10 mL 6 M HF"
+          },
+          {
+            "action": "wash",
+            "parameters": {"inputs": ["chem_5"]},
+            "notes": "until pH 5"
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "notes": "vacuum filtration"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {"value": 333, "unit": "K"},
+            "duration": {"value": 720, "unit": "min"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Section 2.2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calcination in Ar(H2) atmosphere to obtain Ar(H2)–Ti3C2Tx",
+        "operations": [
+          {
+            "action": "load",
+            "parameters": {"inputs": ["target_1"]},
+            "amount": {"value": 0.5, "unit": "g"},
+            "notes": "into quartz tube furnace"
+          },
+          {
+            "action": "degass",
+            "parameters": {},
+            "notes": "vacuum pump then refill with Ar(H2), repeated twice"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {"value": 673, "unit": "K"},
+            "ramp_rate": {"value": 10, "unit": "K min-1"},
+            "duration": {"value": 60, "unit": "min"},
+            "atmosphere": "Ar(5% H2), 100 sccm",
+            "notes": ""
+          },
+          {
+            "action": "cool",
+            "parameters": {},
+            "temperature": {"value": 298, "unit": "K"},
+            "atmosphere": "Ar(5% H2)",
+            "notes": ""
+          }
+        ],
+        "conditions": {"pressure": {"value": null, "unit": ""}},
+        "prov": ["Section 2.3"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Calcination in humid Ar to obtain Ar(H2O)–Ti3C2Tx",
+        "operations": [
+          {
+            "action": "repeat_step",
+            "parameters": {"reference": "step_3"},
+            "notes": "Same procedure but with Ar(H2O) (3.1% H2O) atmosphere"
+          }
+        ],
+        "conditions": {"atmosphere": "Ar with 3.1% H2O, 100 sccm"},
+        "prov": ["Section 2.3"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Calcination in NH3 atmosphere to obtain NH3–Ti3C2Tx",
+        "operations": [
+          {
+            "action": "repeat_step",
+            "parameters": {"reference": "step_3"},
+            "notes": "Same procedure but with NH3 atmosphere"
+          }
+        ],
+        "conditions": {"atmosphere": "NH3, 100 sccm"},
+        "prov": ["Section 2.3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "High-temperature synthesis of Ti3AlC2 MAX phase"},
+      {"step_ref": "step_2", "description": "HF etching and post-treatment to yield pristine Ti3C2Tx MXene"},
+      {"step_ref": "step_3", "description": "Thermal treatment in Ar/H2 to tailor surface terminations"},
+      {"step_ref": "step_4", "description": "Thermal treatment in humid Ar to tailor surface terminations"},
+      {"step_ref": "step_5", "description": "Ammonia treatment to produce N-functionalized Ti3C2Tx"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact pressure during calcination not specified",
+        "excerpt": "The sample chamber was degassed using a vacuum pump, and subsequently filled with a mixed flow ... (Section 2.3)"
+      },
+      {
+        "issue": "Water content value derived, not directly stated as concentration",
+        "excerpt": "According to the saturated vapor pressure of water at 25 °C (3.169 ×10^3 Pa), the water content in the mixed flow of Ar(H2O) is determined to be 3.1%."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {"radiation": "Cu Kα (λ = 0.15418 nm)", "scan_range_2theta": "5–65°", "step": "0.04°"},
+      "results": [
+        {"metric": "c-lattice parameter of pristine sample", "value": 19.8, "unit": "Å"},
+        {"metric": "c-lattice parameter of NH3 sample", "value": 24.5, "unit": "Å"},
+        {"metric": "zero-strain feature", "value": "diffraction peaks shifted negligibly during charge/discharge", "unit": ""}
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1", "Figure 5", "Page 1101", "Page 1104"]
+    },
+    {
+      "method": "HAADF-STEM",
+      "parameters": {"accelerating_voltage": "300 kV"},
+      "results": [
+        {"metric": "interlayer spacing pristine", "value": 19.8, "unit": "Å"},
+        {"metric": "interlayer spacing NH3-treated", "value": 24.5, "unit": "Å"}
+      ],
+      "interpretation": "NH3 treatment increases and homogenizes interlayer spacing",
+      "prov": ["Figure 2", "Page 1101"]
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {"scan_rates": "0.05–3.0 V, various (e.g., 0.1 mV s-1)"},
+      "results": [
+        {"metric": "redox couples pristine", "value": 2, "unit": "count"},
+        {"metric": "redox couples NH3 sample", "value": 1, "unit": "count"}
+      ],
+      "interpretation": "Sequential vs simultaneous Li-ion intercalation depending on interlayer spacing",
+      "prov": ["Figure 4", "Page 1103"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {"frequency_range": "100 kHz–10 mHz", "amplitude": "5 mV"},
+      "results": [
+        {"metric": "additional migration resistance observed at 2.4 V (pristine)", "value": "present", "unit": ""}
+      ],
+      "interpretation": "NH3-treated sample shows lower interlayer migration resistance",
+      "prov": ["Figure 6", "Page 1105"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Kinetic analysis from CV",
+        "results": [
+          {"equation": "i = a v^b", "value": {"anodic_b": 0.78, "cathodic_b": 0.87}, "unit": ""},
+          {"metric": "capacitive contribution at 2 mV s-1", "value": 74, "unit": "%"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 168,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T12:00:00Z",
+    "source_file": "extracted_text_chunk",
+    "processing_time": null
+  }
+}

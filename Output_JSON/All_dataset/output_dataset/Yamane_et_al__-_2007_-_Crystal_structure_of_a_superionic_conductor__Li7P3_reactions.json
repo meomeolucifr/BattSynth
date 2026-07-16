@@ -1,0 +1,388 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Crystal structure of a superionic conductor, Li7P3S11",
+    "doi": "10.1016/j.ssi.2007.05.020",
+    "authors": [
+      "Hisanori Yamane",
+      "Masatoshi Shibata",
+      "Yukio Shimane",
+      "Tadanori Junke",
+      "Yoshikatsu Seino",
+      "Stefan Adams",
+      "Keiichi Minami",
+      "Akitoshi Hayashi",
+      "Masahiro Tatsumisago"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2007
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "superionic conductor",
+      "solid electrolyte",
+      "glass ceramics",
+      "crystal structure"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7P3S11",
+      "molecular_formula": "Li7P3S11",
+      "intended_role": "product",
+      "prov": [
+        "Experimental section",
+        "Fig. 1"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used at 70 mol% relative to P2S5",
+      "prov": [
+        "Experimental section"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used at 30 mol% relative to Li2S",
+      "prov": [
+        "Experimental section"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Dry Ar atmosphere ([H2O] < 1 ppm) used throughout glovebox handling and tube sealing",
+      "prov": [
+        "Experimental section"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li7P3S11",
+      "molecular_formula": "Li7P3S11",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Experimental section"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Tetralin",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "density medium",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used dehydrated with molecular sieve for Archimedes density measurement",
+      "prov": [
+        "Experimental section"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Ceria (NIST SRM 640b CeO2)",
+      "molecular_formula": "CeO2",
+      "ontology": {
+        "role": "calibration standard",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for wavelength calibration in XRD",
+      "prov": [
+        "Experimental section"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanical milling of Li2S and P2S5 to form amorphous powder",
+        "operations": [
+          {
+            "action": "mechanical_milling",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ],
+              "equipment": "planetary ball mill (Fritsch Pulverisette 7)",
+              "container": "Al2O3 pot with Al2O3 balls",
+              "rotation_speed": {
+                "value": 500,
+                "unit": "rpm"
+              }
+            },
+            "duration": {
+              "value": 2400,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "atmosphere": "dry Ar (glovebox)",
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Heat treatment of milled powder to crystallize Li7P3S11",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "input": "product of step_1",
+              "container": "stainless steel tube (sealed under Ar)"
+            },
+            "temperature": {
+              "value": 573,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "atmosphere": "Ar",
+            "notes": "Followed by cooling to room temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ball milling of Li2S and P2S5 under Ar for 40 h"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Sealed-tube heat treatment at 573 K for 2 h and cooling to RT to obtain Li7P3S11 glass ceramics"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of Li2S and P2S5 not provided; only mol% ratios.",
+        "excerpt": "A mixture of 70 mol% Li2S and 30 mol% P2S5 was placed in an Al2O3 pot..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Synchrotron X-ray powder diffraction (Debye–Scherrer)",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        },
+        "wavelength": {
+          "value": 1.49738,
+          "unit": "Å"
+        },
+        "2theta_range": "6–70°",
+        "step_width": "0.01°",
+        "camera_length": {
+          "value": 286.5,
+          "unit": "mm"
+        }
+      },
+      "results": [
+        {
+          "metric": "cell_parameter_a",
+          "value": 12.5009,
+          "unit": "Å"
+        },
+        {
+          "metric": "cell_parameter_b",
+          "value": 6.03160,
+          "unit": "Å"
+        },
+        {
+          "metric": "cell_parameter_c",
+          "value": 12.5303,
+          "unit": "Å"
+        },
+        {
+          "metric": "alpha",
+          "value": 102.845,
+          "unit": "°"
+        },
+        {
+          "metric": "beta",
+          "value": 113.2024,
+          "unit": "°"
+        },
+        {
+          "metric": "gamma",
+          "value": 74.467,
+          "unit": "°"
+        },
+        {
+          "metric": "phase_purity",
+          "value": 98.5,
+          "unit": "mass % Li7P3S11"
+        },
+        {
+          "metric": "impurity_content",
+          "value": 1.5,
+          "unit": "mass % Li4P2S6"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 1",
+        "Table 1"
+      ]
+    },
+    {
+      "method": "Archimedes density measurement",
+      "parameters": {
+        "medium": "tetralin (dehydrated)"
+      },
+      "results": [
+        {
+          "metric": "density_measured",
+          "value": 1.91,
+          "unit": "g cm-3"
+        },
+        {
+          "metric": "density_calculated",
+          "value": 1.98,
+          "unit": "g cm-3"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Experimental section",
+        "Table 1"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Literature-reported ionic conductivity",
+        "results": [
+          {
+            "metric": "ionic_conductivity",
+            "value": 3.2e-3,
+            "unit": "S cm-1",
+            "notes": "Value cited from Mizuno et al. for Li7P3S11 glass ceramics"
+          },
+          {
+            "metric": "activation_energy",
+            "value": 12,
+            "unit": "kJ mol-1",
+            "notes": "Activation energy for Li+ conduction, cited from literature"
+          }
+        ],
+        "prov": [
+          "Abstract",
+          "Introduction"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-11T20:35:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

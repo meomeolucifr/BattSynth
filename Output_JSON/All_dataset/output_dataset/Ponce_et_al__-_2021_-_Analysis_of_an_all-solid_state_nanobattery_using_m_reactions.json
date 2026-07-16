@@ -1,0 +1,523 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Analysis of an all-solid state nanobattery using molecular dynamics simulations under an external electric field",
+    "doi": "10.1039/d0cp02851g",
+    "authors": [
+      "Victor Ponce",
+      "Diego E. Galvez-Aranda",
+      "Jorge M. Seminario"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid-state battery",
+      "molecular dynamics",
+      "Li-metal anode",
+      "SEI",
+      "nanobattery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "All-solid-state nanobattery model",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Figure 1",
+        "Nanobattery description section (Page 598)"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": 1296,
+        "unit": "atom"
+      },
+      "notes": "Atom count taken from Figure 1 caption.",
+      "prov": [
+        "Figure 1 caption"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "SEI film",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 226,
+        "unit": "formula_unit"
+      },
+      "notes": "Atom count corresponding to (Li2S)226 in Figure 1 caption.",
+      "prov": [
+        "Figure 1 caption"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li3P",
+      "molecular_formula": "Li3P",
+      "ontology": {
+        "role": "SEI film",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 112,
+        "unit": "formula_unit"
+      },
+      "notes": "From (Li3P)112 in Figure 1 caption.",
+      "prov": [
+        "Figure 1 caption"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li7P2S8I",
+      "molecular_formula": "Li7P2S8I",
+      "ontology": {
+        "role": "solid-state electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 120,
+        "unit": "formula_unit"
+      },
+      "notes": "From (Li7P2S8I)120 in Figure 1 caption.",
+      "prov": [
+        "Figure 1 caption"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode",
+        "category": "inorganic oxide"
+      },
+      "amount": {
+        "value": 756,
+        "unit": "formula_unit"
+      },
+      "notes": "From (LiCoO2)756 in Figure 1 caption.",
+      "prov": [
+        "Figure 1 caption"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Aluminum",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": 672,
+        "unit": "atom"
+      },
+      "notes": "Al 672 atoms in Figure 1 caption.",
+      "prov": [
+        "Figure 1 caption"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Copper",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": 864,
+        "unit": "atom"
+      },
+      "notes": "Cu 864 atoms in Figure 1 caption.",
+      "prov": [
+        "Figure 1 caption"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Assembly of initial nanobattery geometry with layered components: Cu current collector, Li metal anode, Li2S/Li3P SEI films, Li7P2S8I SSE, LiCoO2 cathode, and Al current collector.",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": [
+                "chem_7",
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4",
+                "chem_5",
+                "chem_6"
+              ]
+            },
+            "notes": "Atom counts as listed in Figure 1 caption."
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": [
+          "Nanobattery description (Page 598)",
+          "Figure 1"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Geometry optimization using the Polak–Ribiere algorithm.",
+        "operations": [
+          {
+            "action": "optimize",
+            "parameters": {
+              "algorithm": "Polak–Ribiere",
+              "force_threshold": "1e-8 kcal mol^-1 Å^-1"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": [
+          "Methodology section (Page 598-599)"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Molecular dynamics equilibration at 5 K for 200 ps under NPT ensemble.",
+        "operations": [
+          {
+            "action": "equilibrate_MD",
+            "parameters": {
+              "time": {
+                "value": 200,
+                "unit": "ps"
+              },
+              "temperature": {
+                "value": 5,
+                "unit": "K"
+              },
+              "ensemble": "NPT",
+              "time_step": "0.1 fs"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 5,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": [
+          "Methodology section (Page 599)"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heating from 5 K to 300 K over 200 ps (heating rate 1.48 K ps⁻¹) under NPT ensemble.",
+        "operations": [
+          {
+            "action": "heat_MD",
+            "parameters": {
+              "temperature_initial": 5,
+              "temperature_final": 300,
+              "time": {
+                "value": 200,
+                "unit": "ps"
+              },
+              "ensemble": "NPT",
+              "heating_rate": "1.48 K ps^-1"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 300,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": [
+          "Methodology section (Page 599)"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Additional equilibration at 300 K for 200 ps under NPT ensemble.",
+        "operations": [
+          {
+            "action": "equilibrate_MD",
+            "parameters": {
+              "time": {
+                "value": 200,
+                "unit": "ps"
+              },
+              "temperature": {
+                "value": 300,
+                "unit": "K"
+              },
+              "ensemble": "NPT"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 300,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": [
+          "Methodology section (Page 599)"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Application of external electric field (0.75 V Å⁻¹) and MD simulation to mimic charging.",
+        "operations": [
+          {
+            "action": "apply_field_MD",
+            "parameters": {
+              "electric_field": "0.75 V Å^-1",
+              "simulation_time": "10 ps",
+              "ensemble": "NPT"
+            },
+            "notes": "Used to induce Li⁺ transport for charging study."
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 300,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": [
+          "Results section (Pages 600-603)"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Initial assembly of layered nanobattery model."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Geometry optimization to remove bad contacts."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Low-temperature equilibration at 5 K."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Controlled heating to 300 K."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Room-temperature equilibration."
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Charging simulation under external electric field."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Force convergence criterion unit formatting unclear",
+        "excerpt": "force convergence criterion on each atom of 10/C08kcal mol/C01Å/C01"
+      },
+      {
+        "issue": "Pressure values during NPT not explicitly stated",
+        "excerpt": "under the NPT ensemble 52"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Molecular dynamics temperature profiling",
+      "parameters": {
+        "spatial_resolution": "4 Å slabs",
+        "sampling_interval": "100 fs"
+      },
+      "results": [
+        {
+          "metric": "Temperature at SEI without field",
+          "value": 315,
+          "unit": "K"
+        },
+        {
+          "metric": "Global set temperature",
+          "value": 300,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Slight temperature rise at SEI due to interfacial reactions; higher temperature in electrolyte under field.",
+      "prov": [
+        "Figure 3",
+        "Results section (Page 600)"
+      ]
+    },
+    {
+      "method": "Speciation analysis from MD trajectories",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "PS3− fragments formed (without field)",
+          "value": 3,
+          "unit": "count"
+        },
+        {
+          "metric": "PS3I2− dissociation events",
+          "value": 20,
+          "unit": "count"
+        }
+      ],
+      "interpretation": "Formation of PS3− and P2S7⁴⁻ fragments contributes to evolving SEI composition.",
+      "prov": [
+        "Figure 4",
+        "Results section (Pages 600-601)"
+      ]
+    },
+    {
+      "method": "Potential energy profiling of Li⁺",
+      "parameters": {
+        "spatial_resolution": "0.5 Å slabs",
+        "cutoff_radius": "12 Å"
+      },
+      "results": [
+        {
+          "metric": "Open-circuit voltage",
+          "value": 3.86,
+          "unit": "V"
+        },
+        {
+          "metric": "Additional voltage from applied field",
+          "value": 1.60,
+          "unit": "V"
+        },
+        {
+          "metric": "Total charging voltage",
+          "value": 5.46,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "External field of 0.75 V Å⁻¹ overcomes OCV and drives Li⁺ from cathode to anode.",
+      "prov": [
+        "Figure 5",
+        "Results section (Page 602)"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Molecular Dynamics Simulation (LAMMPS)",
+        "results": [
+          {
+            "description": "Calculated open-circuit voltage",
+            "value": 3.86,
+            "unit": "V"
+          },
+          {
+            "description": "Charging voltage under 0.75 V Å⁻¹ field",
+            "value": 5.46,
+            "unit": "V"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-03-27T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

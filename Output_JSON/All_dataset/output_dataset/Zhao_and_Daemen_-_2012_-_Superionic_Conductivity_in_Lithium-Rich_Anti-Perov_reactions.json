@@ -1,0 +1,478 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Superionic Conductivity in Lithium-Rich Anti-Perovskites",
+    "doi": "10.1021/ja305709z",
+    "authors": [
+      "Yusheng Zhao",
+      "Luke L. Daemen"
+    ],
+    "journal": "Journal of the American Chemical Society",
+    "year": 2012
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": ["solid electrolyte", "anti-perovskite", "lithium-ion conduction"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3OCl",
+      "molecular_formula": "Li3OCl",
+      "intended_role": "product",
+      "prov": ["Experimental Section – Synthesis"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3OBr",
+      "molecular_formula": "Li3OBr",
+      "intended_role": "product",
+      "prov": ["Experimental Section – Discussion of mixed halogens"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li3OCl0.5Br0.5",
+      "molecular_formula": "Li3OCl0.5Br0.5",
+      "intended_role": "product",
+      "prov": ["Results – Conductivity measurements"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hydroxide",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2.40,
+        "unit": "g"
+      },
+      "notes": "0.1 mol; Aldrich, >99% purity",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2.12,
+        "unit": "g"
+      },
+      "notes": "0.05 mol; Aldrich, >99% purity",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium oxide",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "alternative reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in alternative high-P/high-T synthesis; no quantity given",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium bromide",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Required for Li3OBr and mixed-halogen samples; quantities not reported",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Dry inert gas used to flush apparatus",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "coating/electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Sputtered on sample surfaces for impedance measurements",
+      "prov": ["Results – Impedance measurements"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Grinding of LiOH and LiCl",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Ground together for several minutes with mortar and pestle"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Heating the ground mixture under vacuum to form molten Li3OCl",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 618,
+              "unit": "K"
+            },
+            "notes": "Mixture heated to 330–360 °C (603–633 K) under vacuum for several days; value entered is mid-range"
+          },
+          {
+            "action": "vacuum",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "High-vacuum pump with liquid-nitrogen trap removed water"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Cooling and isolation of product",
+        "operations": [
+          {
+            "action": "cool",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Product either rapidly quenched or slowly cooled to room temperature"
+          },
+          {
+            "action": "flush",
+            "parameters": {
+              "inputs": ["chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Apparatus flushed with dry Ar; product kept from moisture"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Alternative high-pressure/high-temperature synthesis (Li2O + LiCl)",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_3", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Limited quantities obtained; no detailed conditions"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Grinding LiOH and LiCl"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Melting under vacuum to form Li3OCl"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Cooling, Ar flush, and isolation"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Non-numeric duration 'several minutes' and 'several days'",
+        "excerpt": "ground together for several minutes... heated... for several days"
+      },
+      {
+        "issue": "Temperature range provided",
+        "excerpt": "heated to 330−360 °C"
+      },
+      {
+        "issue": "Alternative synthesis lacks quantitative details",
+        "excerpt": "We have also performed high-P/high-T synthesis from Li2O and LiCl..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "instrument": "Rigaku Ultima III"
+      },
+      "results": [
+        {
+          "metric": "lattice parameter",
+          "value": 3.91,
+          "unit": "Å",
+          "sample": "Li3OCl"
+        },
+        {
+          "metric": "lattice parameter",
+          "value": 4.02,
+          "unit": "Å",
+          "sample": "Li3OBr"
+        }
+      ],
+      "interpretation": "Both compounds adopt distorted pseudocubic perovskite structure",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "DSC",
+      "parameters": {
+        "instrument": "Netzsch Jupiter 449C",
+        "heating_rate": "5 °C min−1",
+        "atmosphere": "dry Ar"
+      },
+      "results": [
+        {
+          "metric": "melting_point",
+          "value": 282,
+          "unit": "°C",
+          "sample": "Li3OCl"
+        },
+        {
+          "metric": "melting_point",
+          "value": 280,
+          "unit": "°C",
+          "sample": "Li3OBr"
+        },
+        {
+          "metric": "melting_point",
+          "value": 270,
+          "unit": "°C",
+          "sample": "Li3OCl0.5Br0.5"
+        },
+        {
+          "metric": "endothermic_peak",
+          "value": 40,
+          "unit": "°C",
+          "sample": "Li3OCl"
+        },
+        {
+          "metric": "endothermic_peak",
+          "value": 225,
+          "unit": "°C",
+          "sample": "Li3OCl"
+        },
+        {
+          "metric": "endothermic_peak",
+          "value": 206,
+          "unit": "°C",
+          "sample": "Li3OBr"
+        },
+        {
+          "metric": "endothermic_peak",
+          "value": 232,
+          "unit": "°C",
+          "sample": "Li3OBr"
+        }
+      ],
+      "interpretation": "Mixed halogen reduces melting point and shows additional phase transition",
+      "prov": ["Figure 3"]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "configuration": "Nyquist plots",
+        "electrodes": "Au sputtered"
+      },
+      "results": [
+        {
+          "metric": "ionic_conductivity",
+          "value": 0.85e-3,
+          "unit": "S/cm",
+          "sample": "Li3OCl",
+          "temperature": 298
+        },
+        {
+          "metric": "ionic_conductivity",
+          "value": 1.94e-3,
+          "unit": "S/cm",
+          "sample": "Li3OCl0.5Br0.5",
+          "temperature": 298
+        },
+        {
+          "metric": "ionic_conductivity",
+          "value": 4.82e-3,
+          "unit": "S/cm",
+          "sample": "Li3OCl",
+          "temperature": 523
+        },
+        {
+          "metric": "ionic_conductivity",
+          "value": 6.05e-3,
+          "unit": "S/cm",
+          "sample": "Li3OCl0.5Br0.5",
+          "temperature": 523
+        }
+      ],
+      "interpretation": "Mixed halogen sample exhibits higher ionic conductivity",
+      "prov": ["Figure 4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "σT = Ao * exp(-Ea/kT)",
+            "value": 0.26,
+            "unit": "eV",
+            "sample": "Li3OCl"
+          },
+          {
+            "equation": "σT = Ao * exp(-Ea/kT)",
+            "value": 0.18,
+            "unit": "eV",
+            "sample": "Li3OCl0.5Br0.5"
+          }
+        ],
+        "prov": ["Figure 5"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-22T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

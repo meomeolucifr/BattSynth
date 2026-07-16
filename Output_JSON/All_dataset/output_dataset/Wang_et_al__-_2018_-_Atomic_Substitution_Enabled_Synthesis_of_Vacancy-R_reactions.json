@@ -1,0 +1,318 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Atomic Substitution Enabled Synthesis of Vacancy-Rich Two-Dimensional Black TiO2−x Nanoflakes for High-Performance Rechargeable Magnesium Batteries",
+    "doi": "10.1021/acsnano.8b06917",
+    "authors": ["Yanrong Wang", "Xiaolan Xue", "Pingying Liu", "Caixing Wang", "Xu Yi", "Yi Hu", "Lianbo Ma", "Guoyin Zhu", "Renpeng Chen", "Tao Chen", "Jing Ma", "Jie Liu", "Zhong Jin"],
+    "journal": "ACS Nano",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["TiO2−x", "vacancy engineering", "magnesium battery", "nanoflake"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ultrathin TiS2 nanoflakes",
+      "molecular_formula": "TiS2",
+      "intended_role": "intermediate",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Porous black TiO2−x nanoflakes (B-TiO2−x)",
+      "molecular_formula": "TiO2−x",
+      "intended_role": "product",
+      "prov": ["Experimental Section", "Figure 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "White TiO2 nanoflakes (W-TiO2)",
+      "molecular_formula": "TiO2",
+      "intended_role": "control",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "sulfur",
+      "molecular_formula": "S",
+      "ontology": {"role": "reactant", "category": "element"},
+      "amount": {"value": 0.8, "unit": "g"},
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "oleylamine",
+      "molecular_formula": "",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": 30, "unit": "mL"},
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "titanium tetrachloride",
+      "molecular_formula": "TiCl4",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": 2, "unit": "mL"},
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "trichloromethane",
+      "molecular_formula": "CHCl3",
+      "ontology": {"role": "wash_solvent", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "absolute ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {"role": "wash_solvent", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "TiS2 nanoflakes",
+      "molecular_formula": "TiS2",
+      "ontology": {"role": "precursor", "category": "inorganic"},
+      "amount": {"value": 0.1, "unit": "g"},
+      "notes": "prepared in previous step",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": 20, "unit": "mL"},
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "air",
+      "molecular_formula": "",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dissolution and degassing of sulfur in oleylamine",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {"inputs": ["chem_1", "chem_2"]},
+            "temperature": {"value": 373, "unit": "K"},
+            "duration": {"value": 120, "unit": "min"},
+            "atmosphere": "N2",
+            "notes": "vigorous magnetic stirring to remove water and oxygen"
+          }
+        ],
+        "conditions": {"pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Injection of TiCl4 precursor",
+        "operations": [
+          {
+            "action": "inject",
+            "parameters": {"inputs": ["chem_3"]},
+            "temperature": {"value": 298, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "N2", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "High-temperature reaction to form TiS2 nanoflakes",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {"value": 573, "unit": "K"},
+            "duration": {"value": 360, "unit": "min"},
+            "notes": "temperature raised over 180 min and kept for another 180 min, reflux under N2"
+          }
+        ],
+        "conditions": {"atmosphere": "N2", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Work-up of TiS2 product",
+        "operations": [
+          {"action": "centrifuge"},
+          {"action": "wash", "parameters": {"inputs": ["chem_4", "chem_5"]}},
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {"value": 333, "unit": "K"},
+            "duration": {"value": 720, "unit": "min"},
+            "notes": "vacuum oven"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Annealing to remove organic residues",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "temperature": {"value": 673, "unit": "K"},
+            "duration": {"value": 240, "unit": "min"},
+            "atmosphere": "Ar",
+            "notes": ""
+          }
+        ],
+        "conditions": {"pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Atomic substitution to form black TiO2-x nanoflakes",
+        "operations": [
+          {
+            "action": "disperse",
+            "parameters": {"inputs": ["chem_7", "chem_8"]},
+            "temperature": {"value": 298, "unit": "K"},
+            "duration": {"value": 4320, "unit": "min"},
+            "notes": "vigorous stirring"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Isolation of B-TiO2-x product",
+        "operations": [
+          {"action": "centrifuge"},
+          {"action": "wash", "parameters": {"inputs": ["chem_8", "chem_5"]}},
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {"value": 323, "unit": "K"},
+            "duration": {"value": 720, "unit": "min"},
+            "notes": "vacuum oven"
+          }
+        ],
+        "conditions": {"pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Annealing control samples to vary oxygen vacancy content",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "temperature": {"value": 723, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "atmosphere": "air",
+            "notes": "1 h (G-TiO2-x), 2 h (K-TiO2-x), 4 h (W-TiO2)"
+          }
+        ],
+        "conditions": {"pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Sulfur dissolved and degassed in oleylamine."},
+      {"step_ref": "step_2", "description": "TiCl4 added to reaction mixture."},
+      {"step_ref": "step_3", "description": "High-temperature synthesis of TiS2 nanoflakes."},
+      {"step_ref": "step_4", "description": "Isolation and drying of TiS2 product."},
+      {"step_ref": "step_5", "description": "Ar annealing to remove organics."},
+      {"step_ref": "step_6", "description": "Atomic substitution in water giving B-TiO2-x."},
+      {"step_ref": "step_7", "description": "Work-up and drying of B-TiO2-x product."},
+      {"step_ref": "step_8", "description": "Air annealing to prepare control samples with varied OV content."}
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {"method": "SEM", "parameters": {}, "results": [{"metric": "morphology", "value": "ultrathin stacked nanoflakes", "unit": ""}], "interpretation": "", "prov": ["Figure 1"]},
+    {"method": "TEM/HRTEM", "parameters": {}, "results": [{"metric": "lattice spacing", "value": 0.35, "unit": "nm"}], "interpretation": "matches (101) of anatase TiO2", "prov": ["Figure 1"]},
+    {"method": "XRD", "parameters": {}, "results": [{"metric": "phase", "value": "tetragonal anatase TiO2", "unit": ""}], "interpretation": "successful conversion from TiS2", "prov": ["Figure 2a"]},
+    {"method": "Raman", "parameters": {}, "results": [{"metric": "Eg mode shift", "value": 151.9, "unit": "cm-1"}], "interpretation": "red shift indicates oxygen vacancies", "prov": ["Figure 2b"]},
+    {"method": "EPR", "parameters": {}, "results": [{"metric": "g value", "value": 2.002, "unit": ""}, {"metric": "O2•− concentration", "value": 0.57, "unit": "µmol g-1"}], "interpretation": "confirms abundant OVs", "prov": ["Figure 2c"]},
+    {"method": "XPS", "parameters": {}, "results": [{"metric": "Ti3+ content", "value": 20, "unit": "%"}], "interpretation": "presence of reduced Ti species", "prov": ["Figure 2d"]},
+    {"method": "BET", "parameters": {}, "results": [{"metric": "surface area", "value": 134, "unit": "m2 g-1"}], "interpretation": "high porosity", "prov": ["Figure S3"]},
+    {"method": "UV-Vis DRS", "parameters": {}, "results": [{"metric": "optical bandgap", "value": 1.79, "unit": "eV"}], "interpretation": "narrowed by vacancies", "prov": ["Figure 2f"]}
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Battery performance evaluation",
+        "results": [
+          {"equation": "", "value": 190, "unit": "mAh g-1", "notes": "initial discharge capacity at 50 mA g-1"},
+          {"equation": "", "value": 134, "unit": "mAh g-1", "notes": "initial charge capacity at 50 mA g-1"},
+          {"equation": "", "value": 106, "unit": "mAh g-1", "notes": "discharge capacity after 200 cycles at 150 mA g-1"},
+          {"equation": "", "value": 77, "unit": "mAh g-1", "notes": "discharge capacity after 400 cycles at 300 mA g-1"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 150,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 400
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-26T14:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

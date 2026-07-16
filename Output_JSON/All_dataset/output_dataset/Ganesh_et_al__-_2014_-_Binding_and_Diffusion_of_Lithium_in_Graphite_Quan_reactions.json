@@ -1,0 +1,170 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Binding and Diffusion of Lithium in Graphite: Quantum Monte Carlo Benchmarks and Validation of van der Waals Density Functional Methods",
+    "doi": "10.1021/ct500617z",
+    "authors": [
+      "P. Ganesh",
+      "Jeongnim Kim",
+      "Changwon Park",
+      "Mina Yoon",
+      "Fernando A. Reboredo",
+      "Paul R. C. Kent"
+    ],
+    "journal": "Journal of Chemical Theory and Computation",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "quantum Monte Carlo",
+      "DFT",
+      "van der Waals interactions",
+      "lithium diffusion",
+      "graphite"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "AA-stacked graphite",
+      "molecular_formula": "C",
+      "intended_role": "model_system",
+      "prov": [
+        "Figure 1",
+        "Text Page 5319"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li in AA-stacked graphite (Li0.06C6)",
+      "molecular_formula": "Li0.06C6",
+      "intended_role": "model_system",
+      "prov": [
+        "Figure 2",
+        "Text Page 5320"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "adsorbate",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Dilute concentration x = 0.06 in Li_xC6 supercells",
+      "prov": [
+        "Methods Section"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Graphite (AA-stacked)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate",
+        "category": "allotrope"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Two graphene layers per supercell, 50 C atoms each",
+      "prov": [
+        "Methods Section"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Diffusion Quantum Monte Carlo (DMC)",
+      "parameters": {
+        "time_step": {
+          "value": 0.02,
+          "unit": "au"
+        },
+        "walkers": 16000
+      },
+      "results": [
+        {
+          "metric": "lattice constant (AA graphite)",
+          "value": 3.63,
+          "unit": "Å",
+          "error": 0.02
+        },
+        {
+          "metric": "binding energy (AA graphite)",
+          "value": 36,
+          "unit": "meV",
+          "error": 1
+        },
+        {
+          "metric": "optimal lattice constant for Li in graphite",
+          "value": 3.61,
+          "unit": "Å",
+          "error": 0.02
+        },
+        {
+          "metric": "Li binding energy at optimum separation",
+          "value": 1.6,
+          "unit": "eV",
+          "error": 0.1
+        }
+      ],
+      "interpretation": "DMC accurately captures van der Waals interactions and charge transfer in Li–graphite system.",
+      "prov": [
+        "Figure 1",
+        "Figure 2",
+        "Text Pages 5319-5320"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T20:51:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

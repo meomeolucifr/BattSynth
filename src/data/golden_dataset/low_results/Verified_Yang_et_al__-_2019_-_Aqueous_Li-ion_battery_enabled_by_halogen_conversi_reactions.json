@@ -1,0 +1,946 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Aqueous Li-ion battery enabled by halogen conversion\u2013intercalation chemistry in graphite",
+    "doi": "10.1038/s41586-019-1175-6",
+    "authors": [
+      "Chongyin Yang",
+      "Ji Chen",
+      "Xiao Ji",
+      "Travis P. Pollard",
+      "Xujie L\u00fc",
+      "Cheng-Jun Sun",
+      "Singyuk Hou",
+      "Qi Liu",
+      "Cunming Liu",
+      "Tingting Qing",
+      "Yingqi Wang",
+      "Oleg Borodin",
+      "Yang Ren",
+      "Kang Xu",
+      "Chunsheng Wang"
+    ],
+    "journal": "Nature",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": [
+      "graphite intercalation compound",
+      "aqueous lithium-ion battery",
+      "halogen conversion\u2013intercalation",
+      "water-in-salt electrolyte"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LBC-G composite electrode",
+      "molecular_formula": "(LiBr)0.5(LiCl)0.5\u2013graphite",
+      "intended_role": "cathode material",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states that a composite electrode containing equimolar lithium halide salts \u201c(LiBr)0.5(LiCl)0.5\u2013graphite (hereafter denoted as LBC-G)\u201d was synthesized (Page 1, main text). This exactly matches the extracted Target Formula.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Water-in-bisalt (WiBS) electrolyte",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.83,
+        "reasoning": "The paper explicitly reports multiple chemical formulas relevant to the target material (for example, stage-I graphite intercalation compound C3.5[Br0.5Cl0.5] and an overall mixing composition (LiBr)0.5(LiCl)0.5C~3.7), including in the Methods section. However, the extracted value for \u201cTarget Formula\u201d is blank/empty, which is not a valid value and is not explicitly stated as such in the source text.",
+        "suggested_fix": "If the intended target is the active stage-I GIC formula, use: C3.5[Br0.5Cl0.5]. If the intended target is the synthesized composite stoichiometry, use: (LiBr)0.5(LiCl)0.5C~3.7 (from the 2:1:2 mass ratio)."
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "PEO-WiBS gel electrolyte",
+      "molecular_formula": "",
+      "intended_role": "gel electrolyte",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The field 'Target Formula' has an empty extracted value. The paper explicitly states the stage-I graphite intercalation compound/formula as C3.5[Br0.5Cl0.5] (also written as stage-I C3.5[Br0.5Cl0.5]) multiple times (e.g., Page 1 abstract and Fig. 3 caption; also supported by Methods/EXAFS discussion). Therefore, leaving the value blank is not supported by the source text.",
+        "suggested_fix": "C3.5[Br0.5Cl0.5]"
+      }
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "HFE-PEO protective gel",
+      "molecular_formula": "",
+      "intended_role": "anode coating",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The field 'Target Formula' has an empty extracted value. The paper does explicitly state a target/stage-I graphite intercalation compound formula, notably \u201cC3.5[Br0.5Cl0.5]\u201d (Page 1 and Fig. 1 caption on Page 2). Since a formula is clearly provided in the source, leaving the extracted value blank is not supported.",
+        "suggested_fix": "C3.5[Br0.5Cl0.5] (stage-I graphite intercalation compound)"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium bromide",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "anhydrous, 99.9%; mass ratio in mix 2 (LiBr):1 (LiCl):2 (graphite)",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly specifies the amount/ratio of LiBr used in the LBC-G composite cathode. It states that anhydrous LiBr and LiCl were mixed with graphite at an optimal mass ratio of 2:1:2 (LiBr:LiCl:graphite), and in Methods it reiterates LiBr:LiCl molar ratio = 1:1 and LiBr:LiCl:graphite mass ratio \u2248 2:1:2. Therefore, the extracted claim 'Amount: Not specified in text' is contradicted by the source text.",
+        "suggested_fix": "Lithium bromide (LiBr) used in LBC-G composite; amount specified as part of mixture ratio: LiBr:LiCl:graphite mass ratio \u2248 2:1:2 (with LiBr:LiCl molar ratio 1:1)."
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "anhydrous, 99.9%; mass ratio LiBr:LiCl 2:1",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper clearly identifies the chemical as lithium chloride (LiCl) (e.g., \u201cmixing anhydrous LiBr and LiCl with graphite\u2026\u201d, and in Methods: \u201canhydrous LiBr\u2026 LiCl\u2026\u201d; also LiCl\u00b7H2O in full-cell variants). However, the document text does not provide a standalone explicit amount for LiCl by itself (no grams, moles, molarity, or wt% of LiCl alone). It only gives ratios (LiBr:LiCl molar ratio 1:1; mass ratio LiBr:LiCl:graphite about 2:1:2; electrode loading ~38 mg cm\u22122 for cathode material overall). Therefore the extractor\u2019s statement \u201cAmount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Graphite powder (TIMREX KS4)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "host material",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "average particle size \u22484.1 \u00b5m; mass ratio to salts 2 (LiBr):1 (LiCl):2 (graphite)",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.72,
+        "reasoning": "The paper does explicitly identify the graphite as synthetic graphite powder \u201cTIMCAL TIMREX KS4\u201d in the Methods (\u201cPreparation of electrodes\u201d). However, the extracted value specifies \u201cGraphite powder (TIMREX KS4)\u201d, which is not the exact product naming used in the text (it is TIMCAL TIMREX KS4). Also, the amount is not entirely \u201cnot specified\u201d: the Methods provides a cathode areal loading (~38 mg cm\u22122), cathode thickness (~200 \u03bcm), and composite/binder ratio (LBC-G:PTFE = 95:5), plus the LiBr:LiCl:graphite mass ratio (~2:1:2), which together constitute quantitative amount information for graphite within the composite. Therefore the claim that the amount is \u201cNot specified in text\u201d is not supported.",
+        "suggested_fix": "Chemical: synthetic graphite powder (TIMCAL TIMREX KS4; average particle size ~4.1 \u03bcm). Amount info given indirectly: LiBr:LiCl:graphite mass ratio ~2:1:2 (so graphite is ~40 wt% of the LiBr+LiCl+graphite mix), and cathode composition LBC-G:PTFE = 95:5 with areal loading ~38 mg cm\u22122 (cathode material) and thickness ~200 \u03bcm."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Polytetrafluoroethylene",
+      "molecular_formula": "(C2F4)n",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "5 wt% in cathode film; 10 wt% in anode",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions polytetrafluoroethylene (PTFE) as a binder in the electrode fabrication Methods (\u201cComposite LBC-G cathodes were fabricated by compressing LBC-G composite and polytetrafluoroethylene (PTFE; Sigma-Aldrich) at a weight ratio of 95:5\u2026\u201d; also graphite anodes used PTFE at 9:1). However, the text does not provide an absolute amount (e.g., grams or mg) of PTFE used\u2014only weight ratios and areal loading for the cathode material are given. Therefore, identifying PTFE and stating that the amount is not specified in the text is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Titanium metal mesh",
+      "molecular_formula": "Ti",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "100 mesh",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.94,
+        "reasoning": "The paper explicitly mentions use of a titanium metal mesh as the current collector for the composite cathode: \u201cComposite LBC-G cathodes were fabricated \u2026 on a titanium metal mesh (Alfa Aesar; 100 mesh)\u201d (Methods, page 7). The text does not provide an amount/mass/size of the titanium mesh used (only the mesh count \u2018100 mesh\u2019 is given), so \u2018Amount: Not specified in text\u2019 is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Mesocarbon microbead graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "anode active",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used for graphite anode",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly identifies the graphite used for the anode as \u201cmesocarbon microbead graphite powder (MTI Corp.)\u201d in the Methods section (\u201cThe graphite anodes were fabricated using mesocarbon microbead graphite powder\u2026\u201d). However, no explicit amount/mass of mesocarbon microbead graphite used (e.g., grams or mg) is stated\u2014only a mixing ratio (graphite:PTFE = 9:1 by weight) is given. Therefore the extracted statement \u201cMesocarbon microbead graphite | Amount: Not specified in text\u201d is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiTFSI",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "lithium salt"
+      },
+      "amount": {
+        "value": 21,
+        "unit": "mol kg-1"
+      },
+      "notes": "in water for WiBS electrolyte",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The Methods section explicitly states: \u201cThe liquid WiBS aqueous electrolytes were first prepared by dissolving 21 mol kg\u22121 LiTFSI \u2026\u201d. LiTFSI is lithium bis(trifluoromethanesulfonyl)imide (TFSI = bis(trifluoromethanesulfonyl)imide is defined in the main text), matching both the chemical identity and the amount (21 mol kg\u22121).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Lithium trifluoromethanesulfonate",
+      "molecular_formula": "LiOTf",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "lithium salt"
+      },
+      "amount": {
+        "value": 7,
+        "unit": "mol kg-1"
+      },
+      "notes": "in water for WiBS electrolyte",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The Methods section explicitly states the WiBS electrolyte composition as \u201c21 mol kg\u22121 LiTFSI \u2026 and 7 mol kg\u22121 lithium trifluoromethanesulfonate (LiOTf) \u2026 in water\u201d. Lithium trifluoromethanesulfonate is LiOTf, and the amount is given as 7 mol kg\u22121.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "HPLC grade",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper repeatedly discusses water as part of the electrolyte (e.g., \u201cwater-in-bisalt electrolyte\u201d, \u201caqueous gel electrolyte\u201d) and gives some contextual amounts (for WiBS preparation: salts dissolved \u201cin water (HPLC grade)\u201d; also mentions 2.4% water uptake from WiBS). However, there is no explicit statement of an amount for the chemical \u201cWater\u201d itself as a standalone component (e.g., grams, mL, molarity of water), aside from it being the solvent. Thus the extractor\u2019s note \u201cAmount: Not specified in text\u201d is consistent with the document content.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Poly(ethylene oxide)",
+      "molecular_formula": "(C2H4O)n",
+      "ontology": {
+        "role": "gel polymer",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 20,
+        "unit": "wt%"
+      },
+      "notes": "used to gel WiBS; 10 wt% for HFE coating",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The Methods section explicitly states: \u201cAqueous gel electrolytes were prepared by mixing 20 wt% poly(ethylene oxide) (PEO; \u2026) \u2026 with WiBS electrolyte\u2026\u201d. This directly supports the extracted chemical identity (poly(ethylene oxide)) and the amount (20 wt%).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Polyvinyl alcohol",
+      "molecular_formula": "(C2H4O)n",
+      "ontology": {
+        "role": "gel polymer",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "wt%"
+      },
+      "notes": "alternative gel former",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The Methods section explicitly states that aqueous gel electrolytes were prepared by mixing \"10 wt% polyvinyl alcohol\" with the WiBS electrolyte (\"10 wt% polyvinyl alcohol (weight-average molecule weight, Mw = 146,000\u2013186,000; >99% hydrolysed; Sigma-Aldrich)\"). This directly supports the extracted value: Polyvinyl alcohol | Amount: 10 wt%.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "1,1,2,2-Tetrafluoroethyl-2',2',2'-trifluoroethyl ether",
+      "molecular_formula": "C4H2F7O",
+      "ontology": {
+        "role": "solvent",
+        "category": "fluorinated ether"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "HFE used for protective gel",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The Methods section explicitly names the chemical used in the HFE-PEO gel protection coating preparation: \u201c1,1,2,2-tetrafluoroethyl-2\u2032,2\u2032,2\u2032-trifluoroethyl ether\u201d. However, the text also specifies an amount/concentration for this chemical in the formulation: it is used as the solvent for \u201c0.5 M LiTFSI\u201d and combined with \u201c10 wt% PEO in HFE/fluoroethylene carbonate (with volume ratio 95:5)\u201d. Therefore, the claim \u201cAmount: Not specified in text\u201d is not correct; the text provides composition information (0.5 M LiTFSI; 10 wt% PEO; HFE:FEC = 95:5 by volume), even though it does not give a mass or volume of the ether itself.",
+        "suggested_fix": "1,1,2,2-tetrafluoroethyl-2\u2032,2\u2032,2\u2032-trifluoroethyl ether (HFE); used in LiTFSI-HFE gel with 0.5 M LiTFSI and 10 wt% PEO in HFE/fluoroethylene carbonate (95:5 v/v)."
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Fluoroethylene carbonate",
+      "molecular_formula": "C3H3FO3",
+      "ontology": {
+        "role": "co-solvent",
+        "category": "carbonate"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "5 vol% in HFE mixture",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper does mention fluoroethylene carbonate (FEC) in the Methods section: the HFE/fluoroethylene carbonate solvent mixture is specified as \u201cHFE/fluoroethylene carbonate (with volume ratio 95:5)\u201d used to prepare the LiTFSI-HFE gel coating. Therefore, the claim \u201cAmount: Not specified in text\u201d is incorrect because an explicit amount/ratio (95:5 by volume) is given for FEC (as part of a solvent mixture).",
+        "suggested_fix": "Fluoroethylene carbonate | Amount: 5 vol% in HFE/FEC mixture (HFE:fluoroethylene carbonate = 95:5 v/v)"
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of LBC-G composite powder",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ],
+              "mass_ratio": "2:1:2"
+            },
+            "notes": "Homogenously mixed by zirconia ball milling",
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The paper explicitly describes synthesizing the LBC-G composite electrode by \u201cmixing anhydrous LiBr and LiCl with graphite\u201d (Page 1) and further specifies in Methods that LBC-G was obtained by \u201chomogenously mixing \u2026 LiBr, LiCl and synthetic graphite powder \u2026 by zirconia ball milling for 15 min\u201d (Page 7). This supports the extracted synthesis operation 'mix'.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Fabrication of LBC-G cathode film",
+        "operations": [
+          {
+            "action": "combine",
+            "parameters": {
+              "inputs": [
+                "target_1",
+                "chem_4"
+              ]
+            },
+            "ratio": "95:5 (w/w)",
+            "notes": "Composite pressed onto titanium mesh current collector",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.72,
+              "reasoning": "The paper does describe synthesis steps using terms like \u201cmixing\u201d and \u201ccompressing\u201d (for example, \u201cLBC-G composite was obtained by homogenously mixing anhydrous LiBr, LiCl and synthetic graphite powder\u2026\u201d in Methods). However, the specific synthesis operation word \u201ccombine\u201d does not appear in the provided text, nor is it explicitly used as the named operation. Therefore the extracted value is not explicitly supported as written.",
+              "suggested_fix": "Use \u201cmixing\u201d (or \u201chomogenously mixing\u201d via ball milling) as the synthesis operation. E.g., \u201cmix (ball mill) LiBr, LiCl, and graphite\u201d."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Preparation of WiBS liquid electrolyte",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_7",
+                "chem_8",
+                "chem_9"
+              ],
+              "concentrations": "21 mol kg-1 LiTFSI, 7 mol kg-1 LiOTf"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.83,
+              "reasoning": "The paper does not describe the LBC-G synthesis using a 'dissolve' operation. Instead, it states the composite cathode was synthesized by mixing anhydrous LiBr and LiCl with graphite, specifically via zirconia ball milling for 15 min (Methods: 'obtained by homogenously mixing... by zirconia ball milling'). 'Dissolving' appears only in the electrolyte preparation step (salts dissolved in water), not as the synthesis operation for the electrode composite itself.",
+              "suggested_fix": "mix (ball mill/homogenously mix by zirconia ball milling)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Formation of PEO-WiBS gel electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "target_2",
+                "chem_10"
+              ],
+              "weight_percent_polymer": 20
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "notes": "Heated in sealed glass moulds, then cooled to room temperature to obtain semi-solid gel",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes synthesizing the LBC-G composite electrode \u201cby mixing anhydrous LiBr and LiCl with graphite\u201d (Page 1) and in Methods: \u201cobtained by homogenously mixing ... LiBr, LiCl and synthetic graphite powder ... by zirconia ball milling\u201d (Page 7). This supports the synthesis operation being a mixing step.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Preparation of HFE-PEO protective coating",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_12",
+                "chem_7",
+                "chem_10",
+                "chem_13"
+              ],
+              "composition": "0.5 M LiTFSI, 10 wt% PEO in HFE/FEC 95:5 (v/v)"
+            },
+            "temperature": {
+              "value": 343,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 5,
+              "unit": "min"
+            },
+            "notes": "Vigorous stirring",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.95,
+              "reasoning": "The paper explicitly describes the synthesis of the LBC-G composite cathode as being synthesized by \u201cmixing anhydrous LiBr and LiCl with graphite\u201d (Page 1). The Methods section further specifies it was obtained by \u201chomogenously mixing \u2026 by zirconia ball milling for 15 min\u201d (Page 7). Therefore the extracted synthesis operation \u201cmix\u201d is directly supported.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Fabrication of graphite anode",
+        "operations": [
+          {
+            "action": "combine",
+            "parameters": {
+              "inputs": [
+                "chem_6",
+                "chem_4"
+              ],
+              "weight_ratio": "9:1"
+            },
+            "notes": "Cast on stainless steel mesh current collector",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.72,
+              "reasoning": "The paper describes the synthesis/operation using terms like \u201cmixing\u201d (e.g., \u201csynthesized by mixing anhydrous LiBr and LiCl with graphite\u201d) and \u201ccompressing\u201d (fabricating cathodes). Nowhere in the provided text is the specific synthesis operation explicitly stated as \u201ccombine\u201d. The closest explicit operation is \u201cmixing\u201d, not \u201ccombine\u201d (though they are conceptually similar).",
+              "suggested_fix": "mixing"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ball-milling of LiBr, LiCl, and graphite to produce LBC-G powder",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The paper explicitly describes synthesizing the LBC-G composite by zirconia ball milling (a form of ball-milling) LiBr, LiCl, and graphite to obtain the LBC-G composite powder. Methods section: \u201cLBC-G composite was obtained by homogenously mixing anhydrous LiBr, LiCl and synthetic graphite powder \u2026 by zirconia ball milling for 15 min.\u201d This supports the extracted workflow step \u201cBall-milling of LiBr, LiCl, and graphite to produce LBC-G powder.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pressing composite with PTFE onto Ti mesh to form cathode",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The Methods section explicitly states: \u201cComposite LBC-G cathodes were fabricated by compressing LBC-G composite and polytetrafluoroethylene (PTFE; Sigma-Aldrich) at a weight ratio of 95:5 on a titanium metal mesh (Alfa Aesar; 100 mesh).\u201d This matches the extracted workflow step of pressing the composite with PTFE onto Ti mesh to form the cathode.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Preparation of highly concentrated WiBS electrolyte",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper contains preparation procedures for WiBS/WiBS-gel electrolyte (Methods: \u201cPreparation of electrolytes\u201d), including the specific composition (21 mol kg\u22121 LiTFSI + 7 mol kg\u22121 LiOTf in water) and gel preparation steps. However, the extracted workflow timeline entry \u201cPreparation of highly concentrated WiBS electrolyte\u201d is not stated as a named workflow step/timeline item anywhere in the provided text, nor is there an explicit phrase indicating a workflow timeline with that step title. It is an inferred/summary label rather than an explicit value from the document.",
+          "suggested_fix": "If the field must reflect an explicit step, use the Methods wording: \u201cPreparation of electrolytes: WiBS prepared by dissolving 21 mol kg\u22121 LiTFSI and 7 mol kg\u22121 LiOTf in water; WiBS gel prepared by mixing with 20 wt% PEO (or 10 wt% PVA) and heating at 80\u2009\u00b0C for 1 h.\u201d"
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Conversion of WiBS into PEO gel electrolyte",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The paper discusses WiBS/WIBS electrolytes and mentions an \u201caqueous gel polymer electrolyte based on WiBS\u201d and that gel electrolytes are prepared by mixing PEO with WiBS (Methods: \u201cAqueous gel electrolytes were prepared by mixing 20 wt% poly(ethylene oxide) (PEO) \u2026 with WiBS electrolyte\u2026\u201d). However, it does not describe a workflow step as a \u201cConversion of WiBS into PEO gel electrolyte,\u201d nor does it frame this as a conversion of WiBS itself; rather, it is preparation of a gel electrolyte by mixing PEO into WiBS. The extracted workflow-timeline phrase is not explicitly supported as written.",
+          "suggested_fix": "Preparation of WiBS-based aqueous gel electrolyte by mixing WiBS with PEO (e.g., 20 wt% PEO) and heating (80 \u00b0C for 1 h), then cooling to obtain a semi-solid gel."
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Synthesis of fluorinated ether\u2013PEO protective gel",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The document discusses an HFE/poly(ethylene oxide) (HFE-PEO) protective gel/coating on the graphite anode (for example: \u201cgraphite anode protected by a highly fluorinated ether (HFE) polymer gel\u201d and Methods: \u201cpreparation of HFE-PEO gel protection coating ...\u201d). However, the phrase/timeline step \u201cSynthesis of fluorinated ether\u2013PEO protective gel\u201d is not explicitly stated as a workflow timeline item anywhere in the paper. The text contains preparation details, but not as a labeled \u2018Workflow Timeline\u2019 entry, and it does not use this exact timeline phrasing.",
+          "suggested_fix": "If the intent is to capture the step described in Methods, use something like: \u201cPreparation of HFE\u2013PEO gel protection coating (LiTFSI-HFE gel + 10 wt% PEO in HFE/fluoroethylene carbonate (95:5), heated at 70\u2009\u00b0C for 5 min under vigorous stirring).\u201d"
+        }
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Preparation of PTFE-bonded graphite anode on stainless steel mesh",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The Methods section explicitly describes fabrication of the graphite anode using PTFE binder on a stainless steel mesh: \u201cThe graphite anodes were fabricated using mesocarbon microbead graphite powder ... and PTFE at a weight ratio of 9:1 on a stainless steel mesh (200 mesh).\u201d This supports the workflow step \u2018Preparation of PTFE-bonded graphite anode on stainless steel mesh\u2019 (though the exact phrasing \u2018PTFE-bonded\u2019 is paraphrased from the described PTFE binder fabrication).",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of LiBr, LiCl, and graphite not provided",
+        "excerpt": "mass ratio of 2:1:2 (corresponding to a molar ratio of (LiBr)0.5(LiCl)0.5C~3.7; see Methods)",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "Supported. Across the main text (Page 1) and Methods (Page 7), the paper specifies only ratios for synthesizing the LBC-G composite (LiBr:LiCl:graphite mass ratio \u2248 2:1:2; LiBr:LiCl molar ratio 1:1; corresponding to molar ratio (LiBr)0.5(LiCl)0.5C~3.7). Nowhere in the provided full text are absolute/\u201cexact\u201d masses (e.g., grams or mg of LiBr, LiCl, graphite per batch) reported; only an example areal loading (\u224838 mg cm\u22122) and electrode thickness (\u2248200 \u03bcm) are given, which do not provide the individual component masses. Therefore, the stated issue that exact masses are not provided is consistent with the document.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Pressing conditions (pressure) for electrode fabrication not specified",
+        "excerpt": "Composite LBC-G cathodes were fabricated by compressing LBC-G composite and polytetrafluoroethylene (PTFE; Sigma-Aldrich) at a weight ratio of 95:5 on a titanium metal mesh",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "Supported. In the Methods (\u201cPreparation of electrodes\u201d), the paper states: \u201cComposite LBC-G cathodes were fabricated by compressing LBC-G composite and polytetrafluoroethylene (PTFE; Sigma-Aldrich) at a weight ratio of 95:5 on a titanium metal mesh \u2026\u201d. Nowhere in the provided full text is a pressing/compression pressure (or other pressing condition such as MPa/tons) specified for this compression step. Therefore the extractor\u2019s noted ambiguity\u2014pressing pressure not specified\u2014is consistent with the document.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "scan_rate": "0.05 mV s-1",
+        "potential_window": "3.2\u20134.9 V vs Li/Li+"
+      },
+      "results": [
+        {
+          "metric": "distinct redox ranges",
+          "value": "4.0\u20134.2 V (Br\u2212) and 4.2\u20134.5 V (Cl\u2212)",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper text explicitly states: \u201cThe cyclic voltammetry (Fig. 1b) ... indicated two distinct reaction voltage ranges, 4.0\u20134.2 V for Br\u2212 intercalation and 4.2\u20134.5 V for Cl\u2212 intercalation.\u201d This directly supports the extracted distinct redox ranges and matches the alleged provenance (Fig. 1b).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Galvanostatic charge/discharge",
+      "parameters": {
+        "current_density": "80 mA g-1"
+      },
+      "results": [
+        {
+          "metric": "discharge capacity",
+          "value": 243,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "High reversible capacity",
+      "prov": [
+        "Figure 1c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly reports a reversible discharge capacity of 243 mAh g\u22121 for the LBC-G composite electrode. On Page 1 it states: \u201c...deliver a highly reversible discharge capacity of 243 mAh g\u22121 (for the total mass of LBC-G composite)...\u201d in the discussion of the charge/discharge profiles (Fig. 1c, d). This supports the extracted metric/value/unit. The alleged provenance \u2018Figure 1c\u2019 is broadly consistent because the capacity is discussed alongside Fig. 1c/d, though the numeric value appears in the main text rather than only in the figure itself.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "GITT",
+      "parameters": {
+        "current_density": "80 mA g-1"
+      },
+      "results": [
+        {
+          "metric": "quasi-equilibrium potential Br\u2212",
+          "value": 4.05,
+          "unit": "V"
+        },
+        {
+          "metric": "quasi-equilibrium potential Cl\u2212",
+          "value": 4.35,
+          "unit": "V"
+        },
+        {
+          "metric": "diffusion coefficient",
+          "value": "10^-15\u201310^-13",
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1e"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports GITT-derived quasi-equilibrium potentials of ~4.05 V for Br\u2212 and ~4.35 V for Cl\u2212 oxidation/intercalation and reports total diffusion coefficients estimated from GITT as 10\u221215\u201310\u221213 cm2 s\u22121. These statements appear in the main text (page 1) and are associated with Fig. 1e (also consistent with the Fig. 1e caption/inset showing D in the 10\u221215 to 10\u221213 range).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "apparent ionic diffusion coefficient",
+          "value": "6.85\u00d710^-15\u20132.07\u00d710^-14",
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1f"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly states: \u201cThe diffusion coefficients were also estimated with electrochemical impedance spectroscopy (EIS; Fig. 1f), and fitting ... yielded apparent ionic diffusion coefficients of 6.85 \u00d7 10\u221215\u20132.07 \u00d7 10\u221214 cm2 s\u22121.\u201d This directly matches the extracted value and unit. Although the sentence appears in the main text near the discussion of Fig. 1f (page 1 in the provided text), it is clearly tied to Fig. 1f, so the provenance is acceptable.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "range": "100\u2013550 cm-1"
+      },
+      "results": [
+        {
+          "metric": "intercalant peaks",
+          "value": "Br2 at 242 cm-1, BrCl at 310 cm-1",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Confirms intercalation of Br and BrCl",
+      "prov": [
+        "Figure 2a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Supported by the text describing in situ Raman spectroscopy (Fig. 2a): it explicitly reports a Br2 intercalant peak at \u03c90 = 242 cm\u22121 and a BrCl intercalant feature at \u03c90 = 310 cm\u22121. Although the provenance cites Figure 2a, the supporting statement appears in the main text on Page 2 (and the plotted labels in Fig. 2a on Page 3 also show 242 cm\u22121 and 310 cm\u22121).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "stage-I d002 spacing",
+          "value": 3.43,
+          "unit": "\u00c5"
+        }
+      ],
+      "interpretation": "Formation of densely packed stage-I GIC",
+      "prov": [
+        "Figure 3b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly reports that at 100% SOC the structure reaches stage-I BrCl-GIC with d002 \u2248 3.43 \u00c5. This appears in the main text discussion of Fig. 3b/3c (page 5): \u201ceventually reaching stage-I BrCl-GIC (d002 \u2248 3.43 \u00c5) at 100% SOC.\u201d Figure 3b also labels the stage-I spacing values around 3.43\u20133.45 \u00c5, consistent with the extracted 3.43 \u00c5. Although the alleged provenance cites only \u201cFigure 3b,\u201d the numerical value is explicitly stated in the text tied to Fig. 3b.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XANES",
+      "parameters": {
+        "edges": "Br K, Cl K"
+      },
+      "results": [
+        {
+          "metric": "evidence of Br and Cl oxidation states",
+          "value": "Br reaches ~0, Cl ~-0.25",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 2b",
+        "Figure 2c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly reports XANES/DFT-derived oxidation states for Br and Cl associated with the Br and Cl intercalation sequence discussed around Fig. 2b and Fig. 2c. In the text describing Fig. 2b\u2013d, it states Br is ~\u22120.16 at 50% SOC and then increases to nearly Br0 (oxidation state \u22120.05) after Cl intercalation; it also states \u201cThe oxidation state of Cl becomes \u22120.25.\u201d Fig. 2d caption reiterates Bader analysis results: \u22120.05 for Br and \u22120.25 for Cl in Cn[BrCl]. Thus the extracted claim of evidence for Br/Cl oxidation states with values approximately Br ~0 and Cl ~\u22120.25 is supported (with Br more precisely given as \u22120.05 rather than exactly 0).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Energy density calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": 460,
+            "unit": "Wh kg-1"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The extracted value for \"Analysis Method\" is blank, but the paper explicitly describes multiple analysis/characterization methods used (for example: in situ Raman spectroscopy, ex situ XANES/XAFS (XANES/EXAFS), ex situ and in situ XRD, GITT, EIS, SEM/EDS, ion chromatography, MD and DFT simulations). Therefore the field is not missing in the source text, and a blank extraction is not supported.",
+          "suggested_fix": "Populate \"Analysis Method\" with the methods stated in the text, e.g., \"in situ Raman spectroscopy; XRD (ex situ and in situ); X-ray absorption spectroscopy (XANES/EXAFS); electrochemical tests (CV, GITT, EIS, galvanostatic cycling); SEM/EDS; ion chromatography; DFT and MD simulations.\""
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 243,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 230,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.93,
+      "reasoning": "The paper explicitly reports capacity retention over 230 cycles: \u201c243 mAh g\u22121 ... 82% of which is retained over 230 cycles \u2026\u201d (Page 1, describing cycling performance of LBC-G in a three-electrode cell). This supports a cycle life value of 230 cycles for that test condition.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-28T00:00:00Z",
+    "source_file": "extracted_text_chunk",
+    "processing_time": null
+  }
+}

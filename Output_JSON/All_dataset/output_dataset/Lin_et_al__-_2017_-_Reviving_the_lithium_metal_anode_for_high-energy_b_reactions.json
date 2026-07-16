@@ -1,0 +1,338 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Reviving the lithium metal anode for high-energy batteries",
+    "doi": "10.1038/NNANO.2017.16",
+    "authors": ["Dingchang Lin", "Yayuan Liu", "Yi Cui"],
+    "journal": "Nature Nanotechnology",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["lithium metal anode", "electrolyte additives", "solid electrolyte interphase"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li deposition in 1 M LiPF6/PC (control)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Figure 2b"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li deposition with 0.05 M CsPF6 additive",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Figure 2c"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li metal cycled in 7 M LiTFSI DOL/DME electrolyte",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Figure 2d"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li deposition in 4 M LiFSI/DME electrolyte",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Figure 2e"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li3PO4 artificial SEI–coated Li anode",
+      "molecular_formula": "Li3PO4 on Li",
+      "intended_role": "protected anode",
+      "prov": ["Text Page 197, Figure 3b"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "Al2O3-coated Li anode (14 nm)",
+      "molecular_formula": "Al2O3 on Li",
+      "intended_role": "protected anode",
+      "prov": ["Text Page 197, Figure 3c"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {"role": "salt", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Figure 2b"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Propylene carbonate",
+      "molecular_formula": "C4H6O3",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Figure 2b"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Cesium hexafluorophosphate",
+      "molecular_formula": "CsPF6",
+      "ontology": {"role": "additive", "category": "inorganic"},
+      "amount": {"value": 0.05, "unit": "M"},
+      "notes": "added to electrolyte",
+      "prov": ["Figure 2c"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium bis(trifluoromethanesulphonyl)imide",
+      "molecular_formula": "LiN(SO2CF3)2",
+      "ontology": {"role": "salt", "category": "inorganic"},
+      "amount": {"value": 7, "unit": "M"},
+      "notes": "",
+      "prov": ["Figure 2d"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "1,3-Dioxolane",
+      "molecular_formula": "C3H6O2",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Figure 2d"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Dimethoxyethane",
+      "molecular_formula": "C4H10O2",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Figure 2d", "Figure 2e"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium bis(fluorosulfonyl)imide",
+      "molecular_formula": "LiN(SO2F)2",
+      "ontology": {"role": "salt", "category": "inorganic"},
+      "amount": {"value": 4, "unit": "M"},
+      "notes": "",
+      "prov": ["Figure 2e"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Lithium phosphate",
+      "molecular_formula": "Li3PO4",
+      "ontology": {"role": "coating", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "~50 nm artificial SEI",
+      "prov": ["Text Page 197, Figure 3b"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Aluminium oxide",
+      "molecular_formula": "Al2O3",
+      "ontology": {"role": "coating", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "14 nm ALD layer",
+      "prov": ["Text Page 197, Figure 3c"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Electrodeposition of Li in control electrolyte",
+        "operations": [
+          {
+            "action": "electrodeposit",
+            "parameters": {
+              "electrolyte": ["chem_1", "chem_2"],
+              "current_density": {"value": 0.1, "unit": "mA cm-2"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Li deposited on substrate; morphology observed (Figure 2b)"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Figure 2b"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Electrodeposition of Li with CsPF6 additive",
+        "operations": [
+          {
+            "action": "electrodeposit",
+            "parameters": {
+              "electrolyte": ["chem_1", "chem_2", "chem_3"],
+              "current_density": {"value": 0.1, "unit": "mA cm-2"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Figure 2c"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Cycling of Li metal in 7 M LiTFSI DOL/DME electrolyte",
+        "operations": [
+          {
+            "action": "cycle",
+            "parameters": {
+              "electrolyte": ["chem_4", "chem_5", "chem_6"],
+              "current_density": {"value": 0.1, "unit": "mA cm-2"},
+              "cycles": {"value": 280, "unit": ""}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Post-cycling morphology shown Figure 2d"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Figure 2d"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Electrodeposition of Li in 4 M LiFSI/DME electrolyte",
+        "operations": [
+          {
+            "action": "electrodeposit",
+            "parameters": {
+              "electrolyte": ["chem_7", "chem_6"],
+              "current_density": {"value": 1.0, "unit": "mA cm-2"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Morphology compared to control (Figure 2e)"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Figure 2e"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Formation of Li3PO4 artificial SEI on Li",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "coating_material": ["chem_8"],
+              "thickness": {"value": 50, "unit": "nm"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Method not specified"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Text Page 197, Figure 3b"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "ALD deposition of 14 nm Al2O3 on Li surface",
+        "operations": [
+          {
+            "action": "ALD_coat",
+            "parameters": {
+              "coating_material": ["chem_9"],
+              "thickness": {"value": 14, "unit": "nm"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Radio-frequency magnetron sputtering also mentioned but thickness specific to ALD"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Text Page 197, Figure 3c"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Li deposition in baseline electrolyte"},
+      {"step_ref": "step_2", "description": "Li deposition with CsPF6 additive"},
+      {"step_ref": "step_3", "description": "Long cycling in high-salt concentration electrolyte"},
+      {"step_ref": "step_4", "description": "Li deposition in LiFSI electrolyte"},
+      {"step_ref": "step_5", "description": "Application of Li3PO4 artificial SEI"},
+      {"step_ref": "step_6", "description": "ALD Al2O3 protective coating"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing deposition time and temperature for several steps",
+        "excerpt": "Morphologies of Li deposited in 1 M LiPF6/propylene carbonate (PC) at 0.1 mA cm–2"
+      },
+      {
+        "issue": "Coating method details not provided for Li3PO4 artificial SEI",
+        "excerpt": "a thin (~50-nm) yet uniform Li3PO4 artificial SEI on Li was used56"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {"metric": "Li morphology without additive", "value": "dendritic", "unit": ""},
+        {"metric": "Li morphology with CsPF6", "value": "uniform surface without dendrites", "unit": ""}
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2b", "Figure 2c"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {"metric": "Li surface after 280 cycles in 7 M LiTFSI", "value": "smooth surface without dendrites", "unit": ""}
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2d"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {"metric": "Li morphology in 4 M LiFSI", "value": "nodule-like Li with larger particle size", "unit": ""}
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2e"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

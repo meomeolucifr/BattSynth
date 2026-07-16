@@ -1,0 +1,149 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Design of Nanostructured Heterogeneous Solid Ionic Coatings through a Multiscale Defect Model",
+    "doi": "10.1021/acsami.5b12030",
+    "authors": ["Jie Pan", "Qinglin Zhang", "Xingcheng Xiao", "Yang-Tse Cheng", "Yue Qi"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational_theoretical_study",
+    "tags": ["solid electrolyte interphase", "DFT", "space charge", "Li-ion battery", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Nanostructured artificial SEI (LiF/Li2CO3 composite)",
+      "molecular_formula": "",
+      "intended_role": "protective_coating",
+      "prov": ["Abstract", "Results"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium fluoride",
+      "molecular_formula": "LiF",
+      "ontology": {
+        "role": "phase_component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Phase B in composite SEI",
+      "prov": ["Figure 1", "Methodology"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "phase_component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Phase A in composite SEI",
+      "prov": ["Figure 1", "Methodology"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (DFT)",
+      "parameters": {
+        "functional": "GGA-PBE",
+        "software": "VASP",
+        "basis_set": "plane wave",
+        "potentials": "PAW"
+      },
+      "results": [
+        {
+          "metric": "defect formation energies (ΣΔhi)",
+          "value": [0.86, 0.76, 3.09, 1.47],
+          "unit": "eV",
+          "notes": "For reactions R1–R4 respectively"
+        },
+        {
+          "metric": "chemical potential change (Δμ) R1",
+          "value": -0.95,
+          "unit": "eV",
+          "notes": ""
+        }
+      ],
+      "interpretation": "R1 is energetically favorable; drives space-charge region.",
+      "prov": ["Table 1", "Methodology"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Space charge model",
+        "results": [
+          {
+            "equation": "λD = sqrt(εr ε0 RT / (F^2 c∞))",
+            "value": 9,
+            "unit": "nm",
+            "notes": "Debye length in Li2CO3 on Li metal electrode",
+            "prov": ["Results"]
+          },
+          {
+            "metric": "bulk ionic conductivity of Li2CO3",
+            "value": 6.7e-8,
+            "unit": "S cm-1",
+            "prov": ["Results"]
+          },
+          {
+            "metric": "predicted conductivity increase",
+            "value": 100,
+            "unit": "fold",
+            "notes": "two orders of magnitude increase for L̅A < λD",
+            "prov": ["Results", "Figure 3"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T11:52:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

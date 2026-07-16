@@ -1,0 +1,342 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Conflicting Roles of Nickel in Controlling Cathode Performance in Lithium Ion Batteries",
+    "doi": "10.1021/nl302249v",
+    "authors": [
+      "Meng Gu",
+      "Ilias Belharouak",
+      "Arda Genc",
+      "Zhiguo Wang",
+      "Dapeng Wang",
+      "Khalil Amine",
+      "Fei Gao",
+      "Guangwen Zhou",
+      "Suntharampillai Thevuthasan",
+      "Donald R. Baer",
+      "Ji-Guang Zhang",
+      "Nigel D. Browning",
+      "Jun Liu",
+      "Chongmin Wang"
+    ],
+    "journal": "Nano Letters",
+    "year": 2012
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium-ion battery", "cathode materials", "nickel segregation", "STEM", "DFT"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li1.2Ni0.2Mn0.6O2 nanoparticles",
+      "molecular_formula": "Li1.2Ni0.2Mn0.6O2",
+      "intended_role": "product",
+      "prov": ["Page 5186-5188"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ni0.25Mn0.75(OH)2",
+      "molecular_formula": "Ni0.25Mn0.75(OH)2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 5189"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 5189"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li1.2Ni0.2Mn0.6O2",
+      "molecular_formula": "Li1.2Ni0.2Mn0.6O2",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Cathode material (LNMO)",
+      "prov": ["Page 5186"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiNi0.5Mn0.5O2 (model compound)",
+      "molecular_formula": "LiNi0.5Mn0.5O2",
+      "ontology": {
+        "role": "reference_model",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in DFT calculations",
+      "prov": ["Page 5189"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mixing precursors",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5189"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Calcination of mixture to form LNMO nanoparticles",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1173,
+              "unit": "K"
+            },
+            "notes": "Described as 900 °C for different times"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5189"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Precursor mixing of Ni0.25Mn0.75(OH)2 and Li2CO3"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Calcination at 900 °C (1173 K) to obtain LNMO nanoparticles"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified calcination time",
+        "excerpt": "\"the mixture was calcined at 900 °C for different times\""
+      },
+      {
+        "issue": "Ambiguous capacity value",
+        "excerpt": "\"demonstrated a rechargeable capacity of >250 mAh/g\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "STEM (HAADF Z-contrast)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Surface Ni segregation",
+          "value": "",
+          "unit": "",
+          "notes": "Certain facets and grain boundaries show enhanced Z-contrast indicating Ni enrichment"
+        }
+      ],
+      "interpretation": "Preferential Ni segregation at mixed cation/anion terminated facets",
+      "prov": ["Figures 1, 2, 3"]
+    },
+    {
+      "method": "XEDS mapping",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ni:Mn ratio interior",
+          "value": 0.25,
+          "unit": "",
+          "notes": "Approximately 1:4"
+        },
+        {
+          "metric": "Ni:Mn ratio surface/grain boundary",
+          "value": 1,
+          "unit": "",
+          "notes": "Approximately 1:1 at certain regions"
+        }
+      ],
+      "interpretation": "Ni enrichment at surfaces and grain boundaries confirmed",
+      "prov": ["Figures 3, 4"]
+    },
+    {
+      "method": "XEDS tomography",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "3D distribution of Ni",
+          "value": "",
+          "unit": "",
+          "notes": "Ni selectively segregated to certain surfaces and grain boundaries"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3f"]
+    },
+    {
+      "method": "Lattice parameter measurement (from STEM images)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "LiMO2 (R3̅m) lattice a=b",
+          "value": 2.887,
+          "unit": "Å",
+          "notes": ""
+        },
+        {
+          "metric": "LiMO2 (R3̅m) lattice c",
+          "value": 14.29,
+          "unit": "Å",
+          "notes": ""
+        },
+        {
+          "metric": "Li2MO3 (C2/m) lattice a",
+          "value": 4.926,
+          "unit": "Å",
+          "notes": ""
+        },
+        {
+          "metric": "Li2MO3 (C2/m) lattice b",
+          "value": 8.527,
+          "unit": "Å",
+          "notes": ""
+        },
+        {
+          "metric": "Li2MO3 (C2/m) lattice c",
+          "value": 5.028,
+          "unit": "Å",
+          "notes": ""
+        },
+        {
+          "metric": "Li2MO3 (C2/m) lattice β",
+          "value": 109.22,
+          "unit": "°",
+          "notes": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculation of diffusion barriers",
+        "results": [
+          {
+            "equation": "",
+            "value": 0.25,
+            "unit": "eV",
+            "notes": "Ni diffusion barrier along Li channel (path A)"
+          },
+          {
+            "equation": "",
+            "value": 1.47,
+            "unit": "eV",
+            "notes": "Ni diffusion barrier along path B"
+          },
+          {
+            "equation": "",
+            "value": 0.67,
+            "unit": "eV",
+            "notes": "Li diffusion barrier along path A"
+          },
+          {
+            "equation": "",
+            "value": 0.98,
+            "unit": "eV",
+            "notes": "Li diffusion barrier along path B"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-01T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

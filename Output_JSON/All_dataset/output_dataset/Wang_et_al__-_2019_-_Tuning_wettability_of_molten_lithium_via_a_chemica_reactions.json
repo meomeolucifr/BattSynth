@@ -1,0 +1,441 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Tuning wettability of molten lithium via a chemical strategy for lithium metal anodes",
+    "doi": "10.1038/s41467-019-12938-4",
+    "authors": ["Shu-Hua Wang", "Junpei Yue", "Wei Dong", "Tong-Tong Zuo", "Jin-Yi Li", "Xiaolong Liu", "Xu-Dong Zhang", "Lin Liu", "Ji-Lei Shi", "Ya-Xia Yin", "Yu-Guo Guo"],
+    "journal": "Nature Communications",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis",
+    "tags": ["lithium metal anode", "wettability", "ultrathin lithium", "organic coating", "alloy additive"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ultrathin lithium layer",
+      "molecular_formula": "Li",
+      "intended_role": "product",
+      "prov": ["Page 2 Fig. 2m-n"],
+      "properties": {
+        "thickness": {
+          "value": 12,
+          "unit": "µm"
+        }
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiₓInᵧ ultrathin alloy layer",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Supplementary Fig. 17e-f"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Commercial Li heated to form molten Li",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Abietic resin",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "coating",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "5 wt% solution in ethanol",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Copper foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Planar Cu current collector",
+      "prov": ["Page 2 Fig. 2a"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Indium powder",
+      "molecular_formula": "In",
+      "ontology": {
+        "role": "additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "5–50 wt% relative to Li",
+      "prov": ["Supplementary Fig. 17"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Polyvinylidene fluoride (PVDF)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "coating",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Supplementary Fig. 13"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of abietic resin coating on Cu foil",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"],
+              "concentration": {
+                "value": 5,
+                "unit": "wt%"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Solution prepared outside glove box"
+          },
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["chem_4"],
+              "method": "doctor-blade",
+              "wet_thickness": {
+                "value": 200,
+                "unit": "µm"
+              }
+            },
+            "notes": ""
+          },
+          {
+            "action": "evaporate",
+            "parameters": {},
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Solvent fully removed; final coating ~500 nm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient air then argon glove box (<0.1 ppm O2/H2O)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Melting lithium and oxide removal",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "temperature": {
+                "value": 573,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "notes": "Gray oxide layer formed and removed prior to use"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (<0.1 ppm O2/H2O)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Formation of ultrathin Li layer via improved wettability",
+        "operations": [
+          {
+            "action": "contact",
+            "parameters": {
+              "inputs": ["molten Li from step_2", "coated Cu from step_1"],
+              "temperature_range": {
+                "low": 453,
+                "high": 573,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": 0.083,
+              "unit": "min"
+            },
+            "notes": "<5 s spreading to form ultrathin Li"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2 Fig. 2h-l"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of Li-In molten alloy",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_5", "chem_1"],
+              "ratio": "5–50 wt% In"
+            },
+            "notes": ""
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 573,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Homogenize alloy"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods", "Supplementary Fig. 17"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Spreading Li-In alloy on Cu to form ultrathin LixIny layer",
+        "operations": [
+          {
+            "action": "contact",
+            "parameters": {
+              "inputs": ["Li-In alloy from step_4", "chem_4"],
+              "temperature": {
+                "value": 573,
+                "unit": "K"
+              }
+            },
+            "notes": "Decreased surface tension enables spreading"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Supplementary Fig. 17"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Substrate coating with abietic resin"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of molten lithium"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Formation of ultrathin Li layer on coated Cu"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Li-In alloy preparation"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Formation of ultrathin Li-In alloy layer on Cu"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Contact angle unit representation",
+        "excerpt": "\"~140 °C at a temperature of 250 °C for planar Cu; Fig. 2g\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "Li peaks only",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms product is metallic Li",
+      "prov": ["Fig. 2m"]
+    },
+    {
+      "method": "EPMA",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "element distribution at bottom surface",
+          "value": "C 52.19 wt%, O 47.81 wt%",
+          "unit": "wt%"
+        }
+      ],
+      "interpretation": "Carbon-enriched interphase present",
+      "prov": ["Fig. 3b"]
+    },
+    {
+      "method": "FTIR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "functional groups detected",
+          "value": "methyl/methylene, LiOH",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 3c"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li 1s peaks",
+          "value": "LiOH 54.9 eV; Li2O/–COOLi 55.6 eV",
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Indicates formation of Li–O bonds",
+      "prov": ["Fig. 3i"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Gibbs free energy calculation",
+        "results": [
+          {
+            "equation": "ΔrG = ΔrH – TΔrS at 523.15 K",
+            "value": -407.7,
+            "unit": "kJ mol-1",
+            "notes": "For Li + H2O → LiOH + H2"
+          }
+        ],
+        "prov": ["Fig. 4a"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 135,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T18:27:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

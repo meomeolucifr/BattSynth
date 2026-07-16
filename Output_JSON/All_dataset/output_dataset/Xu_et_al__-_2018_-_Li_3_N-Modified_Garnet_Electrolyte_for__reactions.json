@@ -1,0 +1,423 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Li3N-Modified Garnet Electrolyte for All-Solid-State Lithium Metal Batteries Operated at 40 °C",
+    "doi": "10.1021/acs.nanolett.8b03902",
+    "authors": ["Henghui Xu", "Yutao Li", "Aijun Zhou", "Nan Wu", "Sen Xin", "Zongyao Li", "John B. Goodenough"],
+    "journal": "Nano Letters",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state battery", "garnet electrolyte", "Li3N coating"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3N-modified Li6.5La3Zr1.5Ta0.5O12 pellet",
+      "molecular_formula": "Li6.5La3Zr1.5Ta0.5O12/Li3N",
+      "intended_role": "solid electrolyte",
+      "prov": ["Figure 1a", "Text paragraph starting 'Figure 1a demonstrates the preparation'"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li6.5La3Zr1.5Ta0.5O12",
+      "molecular_formula": "Li6.5La3Zr1.5Ta0.5O12",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "garnet electrolyte pellet (LLZT) prepared via solid-state reaction",
+      "prov": ["Text: 'The original garnet Li6.5La3Zr1.5Ta0.5O12 (LLZT) pellet was fabricated...'"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "impurity",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "surface layer on LLZT to be removed",
+      "prov": ["Text: 'Lithium carbonate on the surface of garnet blocks Li+ conduction'"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li3N",
+      "molecular_formula": "Li3N",
+      "ontology": {
+        "role": "coating",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "ultrathin conductive layer deposited by PECVD",
+      "prov": ["Text: 'a layer of Li-conductive Li3N was coated on the treated LLZT surface through plasma enhanced chemical vapor deposition (PECVD)'"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "carbon",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "reductant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used for carbon anneal to remove Li2CO3",
+      "prov": ["Text: 'we remove the original Li2CO3 by a carbon anneal'"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Text describing symmetric Li/LN-LLZT/Li cells"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "cathode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Text: 'an all-solid-state Li/LiFePO4 battery with a Li3N-modified garnet'"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Fabricate LLZT pellet via traditional solid-state reaction.",
+        "operations": [
+          {
+            "action": "solid_state_reaction",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Details referenced from previous studies, not provided in text."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Text: 'The original garnet ... was fabricated through a traditional solid-state reaction according to previous studies.'"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Remove surface Li2CO3 by carbon anneal to obtain Li2CO3-free LLZT.",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["chem_1", "chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Referred to as 'carbon anneal'; exact parameters not specified."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Text: 'we remove the original Li2CO3 by a carbon anneal'"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Coat ultrathin Li3N layer on Li2CO3-free LLZT via PECVD to yield LN-LLZT pellet.",
+        "operations": [
+          {
+            "action": "plasma_enhanced_chemical_vapor_deposition",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Produces dense plates of Li3N on LLZT surface."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1a", "Text: 'a layer of Li-conductive Li3N was coated ... through PECVD'"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesize LLZT pellet."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Carbon anneal to eliminate Li2CO3."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Deposit Li3N layer via PECVD to form LN-LLZT."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing annealing parameters",
+        "excerpt": "we remove the original Li2CO3 by a carbon anneal"
+      },
+      {
+        "issue": "PECVD conditions not specified",
+        "excerpt": "a layer of Li-conductive Li3N was coated on the treated LLZT surface through plasma enhanced chemical vapor deposition (PECVD)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "pure cubic garnet (PDF-80-0457)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "No Li2CO3 detected on original pellet by XRD.",
+      "prov": ["Figure S1", "Text: 'The X-ray diffraction (XRD) pattern of the original garnet pellet ... shows a pure phase of cubic garnet'"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": "several micrometers",
+          "unit": "µm"
+        },
+        {
+          "metric": "surface morphology",
+          "value": "dense Li3N plates on LN-LLZT",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Li3N coating changes surface roughness.",
+      "prov": ["Figure 1b", "Figure 1c"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "C 1s peak at 289.9 eV",
+          "value": "Li2CO3 presence on LC-LLZT",
+          "unit": "eV"
+        },
+        {
+          "metric": "absence of Li2CO3 peak",
+          "value": "confirmed on LN-LLZT",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Successful removal of Li2CO3 and deposition of Li3N.",
+      "prov": ["Figure 1i", "Figure 1j", "Figure 1k"]
+    },
+    {
+      "method": "TOF-SIMS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "LiN− signal intensity drop",
+          "value": "confirms surface Li3N layer thickness",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Uniform Li3N coating on LLZT surface.",
+      "prov": ["Figure 2a", "Figure 2b", "Figure 2c"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": "333 K"
+      },
+      "results": [
+        {
+          "metric": "total resistance (LC-LLZT)",
+          "value": 2512,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "total resistance (LN-LLZT)",
+          "value": 180,
+          "unit": "Ω cm2"
+        }
+      ],
+      "interpretation": "Li3N layer drastically reduces interfacial resistance at 60 °C.",
+      "prov": ["Figure S3a", "Figure S3b"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "total resistance (LC-LLZT)",
+          "value": 4785,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "total resistance (LN-LLZT)",
+          "value": 350,
+          "unit": "Ω cm2"
+        }
+      ],
+      "interpretation": "Reduced resistance maintained at room temperature.",
+      "prov": ["Figure 3a"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge-discharge (Li/LN-LLZT/LFP)",
+        "results": [
+          {
+            "equation": "",
+            "value": 147,
+            "unit": "mAh g-1",
+            "notes": "discharge capacity at 25 µA cm-2 and 60 °C"
+          },
+          {
+            "equation": "",
+            "value": 118,
+            "unit": "mAh g-1",
+            "notes": "discharge capacity at 200 µA cm-2 and 60 °C"
+          },
+          {
+            "equation": "",
+            "value": 136.6,
+            "unit": "mAh g-1",
+            "notes": "discharge capacity at 50 µA cm-2 and 40 °C"
+          },
+          {
+            "equation": "",
+            "value": 100.5,
+            "unit": "mAh g-1",
+            "notes": "discharge capacity at 100 µA cm-2 and 40 °C"
+          }
+        ],
+        "prov": ["Figure 4b", "Figure 4d"]
+      },
+      {
+        "method_name": "Symmetric cell overpotential measurement",
+        "results": [
+          {
+            "equation": "",
+            "value": 23,
+            "unit": "mV",
+            "notes": "overpotential at 100 µA cm-2, 60 °C"
+          },
+          {
+            "equation": "",
+            "value": 44,
+            "unit": "mV",
+            "notes": "overpotential at 200 µA cm-2, 60 °C"
+          },
+          {
+            "equation": "",
+            "value": 60,
+            "unit": "mV",
+            "notes": "overpotential at 100 µA cm-2, 25 °C"
+          }
+        ],
+        "prov": ["Figure S3c", "Figure 3b"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 147,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 300
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,488 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Twin Boundary-Assisted Lithium Ion Transport",
+    "doi": "10.1021/nl504087z",
+    "authors": [
+      "Anmin Nie",
+      "Li-Yong Gan",
+      "Yingchun Cheng",
+      "Qianqian Li",
+      "Yifei Yuan",
+      "Farzad Mashayek",
+      "Hongtao Wang",
+      "Robert Klie",
+      "Udo Schwingenschlogl",
+      "Reza Shahbazian-Yassar"
+    ],
+    "journal": "Nano Letters",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "SnO2 nanowires",
+      "twin boundary",
+      "lithium-ion batteries",
+      "TEM",
+      "vapor transport synthesis"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "SnO2 nanowires (without twin boundaries)",
+      "molecular_formula": "SnO2",
+      "intended_role": "product",
+      "prov": [
+        "Methods: Sample Preparation"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "SnO2 nanowires with (101̅) twin boundaries",
+      "molecular_formula": "SnO2",
+      "intended_role": "product",
+      "prov": [
+        "Methods: Sample Preparation"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li-intercalated SnO2 nanowire (partially lithiated)",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": [
+        "In situ Experiments"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Tin powder",
+      "molecular_formula": "Sn",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "High-purity Sn powder (99.9%) used as source material",
+      "prov": [
+        "Methods: Sample Preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Gold nanoparticles (Au-coated Si wafer)",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "catalyst",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Acts as catalyst; deposited on Si wafer",
+      "prov": [
+        "Methods: Sample Preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Silicon wafer",
+      "molecular_formula": "Si",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods: Sample Preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "carrier gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": 250,
+        "unit": "mL min-1"
+      },
+      "notes": "Original unit reported as 250 sccm",
+      "prov": [
+        "Methods: Sample Preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "oxidant",
+        "category": "gas"
+      },
+      "amount": {
+        "value": 5,
+        "unit": "mL min-1"
+      },
+      "notes": "Original unit reported as 5 sccm (only for TB nanowire growth)",
+      "prov": [
+        "Methods: Sample Preparation"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as Li source for in-situ lithiation",
+      "prov": [
+        "In situ Experiments"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium oxide",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Naturally grown layer on Li metal surface during transfer",
+      "prov": [
+        "In situ Experiments"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Vapor transport synthesis of SnO2 nanowires without twin boundaries",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "temperature": {
+              "value": 1073,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "notes": "Sn powder heated in tube furnace; container partially covered by Au-coated Si wafer"
+          },
+          {
+            "action": "flow_gas",
+            "parameters": {
+              "inputs": [
+                "chem_4"
+              ]
+            },
+            "flow_rate": {
+              "value": 250,
+              "unit": "mL min-1"
+            },
+            "notes": "Argon carrier gas"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods: Sample Preparation"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Vapor transport synthesis of SnO2 nanowires with (101̅) twin boundaries",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "temperature": {
+              "value": 1173,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Container partially covered by Au-coated Si wafer"
+          },
+          {
+            "action": "flow_gas",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "flow_rate": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Mixed gas flow Ar:O2 = 250:5 sccm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar/O2 mixture",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods: Sample Preparation"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "In-situ electrochemical lithiation of a single SnO2 nanowire",
+        "operations": [
+          {
+            "action": "assemble_cell",
+            "parameters": {
+              "inputs": [
+                "target_2",
+                "chem_6",
+                "chem_7"
+              ]
+            },
+            "notes": "Nanofactory TEM-STM holder used; Li2O layer acts as solid electrolyte"
+          },
+          {
+            "action": "apply_bias",
+            "parameters": {},
+            "voltage": {
+              "value": -3,
+              "unit": "V"
+            },
+            "notes": "Bias applied to nanowire side to drive lithiation"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "In situ Experiments"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Growth of SnO2 nanowires without TB at 800 °C for 1 h under Ar flow"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Growth of TB-SnO2 nanowires at 900 °C under Ar/O2 mixed flow"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Electrochemical lithiation of individual SnO2 nanowire inside TEM"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Growth duration for TB-SnO2 nanowires not specified",
+        "excerpt": "\"the TB-SnO2 nanowires were grown at 900 °C under an ambient flow of mixed gas (Ar:O2, 250:5 sccm).\""
+      },
+      {
+        "issue": "Pressure during vapor transport not provided",
+        "excerpt": "\"heated in a tube furnace... with 250 sccm Ar flow\""
+      },
+      {
+        "issue": "Flow rate units (sccm) differ from schema units",
+        "excerpt": "\"250 sccm Ar flow\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "TEM (Transmission Electron Microscopy) with SAED",
+      "parameters": {
+        "accelerating_voltage": "200 keV"
+      },
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "nanowire with (101̅) twin boundary observed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1a",
+        "Methods: Microscopy"
+      ]
+    },
+    {
+      "method": "HAADF-STEM",
+      "parameters": {
+        "probe_convergence": "22 mrad",
+        "detector_inner_outer": "90–370 mrad"
+      },
+      "results": [
+        {
+          "metric": "atomic columns contrast",
+          "value": "Sn columns visible; twin plane mirror symmetry",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1b",
+        "Methods: Microscopy"
+      ]
+    },
+    {
+      "method": "ABF-STEM",
+      "parameters": {
+        "detector_inner_outer": "11–22 mrad"
+      },
+      "results": [
+        {
+          "metric": "oxygen column imaging",
+          "value": "O atoms resolved around Sn",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1c"
+      ]
+    },
+    {
+      "method": "LAADF-STEM",
+      "parameters": {
+        "detector_inner_outer": "40–160 mrad"
+      },
+      "results": [
+        {
+          "metric": "strain contrast",
+          "value": "darker strips along TB and [001] indicate strain from Li intercalation",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 2d"
+      ]
+    },
+    {
+      "method": "EELS mapping",
+      "parameters": {
+        "collection_angle": "45 mrad"
+      },
+      "results": [
+        {
+          "metric": "Li distribution",
+          "value": "higher Li signal at TB and along [001] channels",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 3"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT simulations",
+        "results": [
+          {
+            "equation": "",
+            "value": "Li intercalation energy lowest near TB; energy difference referenced to Li1 site (0 eV)",
+            "unit": "eV"
+          },
+          {
+            "equation": "",
+            "value": "Sn vacancy formation energy lowest at TB",
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T09:06:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

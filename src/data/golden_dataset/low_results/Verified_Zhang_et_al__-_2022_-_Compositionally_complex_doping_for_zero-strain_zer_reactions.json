@@ -1,0 +1,1081 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Compositionally complex doping for zero-strain zero-cobalt layered cathodes",
+    "doi": "10.1038/s41586-022-05115-z",
+    "authors": [
+      "Rui Zhang",
+      "Chunyang Wang",
+      "Peichao Zou",
+      "Ruoqian Lin",
+      "Lu Ma",
+      "Liang Yin",
+      "Tianyi Li",
+      "Wenqian Xu",
+      "Hao Jia",
+      "Qiuyan Li",
+      "Sami Sainio",
+      "Kim Kisslinger",
+      "Stephen E. Trask",
+      "Steven N. Ehrlich",
+      "Yang Yang",
+      "Andrew M. Kiss",
+      "Mingyuan Ge",
+      "Bryant J. Polzin",
+      "Sang Jun Lee",
+      "Wu Xu",
+      "Yang Ren",
+      "Huolin L. Xin"
+    ],
+    "journal": "Nature",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis",
+    "tags": [
+      "lithium-ion batteries",
+      "high-entropy cathode",
+      "zero-cobalt",
+      "layered oxide"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "HE-LNMO",
+      "molecular_formula": "LiNi0.8Mn0.13Ti0.02Mg0.02Nb0.01Mo0.02O2",
+      "intended_role": "product",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states the developed zero-Co layered cathode composition as \u201cLiNi0.8Mn0.13Ti0.02Mg0.02Nb0.01Mo0.02O2 (HE-LNMO)\u201d in the main text (Page 2). The same formula is reiterated as the designed formula in the EDS quantification sentence on Page 2. Therefore the extracted Target Formula matches the source exactly.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Ni0.8Mn0.13Ti0.02Mg0.02Nb0.01Mo0.02(OH)2",
+      "molecular_formula": "Ni0.8Mn0.13Ti0.02Mg0.02Nb0.01Mo0.02(OH)2",
+      "intended_role": "intermediate",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The Methods section explicitly gives the hydroxide precursor formula as \u201cNi0.8Mn0.13Ti0.02Mg0.02Nb0.01Mo0.02(OH)2\u201d. The extracted value includes an additional leading \u201cLi\u201d (i.e., \u201cLiNi0.8...\u201d), which is not part of that precursor formula. Elsewhere, the paper gives the final oxide cathode as LiNi0.8Mn0.13Ti0.02Mg0.02Nb0.01Mo0.02O2, but not Li... (OH)2.",
+        "suggested_fix": "Ni0.8Mn0.13Ti0.02Mg0.02Nb0.01Mo0.02(OH)2"
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "HE-Ni90",
+      "molecular_formula": "LiNi0.9Mn0.03Ti0.02Mg0.02Mo0.02Nb0.01O2",
+      "intended_role": "product",
+      "prov": [
+        "Article \u2013 Generality and transferability"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly lists this exact target composition in the \u201cGenerality and transferrability\u201d section: \u201cHE-Ni90 with the composition of LiNi0.9Mn0.03Ti0.02Mg0.02Mo0.02Nb0.01O2\u201d. This matches the extracted value (ordering of elements aside).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "HE-N70",
+      "molecular_formula": "LiNi0.7Mn0.23Ti0.02Mg0.02Mo0.02Nb0.01O2",
+      "intended_role": "product",
+      "prov": [
+        "Article \u2013 Generality and transferability"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "In the provided paper text, the composition explicitly given for the Ni=0.7 sample is \u201cHE-N70 with the composition of LiNi0.7Mn0.23Ti0.02Mg0.02Mo0.02Nb0.01O2\u201d (Page 6, \u201cGenerality and transferrability\u201d). The extracted value instead lists Nb0.01 but changes the oxygen count to O2 and matches the correct O2; however it adds an extra element ordering difference only (acceptable) but the main issue is that the extracted value includes the same elements/stoichiometries as HE-N70 except it is identical actually\u2014wait: the extracted value is LiNi0.7Mn0.23Ti0.02Mg0.02Mo0.02Nb0.01O2, which matches exactly the paper\u2019s HE-N70 formula. The only mismatch is provenance, not value. Therefore it is supported by Page 6, not necessarily the alleged section label only.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "HE-N60",
+      "molecular_formula": "LiNi0.6Mn0.33Ti0.02Mg0.02Mo0.02Nb0.01O2",
+      "intended_role": "product",
+      "prov": [
+        "Article \u2013 Generality and transferability"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper\u2019s \u2018Generality and transferrability\u2019 section lists HE-N60 as \u201cLiNi0.6Mn0.33Ti0.02Mg0.02Mo0.02Nb0.01O2\u201d. The extracted value adds an extra \u201cMn\u201d term (LiNi0.6Mn0.33Ti0.02Mg0.02Mo0.02Nb0.01O2) and thus is not the exact formula stated in the text.",
+        "suggested_fix": "LiNi0.6Mn0.33Ti0.02Mg0.02Mo0.02Nb0.01O2"
+      }
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "AZCV-LNMO",
+      "molecular_formula": "LiNi0.8Mn0.13Al0.02Zr0.02Cr0.02V0.01O2",
+      "intended_role": "product",
+      "prov": [
+        "Article \u2013 Generality and transferability"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly states in the \u201cGenerality and transferrability\u201d section (Page 6 / Nature Vol 610 p.72) that \u201cAZCV-LNMO with the composition of LiNi0.8Mn0.13Al0.02Zr0.02Cr0.02V0.01O2\u201d was synthesized. This matches the extracted Target Formula exactly (ordering differences only).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "NiSO4\u00b76H2O",
+      "molecular_formula": "NiSO4\u00b76H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section (Materials synthesis) explicitly lists NiSO4\u00b76H2O as a starting reagent, but it does not provide a specific mass, moles, or volume amount for NiSO4\u00b76H2O. It only states that the salts are dissolved with a total transition metal concentration of 1 M. Therefore, the extracted statement that the chemical identity is NiSO4\u00b76H2O and the amount is not specified is supported by the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "MnSO4\u00b74H2O",
+      "molecular_formula": "MnSO4\u00b74H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The Methods section (Materials synthesis, Page 8) explicitly lists MnSO4\u00b74H2O among the precursor chemicals: \u201cNiSO4\u00b76H2O\u2026, MnSO4\u00b74H2O\u2026, MgSO4\u00b77H2O\u2026, \u2026 are dissolved in pure water with a total transition metal concentration of 1 M.\u201d However, the paper does not provide a specific standalone amount (mass, moles, or volume) for MnSO4\u00b74H2O; it only gives the overall transition-metal concentration (1 M) and the target stoichiometric ratios. Therefore, the identity is supported and the extractor\u2019s \u201cAmount: Not specified in text\u201d is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "MgSO4\u00b77H2O",
+      "molecular_formula": "MgSO4\u00b77H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods (Materials synthesis) explicitly lists MgSO4\u00b77H2O (98%, ACROS) as a reagent, but it does not provide a mass, molar amount, or volume specifically for MgSO4\u00b77H2O. It only states that the combined transition-metal solution has a total transition metal concentration of 1 M and that the hydroxide precursor has a stoichiometric ratio Ni0.8Mn0.13Ti0.02Mg0.02Nb0.01Mo0.02(OH)2. Therefore, the extractor\u2019s statement that the amount is not specified in the text is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "TiOSO4 solution",
+      "molecular_formula": "TiOSO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Provided as solution (Sigma-Aldrich)",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "In the Methods section under \u201cMaterials synthesis\u201d, the paper explicitly lists \u201cTiOSO4 solution (Sigma-Aldrich)\u201d among the dissolved reagents, but it does not provide a specific volume, mass, molarity of the TiOSO4 stock solution, or moles/amount used for TiOSO4 individually. It only gives a total transition metal concentration (1 M) for the combined solution and the target stoichiometric ratios. Therefore, the identification of TiOSO4 solution is supported, and the statement that the amount is not specified is also supported by omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Nb(HC2O4)5",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The Methods section (Materials synthesis) explicitly lists Nb(HC2O4)5 (Alfa-Aesar) as a precursor used in the co-precipitation synthesis. However, the text does not provide an explicit amount/mass/volume for Nb(HC2O4)5 (only that all salts are dissolved to make a total transition-metal concentration of 1 M and used to achieve the target stoichiometry). Therefore, the chemical identity is supported and the extracted note 'Amount: Not specified in text' is also supported by omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "(NH4)6Mo7O24",
+      "molecular_formula": "(NH4)6Mo7O24",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section (Materials synthesis) explicitly lists (NH4)6Mo7O24 (99.98%, Sigma-Aldrich) as one of the dissolved precursors. However, the text does not provide an individual amount/mass/volume for (NH4)6Mo7O24; only an overall total transition-metal concentration of 1 M is given for the combined solution. Therefore, the chemical identity is supported and the extractor\u2019s 'Amount: Not specified in text' is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Pure water",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section explicitly states synthesis is performed in \u201cwater solution\u201d and that the transition-metal salts \u201care dissolved in pure water,\u201d and the precipitate is \u201cwashed with pure water.\u201d Nowhere in the provided text is a specific volume or mass amount of water given (only other solutions have specified volumes/concentrations, e.g., 30 ml base solution). Therefore, identifying Water as used but with amount not specified is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "NaOH",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "base",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "M"
+      },
+      "notes": "Concentration in base solution",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "In the Methods section under \u201cMaterials synthesis,\u201d the paper explicitly states: \u201cthe base solution with 2\u0000a0M NaOH and 1.67\u0000a0M NH4OH is mixed and prepared before the reaction.\u201d This directly supports the extracted chemical identity (NaOH) and amount (2 M).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "NH4OH",
+      "molecular_formula": "NH4OH",
+      "ontology": {
+        "role": "base",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.67,
+        "unit": "M"
+      },
+      "notes": "Concentration in base solution",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The Methods section under \u201cMaterials synthesis\u201d explicitly states: \u201cthe base solution with 2 M NaOH and 1.67 M NH4OH is mixed and prepared before the reaction.\u201d This directly supports the chemical identity NH4OH and the amount 1.67 M.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Sulfuric acid (diluted)",
+      "molecular_formula": "H2SO4",
+      "ontology": {
+        "role": "pH adjuster",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The Methods (Materials synthesis) explicitly states: \u201cthe pH of the starting solution is adjusted to 11.0 by using diluted sulfuric acid,\u201d confirming the chemical identity (sulfuric acid, diluted). The text does not provide any amount/concentration/volume for the diluted sulfuric acid used, so \u201cAmount: Not specified in text\u201d is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Ar protection during co-precipitation",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The Methods section explicitly states multiple times that synthesis steps were done/stored/assembled under an Ar (argon) atmosphere (for example: \u201cstored in an Ar-filled bottle\u201d, \u201c60 \u00b0C under Ar protection\u201d, \u201cassembled in the Ar glovebox\u201d). However, the paper never specifies a quantitative amount/flow/pressure for Ar during the protection steps (only oxygen flow is quantified later). Therefore, the extraction \u201cArgon | Amount: Not specified in text\u201d is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "LiOH",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "lithium source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "5% excess relative to stoichiometry",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Methods section (Materials synthesis) explicitly states the precursor powder is \u201cmixed thoroughly with LiOH powder with 5% excess Li as compensation at high temperatures,\u201d confirming the chemical identity LiOH. However, the text does not provide an explicit LiOH mass, molar amount, or concentration\u2014only \u201c5% excess Li,\u201d which is not an absolute LiOH amount. Therefore, the extractor\u2019s \u201cAmount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "calcination atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": 0.5,
+        "unit": "L min-1"
+      },
+      "notes": "Flow rate during calcination",
+      "prov": [
+        "Methods \u2013 Materials synthesis"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "In the Methods section under \u201cMaterials synthesis\u201d (page 8 of the provided text), it explicitly states: \u201cThe HE-LNMO precursor is calcined in a tube furnace at 730\u2009\u00b0C for 12\u2009h under an oxygen flow of 0.5\u2009l\u2009min\u22121.\u201d This directly supports the extracted chemical identity (oxygen) and amount/flow rate (0.5 L min\u22121).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of 1 M total transition-metal solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4",
+                "chem_5",
+                "chem_6",
+                "chem_7"
+              ]
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Magnetic stirring for 12 h; stored under Ar",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly uses the operation verb \u201cdissolved\u201d multiple times in the Methods (Materials synthesis), e.g., \u201cNiSO4\u00b76H2O \u2026 and (NH4)6Mo7O24 \u2026 are dissolved in pure water \u2026\u201d and \u201cThe electrolyte is 1 M LiPF6 dissolved in \u2026\u201d. This supports the extracted synthesis operation 'dissolve'.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.97,
+            "reasoning": "The Methods section explicitly states synthesis steps were performed under an inert argon environment: the transition metal solution was 'stored in an Ar-filled bottle' and the co-precipitation reaction was conducted 'at ... 60 \u00b0C under Ar protection'. This supports the extracted synthesis atmosphere as Ar (even though the final calcination step is under oxygen flow).",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods \u2013 Materials synthesis"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of base solution",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_8",
+                "chem_9"
+              ]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "2 M NaOH and 1.67 M NH4OH mixed before reaction",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly describes a mixing step in the synthesis: in Methods (\u201cMaterials synthesis\u201d), it states \u201cThe transition metal solution is mixed uniformly using magnetic stirring for 12 h\u2026\u201d, and later \u201cthe dried\u2026 precursor powder is mixed thoroughly with LiOH powder\u2026\u201d. Therefore the extracted synthesis operation \u201cmix\u201d is supported by the source text.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods \u2013 Materials synthesis"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Set starting solution and pH adjustment",
+        "operations": [
+          {
+            "action": "measure",
+            "parameters": {
+              "inputs": [
+                "chem_8",
+                "chem_9"
+              ],
+              "volume": {
+                "value": 30,
+                "unit": "mL"
+              }
+            },
+            "notes": "30 mL base solution used as starting solution",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.84,
+              "reasoning": "The paper uses the verb \u201cmeasure\u201d in contexts like \u201cXRD measurements show\u2026\u201d (Page 4) and \u201ctemperature measurements\u2026\u201d (Methods), but it does not present \u201cmeasure\u201d as a discrete synthesis operation/step. The explicit synthesis operations described are dissolving, mixing/stirring, pH adjusting, injecting solutions, precipitating, filtering/washing, drying, mixing with LiOH, and calcining (Methods: Materials synthesis). Therefore assigning the synthesis operation as \u201cmeasure\u201d is not supported by the text.",
+              "suggested_fix": "Replace with an actual synthesis operation explicitly described in Methods, e.g., \u201cco-precipitation\u201d (overall method) or specific steps such as \u201cdissolve\u201d, \u201cmix/stir\u201d, \u201cadjust pH\u201d, \u201cinject\u201d, \u201cprecipitate\u201d, \u201cvacuum filtration\u201d, \u201cwash\u201d, \u201cdry\u201d, \u201cmix with LiOH\u201d, \u201ccalcine (730 \u00b0C, 12 h, O2 flow)\u201d."
+            }
+          },
+          {
+            "action": "adjust pH",
+            "parameters": {
+              "inputs": [
+                "chem_10"
+              ]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "pH adjusted to 11.0",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.94,
+              "reasoning": "The Methods section explicitly states that the pH is adjusted during co-precipitation: \u201cthe pH of the starting solution is adjusted to 11.0 by using diluted sulfuric acid\u201d and the reaction is maintained at \u201cpH = 11.0 \u00b1 0.2\u201d. This directly supports the synthesis operation 'adjust pH'.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods \u2013 Materials synthesis"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Co-precipitation of hydroxide precursor",
+        "operations": [
+          {
+            "action": "inject",
+            "parameters": {
+              "inputs": [
+                "step_1 solution",
+                "step_2 solution"
+              ],
+              "flow_rate": "4 mL min-1"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "notes": "Simultaneous injection at pH 11 \u00b10.2, stirring",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.96,
+              "reasoning": "The Methods section explicitly describes the synthesis step: \u201cthe reaction is started by injecting both the transition metal solution and base solution simultaneously \u2026\u201d. This directly supports the extracted synthesis operation \u201cinject\u201d.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.95,
+            "reasoning": "The Methods section explicitly states multiple steps conducted under argon: the transition metal solution is \u201cstored in an Ar-filled bottle,\u201d the co-precipitation reaction is performed \u201cat \u2026 60 \u00b0C under Ar protection,\u201d and coin cells are \u201cassembled in the Ar glovebox.\u201d This supports 'Ar' as a synthesis atmosphere (at least for precursor preparation/co-precipitation and handling), although the final calcination is under oxygen flow.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods \u2013 Materials synthesis"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Isolation and washing of precipitate",
+        "operations": [
+          {
+            "action": "filter",
+            "parameters": {
+              "inputs": [
+                "target_2"
+              ]
+            },
+            "notes": "Vacuum filtration",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.78,
+              "reasoning": "The Methods section explicitly describes collecting the precipitate using \u201cvacuum filtration\u201d during materials synthesis (\u201cThe laurel-green precipitate is collected using vacuum filtration\u2026\u201d). This supports that a filtration (filter) operation is part of the synthesis workflow.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": [
+                "chem_7"
+              ]
+            },
+            "notes": "Washed with pure water to remove residual ions",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly describes a washing step during synthesis: in the Methods section under \u201cMaterials synthesis\u201d, it states that \u201cThe laurel-green precipitate is collected using vacuum filtration and washed with pure water to remove the residual ions\u2026\u201d. This supports the extracted synthesis operation \u201cwash\u201d.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods \u2013 Materials synthesis"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Drying of hydroxide precursor",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [
+                "target_2"
+              ]
+            },
+            "temperature": {
+              "value": 383,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Vacuum oven",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.75,
+              "reasoning": "The paper\u2019s Methods explicitly state multiple drying steps (for example: \u201cdried in a vacuum oven at 110 \u00b0C\u201d for the precipitate; \u201cdried in a vacuum oven overnight at 105 \u00b0C\u201d for coated electrodes; electrodes \u201cwashed ... and dried\u201d in a glovebox). However, the extracted value is only \u201cdry\u201d, which is not an explicit synthesis operation described verbatim in the text and is overly vague/underspecified compared with the documented operations (\u201cdried in a vacuum oven \u2026\u201d).",
+              "suggested_fix": "dried (e.g., dried in a vacuum oven at 110 \u00b0C; electrodes dried in a vacuum oven overnight at 105 \u00b0C)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods \u2013 Materials synthesis"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Lithiation of precursor",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "target_2",
+                "chem_12"
+              ]
+            },
+            "notes": "5% excess LiOH, thorough mixing",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly describes a mixing step during synthesis: \u201cThe transition metal solution is mixed uniformly using magnetic stirring for 12 h\u2026\u201d and also \u201cthe dried\u2026 precursor powder is mixed thoroughly with LiOH powder\u2026\u201d. This supports the extracted synthesis operation 'mix'.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods \u2013 Materials synthesis"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Calcination to form HE-LNMO",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": [
+                "mixture from step_7"
+              ],
+              "duration": {
+                "value": 720,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 1003,
+                "unit": "K"
+              }
+            },
+            "notes": "Tube furnace under 0.5 L min-1 O2 flow",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly states in the Methods (Materials synthesis) that \u201cThe HE-LNMO precursor is calcined in a tube furnace at 730\u2009\u00b0C for 12\u2009h under an oxygen flow\u2026\u201d. This directly supports the synthesis operation being calcination (i.e., \u201ccalcine\u201d).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.92,
+            "reasoning": "The paper does mention O2 in several contexts (for example, oxygen loss/O2 signal in TGA\u2013MS figures), but that is not the synthesis atmosphere. In the Methods (Materials synthesis), the co-precipitation step is performed \u201cunder Ar protection\u201d and solutions are stored in an \u201cAr-filled bottle,\u201d while the calcination step is performed \u201cunder an oxygen flow of 0.5 l min\u22121.\u201d Therefore a single extracted value of \u201cO2\u201d for \u2018Synthesis Atmosphere\u2019 is incomplete/misleading because multiple atmospheres are used across synthesis steps (Ar and O2).",
+            "suggested_fix": "Ar protection during co-precipitation; calcination under flowing O2 (0.5 l min\u22121)."
+          }
+        },
+        "prov": [
+          "Methods \u2013 Materials synthesis"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare TM solution (1 M) by dissolving salts; stir 12 h under Ar",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.94,
+          "reasoning": "The Methods section explicitly states that the transition metal salts are dissolved in pure water with a total transition metal concentration of 1 M, then the transition metal solution is mixed uniformly using magnetic stirring for 12 h and stored in an Ar-filled bottle (i.e., under Ar). This supports: \u201cPrepare TM solution (1 M) by dissolving salts; stir 12 h under Ar.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Prepare base solution of 2 M NaOH and 1.67 M NH4OH",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The Methods section explicitly states: \u201cThen, the base solution with 2 M NaOH and 1.67 M NH4OH is mixed and prepared before the reaction.\u201d This directly supports the extracted workflow timeline step to prepare a base solution of 2 M NaOH and 1.67 M NH4OH.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Use 30 mL base as starting solution, adjust pH to 11 with diluted H2SO4",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.99,
+          "reasoning": "The Methods section explicitly states: \u201cNext, 30 ml of the as-prepared base solution is used as the starting solution. Then, the pH of the starting solution is adjusted to 11.0 by using diluted sulfuric acid \u2026\u201d. This directly supports \u2018Use 30 mL base as starting solution, adjust pH to 11 with diluted H2SO4\u2019.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Co-precipitate hydroxide precursor at 60 \u00b0C, pH 11 under Ar",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The Methods section explicitly describes co-precipitation conditions for the hydroxide precursor: the reaction is carried out at pH = 11.0 \u00b1 0.2, 60 \u00b0C, under Ar protection (\u201cThe product is synthesized by stirring the solution at pH = 11.0 \u00b1 0.2, 60 \u00b0C under Ar protection.\u201d). This supports the extracted workflow step \u201cCo-precipitate hydroxide precursor at 60 \u00b0C, pH 11 under Ar.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Filter, wash and collect precipitate",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The Methods section explicitly describes the step: \u201cThe laurel-green precipitate is collected using vacuum filtration and washed with pure water\u2026\u201d. This supports the workflow action \u201cFilter, wash and collect precipitate\u201d (vacuum filtration = filter; washed = wash; collected = collect precipitate).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Dry precursor at 110 \u00b0C in vacuum oven",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.97,
+          "reasoning": "The paper does mention drying the hydroxide precipitate/precursor in a vacuum oven at 110\u2009\u00b0C (\u201c...then dried in a vacuum oven at 110\u2009\u00b0C.\u201d, Methods \u2192 Materials synthesis). However, it does not state that this drying step is performed \u201cin vacuum oven\u201d explicitly tied to the word \u201cprecursor\u201d as a \u201cdry precursor at 110 \u00b0C\u201d workflow timeline step; and it also does not specify it as \u201cDry precursor at 110 \u00b0C in vacuum oven\u201d exactly\u2014rather it says \u201claurel-green precipitate ... then dried in a vacuum oven at 110 \u00b0C.\u201d Because the extracted value is essentially correct but slightly mis-phrased, it is not explicitly supported verbatim as written.",
+          "suggested_fix": "Dry the collected precipitate (hydroxide precursor) in a vacuum oven at 110\u2009\u00b0C."
+        }
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Mix precursor with 5% excess LiOH",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The Methods section states: \u201cthe dried transition metal hydroxide precursor powder is mixed thoroughly with LiOH powder with 5% excess Li as compensation at high temperatures.\u201d This supports using LiOH with a 5% excess of Li, but does not explicitly support the extracted wording \u201cMix precursor with 5% excess LiOH\u201d (excess is described in terms of Li, not LiOH).",
+          "suggested_fix": "Mix the dried transition-metal hydroxide precursor thoroughly with LiOH powder with 5% excess Li (as compensation at high temperatures)."
+        }
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Calcine mixture at 730 \u00b0C for 12 h under O2 to obtain HE-LNMO",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The Methods section explicitly states: \u201cThe HE-LNMO precursor is calcined in a tube furnace at 730\u2009\u00b0C for 12\u2009h under an oxygen flow of 0.5\u2009l\u2009min\u22121.\u201d This supports the extracted workflow step (calcination at 730 \u00b0C for 12 h under O2 to obtain HE-LNMO), with the paper additionally specifying the O2 flow rate and that it is the HE-LNMO precursor being calcined to form HE-LNMO.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Drying duration not specified",
+        "excerpt": "dried in a vacuum oven at 110\u2009\u00b0C",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.94,
+          "reasoning": "Supported. In the Methods\u2014Materials synthesis section, the paper states the precipitate was \u201cdried in a vacuum oven at 110\u2009\u00b0C\u201d but does not provide any drying time/duration. A full scan of the provided text shows no other place where a drying duration for this step is specified.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Exact quantities of dissolved salts not provided",
+        "excerpt": "dissolved in pure water with a total transition metal concentration of 1\u2009M",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "Supported. In the Methods (Materials synthesis), the paper states that multiple salts (NiSO4\u00b76H2O, MnSO4\u00b74H2O, MgSO4\u00b77H2O, TiOSO4 solution, Nb(HC2O4)5, (NH4)6Mo7O24) \u201care dissolved in pure water with a total transition metal concentration of 1 M.\u201d However, it does not provide the exact masses/volumes (individual quantities) of each dissolved salt used to make that 1 M total transition-metal solution. Thus the noted workflow ambiguity (missing exact quantities) is consistent with the source text.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "LiOH amount given only as 5% excess, no mass specified",
+        "excerpt": "mixed thoroughly with LiOH powder with 5% excess Li as compensation",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "Supported. In the Methods (Materials synthesis), the paper states: \u201cthe dried transition metal hydroxide precursor powder is mixed thoroughly with LiOH powder with 5% excess Li as compensation at high temperatures.\u201d No explicit mass (g), moles, or LiOH:precursor weight ratio is provided anywhere in the provided full text\u2014only the 5% excess Li statement\u2014so the noted ambiguity (\u201cno mass specified\u201d) is accurate.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation_energy": "105.7 keV",
+        "space_group": "R\u22123m"
+      },
+      "results": [
+        {
+          "metric": "lattice parameter a=b",
+          "value": 2.89,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "lattice parameter c",
+          "value": 14.29,
+          "unit": "\u00c5"
+        }
+      ],
+      "interpretation": "Well-defined layered structure confirmed",
+      "prov": [
+        "Fig. 2b",
+        "Methods \u2013 X-ray techniques"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Page 3 under \u201cCathode material characterization\u201d explicitly states: \u201c...HE-LNMO has a space group of R\u22123m with the lattice parameters of a = b = 2.89 \u00c5, and c = 14.29 \u00c5...\u201d and Fig. 2 caption also reiterates \u201ca = b = 2.89 \u00c5, c = 14.29 \u00c5.\u201d This directly supports both extracted lattice parameters from XRD/refinement.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "DSC",
+      "parameters": {
+        "heating_rate": "10 K min-1"
+      },
+      "results": [
+        {
+          "metric": "exothermic peak temperature",
+          "value": 559,
+          "unit": "K"
+        },
+        {
+          "metric": "enthalpy",
+          "value": 530.0,
+          "unit": "J g-1"
+        }
+      ],
+      "interpretation": "Thermal stability comparable to NMC-532",
+      "prov": [
+        "Fig. 1d",
+        "Extended Data Fig. 2a"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.96,
+        "reasoning": "The paper states that HE-LNMO delivers a DSC exothermic peak temperature of 286 \u00b0C (page 4, discussing Fig. 1d) and that the exothermic-peak enthalpy is 530.0 J g\u22121 (page 4; quantified in Extended Data Fig. 2a). Converting 286 \u00b0C to Kelvin gives ~559 K, so the extracted peak temperature 559 K is consistent. However, the extracted metric label says \"exothermic peak temperature\" without specifying the material; Fig. 1d contains multiple materials (LNO, NMC-811, NMC-622, HE-LNMO, NMC-532). The only explicit numeric peak temperature given in the text is for HE-LNMO (286 \u00b0C). Thus, the value is only supported if it is explicitly tied to HE-LNMO; as written, it is ambiguous and not explicitly supported as a general DSC peak temperature.",
+        "suggested_fix": "Specify the material: exothermic peak temperature (HE-LNMO) = 286 \u00b0C (~559 K); enthalpy of exothermic peak (HE-LNMO) = 530.0 J g\u22121 (Extended Data Fig. 2a)."
+      }
+    },
+    {
+      "method": "TGA\u2013MS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "oxygen release temperature shift vs NMC-811",
+          "value": 100,
+          "unit": "\u00b0C"
+        }
+      ],
+      "interpretation": "Superior oxygen retention",
+      "prov": [
+        "Fig. 1e"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states (page 4, Thermal stability section, referring to Fig. 1e TGA\u2013MS) that \u201cthe maximum oxygen release temperature of HE-LNMO is delayed by approximately 100 \u00b0C compared with that of NMC-811.\u201d This supports an oxygen release temperature shift vs NMC-811 of ~100 \u00b0C as extracted, even though Fig. 1e itself is not fully readable in the provided text excerpt.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Electrochemical (Galvanostatic)",
+      "parameters": {
+        "voltage_window": "2.5\u20134.3 V vs Li/Li+",
+        "current_rate": "C/3"
+      },
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 210.1,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention after 1000 cycles",
+          "value": 85,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "High capacity and long cycle life",
+      "prov": [
+        "Fig. 1c",
+        "Fig. 2f"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "Supported by the paper text (not the alleged provenance). The document explicitly states: (1) \u201cHE-LNMO delivers an initial discharge capacity of 210.1 mAh g\u22121\u201d in the Electrochemical performance section (Page 4; refers to Fig. 2f). (2) It also states \u201cimproved capacity retention (85% at 1,000 cycles in a half cell)\u2026 (Fig. 1c)\u201d (Page 2). Thus both extracted metrics match the text, though the provenance for the 85% value should be Fig. 1c rather than Fig. 2f.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "CV",
+      "parameters": {
+        "scan_rate": "0.1 mV s-1"
+      },
+      "results": [
+        {
+          "metric": "H2\u2013H3 peak shift",
+          "value": 77,
+          "unit": "mV"
+        }
+      ],
+      "interpretation": "Phase transitions postponed in HE-LNMO",
+      "prov": [
+        "Fig. 2g"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly states in the Electrochemical performance section (text describing Fig. 2g) that the \u201cH2\u2013H3 redox peak shifts towards a higher potential by 77 mV\u201d for HE-LNMO compared with NMC-811. The Fig. 2g panel label also shows \u201c77 mV\u201d next to the H2\u2013H3 feature. This directly supports an H2\u2013H3 peak shift of 77 mV.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 210.1,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null,
+    "_llm_flag": {
+      "is_supported": false,
+      "confidence": 0.72,
+      "reasoning": "The paper explicitly reports \u201can initial discharge capacity of 210.1 mAh g\u22121\u201d for HE-LNMO (Page 4, Electrochemical performance, Fig. 2f). However, the field requested is \u201cFinal Capacity,\u201d and the provided text does not state a final (end-of-cycling) capacity value of 210.1 mAh g\u22121. Instead, later sections discuss capacity retention percentages after various cycle counts/voltage windows, but do not equate the final capacity to 210.1 mAh g\u22121.",
+      "suggested_fix": "If the intended value is the initial capacity, use: \u201cInitial discharge capacity = 210.1 mAh g\u22121 (HE-LNMO).\u201d If \u201cFinal Capacity\u201d is required, it should be derived from a specific cycling endpoint (e.g., capacity after 100/500/1000 cycles) which is not explicitly given as 210.1 mAh g\u22121 in the provided text."
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

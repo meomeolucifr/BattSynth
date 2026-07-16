@@ -1,0 +1,692 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Structural and Mechanistic Insights into Fast Lithium-Ion Conduction in Li4SiO4−Li3PO4 Solid Electrolytes",
+    "doi": "10.1021/jacs.5b04444",
+    "authors": [
+      "Yue Deng",
+      "Christopher Eames",
+      "Jean-Noël Chotard",
+      "Fabien Lalère",
+      "Vincent Seznec",
+      "Steffen Emge",
+      "Oliver Pecher",
+      "Clare P. Grey",
+      "Christian Masquelier",
+      "M. Saiful Islam"
+    ],
+    "journal": "Journal of the American Chemical Society",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research_article",
+    "tags": ["solid electrolyte", "lithium ion", "oxide", "Li4SiO4", "Li3PO4"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li4SiO4",
+      "molecular_formula": "Li4SiO4",
+      "intended_role": "product",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3.75Si0.75P0.25O4",
+      "molecular_formula": "Li3.75Si0.75P0.25O4",
+      "intended_role": "product",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li3.5Si0.5P0.5O4",
+      "molecular_formula": "Li3.5Si0.5P0.5O4",
+      "intended_role": "product",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li3.25Si0.25P0.75O4",
+      "molecular_formula": "Li3.25Si0.25P0.75O4",
+      "intended_role": "product",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "γ-Li3PO4",
+      "molecular_formula": "Li3PO4",
+      "intended_role": "product",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "Li4SiO4 single crystals",
+      "molecular_formula": "Li4SiO4",
+      "intended_role": "product",
+      "prov": ["Methods – Synthesis"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiOH·H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "98% purity, Sigma-Aldrich",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "SiO2",
+      "molecular_formula": "SiO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "fumed, dried at 500 °C for 3 h",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "β-Li3PO4",
+      "molecular_formula": "Li3PO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "powder, Sigma-Aldrich",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "distilled water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "overall Li concentration 0.6 M",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as flowing gas during heat treatment and impedance tests",
+      "prov": ["Methods – Synthesis", "AC Impedance"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "coating",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "sputtered onto pellets for electrodes",
+      "prov": ["AC Impedance"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of precursor slurry",
+        "operations": [
+          {
+            "action": "disperse",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"],
+              "concentration": {
+                "value": 0.6,
+                "unit": "M",
+                "basis": "Li"
+              }
+            },
+            "notes": "",
+            "prov": ["Methods – Synthesis"]
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 353,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "slowly heated to evaporate water",
+            "prov": ["Methods – Synthesis"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pulverisation and pellet pressing",
+        "operations": [
+          {
+            "action": "pulverize",
+            "parameters": {},
+            "notes": "",
+            "prov": ["Methods – Synthesis"]
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 40,
+                "unit": "MPa"
+              }
+            },
+            "notes": "cold-pressed into pellets",
+            "prov": ["Methods – Synthesis"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 40,
+            "unit": "MPa"
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "High temperature calcination",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 1173,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 600,
+                "unit": "min"
+              }
+            },
+            "notes": "heated in alumina crucibles under Ar flow",
+            "prov": ["Methods – Synthesis"]
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "temperature": {
+                "value": 298,
+                "unit": "K"
+              }
+            },
+            "notes": "slow cooling to room temperature",
+            "prov": ["Methods – Synthesis"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Post-calcination processing",
+        "operations": [
+          {
+            "action": "pulverize",
+            "parameters": {},
+            "notes": "",
+            "prov": ["Methods – Synthesis"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Growth of Li4SiO4 single crystals",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 1473,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "",
+            "prov": ["Methods – Synthesis"]
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "rate": "10 °C/h"
+            },
+            "notes": "",
+            "prov": ["Methods – Synthesis"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Phase conversion of β-Li3PO4 to γ-Li3PO4",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 1123,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 600,
+                "unit": "min"
+              }
+            },
+            "notes": "",
+            "prov": ["Methods – Synthesis"]
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "temperature": {
+                "value": 298,
+                "unit": "K"
+              }
+            },
+            "notes": "",
+            "prov": ["Methods – Synthesis"]
+          },
+          {
+            "action": "pulverize",
+            "parameters": {},
+            "notes": "",
+            "prov": ["Methods – Synthesis"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Pellet preparation for impedance",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "mass": {
+                "value": 0.15,
+                "unit": "g"
+              },
+              "diameter": "10 mm",
+              "pressure": {
+                "value": 40,
+                "unit": "MPa"
+              }
+            },
+            "notes": "powder pressed in graphite matrix",
+            "prov": ["AC Impedance"]
+          },
+          {
+            "action": "spark_plasma_sinter",
+            "parameters": {
+              "temperature": {
+                "value": 973,
+                "unit": "K"
+              },
+              "heating_rate": "70 K/min",
+              "duration": {
+                "value": 3,
+                "unit": "min"
+              },
+              "force": "8 kN"
+            },
+            "notes": "",
+            "prov": ["AC Impedance"]
+          },
+          {
+            "action": "polish",
+            "parameters": {},
+            "notes": "",
+            "prov": ["AC Impedance"]
+          },
+          {
+            "action": "sputter_coat",
+            "parameters": {
+              "coating_material": "Au"
+            },
+            "notes": "gold sputtering using Bal-Tec SCD 050",
+            "prov": ["AC Impedance"]
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "temperature": {
+                "value": 373,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "notes": "primary vacuum overnight",
+            "prov": ["AC Impedance"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["AC Impedance"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Stoichiometric precursors dispersed in water and concentrated"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Dry solid milled and pressed into green pellets"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "High-temperature calcination at 900 °C under Ar"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Product ground to powder"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Additional high-temp treatment at 1200 °C for single crystal growth"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "β-Li3PO4 converted to γ-Li3PO4 at 850 °C"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Pellets densified by SPS, gold-coated for impedance tests"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of LiOH·H2O, SiO2, and β-Li3PO4 not specified",
+        "excerpt": "Stoichiometric mixtures of raw materials were dispersed in distilled water"
+      },
+      {
+        "issue": "Volume of distilled water not reported; only concentration given",
+        "excerpt": "overall concentration of 0.6 mol of Li per liter of H2O"
+      },
+      {
+        "issue": "Cooling duration after 900 °C treatment unspecified",
+        "excerpt": "followed by slow cooling to room temperature"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRPD",
+      "parameters": {
+        "instrument": "Bruker D8",
+        "radiation": "Cu Kα",
+        "scan_range_2theta": "10–100°",
+        "step_size": "0.009°",
+        "scan_rate": "3.8 s/step"
+      },
+      "results": [
+        {
+          "metric": "superstructure detection in Li4SiO4",
+          "value": "",
+          "unit": "",
+          "notes": "Observed additional peaks indicating 7-fold superstructure"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Methods – Diffraction"]
+    },
+    {
+      "method": "Neutron powder diffraction",
+      "parameters": {
+        "instruments": "HRPT (λ 1.494 Å); D2B",
+        "scan_range_2theta": "10–160°",
+        "step_size": "0.05°"
+      },
+      "results": [
+        {
+          "metric": "crystal structure determination",
+          "value": "",
+          "unit": "",
+          "notes": "Structures for Li3.75Si0.75P0.25O4, Li3.5Si0.5P0.5O4, Li3.25Si0.25P0.75O4 solved"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Methods – Diffraction"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "0.1 Hz – 200 kHz",
+        "temperature_range": "298–573 K",
+        "atmosphere": "Ar"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity Li3.75Si0.75P0.25O4",
+          "value": 2.5e-3,
+          "unit": "S cm-1",
+          "notes": "at 573 K"
+        },
+        {
+          "metric": "ionic conductivity Li3.5Si0.5P0.5O4",
+          "value": 2.5e-3,
+          "unit": "S cm-1",
+          "notes": "at 573 K"
+        },
+        {
+          "metric": "ionic conductivity Li3.25Si0.25P0.75O4",
+          "value": 2.5e-3,
+          "unit": "S cm-1",
+          "notes": "at 573 K"
+        },
+        {
+          "metric": "ionic conductivity Li4SiO4",
+          "value": 2.5e-6,
+          "unit": "S cm-1",
+          "notes": "at 573 K"
+        },
+        {
+          "metric": "ionic conductivity Li3PO4",
+          "value": 1.2e-8,
+          "unit": "S cm-1",
+          "notes": "at 573 K"
+        }
+      ],
+      "interpretation": "Mixed compositions show 3–4 orders of magnitude higher conductivity",
+      "prov": ["Figure 8", "AC Impedance section"]
+    },
+    {
+      "method": "Solid-state NMR (7Li, 6Li, 31P)",
+      "parameters": {
+        "field": "9.4 – 16.4 T",
+        "temperature_range": "320–875 K",
+        "MAS_speed": "1.3–7.0 mm rotors, up to 60 kHz"
+      },
+      "results": [
+        {
+          "metric": "7Li T1 (Li3.75Si0.75P0.25O4)",
+          "value": 3.60,
+          "unit": "s",
+          "notes": "room temperature"
+        },
+        {
+          "metric": "7Li T1 (Li3.5Si0.5P0.5O4)",
+          "value": 2.07,
+          "unit": "s",
+          "notes": "room temperature"
+        },
+        {
+          "metric": "7Li T1 (Li3.25Si0.25P0.75O4)",
+          "value": 1.37,
+          "unit": "s",
+          "notes": "room temperature"
+        },
+        {
+          "metric": "Activation energy (BPP fit, Li3.75Si0.75P0.25O4)",
+          "value": 0.18,
+          "unit": "eV",
+          "notes": ""
+        },
+        {
+          "metric": "Activation energy (BPP fit, Li3.5Si0.5P0.5O4)",
+          "value": 0.23,
+          "unit": "eV",
+          "notes": ""
+        },
+        {
+          "metric": "Activation energy (BPP fit, Li3.25Si0.25P0.75O4)",
+          "value": 0.21,
+          "unit": "eV",
+          "notes": ""
+        }
+      ],
+      "interpretation": "Enhanced Li-ion dynamics and disordered Li sublattice in mixed compositions",
+      "prov": ["NMR section", "Figure 9"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Molecular dynamics simulation",
+        "results": [
+          {
+            "equation": "Nernst–Einstein",
+            "value": 2.5e-3,
+            "unit": "S cm-1",
+            "notes": "Calculated conductivity for mixed compositions at 573 K"
+          },
+          {
+            "metric": "Activation energy (Li3.75Si0.75P0.25O4)",
+            "value": 0.29,
+            "unit": "eV",
+            "notes": "from Arrhenius of calculated diffusivity"
+          },
+          {
+            "metric": "Haven ratio range",
+            "value": 2.3,
+            "unit": "",
+            "notes": "for mixed compositions at 473 K indicating correlated motion"
+          }
+        ],
+        "prov": ["MD simulation section"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-28T00:00:00Z",
+    "source_file": "extracted_text_chunk",
+    "processing_time": null
+  }
+}

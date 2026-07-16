@@ -1,0 +1,521 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "The solid-state Li-ion conductor Li7TaO6: A combined computational and experimental study",
+    "doi": "10.1016/j.ssi.2020.115226",
+    "authors": ["Leonid Kahle", "Xi Cheng", "Tobias Binninger", "Steven David Lacey", "Aris Marcolongo", "Federico Zipoli", "Elisa Gilardi", "Claire Villevieille", "Mario El Kazzi", "Nicola Marzari", "Daniele Pergolesi"],
+    "journal": "Solid State Ionics",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state electrolyte", "Li-ion conductor", "Li7TaO6", "oxide electrolyte"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7TaO6",
+      "molecular_formula": "Li7TaO6",
+      "intended_role": "solid-state electrolyte",
+      "prov": ["Section 2.3.1 Synthesis"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "xs-Li7TaO6",
+      "molecular_formula": "Li8TaO6",
+      "intended_role": "solid-state electrolyte (Li-rich variant)",
+      "prov": ["Section 2.3.1 Synthesis"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li7+xTa0.98Zr0.02O6",
+      "molecular_formula": "",
+      "intended_role": "doped solid-state electrolyte",
+      "prov": ["Section 2.3.1 Synthesis"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li7+xTa0.98Mo0.02O6",
+      "molecular_formula": "",
+      "intended_role": "doped solid-state electrolyte",
+      "prov": ["Section 2.3.1 Synthesis"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ta2O5",
+      "molecular_formula": "Ta2O5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "stoichiometric amount",
+      "prov": ["Section 2.3.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "stoichiometric or excess (Li:Ta = 8:1)",
+      "prov": ["Section 2.3.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "ZrO2",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "added stoichiometric for 2% substitution",
+      "prov": ["Section 2.3.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "MoO3",
+      "molecular_formula": "MoO3",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "added stoichiometric for 2% substitution",
+      "prov": ["Section 2.3.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "MgO wafer",
+      "molecular_formula": "MgO",
+      "ontology": {
+        "role": "support",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as substrate during heating",
+      "prov": ["Section 2.3.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Al2O3 crucible",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "container",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Section 2.3.1"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "dry argon atmosphere",
+      "prov": ["Section 2.3.1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Grinding of reactants for stoichiometric Li7TaO6",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "stoichiometric amounts"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.3.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pellet pressing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 5,
+                "unit": "ton"
+              },
+              "inputs": ["step_1"]
+            },
+            "notes": "formed cylindrical pellet 13 mm diameter, 5 mm thick"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.3.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heat treatment to form Li7TaO6",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 973,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 2880,
+                "unit": "min"
+              },
+              "inputs": ["step_2"]
+            },
+            "notes": "heated on MgO wafer in alumina crucible under dry Ar"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "dry Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 2.3.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Synthesis of Li-rich xs-Li7TaO6",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "stoichiometry": "Li:Ta = 8:1"
+            },
+            "notes": "excess Li2O"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.3.1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Doping with Zr or Mo",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "notes": "for Li7+xTa0.98Zr0.02O6"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "notes": "for Li7+xTa0.98Mo0.02O6"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.3.1"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Spark plasma sintering of Li7TaO6 pellets",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature": {
+                "value": 1223,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 5,
+                "unit": "min"
+              },
+              "pressure": {
+                "value": 100,
+                "unit": "MPa"
+              }
+            },
+            "notes": "10 mm graphite mold, dynamic primary vacuum"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": 1e-4,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.3.1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Grinding Ta2O5 and Li2O"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pellet pressing"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Heat treatment at 700 °C for 48 h"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Optional SPS densification at 950 °C for 5 min under 100 MPa"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Quantities of reactants not specified",
+        "excerpt": "stoichiometric amounts of Ta2O5 (Alfa-Aesar 99.993%) and Li2O (Alfa-Aesar 99.5%) were ground together."
+      },
+      {
+        "issue": "Pressure unit for pressing load unclear (tons vs force/unit area)",
+        "excerpt": "pressed ... at 5 tons load."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu K-α 0.15418 nm",
+        "scan_range": "10–90° 2θ",
+        "step_size": "0.0334°",
+        "duration": "60 min"
+      },
+      "results": [
+        {
+          "metric": "phase",
+          "value": "triclinic Li7TaO6 P-1",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirmed desired phase with minor impurities",
+      "prov": ["Section 2.3.2"]
+    },
+    {
+      "method": "ICP-OES",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li:Ta ratio for xs-Li7TaO6",
+          "value": 1.1,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Li excess (~10%) detected",
+      "prov": ["Section 3.2 Fig.6"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "photon_energy": "Al Kα 1486.6 eV",
+        "pass_energy": "30 eV",
+        "sputtering": "Ar, 3 kV, up to 5 min"
+      },
+      "results": [
+        {
+          "metric": "surface contamination",
+          "value": "presence of Li2CO3 layer >10 nm",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Surface carbonate contamination confirmed",
+      "prov": ["Section 3.2 Fig.8"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "100 mHz–1 MHz",
+        "temperature_range": "40–200 °C",
+        "electrode": "Ti/Pt sputtered"
+      },
+      "results": [
+        {
+          "metric": "activation_energy",
+          "value": 0.6,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Bulk + grain boundary ionic conductivity determined; grain boundary visible in Nyquist plot",
+      "prov": ["Section 3.2 Fig.7"]
+    },
+    {
+      "method": "DC electronic conductivity",
+      "parameters": {
+        "voltage": "100 mV",
+        "configuration": "Cu/Li7TaO6/Cu"
+      },
+      "results": [
+        {
+          "metric": "electronic_conductivity",
+          "value": 2e-9,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Electronic leakage comparable to other SSEs",
+      "prov": ["Section 3.3"]
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate": 0.1,
+        "unit": "mV s-1",
+        "temperature": 353,
+        "potential_range": "-0.5 to 6 V vs Li+/Li"
+      },
+      "results": [
+        {
+          "metric": "oxidation_onset",
+          "value": 2.7,
+          "unit": "V"
+        },
+        {
+          "metric": "reduction_onset",
+          "value": 0.7,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Electrochemical stability window approximately 0.7–2.7 V limited by impurities; intrinsic window predicted 0.31–2.51 V",
+      "prov": ["Section 3.4 Fig.10"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "First-principles MD simulation",
+        "results": [
+          {
+            "equation": "",
+            "value": 5.7e-4,
+            "unit": "S cm-1",
+            "metric": "predicted ionic conductivity at 300 K"
+          },
+          {
+            "equation": "",
+            "value": 0.29,
+            "unit": "eV",
+            "metric": "activation barrier"
+          }
+        ]
+      },
+      {
+        "method_name": "DFT thermodynamics",
+        "results": [
+          {
+            "equation": "Φ_red = 0.31 V; Φ_ox = 2.51 V vs Li",
+            "value": null,
+            "unit": "",
+            "metric": "phase stability window"
+          },
+          {
+            "equation": "Stoichiometry window -0.85 to 3.85 V vs Li",
+            "value": null,
+            "unit": "",
+            "metric": "stoichiometry stability"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-22T18:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

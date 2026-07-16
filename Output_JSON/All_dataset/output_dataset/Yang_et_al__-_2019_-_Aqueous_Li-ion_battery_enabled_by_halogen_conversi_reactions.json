@@ -1,0 +1,422 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Aqueous Li-ion battery enabled by halogen conversion–intercalation chemistry in graphite",
+    "doi": "10.1038/s41586-019-1175-6",
+    "authors": ["Chongyin Yang", "Ji Chen", "Xiao Ji", "Travis P. Pollard", "Xujie Lü", "Cheng-Jun Sun", "Singyuk Hou", "Qi Liu", "Cunming Liu", "Tingting Qing", "Yingqi Wang", "Oleg Borodin", "Yang Ren", "Kang Xu", "Chunsheng Wang"],
+    "journal": "Nature",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": ["graphite intercalation compound", "aqueous lithium-ion battery", "halogen conversion–intercalation", "water-in-salt electrolyte"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LBC-G composite electrode",
+      "molecular_formula": "(LiBr)0.5(LiCl)0.5–graphite",
+      "intended_role": "cathode material",
+      "prov": ["Methods"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Water-in-bisalt (WiBS) electrolyte",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Methods"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "PEO-WiBS gel electrolyte",
+      "molecular_formula": "",
+      "intended_role": "gel electrolyte",
+      "prov": ["Methods"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "HFE-PEO protective gel",
+      "molecular_formula": "",
+      "intended_role": "anode coating",
+      "prov": ["Methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium bromide",
+      "molecular_formula": "LiBr",
+      "ontology": {"role": "reactant", "category": "inorganic salt"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "anhydrous, 99.9%; mass ratio in mix 2 (LiBr):1 (LiCl):2 (graphite)",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {"role": "reactant", "category": "inorganic salt"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "anhydrous, 99.9%; mass ratio LiBr:LiCl 2:1",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Graphite powder (TIMREX KS4)",
+      "molecular_formula": "C",
+      "ontology": {"role": "host material", "category": "carbon"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "average particle size ≈4.1 µm; mass ratio to salts 2 (LiBr):1 (LiCl):2 (graphite)",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Polytetrafluoroethylene",
+      "molecular_formula": "(C2F4)n",
+      "ontology": {"role": "binder", "category": "polymer"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "5 wt% in cathode film; 10 wt% in anode",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Titanium metal mesh",
+      "molecular_formula": "Ti",
+      "ontology": {"role": "current collector", "category": "metal"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "100 mesh",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Mesocarbon microbead graphite",
+      "molecular_formula": "C",
+      "ontology": {"role": "anode active", "category": "carbon"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "used for graphite anode",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiTFSI",
+      "ontology": {"role": "electrolyte salt", "category": "lithium salt"},
+      "amount": {"value": 21, "unit": "mol kg-1"},
+      "notes": "in water for WiBS electrolyte",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Lithium trifluoromethanesulfonate",
+      "molecular_formula": "LiOTf",
+      "ontology": {"role": "electrolyte salt", "category": "lithium salt"},
+      "amount": {"value": 7, "unit": "mol kg-1"},
+      "notes": "in water for WiBS electrolyte",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "HPLC grade",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Poly(ethylene oxide)",
+      "molecular_formula": "(C2H4O)n",
+      "ontology": {"role": "gel polymer", "category": "polymer"},
+      "amount": {"value": 20, "unit": "wt%"},
+      "notes": "used to gel WiBS; 10 wt% for HFE coating",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Polyvinyl alcohol",
+      "molecular_formula": "(C2H4O)n",
+      "ontology": {"role": "gel polymer", "category": "polymer"},
+      "amount": {"value": 10, "unit": "wt%"},
+      "notes": "alternative gel former",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "1,1,2,2-Tetrafluoroethyl-2',2',2'-trifluoroethyl ether",
+      "molecular_formula": "C4H2F7O",
+      "ontology": {"role": "solvent", "category": "fluorinated ether"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "HFE used for protective gel",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Fluoroethylene carbonate",
+      "molecular_formula": "C3H3FO3",
+      "ontology": {"role": "co-solvent", "category": "carbonate"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "5 vol% in HFE mixture",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of LBC-G composite powder",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "mass_ratio": "2:1:2"
+            },
+            "notes": "Homogenously mixed by zirconia ball milling",
+            "duration": {"value": 15, "unit": "min"},
+            "temperature": {"value": null, "unit": "K"}
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Fabrication of LBC-G cathode film",
+        "operations": [
+          {
+            "action": "combine",
+            "parameters": {
+              "inputs": ["target_1", "chem_4"]
+            },
+            "ratio": "95:5 (w/w)",
+            "notes": "Composite pressed onto titanium mesh current collector"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Preparation of WiBS liquid electrolyte",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_7", "chem_8", "chem_9"],
+              "concentrations": "21 mol kg-1 LiTFSI, 7 mol kg-1 LiOTf"
+            },
+            "temperature": {"value": null, "unit": "K"},
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Formation of PEO-WiBS gel electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["target_2", "chem_10"],
+              "weight_percent_polymer": 20
+            },
+            "temperature": {"value": 353, "unit": "K"},
+            "duration": {"value": 60, "unit": "min"},
+            "notes": "Heated in sealed glass moulds, then cooled to room temperature to obtain semi-solid gel"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Preparation of HFE-PEO protective coating",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_12", "chem_7", "chem_10", "chem_13"],
+              "composition": "0.5 M LiTFSI, 10 wt% PEO in HFE/FEC 95:5 (v/v)"
+            },
+            "temperature": {"value": 343, "unit": "K"},
+            "duration": {"value": 5, "unit": "min"},
+            "notes": "Vigorous stirring"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Fabrication of graphite anode",
+        "operations": [
+          {
+            "action": "combine",
+            "parameters": {
+              "inputs": ["chem_6", "chem_4"],
+              "weight_ratio": "9:1"
+            },
+            "notes": "Cast on stainless steel mesh current collector"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ball-milling of LiBr, LiCl, and graphite to produce LBC-G powder"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pressing composite with PTFE onto Ti mesh to form cathode"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Preparation of highly concentrated WiBS electrolyte"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Conversion of WiBS into PEO gel electrolyte"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Synthesis of fluorinated ether–PEO protective gel"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Preparation of PTFE-bonded graphite anode on stainless steel mesh"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of LiBr, LiCl, and graphite not provided",
+        "excerpt": "mass ratio of 2:1:2 (corresponding to a molar ratio of (LiBr)0.5(LiCl)0.5C~3.7; see Methods)"
+      },
+      {
+        "issue": "Pressing conditions (pressure) for electrode fabrication not specified",
+        "excerpt": "Composite LBC-G cathodes were fabricated by compressing LBC-G composite and polytetrafluoroethylene (PTFE; Sigma-Aldrich) at a weight ratio of 95:5 on a titanium metal mesh"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {"scan_rate": "0.05 mV s-1", "potential_window": "3.2–4.9 V vs Li/Li+"},
+      "results": [{"metric": "distinct redox ranges", "value": "4.0–4.2 V (Br−) and 4.2–4.5 V (Cl−)", "unit": "V"}],
+      "interpretation": "",
+      "prov": ["Figure 1b"]
+    },
+    {
+      "method": "Galvanostatic charge/discharge",
+      "parameters": {"current_density": "80 mA g-1"},
+      "results": [{"metric": "discharge capacity", "value": 243, "unit": "mAh g-1"}],
+      "interpretation": "High reversible capacity",
+      "prov": ["Figure 1c"]
+    },
+    {
+      "method": "GITT",
+      "parameters": {"current_density": "80 mA g-1"},
+      "results": [
+        {"metric": "quasi-equilibrium potential Br−", "value": 4.05, "unit": "V"},
+        {"metric": "quasi-equilibrium potential Cl−", "value": 4.35, "unit": "V"},
+        {"metric": "diffusion coefficient", "value": "10^-15–10^-13", "unit": "cm2 s-1"}
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1e"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [{"metric": "apparent ionic diffusion coefficient", "value": "6.85×10^-15–2.07×10^-14", "unit": "cm2 s-1"}],
+      "interpretation": "",
+      "prov": ["Figure 1f"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {"range": "100–550 cm-1"},
+      "results": [{"metric": "intercalant peaks", "value": "Br2 at 242 cm-1, BrCl at 310 cm-1", "unit": "cm-1"}],
+      "interpretation": "Confirms intercalation of Br and BrCl",
+      "prov": ["Figure 2a"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [{"metric": "stage-I d002 spacing", "value": 3.43, "unit": "Å"}],
+      "interpretation": "Formation of densely packed stage-I GIC",
+      "prov": ["Figure 3b"]
+    },
+    {
+      "method": "XANES",
+      "parameters": {"edges": "Br K, Cl K"},
+      "results": [{"metric": "evidence of Br and Cl oxidation states", "value": "Br reaches ~0, Cl ~-0.25", "unit": ""}],
+      "interpretation": "",
+      "prov": ["Figure 2b","Figure 2c"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Energy density calculation",
+        "results": [
+          {"equation": "", "value": 460, "unit": "Wh kg-1"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 243,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 230
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-28T00:00:00Z",
+    "source_file": "extracted_text_chunk",
+    "processing_time": null
+  }
+}

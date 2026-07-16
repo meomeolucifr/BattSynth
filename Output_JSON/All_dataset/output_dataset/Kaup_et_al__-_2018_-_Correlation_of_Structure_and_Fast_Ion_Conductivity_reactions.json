@@ -1,0 +1,379 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Correlation of Structure and Fast Ion Conductivity in the Solid Solution Series Li 1+2xZn1−xPS4",
+    "doi": "10.1021/acs.chemmater.7b05108",
+    "authors": [
+      "Kavish Kaup",
+      "Fabien Lalère",
+      "Ashfia Huq",
+      "Abhinandan Shyamsunder",
+      "Torben Adermann",
+      "Pascal Hartmann",
+      "Linda F. Nazar"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "communication",
+    "tags": ["solid electrolyte", "lithium-ion conductor", "thiophosphate", "solid-state synthesis"]
+  },
+  "targets": [
+    {
+      "target_id": "t1",
+      "compound_name": "Li1.5Zn0.75PS4",
+      "molecular_formula": "Li1.5Zn0.75PS4",
+      "intended_role": "product",
+      "prov": ["Page 593, Figure 2"]
+    },
+    {
+      "target_id": "t2",
+      "compound_name": "Li1.7Zn0.65PS4",
+      "molecular_formula": "Li1.7Zn0.65PS4",
+      "intended_role": "product",
+      "prov": ["Page 593-594, Figure 4"]
+    },
+    {
+      "target_id": "t3",
+      "compound_name": "Li2.5Zn0.25PS4",
+      "molecular_formula": "Li2.5Zn0.25PS4",
+      "intended_role": "product",
+      "prov": ["Page 594, text referencing x = 0.75"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "c1",
+      "name": "ZnS",
+      "molecular_formula": "ZnS",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "nanosized ZnS employed in the synthesis",
+      "prov": ["Page 593, paragraph discussing synthesis"]
+    },
+    {
+      "chemical_id": "c2",
+      "name": "Li4P2S6",
+      "molecular_formula": "Li4P2S6",
+      "ontology": {
+        "role": "impurity",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 593, Figure 2"]
+    },
+    {
+      "chemical_id": "c3",
+      "name": "Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "ontology": {
+        "role": "impurity",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 593, Figure 2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "s1",
+        "description": "Ball milling of precursor powders to form homogeneous mixtures for Li1+2xZn1−xPS4 compositions (x = 0.25, 0.5, 0.75).",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["c1"],
+              "speed": {
+                "value": null,
+                "unit": "rpm"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Other lithium and phosphorus sources not specified in the excerpt."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 593, synthesis description"]
+      },
+      {
+        "step_id": "s2",
+        "description": "Annealing of ball-milled precursors to obtain crystalline or glass-ceramic Li1+2xZn1−xPS4 phases.",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Exact temperatures for x = 0.25 and 0.5 not given in text."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 593, synthesis description"]
+      },
+      {
+        "step_id": "s3",
+        "description": "Low-temperature heat treatment of x = 0.75 composition to produce highly conductive glassy phase.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 503,
+              "unit": "K"
+            },
+            "notes": "230 °C reported."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 594, paragraph describing 230 °C treatment"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "s1",
+        "description": "Ball milling of precursors."
+      },
+      {
+        "step_ref": "s2",
+        "description": "General annealing to form crystalline products."
+      },
+      {
+        "step_ref": "s3",
+        "description": "Low-temperature heat treatment for x = 0.75 sample."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified precursor list and amounts",
+        "excerpt": "Li1+2xZn1−xPS4 compositions were prepared ... using solid-state synthesis consisting of ball-milling and annealing."
+      },
+      {
+        "issue": "Annealing temperatures and times not provided for x = 0.25 and 0.5 samples",
+        "excerpt": "The corresponding synthesis temperatures are listed above the compositions."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Synchrotron powder X-ray diffraction",
+      "parameters": {
+        "wavelength": "0.412 Å"
+      },
+      "results": [
+        {
+          "metric": "lattice parameter a",
+          "value": 5.7945,
+          "unit": "Å",
+          "sample_id": "t2"
+        },
+        {
+          "metric": "lattice parameter c",
+          "value": 8.8337,
+          "unit": "Å",
+          "sample_id": "t2"
+        }
+      ],
+      "interpretation": "Body-centered tetragonal cell, space group I4̄.",
+      "prov": ["Page 593-594, Table 1 and Figure 4"]
+    },
+    {
+      "method": "Time-of-flight neutron powder diffraction",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "occupancy Li (2a site)",
+          "value": 0.344,
+          "unit": "",
+          "sample_id": "t2"
+        },
+        {
+          "metric": "occupancy Zn (2a site)",
+          "value": 0.656,
+          "unit": "",
+          "sample_id": "t2"
+        },
+        {
+          "metric": "occupancy Li (2d site)",
+          "value": 0.345,
+          "unit": "",
+          "sample_id": "t2"
+        }
+      ],
+      "interpretation": "Identification of interstitial lithium on 2d sites.",
+      "prov": ["Page 593-594, Table 1"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 1.30e-4,
+          "unit": "S cm-1",
+          "sample_id": "t2"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.22,
+          "unit": "eV",
+          "sample_id": "t2"
+        },
+        {
+          "metric": "ionic conductivity",
+          "value": 1.65e-5,
+          "unit": "S cm-1",
+          "sample_id": "t1"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.25,
+          "unit": "eV",
+          "sample_id": "t1"
+        },
+        {
+          "metric": "ionic conductivity",
+          "value": 8.4e-4,
+          "unit": "S cm-1",
+          "sample_id": "t3"
+        }
+      ],
+      "interpretation": "Conductivity improves with higher lithium content and glass-ceramic nature.",
+      "prov": ["Page 594-595, Figure 6"]
+    },
+    {
+      "method": "Scanning electron microscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "featureless glass-ceramic",
+          "unit": "",
+          "sample_id": "t3"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 594, Figure S2 (referenced)"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "presence of P2S7^4− units",
+          "value": "detected",
+          "unit": "",
+          "sample_id": "t3"
+        }
+      ],
+      "interpretation": "Indicates glassy matrix contribution to conductivity.",
+      "prov": ["Page 594, Figure S3 (referenced)"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "σ = σ0 * exp(-Ea/RT)",
+            "value": 0.22,
+            "unit": "eV",
+            "sample_id": "t2"
+          },
+          {
+            "equation": "σ = σ0 * exp(-Ea/RT)",
+            "value": 0.25,
+            "unit": "eV",
+            "sample_id": "t1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-29T15:33:00Z",
+    "source_file": "provided_text",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,909 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A scalable Li-Al-Cl stratified structure for stable all-solid-state lithium metal batteries",
+    "doi": "10.1038/s41467-024-48585-7",
+    "authors": [
+      "Han Su",
+      "Jingru Li",
+      "Yu Zhong",
+      "Yu Liu",
+      "Xuhong Gao",
+      "Juner Kuang",
+      "Minkang Wang",
+      "Chunxi Lin",
+      "Xiuli Wang",
+      "Jiangping Tu"
+    ],
+    "journal": "Nature Communications",
+    "year": 2024
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid-state electrolyte",
+      "lithium metal batteries",
+      "interface engineering"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li-Al-Cl stratified structure (LACSS)",
+      "molecular_formula": "",
+      "intended_role": "anode/SEI integrated structure",
+      "prov": [
+        "Fig. 1",
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The field 'Target Formula' is blank in the extracted value. The paper does explicitly state the target material/structure and its composition: the Li\u2013Al\u2013Cl stratified structure (LACSS) consists of Li, Li9Al4, and LiCl (e.g., XRD indexed to Li, LiCl, and Li9Al4; reaction equation 21 Li + 4 AlCl3 = Li9Al4 + 12 LiCl). Therefore, leaving the target formula empty is not supported by the source text.",
+        "suggested_fix": "Li\u2013Al\u2013Cl stratified structure (LACSS), composed of Li + Li9Al4 + LiCl (overall phases indexed to Li, LiCl, and Li9Al4; Eq. (1): 21 Li + 4 AlCl3 \u2192 Li9Al4 + 12 LiCl)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li5.5PS4.5Cl1.5 (LPSC)",
+      "molecular_formula": "Li5.5PS4.5Cl1.5",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly uses the electrolyte composition Li5.5PS4.5Cl1.5 and names it LPSC. On Page 2 it states: \u201cthe LACSS symmetric cell using Li5.5PS4.5Cl1.5 (LPSC) electrolytes\u2026\u201d. This directly supports the extracted Target Formula value.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reactant",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Foil, polished prior to reaction",
+      "prov": [
+        "Methods",
+        "Fig. 1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.83,
+        "reasoning": "The paper clearly identifies the presence/use of lithium (Li metal/foil) throughout (e.g., \u201cLithium (Li) foil (99.95%...)\u201d in Methods; Li in Eq. (1) and figures discussing Li metal). However, the extracted statement \u201cAmount: Not specified in text\u201d is not correct because the Methods explicitly specify multiple lithium amounts/thicknesses used in experiments (e.g., \u201c100 \u03bcm-thick bare Li\u201d and \u201c60 \u03bcm-thick LACSS\u201d in full cells; LPSC powder mass, etc.). Therefore, while the chemical identity \u2018Lithium\u2019 is supported, the claim that its amount is not specified is contradicted by the text.",
+        "suggested_fix": "Lithium (Li) foil/metal is used; amounts are specified in places such as: 100 \u03bcm-thick bare Li (full cells) and 60 \u03bcm-thick LACSS; also LPSC pellets use 150 mg LPSC and full-cell electrolyte uses 120 mg LPSC."
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Aluminum trichloride",
+      "molecular_formula": "AlCl3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Vapor concentration 3.6 g L\u22121",
+      "prov": [
+        "Methods",
+        "Fig. 1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.75,
+        "reasoning": "The paper explicitly identifies AlCl3 (aluminum trichloride) as the precursor (e.g., \u201cnano-AlCl3 precursors\u201d, \u201cgas-state AlCl3 (99.99%, Macklin)\u201d, and the reaction 21Li + 4AlCl3 \u2192 Li9Al4 + 12LiCl). However, the extracted claim that the Amount is \u201cNot specified in text\u201d is not supported because the Methods section specifies the AlCl3 gas concentration used for deposition (\u201c3.6 g L\u22121 at 178 \u00b0C\u201d) and also discusses controlling deposition via exposure time (e.g., 40 s in Results; 20 s/60 s for low/high loading). Thus, some quantitative amount/loading information is provided.",
+        "suggested_fix": "Aluminum trichloride (AlCl3) | Amount: AlCl3 gas concentration 3.6 g L\u22121 (deposition at 178 \u00b0C); deposition amount controlled by exposure time (e.g., 40 s; also 20 s and 60 s for low/high loading)."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li9Al4",
+      "molecular_formula": "Li9Al4",
+      "ontology": {
+        "role": "SEI component",
+        "category": "intermetallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Formed in situ during LACSS preparation",
+      "prov": [
+        "Fig. 1",
+        "Fig. 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.83,
+        "reasoning": "The paper explicitly identifies Li9Al4 as a phase/product in the Li-Al-Cl stratified structure (e.g., XRD indexing to Li, LiCl, and Li9Al4; reaction equation 21 Li + 4 AlCl3 = Li9Al4 + 12 LiCl; and TEM/SAED/FFT identifying Li9Al4). However, the text does not specify an explicit numeric amount of Li9Al4 (e.g., wt%, mol%, loading, thickness contribution), only that it is enriched at the surface and diluted in the bulk. Therefore, 'Li9Al4 | Amount: Not specified in text' is supported, though the alleged provenance is imprecise (the explicit identification is mainly in Supplementary Fig. 8 / Eq. (1) and Fig. 2 discussion, not solely Fig. 1\u20132).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "SEI component / reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Generated from AlCl3 reduction and also used in LPSC synthesis",
+      "prov": [
+        "Fig. 1",
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The document discusses lithium chloride (LiCl) as a reaction product in the Li-Al-Cl stratified structure (e.g., XRD indexed to Li, LiCl, Li9Al4; Eq. (1) produces 12 LiCl; Methods also lists LiCl as a reagent for making LPSC). However, the extracted chemical identity is \"Lithium chloride\" (not LiCl) and the amount is claimed as \"Not specified in text\". The text does specify quantitative information related to LiCl (e.g., in Eq. (1): 4 AlCl3 + 21 Li \u2192 Li9Al4 + 12 LiCl; Methods: LiCl used as a precursor for LPSC though its mass is not given). Therefore, it is not correct to say the amount is not specified in the text without qualification; stoichiometric amount (12 LiCl per reaction as written) is explicitly given.",
+        "suggested_fix": "Lithium chloride (LiCl) | Amount: Produced stoichiometrically as 12 LiCl in the reaction 21 Li + 4 AlCl3 \u2192 Li9Al4 + 12 LiCl (Eq. 1). (If the intent is experimental mass/loading of LiCl, then specify: \"experimental mass/loading not specified\".)"
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used for LPSC synthesis",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper does not mention \u201clithium sulfide\u201d as a reagent/material identity for the reported synthesis or cell fabrication. Instead, the Methods explicitly list Li metal foil, AlCl3, and for electrolyte synthesis: Li2S, P2S5, and LiCl (to form Li5.5PS4.5Cl1.5, LPSC). \u201cLi2S\u201d appears as a reduction product at interfaces and as a precursor, but \u201clithium sulfide (Li2S)\u201d is not referred to as \u201clithium sulfide\u201d in the provided text, and no \u201cLi2S amount\u201d is given beyond \u201cstoichiometric\u201d and LPSC mass (150 mg). Thus the extracted chemical identity is incorrect (it conflates Li2S with lithium sulfide and mislabels it as lithium sulfide while writing \u201cLithium sulfide\u201d without formula), and the statement that its amount is not specified is also not properly tied to a correct chemical entry.",
+        "suggested_fix": "Replace with: \u201cLi2S (99.98%, Sigma-Aldrich) | Amount: stoichiometric (not numerically specified)\u201d as an LPSC precursor (Methods: \u2018Stoichiometric Li2S, P2S5, and LiCl\u2026 mechanically milled\u2026\u2019). If the intended entry is \u201cLithium sulfide (Li2S) used as precursor\u201d, keep amount as \u2018stoichiometric, not specified\u2019."
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used for LPSC synthesis",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper does not mention using phosphorus pentasulfide (P2S5) in the main-text Methods or elsewhere as a standalone reagent for any synthesis except as part of preparing the LPSC electrolyte, where it is explicitly listed as \u201cP2S5 (99 %, Macklin)\u201d and the amounts are described only as \u201cstoichiometric\u201d (no numerical mass/volume). Additionally, the extracted chemical identity is incorrect: it says \u201cPhosphorus pentasulfide\u201d but the text uses the formula P2S5. Therefore, while the *amount* is indeed not numerically specified, the *chemical identity* should be recorded as P2S5 (phosphorus pentasulfide), not the spelled-out name as a separate item with no context.",
+        "suggested_fix": "P2S5 (phosphorus pentasulfide); Amount: stoichiometric (no numerical amount given)."
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Zr/F\u2013doped LiNi0.83Co0.12Mn0.05O2 (NCM83125)",
+      "molecular_formula": "LiNi0.83Co0.12Mn0.05O2",
+      "ontology": {
+        "role": "cathode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in full\u2010cell assembly",
+      "prov": [
+        "Methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.77,
+        "reasoning": "The paper does identify the cathode as \u201cZr/F doped NCM83125\u201d and also states the composition \u201cLiNi0.83Co0.12Mn0.05O2 (NCM83125)\u201d. However, it does not explicitly state the chemical identity as \u201cZr/F\u2013doped LiNi0.83Co0.12Mn0.05O2 (NCM83125)\u201d in a single, unambiguous phrase; rather, it describes \u201cZr/F doped NCM83125\u201d and elsewhere defines NCM83125 as LiNi0.83Co0.12Mn0.05O2. Additionally, the extracted claim \u201cAmount: Not specified in text\u201d is contradicted by the Methods section, which provides explicit amounts/loading information for the cathode in the composite (70:30 NCM83125:LPSC by weight) and the cathode loading (e.g., 1.78 mAh cm\u22122 for long-term cycling; 1.07 mAh cm\u22122 for rate/GITT). Therefore the extraction is not fully supported.",
+        "suggested_fix": "Chemical identity: Zr/F doped NCM83125 (where NCM83125 = LiNi0.83Co0.12Mn0.05O2). Amount/loading: composite positive electrode NCM83125:LPSC = 70:30 wt%; cathode loading = 1.78 mAh cm\u22122 (long-term cycling) and 1.07 mAh cm\u22122 (rate/GITT)."
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_LACSS_1",
+        "description": "Polish Li foil to remove native oxide layer",
+        "operations": [
+          {
+            "action": "polish",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Plastic scraper",
+            "prov": [
+              "Methods"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.96,
+              "reasoning": "The Methods section explicitly states: \"Lithium (Li) foil ... was first polished by a plastic scraper to remove the native oxidation layer.\" This directly supports the synthesis operation 'polish'.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.88,
+            "reasoning": "The paper explicitly states that \u201cAll the solid-state cells were assembled in the Ar-filled glovebox (H2O < 0.1 ppm, O2 < 0.1 ppm)\u201d in the Methods section, which indicates an argon atmosphere was used during synthesis/handling steps. Thus, the extracted synthesis atmosphere \u201cAr\u201d is supported.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_LACSS_2",
+        "description": "Sublimation\u2013deposition of AlCl3 onto Li foil",
+        "operations": [
+          {
+            "action": "sublime_deposit",
+            "parameters": {
+              "inputs": [
+                "chem_2",
+                "chem_1"
+              ],
+              "concentration": {
+                "value": 3.6,
+                "unit": "g L-1"
+              }
+            },
+            "duration": {
+              "value": 0.67,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 451,
+              "unit": "K"
+            },
+            "notes": "Generates a nanosized AlCl3 layer",
+            "prov": [
+              "Methods",
+              "Fig. 1"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.98,
+              "reasoning": "The paper explicitly describes an \u201cAlCl3 sublimation-deposition\u201d step as part of the scalable \u201csublimating-winding-rolling method\u201d used to prepare the Li-Al-Cl stratified structure (LACSS). Figure 1 labels the process step as \u201cAlCl3 sublimation-deposition,\u201d and the Methods section states the Li foil \u201cwas exposed to the gas-state AlCl3 \u2026 generating a layer of AlCl3 deposits on the surface.\u201d This matches the synthesis operation 'sublime_deposit'.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.93,
+            "reasoning": "The Methods section explicitly states: \"All the solid-state cells were assembled in the Ar-filled glovebox (H2O < 0.1 ppm, O2 < 0.1 ppm).\" This directly supports that the synthesis/handling atmosphere was Ar (argon) during preparation/assembly steps relevant to the LACSS and cells.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_LACSS_3",
+        "description": "Winding of AlCl3-deposited Li foil to encapsulate precursors",
+        "operations": [
+          {
+            "action": "wind",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": [
+              "Fig. 1",
+              "Methods"
+            ],
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.9,
+              "reasoning": "The paper describes a \u201csublimating-winding-rolling method\u201d and repeatedly mentions \u201cwinding-rolling process\u201d (including Fig. 1 caption and Methods: \u201ca winding-rolling process was conducted\u2026\u201d). There is no synthesis operation explicitly called \u201cwind\u201d; the correct term used is \u201cwinding\u201d (as a step in the winding-rolling process).",
+              "suggested_fix": "winding (as part of a sublimating-winding-rolling / winding-rolling process)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.95,
+            "reasoning": "The paper explicitly states that \u201cAll the solid-state cells were assembled in the Ar-filled glovebox (H2O < 0.1 ppm, O2 < 0.1 ppm)\u201d in the Methods section, which directly supports argon (Ar) as the synthesis/processing atmosphere for cell assembly and handling of materials. Additionally, Ar+ sputtering is mentioned for XPS depth profiling, but the glovebox statement is the relevant atmosphere description.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_LACSS_4",
+        "description": "Rolling process to complete reaction and form LACSS",
+        "operations": [
+          {
+            "action": "roll",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "High strain rate induces phase separation",
+            "prov": [
+              "Fig. 1",
+              "Methods"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The paper explicitly describes a \u201csublimating-winding-rolling method\u201d and states that strain-activated atom diffusion occurs \u201cduring the rolling process\u201d to form the Li-Al-Cl stratified structure (Page 2). Figure 1e also schematically lists \u201cRolling\u201d as a step in the preparation process, and the text further discusses a \u201cwinding-rolling process\u201d (Page 3) and \u201cmechanical rolling process\u201d (Page 4). Therefore, the synthesis operation \u2018roll\u2019 is directly supported.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.9,
+            "reasoning": "The paper explicitly states that all solid-state cells were assembled in an Ar-filled glovebox (H2O < 0.1 ppm, O2 < 0.1 ppm), which is a synthesis/processing atmosphere consistent with the extracted value 'Ar'. This appears in the Methods section ('Cell assembly and electrochemical measurements').",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_LPSC_1",
+        "description": "Ball milling of Li2S, P2S5 and LiCl for LPSC precursor",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": [
+                "chem_5",
+                "chem_6",
+                "chem_4"
+              ],
+              "rotation_speed": {
+                "value": 550,
+                "unit": "rpm"
+              }
+            },
+            "duration": {
+              "value": 1200,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Stoichiometric ratios, 20 h",
+            "prov": [
+              "Methods"
+            ],
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.82,
+              "reasoning": "The paper describes a \u201csublimating-winding-rolling\u201d method for making the LACSS, and separately mentions that LPSC electrolyte precursors were \u201cmechanically milled at 550 rpm for 20 h\u201d (Methods). However, the extracted synthesis operation value \"mill\" is not used to describe the LACSS synthesis operation itself (it is rolling/winding after AlCl3 sublimation exposure). Thus, as a general \u201cSynthesis Operation\u201d for the main material/process, \"mill\" is not explicitly supported.",
+              "suggested_fix": "For LACSS synthesis: \"sublimation-deposition; winding; rolling\" (or \"sublimating-winding-rolling\"). If the field targets LPSC electrolyte synthesis instead: \"mechanically milled (ball milling)\"."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_LPSC_2",
+        "description": "Annealing the milled precursor to form LPSC",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 723,
+              "unit": "K"
+            },
+            "notes": "5 h at 450 \u00b0C",
+            "prov": [
+              "Methods"
+            ],
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "Across the full provided text (including the Methods section), the synthesis procedure for LACSS involves polishing Li foil, exposing it to gas-state AlCl3 at 178 \u00b0C to deposit AlCl3, cooling, and then a winding-rolling process at room temperature. The term/operation \"anneal\" is not used for LACSS synthesis, and no annealing step is described for making LACSS. (Annealing at 450 \u00b0C for 5 h is mentioned only for preparing the LPSC electrolyte, not the LACSS.) \u0644\u0630\u0644\u0643 the extracted synthesis operation \"anneal\" is not supported for the target synthesis.",
+              "suggested_fix": "For LACSS synthesis, replace \"anneal\" with \"AlCl3 sublimation-deposition (exposure) + cooling + winding + rolling (room temperature)\". If the field is meant to capture any synthesis operation in the paper, then \"annealed at 450 \u00b0C for 5 h\" applies to LPSC electrolyte preparation, not LACSS."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_LACSS_1",
+        "description": "Li foil surface preparation",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.62,
+          "reasoning": "The paper discusses polishing Li foil with a plastic scraper to remove the native oxidation layer and then exposing it to AlCl3 vapor (Methods: \u201cSynthesis of the LACSS\u201d). While this is a Li foil surface preparation step, the extracted value \u201cLi foil surface preparation\u201d is not presented as a distinct \u201cWorkflow Timeline\u201d item/heading in the text, nor is a timeline list explicitly given. Therefore the extraction, as a workflow-timeline entry, is not explicitly supported.",
+          "suggested_fix": "If the field is meant to capture the surface-prep step described in Methods, use: \u201cLi foil was first polished by a plastic scraper to remove the native oxidation layer (prior to AlCl3 vapor exposure).\u201d If the field requires a true timeline label/section, then: \u201cNot specified as a workflow timeline item in the paper.\u201d"
+        }
+      },
+      {
+        "step_ref": "step_LACSS_2",
+        "description": "AlCl3 vapor deposition on Li",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The paper explicitly describes depositing AlCl3 (via sublimation/deposition) onto Li foil as part of the preparation workflow: after exposing/polishing Li foil, a layer of nanosized AlCl3 is deposited on Li (\u201cAlCl3 sublimation-deposition\u201d schematic; \u201ca homogenous layer of nanosized AlCl3 powder was deposited on the bare Li foil\u201d; Methods: \u201cpolished Li foil was exposed to the gas-state AlCl3\u2026 generating a layer of AlCl3 deposits on the surface\u201d). This supports the workflow step \u2018AlCl3 vapor deposition on Li,\u2019 though the paper more precisely calls it AlCl3 sublimation-deposition/exposure to gas-state AlCl3 at 178 \u00b0C.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_LACSS_3",
+        "description": "Winding to encapsulate powders",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper describes a workflow step where \u201cvia the winding process, the partially-reacted AlCl3 precursors are encapsulated in the Li matrix\u201d (Page 4). It does not state that winding is used \u201cto encapsulate powders\u201d in general; rather, it specifically encapsulates partially reacted AlCl3 precursors within Li foil during the winding-rolling process. Therefore the extracted value is imprecise/overgeneralized relative to the text.",
+          "suggested_fix": "Winding to encapsulate partially reacted AlCl3 precursors in the Li matrix (Li foils), prior to rolling."
+        }
+      },
+      {
+        "step_ref": "step_LACSS_4",
+        "description": "Rolling to create stratified Li-Al-Cl structure",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.78,
+          "reasoning": "The paper explicitly describes that the Li-Al-Cl stratified structure (LACSS) is formed via a rolling step as part of a scalable sublimating-winding-rolling method: after AlCl3 deposition, \u201ca winding-rolling process was employed\u201d and \u201cFurther rolling \u2026 resulted in the formation of the LACSS that displays a differential surface/bulk elemental distribution\u201d (Page 3). It also states that during rolling, strain-activated atom diffusion causes Li9Al4 and LiCl to accumulate at the surface and disperse in the bulk (Page 2), matching the idea of rolling to create a stratified Li-Al-Cl structure.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_LPSC_1",
+        "description": "Ball milling of sulfide precursors",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The paper describes (i) preparation of LPSC sulfide electrolyte precursors by **mechanical/ball milling** (Li2S, P2S5, LiCl) and (ii) preparation of the Li-Al-Cl stratified structure (LACSS) via a **sublimating\u2013winding\u2013rolling** method (AlCl3 deposited on Li foil, then wound and rolled). Nowhere does the text state a workflow step of \u201cBall milling of sulfide precursors\u201d as a general workflow timeline item (and it is not part of the LACSS preparation workflow). Thus, the extracted value is not explicitly supported as written for the requested field.",
+          "suggested_fix": "If the intent is the sulfide electrolyte (LPSC) synthesis timeline: \u201cLi2S, P2S5, and LiCl were mechanically (ball) milled at 550 rpm for 20 h, then annealed at 450 \u00b0C for 5 h.\u201d If the intent is the LACSS workflow timeline: \u201cAlCl3 sublimation-deposition on Li foil \u2192 winding \u2192 rolling at room temperature.\u201d"
+        }
+      },
+      {
+        "step_ref": "step_LPSC_2",
+        "description": "High-temperature annealing to form LPSC electrolyte",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.8,
+          "reasoning": "The paper describes annealing at 450 \u00b0C for 5 h to synthesize the LPSC electrolyte (\u201cas-milled precursors\u2026 were further annealed at 450 \u00b0C for 5 h to yield the final LPSC products\u201d), not \u201chigh-temperature annealing to form LPSC electrolyte\u201d as a workflow timeline step for forming LPSC itself is mentioned, but the extracted value is vague and also incorrectly labels the annealing as for forming LPSC (it is for LPSC synthesis, yes) while the field name suggests timeline; moreover the main workflow emphasized in the paper is the sublimating-winding-rolling method for LACSS at room temperature. There is no explicit phrase \u2018high-temperature annealing to form LPSC electrolyte\u2019 as a workflow timeline item; the explicit condition is 450 \u00b0C for 5 h after milling.",
+          "suggested_fix": "Anneal ball-milled LPSC precursors at 450 \u00b0C for 5 h to obtain LPSC electrolyte (after mechanical milling at 550 rpm for 20 h)."
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Amounts of Li foil and AlCl3 not specified",
+        "excerpt": "Lithium (Li) foil ... Then, the polished Li foil was exposed to the gas-state AlCl3 ... the amount of deposited AlCl3 was adjusted by controlling the exposure time.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper\u2019s Methods section describes polishing a Li foil and exposing it to gas-state AlCl3, stating only that the amount of deposited AlCl3 was adjusted by controlling exposure time, without giving an explicit mass/area/thickness/moles for Li foil or AlCl3. Elsewhere it gives exposure times (e.g., 40 s; also 20 s/60 s variants) and AlCl3 gas concentration (3.6 g L\u22121 at 178 \u00b0C), but not the actual amount of Li foil used (mass/area) nor the actual AlCl3 amount deposited/loading. Therefore the extractor\u2019s claim that amounts are not specified is supported by the text omission.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Rolling pressure unspecified for standard LACSS",
+        "excerpt": "LACSS with different thicknesses can be prepared by adjusting rolling pressure (Supplementary Fig. 6).",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.83,
+          "reasoning": "The paper explicitly states: \u201cLACSS with different thicknesses can be prepared by adjusting rolling pressure (Supplementary Fig. 6).\u201d However, in the provided full text (main article pages 1\u201310), no numerical/explicit rolling pressure value for the \u201cstandard\u201d LACSS is given. The mentioned pressure details appear to be relegated to Supplementary Fig. 6, which is not included here. Therefore, the identified workflow ambiguity\u2014rolling pressure unspecified in the main text for standard LACSS\u2014is supported by the absence of that parameter in the provided source text.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM/EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface enrichment of Al and Cl",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Demonstrates differential surface/bulk distribution in LACSS",
+      "prov": [
+        "Fig. 1c\u2013d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly reports SEM/EDS evidence of surface enrichment of Al and Cl in the LACSS. In the Results (discussion of Fig. 1c\u2013d), it states: \u201cthe surface of the LACSS exhibits significant enrichment of Al elements and modest enrichment of Cl elements,\u201d referring to the EDS mapping in Fig. 1d. This supports the extracted metric \u201csurface enrichment of Al and Cl.\u201d",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TOF-SIMS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li5Al2O+ signal decrease depth",
+          "value": 600,
+          "unit": "s"
+        },
+        {
+          "metric": "surface enrichment confirmed",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 1f\u2013g"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly states in the TOF-SIMS depth profile description (Fig. 1f) that \u201cThe intensity of Li5Al2O+ sharply decreases after ~600 s of sputtering,\u201d supporting the extracted metric/value/unit (600 s). It also explicitly concludes from TOF-SIMS and XPS that Li-Al alloys and LiCl are more concentrated/enriched on the surface (\u201chighest intensities on the surface\u201d; \u201cmore concentrated on the surface\u201d), supporting the qualitative claim of surface enrichment (though the extracted entry leaves the value blank).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "presence of Li-Al alloys and LiCl on surface",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Surface concentrated in Li9Al4 and LiCl",
+      "prov": [
+        "Fig. 1h"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly reports in-depth XPS (Fig. 1h) showing peaks corresponding to Li-Al alloys (Al 2p) and LiCl (Cl 2p) throughout etching, with peak intensities decreasing with etching depth, indicating these species are more concentrated at the surface. Text: \u201cAs shown in Fig. 1h, consistent peaks corresponding to Li-Al alloys and LiCl are observed\u2026 the peak intensities\u2026 decrease with increasing etching depth, which suggests that Li-Al alloys and LiCl are more concentrated on the surface.\u201d This supports the extracted claim of presence of Li-Al alloys and LiCl on the surface.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phases identified",
+          "value": "Li, LiCl, Li9Al4",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Supplementary Fig. 8"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states the XRD-identified phases for the LACSS: \u201cAll the peaks in the XRD pattern are indexed to Li, LiCl, and Li9Al4 (Supplementary Fig. 8).\u201d This directly supports the extracted phases identified (Li, LiCl, Li9Al4). The alleged provenance (Supplementary Fig. 8) matches the cited location in the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cryo-FIB-SEM/TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface layer thickness (Al/Cl enriched)",
+          "value": 300,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Confirms stratified phase distribution",
+      "prov": [
+        "Fig. 2b\u2013c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states in the cryo-FIB-SEM/cryo-TEM characterization section that the Al/Cl-enriched surface layer thickness is about 300 nm: \u201cAccording to the line scan profiles of Al and Cl (Fig. 2c), the thickness of the Al/Cl-enriched layer is about 300 nm.\u201d This corresponds to Fig. 2b\u2013c (and specifically Fig. 2c).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "AFM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "average Young's modulus of LACSS surface",
+          "value": 64,
+          "unit": "GPa"
+        }
+      ],
+      "interpretation": "High mechanical strength SEI",
+      "prov": [
+        "Fig. 5c\u2013d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states: \u201cAs observed by atomic force microscopy (AFM), the dense surface of the LACSS exhibits an extremely high average Young\u2019s modulus of 64 GPa (Fig. 5c\u2013d).\u201d This directly supports the extracted metric/value/unit (average Young\u2019s modulus of LACSS surface = 64 GPa) and matches the alleged provenance (Fig. 5c\u2013d).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Electrochemical (CCD test)",
+      "parameters": {
+        "electrolyte": "LPSC"
+      },
+      "results": [
+        {
+          "metric": "critical current density (symmetric cell)",
+          "value": 2.5,
+          "unit": "mA cm-2"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 4d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly reports a critical current density (CCD) of 2.5 mA cm\u22122 for the LACSS symmetric cell. This appears in the Results/Discussion text (Page 5\u20136) stating: \u201cthe CCD value of the LACSS symmetric cell reaches ... 2.5 mA cm\u22122,\u201d and is also shown in Fig. 4d (labeled \u201cLACSS 2.5 mA cm\u22122\u201d). Thus the extracted value and unit match the source.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {
+        "current_density": "1.0 mA cm-2",
+        "capacity": "0.5 mAh cm-2"
+      },
+      "results": [
+        {
+          "metric": "stable cycling time",
+          "value": 400,
+          "unit": "h"
+        }
+      ],
+      "interpretation": "Demonstrates interface stability",
+      "prov": [
+        "Fig. 4h"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper text describing Fig. 4h states: \u201cUnder more demanding conditions with a current density of 1.0 mA cm\u22122 and a capacity of 0.5 mAh cm\u22122, the LACSS symmetric cell still functions well for more than 400 h \u2026 (Fig. 4g, h).\u201d This directly supports a stable cycling time of ~400 h (reported as >400 h).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity of synthesized LPSC",
+          "value": 7.9,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Supplementary Fig. 28b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The Methods section explicitly states: \"The ionic conductivity of the synthesized LPSC was measured to be 7.9 mS cm\u22121 (Supplementary Fig. 28b).\" This directly supports the extracted value (7.9 mS cm\u22121) and matches the cited provenance (Supplementary Fig. 28b).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Full-cell cycling",
+      "parameters": {
+        "current_density": "0.89 mA cm-2",
+        "temperature": "303 K"
+      },
+      "results": [
+        {
+          "metric": "capacity retention after 300 cycles",
+          "value": 92.3,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "LACSS improves long-term stability",
+      "prov": [
+        "Fig. 6a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states that the LACSS | LPSC | NCM83125 full cell achieves a \u201ccapacity retention of 92.3%\u201d after 300 cycles (Page 2, end of Introduction; also reiterated in the Results section describing Fig. 6a on Page 6: \u201cAfter 300 cycles... with a capacity retention of 92.3%.\u201d). This directly supports the extracted metric/value/unit.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT surface/interface energy calculation",
+        "results": [
+          {
+            "equation": "\u03b3_LiCl \u2013 \u03b3_LiCl/Li = \u20130.42 J m\u22122",
+            "value": -0.42,
+            "unit": "J m-2"
+          },
+          {
+            "equation": "Li adsorption energy on Li9Al4",
+            "value": -1.97,
+            "unit": "eV"
+          }
+        ],
+        "prov": [
+          "Supplementary Table 1",
+          "Supplementary Fig. 27"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.62,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly describes multiple analysis/characterization methods used (e.g., SEM/EDS, TOF-SIMS, XPS, XRD, cryo-FIB-SEM/TEM, AFM, EIS/CV/LSV/GITT, AIMD/DFT). Therefore the field is not missing in the source, and a blank extraction is not supported. The alleged provenance (Supplementary Table 1, Supplementary Fig. 27) does not contain/justify leaving the analysis method empty; in the main text Supplementary Table 1 is referenced for interfacial energy calculations and Supplementary Fig. 27 for adsorption energy, not for omission of methods.",
+          "suggested_fix": "Populate \u201cAnalysis Method\u201d with the methods explicitly listed in the paper, e.g.: SEM/EDS; XRD; XPS (depth profiling); TOF-SIMS (depth profiling); cryo-FIB-SEM and cryo-TEM (SAED, HRTEM/FFT); AFM (modulus); electrochemical tests (EIS, CV, LSV, galvanostatic cycling/CCD, GITT); first-principles DFT calculations and AIMD simulations."
+        }
+      },
+      {
+        "method_name": "AIMD simulation",
+        "results": [
+          {
+            "metric": "reduced PS4^3\u2212 decomposition at Li9Al4/LPSC interface vs Li/LPSC",
+            "value": "",
+            "unit": ""
+          }
+        ],
+        "prov": [
+          "Fig. 5e\u2013f"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.86,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper (including Fig. 5e\u2013f and its caption) clearly specifies analysis/simulation methods used: Fig. 5c\u2013d show atomic force microscopy (AFM) modulus/height mapping, and Fig. 5e\u2013f show ab initio molecular dynamics (AIMD) simulations with corresponding radial distribution function (RDF) analysis of the P\u2013S pair. Therefore, leaving \u201cAnalysis Method\u201d empty is not supported by the source text.",
+          "suggested_fix": "AFM (modulus/height mapping) and AIMD simulations (with RDF analysis of P\u2013S pair)"
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 162.8,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 300,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.93,
+      "reasoning": "The paper explicitly reports performance after 300 cycles for the full cell: \u201ca remarkable capacity retention of 92.3% is achieved in the LACSS | LPSC | NCM83125 full cell after 300 cycles at 0.89 mA cm\u22122\u201d (Page 2) and reiterates \u201cAfter 300 cycles, it maintains\u2026\u201d (Page 6) and in Fig. 6 caption (Page 8). Thus, a cycle life value of 300 (cycles) is directly supported for the full cell test condition.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

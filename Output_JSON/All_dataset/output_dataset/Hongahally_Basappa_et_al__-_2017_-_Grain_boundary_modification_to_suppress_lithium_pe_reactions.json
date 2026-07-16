@@ -1,0 +1,771 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Grain boundary modification to suppress lithium penetration through garnet-type solid electrolyte",
+    "doi": "10.1016/j.jpowsour.2017.07.088",
+    "authors": [
+      "Rajendra Hongahally Basappa",
+      "Tomoko Ito",
+      "Takao Morimura",
+      "Raman Bekarevich",
+      "Kazutaka Mitsuishi",
+      "Hirotoshi Yamada"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid electrolyte",
+      "garnet",
+      "LLZT",
+      "lithium dendrite",
+      "grain boundary modification"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LLZT-air pellet",
+      "molecular_formula": "Li6.5La3Zr1.5Ta0.5O12",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Section 2.1, Experimental"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LLZT-w/o-air pellet",
+      "molecular_formula": "Li6.5La3Zr1.5Ta0.5O12",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Section 2.1, Experimental"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LLZT-2calc pellet",
+      "molecular_formula": "Li6.5La3Zr1.5Ta0.5O12",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Section 2.1, Experimental"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hydroxide monohydrate",
+      "molecular_formula": "LiOH·H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Dried at 473 K before use; 10 % excess Li relative to stoichiometry",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum oxide",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Heated at 1073 K before use",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconium dioxide",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Tantalum pentoxide",
+      "molecular_formula": "Ta2O5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium hydroxide",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "surface modifier",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "%"
+      },
+      "notes": "2 wt % relative to LLZT powder for LLZT-2calc",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "surface layer/filler",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Formed in situ on particle surfaces",
+      "prov": ["FT-IR results"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "die material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Graphite die and punches used during SPS",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "inert atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Glovebox atmosphere (H2O <1 ppm, O2 <0.1 ppm)",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "calcination atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Pure O2 used for LLZT-w/o-air calcination",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "electrode coating",
+        "category": "metal"
+      },
+      "amount": {
+        "value": 300,
+        "unit": "nm"
+      },
+      "notes": "Sputtered on pellet surfaces for impedance measurements",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Copper",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Cu electrodes sandwiching pellets during impedance test",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Thin layers (~5 mm diameter, ~2 mm thickness*) deposited by vacuum evaporation and Li foils attached",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Potassium bromide",
+      "molecular_formula": "KBr",
+      "ontology": {
+        "role": "FT-IR matrix",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Section 2.2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Drying of LiOH·H2O",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 473,
+              "unit": "K"
+            },
+            "notes": "Performed prior to mixing; vacuum drying for LLZT-w/o-air, air drying for other variants"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pre-heating of La2O3 to remove CO2",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1073,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Mixing of starting materials with 10 % excess Li",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Stoichiometric proportions; 10 % excess lithium supplied via chem_1"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "First calcination to form LLZT powder",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1173,
+              "unit": "K"
+            },
+            "notes": "Air atmosphere for LLZT-air and LLZT-2calc; pure O2 for LLZT-w/o-air"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air / O2 (variant-dependent)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "LiOH surface modification and ball milling (LLZT-2calc only)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_5"]
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Planetary ball mill, 300 rpm, ZrO2 pot & 3 mm balls, ball:powder 1:1 vol"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Second calcination of modified powder (LLZT-2calc)",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1173,
+              "unit": "K"
+            },
+            "notes": "Performed in air"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Spark plasma sintering (SPS) to form dense pellets",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": ["chem_7"]
+            },
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1223,
+              "unit": "K"
+            },
+            "notes": "Uniaxial pressure 250 bar; vacuum <5 × 10⁻⁵ bar"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": 250,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Surface polishing of pellets",
+        "operations": [
+          {
+            "action": "polish",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Emery papers grit #400 then #1500; removed ~0.1 mm surface layer"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Deposition of Au electrodes for impedance testing",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_10"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Sputter deposition, ~300 nm thickness on both faces"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.3"]
+      },
+      {
+        "step_id": "step_10",
+        "description": "Deposition of Li thin layers and cell assembly",
+        "operations": [
+          {
+            "action": "evaporate",
+            "parameters": {
+              "inputs": ["chem_12"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Vacuum evaporation; ~5 mm diameter, ~2 mm thickness*; Li foils attached; cell assembled at 1.4 MPa stack pressure"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (glovebox)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dry LiOH·H2O precursor"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Remove CO2 from La2O3"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Mix starting oxides with excess Li"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "First calcination to obtain LLZT powder"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "LiOH surface modification (LLZT-2calc only)"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Second calcination for modified powder"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Spark plasma sintering into dense pellets"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Surface polishing of pellets"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Gold electrode sputtering"
+      },
+      {
+        "step_ref": "step_10",
+        "description": "Lithium layer deposition and symmetric cell assembly"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Thickness of deposited lithium layer unclear",
+        "excerpt": "\"metallic lithium thin layers (5 mm and ca. 2 mm in diameter and thickness, respectively) were deposited\""
+      },
+      {
+        "issue": "Amount of starting materials not numerically specified",
+        "excerpt": "\"Stoichiometric amounts of LiOH·H2O, La2O3, ZrO2 and Ta2O5 were used\""
+      },
+      {
+        "issue": "Vacuum level during SPS only given as <5 Pa",
+        "excerpt": "\"under reduced pressure (<5 Pa)\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "voltage": "45 kV",
+        "current": "200 mA",
+        "holder": "Ar-filled, Kapton film"
+      },
+      "results": [
+        {
+          "metric": "phase purity",
+          "value": "Single-phase cubic garnet for all powders and pellets",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Section 2.2", "Fig. S1"]
+    },
+    {
+      "method": "FT-IR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface species",
+          "value": "Li2CO3 detected on LLZT-air; LiOH·H2O on LLZT-2calc; minimal carbonate on LLZT-w/o-air",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 1"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "void observation",
+          "value": "Greater number of surface voids in LLZT-w/o-air compared to others",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figs. 2 & 3"]
+    },
+    {
+      "method": "STEM-EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "grain boundary composition",
+          "value": "Carbon enrichment (Li2CO3) at grain boundaries of LLZT-air",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Evidence of liquid-phase sintering by Li2CO3/LiOH",
+      "prov": ["Fig. 5"]
+    },
+    {
+      "method": "ICP-OES",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "elemental composition consistency",
+          "value": "Similar Li:La:Zr:Ta ratios in all powders and pellets",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. S2"]
+    },
+    {
+      "method": "AC Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "10 MHz–10 Hz",
+        "ac_amplitude": "10 mV",
+        "temperature": "110 °C to −15 °C at 0.25 °C min⁻¹"
+      },
+      "results": [
+        {
+          "metric": "total ionic conductivity (25 °C)",
+          "value": 7.2e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "total ionic conductivity (25 °C) LLZT-w/o-air",
+          "value": 6.6e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "total ionic conductivity (25 °C) LLZT-2calc",
+          "value": 7.6e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy bulk",
+          "value": 0.458,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 1", "Fig. 6"]
+    },
+    {
+      "method": "DC Polarization",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "critical current density LLZT-air",
+          "value": 0.4,
+          "unit": "mA cm-2"
+        },
+        {
+          "metric": "critical current density LLZT-w/o-air",
+          "value": 0.15,
+          "unit": "mA cm-2"
+        },
+        {
+          "metric": "critical current density LLZT-2calc",
+          "value": 0.6,
+          "unit": "mA cm-2"
+        }
+      ],
+      "interpretation": "Surface-modified pellets exhibit higher tolerance to short circuit",
+      "prov": ["Fig. 8"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "σ = σ0 exp(−Ea/RT)",
+            "value": 0.458,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

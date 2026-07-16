@@ -1,0 +1,242 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Impedance Modeling of Solid-State Electrolytes: Influence of the Contacted Space Charge Layer",
+    "doi": "10.1021/acsami.0c22986",
+    "authors": [
+      "Yao Liu",
+      "Yang Bai",
+      "Wolfram Jaegermann",
+      "René Hausbrand",
+      "Bai-Xiang Xu"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid-state electrolyte",
+      "impedance spectroscopy",
+      "LiPON"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiPON thin film electrolyte",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Page 5896 (Figure 1 caption, text)",
+        "Table 1"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiPON",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Film thickness 100 nm; max concentration 1.0×10^4 mol m⁻³ (Table 1).",
+      "prov": [
+        "Table 1",
+        "Page 5897 (Section 2.1)"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Platinum",
+      "molecular_formula": "Pt",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as both current collectors in Pt/LiPON/Pt cell.",
+      "prov": [
+        "Page 5896-5897 (Section 2)"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium ion",
+      "molecular_formula": "Li+",
+      "ontology": {
+        "role": "charge carrier",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Initial mobile concentration 5×10^3 mol m⁻³; diffusion coefficient 1×10⁻¹⁴ m² s⁻¹ (Table 1).",
+      "prov": [
+        "Table 1"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Assembly of symmetric Pt/LiPON/Pt test cell for impedance measurements.",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "LiPON layer thickness 100 nm (Table 1); electrode area 4×10⁻⁶ m²."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 5896-5897 (Section 2)",
+          "Table 1"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Cell assembly prior to electrochemical characterization."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Amplitude units for AC perturbation (Φ̃ac = 0.01) not specified (dimensionless).",
+        "excerpt": "\"The amplitude of the perturbation potential is Φ̃_ac = 0.01\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {
+        "frequency_range": "1e-2–1e8 Hz",
+        "temperature": "298.15 K",
+        "ac_amplitude": "Φ̃ac = 0.01 (dimensionless)",
+        "samples_per_decade": 50
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 1.88e-4,
+          "unit": "S m-1",
+          "prov": [
+            "Table 1 (σ at 298.15 K)"
+          ]
+        },
+        {
+          "metric": "space charge layer capacitance (case c̃− = 0.1)",
+          "value": 6.02e-6,
+          "unit": "F",
+          "prov": [
+            "Figure 2c caption discussion"
+          ]
+        },
+        {
+          "metric": "space charge layer capacitance (case c̃− = 0.5)",
+          "value": 7.29e-6,
+          "unit": "F",
+          "prov": [
+            "Figure 2f caption discussion"
+          ]
+        }
+      ],
+      "interpretation": "Data used to validate equivalent-circuit model including polarization resistance.",
+      "prov": [
+        "Pages 5898-5903 (Sections 3.1–3.3)",
+        "Figure 3"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Modified Planck-Nernst-Poisson (MPNP) modeling",
+        "results": [
+          {
+            "equation": "Analytical Cs (Eq 14)",
+            "value": null,
+            "unit": "",
+            "notes": "Derived general expression for space-charge-layer capacitance."
+          }
+        ]
+      },
+      {
+        "method_name": "Equivalent circuit simulation",
+        "results": [
+          {
+            "equation": "Z = 1/(jωCs) + Rs + Rsp (Eq 21)",
+            "value": null,
+            "unit": "",
+            "notes": "Model reproduced low-frequency impedance tail."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-22T11:46:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

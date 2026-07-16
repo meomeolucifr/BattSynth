@@ -1,0 +1,256 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A Sodium–Antimony–Telluride Intermetallic Allows Sodium-Metal Cycling at 100% Depth of Discharge and as an Anode-Free Metal Battery",
+    "doi": "10.1002/adma.202106005",
+    "authors": ["Yixian Wang", "Hui Dong", "Naman Katyal", "Hongchang Hao", "Pengcheng Liu", "Hugo Celio", "Graeme Henkelman", "John Watt", "David Mitlin"],
+    "journal": "Advanced Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": ["sodium metal anode", "intermetallic", "battery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "NST-Na metallurgical composite",
+      "molecular_formula": "Na2(Sb2/6Te3/6Vac1/6) + Na matrix",
+      "intended_role": "product",
+      "prov": ["Page 2–4, Scheme 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na2Te–Na composite (NT–Na)",
+      "molecular_formula": "Na2Te + Na",
+      "intended_role": "reference product",
+      "prov": ["Page 3, Paragraph starting 'As a baseline for structural analysis'"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na3Sb–Na composite (NS–Na)",
+      "molecular_formula": "Na3Sb + Na",
+      "intended_role": "reference product",
+      "prov": ["Page 3, Paragraph starting 'As a baseline for structural analysis'"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sodium metal",
+      "molecular_formula": "Na",
+      "ontology": {"role": "reactant", "category": "metal"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "used as foil; electrochemically active matrix",
+      "prov": ["Page 2, synthesis description"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Antimony telluride",
+      "molecular_formula": "Sb2Te3",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "powder, average particle diameter 300 nm",
+      "prov": ["Page 2, synthesis description; Page 3, SEM analysis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "<0.1 ppm H2O and O2 in glove box",
+      "prov": ["Page 2, synthesis description"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Tellurium powder",
+      "molecular_formula": "Te",
+      "ontology": {"role": "reactant", "category": "element"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "used for baseline NT–Na composite",
+      "prov": ["Page 3, baseline composite description"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Antimony powder",
+      "molecular_formula": "Sb",
+      "ontology": {"role": "reactant", "category": "element"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "used for baseline NS–Na composite",
+      "prov": ["Page 3, baseline composite description"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of NST-Na composite foil via repeated rolling and folding",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "ratio": "varied; examples 1:4, 1:6, 1:8, 1:10 Sb2Te3:Na by weight"
+            },
+            "notes": "Conducted inside Ar-filled glove box (<0.1 ppm H2O/O2)"
+          },
+          {
+            "action": "mechanical deformation",
+            "parameters": {
+              "method": "cold rolling and folding",
+              "iterations": 20
+            },
+            "notes": "Performed sequentially to form metallurgical composite"
+          }
+        ],
+        "conditions": {
+          "temperature": {"value": 298, "unit": "K"},
+          "time": {"value": null, "unit": "min"},
+          "atmosphere": "Ar (chem_3)",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 2, Scheme 1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Formation of NT–Na composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_1", "chem_4"]},
+            "notes": "Combined in an identical rolling–folding manner as NST-Na"
+          }
+        ],
+        "conditions": {
+          "temperature": {"value": 298, "unit": "K"},
+          "atmosphere": "Ar",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 3"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Formation of NS–Na composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_1", "chem_5"]},
+            "notes": "Combined in an identical rolling–folding manner as NST-Na"
+          }
+        ],
+        "conditions": {
+          "temperature": {"value": 298, "unit": "K"},
+          "atmosphere": "Ar",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "20× cold rolling/folding Sb2Te3 powder with Na metal in Ar glove box to yield 150 μm self-standing NST-Na foil"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Baseline NT–Na prepared via same mechanical mixing of Te powder and Na metal"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Baseline NS–Na prepared via same mechanical mixing of Sb powder and Na metal"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {"mode": "top-view and cross-section"},
+      "results": [{"metric": "particle size of Sb2Te3", "value": 300, "unit": "nm"}],
+      "interpretation": "NST crystallites densely and uniformly distributed within Na-metal matrix",
+      "prov": ["Figure S2a–c", "Page 2–3"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [{"metric": "unit cell expansion vs Na2Te", "value": 3.8, "unit": "%"}],
+      "interpretation": "Confirms formation of Na2(Sb2/6Te3/6Vac1/6) intermetallic; absence of Sb2Te3 peaks after 10 iterations",
+      "prov": ["Figure 1a", "Figure S7"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {"region": "Sb 3d, Te 3d"},
+      "results": [
+        {"metric": "binding energy Sb3- 3d5/2", "value": 527.3, "unit": "eV"},
+        {"metric": "binding energy Te2- 3d5/2", "value": 570.8, "unit": "eV"}
+      ],
+      "interpretation": "Confirms valence states Sb3- and Te2-; supports stoichiometry Na2(Sb2/6Te3/6Vac1/6)",
+      "prov": ["Figure 1b,c"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {"state": "after 5 cycles at 0.5 mA cm-2"},
+      "results": [
+        {"metric": "R_ct+R_SEI NST-Na", "value": 54, "unit": "ohm"},
+        {"metric": "R_ct+R_SEI baseline Na", "value": 624, "unit": "ohm"}
+      ],
+      "interpretation": "Thinner, less resistive SEI on NST-Na",
+      "prov": ["Figure 2h"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations",
+        "results": [
+          {
+            "equation": "",
+            "value": 3.8,
+            "unit": "%",
+            "notes": "NST unit cell 3.8% larger than Na2Te"
+          },
+          {
+            "equation": "",
+            "value": null,
+            "unit": "",
+            "notes": "Binding energies show individual Na atoms more stable than clusters on NST surface (Table 1)"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T11:40:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

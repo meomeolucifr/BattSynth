@@ -1,0 +1,459 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Dendrite initiation and propagation in lithium metal solid-state batteries",
+    "doi": "10.1038/s41586-023-05970-4",
+    "authors": ["Ziyang Ning", "Guanchen Li", "Dominic L. R. Melvin", "Yang Chen", "Junfu Bu", "Dominic Spencer-Jolly", "Junliang Liu", "Bingkun Hu", "Xiangwen Gao", "Johann Perera", "Chen Gong", "Shengda D. Pu", "Shengming Zhang", "Boyang Liu", "Gareth O. Hartley", "Andrew J. Bodey", "Richard I. Todd", "Patrick S. Grant", "David E. J. Armstrong", "T. James Marrow", "Charles W. Monroe", "Peter G. Bruce"],
+    "journal": "Nature",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis_and_electrochemistry",
+    "tags": ["solid-state battery", "Li6PS5Cl", "lithium metal", "dendrite", "ceramic electrolyte"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl electrolyte disc",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Methods: Electrolyte preparation and cell assembly"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li/Li6PS5Cl/Li solid-state cell",
+      "molecular_formula": "",
+      "intended_role": "electrochemical device",
+      "prov": ["Methods", "Three-electrode cell cycling"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic solid electrolyte powder"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "particle size D50 ≈ 10 μm",
+      "prov": ["Methods: Electrolyte preparation"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "100 μm thick foil punched into discs (2 mm or 5 mm diameter as specified)",
+      "prov": ["Methods: Electrolyte preparation and cell assembly"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Aqueous LiOH solution",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "etchant",
+        "category": "inorganic solution"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "degassed; excess amount used for etching solid-electrolyte disc",
+      "prov": ["Operando Methods: On-line mass spectrometry"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glovebox atmosphere with O2 and H2O <0.1 ppm",
+      "prov": ["Methods: Electrolyte preparation"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Compression of Li6PS5Cl powder into a disc",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "die_diameter": {
+                "value": 5,
+                "unit": "mm"
+              },
+              "pressure": {
+                "value": 4000,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "uniaxial pressure using stainless-steel die set"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (glovebox)",
+          "pressure": {
+            "value": 1,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods: Electrolyte preparation"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Sintering of pressed Li6PS5Cl disc",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["target_1"]
+            },
+            "duration": {
+              "value": 20,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 573,
+              "unit": "K"
+            },
+            "notes": "furnace sintering; followed by cooling to room temperature in Ar atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": 1,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods: Electrolyte preparation"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Assembly of symmetric Li/Li6PS5Cl/Li cell for operando XCT",
+        "operations": [
+          {
+            "action": "punch",
+            "parameters": {
+              "inputs": ["chem_2"],
+              "disc_diameter": {
+                "value": 2,
+                "unit": "mm"
+              },
+              "thickness": {
+                "value": 100,
+                "unit": "µm"
+              }
+            },
+            "notes": ""
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_2", "target_1"],
+              "pressure": {
+                "value": 70,
+                "unit": "bar"
+              }
+            },
+            "notes": "lithium discs pressed onto both sides of sintered electrolyte"
+          },
+          {
+            "action": "assemble",
+            "parameters": {
+              "cell_type": "customized airtight tube cell"
+            },
+            "notes": "cell maintains 70 bar stack pressure on beamline"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": 70,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods: Electrolyte preparation and cell assembly"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Assembly of three-electrode pouch cell",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_2", "target_1"],
+              "working_ref_disc_diameter": {
+                "value": 1,
+                "unit": "mm"
+              }
+            },
+            "notes": "working and reference Li discs pressed on same side; separated by 1-mm polymer tape mask"
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_2", "target_1"],
+              "counter_disc_diameter": {
+                "value": 5,
+                "unit": "mm"
+              }
+            },
+            "notes": "Li counter electrode on opposite side"
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "package": "pouch cell",
+              "vacuum": {
+                "value": 0.001,
+                "unit": "bar"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": 1,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods: Three-electrode cell cycling"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Electrochemical activation/cycling protocol",
+        "operations": [
+          {
+            "action": "plate",
+            "parameters": {
+              "current_density": "4.0 mA cm-2",
+              "capacity": "0.5 mAh cm-2"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "performed on working electrode; varied stack pressures (0.1 MPa ≈1 bar and 7 MPa ≈70 bar) depending on experiment"
+          },
+          {
+            "action": "strip",
+            "parameters": {
+              "current_density": "0.05 mA cm-2",
+              "capacity": "0.5 mAh cm-2"
+            },
+            "notes": "low current to avoid void formation"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "sealed pouch"
+        },
+        "prov": ["Methods: Three-electrode cell cycling"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Pressed Li6PS5Cl powder into 5-mm disc at 4000 bar."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Sintered pressed disc at 573 K for 20 min, cooled to room temperature."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Mounted 100 µm Li discs on both sides; assembled airtight tube cell under 70 bar stack pressure for operando XCT."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Built three-electrode pouch cell with working, reference and counter Li electrodes; sealed under 0.001 bar vacuum."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Performed galvanostatic cycling (plate 4 mA cm⁻² / strip 0.05 mA cm⁻², 0.5 mAh cm⁻² per half-cycle) under selected stack pressures."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No mass of Li6PS5Cl powder specified for disc fabrication",
+        "excerpt": "Li6PS5Cl solid electrolyte powder ... pressed into a disc with a 5-mm-diameter stainless-steel die set under a uniaxial pressure of 400 MPa."
+      },
+      {
+        "issue": "Capacity reported in mAh cm⁻², not convertible to mAh g⁻¹ without additional data",
+        "excerpt": "plated at a plating current density of 4.0 mA cm−2 and stripped at 0.05 mA cm−2 (for a capacity of 0.5 mAh cm−2 per half-cycle)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Operando X-ray computed tomography (XCT)",
+      "parameters": {
+        "beam_energy_range": "8–30 keV",
+        "pixel_size": "1.625 µm",
+        "field_of_view": "4.7 × 4.4 mm²",
+        "exposure_time": "100 ms",
+        "projections": 1801
+      },
+      "results": [
+        {
+          "metric": "dendrite propagation observation",
+          "value": "transverse crack reached counter electrode leading to short circuit after Li filled crack",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Identified separate stages of crack initiation and propagation.",
+      "prov": ["Figure 1", "Methods: Operando XCT"]
+    },
+    {
+      "method": "FIB-SEM with SIMS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li presence in subsurface pore",
+          "value": "detected",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1d", "Methods: SIMS"]
+    },
+    {
+      "method": "On-line mass spectrometry",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "H₂ evolution delay",
+          "value": "observed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms Li deposited primarily in subsurface pores.",
+      "prov": ["Figure 1e", "Methods: On-line mass spectrometry"]
+    },
+    {
+      "method": "Nanoindentation",
+      "parameters": {
+        "tip": "Berkovich"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods: Nanoindentation"]
+    },
+    {
+      "method": "Microcantilever bending",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "local fracture strength σc",
+          "value": null,
+          "unit": "Pa"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Methods: Microcantilever bending"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Crack initiation model",
+        "results": [
+          {
+            "metric": "Critical current density for initiation (CCDinit)",
+            "value": 1.0,
+            "unit": "mA cm-2"
+          }
+        ],
+        "prov": ["Main text: Crack initiation based on pore filling"]
+      },
+      {
+        "method_name": "Crack propagation model",
+        "results": [
+          {
+            "metric": "iprop at dendrite length 115 µm & 7 MPa",
+            "value": 2.4,
+            "unit": "mA cm-2"
+          },
+          {
+            "metric": "iprop at dendrite length 115 µm & 0 MPa",
+            "value": 4.2,
+            "unit": "mA cm-2"
+          }
+        ],
+        "prov": ["Figure 3d"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 170
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-21T10:50:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

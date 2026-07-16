@@ -1,0 +1,486 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Poly(vinylidene fluoride)-Based Al Ion Conductive Solid Polymer Electrolyte for Al Battery",
+    "doi": "10.1149/2.1601714jes",
+    "authors": [
+      "Masashi Kotobuki",
+      "Li Lu",
+      "Seruguei V. Savilov",
+      "Serguei M. Aldoshin"
+    ],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "solid polymer electrolyte",
+      "aluminum battery",
+      "PVdF",
+      "AlCl3"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "PVdF–AlCl3 solid polymer electrolyte (F/Al = 8)",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Experimental section",
+        "Table I"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Poly(vinylidene fluoride)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "host polymer",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "g"
+      },
+      "notes": "Mw = 534,000; amount corresponds to each batch in Table I",
+      "prov": [
+        "Experimental",
+        "Table I"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Aluminum chloride",
+      "molecular_formula": "AlCl3",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.52,
+        "unit": "g"
+      },
+      "notes": "Amount for F/Al ratio 8 (Table I)",
+      "prov": [
+        "Experimental",
+        "Table I"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "N-methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 7.59,
+        "unit": "g"
+      },
+      "notes": "Amount for F/Al ratio 8 (Table I)",
+      "prov": [
+        "Experimental",
+        "Table I"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Aluminum powder",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "active material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for electrode preparation (8:1:1 Al:Super P:PVdF)",
+      "prov": [
+        "Experimental"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Super P",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in Al electrode slurry (8:1:1 ratio)",
+      "prov": [
+        "Experimental"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dissolution of AlCl3 in NMP",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Magnetic stirring until complete dissolution"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Addition and dissolution of PVdF into AlCl3/NMP solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "Stirred to obtain homogeneous solution"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Casting of the polymer electrolyte solution",
+        "operations": [
+          {
+            "action": "cast",
+            "parameters": {},
+            "notes": "Solution cast onto petri dish"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Drying of cast film in glove box",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "notes": "Glove box maintained at <0.1 ppm H2O/O2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Glove box (Ar, <0.1 ppm H2O/O2)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare AlCl3/NMP solution"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Incorporate PVdF and stir 2 h"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Cast homogeneous solution onto petri dish"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Dry film in low-moisture glove box to obtain SPE membrane"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Stirring time for dissolving AlCl3 in NMP not specified",
+        "excerpt": "First of all, AlCl3 was dissolved into NMP by magnetic stirring."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM-EDS",
+      "parameters": {
+        "accelerating_voltage": "15 kV"
+      },
+      "results": [
+        {
+          "metric": "elemental distribution uniformity",
+          "value": "uniform for FAl-8; phase separation in FAl-6",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates homogeneous dispersion of AlCl3 up to F/Al = 8",
+      "prov": [
+        "Fig. 3",
+        "Fig. 4"
+      ]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "scan_range": "10–60 deg",
+        "scan_rate": "1 deg min-1",
+        "step": "0.02 deg"
+      },
+      "results": [
+        {
+          "metric": "crystallinity",
+          "value": "amorphous at FAl-8; crystalline peaks reappear at higher AlCl3 content",
+          "unit": ""
+        }
+      ],
+      "interpretation": "AlCl3 induces amorphization up to optimum ratio",
+      "prov": [
+        "Fig. 5"
+      ]
+    },
+    {
+      "method": "FT-IR (ATR)",
+      "parameters": {
+        "wavenumber_range": "400–1500 cm-1"
+      },
+      "results": [
+        {
+          "metric": "CF stretch shift",
+          "value": "1401 cm-1 to higher frequency until FAl-8",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Evidence of interaction between Al3+ and PVdF fluorine",
+      "prov": [
+        "Fig. 6",
+        "Table II"
+      ]
+    },
+    {
+      "method": "TG-DTA",
+      "parameters": {
+        "heating_rate": "10 K min-1",
+        "max_temperature": "1273 K",
+        "atmosphere": "air"
+      },
+      "results": [
+        {
+          "metric": "degradation_onset",
+          "value": 570,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "AlCl3 does not affect main PVdF degradation step",
+      "prov": [
+        "Fig. 7"
+      ]
+    },
+    {
+      "method": "DSC",
+      "parameters": {
+        "heating_rate": "10 K min-1",
+        "max_temperature": "473 K",
+        "atmosphere": "Ar"
+      },
+      "results": [
+        {
+          "metric": "melting_temperature",
+          "value": 444,
+          "unit": "K",
+          "notes": "PVdF without AlCl3; value shifts lower with AlCl3 until F/Al=8"
+        }
+      ],
+      "interpretation": "Eutectic effect lowers Tm up to F/Al=8",
+      "prov": [
+        "Fig. 8"
+      ]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "amplitude": "50 mV",
+        "frequency_range": "10 MHz–10 Hz",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "ionic_conductivity",
+          "value": 4.4e-4,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Highest conductivity at F/Al = 8",
+      "prov": [
+        "Fig. 10",
+        "Table III"
+      ]
+    },
+    {
+      "method": "DC polarization (ionic/electronic)",
+      "parameters": {
+        "voltage": "0.5 V"
+      },
+      "results": [
+        {
+          "metric": "ionic_transference_number",
+          "value": 0.94,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Charge transport predominantly ionic",
+      "prov": [
+        "Fig. 11"
+      ]
+    },
+    {
+      "method": "DC polarization + EIS (Bruce method)",
+      "parameters": {
+        "voltage": "10 mV"
+      },
+      "results": [
+        {
+          "metric": "cation_transference_number (Al3+)",
+          "value": 0.24,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Comparable to Li-ion PVdF electrolytes",
+      "prov": [
+        "Fig. 12"
+      ]
+    },
+    {
+      "method": "Linear sweep voltammetry",
+      "parameters": {
+        "scan_rate": "0.1 mV s-1",
+        "voltage_range": "0.5–3.5 V vs Al3+/Al"
+      },
+      "results": [
+        {
+          "metric": "electrochemical_stability_window_upper",
+          "value": 2.4,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Stable within 0–2.4 V vs Al3+/Al",
+      "prov": [
+        "Fig. 13"
+      ]
+    },
+    {
+      "method": "Cyclic voltammetry (symmetric Al cell)",
+      "parameters": {
+        "scan_rate": "0.1 mV s-1",
+        "voltage_range": "−0.5–0.5 V"
+      },
+      "results": [
+        {
+          "metric": "redox_peaks",
+          "value": "−0.2 V (reduction), 0.2 V (oxidation)",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Confirms reversible Al deposition/dissolution in SPE",
+      "prov": [
+        "Fig. 14"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-06T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

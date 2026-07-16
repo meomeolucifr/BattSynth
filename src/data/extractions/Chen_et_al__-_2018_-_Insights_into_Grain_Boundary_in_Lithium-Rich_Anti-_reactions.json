@@ -1,0 +1,131 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Insights into Grain Boundary in Lithium-Rich Anti-Perovskite as Solid Electrolytes",
+    "doi": "10.1149/2.0831816jes",
+    "authors": ["Bingbing Chen", "Chaoqun Xu", "Jianqiu Zhou"],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["solid electrolyte", "grain boundary", "Li3OCl", "DFT", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3OCl",
+      "molecular_formula": "Li3OCl",
+      "intended_role": "solid electrolyte",
+      "prov": ["Title", "Abstract"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li3OCl",
+      "molecular_formula": "Li3OCl",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Title", "Abstract"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (DFT)",
+      "parameters": {
+        "functional": "PBE",
+        "plane_wave_cutoff": {"value": 520, "unit": "eV"},
+        "k_point_spacing": {"value": 0.03, "unit": "Å-1"}
+      },
+      "results": [
+        {"metric": "GB energy", "value": 0.29, "unit": "J m-2", "notes": "/Sigma13(111)", "prov": ["Table I"]},
+        {"metric": "GB energy", "value": 0.48, "unit": "J m-2", "notes": "/Sigma13(112)", "prov": ["Table I"]},
+        {"metric": "GB energy", "value": 1.24, "unit": "J m-2", "notes": "/Sigma15(210)", "prov": ["Table I"]},
+        {"metric": "GB energy", "value": 1.31, "unit": "J m-2", "notes": "/Sigma15(310)", "prov": ["Table I"]},
+        {"metric": "Band gap", "value": 4.78, "unit": "eV", "notes": "Pristine Li3OCl", "prov": ["Figure 3"]},
+        {"metric": "Band gap", "value": 4.4, "unit": "eV", "notes": "GB /Sigma13 structures", "prov": ["Figure 3"]},
+        {"metric": "Band gap", "value": 3.7, "unit": "eV", "notes": "GB /Sigma15 structures", "prov": ["Figure 3"]}
+      ],
+      "interpretation": "",
+      "prov": ["Computational Methods", "Table I", "Figure 3"]
+    },
+    {
+      "method": "CI-NEB",
+      "parameters": {},
+      "results": [
+        {"metric": "Li-ion migration barrier", "value": 0.58, "unit": "eV", "notes": "/Sigma13(111) V pathway (across GB)", "prov": ["Figure 6a"]},
+        {"metric": "Li-ion migration barrier", "value": 0.50, "unit": "eV", "notes": "/Sigma13(111) P pathway (along GB)", "prov": ["Figure 6c"]},
+        {"metric": "Li-ion migration barrier", "value": 0.59, "unit": "eV", "notes": "/Sigma13(112) V pathway (across GB)", "prov": ["Figure 6b"]},
+        {"metric": "Li-ion migration barrier", "value": 0.54, "unit": "eV", "notes": "/Sigma13(112) P pathway (along GB)", "prov": ["Figure 6d"]}
+      ],
+      "interpretation": "",
+      "prov": ["Figure 6"]
+    },
+    {
+      "method": "ab initio Molecular Dynamics (AIMD)",
+      "parameters": {},
+      "results": [
+        {"metric": "Observation", "value": "", "unit": "", "notes": "Self-diffusion coefficients for GB structures lower than pristine; exact values not provided", "prov": ["Figure 7a"]},
+        {"metric": "Activation energy trend", "value": "", "unit": "", "notes": "/Sigma15 GB < /Sigma13 GB < pristine (quantitative values not provided)", "prov": ["Figure 7b"]}
+      ],
+      "interpretation": "",
+      "prov": ["Figure 7"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Elastic property calculation",
+        "results": [
+          {"metric": "Pugh's ratio (B/G)", "value": 1.53, "unit": "", "notes": "Li3OCl with GB (approximate)", "prov": ["Figure 4"]}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-23T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

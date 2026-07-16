@@ -1,0 +1,453 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Free-standing ultrathin lithium metal–graphene oxide host foils with controllable thickness for lithium batteries",
+    "doi": "10.1038/s41560-021-00833-6",
+    "authors": ["Hao Chen", "Yufei Yang", "David T. Boyle", "You Kyeong Jeong", "Rong Xu", "Luize Scalco de Vasconcelos", "Zhuojun Huang", "Hansen Wang", "Hongxia Wang", "Wenxiao Huang", "Huiqiao Li", "Jiangyan Wang", "Hanke Gu", "Ryuhei Matsumoto", "Kejie Zhao", "Kazunari Motohashi", "Yuri Nakayama", "Yi Cui"],
+    "journal": "Nature Energy",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium metal anode", "graphene oxide host", "ultrathin foils"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "expanded and reduced graphene oxide film (eGF)",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Methods – Preparation of the ultrathin eGF host"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li@eGF ultrathin composite electrode",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Methods – Fabrication of ultrathin Li@eGF electrode"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Graphene oxide solution",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": 9,
+        "unit": "mg mL-1"
+      },
+      "notes": "Commercial GO dispersion concentration",
+      "prov": ["Methods – Preparation of the ultrathin eGF host"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inorganic gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glovebox atmosphere during USER reaction",
+      "prov": ["Methods – Preparation of the ultrathin eGF host"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reactant",
+        "category": "alkali metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Melted to 350 °C for infiltration",
+      "prov": ["Methods – Fabrication of ultrathin Li@eGF electrode"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glovebox atmosphere during lithium infiltration",
+      "prov": ["Methods – Fabrication of ultrathin Li@eGF electrode"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Solvent for commercial GO dispersion (implied)",
+      "prov": ["Methods – Preparation of the ultrathin eGF host"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of free-standing GO film",
+        "operations": [
+          {
+            "action": "blade_coat",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "substrate": "glass"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Doctor blade used; film dried at room temperature"
+          },
+          {
+            "action": "peel_off",
+            "parameters": {},
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Preparation of the ultrathin eGF host"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "USER reaction to create porous eGF",
+        "operations": [
+          {
+            "action": "heat_edge_contact",
+            "parameters": {
+              "inputs": ["step_1"],
+              "temperature_source": "hotplate"
+            },
+            "temperature": {
+              "value": 623,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Rapid self-expansion within milliseconds"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2 (chem_2)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Preparation of the ultrathin eGF host"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Micrometre-precision calendaring of eGF",
+        "operations": [
+          {
+            "action": "calender",
+            "parameters": {
+              "inputs": ["step_2"],
+              "rollers_gap": "tunable"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Thickness adjusted between 0.3–20 µm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Preparation of the ultrathin eGF host"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Molten lithium infiltration to form Li@eGF",
+        "operations": [
+          {
+            "action": "melt",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "temperature": {
+              "value": 623,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Lithium melted on hotplate"
+          },
+          {
+            "action": "edge_contact_absorption",
+            "parameters": {
+              "inputs": ["step_3", "chem_3"]
+            },
+            "temperature": {
+              "value": 623,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Rapid capillary absorption into eGF channels"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (chem_4)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Fabrication of ultrathin Li@eGF electrode"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "GO dispersion coated and dried to obtain GO film"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "USER reaction converts GO film to porous eGF"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Calendering tunes eGF thickness to sub-micrometre–20 µm range"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Edge-contact molten Li infiltration yields Li@eGF ultrathin composite electrode"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No explicit durations provided for drying, calendaring, or lithium absorption steps",
+        "excerpt": "\"dried at room temperature\", \"rapidly spreads across the whole film within milliseconds\", \"simply controlling the distance between each roller\""
+      },
+      {
+        "issue": "Capacity values reported as mAh cm−2, not mAh g−1 (schema unit)",
+        "excerpt": "0.089, 0.196, 0.391, 0.853, 1.896 and 3.678 mAh cm−2"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {
+        "mode": "cross-sectional and top-view"
+      },
+      "results": [
+        {
+          "metric": "film thickness",
+          "value": "0.5–20",
+          "unit": "µm"
+        },
+        {
+          "metric": "void channels presence",
+          "value": "confirmed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Sub-micrometre channels remain after calendaring and become filled with Li after infiltration",
+      "prov": ["Figure 1d-g", "Figure 2a-e"]
+    },
+    {
+      "method": "BET surface area",
+      "parameters": {},
+      "results": [],
+      "interpretation": "High porosity verified (numerical data not provided in text chunk)",
+      "prov": ["Supplementary Fig. 3"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phases detected",
+          "value": "Li-intercalated rGO and metallic Li peaks present",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms successful lithium incorporation",
+      "prov": ["Figure 3g"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Spectra support Li filling (exact binding energies not specified in chunk)",
+      "prov": ["Supplementary Fig. 9"]
+    },
+    {
+      "method": "Nanoindentation",
+      "parameters": {
+        "indenter": "Berkovich",
+        "max_depth": "5 µm"
+      },
+      "results": [
+        {
+          "metric": "hardness",
+          "value": 41.13,
+          "unit": "MPa"
+        },
+        {
+          "metric": "elastic modulus",
+          "value": 9.34,
+          "unit": "GPa"
+        }
+      ],
+      "interpretation": "Li@eGF film has ~525 % higher hardness than pure Li (6.58 MPa)",
+      "prov": ["Figure 2g-h"]
+    },
+    {
+      "method": "Tensile test",
+      "parameters": {
+        "sample_dimensions": "7 mm × 10 mm × 50 µm",
+        "strain_rate": "10 mm min-1"
+      },
+      "results": [
+        {
+          "metric": "tensile strength",
+          "value": 11.41,
+          "unit": "MPa"
+        },
+        {
+          "metric": "Young's modulus",
+          "value": 738.87,
+          "unit": "MPa"
+        }
+      ],
+      "interpretation": "Mechanical robustness greatly exceeds that of pure Li (1.814 MPa tensile strength)",
+      "prov": ["Supplementary Fig. 10"]
+    },
+    {
+      "method": "Electrochemical stripping",
+      "parameters": {
+        "cut-off_voltage": "1.5 V vs Li/Li+"
+      },
+      "results": [
+        {
+          "metric": "areal capacity (0.5 µm film)",
+          "value": 0.089,
+          "unit": "mAh cm-2"
+        },
+        {
+          "metric": "areal capacity (1 µm film)",
+          "value": 0.196,
+          "unit": "mAh cm-2"
+        },
+        {
+          "metric": "areal capacity (2 µm film)",
+          "value": 0.391,
+          "unit": "mAh cm-2"
+        },
+        {
+          "metric": "areal capacity (5 µm film)",
+          "value": 0.853,
+          "unit": "mAh cm-2"
+        },
+        {
+          "metric": "areal capacity (10 µm film)",
+          "value": 1.896,
+          "unit": "mAh cm-2"
+        },
+        {
+          "metric": "areal capacity (20 µm film)",
+          "value": 3.678,
+          "unit": "mAh cm-2"
+        }
+      ],
+      "interpretation": "Areal capacity scales linearly with film thickness",
+      "prov": ["Figure 2f"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-27T18:27:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

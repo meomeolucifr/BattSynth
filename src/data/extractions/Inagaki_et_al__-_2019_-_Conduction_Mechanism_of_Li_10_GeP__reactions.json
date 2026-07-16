@@ -1,0 +1,467 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Conduction Mechanism of Li10GeP2S12-type Lithium Superionic Conductors in a Li−Sn−Si−P−S System",
+    "doi": "10.1021/acs.chemmater.9b00743",
+    "authors": [
+      "Makoto Inagaki",
+      "Kota Suzuki",
+      "Satoshi Hori",
+      "Kazuhiro Yoshino",
+      "Naoki Matsui",
+      "Masao Yonemura",
+      "Masaaki Hirayama",
+      "Ryoji Kanno"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": ["solid electrolyte", "LGPS-type", "sulfide", "lithium superionic conductor"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10.2Sn0.96Si0.24P1.8S12",
+      "molecular_formula": "Li10.2Sn0.96Si0.24P1.8S12",
+      "intended_role": "product",
+      "prov": ["Table 1", "Experimental Section (sample i)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li10.5Sn0.3Si1.2P1.5S12",
+      "molecular_formula": "Li10.5Sn0.3Si1.2P1.5S12",
+      "intended_role": "product",
+      "prov": ["Table 1", "Experimental Section (sample ii)"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li10.35Sn0.27Si1.08P1.65S12",
+      "molecular_formula": "Li10.35Sn0.27Si1.08P1.65S12",
+      "intended_role": "product",
+      "prov": ["Table 1", "Experimental Section (sample iii)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in stoichiometric ratio for each target composition",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "SiS2",
+      "molecular_formula": "SiS2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in stoichiometric ratio for each target composition",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "SnS2",
+      "molecular_formula": "SnS2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in stoichiometric ratio for each target composition",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in stoichiometric ratio for each target composition",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glovebox atmosphere during weighing and mixing",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Stoichiometric weighing and manual grinding",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "atmosphere": "Ar",
+            "notes": "Stoichiometric ratios for each target composition"
+          },
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "equipment": "agate mortar and pestle",
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Planetary ball milling",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "duration": {
+                "value": 1200,
+                "unit": "min"
+              },
+              "speed": "380 rpm",
+              "media": "ZrO2 balls (φ 10 mm)",
+              "container": "ZrO2 pot"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Pelletization",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 120,
+                "unit": "MPa"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Vacuum sealing",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "quartz tube",
+              "pressure": {
+                "value": 0.0001,
+                "unit": "bar"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": 0.0001,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Heat treatment",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 823,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 1440,
+                "unit": "min"
+              }
+            },
+            "notes": "Followed by slow cooling to room temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed quartz tube (vacuum)",
+          "pressure": {
+            "value": 0.0001,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Slow cooling",
+        "operations": [
+          {
+            "action": "cool",
+            "parameters": {
+              "from_temperature": {
+                "value": 823,
+                "unit": "K"
+              },
+              "to_temperature": {
+                "value": 298,
+                "unit": "K"
+              },
+              "rate": "slow (not specified)"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": 0.0001,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Weighing and manual grinding of precursors under Ar"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Planetary ball milling for 20 h at 380 rpm"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Pellet pressing at 120 MPa"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Sealing pellets in quartz tube under 10 Pa"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Heating at 823 K for 24 h"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Slow cooling to room temperature"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of starting materials not provided",
+        "excerpt": "The starting materials ... were weighed in stoichiometric ratios in an Ar-filled glovebox"
+      },
+      {
+        "issue": "Cooling rate unspecified",
+        "excerpt": "the sample was slowly cooled to room temperature"
+      },
+      {
+        "issue": "RPM unit retained as given (non-SI)",
+        "excerpt": "mechanically milled for 20 h at 380 rpm"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "LGPS-type isostructural phase confirmed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1", "Experimental Section"]
+    },
+    {
+      "method": "Neutron powder diffraction (TOF)",
+      "parameters": {
+        "instrument": "BL09 SPICA",
+        "facility": "J-PARC",
+        "temperature": {
+          "value": 300,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "impurity phase",
+          "value": "γ-Li3PO4 detected",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Structure refined by Rietveld; MEM shows 1D vs 3D Li diffusion as function of composition",
+      "prov": ["Figure 2", "Results and Discussion"]
+    },
+    {
+      "method": "Ionic conductivity (pressed pellet)",
+      "parameters": {
+        "temperature": {
+          "value": 300,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "sample_id": "target_1",
+          "metric": "ionic conductivity",
+          "value": 2.50,
+          "unit": "mS cm-1"
+        },
+        {
+          "sample_id": "target_2",
+          "metric": "ionic conductivity",
+          "value": 2.93,
+          "unit": "mS cm-1"
+        },
+        {
+          "sample_id": "target_3",
+          "metric": "ionic conductivity",
+          "value": 3.31,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 1"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Maximum Entropy Method (MEM)",
+        "results": [
+          {
+            "sample_id": "target_1",
+            "value": "1D Li diffusion along c-axis",
+            "unit": ""
+          },
+          {
+            "sample_id": "target_2",
+            "value": "1D Li diffusion along c-axis",
+            "unit": ""
+          },
+          {
+            "sample_id": "target_3",
+            "value": "3D Li diffusion involving ab-plane",
+            "unit": ""
+          }
+        ],
+        "prov": ["Figure 4", "Results and Discussion"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-06T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

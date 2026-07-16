@@ -1,0 +1,236 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Dynamical conductivity of lithium-intercalated hexagonal boron nitride films: A memory function approach",
+    "doi": "10.1103/PhysRevB.102.205108",
+    "authors": [
+      "Zoran Rukelj"
+    ],
+    "journal": "Physical Review B",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "dynamical conductivity",
+      "memory function",
+      "Li(BN)8",
+      "2D materials"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li(BN)8",
+      "molecular_formula": "Li(BN)8",
+      "intended_role": "material studied",
+      "prov": [
+        "Section I",
+        "Figure 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly identifies the studied heterostructure/compound as having stoichiometric formula Li(BN)8. Page 1 states: \"This work is a study of dynamical conductivity of a quasi-two-dimensional heterostructure Li(BN)8\" and \"The stoichiometric formula for this particular compound is Li(BN)8.\" Figure 1 caption on Page 2 also refers to \"the three layered structure Li(BN)8.\"",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "component",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Figure 1",
+        "Section I"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.94,
+        "reasoning": "The paper clearly identifies the relevant chemical species as lithium (Li) in a lithium-intercalated heterostructure with stoichiometric formula Li(BN)8 (Introduction; Fig. 1 caption; Sec. II and Sec. V). However, the text does not specify an experimental amount/concentration/mass/volume of lithium used (no dosage, molarity, wt%, loading, or similar quantity is given). Thus the extractor\u2019s claim that the amount is not specified is consistent with the source.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Boron nitride",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "component",
+        "category": "compound"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Figure 1",
+        "Section I"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly identifies the material as lithium-intercalated hexagonal boron nitride with stoichiometry Li(BN)8, i.e., it contains boron nitride (BN) layers (Introduction: \u201cboron nitride (BN) insulating layers\u2026 stoichiometric formula\u2026 Li(BN)8\u201d; Fig. 1 caption describes the BN layers). The text does not specify an explicit amount (mass, molarity, loading, thickness of BN in quantity terms) of boron nitride used; it only discusses structure and dimensions (e.g., thickness 6.4 \u00c5, lattice spacing a=5 \u00c5). Therefore \u201cBoron nitride | Amount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "No experimental synthesis procedure provided in the text.",
+        "excerpt": "The article is purely theoretical; it does not describe how Li(BN)8 films are synthesized.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "Supported. The full text contains no experimental section and provides only theoretical modeling/derivations for Li(BN)8 dynamical conductivity (Hamiltonian, memory function, conductivity calculations). Li(BN)8 is referenced as a quasi-2D heterostructure previously presented in other works, but this paper does not describe any film growth, intercalation method, synthesis steps, precursors, conditions, or fabrication procedure. Therefore the extracted issue (\u201cNo experimental synthesis procedure provided in the text / purely theoretical\u201d) is consistent with the document\u2019s contents.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Structural parameters (theoretical, Figure 1)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li\u2013Li in-plane distance",
+          "value": 5,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "Heterostructure thickness",
+          "value": 6.4,
+          "unit": "\u00c5"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "Figure 1 caption explicitly states: \u201cThe distance between the Li atoms is a = 5 \u00c5, while the thickness of the structure is 6.4 \u00c5.\u201d This supports both extracted structural parameters (Li\u2013Li in-plane distance = 5 \u00c5; heterostructure thickness = 6.4 \u00c5).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Electronic band parameters (single-band model)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Effective mass",
+          "value": 1.15,
+          "unit": "me"
+        },
+        {
+          "metric": "Fermi wave vector",
+          "value": 0.537,
+          "unit": "\u00c5^-1"
+        },
+        {
+          "metric": "Fermi energy",
+          "value": 0.96,
+          "unit": "eV"
+        },
+        {
+          "metric": "Lattice constant a",
+          "value": 5,
+          "unit": "\u00c5"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Section II"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Section II (Hamiltonian of Li(BN)8) explicitly lists all extracted single-band parameters: effective mass m* = 1.15 me, Fermi wave vector kF = 0.537 \u00c5^-1, Fermi energy \u03b5F = 0.96 eV, and lattice constant a = 5 \u00c5 (also reiterated in Fig. 1 caption as the Li\u2013Li distance). Units and values match exactly.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Memory function approach (theoretical calculation)",
+        "results": [
+          {
+            "metric": "Debye energy",
+            "value": 20,
+            "unit": "meV"
+          },
+          {
+            "metric": "Debye temperature",
+            "value": 230,
+            "unit": "K"
+          },
+          {
+            "metric": "Acoustic phonon sound speed",
+            "value": 3500,
+            "unit": "m s-1"
+          }
+        ],
+        "prov": [
+          "Figure 3 caption",
+          "Section IV"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.76,
+          "reasoning": "The paper describes the theoretical approach/methods used: an equation-of-motion technique for the electron-hole operator in the Heisenberg picture, leading to a memory-function formulation and generalized Drude conductivity; it also references Kramers\u2013Kronig relations and compares to current-current correlation approaches (G\u00f6tze\u2013W\u00f6lfle). However, the extracted value for \u201cAnalysis Method\u201d is blank/missing, which is not supported because the document does specify the analysis method (notably in the Abstract/Intro and Secs. III\u2013IV).",
+          "suggested_fix": "Analysis Method: Memory function approach / equation-of-motion (Heisenberg equation) evaluation of the electron-hole operator to derive a generalized Drude formula; real part via Kramers\u2013Kronig relations."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

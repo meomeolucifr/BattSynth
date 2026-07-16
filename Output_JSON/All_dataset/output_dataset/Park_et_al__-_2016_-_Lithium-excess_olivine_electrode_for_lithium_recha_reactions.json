@@ -1,0 +1,496 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium-excess olivine electrode for  lithium rechargeable  batteries",
+    "doi": "",
+    "authors": ["Kyu-Young Park", "Inchul Park", "Hyungsub Kim", "Gabin Yoon", "Hyeokjo Gwon", "Yongbeom Cho", "Young Soo Yun", "Jung-Joon Kim", "Seongsu Lee", "Docheon Ahn", "Yunok Kim", "Haegyeom Kim", "Insang Hwang", "Won-Sub Yoon", "Kisuk Kang"],
+    "journal": "Energy & Environmental Science (Electronic Supplementary Material)",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": ["lithium-ion battery", "olivine", "LiFePO4", "lithium-excess"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "lithium-excess LiFePO4 (Li-excess LFP)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 2 – section “Detailed synthetic process of lithium-excess LFP”"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Iron(II) oxalate monohydrate",
+      "molecular_formula": "FeC2O4·H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ammonium hydrogen phosphate",
+      "molecular_formula": "(NH4)HPO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Acetonitrile",
+      "molecular_formula": "C2H3N",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used for delithiation sample preparation",
+      "prov": ["Page 30"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Nitronium tetrafluoroborate",
+      "molecular_formula": "NO2BF4",
+      "ontology": {
+        "role": "oxidizing agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "1.5-fold excess relative to LFP (exact mass not given)",
+      "prov": ["Page 30"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pulverize individual precursor powders via high-energy ball milling under Ar to avoid oxidation.",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "High-energy ball milling; atmosphere Ar (chem_4)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Mix finely ground precursors by wet ball milling to ensure homogeneity.",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Wet ball milling; stated as >24 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Dry the wet-milled powder.",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 393,
+              "unit": "K"
+            },
+            "notes": "Original unit 120 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Pulverize dried powder via dry ball milling to improve uniformity.",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Dry ball milling"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Calcine the powder.",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {},
+            "duration": {
+              "value": 600,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 623,
+              "unit": "K"
+            },
+            "notes": "Heating rate 5–6 °C min⁻¹; original temp 350 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Pulverize calcined powder and pelletize.",
+        "operations": [
+          {
+            "action": "pulverize",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "pelletize",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "pressure": {
+              "value": 300,
+              "unit": "bar"
+            },
+            "notes": "Pressure stated as >300 bar"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 300,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Sinter the pellets under Ar atmosphere.",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Heating rate 5–6 °C min⁻¹; Ar atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "High-energy ball milling of individual precursors under Ar."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Wet ball milling of mixed precursors for >24 h."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Drying of wet-milled powder at 393 K."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Dry ball milling for uniformity."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Calcination at 623 K for 10 h with controlled heating rate."
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Pulverization and pelletization (>300 bar)."
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Sintering under Ar atmosphere with fast heating rate."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Sintering temperature not specified",
+        "excerpt": "The sintering is conducted with relatively fast heating rate at a 5 ~ 6 º C/min rate in Ar atmosphere."
+      },
+      {
+        "issue": "Amounts of precursor chemicals not provided",
+        "excerpt": "Each  precursor powders, such as Li2CO3, FeC2O4*H2O and (NH4)HPO4, is pulverized as fine as possible, separately."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "2theta_range": "15–40°",
+        "step_size": "0.02°",
+        "instrument": "D2 Phaser (Bruker)"
+      },
+      "results": [
+        {
+          "metric": "phase purity",
+          "value": "Stoichiometric and 5 % Li-excess samples show no crystalline impurities; 7.5 % and 10 % Li-excess contain Li3Fe2(PO4)3",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["S Figure 1, Page 3"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size (Li-excess)",
+          "value": 150,
+          "unit": "nm"
+        },
+        {
+          "metric": "particle size (normal)",
+          "value": 100,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["S Figure 5, Page 10"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "3 MHz – 0.1 Hz",
+        "temperatures": "273 K, 293 K, 303 K, 313 K, 333 K, 353 K"
+      },
+      "results": [
+        {
+          "metric": "Li⁺ diffusion activation barrier (Li-excess)",
+          "value": 240,
+          "unit": "meV"
+        },
+        {
+          "metric": "Li⁺ diffusion activation barrier (normal)",
+          "value": 330,
+          "unit": "meV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["S Figure 15, Page 24"]
+    },
+    {
+      "method": "Galvanostatic discharge",
+      "parameters": {
+        "temperature": 273,
+        "current_density": "2 A g⁻¹"
+      },
+      "results": [
+        {
+          "metric": "specific capacity (Li-excess)",
+          "value": 66,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "specific capacity (normal)",
+          "value": 49,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Li-excess delivers ~30 % higher capacity than normal at 0 °C.",
+      "prov": ["S Figure 20, Page 36"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations (PBE-GGA + U)",
+        "results": [
+          {
+            "equation": "",
+            "value": "Excess Li occupies M2 site with 4.2 % occupancy; zero Li/Fe antisite observed",
+            "unit": ""
+          }
+        ],
+        "prov": ["S Figure 2, Page 6"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 66,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T00:00:00Z",
+    "source_file": "supplementary_information.pdf",
+    "processing_time": null
+  }
+}

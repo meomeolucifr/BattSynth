@@ -1,0 +1,284 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Machine Learning-Assisted Discovery of Solid Li-Ion Conducting Materials",
+    "doi": "10.1021/acs.chemmater.8b03272",
+    "authors": [
+      "Austin D. Sendek",
+      "Ekin D. Cubuk",
+      "Evan R. Antoniuk",
+      "Gowoon Cheon",
+      "Yi Cui",
+      "Evan J. Reed"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "Li-ion conductors",
+      "solid electrolytes",
+      "DFT-MD",
+      "machine learning"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li5B7S13",
+      "molecular_formula": "Li5B7S13",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 1", "Page 346"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li2B2S5",
+      "molecular_formula": "Li2B2S5",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 1", "Page 346"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li3ErCl6",
+      "molecular_formula": "Li3ErCl6",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 1", "Page 346"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "LiSO3F",
+      "molecular_formula": "LiSO3F",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 1", "Table 2", "Page 346"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li3InCl6",
+      "molecular_formula": "Li3InCl6",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 1", "Page 346"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "Li2HIO",
+      "molecular_formula": "Li2HIO",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 1", "Page 346"]
+    },
+    {
+      "target_id": "target_7",
+      "compound_name": "LiMgB3(H9N)2",
+      "molecular_formula": "LiMgB3H9N2",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 1", "Page 347"]
+    },
+    {
+      "target_id": "target_8",
+      "compound_name": "CsLi2BS3",
+      "molecular_formula": "CsLi2BS3",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 1", "Page 346"]
+    },
+    {
+      "target_id": "target_9",
+      "compound_name": "Sr2LiCBr3N2",
+      "molecular_formula": "Sr2LiCBr3N2",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 1", "Page 346"]
+    },
+    {
+      "target_id": "target_10",
+      "compound_name": "Li6Ho(BO3)3",
+      "molecular_formula": "Li6Ho(BO3)3",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 2", "Page 348"]
+    },
+    {
+      "target_id": "target_11",
+      "compound_name": "LiSbO3",
+      "molecular_formula": "LiSbO3",
+      "intended_role": "candidate solid electrolyte",
+      "prov": ["Table 2", "Page 348"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "ml_screening",
+        "description": "Machine learning model screened 12,000+ Li-containing materials down to 317 candidates, then to 21 predicted fast conductors."
+      },
+      {
+        "step_ref": "dft_md_simulation",
+        "description": "DFT-MD simulations (400-1200 K, tens to hundreds of ps) performed on ML-selected and randomly selected materials to compute Li diffusivity and extrapolate RT ionic conductivity."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Approximate conductivity values indicated with '~' in text.",
+        "excerpt": "Li2HIO ... extrapolation assumes a diffusion barrier of 0.35 eV: a typical, if high, Li ion diffusion barrier..."
+      },
+      {
+        "issue": "Conductivity for CsLi2BS3 taken from analogous phase due to convergence issues.",
+        "excerpt": "RT conductivity value is assumed to be of the same order of magnitude as Li3BS3 in ref 25."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT-MD",
+      "parameters": {
+        "temperature_range_K": [400, 1200],
+        "simulation_time_ps": "tens-to-hundreds",
+        "Li_vacancy_concentration_%": "3-17"
+      },
+      "results": [
+        {
+          "target_ref": "target_1",
+          "metric": "RT ionic conductivity",
+          "value": 74,
+          "unit": "mS/cm"
+        },
+        {
+          "target_ref": "target_2",
+          "metric": "RT ionic conductivity",
+          "value": 9.7,
+          "unit": "mS/cm"
+        },
+        {
+          "target_ref": "target_3",
+          "metric": "RT ionic conductivity",
+          "value": 3,
+          "unit": "mS/cm"
+        },
+        {
+          "target_ref": "target_4",
+          "metric": "RT ionic conductivity",
+          "value": 0.082,
+          "unit": "mS/cm"
+        },
+        {
+          "target_ref": "target_5",
+          "metric": "RT ionic conductivity",
+          "value": 6.4,
+          "unit": "mS/cm"
+        },
+        {
+          "target_ref": "target_6",
+          "metric": "RT ionic conductivity",
+          "value": 0.1,
+          "unit": "mS/cm"
+        },
+        {
+          "target_ref": "target_7",
+          "metric": "RT ionic conductivity",
+          "value": 7.9,
+          "unit": "mS/cm"
+        },
+        {
+          "target_ref": "target_8",
+          "metric": "RT ionic conductivity",
+          "value": 1,
+          "unit": "mS/cm"
+        },
+        {
+          "target_ref": "target_9",
+          "metric": "RT ionic conductivity",
+          "value": 0.0033,
+          "unit": "mS/cm"
+        },
+        {
+          "target_ref": "target_10",
+          "metric": "RT ionic conductivity",
+          "value": 5.1,
+          "unit": "mS/cm"
+        },
+        {
+          "target_ref": "target_11",
+          "metric": "RT ionic conductivity",
+          "value": 0.67,
+          "unit": "mS/cm"
+        }
+      ],
+      "interpretation": "Several materials exhibit superionic Li conductivity at room temperature as predicted by ML model.",
+      "prov": ["Tables 1 & 2", "Pages 346-348"]
+    },
+    {
+      "method": "Machine Learning Logistic Regression",
+      "parameters": {
+        "training_samples": 40,
+        "features": ["LLB", "SBI", "AFC", "LASD", "LLSD"],
+        "performance_F1": 0.50
+      },
+      "results": [
+        {
+          "metric": "superionic prediction precision",
+          "value": 1.0,
+          "unit": ""
+        },
+        {
+          "metric": "superionic prediction recall",
+          "value": 0.33,
+          "unit": ""
+        }
+      ],
+      "interpretation": "ML model is 2.7x more likely than random to identify fast conductors.",
+      "prov": ["Page 348", "Figure 3", "Table 3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Statistical comparison",
+        "results": [
+          {
+            "equation": "log-average(σ_RT, ML) / log-average(σ_RT, random)",
+            "value": 44,
+            "unit": "dimensionless"
+          },
+          {
+            "metric": "Discovery rate improvement",
+            "value": 2.7,
+            "unit": "dimensionless"
+          }
+        ],
+        "prov": ["Page 348", "Figure 3"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-17T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

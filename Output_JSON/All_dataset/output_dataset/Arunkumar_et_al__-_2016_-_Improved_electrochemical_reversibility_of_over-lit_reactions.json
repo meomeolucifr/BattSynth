@@ -1,0 +1,465 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Improved electrochemical reversibility of over-lithiated layered Li2RuO3 cathodes: Understanding aliovalent Co3+ substitution with excess lithium",
+    "doi": "10.1016/j.jpowsour.2016.05.013",
+    "authors": [
+      "Paulraj Arunkumar",
+      "Woo Jin Jeong",
+      "Seob Won",
+      "Won Bin Im"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "Li-ion battery",
+      "cathode material",
+      "over-lithiated layered oxide"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2RuO3",
+      "molecular_formula": "Li2RuO3",
+      "intended_role": "product",
+      "prov": ["Page 429-430 (XRD description)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li2.1Ru0.9Co0.1O3",
+      "molecular_formula": "Li2.1Ru0.9Co0.1O3",
+      "intended_role": "product",
+      "prov": ["Page 428 (abstract)"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li2.2Ru0.8Co0.2O3",
+      "molecular_formula": "Li2.2Ru0.8Co0.2O3",
+      "intended_role": "product",
+      "prov": ["Page 429"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li2.5Ru0.5Co0.5O3",
+      "molecular_formula": "Li2.5Ru0.5Co0.5O3",
+      "intended_role": "product",
+      "prov": ["Page 429"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "RuO2",
+      "molecular_formula": "RuO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric amount varied with target composition",
+      "prov": ["Experimental section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Co(CH3COO)2",
+      "molecular_formula": "C4H6CoO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric amount according to desired x; Sigma-Aldrich 99.9%",
+      "prov": ["Experimental section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "CH3COOLi",
+      "molecular_formula": "C2H3O2Li",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric with 10 wt% excess to compensate volatilization",
+      "prov": ["Experimental section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "acetone",
+      "molecular_formula": "C3H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used for grinding/homogenizing precursors",
+      "prov": ["Experimental section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "conductive carbon (Ketjen black)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "mass %"
+      },
+      "notes": "Electrode fabrication",
+      "prov": ["Experimental section 2.3"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "PTFE binder",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "mass %"
+      },
+      "notes": "Electrode fabrication",
+      "prov": ["Experimental section 2.3"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "electrolyte component"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of electrolyte (1:1 wt with DMC)",
+      "prov": ["Experimental section 2.3"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "electrolyte component"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of electrolyte (1:1 wt with EC)",
+      "prov": ["Experimental section 2.3"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Electrolyte concentration",
+      "prov": ["Experimental section 2.3"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of precursor mixture",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Stoichiometric amounts; 10 wt% excess Li acetate for volatilization compensation"
+          },
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Grinding with acetone to homogenize"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-temperature solid-state reaction",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["intermediate from step_1"]
+            },
+            "temperature": {
+              "value": 1373.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "ramp_rate": {
+              "value": 2,
+              "unit": "K min-1"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental section 2.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Electrode fabrication (for electrochemical testing)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["target_1/2/3/4", "chem_5", "chem_6"]
+            },
+            "notes": "80 wt% active material, 10 wt% conductive carbon, 10 wt% PTFE"
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["mixture"]
+            },
+            "notes": "Pressed onto aluminum current collector"
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "temperature": {
+                "value": 393.15,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "Dried overnight under vacuum"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental section 2.3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mixing and homogenizing precursors with acetone"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Calcination at 1373 K for 12 h to form Li2+xRu1−xCoxO3 phases"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Preparation of composite electrodes for electrochemical testing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of precursors not specified",
+        "excerpt": "using stoichiometric amounts of RuO2, Co(CH3COO)2, and CH3COOLi"
+      },
+      {
+        "issue": "Atmosphere during heating unspecified",
+        "excerpt": "the resulting mixture was heated at 1100 °C for 12 h"
+      },
+      {
+        "issue": "Duration of 'overnight' drying undefined",
+        "excerpt": "dried at 120 °C overnight under vacuum"
+      },
+      {
+        "issue": "Capacity unit notation ambiguous ('mAh g/C01')",
+        "excerpt": "initial capacity of 250 mAh g/C01"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "wavelength": "1.54056 Å"
+      },
+      "results": [
+        {
+          "metric": "cell_parameters",
+          "value": {
+            "Li2RuO3": {"a": "4.9533 Å", "b": "8.7590 Å", "c": "9.8553 Å", "β": "100.11°"},
+            "Li2.1Ru0.9Co0.1O3": {"a": "4.9997 Å", "b": "8.6971 Å", "c": "9.8020 Å", "β": "100.20°"},
+            "Li2.2Ru0.8Co0.2O3": {"a": "4.9795 Å", "b": "8.6963 Å", "c": "9.8216 Å", "β": "100.18°"},
+            "Li2.5Ru0.5Co0.5O3": {"a": "2.8170 Å", "b": "2.8170 Å", "c": "14.2000 Å"}
+          },
+          "unit": ""
+        },
+        {
+          "metric": "I(020)/I(002)",
+          "value": {
+            "Li2RuO3": 0.14,
+            "Li2.1Ru0.9Co0.1O3": 0.18,
+            "Li2.2Ru0.8Co0.2O3": 0.13,
+            "Li2.5Ru0.5Co0.5O3": 0.00
+          },
+          "unit": ""
+        }
+      ],
+      "interpretation": "Higher I(020)/I(002) ratio for Li2.1Ru0.9Co0.1O3 indicates greater cation ordering.",
+      "prov": ["Table 1", "Page 430"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": "3–5 μm polyhedral particles",
+          "unit": "μm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy (EIS)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "charge-transfer resistance (Rct)",
+          "value": {
+            "Li2RuO3": 16.5,
+            "Li2.1Ru0.9Co0.1O3": 13.4,
+            "Li2.2Ru0.8Co0.2O3": 16.4,
+            "Li2.5Ru0.5Co0.5O3": 18.3
+          },
+          "unit": "Ω"
+        }
+      ],
+      "interpretation": "Lower Rct for Li2.1Ru0.9Co0.1O3 indicates improved charge transfer.",
+      "prov": ["Figure 8"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge–discharge",
+        "results": [
+          {
+            "description": "Initial discharge capacity at 1C",
+            "value": 225,
+            "unit": "mAh g-1",
+            "conditions": "Li2.1Ru0.9Co0.1O3, 2.0–4.8 V, 1C",
+            "prov": ["Page 433, Fig. 5a"]
+          },
+          {
+            "description": "Capacity after 100 cycles at 1C",
+            "value": 117,
+            "unit": "mAh g-1",
+            "conditions": "Li2.1Ru0.9Co0.1O3, 2.0–4.8 V, 1C",
+            "prov": ["Page 433, Fig. 5a"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 250,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

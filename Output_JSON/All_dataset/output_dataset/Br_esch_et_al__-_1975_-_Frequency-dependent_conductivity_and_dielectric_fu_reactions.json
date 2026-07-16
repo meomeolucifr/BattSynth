@@ -1,0 +1,294 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Frequency-Dependent Conductivity and Dielectric Function of Superionic Conductors",
+    "doi": "",
+    "authors": ["P. Bruesch", "S. Strassler", "H. R. Zeller"],
+    "journal": "physica status solidi (a)",
+    "year": 1976
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["superionic conductors", "AgI", "β-alumina", "far infrared spectroscopy"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "AgI single crystal",
+      "molecular_formula": "AgI",
+      "intended_role": "product",
+      "prov": ["Page 223"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "AgI",
+      "molecular_formula": "AgI",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Grown as single crystals for FIR experiments",
+      "prov": ["Page 223"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "hydroiodic acid",
+      "molecular_formula": "HI",
+      "ontology": {
+        "role": "solvent",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used as solvent for AgI growth by slow evaporation",
+      "prov": ["Page 223"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "potassium iodide",
+      "molecular_formula": "KI",
+      "ontology": {
+        "role": "complexing agent",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Provides complex for AgI in aqueous solution; decomplexed slowly to grow crystals",
+      "prov": ["Page 223"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Aqueous medium for KI complex solution",
+      "prov": ["Page 223"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Growth of AgI single crystals by slow evaporation of hydroiodic acid solvent",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "evaporate",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Slow evaporation leads to crystal growth"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 223"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Alternative growth of AgI single crystals by slow decomplexing of KI complex in aqueous solution",
+        "operations": [
+          {
+            "action": "prepare_solution",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3", "chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Formation of AgI–KI complex in water"
+          },
+          {
+            "action": "decomplex",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Slow decomplexation leads to AgI crystal precipitation/growth"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 223"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Slow evaporation method to obtain AgI single crystals"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Slow decomplexation method to obtain AgI single crystals from KI complex"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No quantitative synthesis parameters provided (amounts, temperatures, times)",
+        "excerpt": "Single crystals of β-AgI have been grown by slow evaporation of the solvent (HI) or by slowly decomplexing an aqueous solution with KI as complexing agent [34]"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Far-infrared reflectivity spectroscopy",
+      "parameters": {
+        "instrument": "Beckmann FS 720 Fourier photospectrometer",
+        "orientation": "E ⟂ c-axis, near normal incidence",
+        "temperature_range": "various, including 393 K, 419 K, 453 K"
+      },
+      "results": [
+        {
+          "metric": "TO phonon resonance frequency (β-AgI)",
+          "value": 106,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Subsidiary peak frequency (β-AgI)",
+          "value": 80,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Damping constant Γ0 at 393 K",
+          "value": 35,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Effective Szigeti charge (α-AgI)",
+          "value": 0.6,
+          "unit": "e"
+        },
+        {
+          "metric": "Model fit parameters (α-AgI) ω0",
+          "value": 105,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Model fit parameters (α-AgI) Γ0",
+          "value": 45,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Data used to model frequency-dependent conductivity; α-AgI shows increased reflectivity at lowest frequencies indicating finite dc conductivity",
+      "prov": ["Figures 3, 4, 5, 6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Kramers-Kronig analysis",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      },
+      {
+        "method_name": "Phenomenological oscillator-diffusion model (Equation 10)",
+        "results": [
+          {
+            "equation": "σ(ω) model with parameters ε∞=5, ω0=105 cm-1, Γ0=45 cm-1, τc⁻¹=53 cm-1",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

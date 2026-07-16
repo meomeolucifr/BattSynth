@@ -1,0 +1,148 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "First principles study of layered transition metal dichalcogenides for use as electrodes in Li-ion and Mg-ion batteries",
+    "doi": "10.1039/d3ta00940h",
+    "authors": ["Conor Jason Price", "Edward Allery David Baker", "Steven Paul Hepplestone"],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["TMDC", "DFT", "battery electrodes", "lithium intercalation", "magnesium intercalation"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Layered transition metal dichalcogenides (MX2, M = transition metal, X = S, Se, Te)",
+      "molecular_formula": "",
+      "intended_role": "electrode material",
+      "prov": ["Paper body"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "intercalant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Paper body"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Magnesium",
+      "molecular_formula": "Mg",
+      "ontology": {
+        "role": "intercalant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Paper body"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (DFT) calculations using VASP",
+      "parameters": {
+        "functional": "PBE; HSE06 for selected systems",
+        "plane_wave_cutoff": "700 eV",
+        "k_point_grid": "6×6×6 (Monkhorst–Pack) in supercells",
+        "vdW_correction": "DFT-D3 (zero damping)",
+        "spin_polarization": "collinear, no initial spin specified",
+        "force_convergence": "0.01 eV Å-1",
+        "energy_convergence": "1×10-7 eV"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods section"]
+    },
+    {
+      "method": "Nudged Elastic Band (NEB) calculations",
+      "parameters": {
+        "functional": "PBE",
+        "k_point_grid": "6×6×1",
+        "force_convergence": "0.01 eV Å-1",
+        "images": "series of interpolated images along diffusion paths A, B, C"
+      },
+      "results": [
+        {
+          "metric": "Li diffusion barrier in SnSe2 (route B)",
+          "value": 0.59,
+          "unit": "eV"
+        },
+        {
+          "metric": "Mg diffusion barrier in SnSe2 (route B)",
+          "value": 1.01,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3d", "Methods"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Thermodynamic phase diagram analysis",
+        "results": [
+          {
+            "equation": "E_IS = [...] (eqn 6,7)",
+            "value": null,
+            "unit": "",
+            "notes": "Used to estimate stability window and theoretical capacity for each TMDC"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2025-02-12T21:27:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Possible application of 2D-boron sheets as anode material in lithium ion battery: A DFT and AIMD study",
+    "doi": "10.1039/c3ta14041e",
+    "authors": [
+      "Swastika Banerjee",
+      "Ganga Periyasamy",
+      "Swapan K. Pati"
+    ],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "DFT",
+      "AIMD",
+      "lithium-ion battery",
+      "boron sheet",
+      "anode material"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "a1-AA boron sheet",
+      "molecular_formula": "",
+      "intended_role": "anode material",
+      "prov": [
+        "Main text Page 3858-3863"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "intercalant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Adsorbed/intercalated onto boron sheets during simulations",
+      "prov": [
+        "Throughout text"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "a1 boron sheet",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2D boron sheet polymorph studied",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium borohydride",
+      "molecular_formula": "LiBH4",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in model lithiation/delithiation reaction equations",
+      "prov": [
+        "Page 3859"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Borohydride anion",
+      "molecular_formula": "BH4-",
+      "ontology": {
+        "role": "byproduct",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Appears in reaction equations for desorption",
+      "prov": [
+        "Page 3859"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "",
+        "description": "Density functional theory and ab-initio molecular dynamics simulations of lithium adsorption, diffusion, and capacity on 2D boron sheets."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (PBE functional)",
+      "parameters": {
+        "basis_set": "TZV",
+        "dispersion_correction": "Grimme D2",
+        "temperature": 0
+      },
+      "results": [
+        {
+          "metric": "Li adsorption energy on a1 sheet (H site)",
+          "value": 1.62,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li adsorption energy on h sheet (H site)",
+          "value": 2.27,
+          "unit": "eV",
+          "notes": "0.65 eV higher than a1 sheet as stated in text"
+        }
+      ],
+      "interpretation": "Hollow hexagon site is most energetically favourable for Li adsorption.",
+      "prov": [
+        "Page 3859-3860"
+      ]
+    },
+    {
+      "method": "DIMER/NEB transition-state search",
+      "parameters": {
+        "path": "H → H via top of B atom",
+        "temperature": 0
+      },
+      "results": [
+        {
+          "metric": "Li diffusion barrier (monolayer a1)",
+          "value": 0.62,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li diffusion barrier (bilayer a1-AA, average surface & interlayer)",
+          "value": 0.66,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Diffusion proceeds over B atom with moderate barriers.",
+      "prov": [
+        "Figure 6"
+      ]
+    },
+    {
+      "method": "AIMD",
+      "parameters": {
+        "temperature": 300,
+        "pressure": 1,
+        "simulation_time": 5,
+        "time_unit": "ps"
+      },
+      "results": [
+        {
+          "metric": "Li diffusion barrier (monolayer a1, 300 K)",
+          "value": 0.35,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li diffusion barrier (bilayer a1-AA, 300 K)",
+          "value": 0.39,
+          "unit": "eV"
+        },
+        {
+          "metric": "Time to reach preferred H site",
+          "value": 1,
+          "unit": "ps"
+        }
+      ],
+      "interpretation": "Thermal effects lower diffusion barriers; Li rapidly migrates to H sites.",
+      "prov": [
+        "Figure 7"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical capacity calculation",
+        "results": [
+          {
+            "equation": "Capacity = nF / (3600·M)",
+            "value": 383,
+            "unit": "mAh g-1"
+          }
+        ],
+        "prov": [
+          "Page 3861-3862"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 383,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

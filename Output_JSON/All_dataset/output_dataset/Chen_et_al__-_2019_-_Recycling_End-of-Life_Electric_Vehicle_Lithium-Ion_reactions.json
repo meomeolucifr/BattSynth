@@ -1,0 +1,503 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recycling End-of-Life Electric Vehicle Lithium-Ion Batteries",
+    "doi": "10.1016/j.joule.2019.09.014",
+    "authors": ["Mengyuan Chen", "Xiaotu Ma", "Bin Chen", "Renata Arsenault", "Peter Karlson", "Nakia Simon", "Yan Wang"],
+    "journal": "Joule",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "perspective_review",
+    "tags": ["battery recycling", "pyrometallurgy", "hydrometallurgy", "direct recycling"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Co–Ni–Cu–Fe alloy",
+      "molecular_formula": "",
+      "intended_role": "recovered_product",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "lithium-containing Mn-rich slag",
+      "molecular_formula": "",
+      "intended_role": "recovered_product",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiCl",
+      "molecular_formula": "LiCl",
+      "intended_role": "recovered_product",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "intended_role": "recovered_product",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Mn3O4",
+      "molecular_formula": "Mn3O4",
+      "intended_role": "recovered_product",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "NiSO4",
+      "molecular_formula": "NiSO4",
+      "intended_role": "recovered_product",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_7",
+      "compound_name": "CoSO4",
+      "molecular_formula": "CoSO4",
+      "intended_role": "recovered_product",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_8",
+      "compound_name": "MnSO4",
+      "molecular_formula": "MnSO4",
+      "intended_role": "recovered_product",
+      "prov": ["Table 1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "MnO",
+      "molecular_formula": "MnO",
+      "ontology": {
+        "role": "slag_component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Table 1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "SiO2",
+      "molecular_formula": "SiO2",
+      "ontology": {
+        "role": "slag_component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Table 1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "slag_component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Table 1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "slag_component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Table 1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "carbon (reducing agent)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "reducing_agent",
+        "category": "element"
+      },
+      "amount": {
+        "value": 19.9,
+        "unit": "%"
+      },
+      "notes": "mass percentage dosage in reduction roasting",
+      "prov": ["Table 1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Recovered in multiple steps",
+      "prov": ["Table 1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Smelting of MnO–SiO2–Al2O3 slag to recover alloy and Mn-rich slag.",
+        "operations": [
+          {
+            "action": "smelt",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "temperature": {
+                "value": 1748.15,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "notes": "slag system MnO-SiO2-Al2O3; produces Co–Ni–Cu–Fe alloy and lithium-containing Mn-rich slag"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Table 1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Chlorination roasting of SiO2–CaO–Al2O3–Li2O simulated slag to produce LiCl.",
+        "operations": [
+          {
+            "action": "roast",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3", "chem_4"],
+              "temperature": {
+                "value": 1273.15,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 90,
+                "unit": "min"
+              }
+            },
+            "notes": "chlorination roasting yielded LiCl with 97.45% lithium recovery"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Table 1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Oxygen-free roasting followed by wet magnetic separation to recover Co, Li2CO3 and graphite.",
+        "operations": [
+          {
+            "action": "roast",
+            "parameters": {
+              "temperature": {
+                "value": 1273.15,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "notes": "oxygen-free environment"
+          },
+          {
+            "action": "separate",
+            "parameters": {
+              "method": "wet magnetic separation"
+            },
+            "notes": "separated metallic Co and graphite"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Table 1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Vacuum thermal treatment to recover Li2CO3.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 973,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              },
+              "pressure": {
+                "value": 0.001,
+                "unit": "bar"
+              }
+            },
+            "notes": "vacuum condition <1 kPa"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Table 1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Oxygen-free roasting to obtain Li2CO3 and Mn3O4.",
+        "operations": [
+          {
+            "action": "roast",
+            "parameters": {
+              "temperature": {
+                "value": 1073,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 45,
+                "unit": "min"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Table 1"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Reduction roasting of spent NMC/C battery material followed by leaching to recover Li2CO3 and metal sulfates.",
+        "operations": [
+          {
+            "action": "roast",
+            "parameters": {
+              "temperature": {
+                "value": 923.15,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 180,
+                "unit": "min"
+              },
+              "other": {
+                "carbon_dosage": "19.9 %"
+              }
+            },
+            "notes": "reduction roasting"
+          },
+          {
+            "action": "leach",
+            "parameters": {
+              "method": "carbonated water leaching"
+            },
+            "notes": "Li recovery 84.7% to Li2CO3"
+          },
+          {
+            "action": "leach",
+            "parameters": {
+              "method": "acid leaching"
+            },
+            "notes": "Ni, Mn, Co leach efficiencies >99% yielding NiSO4, CoSO4, MnSO4"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Table 1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "High-temperature smelting of slag to obtain metal alloy and Li-Mn slag."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Chlorination roasting of simulated slag to recover Li as LiCl."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Oxygen-free roasting and magnetic separation to collect Co, Li2CO3, and graphite."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Vacuum heat treatment for Li2CO3 recovery."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Roasting to obtain Li2CO3 and Mn3O4."
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Reduction roasting with carbon and subsequent leaching to separate Li2CO3 and metal sulfates."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses and reagent proportions not provided.",
+        "excerpt": "Slag system: MnO-SiO2-Al2O3; Smelting condition: 1,475 °C, 30 min"
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Recovery efficiency determination (Table 1)",
+        "results": [
+          {
+            "metric": "Co recovery",
+            "value": 99.79,
+            "unit": "%"
+          },
+          {
+            "metric": "Ni recovery",
+            "value": 99.30,
+            "unit": "%"
+          },
+          {
+            "metric": "Cu recovery",
+            "value": 99.30,
+            "unit": "%"
+          },
+          {
+            "metric": "Mn leaching efficiency",
+            "value": 79.86,
+            "unit": "%"
+          },
+          {
+            "metric": "Li leaching efficiency",
+            "value": 94.85,
+            "unit": "%"
+          },
+          {
+            "metric": "Li recovery (LiCl step)",
+            "value": 97.45,
+            "unit": "%"
+          },
+          {
+            "metric": "Co recovery (oxygen-free roasting)",
+            "value": 95.72,
+            "unit": "%"
+          },
+          {
+            "metric": "Li recovery (oxygen-free roasting)",
+            "value": 98.93,
+            "unit": "%"
+          },
+          {
+            "metric": "Graphite recovery",
+            "value": 91.05,
+            "unit": "%"
+          },
+          {
+            "metric": "Li purity (vacuum treatment)",
+            "value": 99.7,
+            "unit": "%"
+          },
+          {
+            "metric": "Li recovery (vacuum treatment)",
+            "value": 81.90,
+            "unit": "%"
+          },
+          {
+            "metric": "Li recovery (Mn3O4 step)",
+            "value": 91.30,
+            "unit": "%"
+          },
+          {
+            "metric": "Mn purity (Mn3O4 step)",
+            "value": 95.11,
+            "unit": "%"
+          },
+          {
+            "metric": "Li water-leach efficiency (reduction roasting)",
+            "value": 84.7,
+            "unit": "%"
+          },
+          {
+            "metric": "Ni acid-leach efficiency",
+            "value": 99,
+            "unit": "%"
+          },
+          {
+            "metric": "Mn acid-leach efficiency",
+            "value": 99,
+            "unit": "%"
+          },
+          {
+            "metric": "Co acid-leach efficiency",
+            "value": 99,
+            "unit": "%"
+          }
+        ],
+        "prov": ["Table 1"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T17:43:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

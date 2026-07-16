@@ -1,0 +1,392 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A stable cathode-solid electrolyte composite for high-voltage, long-cycle-life solid-state sodium-ion batteries",
+    "doi": "https://doi.org/10.1038/s41467-021-21488-7",
+    "authors": ["Erik A. Wu", "Swastika Banerjee", "Hanmei Tang", "Peter M. Richardson", "Jean-Marie Doux", "Ji Qi", "Zhuoying Zhu", "Antonin Grenier", "Yixuan Li", "Enyue Zhao", "Grayson Deysher", "Elias Sebti", "Han Nguyen", "Ryan Stephens", "Guy Verbist", "Karena W. Chapman", "Raphaële J. Clément", "Abhik Banerjee", "Ying Shirley Meng", "Shyue Ping Ong"],
+    "journal": "Nature Communications",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": ["solid-state electrolyte", "sodium-ion battery", "halide conductor"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na3YCl6",
+      "molecular_formula": "Na3YCl6",
+      "intended_role": "intermediate",
+      "prov": ["Page 3 Paragraph 'NYC was first synthesized'"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na2.25Y0.25Zr0.75Cl6",
+      "molecular_formula": "Na2.25Y0.25Zr0.75Cl6",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 3-4: highest conductivity NYZC0.75"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sodium chloride",
+      "molecular_formula": "NaCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric with desired Na content",
+      "prov": ["Methods - Material synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Yttrium(III) chloride",
+      "molecular_formula": "YCl3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Methods - Material synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconium(IV) chloride",
+      "molecular_formula": "ZrCl4",
+      "ontology": {
+        "role": "dopant reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Only for Zr-doped samples",
+      "prov": ["Methods - Material synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Quartz tube",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reaction vessel",
+        "category": "apparatus"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Flame sealed",
+      "prov": ["Methods - Material synthesis"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Manual premixing of precursors",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "duration": {
+                "value": 10,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Hand-mixed in mortar and pestle"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods - Material synthesis"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-energy ball milling",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "duration": {
+                "value": 120,
+                "unit": "min"
+              },
+              "speed": "500 rpm"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "50 mL ZrO2 jar, eleven 10 mm Y-ZrO2 balls"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods - Material synthesis"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Pellet pressing and sealing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 370,
+                "unit": "MPa"
+              }
+            },
+            "notes": "Pressed with 13 mm die"
+          },
+          {
+            "action": "seal",
+            "parameters": {},
+            "notes": "Loaded into quartz tube and flame sealed"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (inside glovebox prior to sealing)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods - Material synthesis"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat treatment (solid-state reaction)",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 773,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 1440,
+                "unit": "min"
+              },
+              "heating_rate": null
+            },
+            "notes": "Box furnace, 500 °C for 24 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed quartz tube",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods - Material synthesis"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Post-synthesis milling to homogenize",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "duration": {
+                "value": 240,
+                "unit": "min"
+              },
+              "speed": "not stated"
+            },
+            "notes": "Using 88 × 5 mm Y-ZrO2 balls"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods - Material synthesis"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mortar mixing of NaCl, YCl3, (optionally ZrCl4)"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Initial ball milling 2 h at 500 rpm"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Pellet pressed and sealed in quartz tube"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Calcination at 773 K for 24 h"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Second ball milling 4 h to homogenize"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact reagent masses not specified",
+        "excerpt": "Stoichiometric amounts of NaCl, YCl3, and ZrCl4 (see Methods)."
+      },
+      {
+        "issue": "Ball-mill speed for second milling not stated",
+        "excerpt": "the material was ball milled again after heat treatment ... for a duration of 4 h"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "range_2theta": "5–90°",
+        "step_size": "0.01°"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "P21/n structure retained up to x = 0.875",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Solid solution formation",
+      "prov": ["Figure 2a"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": "298 K",
+        "frequency_range": "1 MHz–1 Hz"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 6.6e-5,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Highest for NYZC0.75",
+      "prov": ["Figure 2b"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature_range": "298–373 K",
+        "heating_step": "20 K"
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.6636,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2c"]
+    },
+    {
+      "method": "DC polarization",
+      "parameters": {
+        "voltage": "50 mV"
+      },
+      "results": [
+        {
+          "metric": "electronic conductivity",
+          "value": 8.89e-9,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "NYZC0.75 is electronic insulator",
+      "prov": ["Supplementary Fig. 7"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical cycling",
+        "results": [
+          {
+            "description": "First cycle Coulombic efficiency at 298 K, C/10",
+            "value": 97.6,
+            "unit": "%"
+          },
+          {
+            "description": "Capacity retention after 1000 cycles at 313 K, 1 C",
+            "value": 89.3,
+            "unit": "%"
+          },
+          {
+            "description": "Discharge capacity at 313 K, C/2",
+            "value": 101,
+            "unit": "mAh g-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 101,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1000
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-21T14:33:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

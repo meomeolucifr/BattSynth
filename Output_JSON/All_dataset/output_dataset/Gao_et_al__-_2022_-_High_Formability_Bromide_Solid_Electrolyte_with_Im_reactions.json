@@ -1,0 +1,509 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "High Formability Bromide Solid Electrolyte with Improved Ionic Conductivity for Bulk-Type All-Solid-State Lithium−Metal Batteries",
+    "doi": "10.1021/acsaem.2c01343",
+    "authors": ["Ling Gao", "Fan Zhong", "Yan Tong", "Sheng Zhang", "Jiale You", "Huiping Wei", "Xiangxiang Yu", "Siqi Xu", "Guowei Zhao"],
+    "journal": "ACS Applied Energy Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid electrolyte", "Li-ion conductivity", "ball milling", "all-solid-state battery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiGaBr4",
+      "molecular_formula": "LiGaBr4",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Experimental Section", "Figure 2"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3.55(Ge0.45Si0.10V0.45)O4",
+      "molecular_formula": "Li3.55(Ge0.45Si0.10V0.45)O4",
+      "intended_role": "comparison solid electrolyte",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiBr",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "weighed in stoichiometric ratio",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "GaBr3",
+      "molecular_formula": "GaBr3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "weighed in stoichiometric ratio",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "SiO2",
+      "molecular_formula": "SiO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "GeO2",
+      "molecular_formula": "GeO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "V2O5",
+      "molecular_formula": "V2O5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.008,
+        "unit": "g"
+      },
+      "notes": "8 mg in cathode composite",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "foil thickness 0.1 mm, diameter 5 mm",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "LiGaBr4",
+      "molecular_formula": "LiGaBr4",
+      "ontology": {
+        "role": "electrolyte powder",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.1,
+        "unit": "g"
+      },
+      "notes": "pressed into pellet for battery assembly",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanochemical synthesis of LiGaBr4",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "stoichiometric amounts in Ar glovebox"
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "45 mL ZrO2 pot",
+              "additives": "15 ZrO2 balls (10 mm) and 40 ZrO2 balls (3 mm)"
+            }
+          },
+          {
+            "action": "ball mill",
+            "parameters": {
+              "speed": {
+                "value": 510,
+                "unit": "rpm"
+              },
+              "duration": {
+                "value": 1440,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "planetary mill QM-3SP04; atmosphere Ar (<1 ppm O2, H2O)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (<1 ppm O2, H2O)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Synthesis of Li3.55(Ge0.45Si0.10V0.45)O4 (LGSV) by solid-state reaction",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4", "chem_5", "chem_6"]
+            },
+            "notes": "stoichiometric ratios"
+          },
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "mortar and pestle"
+          },
+          {
+            "action": "pelletize",
+            "parameters": {
+              "pressure": {
+                "value": 200,
+                "unit": "bar"
+              }
+            },
+            "notes": "diameter 10 mm, thickness 1 mm"
+          },
+          {
+            "action": "calcine",
+            "parameters": {
+              "temperature": {
+                "value": 1173,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "atmosphere": "air",
+            "notes": "covered with identical powder to prevent volatilization"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air for calcination; Ar for weighing/pelletizing",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Pellet fabrication for conductivity testing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 200,
+                "unit": "bar"
+              }
+            },
+            "notes": "cold uniaxial press; diameter ~5 mm; thickness 1–1.5 mm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Assembly of all-solid-state Li-metal battery",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_9"],
+              "pressure": {
+                "value": 3000,
+                "unit": "bar"
+              }
+            },
+            "notes": "form 10 mm diameter electrolyte pellet"
+          },
+          {
+            "action": "layer",
+            "parameters": {
+              "sequence": ["Li foil (chem_8)", "Cu mesh current collector", "cathode composite containing chem_7 with Al mesh", "Al foil collector"]
+            },
+            "notes": "assembled on opposite sides of LGB pellet"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          }
+        },
+        "prov": ["Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mechanochemical preparation of LiGaBr4 electrolyte powder"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of comparison oxide electrolyte LGSV"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Pellet pressing of LiGaBr4 for conductivity evaluation"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Assembly of LiCoO2/LiGaBr4/Li all-solid-state cell"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses or molar ratios of LiBr and GaBr3 not specified",
+        "excerpt": "LiBr (99.99%, ...) and GaBr3 (99.998%, ...) were weighed at the chemical stoichiometry"
+      },
+      {
+        "issue": "Precise quantities of starting materials for LGSV not given",
+        "excerpt": "The starting materials were weighed in stoichiometric ratios"
+      },
+      {
+        "issue": "Battery capacities reported as approximate values",
+        "excerpt": "showed specific charge and discharge capacities of ∼110 and ∼100 mAh g−1"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα (λ=1.5418 Å)",
+        "instrument": "Shimadzu XRD-6010"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "monoclinic LiGaBr4, pure phase",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {
+        "instrument": "JEOL JSM-6610LV"
+      },
+      "results": [
+        {
+          "metric": "relative density (LiGaBr4 pellet)",
+          "value": 92,
+          "unit": "%"
+        },
+        {
+          "metric": "relative density (LGSV pellet)",
+          "value": 78,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "LGB shows tighter particle connections and fewer voids than LGSV",
+      "prov": ["Figure 4a", "Figure 4b"]
+    },
+    {
+      "method": "AC impedance",
+      "parameters": {
+        "frequency_range": "1e6–1e-1 Hz",
+        "voltage_amplitude": "25–250 mV",
+        "temperature_range": "288–373 K"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (LiGaBr4 pellet at 298 K)",
+          "value": 2.0e-5,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy (LiGaBr4)",
+          "value": 0.51,
+          "unit": "eV"
+        },
+        {
+          "metric": "ionic conductivity (sintered LGSV pellet at 298 K)",
+          "value": 1.0e-5,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "grain-boundary resistance fraction (LiGaBr4)",
+          "value": 9,
+          "unit": "%"
+        },
+        {
+          "metric": "grain-boundary resistance fraction (LGSV)",
+          "value": 73.1,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "LiGaBr4 exhibits low grain-boundary resistance leading to higher total conductivity",
+      "prov": ["Figure 3", "Figure 4c", "Figure 4d"]
+    },
+    {
+      "method": "Galvanostatic charge–discharge",
+      "parameters": {
+        "current_density": "0.03 mA cm-2",
+        "temperature": {
+          "value": 348,
+          "unit": "K"
+        },
+        "voltage_window": "2.5–4.2 V",
+        "rate": "0.05 C"
+      },
+      "results": [
+        {
+          "metric": "initial charge capacity",
+          "value": 110,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "initial discharge capacity",
+          "value": 100,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "initial Coulombic efficiency",
+          "value": 91,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Cell operates smoothly without short circuit; demonstrates electrolyte stability",
+      "prov": ["Figure 5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "σ = σ0 exp(-Ea/RT)",
+            "value": 0.51,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 100,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-07-30T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

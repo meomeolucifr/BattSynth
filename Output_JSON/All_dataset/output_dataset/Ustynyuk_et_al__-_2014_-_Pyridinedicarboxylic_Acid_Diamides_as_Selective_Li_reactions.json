@@ -1,0 +1,243 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Pyridinedicarboxylic Acid Diamides as Selective Ligands for Extraction and Separation of Trivalent Lanthanides and Actinides: DFT Study",
+    "doi": "10.1080/07366299.2014.915666",
+    "authors": [
+      "Yuri A. Ustynyuk",
+      "Igor P. Gloriozov",
+      "Stepan N. Kalmykov",
+      "Artyom A. Mitrofanov",
+      "Vassily A. Babain",
+      "Mikhail Yu. Alyapyshev",
+      "Nickolay A. Ustynyuk"
+    ],
+    "journal": "Solvent Extraction and Ion Exchange",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "lanthanide–actinide separation", "dipicolinic acid diamides"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "[LAm(NO3)3] and [LEu(NO3)3] complexes",
+      "molecular_formula": "",
+      "intended_role": "modeled_product",
+      "prov": ["Pages 518–524"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "N,N,N',N'-tetraethylpyridine-2,6-dicarboxamide",
+      "molecular_formula": "",
+      "ontology": {"role": "ligand", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Ligand 1 in text",
+      "prov": ["Page 511"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "N,N'-dimethyl-N,N'-diphenylpyridine-2,6-dicarboxamide",
+      "molecular_formula": "",
+      "ontology": {"role": "ligand", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Ligand 2 in text",
+      "prov": ["Page 511"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Conformationally rigid dilactam ligand (3)",
+      "molecular_formula": "",
+      "ontology": {"role": "ligand", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Proposed structure, not synthesized",
+      "prov": ["Page 512"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "N,N'-diethyl-N,N'-diphenylpyridine-2,6-dicarboxamide",
+      "molecular_formula": "",
+      "ontology": {"role": "ligand", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Ligand 4",
+      "prov": ["Page 511"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Tetraisobutylpyridine-2,6-dicarboxamide",
+      "molecular_formula": "",
+      "ontology": {"role": "ligand", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Ligand 10 (i-C4H9 substituents)",
+      "prov": ["Page 518"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Eu(NO3)3",
+      "molecular_formula": "",
+      "ontology": {"role": "metal salt", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Throughout"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Am(NO3)3",
+      "molecular_formula": "",
+      "ontology": {"role": "metal salt", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Throughout"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Hydroxonium ion",
+      "molecular_formula": "H3O+",
+      "ontology": {"role": "proton source", "category": "ion"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Pages 514–515"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Nitric acid",
+      "molecular_formula": "HNO3",
+      "ontology": {"role": "acid medium", "category": "inorganic"},
+      "amount": {"value": 6, "unit": "M"},
+      "notes": "Mentioned concentration used in extraction experiments",
+      "prov": ["Page 510"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "model_1",
+        "description": "Geometry optimisation of free ligands V using DFT/PBE with relativistic full-electron basis (L1)."
+      },
+      {
+        "step_ref": "model_2",
+        "description": "Protonation studies of ligands; calculation of proton affinities and [LH3O]+ complexes."
+      },
+      {
+        "step_ref": "model_3",
+        "description": "DFT optimisation of hydrated metal ions [M(H2O)9]3+ and nitrate hydrates (H2O)nM(NO3)3 (n = 3,4)."
+      },
+      {
+        "step_ref": "model_4",
+        "description": "DFT optimisation of [LM]3+ and LM(NO3)3 complexes (M = Eu, Am)."
+      },
+      {
+        "step_ref": "model_5",
+        "description": "Molecular-dynamics (Packmol) simulation of ligand 4 and its protonated form at the water/octane interface."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT",
+      "parameters": {
+        "functional": "PBE",
+        "basis_set": "L1 full-electron relativistic",
+        "temperature": {"value": 298.15, "unit": "K"}
+      },
+      "results": [
+        {
+          "metric": "binding_energy_L4_Eu",
+          "value": 500.6,
+          "unit": "kcal mol-1"
+        },
+        {
+          "metric": "binding_energy_L4_Am",
+          "value": 462.8,
+          "unit": "kcal mol-1"
+        }
+      ],
+      "interpretation": "Eu–ligand binding energies exceed Am–ligand in [LM]3+ species.",
+      "prov": ["Table 3"]
+    },
+    {
+      "method": "Molecular dynamics",
+      "parameters": {
+        "software": "Packmol",
+        "solvent_system": "water/octane"
+      },
+      "results": [
+        {
+          "metric": "interfacial_localisation",
+          "value": "protonated ligand localises at interface; neutral ligand remains in organic phase",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Supports proposed extraction mechanism involving protonated ligand.",
+      "prov": ["Page 516"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Selectivity factor calculation",
+        "results": [
+          {
+            "equation": "−RT ln SFAm/Eu = ΔΔG298",
+            "value": 2.3,
+            "unit": "",
+            "notes": "Ligand 4, complexes 24–25"
+          },
+          {
+            "equation": "−RT ln SFAm/Eu = ΔΔG298",
+            "value": 24.8,
+            "unit": "",
+            "notes": "Ligand 3, complexes 26–27"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

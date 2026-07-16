@@ -1,0 +1,399 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Identifying the Distribution of Al3+ in LiNi0.8Co0.15Al0.05O2",
+    "doi": "10.1021/acs.chemmater.6b02797",
+    "authors": [
+      "Nicole M. Trease",
+      "Ieuan D. Seymour",
+      "Maxwell D. Radin",
+      "Haodong Liu",
+      "Hao Liu",
+      "Sunny Hy",
+      "Natalya Chernova",
+      "Pritesh Parikh",
+      "Arun Devaraj",
+      "Kamila M. Wiaderek",
+      "Peter J. Chupas",
+      "Karena W. Chapman",
+      "M. Stanley Whittingham",
+      "Ying Shirley Meng",
+      "Anton Van der Van",
+      "Clare P. Grey"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "Li-ion battery",
+      "cathode",
+      "NCA",
+      "solid-state NMR",
+      "atom probe tomography",
+      "neutron diffraction"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNi0.8Co0.15Al0.05O2 (NCA)",
+      "molecular_formula": "LiNi0.8Co0.15Al0.05O2",
+      "intended_role": "product",
+      "prov": [
+        "Experimental Methods"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi0.8Co0.15Al0.05O2 (NCA)",
+      "molecular_formula": "LiNi0.8Co0.15Al0.05O2",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Purchased as NAT1050 from TODA America.",
+      "prov": [
+        "Experimental Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "AlF3",
+      "molecular_formula": "AlF3",
+      "ontology": {
+        "role": "reference_standard",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Secondary reference at −17 ppm for 27Al NMR.",
+      "prov": [
+        "Experimental Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Al(NO3)3 (aqueous)",
+      "molecular_formula": "Al(NO3)3",
+      "ontology": {
+        "role": "reference_standard",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Primary reference (0 ppm) for 27Al NMR.",
+      "prov": [
+        "Experimental Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reference_standard",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Reference (0 ppm) for 7Li NMR.",
+      "prov": [
+        "Experimental Methods"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Acquisition of commercial Li[Ni0.8Co0.15Al0.05]O2 powder (NAT1050, TODA America).",
+        "operations": [
+          {
+            "action": "obtain",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Material used as-received for all characterizations."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental Methods"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Commercial NCA powder obtained for study."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Li deficiency detected in APT attributed to Ga damage; true Li content uncertain.",
+        "excerpt": "The Li shows a slightly decreased concentration at the surface, which coincides directly with the Ga enriched region... indicating surface damage due to Ga as the cause for the observed loss of Li near the top surface of the specimen."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "27Al MAS NMR",
+      "parameters": {
+        "magnetic_field": "4.7 T and 7 T",
+        "probe": "1.3 mm MAS",
+        "pulse_sequence": "Hahn-echo, π/2 = 1.5 μs",
+        "spinning_speed": "40 kHz and 60 kHz",
+        "reference": "AlF3 at −17 ppm vs Al(NO3)3"
+      },
+      "results": [
+        {
+          "metric": "isotropic shifts (νr 60 kHz)",
+          "value": "-1243, -1030, -827, -620, -413",
+          "unit": "ppm"
+        },
+        {
+          "metric": "isotropic shifts (νr 40 kHz)",
+          "value": "-1346, -1113, -891, -668, -445",
+          "unit": "ppm"
+        },
+        {
+          "metric": "paramagnetic Al fraction",
+          "value": 97,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Al atoms are homogeneously distributed and experience shifts consistent with dynamic JT distortion.",
+      "prov": [
+        "Figure 6",
+        "Experimental Methods"
+      ]
+    },
+    {
+      "method": "7Li MAS NMR",
+      "parameters": {
+        "magnetic_field": "4.7 T",
+        "probe": "1.3 mm MAS",
+        "pulse_sequence": "pj-MATPASS, π/2 = 1.02 μs",
+        "spinning_speed": "40 kHz and 60 kHz",
+        "reference": "Li2CO3 at 0 ppm"
+      },
+      "results": [
+        {
+          "metric": "diamagnetic peak",
+          "value": 0,
+          "unit": "ppm"
+        },
+        {
+          "metric": "broad paramagnetic envelope",
+          "value": "0-1000",
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "Lineshape matches calculated spectrum for dynamic Jahn-Teller distortion.",
+      "prov": [
+        "Figure 5",
+        "Experimental Methods"
+      ]
+    },
+    {
+      "method": "Neutron Powder Diffraction",
+      "parameters": {
+        "instrument": "POWGEN, SNS",
+        "wavelength": "1.066 Å",
+        "d_spacing_range": "0.3–3.0 Å",
+        "sample_mass": "3 g"
+      },
+      "results": [
+        {
+          "metric": "space group",
+          "value": "R3̅m",
+          "unit": ""
+        },
+        {
+          "metric": "lattice parameter a",
+          "value": 2.86415,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameter c",
+          "value": 14.19052,
+          "unit": "Å"
+        },
+        {
+          "metric": "oxygen z coordinate",
+          "value": 0.2592,
+          "unit": ""
+        },
+        {
+          "metric": "Li/Ni mixing",
+          "value": 0.1,
+          "unit": "%"
+        },
+        {
+          "metric": "Al occupancy",
+          "value": 5.0,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Confirms well-ordered layered structure with minimal cation mixing.",
+      "prov": [
+        "Figure 3",
+        "Table 1"
+      ]
+    },
+    {
+      "method": "Synchrotron X-ray Powder Diffraction",
+      "parameters": {
+        "instrument": "11-BM, APS",
+        "wavelength": "0.45999 Å"
+      },
+      "results": [
+        {
+          "metric": "structure confirmation",
+          "value": "matches neutron data",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Cross-validated layered R3̅m structure.",
+      "prov": [
+        "Figure 3"
+      ]
+    },
+    {
+      "method": "Atom Probe Tomography",
+      "parameters": {
+        "instrument": "CAMECA LEAP 4000 XHR",
+        "laser_pulsing": "UV",
+        "sample_prep": "FIB lift-out, Ga ion milling, Pt cap"
+      },
+      "results": [
+        {
+          "metric": "composition (relative)",
+          "value": "Li0.410 Al0.058 Ni0.800 Co0.164 O1.825 (normalized to Ni)",
+          "unit": ""
+        },
+        {
+          "metric": "element distribution",
+          "value": "homogeneous",
+          "unit": ""
+        }
+      ],
+      "interpretation": "No elemental segregation detected at 10 nm scale.",
+      "prov": [
+        "Figure 4",
+        "Table 2"
+      ]
+    },
+    {
+      "method": "SQUID Magnetic Susceptibility",
+      "parameters": {
+        "instrument": "MPMS XL-5",
+        "field": "1000 Oe",
+        "temperature_range": "350–2 K"
+      },
+      "results": [
+        {
+          "metric": "effective magnetic moment (μ_eff)",
+          "value": 1.98,
+          "unit": "μB"
+        },
+        {
+          "metric": "Weiss constant (Θ)",
+          "value": 16,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Data used for scaling DFT-calculated hyperfine shifts.",
+      "prov": [
+        "Experimental Methods"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT Phase Diagram Calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": "Layered Li(Ni,Co,Al)O2 phase stable with up to ~80 % Al in TM layer at 1000 K",
+            "unit": ""
+          }
+        ]
+      },
+      {
+        "method_name": "DFT Hyperfine Shift Calculation (spin-flip, HYB20)",
+        "results": [
+          {
+            "equation": "δ_SS = 11 ppm; δ_SL = −336 ppm; dynamic contribution per Ni^3+ = −220 ppm",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T10:37:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

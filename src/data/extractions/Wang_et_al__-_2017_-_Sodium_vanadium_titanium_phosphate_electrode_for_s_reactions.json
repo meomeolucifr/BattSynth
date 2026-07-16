@@ -1,0 +1,403 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Sodium vanadium titanium phosphate electrode for symmetric sodium-ion batteries with high power and long lifespan",
+    "doi": "10.1038/ncomms15888",
+    "authors": ["Dongxue Wang", "Xiaofei Bie", "Qiang Fu", "Ditty Dixon", "Natalia Bramnik", "Yong-Sheng Hu", "Francois Fauth", "Yingjin Wei", "Helmut Ehrenberg", "Gang Chen", "Fei Du"],
+    "journal": "Nature Communications",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["sodium-ion battery", "NASICON", "symmetric cell"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na2VTi(PO4)3@C nanocomposite",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sodium carbonate",
+      "molecular_formula": "Na2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Stoichiometric amount",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ammonium metavanadate",
+      "molecular_formula": "NH4VO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Stoichiometric amount",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Titanium isopropoxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Described as (CH3CH3CHO)4Ti, Sigma-Aldrich 99%",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Ammonium dihydrogen phosphate",
+      "molecular_formula": "NH4H2PO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Stoichiometric amount",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Citric acid",
+      "molecular_formula": "C6H8O7",
+      "ontology": {
+        "role": "complexing agent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "0.02 M aqueous solution; Na:citric acid ratio 2:1",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to prepare 0.02 M citric acid aqueous solution",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used during sintering at 1073 K",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dissolution and complexation",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5", "chem_6"]
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "Stoichiometric reagents dissolved in 0.02 M aqueous citric acid; Na:citric acid = 2:1"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pre-calcination of precursor",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "temperature": {
+              "value": 623,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "notes": "Pretreated at 350 °C to obtain intermediate"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Sintering to form Na2VTi(PO4)3@C",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": ["step_2"]
+            },
+            "temperature": {
+              "value": 1073,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "Under nitrogen atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "nitrogen",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"],
+        "outputs": ["target_1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Solution reaction at 353 K for 12 h forming precursor gel."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pre-calcination at 623 K for 5 h to remove volatiles."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Nitrogen sintering at 1073 K for 12 h yielding carbon-coated Na2VTi(PO4)3."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Ambiguous chemical formula for titanium source",
+        "excerpt": "\"(CH3CH3CHO)4Ti (Sigma-Aldrich, 99%)\""
+      },
+      {
+        "issue": "Exact stoichiometric masses/amounts not specified",
+        "excerpt": "\"Stoichiometric amount of Na2CO3, NH4VO3, (CH3CH3CHO)4Ti and NH4H2PO4 was dissolved...\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Synchrotron XRD (Rietveld refinement)",
+      "parameters": {
+        "radiation_energy": "30 keV",
+        "wavelength": "0.413364 Å"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameter_a",
+          "value": 8.5992,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice_parameter_c",
+          "value": 21.8181,
+          "unit": "Å"
+        },
+        {
+          "metric": "Rwp",
+          "value": 4.39,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Confirmed rhombohedral NASICON structure.",
+      "prov": ["Figure 1b"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle_size",
+          "value": 200,
+          "unit": "nm"
+        },
+        {
+          "metric": "carbon_coating_thickness",
+          "value": 6,
+          "unit": "nm"
+        },
+        {
+          "metric": "lattice_spacing_d110",
+          "value": 0.43,
+          "unit": "nm"
+        },
+        {
+          "metric": "lattice_spacing_d300",
+          "value": 0.25,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Well-crystallized nanoparticles with uniform carbon layer.",
+      "prov": ["Figure 1b inset"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength": "514.5 nm"
+      },
+      "results": [
+        {
+          "metric": "ID/IG",
+          "value": 0.98,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Amorphous nature of carbon.",
+      "prov": ["Supplementary Fig. 3"]
+    },
+    {
+      "method": "CHN elemental analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "carbon_content",
+          "value": 4.2,
+          "unit": "wt%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Methods"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge–discharge (half-cell vs Na)",
+        "results": [
+          {
+            "metric": "specific_capacity_discharge_0.1C",
+            "value": 147,
+            "unit": "mAh g-1"
+          },
+          {
+            "metric": "specific_capacity_20C",
+            "value": 44,
+            "unit": "mAh g-1"
+          }
+        ]
+      },
+      {
+        "method_name": "Galvanostatic charge–discharge (symmetric full cell)",
+        "results": [
+          {
+            "metric": "specific_capacity_1C_initial_discharge",
+            "value": 78,
+            "unit": "mAh g-1"
+          },
+          {
+            "metric": "specific_capacity_20C",
+            "value": 49,
+            "unit": "mAh g-1"
+          },
+          {
+            "metric": "cycle_life_capacity_retention_10C",
+            "value": 74,
+            "unit": "%",
+            "notes": "After 10,000 cycles"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 147,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 10000
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-22T18:54:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

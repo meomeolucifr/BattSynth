@@ -1,0 +1,172 @@
+{
+  "_instructions": {
+    "purpose": "Fill in human_verdict for each entity below. Compare the extracted_value against the source PDF. Focus on any values that look suspicious or surprising.",
+    "human_verdict_choices": [
+      "correct           — value matches the PDF exactly",
+      "incorrect         — value is wrong (fill in 'correction')",
+      "partially_correct — partially right but incomplete/imprecise",
+      "missing_data      — field should have a value but is null/empty"
+    ],
+    "error_category_choices": [
+      "null              — no error",
+      "hallucination     — value not in the paper at all",
+      "missing_formula   — formula missing or wrong",
+      "wrong_amount      — numerical value or unit is wrong",
+      "term_normalization— naming/synonym issue",
+      "provenance_error  — wrong page/table/figure citation",
+      "semantic_mismatch — meaning is off",
+      "other             — anything else"
+    ],
+    "workflow": [
+      "STEP 1: Open the PDF:  Golden_Dataset_v2/pdfs/simple/Lee_et_al__-_2001_-_Synthesis_and_characterization_of_lithium_aluminum.pdf",
+      "STEP 2: Open this file in a text editor (VS Code recommended)",
+      "STEP 3: Work through entity_reviews top-to-bottom",
+      "STEP 4: For each entity: set human_verdict + page_reference at minimum",
+      "STEP 5: If incorrect: fill in correction + error_category",
+      "STEP 6: Add missed_errors entries for errors the extractor missed entirely",
+      "STEP 7: Add missing_extractions for important info not extracted at all",
+      "STEP 8: Fill in the summary section at the bottom",
+      "STEP 9: Save as-is (filename already set correctly)"
+    ]
+  },
+  "paper_id": "Lee_et_al__-_2001_-_Synthesis_and_characterization_of_lithium_aluminum",
+  "reviewer_name": "",
+  "review_date": "2026-03-10",
+  "review_start_time": "",
+  "review_end_time": "",
+  "source_pdf_filename": "Lee_et_al__-_2001_-_Synthesis_and_characterization_of_lithium_aluminum.pdf",
+  "extraction_json_filename": "Lee_et_al__-_2001_-_Synthesis_and_characterization_of_lithium_aluminum_reactions.json",
+  "tier": "simple",
+  "score_percent": 82.8,
+  "title": "Synthesis and characterization of lithium aluminum-doped spinel for lithium seco",
+  "journal": "",
+  "year": "",
+  "doi": "",
+  "entity_reviews": [
+    {
+      "entity_path": "targets[0]",
+      "entity_id": "target_1",
+      "extracted_value": "compound=LiAlxMn2-xO4 spinel  formula=  role=cathode material",
+      "llm_verdict": "N/A (no Verified_ file — review directly from PDF)",
+      "llm_confidence": null,
+      "human_verdict": "",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": ""
+    },
+    {
+      "entity_path": "chemicals[0]",
+      "entity_id": "chem_0",
+      "extracted_value": "name=Al(NO3)3  formula=  role=  amount={...}",
+      "llm_verdict": "N/A (no Verified_ file — review directly from PDF)",
+      "llm_confidence": null,
+      "human_verdict": "",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": ""
+    },
+    {
+      "entity_path": "chemicals[1]",
+      "entity_id": "chem_1",
+      "extracted_value": "name=Al(OH)3  formula=  role=  amount={...}",
+      "llm_verdict": "N/A (no Verified_ file — review directly from PDF)",
+      "llm_confidence": null,
+      "human_verdict": "",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": ""
+    },
+    {
+      "entity_path": "synthesis.steps[0]",
+      "entity_id": "step_1",
+      "extracted_value": "description=High-temperature calcination of precursor mixture",
+      "llm_verdict": "N/A (no Verified_ file — review directly from PDF)",
+      "llm_confidence": null,
+      "human_verdict": "",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": ""
+    },
+    {
+      "entity_path": "synthesis.steps[0].operations[0]",
+      "entity_id": "step_1_op0",
+      "extracted_value": "action=calcine  T=null  t=null",
+      "llm_verdict": "N/A (no Verified_ file — review directly from PDF)",
+      "llm_confidence": null,
+      "human_verdict": "",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": ""
+    },
+    {
+      "entity_path": "final_outcomes.yield",
+      "entity_id": "yield",
+      "extracted_value": "{...}",
+      "llm_verdict": "N/A (no Verified_ file — review directly from PDF)",
+      "llm_confidence": null,
+      "human_verdict": "",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": ""
+    },
+    {
+      "entity_path": "final_outcomes.capacity",
+      "entity_id": "capacity",
+      "extracted_value": "{...}",
+      "llm_verdict": "N/A (no Verified_ file — review directly from PDF)",
+      "llm_confidence": null,
+      "human_verdict": "",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": ""
+    }
+  ],
+  "missed_errors": [
+    {
+      "_comment": "Errors NOT caught by the extractor (values that are simply wrong but look plausible)",
+      "entity_path": "",
+      "entity_id": "",
+      "issue": "",
+      "correct_value": "",
+      "page_reference": ""
+    }
+  ],
+  "missing_extractions": [
+    {
+      "_comment": "Important information in the PDF that was NOT extracted at all",
+      "what_is_missing": "",
+      "page_reference": "",
+      "section": ""
+    }
+  ],
+  "summary": {
+    "total_entities_reviewed": 7,
+    "total_llm_flags_reviewed": 0,
+    "agreements_with_llm": 0,
+    "disagreements_with_llm": 0,
+    "false_negatives_by_llm": 0,
+    "false_positives_by_llm": 0,
+    "correct_count": 0,
+    "incorrect_count": 0,
+    "partially_correct_count": 0,
+    "missing_data_count": 0,
+    "missed_errors_count": 0,
+    "missing_extractions_count": 0,
+    "overall_extraction_quality": "",
+    "reviewer_comments": ""
+  }
+}

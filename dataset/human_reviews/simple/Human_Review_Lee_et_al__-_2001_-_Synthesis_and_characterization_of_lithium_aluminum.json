@@ -1,0 +1,185 @@
+{
+  "_instructions": {
+    "purpose": "Fill in human_verdict for each entity below. Compare the extracted_value against the source PDF. Focus on any values that look suspicious or surprising.",
+    "human_verdict_choices": [
+      "correct           — value matches the PDF exactly",
+      "incorrect         — value is wrong (fill in 'correction')",
+      "partially_correct — partially right but incomplete/imprecise",
+      "missing_data      — field should have a value but is null/empty"
+    ],
+    "error_category_choices": [
+      "null              — no error",
+      "hallucination     — value not in the paper at all",
+      "missing_formula   — formula missing or wrong",
+      "wrong_amount      — numerical value or unit is wrong",
+      "term_normalization— naming/synonym issue",
+      "provenance_error  — wrong page/table/figure citation",
+      "semantic_mismatch — meaning is off",
+      "other             — anything else"
+    ],
+    "workflow": [
+      "STEP 1: Open the PDF:  Golden_Dataset_v2/pdfs/simple/Lee_et_al__-_2001_-_Synthesis_and_characterization_of_lithium_aluminum.pdf",
+      "STEP 2: Open this file in a text editor (VS Code recommended)",
+      "STEP 3: Work through entity_reviews top-to-bottom",
+      "STEP 4: For each entity: set human_verdict + page_reference at minimum",
+      "STEP 5: If incorrect: fill in correction + error_category",
+      "STEP 6: Add missed_errors entries for errors the extractor missed entirely",
+      "STEP 7: Add missing_extractions for important info not extracted at all",
+      "STEP 8: Fill in the summary section at the bottom",
+      "STEP 9: Save as-is (filename already set correctly)"
+    ]
+  },
+  "paper_id": "Lee_et_al__-_2001_-_Synthesis_and_characterization_of_lithium_aluminum",
+  "reviewer_name": "Tri Nguyen",
+  "review_date": "2026-03-12",
+  "review_start_time": "00:12",
+  "review_end_time": "00:12",
+  "source_pdf_filename": "Lee_et_al__-_2001_-_Synthesis_and_characterization_of_lithium_aluminum.pdf",
+  "extraction_json_filename": "Lee_et_al__-_2001_-_Synthesis_and_characterization_of_lithium_aluminum_reactions.json",
+  "tier": "simple",
+  "score_percent": 82.8,
+  "title": "Synthesis and characterization of lithium aluminum-doped spinel for lithium seco",
+  "journal": "",
+  "year": "",
+  "doi": "",
+  "entity_reviews": [
+    {
+      "entity_path": "targets[0]",
+      "entity_id": "target_1",
+      "extracted_value": "compound=LiAlxMn2-xO4 spinel  formula=  role=cathode material",
+      "llm_verdict": "unsupported",
+      "llm_confidence": 0.76,
+      "human_verdict": "missing_data",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": "other",
+      "llm_reasoning": "The field \"Target Formula\" has an empty extracted value, but the paper title and body clearly specify the compound/formula being studied (Al-doped spinel), e.g., \"LiAlxMn2−xO4\" / \"LiAlxMn2−xO4\" (also written as LiAlxMn2−xO4 with x in the range ~0–0.12). Since a target formula is explicitly present in the document, an empty extraction is not supported.",
+      "llm_suggested_fix": "LiAlxMn2−xO4 (Al-doped spinel lithium manganese oxide; x varied ~0–0.12)"
+    },
+    {
+      "entity_path": "chemicals[0]",
+      "entity_id": "chem_0",
+      "extracted_value": "name=Al(NO3)3  formula=  role=  amount={...}",
+      "llm_verdict": "unsupported",
+      "llm_confidence": 0.74,
+      "human_verdict": "correct",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": "",
+      "llm_reasoning": "The paper discusses Al-doped spinel synthesis and lists aluminum starting materials such as Al(OH)(CH3COO)2 (aluminum acetate hydroxide), Al(NO3)3, Al2O3, and AlCl3 (as “Al(NO3)3”, “Al2O3”, “AlCl3”, and an Al-acetate-based compound) (see Page 2, Experimental: starting materials list). However, the text does specify amounts at least in terms of stoichiometry: it states “A stoichiometric amount of LiOH·H2O, MnO2 (or γ-MnOOH), and aluminum-based materials … were mixed in various cationic ratios (x in LiAlxMn2−xO4, x = 0–0.12).” Therefore it is not correct to say the amount is “Not specified in text” in a general sense; stoichiometric amounts/ratios are specified even if exact grams are not.",
+      "llm_suggested_fix": "Al(NO3)3 | Amount: stoichiometric amount (varied by cationic ratio x in LiAlxMn2−xO4, x = 0–0.12); exact mass not given."
+    },
+    {
+      "entity_path": "chemicals[1]",
+      "entity_id": "chem_1",
+      "extracted_value": "name=Al(OH)3  formula=  role=  amount={...}",
+      "llm_verdict": "unsupported",
+      "llm_confidence": 0.93,
+      "human_verdict": "incorrect",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": "other",
+      "llm_reasoning": "The paper discusses Al-doped spinel materials and lists aluminum starting materials such as Al(OH)3/AlO(OH) (written as AlOOH), Al2O3, Al(NO3)3? (not clearly), and Al-acetate is mentioned in prior work context. However, Al(OH)3 is not explicitly identified anywhere in the provided text (the hydroxide form is not named). Since the chemical identity itself is not supported, the paired statement 'Al(OH)3 | Amount: Not specified' is not supported overall (even though amounts for Al sources are generally not given, Al(OH)3 is not the source used/mentioned).",
+      "llm_suggested_fix": "Chemical identity should be one of the explicitly listed Al starting materials, e.g., AlO(OH) (AlOOH), Al2O3, or Al(NO3)3/Al-acetate depending on what is intended; amount: not specified (only 'stoichiometric amount' and mixing ratios are mentioned, no explicit mass/moles for Al source)."
+    },
+    {
+      "entity_path": "synthesis.steps[0]",
+      "entity_id": "step_1",
+      "extracted_value": "description=High-temperature calcination of precursor mixture",
+      "llm_verdict": "not_verified_by_llm",
+      "llm_confidence": null,
+      "human_verdict": "correct",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": ""
+    },
+    {
+      "entity_path": "synthesis.steps[0].operations[0]",
+      "entity_id": "step_1_op0",
+      "extracted_value": "action=calcine  T=null  t=null",
+      "llm_verdict": "supported",
+      "llm_confidence": 0.9,
+      "human_verdict": "correct",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": "",
+      "llm_reasoning": "The paper explicitly describes a calcination step during synthesis: e.g., Page 2 states the mixed starting materials were “precalcined” and then “re-ground and calcined” at high temperature (e.g., 700–900°C) to obtain the Al-doped spinel. This supports the synthesis operation being calcination (“calcine”).",
+      "llm_suggested_fix": ""
+    },
+    {
+      "entity_path": "final_outcomes.yield",
+      "entity_id": "yield",
+      "extracted_value": "{...}",
+      "llm_verdict": "not_verified_by_llm",
+      "llm_confidence": null,
+      "human_verdict": "correct",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": ""
+    },
+    {
+      "entity_path": "final_outcomes.capacity",
+      "entity_id": "capacity",
+      "extracted_value": "{...}",
+      "llm_verdict": "not_verified_by_llm",
+      "llm_confidence": null,
+      "human_verdict": "correct",
+      "human_notes": "",
+      "correction": "",
+      "page_reference": "",
+      "agrees_with_llm": null,
+      "error_category": ""
+    }
+  ],
+  "missed_errors": [
+    {
+      "_comment": "Errors NOT caught by the extractor (values that are simply wrong but look plausible)",
+      "entity_path": "",
+      "entity_id": "",
+      "issue": "",
+      "correct_value": "",
+      "page_reference": ""
+    }
+  ],
+  "missing_extractions": [
+    {
+      "_comment": "Important information in the PDF that was NOT extracted at all",
+      "what_is_missing": "",
+      "page_reference": "",
+      "section": ""
+    }
+  ],
+  "summary": {
+    "total_entities_reviewed": 7,
+    "total_llm_flags_reviewed": 4,
+    "agreements_with_llm": 0,
+    "disagreements_with_llm": 0,
+    "false_negatives_by_llm": 0,
+    "false_positives_by_llm": 0,
+    "correct_count": 5,
+    "incorrect_count": 1,
+    "partially_correct_count": 0,
+    "missing_data_count": 1,
+    "missed_errors_count": 0,
+    "missing_extractions_count": 0,
+    "overall_extraction_quality": "acceptable",
+    "reviewer_comments": "",
+    "llm_supported_count": 1,
+    "llm_unsupported_count": 3,
+    "llm_not_verified_count": 3
+  },
+  "verified_json_filename": "Verified_Lee_et_al__-_2001_-_Synthesis_and_characterization_of_lithium_aluminum_reactions.json",
+  "_llm_update_timestamp": "2026-03-11T07:10:28"
+}

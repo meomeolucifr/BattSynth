@@ -1,0 +1,349 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Theoretical prediction of MXene-like structured Ti3C4 as a high capacity electrode material for Na ion batteries",
+    "doi": "10.1039/c7cp06171d",
+    "authors": [
+      "Qiangqiang Meng",
+      "Alice Hu",
+      "Chunyi Zhi",
+      "Jun Fan"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "MXene",
+      "DFT",
+      "Na-ion battery",
+      "Ti3C4",
+      "electrode material"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ti3C4 monolayer",
+      "molecular_formula": "Ti3C4",
+      "intended_role": "electrode material",
+      "prov": [
+        "Title",
+        "Introduction"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "guest ion",
+        "category": "alkali metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Adsorption section"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sodium",
+      "molecular_formula": "Na",
+      "ontology": {
+        "role": "guest ion",
+        "category": "alkali metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Adsorption section"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ti3C2 monolayer",
+      "molecular_formula": "Ti3C2",
+      "ontology": {
+        "role": "precursor",
+        "category": "MXene"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Structure and stability section"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Model construction: Ti3C4 monolayer obtained by saturating the under-coordinated surface Ti atoms of a Ti3C2 monolayer with additional carbon atoms to form C2 dimers.",
+        "operations": [
+          {
+            "action": "model_construction",
+            "parameters": {
+              "inputs": [
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Fig. 1",
+          "Text: 'The carbonized Ti3C2 monolayer is constructed by saturating the under-coordinated surface Ti(2) atoms with C groups.'"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Construction of Ti3C4 model from Ti3C2 precursor via carbon saturation."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Phonon dispersion (DFPT)",
+      "parameters": {
+        "supercell": "as used in Phonopy calculations",
+        "accuracy": "no imaginary frequencies"
+      },
+      "results": [
+        {
+          "metric": "maximum optical phonon frequency",
+          "value": 866,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "dynamic stability",
+          "value": "stable (no imaginary modes)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "II-Ti3C4 monolayer is dynamically stable.",
+      "prov": [
+        "Fig. 2"
+      ]
+    },
+    {
+      "method": "Electronic band structure (DFT PBE & HSE06)",
+      "parameters": {
+        "k_point_mesh": "12×12×1",
+        "energy_cutoff": "500 eV"
+      },
+      "results": [
+        {
+          "metric": "electronic nature",
+          "value": "metallic",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Bands crossing Fermi level dominated by Ti-3d orbitals.",
+      "prov": [
+        "Fig. 3"
+      ]
+    },
+    {
+      "method": "CI-NEB diffusion barrier calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li diffusion barrier (P1)",
+          "value": 0.74,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li diffusion barrier (P2)",
+          "value": 0.76,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li diffusion barrier (P3)",
+          "value": 0.85,
+          "unit": "eV"
+        },
+        {
+          "metric": "Na diffusion barrier (P1)",
+          "value": 0.35,
+          "unit": "eV"
+        },
+        {
+          "metric": "Na diffusion barrier (P2)",
+          "value": 0.35,
+          "unit": "eV"
+        },
+        {
+          "metric": "Na diffusion barrier (P3)",
+          "value": 0.60,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Na shows lower diffusion barrier than Li, indicating faster kinetics.",
+      "prov": [
+        "Fig. 5"
+      ]
+    },
+    {
+      "method": "AIMD simulation",
+      "parameters": {
+        "temperature": 800,
+        "time_step": "0.5 fs",
+        "total_steps": 10000
+      },
+      "results": [
+        {
+          "metric": "structural integrity after 10000 steps (Li)",
+          "value": "Li forms clusters, no layered structure",
+          "unit": ""
+        },
+        {
+          "metric": "structural integrity after 10000 steps (Na)",
+          "value": "Na maintains orderly layered structure",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Supports multilayer adsorption feasibility for Na only.",
+      "prov": [
+        "Fig. 8"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Adsorption energy calculation",
+        "results": [
+          {
+            "description": "Li adsorption energy (CI site)",
+            "value": -1.74,
+            "unit": "eV"
+          },
+          {
+            "description": "Na adsorption energy (CI site)",
+            "value": -1.49,
+            "unit": "eV"
+          },
+          {
+            "description": "Average adsorption energy first Li layer",
+            "value": -1.47,
+            "unit": "eV per atom"
+          },
+          {
+            "description": "Average adsorption energy first Na layer",
+            "value": -0.90,
+            "unit": "eV per atom"
+          },
+          {
+            "description": "Average adsorption energy second Li layer",
+            "value": 0.15,
+            "unit": "eV per atom"
+          },
+          {
+            "description": "Average adsorption energy second Na layer",
+            "value": -0.03,
+            "unit": "eV per atom"
+          }
+        ]
+      },
+      {
+        "method_name": "Open circuit voltage calculation",
+        "results": [
+          {
+            "description": "Average OCV for Li",
+            "value": 1.47,
+            "unit": "V"
+          },
+          {
+            "description": "Average OCV for Na (one layer)",
+            "value": 0.90,
+            "unit": "V"
+          },
+          {
+            "description": "Average OCV for Na (two layers)",
+            "value": 0.47,
+            "unit": "V"
+          }
+        ]
+      },
+      {
+        "method_name": "Theoretical capacity calculation",
+        "results": [
+          {
+            "description": "Theoretical capacity for Li",
+            "value": 280,
+            "unit": "mAh g-1"
+          },
+          {
+            "description": "Theoretical capacity for Na",
+            "value": 560,
+            "unit": "mAh g-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 560,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T11:52:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A chemical map of NaSICON electrode materials for sodium-ion batteries",
+    "doi": "10.1039/d0ta10688g",
+    "authors": ["Baltej Singh", "Ziliang Wang", "Sunkyu Park", "Gopalakrishnan Sai Gautam", "Jean-Noël Chotard", "Laurence Croguennec", "Dany Carlier", "Anthony K. Cheetham", "Christian Masquelier", "Pieremanuele Canepa"],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["NaSICON", "sodium-ion battery", "DFT", "phase diagram", "voltage prediction"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na3Mn2(PO4)3",
+      "molecular_formula": "Na3Mn2(PO4)3",
+      "intended_role": "predicted stable NaSICON composition",
+      "prov": ["Page 287, Fig. 7a"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na1Mn2(PO4)3",
+      "molecular_formula": "NaMn2(PO4)3",
+      "intended_role": "predicted stable NaSICON composition",
+      "prov": ["Page 287, Fig. 7a"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Na3Co2(PO4)3",
+      "molecular_formula": "Na3Co2(PO4)3",
+      "intended_role": "predicted stable NaSICON composition",
+      "prov": ["Page 287, Fig. 7b"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density Functional Theory (DFT) calculations",
+        "parameters": {
+          "software": "VASP",
+          "exchange_correlation": "PBE-GGA + U",
+          "plane_wave_cutoff": "520 eV",
+          "k_point_mesh": "G-centered Monkhorst–Pack with 25 subdivisions",
+          "U_values_eV": {
+            "Ti": 4.0,
+            "V": 3.1,
+            "Cr": 3.5,
+            "Mn": 3.9,
+            "Fe": 4.0,
+            "Co": 3.4,
+            "Ni": 6.0
+          }
+        },
+        "results": [
+          {
+            "metric": "average intercalation voltage range across 28 NaSICON compositions",
+            "value": "1.96–4.40",
+            "unit": "V vs. Na/Na+"
+          }
+        ],
+        "interpretation": "Identified thermodynamically stable and high-voltage NaSICON compositions for sodium-ion batteries.",
+        "prov": ["Pages 283–289, Figures 2–6"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-13T17:26:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

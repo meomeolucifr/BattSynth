@@ -1,0 +1,555 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Quantum Mechanics Reactive Dynamics Study of Solid Li-Electrode/Li6PS5Cl-Electrolyte Interface",
+    "doi": "10.1021/acsenergylett.7b00319",
+    "authors": [
+      "Tao Cheng",
+      "Boris V. Merinov",
+      "Sergey Morozov",
+      "William A. Goddard III"
+    ],
+    "journal": "ACS Energy Letters",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid electrolyte",
+      "interface stability",
+      "ab initio molecular dynamics",
+      "DFT"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Page 1454"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li metal electrode",
+      "molecular_formula": "Li",
+      "intended_role": "electrode",
+      "prov": [
+        "Page 1454"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li2S",
+      "molecular_formula": "Li2S",
+      "intended_role": "decomposition product",
+      "prov": [
+        "Page 1454",
+        "Figure 6"
+      ]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li3P",
+      "molecular_formula": "Li3P",
+      "intended_role": "decomposition product",
+      "prov": [
+        "Page 1454",
+        "Figure 6"
+      ]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "LiCl",
+      "molecular_formula": "LiCl",
+      "intended_role": "decomposition product",
+      "prov": [
+        "Page 1454",
+        "Figure 6"
+      ]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "LiP",
+      "molecular_formula": "LiP",
+      "intended_role": "possible decomposition product",
+      "prov": [
+        "Page 1454",
+        "Figure 6"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "bulk argyrodite phase used in simulations",
+      "prov": [
+        "Page 1454"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "bcc structure, 8 layers in model",
+      "prov": [
+        "Page 1455"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "identified by simulated XRD",
+      "prov": [
+        "Figure 6"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li3P",
+      "molecular_formula": "Li3P",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "identified by simulated XRD",
+      "prov": [
+        "Figure 6"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "formation evidenced by RDF and simulated XRD",
+      "prov": [
+        "Figure 6",
+        "Figure 7"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "LiP",
+      "molecular_formula": "LiP",
+      "ontology": {
+        "role": "possible product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "suggested by simulated XRD",
+      "prov": [
+        "Figure 6"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Oxygen",
+      "molecular_formula": "O",
+      "ontology": {
+        "role": "interface modifier",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used for partial oxidation of interface",
+      "prov": [
+        "Page 1455"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Construction of Li6PS5Cl crystal with 50% Li site occupancy, followed by DFT PBE geometry optimization.",
+        "operations": [
+          {
+            "action": "geometry optimization",
+            "parameters": {
+              "method": "DFT PBE"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Cell parameters converged to 10.16 × 10.11 × 10.16 Å with small angle deviations."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Figure 1",
+          "Table 1"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Assembly of Li/Li6PS5Cl interface supercell containing 8 layers of BCC Li (100) 3×3 surface and 6 layers of Li6PS5Cl (100) surface (total 228 atoms).",
+        "operations": [
+          {
+            "action": "model construction",
+            "parameters": {
+              "Li supercell length": "10.32 Å",
+              "Li6PS5Cl cell length": "10.15 Å"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 1455",
+          "Figure 2a"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "DFT PBE energy minimization of the Li/Li6PS5Cl interface leading to spontaneous decomposition of interfacial PS4 units.",
+        "operations": [
+          {
+            "action": "energy minimization",
+            "parameters": {
+              "method": "DFT PBE"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Formation of P–Li and Li–S bonds observed."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Figure 2b",
+          "Figure 3"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Partial oxidation of the Li/Li6PS5Cl interface by introducing P–O bonds followed by DFT PBE optimization.",
+        "operations": [
+          {
+            "action": "interface modification",
+            "parameters": {
+              "modifier": "O atoms"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "No decomposition after optimization."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Figure 2c",
+          "Figure 2d"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "AIMD simulation (NVT ensemble) of partially oxidized interface at 298 K for 100 ps to assess stability.",
+        "operations": [
+          {
+            "action": "molecular dynamics",
+            "parameters": {
+              "ensemble": "NVT",
+              "temperature": 298
+            },
+            "duration": {
+              "value": 100,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Interface remained stable up to 100 ps."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 1455"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "AIMD simulations of pristine Li/Li6PS5Cl interface for 500 ps at 298 K, 398 K, and 498 K to study decomposition.",
+        "operations": [
+          {
+            "action": "molecular dynamics",
+            "parameters": {
+              "ensemble": "NVT",
+              "temperatures": [
+                298,
+                398,
+                498
+              ]
+            },
+            "duration": {
+              "value": 500,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Significant decomposition seen even at 298 K."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Figure 4",
+          "Figure 5",
+          "Figure 6"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "DFT optimization of Li6PS5Cl crystal structure."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Construction of Li/Li6PS5Cl interface model."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Initial interfacial decomposition observed during DFT minimization."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Interface partial oxidation and re-optimization."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Short-term AIMD stability test at 298 K."
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Longer AIMD simulations at multiple temperatures revealing decomposition products."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Uncertain formation of LiP phase",
+        "excerpt": "\"and possibly LiP\" (Page 1454)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Radial Distribution Function (RDF)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "P–S peak intensity decrease",
+          "value": "",
+          "unit": ""
+        },
+        {
+          "metric": "New P–Li peaks",
+          "value": "2–3 Å",
+          "unit": "Å"
+        },
+        {
+          "metric": "Li–Cl second shell peak shift",
+          "value": "~5 Å at 498 K",
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "Indicates breaking of P–S and Li–Cl bonds and formation of new bonds during decomposition.",
+      "prov": [
+        "Figure 3",
+        "Figure 7"
+      ]
+    },
+    {
+      "method": "Simulated XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Phase identification",
+          "value": "Li2S, Li3P, LiCl, LiP",
+          "unit": ""
+        },
+        {
+          "metric": "Characteristic LiCl peak",
+          "value": "2θ ≈ 30°",
+          "unit": "degree"
+        }
+      ],
+      "interpretation": "Confirms multiple decomposition products at interface after 500 ps AIMD at 498 K.",
+      "prov": [
+        "Figure 6"
+      ]
+    },
+    {
+      "method": "AIMD trajectory analysis",
+      "parameters": {
+        "simulation_time": 500,
+        "time_unit": "min"
+      },
+      "results": [
+        {
+          "metric": "Onset of decomposition at 298 K",
+          "value": "< 500 ps",
+          "unit": "ps"
+        }
+      ],
+      "interpretation": "Interface reactions have very low energy barriers; diffusion-controlled.",
+      "prov": [
+        "Figure 4",
+        "Text Page 1456"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Qualitative reaction scheme",
+        "results": [
+          {
+            "equation": "Li + Li6PS5Cl → Li3P + Li2S + LiCl (+ LiP)",
+            "value": "",
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

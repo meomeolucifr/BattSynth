@@ -1,0 +1,220 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Design of nano-structured heterogeneous solid ionic coatings through a multi-scale defect model",
+    "doi": "",
+    "authors": [
+      "Jie Pan",
+      "Qinglin Zhang",
+      "Xingcheng Xiao",
+      "Yang-Tse Cheng",
+      "Yue Qi"
+    ],
+    "journal": "",
+    "year": null
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "supporting_information",
+    "tags": [
+      "solid_state_ionics",
+      "defect_modeling"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Phase for which defect profiles and conductivity are modeled",
+      "prov": [
+        "Supporting Information S-2",
+        "Supporting Information S-3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The supporting information repeatedly discusses Li2CO3 (e.g., section titles and figure captions on S-2 and S-3). However, nowhere in the provided text is an amount (mass, molarity, volume, wt%, etc.) of Li2CO3 specified; it is treated as a material/phase in a theoretical/analytical model. Therefore, the identification \u201cLi2CO3\u201d is supported and the statement \u201cAmount: Not specified in text\u201d is also supported by omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiF",
+      "molecular_formula": "LiF",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Forms interface with Li2CO3",
+      "prov": [
+        "Supporting Information S-3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.87,
+        "reasoning": "The supporting information text mentions LiF only in the context of a Li2CO3/LiF interface (e.g., \u201cLi2CO3/LiF interface\u201d and \u201cLiF/Li2CO3 interface\u201d on S-3 to S-4) but provides no quantitative amount, concentration, mass, molarity, or composition fraction for LiF anywhere in the provided document. Therefore the extraction \u201cLiF | Amount: Not specified in text\u201d is consistent with the source text omission (per the null-handling rule).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li\u207a interstitial (Li_i)",
+      "molecular_formula": "Li+",
+      "ontology": {
+        "role": "defect species",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mobile ionic defect considered in conductivity calculations",
+      "prov": [
+        "Supporting Information S-2",
+        "Supporting Information S-3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The Supporting Information explicitly discusses lithium ion interstitial defects in Li2CO3, denoted as Li_i (written as Li\u2022i / Li ion interstitial) in multiple places (e.g., Fig. S1 label \u201cLii\u201d, and text: \u201cLi ion interstitial in the bulk Li2CO3\u201d with c\u221e_{Li\u2022i}). However, no specific numerical amount/concentration value for Li_i is given; it is only represented symbolically as c\u221e_{Li\u2022i}, c_{Li\u2022i}(x), etc. Therefore the extractor\u2019s \u201cAmount: Not specified in text\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "electron (e\u2032)",
+      "molecular_formula": "e-",
+      "ontology": {
+        "role": "defect species",
+        "category": "electron"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Electronic defect included in charge neutrality",
+      "prov": [
+        "Supporting Information S-2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.84,
+        "reasoning": "The Supporting Information (S-2) explicitly mentions the defect species electron as e\u2032 (e.g., Fig. S1(b) label \u201ce\u2032\u201d and Eq. (S1) terms including c\u221e_{e\u2032}), but nowhere in the provided text is an absolute or quantitative \u201camount\u201d (e.g., mol%, concentration value, or number density) given for electrons\u2014only symbolic concentrations and relations (e.g., c\u221e_{e\u2032} = c\u221e_{Li\u2022i}). Therefore, the statement \u201celectron (e\u2032) | Amount: Not specified in text\u201d is consistent with the source.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical modeling (Poisson-Boltzmann and Gouy-Chapman profiles)",
+        "results": [
+          {
+            "equation": "\u2202\u00b2\u03c6(x)/\u2202x\u00b2 = \u2212e/\u03b5_r (c_\u221e^{Li_i} e^{-e\u03c6/k_BT} \u2212 c_\u221e^{e\u2032} e^{e\u03c6/k_BT})",
+            "label": "Eq. (S1)",
+            "prov": [
+              "Supporting Information S-2"
+            ]
+          },
+          {
+            "equation": "\u03bb_D = sqrt(\u03b5_r RT / (2 F\u00b2 c_\u221e^{Li_i}))",
+            "label": "Eq. (S3)",
+            "prov": [
+              "Supporting Information S-2"
+            ]
+          },
+          {
+            "equation": "z(x) = [ (1 + J e^{-x}) / (1 - J e^{-x}) ]\u00b2,  J = (1 - z\u2080^{\u22121/2}) / (1 + z\u2080^{\u22121/2})",
+            "label": "Eq. (S4)",
+            "prov": [
+              "Supporting Information S-2"
+            ]
+          },
+          {
+            "equation": "\u0394\u03c3 = z\u00b2 F\u00b2 D_{Li_i} / (RT) \u0394C_{Li_i}",
+            "label": "Eq. (S7)",
+            "prov": [
+              "Supporting Information S-3"
+            ]
+          },
+          {
+            "equation": "L_A/(2\u03bb_D) = 2\u221a{z*} [F(z*; \u03c0/2) \u2212 F(z*; arcsin\u221a{z\u2080/z*})]",
+            "label": "Eq. (S10)",
+            "prov": [
+              "Supporting Information S-3"
+            ]
+          },
+          {
+            "equation": "\u0394\u03c3_{Li_i} = 4 \u03bb_D / L_A  z\u00b2 F\u00b2 D_{Li_i} / (RT) c_\u221e^{Li_i} [(c_{x=0}^{Li_i} \u2212 c_{x=L_A/2}^{Li_i})]^{1/2}",
+            "label": "Eq. (S16)",
+            "prov": [
+              "Supporting Information S-3"
+            ]
+          }
+        ],
+        "prov": [
+          "Supporting Information S-2",
+          "Supporting Information S-3"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.81,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the Supporting Information text explicitly describes the analytical/theoretical methods used: Poisson\u2013Boltzmann (Gouy\u2013Chapman) profile and Poisson\u2019s equation for space-charge potential/defect distributions (Section 1, Eq. S1\u2013S4), plus Nernst\u2013Einstein relationship and related integrations/elliptic integral treatment for ionic conductivity enhancement (Section 2, Eq. S5\u2013S10; continued Eq. S11\u2013S16). Therefore, the paper does specify analysis methods, and leaving the field empty is not supported.",
+          "suggested_fix": "Analysis method: theoretical modeling/analytical derivations using Poisson\u2013Boltzmann (Gouy\u2013Chapman) space-charge model and Poisson\u2019s equation; Nernst\u2013Einstein relationship for ionic conductivity (with integration/elliptic integral solution for finite grain size)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

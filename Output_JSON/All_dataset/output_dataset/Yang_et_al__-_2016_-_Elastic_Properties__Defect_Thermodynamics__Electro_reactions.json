@@ -1,0 +1,237 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Elastic Properties, Defect Thermodynamics, Electrochemical Window, Phase Stability, and Li+ Mobility of Li3PS4: Insights from First-Principles Calculations",
+    "doi": "10.1021/acsami.6b06754",
+    "authors": ["Yanhan Yang", "Qu Wu", "Yanhua Cui", "Yongchang Chen", "Siqi Shi", "Ru-Zhi Wang", "Hui Yan"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["solid electrolyte", "Li3PS4", "first-principles calculations", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "γ-Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "intended_role": "material studied",
+      "prov": ["Page 1–2, introduction and computational details"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "β-Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "intended_role": "material studied",
+      "prov": ["Page 1–2, introduction and computational details"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "ontology": {
+        "role": "analyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Studied in γ and β phases",
+      "prov": ["Throughout text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li3PO4",
+      "molecular_formula": "Li3PO4",
+      "ontology": {
+        "role": "comparison material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 4, Table 4"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "decomposition product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Predicted interfacial product",
+      "prov": ["Page 11, Table 7"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "decomposition product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 11, Table 7"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Li3P",
+      "molecular_formula": "Li3P",
+      "ontology": {
+        "role": "decomposition product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 11, Table 7"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density Functional Theory (GGA-PBE)",
+        "parameters": {
+          "plane_wave_cutoff": "500 eV",
+          "k_point_mesh": "4×5×5 (γ), 4×6×8 (β)",
+          "supercell_size": "128 atoms"
+        },
+        "results": [],
+        "prov": ["Section 2, Computational Details"]
+      },
+      {
+        "method_name": "Hybrid functional HSE06 DOS calculation",
+        "parameters": {},
+        "results": [
+          {
+            "metric": "Band gap (γ and β)",
+            "value": 3.7,
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Supporting Information Section S4"]
+      },
+      {
+        "method_name": "Climbing image nudged elastic band (CI-NEB)",
+        "parameters": {},
+        "results": [
+          {
+            "metric": "Li⁺ migration barrier β-Li3PS4 [010] knock-off",
+            "value": 0.08,
+            "unit": "eV"
+          },
+          {
+            "metric": "Li⁺ migration barrier γ-Li3PS4 [001] direct hop",
+            "value": 0.16,
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Figures 6 and 9"]
+      },
+      {
+        "method_name": "Elastic constant calculation",
+        "parameters": {},
+        "results": [
+          {
+            "metric": "Bulk modulus γ-Li3PS4",
+            "value": 31.9,
+            "unit": "GPa"
+          },
+          {
+            "metric": "Bulk modulus β-Li3PS4",
+            "value": 21.39,
+            "unit": "GPa"
+          }
+        ],
+        "prov": ["Table 4"]
+      },
+      {
+        "method_name": "Defect formation energy calculation",
+        "parameters": {},
+        "results": [
+          {
+            "metric": "Electrochemical window",
+            "value": "0.6–3.7",
+            "unit": "V"
+          }
+        ],
+        "prov": ["Figures 3, 4 and discussion"]
+      },
+      {
+        "method_name": "Ionic conductivity estimation (Nernst–Einstein)",
+        "parameters": {
+          "temperature": "300 K"
+        },
+        "results": [
+          {
+            "metric": "Calculated σ γ-Li3PS4 (0.80 V)",
+            "value": 4.68e-5,
+            "unit": "S cm-1"
+          },
+          {
+            "metric": "Calculated σ β-Li3PS4 (0.75 V)",
+            "value": 5.30e-1,
+            "unit": "S cm-1"
+          }
+        ],
+        "prov": ["Table 9"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-03T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

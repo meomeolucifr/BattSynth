@@ -1,0 +1,350 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Analysis of a Li-Ion Nanobattery with Graphite Anode Using Molecular Dynamics Simulations",
+    "doi": "10.1021/acs.jpcc.7b04190",
+    "authors": ["Victor Ponce", "Diego E. Galvez-Aranda", "Jorge M. Seminario"],
+    "journal": "Journal of Physical Chemistry C",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["molecular dynamics", "lithium-ion battery", "graphite anode", "electrolyte modeling"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Lithiated graphite",
+      "molecular_formula": "LiC6",
+      "intended_role": "product",
+      "prov": ["Page 12960, reaction 6C + Li+ + e− → LiC6"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "CO3C2H4",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 310,
+        "unit": "molecules"
+      },
+      "notes": "1.15 M model; 240 molecules used in 3.36 M model",
+      "prov": ["Page 12960"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 21,
+        "unit": "molecules"
+      },
+      "notes": "1.15 M model; 50 (or 56, see ambiguity) molecules used in 3.36 M model",
+      "prov": ["Page 12960"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "anode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium cobalt oxide",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "SEI layer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1050,
+        "unit": "units"
+      },
+      "notes": "",
+      "prov": ["Page 12960"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Packing and construction of initial simulation box (166.6 × 27.0 × 58.2 Å³) containing electrolyte, anode, cathode, current collectors and insulator.",
+        "operations": [
+          {
+            "action": "pack",
+            "parameters": {
+              "program": "Packmol",
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "21 LiPF6 and 310 EC molecules for 1.15 M; 50 LiPF6 and 240 EC for 3.36 M"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": ["Page 12960"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Energy minimization of the constructed nanobattery model.",
+        "operations": [
+          {
+            "action": "geometry_minimization",
+            "parameters": {
+              "energy_initial": "-5.59 Gcal/mol",
+              "energy_final": "-5.69 Gcal/mol"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 12962"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Initial equilibration under NVT ensemble.",
+        "operations": [
+          {
+            "action": "equilibrate",
+            "parameters": {
+              "ensemble": "NVT",
+              "duration": {
+                "value": 1,
+                "unit": "ns"
+              }
+            },
+            "temperature": {
+              "value": 5,
+              "unit": "K"
+            },
+            "notes": "Remove hot spots"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 12962"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heating ramp.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "from_temperature": {
+                "value": 5,
+                "unit": "K"
+              },
+              "to_temperature": {
+                "value": 293,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 4,
+                "unit": "ns"
+              },
+              "rate": "72 mK/ps"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 12962"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Second equilibration at 293 K under NVT.",
+        "operations": [
+          {
+            "action": "equilibrate",
+            "parameters": {
+              "ensemble": "NVT",
+              "duration": {
+                "value": 10,
+                "unit": "ns"
+              }
+            },
+            "temperature": {
+              "value": 293,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 12962"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Charging simulations under NPT with external electric fields.",
+        "operations": [
+          {
+            "action": "apply_electric_field",
+            "parameters": {
+              "field_strengths": "0.2–1.5 V/Å",
+              "duration": "20–400 ps depending on field",
+              "ensemble": "NPT"
+            },
+            "notes": "Li+ migrates from cathode to anode while maintaining constant molarity"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Pages 12962–12965", "Tables 4–5"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Build and pack the nanobattery components into simulation box."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Minimize energy of the system."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Equilibrate at 5 K for 1 ns (NVT)."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Ramp temperature to 293 K over 4 ns."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Equilibrate at 293 K for 10 ns (NVT)."
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Apply external electric fields (0.2–1.5 V Å⁻¹) and simulate charging under NPT."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Conflicting number of LiPF6 molecules for 3.36 M model (50 vs 56).",
+        "excerpt": "\"we also constructed a 3.36 M with 50 LiPF6...\" (Page 12962) vs \"56 LiPF6\" in later text (Table 5 footnote)."
+      },
+      {
+        "issue": "Current density units extremely large, possible unit inconsistency.",
+        "excerpt": "Table 4 lists J = 2.30 ×10^10 A/m2 for E = 0.8 V/Å."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Molecular dynamics (LAMMPS)",
+      "parameters": {
+        "time_step": "0.01–1 fs",
+        "ensembles": ["NVT", "NPT"],
+        "thermostat": "Nosé–Hoover"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Pages 12960–12966"]
+    },
+    {
+      "method": "Radial distribution function (RDF)",
+      "parameters": {
+        "region": "SEI layer"
+      },
+      "results": [
+        {"metric": "C–O first NN distance", "value": 1.25, "unit": "Å"},
+        {"metric": "Li–O first NN distance", "value": 1.95, "unit": "Å"},
+        {"metric": "Li–Li first NN distance", "value": 2.95, "unit": "Å"},
+        {"metric": "C–O second NN distance", "value": 3.0, "unit": "Å"},
+        {"metric": "Li–O second NN distance", "value": 2.5, "unit": "Å"},
+        {"metric": "Li–Li second NN distance", "value": 5.0, "unit": "Å"}
+      ],
+      "interpretation": "Indicates preferred Li+ pathways along [010] in Li2CO3 SEI.",
+      "prov": ["Figure 10 a"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrical property calculation from MD trajectories",
+        "results": [
+          {"E_field": "0.4 V/Å", "conductivity": 0.002, "unit": "S/m"},
+          {"E_field": "0.6 V/Å", "conductivity": 0.03, "unit": "S/m"},
+          {"E_field": "0.8 V/Å", "conductivity": 2.874, "unit": "S/m"},
+          {"E_field": "1.0 V/Å", "conductivity": 9.483, "unit": "S/m"},
+          {"E_field": "1.2 V/Å", "conductivity": 15.92, "unit": "S/m"},
+          {"E_field": "1.5 V/Å", "conductivity": 18.20, "unit": "S/m"}
+        ],
+        "prov": ["Table 4"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-03-29T13:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

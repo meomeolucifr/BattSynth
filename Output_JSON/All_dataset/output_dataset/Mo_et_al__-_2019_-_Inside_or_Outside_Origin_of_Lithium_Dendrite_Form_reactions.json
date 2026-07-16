@@ -1,0 +1,457 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Inside or Outside: Origin of Lithium Dendrite Formation of All Solid-State Electrolytes",
+    "doi": "10.1002/aenm.201902123",
+    "authors": ["Fangjie Mo", "Jiafeng Ruan", "Shuxian Sun", "Zixuan Lian", "Sangpu Yang", "Xinyang Yue", "Yun Song", "Yong-Ning Zhou", "Fang Fang", "Guangai Sun", "Shuming Peng", "Dalin Sun"],
+    "journal": "Advanced Energy Materials",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": ["solid-state electrolyte", "lithium dendrite", "LiBH4", "LiF", "ball milling"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiBH4–LiF composite solid-state electrolyte",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Results and Discussion", "Experimental Section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiBH4 solid-state electrolyte",
+      "molecular_formula": "LiBH4",
+      "intended_role": "electrolyte",
+      "prov": ["Results and Discussion"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium borohydride",
+      "molecular_formula": "LiBH4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as primary solid electrolyte powder; 95% purity, Sigma-Aldrich",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium fluoride",
+      "molecular_formula": "LiF",
+      "ontology": {
+        "role": "additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "99.9% purity, Alfa; added at 0–30 wt %",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Ar-filled glove box and milling vials",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Titanium disulfide",
+      "molecular_formula": "TiS2",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used at 50 wt % in cathode composite; loading ≈2 mg cm-2",
+      "prov": ["Results and Discussion", "Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Selenium",
+      "molecular_formula": "Se",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "elemental"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "50 wt % in Se composite cathode",
+      "prov": ["Results and Discussion", "Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Ketjen Black",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "25 wt % in Se composite cathode",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Foil used as electrodes in symmetric and full cells",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Copper",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Cu foil used in Li|Cu cells",
+      "prov": ["Results and Discussion"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Ball milling synthesis of LiBH4–LiF composite powder",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "ratio": "0–30 wt% LiF"
+            },
+            "notes": ""
+          },
+          {
+            "action": "mill",
+            "parameters": {
+              "speed": {
+                "value": 400,
+                "unit": "rpm"
+              },
+              "duration": {
+                "value": 120,
+                "unit": "min"
+              }
+            },
+            "atmosphere": "Ar",
+            "notes": "Planetary ball mill; Ar-filled tanks"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Cold pressing of composite powder into electrolyte pellet",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["target_1"],
+              "pressure": {
+                "value": 300,
+                "unit": "MPa"
+              },
+              "mass": {
+                "value": 0.12,
+                "unit": "g"
+              }
+            },
+            "notes": "PEEK die, diameter 13 mm"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": 300,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Preparation of TiS2 cathode composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_4", "target_1"],
+              "ratio": "50:50 wt%"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of Se cathode composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_5", "target_1", "chem_6"],
+              "ratio": "50:25:25 wt%"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ball milling LiBH4 and LiF powders under Ar to obtain composite"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Cold-press composite powder into dense electrolyte pellet"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Blend TiS2 with composite electrolyte for cathode fabrication"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Blend Se, composite electrolyte, and Ketjen Black for alternative cathode"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact mass of LiBH4 and LiF not specified for each ratio",
+        "excerpt": "Commercial LiBH4 powder (95% purity, Sigma-Aldrich) and LiF powder (99.9% purity, Alfa) with different weight ratios (0, 10, 20, and 30 wt% of LiF) were used as raw materials."
+      },
+      {
+        "issue": "Temperature during ball milling not given; assumed room temperature",
+        "excerpt": "The ball milling using Ar-filled tanks was implemented on a planetary ball milling machine at 400 rpm for 2 h."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase confirmation",
+          "value": "Pnma to P63mc transition above 110 °C; LiF peaks retained in composites",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results and Discussion", "Figure 3b"]
+    },
+    {
+      "method": "FTIR",
+      "parameters": {
+        "temperature_range": "313–413 K"
+      },
+      "results": [
+        {
+          "metric": "B–F bond appearance",
+          "value": "935–1060 cm-1 bands above 80 °C",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates H/F ion exchange forming LiBH4-xFx",
+      "prov": ["Figure 3c"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": {
+          "value": 398,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (LiBH4, 398 K)",
+          "value": 1e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy (P63mc)",
+          "value": 0.56,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li-ion transfer number",
+          "value": 0.94,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1a", "Figure 1b"]
+    },
+    {
+      "method": "Electrochemical cycling (symmetric cells)",
+      "parameters": {
+        "temperature": {
+          "value": 398,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "CCD (LiBH4)",
+          "value": 2.8,
+          "unit": "mA cm-2"
+        },
+        {
+          "metric": "CCD (LiBH4-30LiF)",
+          "value": 6.6,
+          "unit": "mA cm-2"
+        }
+      ],
+      "interpretation": "LiF addition increases CCD by 235 %",
+      "prov": ["Figure 1c", "Figure 5d"]
+    },
+    {
+      "method": "SEM / FIB-SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "dendrite observation",
+          "value": "Li dendrites located inside grain boundaries/pores",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Supports internal dendrite nucleation model",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "CV",
+      "parameters": {
+        "voltage_range": "-0.5 to 3 V"
+      },
+      "results": [
+        {
+          "metric": "electrochemical window (LiBH4-30LiF)",
+          "value": "stable; only Li plating/stripping peaks near 0 V",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Composite electrolyte stable against Li",
+      "prov": ["Figure S17"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT interface energy calculation",
+        "results": [
+          {
+            "equation": "γ = (E_total – E_α – E_β)/(2A)",
+            "value": 13.66,
+            "unit": "meV Å-2",
+            "notes": "Li/LiBH4 interface energy"
+          },
+          {
+            "equation": "",
+            "value": 41.46,
+            "unit": "meV Å-2",
+            "notes": "Li/LiF interface energy"
+          },
+          {
+            "equation": "",
+            "value": 17.27,
+            "unit": "meV Å-2",
+            "notes": "Li/LiBH3.5F0.5 interface energy"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 137,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 60
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-17T20:45:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

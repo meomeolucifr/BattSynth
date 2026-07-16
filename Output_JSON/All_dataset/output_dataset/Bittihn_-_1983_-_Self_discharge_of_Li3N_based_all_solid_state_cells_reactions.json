@@ -1,0 +1,567 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "SELF DISCHARGE OF Li3N BASED ALL SOLID STATE CELLS",
+    "doi": "",
+    "authors": [
+      "R. Bittihn"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 1983
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid-state battery",
+      "Li3N",
+      "self discharge"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3N sinter pellet",
+      "molecular_formula": "Li3N",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Section 2.1"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li/Li3N(sinter)/BiI3 + graphite cell",
+      "molecular_formula": "",
+      "intended_role": "all-solid-state cell",
+      "prov": [
+        "Section 2.2.1"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium nitride",
+      "molecular_formula": "Li3N",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "99.5 % purity (CERAG)",
+      "prov": [
+        "Section 2.1"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Pure nitrogen for sintering atmosphere",
+      "prov": [
+        "Section 2.1"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Melted onto Li3N surface; anode capacity 100 mAh (absolute)",
+      "prov": [
+        "Section 2.2.1"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Bismuth(III) iodide",
+      "molecular_formula": "BiI3",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Section 2.2.1"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "10 vol.% in BiI3 cathode mixture",
+      "prov": [
+        "Section 2.2.1"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Iron",
+      "molecular_formula": "Fe",
+      "ontology": {
+        "role": "blocking electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Sputtered iron electrodes for impedance and DC-polarisation tests",
+      "prov": [
+        "Figure 1",
+        "Section 2.3"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Bismuth",
+      "molecular_formula": "Bi",
+      "ontology": {
+        "role": "electrode material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Pressed pellets used in cell types A and B",
+      "prov": [
+        "Section 2.2.2"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Cold pressing of Li3N powder into pellets",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ],
+              "pressure": {
+                "value": 740,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Original pressure given as 7400 N/cm2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 740,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2.1"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Sintering of pressed Li3N pellets",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ],
+              "atmosphere": "chem_2"
+            },
+            "duration": {
+              "value": 150,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1023.15,
+              "unit": "K"
+            },
+            "notes": "Mo crucible; pure nitrogen atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Section 2.1"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Formation of lithium anode on Li3N sinter",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": [
+                "chem_3",
+                "target_1"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Lithium was melted onto one surface of the sinter"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Argon (<1 ppm O2/H2O)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Section 2.2.1"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of BiI3 + graphite cathode pellet and assembly of full cell",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5"
+              ],
+              "ratio_notes": "10 vol.% graphite"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Pressed pellet used as cathode"
+          },
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": [
+                "target_1",
+                "chem_3",
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Cathode pellet pressed onto Li/Li3N half-cell using spring loading to form full cell"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Argon (<1 ppm O2/H2O)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Section 2.2.1"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Assembly of experimental cells type A (Bi/Li3N/Bi) and type B (Li/Li3N/Bi)",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": [
+                "target_1",
+                "chem_7"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Spring-loaded contacts; Bi electrode capacity 100 mAh"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Argon (<1 ppm O2/H2O)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Section 2.2.2"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Press Li3N powder into green pellets"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Sinter pressed pellets at 1023 K for 150 min under N2"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Melt Li onto one surface to create Li/Li3N half-cell"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Prepare BiI3+graphite cathode pellet and assemble full Li/Li3N/BiI3 cell"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Assemble Bi/Li3N/Bi (type A) and Li/Li3N/Bi (type B) cells for self-discharge study"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Amount of Li3N powder not specified",
+        "excerpt": "Li3N powder provided by CERAG (Li3N 99.5 %) was used as starting material for Li3N sinter production."
+      },
+      {
+        "issue": "Pressing duration for pellet formation not given",
+        "excerpt": "The powder was pressed to pellets (7400 N/cm2)"
+      },
+      {
+        "issue": "Temperature and duration for lithium melting step not provided",
+        "excerpt": "The Li/Li3N (sinter) half cell was preparated by melting on lithium onto one surface of the Li3N sinter"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {
+        "electrodes": "sputtered iron blocking electrodes",
+        "frequency_range": "",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "Li+ ionic conductivity",
+          "value": 1.7e-3,
+          "unit": "(Ω cm)^-1"
+        },
+        {
+          "metric": "activation enthalpy",
+          "value": 0.23,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "High Li+ conductivity indicates significant hydrogen doping",
+      "prov": [
+        "Figure 1",
+        "Section 2.1"
+      ]
+    },
+    {
+      "method": "Hebb-Wagner DC polarisation",
+      "parameters": {
+        "cell": "Li/Li3N(sinter)/Fe",
+        "voltage_range": "0–0.3 V",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "steady-state current density",
+          "value": 14.5,
+          "unit": "µA cm^-2"
+        },
+        {
+          "metric": "partial electronic conductivity",
+          "value": 1.7e-4,
+          "unit": "(Ω cm)^-1"
+        },
+        {
+          "metric": "activation enthalpy",
+          "value": 0.32,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Electronic conductivity is lithium-activity dependent",
+      "prov": [
+        "Figure 4",
+        "Figure 5",
+        "Section 2.3"
+      ]
+    },
+    {
+      "method": "Open-circuit voltage monitoring",
+      "parameters": {
+        "cell": "Li/Li3N(sinter)/BiI3+graphite",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "voltage trend",
+          "value": "",
+          "unit": "",
+          "notes": "Voltage decreases with storage time (see Fig. 2)"
+        }
+      ],
+      "interpretation": "Indicates self-discharge behaviour",
+      "prov": [
+        "Figure 2",
+        "Section 2.2.1"
+      ]
+    },
+    {
+      "method": "Atomic Absorption Spectroscopy (AAS)",
+      "parameters": {
+        "samples": "Bi electrodes after 1000 h storage"
+      },
+      "results": [
+        {
+          "metric": "lithium content in Bi electrode (type A)",
+          "value": 0,
+          "unit": "",
+          "notes": "No lithium detected"
+        },
+        {
+          "metric": "lithium content in Bi electrode (type B)",
+          "value": "detectable",
+          "unit": "",
+          "notes": "Considerable amount detected"
+        }
+      ],
+      "interpretation": "Confirms electronic self-discharge mechanism",
+      "prov": [
+        "Section 2.2.2"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Estimation of electronic conductivity from self-discharge experiment",
+        "results": [
+          {
+            "equation": "",
+            "value": 1e-4,
+            "unit": "(Ω cm)^-1",
+            "notes": "Derived from lithium detected in Bi cathode of cell type B"
+          }
+        ],
+        "prov": [
+          "Section 2.2.2"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

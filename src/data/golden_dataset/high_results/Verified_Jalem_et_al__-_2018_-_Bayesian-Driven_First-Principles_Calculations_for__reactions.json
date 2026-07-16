@@ -1,0 +1,492 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Bayesian-Driven First-Principles Calculations for Accelerating Exploration of Fast Ion Conductors for Rechargeable Battery Application",
+    "doi": "10.1038/s41598-018-23852-y",
+    "authors": [
+      "Randy Jalem",
+      "Kenta Kanamori",
+      "Ichiro Takeuchi",
+      "Masanobu Nakayama",
+      "Hisatsugu Yamasaki",
+      "Toshiya Saito"
+    ],
+    "journal": "Scientific Reports",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational screening",
+    "tags": [
+      "DFT",
+      "Bayesian optimization",
+      "solid electrolyte",
+      "tavorite"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiScSbO4I",
+      "molecular_formula": "LiScSbO4I",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Page 3 explicitly states: \u201cThe optimal compounds (x*) in the Li and Na datasets are LiScSbO4I \u2026 and NaErAsO4Cl \u2026\u201d. This directly supports the extracted Target Formula value LiScSbO4I.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "NaErAsO4Cl",
+      "molecular_formula": "NaErAsO4Cl",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly lists the optimal compound in the Na dataset as \u201cNaErAsO4Cl (Eb = 0.116 eV)\u201d on Page 3 under \u201cDFT-Eb dataset,\u201d which directly supports the target formula NaErAsO4Cl. The alleged provenance (Page 3) matches the location.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiMgSO4F",
+      "molecular_formula": "LiMgSO4F",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 7"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper explicitly mentions the compound formula LiMgSO4F (Page 7), not LiMgSO4F. The extracted value includes an extra \u201c4\u201d (LiMgSO4F) which is not supported anywhere in the provided text.",
+        "suggested_fix": "LiMgSO4F"
+      }
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "LiMgSeO4Cl",
+      "molecular_formula": "LiMgSeO4Cl",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly lists \u201cLiMgSeO4Cl\u201d in the post-processing section as one of the three Li-tavorite compounds that meet both Ed and Eb criteria: \u201cLiMgSeO4Cl (Eb = 0.282 eV, Ed = 0.098 eV/atom)\u201d on Page 7. This directly supports the extracted Target Formula.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "LiZrGeO4F",
+      "molecular_formula": "LiZrGeO4F",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "Page 7 explicitly lists LiZrGeO4F as one of the three Li-tavorite compounds that remained after applying both Ed and Eb criteria: \u201c...and LiZrGeO4F (Eb = 0.246 eV, Ed = 0.091 eV/atom).\u201d This directly supports the target formula.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "NaHfSiO4F",
+      "molecular_formula": "NaHfSiO4F",
+      "intended_role": "candidate solid electrolyte",
+      "prov": [
+        "Page 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "Page 7 explicitly mentions the compound \u201cNaHfSiO4F\u201d as a hypothetical compound that met both Ed and Eb cutoffs (\u201cNaHfSiO4F met both Ed and Eb cutoffs ...\u201d). Therefore the target formula NaHfSiO4F is directly supported by the text.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiScSbO4I",
+      "molecular_formula": "LiScSbO4I",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions the compound LiScSbO4I in the Results section (Page 3): \u201cThe optimal compounds ... in the Li and Na datasets are LiScSbO4I (Eb = 0.104 eV) and NaErAsO4Cl (Eb = 0.116 eV)\u201d. However, the text does not provide any chemical amount (no mass, molar quantity, concentration, loading, etc.) for LiScSbO4I, as the work is computational screening rather than experimental synthesis. Thus, the identification is supported and the \u2018Amount: Not specified in text\u2019 is also supported by omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "NaErAsO4Cl",
+      "molecular_formula": "NaErAsO4Cl",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions the compound identity \u201cNaErAsO4Cl\u201d on Page 3 in the sentence: \u201cThe optimal compounds ... are LiScSbO4I ... and NaErAsO4Cl ...\u201d. However, the text does not specify any chemical amount (no mass, moles, concentration, or composition fraction) for NaErAsO4Cl. Therefore, the extracted statement \u201cAmount: Not specified in text\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiMgSO4F",
+      "molecular_formula": "LiMgSO4F",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions the compound identity \u201cLiMgSO4F\u201d on Page 7 (\u201cTwo of these are recorded in ICSD, LiMgSO4F \u2026\u201d). However, the paper does not state a chemical amount for LiMgSO4F (no mass, molarity, wt%, or similar quantity is provided). Therefore, the extraction \u201cLiMgSO4F | Amount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiMgSeO4Cl",
+      "molecular_formula": "LiMgSeO4Cl",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly mentions the compound \u201cLiMgSeO4Cl\u201d on Page 7 in the post-processing section: \u201c...three compounds remained, namely: ... LiMgSeO4Cl ...\u201d. The text reports properties (Eb and Ed) but does not state a chemical amount (e.g., mass, molar amount, concentration, loading). Therefore, the extracted identity is supported and \u201cAmount: Not specified in text\u201d is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiZrGeO4F",
+      "molecular_formula": "LiZrGeO4F",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Page 7 explicitly lists LiZrGeO4F among the three Li-tavorite compounds that meet both Ed and Eb criteria: \u201cLiZrGeO4F (Eb = 0.246 eV, Ed = 0.091 eV/atom).\u201d The paper does not specify any \u201camount\u201d (no mass, molar amount, concentration, loading, etc.) for LiZrGeO4F anywhere in the provided text, so \u201cAmount: Not specified in text\u201d is correctly extracted under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "NaHfSiO4F",
+      "molecular_formula": "NaHfSiO4F",
+      "ontology": {
+        "role": "candidate material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly mentions the compound NaHfSiO4F in the post-processing section: \u201cthe hypothetical compound NaHfSiO4F met both Ed and Eb cutoffs (Eb = 0.254 eV, Ed = 0.085 eV/atom)\u201d on page 7. Nowhere in the provided full text is a specific chemical amount (mass, moles, concentration, etc.) given for NaHfSiO4F; the work is computational screening rather than an experimental synthesis with quantities. Therefore, the identity is supported and the extractor\u2019s \u2018Amount: Not specified in text\u2019 is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_step_1",
+        "description": "DFT geometry optimization of tavorite-type AMXO4Z compounds.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.78,
+          "reasoning": "The paper explicitly describes a BO-driven DFT workflow for screening tavorite-type AMXO4Z compounds and states that candidate descriptors were extracted from \u201cDFT-optimized crystal structures,\u201d and that \u201cAfter structure optimization on the initial and final state supercell models\u2026 [NEB]\u201d was performed. This supports that DFT geometry/structure optimizations were part of the workflow for tavorite-type AMXO4Z compounds, even though the exact phrase \u201cDFT geometry optimization\u201d is not used verbatim.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "comp_step_2",
+        "description": "Nudged elastic band (NEB) calculations to obtain ion migration energy Eb.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly states that Eb sampling was performed using the NEB method and that \u201cThe nudged elastic band (NEB) technique was employed to calculate Eb.\u201d It also describes constructing images along the migration pathway and computing Eb from the energy profile, which directly supports the extracted statement that NEB calculations were used to obtain the ion migration energy Eb.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "comp_step_3",
+        "description": "Bayesian optimization-driven iterative selection of new compositions for DFT evaluation.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly describes an iterative Bayesian-optimization workflow where a GP model is trained on initial DFT-Eb evaluations, an acquisition function is maximized to choose the next compound (composition) to evaluate by DFT, and this sequence is repeated. This matches 'Bayesian optimization-driven iterative selection of new compositions for DFT evaluation.' (See 'BO-driven DFT-Eb search workflow' around Fig. 3: initial random compounds sampled for DFT-Eb, GP posterior defines acquisition function, maximizing it decides next query compound xt for DFT-Eb, repeated until stopping criterion.)",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "comp_step_4",
+        "description": "Convex hull phase stability calculations to obtain thermodynamic stability energy Ed.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly describes post-processing after Eb screening: \u201cwe carried out DFT phase stability calculations based on the convex hull approach\u2026 Briefly, the thermodynamic stability energy (Ed) of a given compound was checked\u2026\u201d (Page 7). This directly supports the extracted workflow timeline item about convex hull phase stability calculations to obtain thermodynamic stability energy Ed.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "comp_step_5",
+        "description": "Density of states calculations for electronic band gap estimation.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The paper does include density of states (DOS) calculations and uses them to determine DFT-PBE electronic band gap energies (e.g., \u201cFigure 8b,c show the total density of states\u2026 with DFT-PBE electronic band gap energies\u2026\u201d). However, the extracted value is labeled as \u201cWorkflow Timeline\u201d and claims \u201cDensity of states calculations for electronic band gap estimation\u201d as a timeline step. The document\u2019s described workflow is a BO-driven DFT workflow for screening ion migration barriers (Eb) (see Fig. 3 and Methods), and DOS/band-gap appears only as a post-processing step for screened compounds, not as a core workflow timeline item. The paper never explicitly states a workflow timeline step phrased this way.",
+          "suggested_fix": "If the field is meant to capture a post-processing step: \u201cPost-processing included total density of states calculations to estimate DFT-PBE band gaps (e.g., 4.177 eV for LiZrGeO4F and 4.876 eV for NaHfSiO4F).\u201d If the field must be the main workflow timeline: \u201cBO-driven DFT workflow for Eb screening (NEB-based Eb calculations guided by Gaussian-process Bayesian optimization).\u201d"
+        }
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT-NEB",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.104,
+          "unit": "eV",
+          "sample_id": "chem_1"
+        },
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.116,
+          "unit": "eV",
+          "sample_id": "chem_2"
+        },
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.2,
+          "unit": "eV",
+          "sample_id": "chem_3"
+        },
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.282,
+          "unit": "eV",
+          "sample_id": "chem_4"
+        },
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.246,
+          "unit": "eV",
+          "sample_id": "chem_5"
+        },
+        {
+          "metric": "Ion migration energy (Eb)",
+          "value": 0.254,
+          "unit": "eV",
+          "sample_id": "chem_6"
+        }
+      ],
+      "interpretation": "Lower Eb indicates potentially faster Li/Na ion conduction.",
+      "prov": [
+        "Pages 3-7"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper explicitly reports some of the listed ion migration energies Eb (NEB/DFT): LiScSbO4I (Eb = 0.104 eV) and NaErAsO4Cl (Eb = 0.116 eV) in the DFT-Eb dataset section, and in the post-processing section it reports LiMgSO4F (Eb = 0.200 eV), LiMgSeO4Cl (Eb = 0.282 eV), LiZrGeO4F (Eb = 0.246 eV), and NaHfSiO4F (Eb = 0.254 eV). However, the extracted list contains 6 entries with generic sample_ids chem_1\u2013chem_6 and provides no compound identifiers; moreover, one of the extracted values is 0.254 eV and another is 0.246 eV, which match NaHfSiO4F and LiZrGeO4F respectively, but without mapping those to the correct compounds the claim as structured (values per sample_id) is not explicitly supported. In addition, the extracted set omits one reported Eb value (0.550 eV for LiAlPO4F) and does not indicate which compounds the six values correspond to.",
+        "suggested_fix": "Provide compound-resolved entries instead of chem_1\u2013chem_6, e.g.: LiScSbO4I: 0.104 eV; NaErAsO4Cl: 0.116 eV; LiMgSO4F: 0.200 eV; LiMgSeO4Cl: 0.282 eV; LiZrGeO4F: 0.246 eV; NaHfSiO4F: 0.254 eV. (Optionally also include LiAlPO4F: 0.550 eV if extracting all explicitly stated Eb values.)"
+      }
+    },
+    {
+      "method": "DFT-Convex hull",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Thermodynamic stability energy (Ed)",
+          "value": 0.035,
+          "unit": "eV atom-1",
+          "sample_id": "chem_3"
+        },
+        {
+          "metric": "Thermodynamic stability energy (Ed)",
+          "value": 0.098,
+          "unit": "eV atom-1",
+          "sample_id": "chem_4"
+        },
+        {
+          "metric": "Thermodynamic stability energy (Ed)",
+          "value": 0.091,
+          "unit": "eV atom-1",
+          "sample_id": "chem_5"
+        },
+        {
+          "metric": "Thermodynamic stability energy (Ed)",
+          "value": 0.085,
+          "unit": "eV atom-1",
+          "sample_id": "chem_6"
+        }
+      ],
+      "interpretation": "Ed < 0.1 eV/atom suggests experimental synthesizability.",
+      "prov": [
+        "Page 7"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "Page 7 explicitly lists Ed values (eV/atom) for four compounds that pass Ed and/or Eb criteria: LiMgSO4F (Ed = 0.035 eV/atom in the combined Eb/Ed list; earlier also stated as 0.034 eV/atom), LiMgSeO4Cl (Ed = 0.098 eV/atom), LiZrGeO4F (Ed = 0.091 eV/atom), and NaHfSiO4F (Ed = 0.085 eV/atom). Thus the numeric Ed values 0.098, 0.091, 0.085 match the text, but the extracted 0.035 does not exactly match the first stated Ed for LiMgSO4F in the preceding sentence (0.034 eV/atom). Also, the extraction provides only generic sample_ids (chem_3\u2013chem_6) with no mapping to the compounds named in the paper, so as written the list cannot be verified as tied to specific samples.",
+        "suggested_fix": "Use the explicitly stated compound-associated Ed values: LiMgSO4F: Ed = 0.034 eV/atom (not 0.035) (note: later the paper also reports Ed = 0.035 eV/atom for LiMgSO4F in the combined Eb/Ed list, but 0.034 appears first); LiMgSeO4Cl: 0.098 eV/atom; LiZrGeO4F: 0.091 eV/atom; NaHfSiO4F: 0.085 eV/atom. Also replace sample_id placeholders with these compound identifiers."
+      }
+    },
+    {
+      "method": "DFT-DOS",
+      "parameters": {
+        "functional": "PBE"
+      },
+      "results": [
+        {
+          "metric": "Band gap",
+          "value": 4.177,
+          "unit": "eV",
+          "sample_id": "chem_5"
+        },
+        {
+          "metric": "Band gap",
+          "value": 4.876,
+          "unit": "eV",
+          "sample_id": "chem_6"
+        }
+      ],
+      "interpretation": "Wide band gaps indicate low electronic conductivity, suitable for solid electrolytes.",
+      "prov": [
+        "Figure 8b,c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The source text (page 7) explicitly states: \u201cFigure 8b,c show the total density of states of LiZrGeO4F and NaHfSiO4F, with DFT-PBE electronic band gap energies determined to be 4.177 and 4.876 eV, respectively.\u201d This directly supports two band gap values in eV and matches the alleged provenance (Figure 8b,c). The sample mapping aligns with the compounds shown in Fig. 8b (LiZrGeO4F) and Fig. 8c (NaHfSiO4F).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Bayesian optimization",
+        "results": [
+          {
+            "equation": "",
+            "value": 0.9,
+            "unit": "",
+            "description": "Probability of recovering optimal compound after ~30% of search space evaluated."
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.62,
+          "reasoning": "The paper explicitly describes several computational/analysis methods used (e.g., Bayesian optimization with Gaussian process models, DFT calculations using VASP with PAW/PBEsol, NEB for migration barriers, Bader charge analysis, Born effective charges, convex hull phase stability via pymatgen/Materials Project). However, the extracted value for \u201cAnalysis Method\u201d is blank, so it does not capture the stated methods. Therefore the extraction is not supported as-is.",
+          "suggested_fix": "Analysis Method: Bayesian-optimization-driven DFT screening (Gaussian Process BO; additive/ordinary BO); DFT (VASP, PAW, PBEsol); NEB for ion migration barrier Eb; Bader charge analysis; Born effective charges; convex-hull phase stability using pymatgen/Materials Project."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

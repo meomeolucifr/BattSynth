@@ -1,0 +1,311 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Single-crystal X-ray structure analysis of the superionic conductor Li10GeP2S12",
+    "doi": "10.1039/c3cp51985f",
+    "authors": [
+      "Alexander Kuhn",
+      "Jürgen Köhler",
+      "Bettina V. Lotsch"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid electrolyte", "single-crystal XRD", "LGPS"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "product",
+      "prov": ["Page 11620, Title", "Page 11621, Synthesis description"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "stoichiometric amount",
+      "prov": ["Page 11620, Synthesis paragraph"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ge",
+      "molecular_formula": "Ge",
+      "ontology": {
+        "role": "reactant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "stoichiometric amount",
+      "prov": ["Page 11620, Synthesis paragraph"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "P",
+      "molecular_formula": "P",
+      "ontology": {
+        "role": "reactant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "stoichiometric amount",
+      "prov": ["Page 11620, Synthesis paragraph"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "S",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "reactant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "slight excess used",
+      "prov": ["Page 11620, Synthesis paragraph"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanical milling of precursors",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Fritsch planetary mill"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 11620, Synthesis paragraph"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Heat treatment and slow cooling",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "temperature": {
+              "value": 1023,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "in evacuated quartz tube"
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "slowly cooled to room temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum (evacuated tube)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 11620, Synthesis paragraph"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Crystal selection and mounting for XRD",
+        "operations": [
+          {
+            "action": "pick_crystals",
+            "parameters": {
+              "inputs": ["step_2"]
+            },
+            "notes": "picked under inert conditions; yellowish transparent crystals"
+          },
+          {
+            "action": "mount",
+            "parameters": {
+              "inputs": ["step_2"]
+            },
+            "notes": "mounted on sealed glass capillaries under dry petroleum/argon"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 11621, Experimental details"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Milling of Li2S, Ge, P, and excess S for 1 day"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Heating milled powder to 1023 K in evacuated quartz tube and slow cooling to room temperature"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Selecting and mounting single crystals under inert atmosphere"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact quantities of reactants not provided",
+        "excerpt": "Stoichiometric amounts of Li2S, Ge, P, and a slight excess of S were mechanically treated..."
+      },
+      {
+        "issue": "Heating dwell time not specified",
+        "excerpt": "The powder was then heated to 1023 K in an evacuated quartz tube and slowly cooled..."
+      },
+      {
+        "issue": "Rate of slow cooling unspecified",
+        "excerpt": "slowly cooled down to room temperature"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Single-crystal X-ray diffraction",
+      "parameters": {
+        "temperature": 298,
+        "unit_cell_a": "8.7187 Å",
+        "unit_cell_c": "12.6385 Å",
+        "radiation": "Mo Kα",
+        "space_group": "P42/nmc"
+      },
+      "results": [
+        {
+          "metric": "cell volume",
+          "value": 960.72,
+          "unit": "Å^3"
+        }
+      ],
+      "interpretation": "Structure confirmed; four Li positions identified",
+      "prov": ["Table 1", "Page 11621"]
+    },
+    {
+      "method": "Single-crystal X-ray diffraction",
+      "parameters": {
+        "temperature": 100,
+        "unit_cell_a": "8.6521 Å",
+        "unit_cell_c": "12.5816 Å",
+        "radiation": "Mo Kα",
+        "space_group": "P42/nmc"
+      },
+      "results": [
+        {
+          "metric": "cell volume",
+          "value": 941.84,
+          "unit": "Å^3"
+        }
+      ],
+      "interpretation": "Thermal parameters refined at low temperature",
+      "prov": ["Table 1", "Page 11621"]
+    },
+    {
+      "method": "SEM-EDX",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "elemental ratio Ge:P:S",
+          "value": "1:2:12",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Elemental composition consistent with Li10GeP2S12 formula within experimental error",
+      "prov": ["Page 11621, SEM-EDX statement"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T13:05:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

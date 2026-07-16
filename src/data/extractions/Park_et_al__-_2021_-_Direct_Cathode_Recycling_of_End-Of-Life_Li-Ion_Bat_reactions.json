@@ -1,0 +1,345 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Direct Cathode Recycling of End-Of-Life Li-Ion Batteries Enabled by Redox Mediation",
+    "doi": "10.1021/acssuschemeng.1c02133",
+    "authors": ["Kyusung Park", "Jiuling Yu", "Jaclyn Coyle", "Qiang Dai", "Sarah Frisco", "Meng Zhou", "Anthony Burrell"],
+    "journal": "ACS Sustainable Chemistry & Engineering",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["battery recycling", "redox mediator", "lithium-ion battery", "NMC111", "quinone"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Relithiated NMC111 cathode",
+      "molecular_formula": "LiNi1/3Mn1/3Co1/3O2",
+      "intended_role": "product",
+      "prov": ["Page 8216-8218"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li0.9Ni1/3Mn1/3Co1/3O2 (EOL NMC111)",
+      "molecular_formula": "Li0.9Ni1/3Mn1/3Co1/3O2",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": 5, "unit": "g"},
+      "notes": "Model end-of-life cathode powder",
+      "prov": ["Experimental Section - Model EOL NMC111 Cathode Material", "Powder Relithiation Process"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "3,5-di-tert-butyl-o-benzoquinone",
+      "molecular_formula": "",
+      "ontology": {"role": "redox mediator", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Concentration varied 0.1–0.5 M in DME",
+      "prov": ["Powder Relithiation Process"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "DME (1,2-dimethoxyethane)",
+      "molecular_formula": "C4H10O2",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": 7.5, "unit": "mL"},
+      "notes": "Solvent for DTBQ electrolyte",
+      "prov": ["Powder Relithiation Process"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium metal strip",
+      "molecular_formula": "Li",
+      "ontology": {"role": "reducing agent", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Used to pre-lithiate DTBQ overnight",
+      "prov": ["Powder Relithiation Process"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium metal chip",
+      "molecular_formula": "Li",
+      "ontology": {"role": "lithium source", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "0.5 inch diameter, enclosed in porous polypropylene bag during relithiation",
+      "prov": ["Powder Relithiation Process"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "LiPF6 in EC/EMC (30:70 wt%)",
+      "molecular_formula": "",
+      "ontology": {"role": "electrolyte", "category": "electrolyte"},
+      "amount": {"value": 1.2, "unit": "M"},
+      "notes": "Used for electrochemical testing",
+      "prov": ["Electrochemical Tests"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Carbon black (Timcal Super C45/C65)",
+      "molecular_formula": "",
+      "ontology": {"role": "conductive additive", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "5 wt% in cathode slurry",
+      "prov": ["Electrochemical Tests"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Poly(vinylidene fluoride) (PVDF)",
+      "molecular_formula": "",
+      "ontology": {"role": "binder", "category": "polymer"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "5 wt% in electrode slurries",
+      "prov": ["Electrochemical Tests"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "N-Methyl-2-pyrrolidone (NMP)",
+      "molecular_formula": "C5H9NO",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Solvent for slurry preparation",
+      "prov": ["Electrochemical Tests"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Li4Ti5O12",
+      "molecular_formula": "Li4Ti5O12",
+      "ontology": {"role": "anode material", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Used in full-cell tests",
+      "prov": ["Electrochemical Tests"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of lithiated DTBQ electrolyte",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"],
+              "concentration": {"value": [0.1,0.5], "unit": "M"}
+            },
+            "temperature": {"value": 298, "unit": "K"},
+            "duration": {"value": null, "unit": ""},
+            "notes": "DTBQ dissolved in DME to desired concentration"
+          },
+          {
+            "action": "stir",
+            "parameters": {"inputs": ["chem_2", "chem_3", "chem_4"]},
+            "temperature": {"value": 298, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": "Mixture stirred overnight with Li metal strips to reduce DTBQ"
+          },
+          {
+            "action": "remove",
+            "parameters": {"inputs": ["chem_4"]},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Li strips removed before relithiation reaction"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Powder Relithiation Process"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Relithiation of EOL NMC111 powder",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_1", "chem_5", "lithiated_DTBQ_electrolyte"]},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "5 g EOL NMC111 and Li chip enclosed in porous polypropylene bag added to 7.5 mL lithiated DTBQ electrolyte"
+          },
+          {
+            "action": "agitate",
+            "parameters": {},
+            "temperature": {"value": 298, "unit": "K"},
+            "duration": {"value": [10,60], "unit": "min"},
+            "notes": "Magnetic stirring during reaction"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Powder Relithiation Process"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Collection and washing of relithiated powder",
+        "operations": [
+          {
+            "action": "separate",
+            "parameters": {"inputs": ["solid_liquid"]},
+            "temperature": {"value": null, "unit": ""},
+            "notes": ""
+          },
+          {
+            "action": "rinse",
+            "parameters": {"inputs": ["chem_3"]},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Powder rinsed several times with fresh DME"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Powder Relithiation Process"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Post-annealing to restore microstructure",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "temperature": {"value": 1123.15, "unit": "K"},
+            "duration": {"value": 240, "unit": "min"},
+            "notes": "Ramp rate 5 K min-1 in air"
+          }
+        ],
+        "conditions": {"atmosphere": "air", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Powder Relithiation Process"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Prepare and pre-lithiate DTBQ electrolyte with Li strips (overnight)"},
+      {"step_ref": "step_2", "description": "React EOL NMC111 with lithiated DTBQ and Li chip at room temperature for 10-60 min"},
+      {"step_ref": "step_3", "description": "Separate and rinse relithiated powder with DME"},
+      {"step_ref": "step_4", "description": "Anneal rinsed powder at 1123 K for 4 h in air"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact mass or thickness of Li metal chip not provided",
+        "excerpt": "The Li source for the reaction is a Li chip (0.5 inch in diameter) enclosed in a porous polypropylene bag"
+      },
+      {
+        "issue": "Room temperature value not specified",
+        "excerpt": "The mixture was agitated with a magnetic stirrer for a target reaction time (10 −60 min) at room temperature."
+      },
+      {
+        "issue": "Overnight stirring time not quantified",
+        "excerpt": "DTBQ in DME electrolytes ... were prepared and stirred overnight"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "FTIR",
+      "parameters": {"range": "4000–700 cm-1", "resolution": "4 cm-1", "scans": 25},
+      "results": [
+        {"metric": "C=O peak (1660 cm-1) disappearance after lithiation", "value": "", "unit": ""},
+        {"metric": "Color change to blue indicating reduction of DTBQ", "value": "", "unit": ""}
+      ],
+      "interpretation": "Confirms reduction of DTBQ by Li",
+      "prov": ["Figure 3b", "Page 8218"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {"source": "Al Kα (1486.7 eV)"},
+      "results": [
+        {"metric": "O–C=O peak shift", "value": -0.54, "unit": "eV"},
+        {"metric": "C–O FWHM decrease", "value": -0.97, "unit": "eV"}
+      ],
+      "interpretation": "Indicates Li dissolution and reduced SEI on Li metal",
+      "prov": ["Figure 3c", "Page 8218"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {"2theta_range": "15–70°", "voltage": "40 kV", "current": "250 mA"},
+      "results": [
+        {"metric": "(003) peak shift back to pristine position", "value": "", "unit": ""}
+      ],
+      "interpretation": "Elimination of Li vacancies, single-phase layered structure",
+      "prov": ["Figure 2c", "Page 8217"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Powder morphology and size characterized (details not provided in text)",
+      "prov": ["Characterizations section"]
+    },
+    {
+      "method": "Electrochemical (half-cell)",
+      "parameters": {"current_rate": "C/10", "voltage_window": "3.0–4.3 V vs Li/Li+", "temperature": 303},
+      "results": [
+        {"metric": "Initial charge capacity (EOL cathode)", "value": 146.5, "unit": "mAh g-1"},
+        {"metric": "Initial charge capacity (after relithiation 0.5 M DTBQ)", "value": 170.6, "unit": "mAh g-1"}
+      ],
+      "interpretation": "Capacity increase confirms relithiation",
+      "prov": ["Figure 1c", "Page 8216"]
+    },
+    {
+      "method": "Electrochemical (powder process)",
+      "parameters": {"current_rate": "C/10", "voltage_window": "3.0–4.3 V vs Li/Li+", "temperature": 303},
+      "results": [
+        {"metric": "Initial charge capacity (0.5 M DTBQ, 1 h)", "value": 182.5, "unit": "mAh g-1"},
+        {"metric": "Initial charge capacity (0.5 M DTBQ, 10 min)", "value": 179.1, "unit": "mAh g-1"},
+        {"metric": "Multibatch 2 charge capacity", "value": 178.9, "unit": "mAh g-1"},
+        {"metric": "Multibatch 3 charge capacity", "value": 179.6, "unit": "mAh g-1"}
+      ],
+      "interpretation": "High capacities demonstrate efficient, rapid relithiation and electrolyte reusability",
+      "prov": ["Figure 2a-f", "Page 8216-8217"]
+    },
+    {
+      "method": "Electrochemical (full-cell)",
+      "parameters": {"current_rate": "C/10", "voltage_window": "1.0–2.8 V", "temperature": 303},
+      "results": [
+        {"metric": "Initial charge capacity", "value": 186.3, "unit": "mAh g-1"},
+        {"metric": "Initial discharge capacity", "value": 162.9, "unit": "mAh g-1"}
+      ],
+      "interpretation": "Full cell data confirms restored capacity without Li metal counter electrode",
+      "prov": ["Figure 2e", "Page 8217"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Techno-economic analysis (EverBatt)",
+        "results": [
+          {"equation": "", "value": 55, "unit": "% cost reduction vs pyro"},
+          {"equation": "", "value": 45, "unit": "% cost reduction vs hydro"},
+          {"equation": "", "value": 76, "unit": "% GHG reduction vs pyro"},
+          {"equation": "", "value": 73, "unit": "% GHG reduction vs hydro"}
+        ],
+        "prov": ["Figure 4a", "Page 8219"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 182.5,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-27T10:45:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

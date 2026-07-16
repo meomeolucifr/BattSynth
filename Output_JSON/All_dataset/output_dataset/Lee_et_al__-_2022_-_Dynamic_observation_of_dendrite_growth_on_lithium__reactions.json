@@ -1,0 +1,319 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Dynamic observation of dendrite growth on lithium metal anode during battery charging/discharging cycles",
+    "doi": "10.1038/s41524-022-00788-6",
+    "authors": [
+      "Hae Gon Lee",
+      "Se Young Kim",
+      "Joon Sang Lee"
+    ],
+    "journal": "npj Computational Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "lithium metal anode",
+      "dendrite growth",
+      "molecular dynamics",
+      "electrolyte additive"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiF and Li2CO3-rich SEI film",
+      "molecular_formula": "",
+      "intended_role": "protective interphase",
+      "prov": [
+        "Results, Fig. 8"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Density set to 1.3 g/cm3 in simulation cell",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Hydrogen fluoride",
+      "molecular_formula": "HF",
+      "ontology": {
+        "role": "additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.1,
+        "unit": "M"
+      },
+      "notes": "Added to EC electrolyte in additive system",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "elemental"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used for anode and pseudo-cathode in simulation",
+      "prov": [
+        "Methods"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Construction of simulation cell with electrodes and electrolyte",
+        "operations": [
+          {
+            "action": "pack",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_3"
+              ],
+              "cell_dimensions": "69.7 Å × 17.1 Å × 156 Å"
+            },
+            "temperature": {
+              "value": 300,
+              "unit": "K"
+            },
+            "notes": "Periodic boundary conditions in x and y; EC density 1.3 g/cm3"
+          },
+          {
+            "action": "additive_addition",
+            "parameters": {
+              "inputs": [
+                "chem_2"
+              ]
+            },
+            "notes": "Second simulation system only (EC+HF)"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "NVT equilibration prior to voltage application",
+        "operations": [
+          {
+            "action": "equilibrate",
+            "parameters": {},
+            "duration": {
+              "value": 3.3e-10,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 300,
+              "unit": "K"
+            },
+            "notes": "200 ps (original units) equilibration; charge equilibration active"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Cyclic charge/discharge simulation with applied voltage",
+        "operations": [
+          {
+            "action": "apply_voltage",
+            "parameters": {
+              "voltage": "±6 V",
+              "cycles": 20
+            },
+            "duration": {
+              "value": 2.1e-9,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 300,
+              "unit": "K"
+            },
+            "notes": "Each charge or discharge segment 62.5 ps (total 125 ps per cycle)"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods",
+          "Results Fig. 2"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Pack EC and Li electrodes; add HF for additive system."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Equilibrate simulation cell at 300 K for 200 ps (E/S step)."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Run 20 charge/discharge cycles under ±6 V to study dendrite formation."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Molecular formula of ethylene carbonate not explicitly stated",
+        "excerpt": "ethylene carbonate (EC) electrolyte solvent"
+      },
+      {
+        "issue": "Time units converted from picoseconds to minutes per policy; extremely small values",
+        "excerpt": "200 ps NVT equilibration; 62.5 ps per half-cycle"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Molecular dynamics simulation (LAMMPS, reaxFF)",
+      "parameters": {
+        "temperature": "300 K",
+        "force_field": "C/H/O/S/Li/F/N reaxFF by Islam et al.",
+        "cell_size": "69.7 ×17.1 ×156 Å3"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "method": "Mean square displacement analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li+ diffusion coefficient during 3rd discharge",
+          "value": 45.43e-10,
+          "unit": "m2 s-1"
+        },
+        {
+          "metric": "Li+ diffusion coefficient over full cycles",
+          "value": 22.23e-10,
+          "unit": "m2 s-1"
+        },
+        {
+          "metric": "Self-diffusion coefficient with field removed",
+          "value": 1.06e-10,
+          "unit": "m2 s-1"
+        }
+      ],
+      "interpretation": "External electric field accelerates Li+ mobility.",
+      "prov": [
+        "Results, Supplementary Figure 2"
+      ]
+    },
+    {
+      "method": "Activation energy calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Activation energy for EC ring-opening with Li",
+          "value": 79.15,
+          "unit": "kcal mol-1"
+        },
+        {
+          "metric": "Activation energy for LiF formation from HF + Li",
+          "value": 52.04,
+          "unit": "kcal mol-1"
+        }
+      ],
+      "interpretation": "LiF formation is kinetically favored over EC decomposition in presence of HF.",
+      "prov": [
+        "Results, Fig. 9 discussion"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Radial distribution function",
+        "results": [
+          {
+            "description": "Stronger local interaction between gas molecules and crystalline Li than between EC and Li in pure EC system"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

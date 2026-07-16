@@ -1,0 +1,341 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "An In-Depth Study of Zn Metal Surface Chemistry for Advanced Aqueous Zn-Ion Batteries",
+    "doi": "10.1002/adma.202003021",
+    "authors": ["Junnan Hao", "Bo Li", "Xiaolong Li", "Xiaohui Zeng", "Shilin Zhang", "Fuhua Yang", "Sailin Liu", "Dan Li", "Chao Wu", "Zaiping Guo"],
+    "journal": "Advanced Materials",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": ["ZnS protective layer", "zinc anode", "aqueous zinc-ion batteries"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "ZnS@Zn-350 electrode",
+      "molecular_formula": "",
+      "intended_role": "protected zinc electrode",
+      "prov": ["Page 4, Figure 3a–c"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Zinc metal foil",
+      "molecular_formula": "Zn",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as metallic substrate for ZnS formation",
+      "prov": ["Page 4, synthesis description"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sulfur powder",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "reactant",
+        "category": "element"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 4, Figure 2a description"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zinc sulfate",
+      "molecular_formula": "ZnSO4",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Electrolyte concentration stated as 1 m",
+      "prov": ["Page 2, electrolyte description"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Manganese(II) sulfate",
+      "molecular_formula": "MnSO4",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.1,
+        "unit": "M"
+      },
+      "notes": "Additive to inhibit Mn dissolution",
+      "prov": ["Page 7, full-cell electrolyte description"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Manganese dioxide",
+      "molecular_formula": "MnO2",
+      "ontology": {
+        "role": "cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Electrodeposited on carbon cloth",
+      "prov": ["Page 7, Figure S26 reference"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Assembly of sulfur vapor reaction setup",
+        "operations": [
+          {
+            "action": "place",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "notes": "Zn foil placed in a specially designed tube above sulfur powder"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "notes": "100 g sulfur powder positioned below Zn foil"
+          },
+          {
+            "action": "evacuate",
+            "parameters": {
+              "pressure": {
+                "value": 1.0e-3,
+                "unit": "bar"
+              }
+            },
+            "notes": "Tube evacuated then sealed"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": 1.0e-3,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4, Figure 2a"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "In-situ vapor–solid reaction to form ZnS layer",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 623.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Optimal temperature reported as 350 °C for homogeneous coating"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed vacuum tube with sulfur vapor",
+          "pressure": {
+            "value": 1.0e-3,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4, Figure 3a"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Setup and evacuation of sulfur reaction tube"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Heating to produce ZnS@Zn-350 protective layer"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Reaction duration not specified",
+        "excerpt": "Different temperatures have been conducted ... suggesting that a homogeneous ZnS coating was realized at 350 °C (ZnS@Zn-350)."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ZnS layer thickness",
+          "value": 0.5,
+          "unit": "µm"
+        }
+      ],
+      "interpretation": "Homogeneous dense coating",
+      "prov": ["Page 4, Figure 3c"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ZnS peaks",
+          "value": [28.6, 47.5, 56.3],
+          "unit": "degree 2θ"
+        }
+      ],
+      "interpretation": "Confirms cubic ZnS formation",
+      "prov": ["Page 4, Figure 3a"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "S 2p3/2 binding energy",
+          "value": 161.9,
+          "unit": "eV"
+        },
+        {
+          "metric": "S 2p1/2 binding energy",
+          "value": 163.2,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Zn–S bonding and interfacial charge transfer",
+      "prov": ["Page 4, Figure 3e–f"]
+    },
+    {
+      "method": "Linear polarization",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Corrosion potential (ZnS@Zn-350)",
+          "value": -1.048,
+          "unit": "V"
+        },
+        {
+          "metric": "Corrosion potential (bare Zn)",
+          "value": -1.052,
+          "unit": "V"
+        },
+        {
+          "metric": "Corrosion current reduction",
+          "value": 368.5,
+          "unit": "µA cm^-2"
+        }
+      ],
+      "interpretation": "ZnS layer mitigates corrosion",
+      "prov": ["Page 5, Figure S18 reference"]
+    },
+    {
+      "method": "Electrical resistivity measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Resistivity",
+          "value": 1.5e5,
+          "unit": "Ω cm"
+        },
+        {
+          "metric": "Conductivity",
+          "value": 6.5e-6,
+          "unit": "S cm^-1"
+        }
+      ],
+      "interpretation": "ZnS layer is a wide-bandgap semiconductor",
+      "prov": ["Page 5, resistivity evaluation"]
+    },
+    {
+      "method": "Electrochemical impedance / transference number",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Zn2+ transference number (bare)",
+          "value": 0.33,
+          "unit": ""
+        },
+        {
+          "metric": "Zn2+ transference number (ZnS@Zn-350)",
+          "value": 0.78,
+          "unit": ""
+        }
+      ],
+      "interpretation": "ZnS layer enhances Zn2+ transport",
+      "prov": ["Page 5, Figure S21 reference"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": "Unbalanced charge distribution at ZnS/Zn interface inferred",
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 110.2,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 2500
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "provided_text",
+    "processing_time": null
+  }
+}

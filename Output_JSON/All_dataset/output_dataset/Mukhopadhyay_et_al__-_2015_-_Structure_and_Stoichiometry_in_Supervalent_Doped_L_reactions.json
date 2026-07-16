@@ -1,0 +1,544 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Structure and Stoichiometry in Supervalent Doped Li7La3Zr2O12",
+    "doi": "10.1021/acs.chemmater.5b00362",
+    "authors": [
+      "Saikat Mukhopadhyay",
+      "Travis Thompson",
+      "Jeff Sakamoto",
+      "Ashfia Huq",
+      "Jeff Wolfenstine",
+      "Jan L. Allen",
+      "Noam Bernstein",
+      "Derek A. Stewart",
+      "M. D. Johannes"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid electrolyte", "garnet", "Li7La3Zr2O12", "Ta doping", "Al doping"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6.75La3Zr1.75Ta0.25O12",
+      "molecular_formula": "Li6.75La3Zr1.75Ta0.25O12",
+      "intended_role": "product",
+      "prov": ["Materials section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li6.5La3Zr1.5Ta0.5O12",
+      "molecular_formula": "Li6.5La3Zr1.5Ta0.5O12",
+      "intended_role": "product",
+      "prov": ["Materials section", "Table 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li6.25La3Zr1.25Ta0.75O12",
+      "molecular_formula": "Li6.25La3Zr1.25Ta0.75O12",
+      "intended_role": "product",
+      "prov": ["Materials section", "Table 1"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li5.5La3Zr0.5Ta1.5O12",
+      "molecular_formula": "Li5.5La3Zr0.5Ta1.5O12",
+      "intended_role": "product",
+      "prov": ["Materials section", "Table 1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used with 6 wt % excess Li relative to stoichiometry",
+      "prov": ["Materials section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum hydroxide",
+      "molecular_formula": "La(OH)3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Materials section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconium carbonate basic hydrate",
+      "molecular_formula": "(ZrO2)2·CO2·xH2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Equivalent ZrO2 content determined by TGA",
+      "prov": ["Materials section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Nitric acid (aqueous)",
+      "molecular_formula": "HNO3",
+      "ontology": {
+        "role": "solvent",
+        "category": "acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "≈1.4 M solution",
+      "prov": ["Materials section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Tantalum pentachloride",
+      "molecular_formula": "TaCl5",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric relative to desired Ta content",
+      "prov": ["Materials section"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Ethanol, anhydrous",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used to dissolve TaCl5",
+      "prov": ["Materials section"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Zirconia plate",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "apparatus",
+        "category": "ceramic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Pellet placed on plate during calcination",
+      "prov": ["Materials section"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Vanadium",
+      "molecular_formula": "V",
+      "ontology": {
+        "role": "container",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Samples sealed in vanadium cans",
+      "prov": ["Materials section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Acid dissolution of lithium, lanthanum and zirconium precursors",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "time": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Reactants dissolved in ~1.4 M HNO3(aq)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Addition of tantalum dopant solution",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6"]
+            },
+            "notes": "TaCl5 first dissolved in anhydrous ethanol then added to precursor solution"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Evaporation to dryness",
+        "operations": [
+          {
+            "action": "evaporate",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "time": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Used microwave oven in fume hood; NOx evolution observed"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Grinding of dried coprecipitate",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "Lightly ground with mortar and pestle"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Materials section"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Pellet pressing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {},
+            "notes": "Pressed into pellet using Carver laboratory die and press"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Materials section"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Calcination/sintering",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 1173,
+              "unit": "K"
+            },
+            "time": {
+              "value": 180,
+              "unit": "min"
+            },
+            "notes": "Heated in air for 3–4 h; pellet on ZrO2 plate"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials section"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Cooling and retrieval",
+        "operations": [
+          {
+            "action": "cool",
+            "parameters": {},
+            "notes": "Furnace turned off, sample removed"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Materials section"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Sealing of samples",
+        "operations": [
+          {
+            "action": "package",
+            "parameters": {
+              "inputs": ["chem_8"]
+            },
+            "notes": "Loaded in sealed vanadium cans inside glovebox"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "inert (glovebox)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Materials section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dissolution of carbonate/hydroxide/carbonate precursors in nitric acid"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "TaCl5 ethanol solution added to precursor solution"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Microwave evaporation to obtain dry coprecipitate"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Grinding to homogenize powder"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Pellet pressing"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "High-temperature calcination at 1173 K for 3–4 h"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Controlled cooling"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Sealing in vanadium cans under inert atmosphere"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses/volumes of reagents not specified",
+        "excerpt": "Li2CO3, La(OH)3, and “[ZrO2]2·CO2·xH2O” weighed in the desired stoichiometry were dissolved in ∼1.4 M HNO3(aq)."
+      },
+      {
+        "issue": "Precise microwave evaporation temperature/time not given",
+        "excerpt": "The resulting solution was evaporated to dryness in a microwave oven contained inside a fume hood."
+      },
+      {
+        "issue": "Cooling rate unspecified",
+        "excerpt": "The furnace was turned off, and the sample was removed."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Neutron powder diffraction",
+      "parameters": {
+        "instrument": "POWGEN, SNS",
+        "temperatures_K": [300, 10],
+        "center_wavelengths_A": [1.066, 2.665],
+        "d_spacing_range_A": [0.3, 6.5]
+      },
+      "results": [
+        {
+          "sample": "Li6.5La3Zr1.5Ta0.5O12",
+          "metric": "lattice_parameter_a_300K",
+          "value": 12.9305,
+          "unit": "Å"
+        },
+        {
+          "sample": "Li6.5La3Zr1.5Ta0.5O12",
+          "metric": "lattice_parameter_a_10K",
+          "value": 12.9160,
+          "unit": "Å"
+        },
+        {
+          "sample": "Li6.25La3Zr1.25Ta0.75O12",
+          "metric": "lattice_parameter_a_300K",
+          "value": 12.9086,
+          "unit": "Å"
+        },
+        {
+          "sample": "Li6.25La3Zr1.25Ta0.75O12",
+          "metric": "lattice_parameter_a_10K",
+          "value": 12.8878,
+          "unit": "Å"
+        },
+        {
+          "sample": "Li5.5La3Zr0.5Ta1.5O12",
+          "metric": "lattice_parameter_a_300K",
+          "value": 12.8343,
+          "unit": "Å"
+        },
+        {
+          "sample": "Li5.5La3Zr0.5Ta1.5O12",
+          "metric": "lattice_parameter_a_10K",
+          "value": 12.8179,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "High quality Rietveld fits confirm cubic garnet structure; Li occupancy determined at 10 K.",
+      "prov": ["Neutron Diffraction section", "Figure 1", "Table 1"]
+    },
+    {
+      "method": "Synchrotron X-ray powder diffraction",
+      "parameters": {
+        "beamline": "11-BM, APS",
+        "wavelength_A": 0.414,
+        "2theta_range_deg": [-6, 16],
+        "step_deg": 0.001,
+        "scan_speed_deg_per_s": 0.01
+      },
+      "results": [
+        {
+          "sample": "Li6.5La3Zr1.5Ta0.5O12",
+          "metric": "Ta_content_refined",
+          "value": 0.52,
+          "unit": ""
+        },
+        {
+          "sample": "Li6.25La3Zr1.25Ta0.75O12",
+          "metric": "Ta_content_refined",
+          "value": 0.79,
+          "unit": ""
+        },
+        {
+          "sample": "Li5.5La3Zr0.5Ta1.5O12",
+          "metric": "Ta_content_refined",
+          "value": 1.56,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Refined Ta content slightly higher than nominal.",
+      "prov": ["High Resolution XRD section", "Table 1"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength_nm": 514,
+        "grating_lines_per_mm": 1800,
+        "objective_magnification": 20
+      },
+      "results": [
+        {
+          "metric": "Zr–O breathing mode peak",
+          "value": 640,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Ta–O breathing mode peak",
+          "value": 720,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Relative peak areas correlate with Ta content and lattice contraction.",
+      "prov": ["Raman Spectroscopy section", "Figures 3‒5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density Functional Theory",
+        "results": [
+          {
+            "equation": "Vegard's law fit for lattice constants vs Ta concentration",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-11T14:30:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Composite lithium metal anode by melt infusion of lithium into a 3D conducting scaffold with lithiophilic coating",
+    "doi": "10.1073/pnas.1518188113",
+    "authors": [
+      "Zheng, L.",
+      "et al."
+    ],
+    "journal": "Proceedings of the National Academy of Sciences USA",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis",
+    "tags": [
+      "lithium metal batteries",
+      "composite anode",
+      "melt infusion",
+      "carbon fibre scaffold"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Composite lithium/carbon electrode",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Article text"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Article text"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Carbon fibre network",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "scaffold",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Prepared by electrospinning",
+      "prov": [
+        "Article text"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Silicon",
+      "molecular_formula": "Si",
+      "ontology": {
+        "role": "coating material",
+        "category": "metalloid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used to coat carbon fibres for lithiophilicity",
+      "prov": [
+        "Article text"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of a 3D electrospun carbon-fibre network scaffold.",
+        "operations": [
+          {
+            "action": "electrospin",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Details of electrospinning conditions not provided."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Article text"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Silicon coating of carbon fibres to render the scaffold lithiophilic.",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": [
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Method and conditions for coating not specified."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Article text"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Melt-infusion of molten lithium into the silicon-coated carbon scaffold followed by solidification.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Lithium is melted prior to infusion."
+          },
+          {
+            "action": "infuse",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Molten lithium infiltrates the 3D scaffold, then solidifies with porous morphology."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Article text"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare electrospun carbon fibre network."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Coat carbon fibres with silicon."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Melt-infuse lithium into the silicon-coated scaffold and solidify."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No quantitative synthesis parameters (temperature, time, amounts) provided.",
+        "excerpt": "details of electrospinning conditions not provided; molten liquid lithium infuses into the 3D scaffold"
+      },
+      {
+        "issue": "Performance metrics mentioned without specific values.",
+        "excerpt": "the composite lithium/carbon electrode could be stably cycled at high current density"
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

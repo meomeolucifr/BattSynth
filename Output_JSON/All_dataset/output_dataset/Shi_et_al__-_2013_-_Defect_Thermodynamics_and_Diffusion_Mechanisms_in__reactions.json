@@ -1,0 +1,191 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Defect Thermodynamics and Diffusion Mechanisms in Li2CO3 and Implications for the Solid Electrolyte Interphase in Li-Ion Batteries",
+    "doi": "10.1021/jp310591u",
+    "authors": [
+      "Siqi Shi",
+      "Yue Qi",
+      "Hong Li",
+      "Louis G. Hector, Jr."
+    ],
+    "journal": "The Journal of Physical Chemistry C",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "SEI", "Li-ion battery", "Li2CO3", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "intended_role": "material studied",
+      "prov": ["Feature Article main text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "material studied",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Feature Article main text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (VASP)",
+      "parameters": {
+        "functional": "LDA (and GGA-PBE for comparison)",
+        "plane_wave_cutoff": "520 eV",
+        "k_point_mesh": "2×4×3",
+        "supercell": "2×2×2 conventional cell for defects"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameters_LDA",
+          "value": "a=8.249 Å, b=4.906 Å, c=5.847 Å, β=114.553°",
+          "unit": ""
+        },
+        {
+          "metric": "band_gap_LDA",
+          "value": 4.868,
+          "unit": "eV"
+        },
+        {
+          "metric": "band_gap_GGA-PBE",
+          "value": 5.04,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Computed structural parameters agree within 2.5 % of experiment; large band gap indicates electronic insulation.",
+      "prov": ["Table 1"]
+    },
+    {
+      "method": "Phonon calculation (PHONON code)",
+      "parameters": {
+        "approach": "supercell lattice dynamics"
+      },
+      "results": [
+        {
+          "metric": "vibrational_stability",
+          "value": "confirmed (no imaginary frequencies)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Perfect Li2CO3 lattice is mechanically and vibrationally stable.",
+      "prov": ["Main text section 3.1"]
+    },
+    {
+      "method": "CI-NEB",
+      "parameters": {
+        "images": 3
+      },
+      "results": [
+        {
+          "metric": "diffusion_barrier_VLi-_[001]",
+          "value": 0.235,
+          "unit": "eV"
+        },
+        {
+          "metric": "diffusion_barrier_Li_i+_knock-off",
+          "value": 0.31,
+          "unit": "eV"
+        },
+        {
+          "metric": "diffusion_barrier_Li_i0_knock-off",
+          "value": 0.32,
+          "unit": "eV"
+        },
+        {
+          "metric": "diffusion_barrier_Frenkel_pair",
+          "value": 0.377,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Identified lowest-energy diffusion pathways for major carriers.",
+      "prov": ["Figure 3", "Figure 5", "Figure 8"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Nernst–Einstein relation",
+        "results": [
+          {
+            "description": "Ionic conductivity for Li_i+ at 0.23 V",
+            "value": 3.57e-10,
+            "unit": "S cm-1",
+            "prov": ["Table 4"]
+          },
+          {
+            "description": "Ionic conductivity for V_Li- at 0.23 V",
+            "value": 4.37e-21,
+            "unit": "S cm-1",
+            "prov": ["Table 4"]
+          },
+          {
+            "description": "Ionic conductivity (Li_i+, V_Li-) in 0.98–3.98 V range",
+            "value": 2.66e-15,
+            "unit": "S cm-1",
+            "prov": ["Table 4"]
+          },
+          {
+            "description": "Ionic conductivity for V_Li- at 4.28 V",
+            "value": 1.90e-13,
+            "unit": "S cm-1",
+            "prov": ["Table 4"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,744 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A lithium superionic conductor",
+    "doi": "10.1038/NMAT3066",
+    "authors": [
+      "Noriaki Kamaya",
+      "Kenji Homma",
+      "Yuichiro Yamakawa",
+      "Masaaki Hirayama",
+      "Ryoji Kanno",
+      "Masao Yonemura",
+      "Takashi Kamiyama",
+      "Yuki Kato",
+      "Shigenori Hama",
+      "Koji Kawamoto",
+      "Akio Mitsui"
+    ],
+    "journal": "Nature Materials",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid electrolyte",
+      "lithium ion conductivity",
+      "solid-state battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "product",
+      "prov": [
+        "Methods",
+        "Page 684"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiNbO3-coated LiCoO2",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": [
+        "Methods",
+        "Page 685"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in 5/1/1 molar ratio with P2S5 and GeS2",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in 5/1/1 molar ratio with Li2S and GeS2",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "GeS2",
+      "molecular_formula": "GeS2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in 5/1/1 molar ratio with Li2S and P2S5",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Inert atmosphere in glove box and during impedance measurements",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Sputtered/coated onto pellet surfaces",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Indium",
+      "molecular_formula": "In",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Plate thickness 0.1 mm, diameter 10 mm",
+      "prov": [
+        "Page 685"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Commercial powder, coated with LiNbO3",
+      "prov": [
+        "Page 685"
+      ]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "LiNbO3",
+      "molecular_formula": "LiNbO3",
+      "ontology": {
+        "role": "coating",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Coating layer on LiCoO2",
+      "prov": [
+        "Page 685"
+      ]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reference electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in cyclic voltammetry and electronic conductivity measurements",
+      "prov": [
+        "Page 683"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Weighing and mixing of precursors",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ],
+              "molar_ratio": "5:1:1"
+            },
+            "notes": "Performed in Ar-filled glove box"
+          },
+          {
+            "action": "mix",
+            "parameters": {
+              "equipment": "vibrating mill (CMT Tl-100)",
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pelletizing of mixed powder",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "form": "pellet"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Sealing under vacuum",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "quartz tube",
+              "pressure": {
+                "value": 0.0003,
+                "unit": "bar"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": 0.0003,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat treatment to form Li10GeP2S12",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 823.15,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 480,
+                "unit": "min"
+              }
+            },
+            "notes": "Furnace heating"
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "cooling_rate": "slow",
+              "final_temperature": {
+                "value": 298,
+                "unit": "K"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Gold coating of Li10GeP2S12 pellet for impedance measurement",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": [
+                "chem_5"
+              ],
+              "temperature": {
+                "value": 773.15,
+                "unit": "K"
+              }
+            },
+            "notes": "Heating in vacuum after Au coating"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "LiNbO3 coating of LiCoO2 powder",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": [
+                "chem_8",
+                "chem_7"
+              ],
+              "equipment": "fluidized bed granulator (MP-01, Powrex)"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 685"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Preparation of cathode composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "target_2",
+                "target_1"
+              ],
+              "weight_ratio": "70:30",
+              "equipment": "vortex mixer",
+              "duration": {
+                "value": 5,
+                "unit": "min"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 685"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Assembly of all-solid-state cell",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "components": [
+                "target_2",
+                "target_1",
+                "chem_6"
+              ]
+            },
+            "notes": "Cell configuration: LiCoO2/Li10GeP2S12/In"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 685"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mix Li2S, P2S5, and GeS2 under Ar"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Press mixed powder into pellets"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Seal pellets in evacuated quartz tube"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Heat at 823 K for 8 h and slow cool to obtain Li10GeP2S12"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Coat pellets with Au and heat at 773 K for conductivity tests"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Coat LiCoO2 with LiNbO3 using fluidized bed granulator"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Prepare cathode by mixing LiNbO3-LiCoO2 with Li10GeP2S12 (70:30 wt%)"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Assemble LiCoO2/Li10GeP2S12/In solid-state cell"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of starting materials not specified",
+        "excerpt": "These were weighed, mixed in the molar ratio of Li2S/P2S5/GeS2 to 5/1/1"
+      },
+      {
+        "issue": "Details of LiNbO3 coating (temperature, duration) not provided",
+        "excerpt": "The LiNbO3 layer was coated on a commercial LiCoO2 powder using a fluidized bed granulator"
+      },
+      {
+        "issue": "Capacity value reported as \"over 120 mA h g−1\"",
+        "excerpt": "The battery has a discharge capacity of over 120 mA h g−1"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "instrument": "Rigaku SmartLab/Ultima",
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "phase purity",
+          "value": "single phase confirmed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "method": "Synchrotron XRD",
+      "parameters": {
+        "beamline": "BL02B2, SPring-8",
+        "wavelength": {
+          "value": 0.59960,
+          "unit": "Å"
+        },
+        "temperature": {
+          "value": 100,
+          "unit": "K"
+        },
+        "step": "0.01°",
+        "range_2theta": "3–70°"
+      },
+      "results": [
+        {
+          "metric": "unit cell a",
+          "value": 8.71771,
+          "unit": "Å"
+        },
+        {
+          "metric": "unit cell c",
+          "value": 12.63452,
+          "unit": "Å"
+        },
+        {
+          "metric": "space group",
+          "value": "P42/nmc (137)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Tetragonal structure determined",
+      "prov": [
+        "Page 682"
+      ]
+    },
+    {
+      "method": "Neutron diffraction",
+      "parameters": {
+        "instrument": "Super HRPD (BL08, J-PARC)",
+        "container": "vanadium cell, 6 mm",
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "Li occupancy 16h",
+          "value": 0.691,
+          "unit": ""
+        },
+        {
+          "metric": "Li occupancy 4d",
+          "value": 1.000,
+          "unit": ""
+        },
+        {
+          "metric": "Li occupancy 8f",
+          "value": 0.643,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Three-dimensional framework with 1D Li pathways",
+      "prov": [
+        "Page 682"
+      ]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "10^6–10^−1 Hz",
+        "voltage_amplitude": "100–500 mV",
+        "temperature_range": "-110 °C to 110 °C"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 0.012,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy",
+          "value": 24,
+          "unit": "kJ mol-1"
+        }
+      ],
+      "interpretation": "Highest reported Li ionic conductivity for a solid electrolyte",
+      "prov": [
+        "Figure 1",
+        "Page 683"
+      ]
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate": {
+          "value": 1,
+          "unit": "mV s-1"
+        },
+        "voltage_range": "-0.5–5 V",
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "decomposition potential",
+          "value": ">5",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "High electrochemical stability window",
+      "prov": [
+        "Figure 1b"
+      ]
+    },
+    {
+      "method": "Hebb–Wagner polarization",
+      "parameters": {
+        "voltage_range": "2.8–3.5 V",
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "electronic conductivity",
+          "value": 5.70e-9,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Electronic conductivity negligible",
+      "prov": [
+        "Page 683"
+      ]
+    },
+    {
+      "method": "Battery cycling",
+      "parameters": {
+        "current_density": {
+          "value": 14,
+          "unit": "mA g-1"
+        },
+        "voltage_window": "1.9–3.6 V",
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "discharge capacity",
+          "value": 120,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "coulombic efficiency",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Stable cycling after second cycle",
+      "prov": [
+        "Figure 4"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "σ = σ0 exp( -Ea / RT )",
+            "value": 24,
+            "unit": "kJ mol-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 120,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-28T12:00:00Z",
+    "source_file": "extracted_text_chunk",
+    "processing_time": null
+  }
+}

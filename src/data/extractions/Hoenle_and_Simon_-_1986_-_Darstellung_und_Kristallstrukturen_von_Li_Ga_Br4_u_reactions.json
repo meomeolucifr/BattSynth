@@ -1,0 +1,433 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Preparation and Crystal Structure of LiGaBr4 and LiGaBr3",
+    "doi": "",
+    "authors": ["Wolfgang Hönle", "Arndt Simon"],
+    "journal": "Zeitschrift für Naturforschung B",
+    "year": 1986
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["inorganic synthesis", "crystal structure"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiGaBr4",
+      "molecular_formula": "LiGaBr4",
+      "intended_role": "product",
+      "prov": ["Page 1391-1392"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiGaBr3",
+      "molecular_formula": "LiGaBr3",
+      "intended_role": "product",
+      "prov": ["Page 1391-1393"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiBr",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric 1:1 with GaBr3 for LiGaBr4; similar with GaBr2 for LiGaBr3",
+      "prov": ["Page 1391"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "GaBr3",
+      "molecular_formula": "GaBr3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 1391"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "GaBr2",
+      "molecular_formula": "GaBr2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "(α,β) polymorphs mentioned",
+      "prov": ["Page 1392"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used for reduction of GaBr3 to form LiGaBr3 in alternative route",
+      "prov": ["Page 1392"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Vacuum distillation of LiBr",
+        "operations": [
+          {
+            "action": "distill",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "temperature": {
+              "value": 973,
+              "unit": "K"
+            },
+            "pressure": {
+              "value": 3e-4,
+              "unit": "bar"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "LiBr distilled from niobium crucible; stated 3×10^-7 mbar (converted) in high vacuum"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "high vacuum",
+          "pressure": {
+            "value": 3e-4,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1391"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Vacuum distillation of GaBr3",
+        "operations": [
+          {
+            "action": "distill",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "temperature": {
+              "value": 363,
+              "unit": "K"
+            },
+            "pressure": {
+              "value": null,
+              "unit": "bar"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "high vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1391"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Mixing of LiBr and GaBr3 for LiGaBr4 synthesis",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "ratio": "1:1 (stoichiometric)"
+            },
+            "notes": "Approx. 4 g total mixture"
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "glass ampoule (Solidex, Ø 15 mm, length 100 mm, wall 2.5 mm)"
+            },
+            "notes": "Ampoules sealed under protective gas"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "protective inert gas",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1391-1392"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat treatment to form LiGaBr4",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["step_3"]
+            },
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed ampoule",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1391-1392"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Mixing of LiBr and GaBr2 for LiGaBr3 synthesis (alternative route A)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3"],
+              "ratio": "similar to 1:1"
+            },
+            "notes": ""
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "glass ampoule"
+            },
+            "notes": "Conditions analogous to LiGaBr4 synthesis"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "protective inert gas",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1392"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Heat treatment to form LiGaBr3 (route A)",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["step_5"]
+            },
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "notes": "Analogous to LiGaBr4"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed ampoule",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1392"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Reduction of GaBr3 with Li metal to form LiGaBr3 (alternative route B)",
+        "operations": [
+          {
+            "action": "reduce",
+            "parameters": {
+              "inputs": ["chem_2", "chem_4"]
+            },
+            "notes": "Details not provided; stated as alternative preparation"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1392"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Purification of LiBr by high-vacuum distillation"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Purification of GaBr3 by high-vacuum distillation"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Preparation of stoichiometric LiBr/GaBr3 mixture and sealing in ampoule"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Heat treatment at 250 °C for 2 days to obtain LiGaBr4"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Preparation of LiBr/GaBr2 mixture for LiGaBr3 synthesis"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Heat treatment at 250 °C for 2 days to obtain LiGaBr3"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Alternative synthesis of LiGaBr3 via reduction of GaBr3 with Li metal"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear chemical formula written as 'LiGaBr ?' in text; assumed LiGaBr3",
+        "excerpt": "b) LiGaBr ?\nDie Verbindung kann entweder durch Reduktion von GaBr, mit Lithium..."
+      },
+      {
+        "issue": "No explicit amounts of reactants provided; only stoichiometric ratios and approximate total mass",
+        "excerpt": "Die Umsetzung erfolgt in Ansätzen von ca. 4 g in Solidex-Ampullen..."
+      },
+      {
+        "issue": "Pressure during GaBr3 distillation not specified",
+        "excerpt": "G aBr3  90 °C"
+      },
+      {
+        "issue": "Details of reduction route (step_7) absent (temperature, time, atmosphere)",
+        "excerpt": "Die Verbindung kann entweder durch Reduktion von GaBr, mit Lithium..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Powder XRD (Guinier)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Powder pattern lines for LiGaBr4 and LiGaBr3 listed",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "LiGaBr4 obtained X-ray pure",
+      "prov": ["Page 1391-1392"]
+    },
+    {
+      "method": "Single crystal XRD",
+      "parameters": {
+        "temperature": "295 K"
+      },
+      "results": [
+        {
+          "metric": "Cell parameters LiGaBr4",
+          "value": "a=1369.6 pm, b=685.4 pm, c=741.6 pm, β=93.14°",
+          "unit": ""
+        },
+        {
+          "metric": "Cell parameters LiGaBr3",
+          "value": "a=800.7 pm, b=1048.9 pm, c=653.5 pm, β=93.24°",
+          "unit": ""
+        }
+      ],
+      "interpretation": "LiGaBr4 is isotypic to LiAlCl4; LiGaBr3 formulated as Li2[Ga2Br6]",
+      "prov": ["Table I", "Page 1393"]
+    },
+    {
+      "method": "Differential Thermal Analysis (DTA)",
+      "parameters": {
+        "heating_rate": "10 °C/min (converted note)"
+      },
+      "results": [
+        {
+          "metric": "Melting point of LiGaBr4",
+          "value": 478,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 1392"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

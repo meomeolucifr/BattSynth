@@ -1,0 +1,370 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Reaction and Space Charge Layer Formation at the LiCoO2−LiPON Interface: Insights on Defect Formation and Ion Energy Level Alignment by a Combined Surface Science −Simulation Approach",
+    "doi": "10.1021/acs.chemmater.7b00890",
+    "authors": [
+      "Mathias Fingerle",
+      "Roman Buchheit",
+      "Sabrina Sicolo",
+      "Karsten Albe",
+      "René Hausbrand"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid-state battery", "interface", "LiCoO2", "LiPON", "photoelectron spectroscopy"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiCoO2 thin film",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "substrate",
+      "prov": ["Experimental Section, Sample Preparation"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiPON thin film",
+      "molecular_formula": "",
+      "intended_role": "solid electrolyte film",
+      "prov": ["Experimental Section, Sample Preparation"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiCoO2–LiPON interface sample",
+      "molecular_formula": "",
+      "intended_role": "composite/interface",
+      "prov": ["Experimental Section, DAISY-Bat"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Co3O4 interlayer",
+      "molecular_formula": "Co3O4",
+      "intended_role": "reaction product after annealing",
+      "prov": ["Results, Figure 5"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li3PO4 interlayer",
+      "molecular_formula": "Li3PO4",
+      "intended_role": "reaction product after annealing",
+      "prov": ["Results, Figure 5"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "LiNO2 interfacial compound",
+      "molecular_formula": "LiNO2",
+      "intended_role": "transient interlayer",
+      "prov": ["Results, Figure 2"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "sputtering target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "commercial target used for LiCoO2 film deposition",
+      "prov": ["Experimental Section, Sample Preparation"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li3PO4",
+      "molecular_formula": "Li3PO4",
+      "ontology": {
+        "role": "sputtering target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "commercial target for LiPON deposition",
+      "prov": ["Experimental Section, Sample Preparation"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "sputtering atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "pure N2 atmosphere at 8×10−3 mbar during LiPON sputtering",
+      "prov": ["Experimental Section, Sample Preparation"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiPON",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "product",
+        "category": "solid electrolyte"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "amorphous lithium phosphorus oxynitride film",
+      "prov": ["Results"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Co3O4",
+      "molecular_formula": "Co3O4",
+      "ontology": {
+        "role": "reaction product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "forms upon high-temperature annealing at interface",
+      "prov": ["Results, Figure 5"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Li3PO4",
+      "molecular_formula": "Li3PO4",
+      "ontology": {
+        "role": "reaction product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "forms in LiPON region after annealing",
+      "prov": ["Results, Figure 5"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiNO2",
+      "molecular_formula": "LiNO2",
+      "ontology": {
+        "role": "intermediate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "detected at initial interface; disappears on annealing",
+      "prov": ["Results, Figure 2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Deposition of LiCoO2 thin film by RF magnetron sputtering",
+        "operations": [
+          {
+            "action": "sputter_deposition",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "pressure": {
+                "value": 5e-12,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Deposition parameters referenced from literature (ref 43); base pressure 5×10−9 mbar.",
+            "prov": ["Experimental Section, Sample Preparation"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "UHV",
+          "pressure": {
+            "value": 5e-12,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section, Sample Preparation"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Deposition of LiPON thin film onto LiCoO2 substrate by RF magnetron sputtering of Li3PO4 in N2 atmosphere",
+        "operations": [
+          {
+            "action": "sputter_deposition",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"],
+              "pressure": {
+                "value": 8e-6,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Pure N2 atmosphere at 8×10−3 mbar.",
+            "prov": ["Experimental Section, Sample Preparation"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": 8e-6,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section, Sample Preparation"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Stepwise annealing of LiCoO2–LiPON sample under UHV",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["target_3"],
+              "pressure": {
+                "value": 2.5e-11,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 427,
+              "unit": "K"
+            },
+            "notes": "Second annealing step temperature explicitly stated as 154 °C (427 K). Heating via halogen lamp; temperature accuracy ±20 K.",
+            "prov": ["Experimental Section, Sample Annealing", "Results, Figure 5"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "UHV",
+          "pressure": {
+            "value": 2.5e-11,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section, Sample Annealing"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Formation of LiCoO2 thin film substrate."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Growth of LiPON film on LiCoO2, creating LiCoO2–LiPON interface."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Annealing to study interface evolution, leading to formation of Co3O4 and Li3PO4 interlayers."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing deposition parameters for LiCoO2 film (power, time, substrate).",
+        "excerpt": "The LiCoO2 film was prepared by sputtering a commercial LiCoO2 target using deposition parameters described elsewhere.43"
+      },
+      {
+        "issue": "Exact annealing times not specified.",
+        "excerpt": "the heating current for one annealing step was applied for a defined time."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray Photoelectron Spectroscopy (XPS)",
+      "parameters": {
+        "radiation": "Al Kα (1486.6 eV)",
+        "pass_energy": "23.5 eV"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Experimental Section, Photoelectron Spectroscopy"]
+    },
+    {
+      "method": "Ultraviolet Photoelectron Spectroscopy (UPS)",
+      "parameters": {
+        "radiation": "He I (21.2 eV)",
+        "pass_energy": "0.585 eV",
+        "bias_voltage": "-6 V"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Experimental Section, Photoelectron Spectroscopy"]
+    },
+    {
+      "method": "Synchrotron XPS (SXPS)",
+      "parameters": {
+        "beamline": "BESSY II U49-2-PGM2",
+        "pass_energy": "5 eV"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Experimental Section, SoLiAS Endstation at BESSY II"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

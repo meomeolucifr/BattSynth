@@ -1,0 +1,276 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Machine learning molecular dynamics simulation identifying weakly negative effect of polyanion rotation on Li-ion migration",
+    "doi": "10.1038/s41524-023-01049-w",
+    "authors": [
+      "Zhenming Xu",
+      "Huiyu Duan",
+      "Zhi Dou",
+      "Mingbo Zheng",
+      "Yixi Lin",
+      "Yinghui Xia",
+      "Haitao Zhao",
+      "Yongyao Xia"
+    ],
+    "journal": "npj Computational Materials",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["solid-state electrolyte", "MLMD", "ionic conductivity", "polyanion rotation"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7P3S11",
+      "molecular_formula": "Li7P3S11",
+      "intended_role": "lithium-ion conductor (studied material)",
+      "prov": ["Page 2 Fig.1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "lithium-ion conductor (studied material)",
+      "prov": ["Page 2"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "β-Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "intended_role": "lithium-ion conductor (studied material)",
+      "prov": ["Page 2"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li3ErCl6",
+      "molecular_formula": "Li3ErCl6",
+      "intended_role": "lithium-ion conductor (studied material)",
+      "prov": ["Page 2"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li3YBr6",
+      "molecular_formula": "Li3YBr6",
+      "intended_role": "lithium-ion conductor (studied material)",
+      "prov": ["Page 2"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li7P3S11",
+      "molecular_formula": "Li7P3S11",
+      "ontology": {
+        "role": "studied material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "ontology": {
+        "role": "studied material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "β-Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "ontology": {
+        "role": "studied material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li3ErCl6",
+      "molecular_formula": "Li3ErCl6",
+      "ontology": {
+        "role": "studied material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Li3YBr6",
+      "molecular_formula": "Li3YBr6",
+      "ontology": {
+        "role": "studied material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_step_1",
+        "description": "Development of machine-learning interatomic potentials (MTP) for five lithium conductors (training on DFT data)."
+      },
+      {
+        "step_ref": "comp_step_2",
+        "description": "Execution of ultralong-time MLMD simulations (up to 1 μs) at 300–520 K to evaluate Li-ion diffusion and polyanion rotation."
+      },
+      {
+        "step_ref": "comp_step_3",
+        "description": "Arrhenius analysis of diffusion coefficients to obtain activation energies and conductivities."
+      },
+      {
+        "step_ref": "comp_step_4",
+        "description": "Helmholtz free-energy mapping of polyanion rotation to quantify rotational energy barriers."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Conductivity unit not covered by units_policy",
+        "excerpt": "\"ionic conductivity at room temperature are calculated to be 14.96 mS cm−1\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "MLMD",
+      "parameters": {
+        "temperature": 300,
+        "simulation_time": "1 μs"
+      },
+      "results": [
+        {
+          "metric": "Li ion diffusion coefficient",
+          "value": 1.40e-7,
+          "unit": "cm2 s-1"
+        },
+        {
+          "metric": "ionic conductivity",
+          "value": 14.96,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "Values are close to experimental diffusion coefficient 1.65×10−7 cm2 s−1 and conductivity 11.6–17 mS cm−1.",
+      "prov": ["Page 3 Fig.1c"]
+    },
+    {
+      "method": "MLMD",
+      "parameters": {
+        "temperature_range": "300–520 K"
+      },
+      "results": [
+        {
+          "metric": "activation energy (low-T)",
+          "value": 0.425,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (high-T)",
+          "value": 0.165,
+          "unit": "eV"
+        },
+        {
+          "metric": "predicted ionic conductivity at 300 K",
+          "value": 1.37,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "Non-linear Arrhenius behaviour observed for Li3ErCl6 with transition at ~460 K.",
+      "prov": ["Page 2 Fig.1b"]
+    },
+    {
+      "method": "Helmholtz free energy surface analysis",
+      "parameters": {
+        "temperature": 300
+      },
+      "results": [
+        {
+          "metric": "polyanion rotational energy barrier range",
+          "value": 0.60,
+          "unit": "eV",
+          "notes": "Range 0.60–0.68 eV across four PS4 units"
+        }
+      ],
+      "interpretation": "Rotation barriers higher than Li diffusion barriers, indicating limited coupling.",
+      "prov": ["Page 6 Fig.5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "D = D0 * exp(-Ea / kBT)",
+            "value": null,
+            "unit": "",
+            "notes": "Used to derive activation energies for all five conductors"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

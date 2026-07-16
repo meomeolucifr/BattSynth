@@ -1,0 +1,291 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium Chlorides and Bromides as Promising Solid-State Chemistries for Fast Ion Conductors with Good Electrochemical Stability (Supporting Information)",
+    "doi": "",
+    "authors": ["Shuo Wang", "Qiang Bai", "Adelaide M. Nolan", "Yunsheng Liu", "Sheng Gong", "Qiang Sun", "Yifei Mo"],
+    "journal": "",
+    "year": null
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["solid electrolyte", "DFT", "AIMD", "lithium-ion conductors"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3YCl6",
+      "molecular_formula": "Li3YCl6",
+      "intended_role": "studied_material",
+      "prov": ["Page 1", "Table S3"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3YBr6",
+      "molecular_formula": "Li3YBr6",
+      "intended_role": "studied_material",
+      "prov": ["Page 1", "Table S3"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li3YCl6",
+      "molecular_formula": "Li3YCl6",
+      "ontology": {
+        "role": "studied_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li3YBr6",
+      "molecular_formula": "Li3YBr6",
+      "ontology": {
+        "role": "studied_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 1"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "AIMD",
+      "parameters": {
+        "supercell_Li3YCl6": "6 formula units, a=b=11.25 Å, c=12.31 Å",
+        "supercell_Li3YBr6": "8 formula units, a=13.90 Å, b=12.00 Å, c=13.86 Å",
+        "temperature_range": "500–1000 K",
+        "heating": "from 100 K to target T over 2 ps",
+        "ensemble": "NVT, Nose–Hoover thermostat",
+        "simulation_time": "60–200 ps",
+        "timestep": "2 fs"
+      },
+      "results": [
+        {
+          "material_ref": "target_1",
+          "metric": "ionic conductivity (charge center diffusivity)",
+          "value": 190,
+          "unit": "mS cm-1",
+          "conditions": "500 K"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "ionic conductivity (Nernst–Einstein)",
+          "value": 196,
+          "unit": "mS cm-1",
+          "conditions": "500 K"
+        },
+        {
+          "material_ref": "target_2",
+          "metric": "ionic conductivity (charge center diffusivity)",
+          "value": 111,
+          "unit": "mS cm-1",
+          "conditions": "500 K"
+        },
+        {
+          "material_ref": "target_2",
+          "metric": "ionic conductivity (Nernst–Einstein)",
+          "value": 133,
+          "unit": "mS cm-1",
+          "conditions": "500 K"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "correlation factor f",
+          "value": 1.03,
+          "unit": "",
+          "conditions": "500 K"
+        },
+        {
+          "material_ref": "target_2",
+          "metric": "correlation factor f",
+          "value": 1.20,
+          "unit": "",
+          "conditions": "500 K"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "ionic conductivity",
+          "value": 14.0,
+          "unit": "mS cm-1",
+          "conditions": "300 K (bulk pristine)"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "activation energy Ea",
+          "value": 0.19,
+          "unit": "eV",
+          "conditions": "pristine",
+          "error": "±0.03"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "ionic conductivity (ab plane only)",
+          "value": 3.7,
+          "unit": "mS cm-1",
+          "conditions": "300 K"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "activation energy Ea (ab plane)",
+          "value": 0.23,
+          "unit": "eV",
+          "conditions": "",
+          "error": "±0.06"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "ionic conductivity (1 antisite)",
+          "value": 1.8,
+          "unit": "mS cm-1",
+          "conditions": "300 K"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "activation energy Ea (1 antisite)",
+          "value": 0.28,
+          "unit": "eV",
+          "conditions": "",
+          "error": "±0.03"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "ionic conductivity (3 antisites)",
+          "value": 1.4,
+          "unit": "mS cm-1",
+          "conditions": "300 K"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "activation energy Ea (3 antisites)",
+          "value": 0.31,
+          "unit": "eV",
+          "conditions": "",
+          "error": "±0.03"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Pages 7-9", "Table S2"]
+    },
+    {
+      "method": "DFT",
+      "parameters": {
+        "code": "VASP",
+        "functional_PBE": "GGA-PBE for energy",
+        "functional_HSE": "HSE06 for band gap and DOS",
+        "plane_wave_cutoff": "Materials Project settings",
+        "k_points": "Materials Project settings"
+      },
+      "results": [
+        {
+          "material_ref": "target_1",
+          "metric": "energy above hull",
+          "value": 11,
+          "unit": "meV atom-1"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "reduction onset potential",
+          "value": 0.62,
+          "unit": "V vs Li/Li+"
+        },
+        {
+          "material_ref": "target_1",
+          "metric": "oxidation onset potential",
+          "value": 4.21,
+          "unit": "V vs Li/Li+"
+        },
+        {
+          "material_ref": "target_2",
+          "metric": "energy above hull",
+          "value": 22,
+          "unit": "meV atom-1"
+        },
+        {
+          "material_ref": "target_2",
+          "metric": "reduction onset potential",
+          "value": 0.59,
+          "unit": "V vs Li/Li+"
+        },
+        {
+          "material_ref": "target_2",
+          "metric": "oxidation onset potential",
+          "value": 3.15,
+          "unit": "V vs Li/Li+"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table S3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Interface reaction energy calculation",
+        "results": [
+          {
+            "description": "LYC with LiCoO2 interface total minimum decomposition energy",
+            "value": -50,
+            "unit": "meV atom-1",
+            "prov": ["Table S6"]
+          },
+          {
+            "description": "LYB with LiCoO2 interface total minimum decomposition energy",
+            "value": -58,
+            "unit": "meV atom-1",
+            "prov": ["Table S6"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "anie_201901938_sm_miscellaneous_information.pdf",
+    "processing_time": null
+  }
+}

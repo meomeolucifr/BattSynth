@@ -1,0 +1,475 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Benchmarking the performance of all-solid-state lithium batteries",
+    "doi": "10.1038/s41560-020-0565-1",
+    "authors": ["Simon Randau", "Dominik A. Weber", "Olaf Kötz", "Raimund Koerver", "Philipp Braun", "André Weber", "Ellen Ivers-Tiffée", "Torben Adermann", "Jörn Kulisch", "Wolfgang G. Zeier", "Felix H. Richter", "Jürgen Janek"],
+    "journal": "Nature Energy",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["all-solid-state battery", "lithium metal", "beta-Li3PS4", "NCM cathode"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li│β-Li3PS4│NCM all-solid-state battery cell",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Methods, 'Li│LPS│NCM cell assembly' section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Disc, 120 µm thick, 9 mm diameter",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "β-Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.06,
+        "unit": "g"
+      },
+      "notes": "Added as powder to form separator layer",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li(Ni0.6Co0.2Mn0.2)O2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Dried 250 °C overnight in vacuum; part of cathode composite",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Copper foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "40 µm thick, 10 mm diameter disc",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Polyether ether ketone cylinder",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "mold/casing",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "10 mm diameter",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dry NCM powder",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 523,
+              "unit": "K"
+            },
+            "notes": "overnight in vacuum furnace (Büchi)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Prepare cathode composite",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_3", "chem_2"]
+            },
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Weight ratio 70:30 (NCM:LPS) using agate mortar"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon glovebox",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Form solid electrolyte separator",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "60 mg powder placed into PEEK cylinder (10 mm Ø) on stainless steel stamp"
+          },
+          {
+            "action": "compress",
+            "parameters": {
+              "pressure": {
+                "value": null,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Manual uniform compression"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon glovebox",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Add cathode composite layer",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_3", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "10 mg composite (8.9 mg cm-2) spread on LPS surface"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon glovebox",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Uniaxial pressing of stack",
+        "operations": [
+          {
+            "action": "compress",
+            "parameters": {
+              "pressure": {
+                "value": 3800,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": 3,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "30 kN force between stainless steel stamps"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon glovebox",
+          "pressure": {
+            "value": 3800,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Add lithium anode and copper foil",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_1", "chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Li disc 120 µm × 9 mm; Cu disc 40 µm × 10 mm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon glovebox",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Final assembly under external pressure",
+        "operations": [
+          {
+            "action": "apply_pressure",
+            "parameters": {
+              "pressure": {
+                "value": 500,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "External frame maintains 50 MPa during electrochemical tests"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 500,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dry NCM active material"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Prepare NCM/LPS cathode composite"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Form β-Li3PS4 separator pellet"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Layer cathode composite on separator"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Uniaxially press stack"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Add lithium anode and copper current collector"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Apply external frame pressure for finalized cell"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Duration of 'overnight' drying not specified",
+        "excerpt": "The NCM active material was dried in a vacuum at 250 °C (Büchi furnace) overnight."
+      },
+      {
+        "issue": "Manual compression force in step 3 not quantified",
+        "excerpt": "the powder was uniformly compressed manually with the second stainless steel stamp current collector"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Charge–discharge cycling",
+      "parameters": {
+        "voltage_range": "2.6–4.3 V",
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        },
+        "current_density": {
+          "value": 0.178,
+          "unit": "mA cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "discharge_capacity",
+          "value": 128,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "specific_energy",
+          "value": 44,
+          "unit": "Wh kg-1"
+        },
+        {
+          "metric": "energy_efficiency",
+          "value": 92,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 2, Methods"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "7 MHz – 1 Hz",
+        "ac_amplitude": "10 mV"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods"]
+    },
+    {
+      "method": "X-ray Photoelectron Spectroscopy",
+      "parameters": {
+        "x_ray_source": "Al anode",
+        "power": "100 W",
+        "spot_size": "100 µm × 1400 µm",
+        "pass_energy_survey": "187.9 eV",
+        "pass_energy_detail": "23.5 eV"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods"]
+    },
+    {
+      "method": "Scanning Electron Microscopy",
+      "parameters": {
+        "acceleration_voltage": "3 kV",
+        "beam_current": "150 pA"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 128,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 211
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

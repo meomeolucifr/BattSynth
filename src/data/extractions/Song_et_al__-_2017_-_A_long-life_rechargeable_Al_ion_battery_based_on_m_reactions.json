@@ -1,0 +1,330 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A long-life rechargeable Al ion battery based on molten salts",
+    "doi": "10.1039/c6ta09829k",
+    "authors": [
+      "Yang Song",
+      "Shuqiang Jiao",
+      "Jiguo Tu",
+      "Junxiang Wang",
+      "Yingjun Liu",
+      "Handong Jiao",
+      "Xuhui Mao",
+      "Zhancheng Guo",
+      "Derek J. Fray"
+    ],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["Al-ion battery", "molten salt electrolyte", "NaAlCl4"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "sodium chloroaluminate molten salt (NaAlCl4)",
+      "molecular_formula": "NaAlCl4",
+      "intended_role": "electrolyte",
+      "prov": ["Page 1283, paragraph 'The molten salt electrolyte was prepared...'"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Al/graphite full cell (Al-ion battery)",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": ["Fig. 1a description"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Aluminum chloride",
+      "molecular_formula": "AlCl3",
+      "ontology": {"role": "precursor", "category": "inorganic salt"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Mixed with NaCl at AlCl3/NaCl molar ratio 1.63 to form NaAlCl4 melt",
+      "prov": ["Page 1283"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sodium chloride",
+      "molecular_formula": "NaCl",
+      "ontology": {"role": "precursor", "category": "inorganic salt"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Mixed with AlCl3 at molar ratio 1.63",
+      "prov": ["Page 1283"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sodium chloroaluminate",
+      "molecular_formula": "NaAlCl4",
+      "ontology": {"role": "product", "category": "molten salt electrolyte"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Eutectic melt, melting point ~108 °C, operated at 120 °C",
+      "prov": ["Fig. 1b caption"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Aluminium foil",
+      "molecular_formula": "Al",
+      "ontology": {"role": "anode", "category": "metal"},
+      "amount": {"value": 0.243, "unit": "g"},
+      "notes": "High-purity, 12 mm × 50 mm, 150 µm thick",
+      "prov": ["Experimental section 4.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Graphitic carbon paper",
+      "molecular_formula": "C",
+      "ontology": {"role": "cathode", "category": "carbon material"},
+      "amount": {"value": 0.0187, "unit": "g"},
+      "notes": "15 mm × 15 mm, >99.9 % purity",
+      "prov": ["Experimental section 4.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Glass fiber membrane (GF/D)",
+      "molecular_formula": "",
+      "ontology": {"role": "separator", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Used to wrap cathode",
+      "prov": ["Experimental section 4.1"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Molybdenum sheet",
+      "molecular_formula": "Mo",
+      "ontology": {"role": "current collector", "category": "metal"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Experimental section 4.1"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Water (de-ionized)",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "washing solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "",
+      "prov": ["Page 1287"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Anhydrous ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {"role": "washing solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "",
+      "prov": ["Page 1287"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Drying and mixing precursors for electrolyte",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {"inputs": ["chem_1", "chem_2"]},
+            "duration": {"value": null, "unit": "min"},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "Vacuum dried prior to use"
+          },
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_1", "chem_2"], "ratio": "AlCl3/NaCl = 1.63 (molar)"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 1283"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Formation of NaAlCl4 eutectic melt",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {"inputs": ["mixture from step_1"]},
+            "temperature": {"value": 393, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": "Mixture melted to obtain NaAlCl4 electrolyte; 120 °C selected for operation"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Fig. 1b caption", "Page 1283"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Preparation of aluminium anode",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {"inputs": ["chem_4"]},
+            "duration": {"value": 15, "unit": "min"},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "Ultrasonic cleaner"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental section 4.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Cathode assembly",
+        "operations": [
+          {
+            "action": "fix",
+            "parameters": {"inputs": ["chem_5", "chem_7"]},
+            "notes": "Graphitic carbon paper fixed with molybdenum sheet"
+          },
+          {
+            "action": "wrap",
+            "parameters": {"inputs": ["chem_5", "chem_6"]},
+            "notes": "Cathode wrapped with glass fiber membrane"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental section 4.1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Cell assembly",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {"inputs": ["chem_4", "cathode from step_4", "chem_3"]},
+            "notes": "Components placed in glassy reactor and sealed"
+          }
+        ],
+        "conditions": {"temperature": {"value": 393, "unit": "K"}, "pressure": {"value": null, "unit": ""}, "atmosphere": ""},
+        "prov": ["Fig. 1a description"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Vacuum-dry AlCl3 and NaCl, mix at molar ratio 1.63"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Heat mixture to 120 °C to form NaAlCl4 molten electrolyte"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Ultrasonic clean Al foil anode for 15 min"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Fix graphite cathode with Mo sheet and wrap with glass fiber separator"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Assemble Al/graphite cell with molten NaAlCl4 at 120 °C"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact temperature and time for melting mixture not explicitly provided; 120 °C used as operation temperature but preparation temperature could differ.",
+        "excerpt": "“The molten salt electrolyte was prepared by melting the mixture of AlCl3 and NaCl … The ionic conductivity… increases quickly with increasing temperature from 110 °C to 120 °C. … 120 °C was therefore selected as the temperature of the electrolyte in this study.”"
+      },
+      {
+        "issue": "Molar ratio notation '/C241.63' unclear formatting but interpreted as AlCl3:NaCl = 1.63.",
+        "excerpt": "“…melting the mixture of AlCl3 and NaCl with a molar ratio of /C241.63.”"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {},
+      "results": [
+        {"metric": "002 peak position shift", "value": "26.5°→25.5°", "unit": "2θ"}
+      ],
+      "interpretation": "Indicates increased interlayer spacing upon ion intercalation.",
+      "prov": ["Fig. 3c"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {"metric": "D band position", "value": 1352, "unit": "cm-1"},
+        {"metric": "G band position", "value": 1580, "unit": "cm-1"},
+        {"metric": "D band intensity change", "value": "diminished after charge", "unit": ""}
+      ],
+      "interpretation": "Intercalation decreases structural defects; order retained after discharge.",
+      "prov": ["Fig. 3d"]
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {"scan_rate": "2 mV s-1"},
+      "results": [
+        {"metric": "oxidation peaks", "value": "2.14, 1.98, 1.80", "unit": "V vs Al3+/Al"},
+        {"metric": "reduction peaks", "value": "1.81, 1.58, 1.25", "unit": "V vs Al3+/Al"}
+      ],
+      "interpretation": "Three reversible redox processes corresponding to adsorption and intercalation of chloroaluminate ions.",
+      "prov": ["Fig. 3a"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {"frequency_range": "1 Hz – 100 kHz", "amplitude": "10 mV"},
+      "results": [
+        {"metric": "charge transfer resistance Rct", "value": 0.80, "unit": "Ω"},
+        {"metric": "Warburg diffusion coefficient", "value": 3.86e-11, "unit": "cm2 s-1"}
+      ],
+      "interpretation": "Low Rct indicates fast ion intercalation kinetics.",
+      "prov": ["Supplementary Fig. S14"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge/discharge cycling",
+        "results": [
+          {"parameter": "capacity at 100 mA g-1", "value": 190, "unit": "mAh g-1"},
+          {"parameter": "capacity after 100 cycles at 500 mA g-1", "value": 115, "unit": "mAh g-1"},
+          {"parameter": "capacity after 5000 cycles at 4000 mA g-1", "value": 60, "unit": "mAh g-1"},
+          {"parameter": "capacity after 9000 cycles at 4000 mA g-1", "value": 43, "unit": "mAh g-1"},
+          {"parameter": "coulombic efficiency (>500–4000 mA g-1)", "value": ">99", "unit": "%"}
+        ],
+        "prov": ["Fig. 1c–d", "Fig. 2b–c"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 190,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 9000
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T19:15:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

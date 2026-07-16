@@ -1,0 +1,470 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Symmetric Cells as an Analytical Tool for Battery Research: Assembly, Operation, and Data Analysis Strategies",
+    "doi": "10.1149/1945-7111/acaf42",
+    "authors": ["Zilai Yan"],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["symmetric cell", "battery", "EIS", "cell assembly"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "positive/positive symmetric coin cell",
+      "molecular_formula": "",
+      "intended_role": "analytical device",
+      "prov": ["Fig. 6 description"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "double-half cell (DHC)",
+      "molecular_formula": "",
+      "intended_role": "analytical device",
+      "prov": ["Fig. 8a description"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi0.6Mn0.2Co0.2O2",
+      "molecular_formula": "LiNi0.6Mn0.2Co0.2O2",
+      "ontology": {
+        "role": "working electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "also referred to as NMC622",
+      "prov": ["Figure 2b caption"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li4Ti5O12-coated aluminium mesh",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reference/counter electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used as reference in three-electrode cell",
+      "prov": ["Figure 2b caption"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiFePO4 electrode (high conductive carbon, 15%)",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "working electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "denoted LFP-highC",
+      "prov": ["Figure 3b caption"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiFePO4 electrode (low conductive carbon, 5%)",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "working electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "denoted LFP-lowC",
+      "prov": ["Figure 3b caption"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "graphite electrode",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "working electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Figure 3b caption"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "vinylene carbonate",
+      "molecular_formula": "C3H2O3",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["text discussing additive impact"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Li metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter/reference electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["multiple text mentions e.g., Fig. 8"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Figure 11b caption"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pre-cycle positive electrodes in coin cells until designed condition is reached.",
+        "operations": [
+          {
+            "action": "electrochemical cycling",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "No specific rate or cycle number provided"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 6 description"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Open cycled coin cells with a non-conductive cell opener to avoid shorting.",
+        "operations": [
+          {
+            "action": "open cell",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 6 description"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Extract electrodes along with separator from opened cells.",
+        "operations": [
+          {
+            "action": "extract",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Separator kept attached to maintain electrode integrity"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 6 description"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Transfer extracted electrode-separator stacks into symmetric coin-cell casing.",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 6 description"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Add several drops of fresh electrolyte onto electrode stack.",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Exact volume not specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 6 description"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Assemble and seal the symmetric coin cell.",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 6 description"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Construct a double-half cell (DHC) by electrically connecting Li counter electrodes of two identical half-cells.",
+        "operations": [
+          {
+            "action": "connect",
+            "parameters": {
+              "inputs": ["chem_7"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 8a description"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Pre-cycling of electrodes in individual coin cells"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Opening of cycled coin cells"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Extraction of electrode-separator stack"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Transfer to new symmetric cell hardware"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Addition of fresh electrolyte"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Final assembly and sealing of symmetric cell"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Formation of double-half cell (DHC) for improved measurement accuracy"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No quantities or electrolyte composition provided for step_5",
+        "excerpt": "\"some extra electrolyte is added before assembly\" (Fig. 6 description)"
+      },
+      {
+        "issue": "Temperature and cycling parameters not fully specified for pre-cycling",
+        "excerpt": "\"electrodes are cycled/pre-treated in coin cells until the designed condition is reached\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {
+        "perturbation_amplitude": {
+          "value": 10,
+          "unit": "mV"
+        },
+        "frequency_range": "MHz to mHz"
+      },
+      "results": [],
+      "interpretation": "10 mV amplitude commonly sufficient for high-quality data; 50 mV sometimes used for solid-state cells.",
+      "prov": ["Section discussing perturbation amplitude"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": {
+          "value": 0.2,
+          "unit": "mA cm-2"
+        },
+        "areal_capacity_per_half_cycle": {
+          "value": 0.2,
+          "unit": "mAh cm-2"
+        }
+      },
+      "results": [],
+      "interpretation": "Used for Li/Li6PS5Cl/Li symmetric cell demonstration.",
+      "prov": ["Figure 11b caption"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Coulombic efficiency calculation",
+        "results": [
+          {
+            "equation": "CE = 1 − F",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": ["Section 4.2 Cycling protocols and analysis"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-07T14:36:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Speeding Up Discovery of Auxetic Zeolite Frameworks by Machine Learning",
+    "doi": "10.1021/acs.chemmater.0c00434",
+    "authors": [
+      "Romain Gaillac",
+      "Siwar Chibani",
+      "François-Xavier Coudert"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational materials screening",
+    "tags": [
+      "machine learning",
+      "zeolites",
+      "auxetic materials",
+      "DFT",
+      "mechanical properties"
+    ]
+  },
+  "targets": [],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "WF1",
+        "description": "Force-field (BKS) optimization and elastic-tensor calculation on 590 811 hypothetical zeolite structures."
+      },
+      {
+        "step_ref": "WF2",
+        "description": "Selection of 578 force-field predicted completely auxetic frameworks and 742 random frameworks for higher-level study."
+      },
+      {
+        "step_ref": "WF3",
+        "description": "Periodic DFT (PBESOL + D2) geometry optimization and elastic-tensor computation on 991 structures (392 auxetic candidates, 599 random)."
+      },
+      {
+        "step_ref": "WF4",
+        "description": "Training and cross-validation of a Gradient Boosting Regressor on DFT data to predict Poisson’s ratio (average, minimum, maximum)."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Force-field elastic property calculation",
+      "parameters": {
+        "force_field": "van Beest–Kramer–van Santen (BKS)",
+        "structures_evaluated": 590811
+      },
+      "results": [
+        {
+          "metric": "mechanically_unstable_structures",
+          "value": 128563,
+          "unit": "count"
+        },
+        {
+          "metric": "completely_auxetic_structures_predicted",
+          "value": 578,
+          "unit": "count"
+        }
+      ],
+      "interpretation": "Approximately 0.1 % of mechanically stable structures are predicted auxetic at force-field level.",
+      "prov": [
+        "Pages 2655-2656"
+      ]
+    },
+    {
+      "method": "Density Functional Theory (PBESOL + D2)",
+      "parameters": {
+        "software": "CRYSTAL14",
+        "functional": "PBESOL",
+        "dispersion_correction": "Grimme D2",
+        "basis_set": "TZVP for Si and O",
+        "structures_evaluated": 991
+      },
+      "results": [
+        {
+          "metric": "mechanically_stable_auxetic_subset",
+          "value": 392,
+          "unit": "count"
+        },
+        {
+          "metric": "mechanically_stable_random_subset",
+          "value": 599,
+          "unit": "count"
+        },
+        {
+          "metric": "average_bulk_modulus_auxetic_subset",
+          "value": 16,
+          "unit": "GPa"
+        },
+        {
+          "metric": "bulk_modulus_std_dev_auxetic_subset",
+          "value": 6.5,
+          "unit": "GPa"
+        }
+      ],
+      "interpretation": "DFT confirms lower stiffness for auxetic candidates compared with random frameworks.",
+      "prov": [
+        "Pages 2657-2659"
+      ]
+    },
+    {
+      "method": "Machine Learning (Gradient Boosting Regressor)",
+      "parameters": {
+        "library": "scikit-learn",
+        "n_estimators": 1000,
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "subsample": 0.4,
+        "cross_validation": "3-fold, 100 repetitions"
+      },
+      "results": [
+        {
+          "metric": "RMSE_average_Poissons_ratio_all",
+          "value": 0.12,
+          "unit": ""
+        },
+        {
+          "metric": "RMSE_average_Poissons_ratio_auxetic_subset",
+          "value": 0.15,
+          "unit": ""
+        }
+      ],
+      "interpretation": "ML predictions outperform force-field estimates for anisotropic elastic properties.",
+      "prov": [
+        "Pages 2659-2660"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Statistical correlation analysis",
+        "results": [
+          {
+            "description": "Positive correlation between minimum shear modulus and minimum Young’s modulus across 590 811 structures."
+          },
+          {
+            "description": "Weak correlation between elastic anisotropy and framework energy at force-field level."
+          }
+        ]
+      },
+      {
+        "method_name": "Error metrics comparison",
+        "results": [
+          {
+            "equation": "RMSE (Force field vs DFT) for Poisson’s ratio",
+            "value": 0.29,
+            "unit": ""
+          },
+          {
+            "equation": "RMSE (ML vs DFT) for Poisson’s ratio",
+            "value": 0.12,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T14:30:00Z",
+    "source_file": "chem_mater_2020_32_2653",
+    "processing_time": null
+  }
+}

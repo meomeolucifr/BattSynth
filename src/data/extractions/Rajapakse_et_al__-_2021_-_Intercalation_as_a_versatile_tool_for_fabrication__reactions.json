@@ -1,0 +1,160 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Intercalation as a versatile tool for fabrication, property tuning, and phase transitions in 2D materials",
+    "doi": "10.1038/s41699-021-00211-6",
+    "authors": ["Manthila Rajapakse", "Bhupendra Karki", "Usman O. Abu", "Sahar Pishgar", "Md Rajib Khan Musa", "S. M. Shah Riyadh", "Ming Yu", "Gamini Sumanasekera", "Jacek B. Jasinski"],
+    "journal": "npj 2D Materials and Applications",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["intercalation", "2D materials", "MXene", "gas sensing"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "V2CTx MXene nano flakes",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page segment describing: \"Lee et al. fabricated 2D V2CTx … The obtained MXene was intercalated with tetra-n butyl ammonium hydroxide (TBAOH) and dealuminated upon shaking in deionized (DI) water for 2 h.\""]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "tetra-n-butyl ammonium hydroxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "intercalant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Same page segment as above"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "water (de-ionized)",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Same page segment as above"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Intercalation and dealumination of V2CTx MXene using TBAOH followed by shaking in de-ionized water.",
+        "operations": [
+          {
+            "action": "intercalate",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "target": "target_1"
+            },
+            "notes": "TBAOH used as intercalation/delamination agent"
+          },
+          {
+            "action": "shake",
+            "parameters": {
+              "inputs": ["chem_2"],
+              "target": "target_1"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "Shaking in DI water achieves dealumination"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": ["Same page segment as above"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Intercalation of V2CTx with TBAOH and subsequent 2-hour shaking in DI water."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Gas sensing performance test",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "hydrogen detection limit",
+          "value": 2,
+          "unit": "ppm"
+        },
+        {
+          "metric": "methane detection limit",
+          "value": 25,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "MXene devices demonstrated ultrahigh selectivity towards non-polar gases.",
+      "prov": ["Page segment describing detection of hydrogen and methane at 2 and 25 ppm, respectively"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Understanding the apparent fractional charge of protons in the aqueous electrochemical double layer",
+    "doi": "10.1038/s41467-018-05511-y",
+    "authors": [
+      "Leanne D. Chen",
+      "Michal Bajdich",
+      "J. Mark P. Martirez",
+      "Caroline M. Krauter",
+      "Joseph A. Gauthier",
+      "Emily A. Carter",
+      "Alan C. Luntz",
+      "Karen Chan",
+      "Jens K. Nørskov"
+    ],
+    "journal": "Nature Communications",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "electrochemical interface", "Pt(111)", "Al(111)", "proton charge"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Pt(111) | H2O interface",
+      "molecular_formula": "",
+      "intended_role": "model_system",
+      "prov": ["Page 2, Fig.1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Al(111) | H2O interface",
+      "molecular_formula": "",
+      "intended_role": "model_system",
+      "prov": ["Page 5, Fig.4"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Platinum",
+      "molecular_formula": "Pt",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Pt(111) three-layer slab used in simulation",
+      "prov": ["Methods, DFT calculation details"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Aluminum",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Al(111) three-layer slab used in simulation",
+      "prov": ["Page 5, Fig.4a"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Three explicit solvent layers, eight molecules per layer",
+      "prov": ["Methods, DFT calculation details"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Hydronium ion",
+      "molecular_formula": "H3O+",
+      "ontology": {
+        "role": "ion",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Added to first or third solvent layer to simulate solvated proton",
+      "prov": ["Page 2, Results"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Construction and relaxation of Pt(111)|H2O interface model",
+        "operations": [
+          {
+            "action": "build_supercell",
+            "parameters": {
+              "cells": "(3×3) of FCC Pt(111)",
+              "metal_layers": 3,
+              "solvent_layers": 3,
+              "water_per_layer": 8
+            },
+            "notes": "Vacuum gap ≥15 Å in z-direction",
+            "prov": ["Methods, DFT calculation details"]
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_4"],
+              "location": "first or third solvent layer"
+            },
+            "notes": "Simulates solvated proton",
+            "prov": ["Page 2, Results"]
+          },
+          {
+            "action": "geometry_optimization",
+            "parameters": {
+              "functional": "PBE",
+              "k_points": "4×4×1 Γ-centered",
+              "cutoff": "400 eV"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Forces converged below 0.05 eV Å-1",
+            "prov": ["Methods, DFT calculation details"]
+          },
+          {
+            "action": "single_point_calculation",
+            "parameters": {
+              "functionals": ["HSE06", "EXX1.0"]
+            },
+            "notes": "Performed on PBE-optimized geometry",
+            "prov": ["Methods, DFT calculation details"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods, DFT calculation details"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Construction of embedded wavefunction cluster for Al(111)|H2O interface",
+        "operations": [
+          {
+            "action": "build_cluster",
+            "parameters": {
+              "cluster_formula": "Al10(H2O)3H3O+"
+            },
+            "prov": ["Page 5, Fig.4a"]
+          },
+          {
+            "action": "embed_potential_optimization",
+            "parameters": {
+              "method": "DFET",
+              "functional": "PBE"
+            },
+            "prov": ["Methods, Embedded DFT and CW calculation details"]
+          },
+          {
+            "action": "wavefunction_calculation",
+            "parameters": {
+              "methods": ["CASSCF (11e,10o)", "MRSDCI"],
+              "basis": "aug-cc-pVDZ for H,O; LANL2DZ ECP for Al"
+            },
+            "prov": ["Methods, Embedded DFT and CW calculation details"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods, Embedded DFT and CW calculation details"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "DFT-based setup and relaxation of Pt(111)|H2O interface with hydronium"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Embedded correlated wavefunction treatment of Al(111)|H2O interface"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Charge uncertainty",
+        "excerpt": "We note that the determination of these charges has an uncertainty of 0.1 e as discussed in Supplementary Note 1"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Plane-integrated electron density analysis",
+      "parameters": {
+        "integration_direction": "z",
+        "partitioning": "Bader-equivalent 1D"
+      },
+      "results": [
+        {
+          "metric": "Proton charge (outer Helmholtz plane)",
+          "value": 0.64,
+          "unit": "e",
+          "notes": "PBE functional"
+        },
+        {
+          "metric": "Proton charge (outer Helmholtz plane)",
+          "value": 0.69,
+          "unit": "e",
+          "notes": "HSE06 functional"
+        },
+        {
+          "metric": "Proton charge (outer Helmholtz plane)",
+          "value": 0.71,
+          "unit": "e",
+          "notes": "EXX1.0 functional"
+        },
+        {
+          "metric": "Proton charge (third solvent layer)",
+          "value": 0.86,
+          "unit": "e",
+          "notes": "PBE functional"
+        },
+        {
+          "metric": "Proton charge (third solvent layer)",
+          "value": 0.88,
+          "unit": "e",
+          "notes": "HSE06 functional"
+        },
+        {
+          "metric": "Proton charge (third solvent layer)",
+          "value": 0.91,
+          "unit": "e",
+          "notes": "EXX1.0 functional"
+        }
+      ],
+      "interpretation": "Proton in outer Helmholtz plane exhibits fractional charge due to electron density overlap",
+      "prov": ["Fig.2", "Results section"]
+    },
+    {
+      "method": "Projected density of states (PDOS)",
+      "parameters": {
+        "elements": ["O 2s,2p", "H 1s"],
+        "functionals": ["PBE", "HSE06", "EXX1.0"]
+      },
+      "results": [
+        {
+          "metric": "Band alignment check",
+          "value": "",
+          "unit": "",
+          "notes": "Solvent HOMO/LUMO straddle metal Fermi level except borderline in PBE"
+        }
+      ],
+      "interpretation": "Correct band alignment ensures no artificial charge transfer",
+      "prov": ["Fig.3"]
+    },
+    {
+      "method": "Embedded wavefunction charge analysis",
+      "parameters": {
+        "methods": ["CASSCF", "MRSDCI"]
+      },
+      "results": [
+        {
+          "metric": "Residual charge on proton layer (Al interface)",
+          "value": 0.71,
+          "unit": "e",
+          "notes": "CASSCF"
+        },
+        {
+          "metric": "Residual charge on proton layer (Al interface)",
+          "value": 0.70,
+          "unit": "e",
+          "notes": "MRSDCI"
+        }
+      ],
+      "interpretation": "Correlated methods confirm fractional charge phenomenon",
+      "prov": ["Fig.4d"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electron spillover integration",
+        "results": [
+          {
+            "equation": "Net spillover = 0.57 (slab) - 0.31 (solvent) = 0.26 e",
+            "value": 0.74,
+            "unit": "e",
+            "notes": "Explains fractional proton charge"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T12:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

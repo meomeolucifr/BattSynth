@@ -1,0 +1,236 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recycling of spent lithium-ion batteries in view of lithium recovery: A critical review",
+    "doi": "10.1016/j.jclepro.2019.04.304",
+    "authors": [
+      "Chunwei Liu",
+      "Jiao Lin",
+      "Hongbin Cao",
+      "Yi Zhang",
+      "Zhi Sun"
+    ],
+    "journal": "Journal of Cleaner Production",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["battery recycling","lithium recovery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "intended_role": "product",
+      "prov": ["Page 807 (vacuum carbothermal reduction description)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {"role": "reductant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Stripped from anode of spent LIBs",
+      "prov": ["Page 807"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Spent cathode material (e.g., LiCoO2 / LiMn2O4 / LiNiCoMnO2)",
+      "molecular_formula": "",
+      "ontology": {"role": "feedstock", "category": "mixed cathode"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Page 807"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "",
+      "prov": ["Page 807"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Carbon dioxide",
+      "molecular_formula": "CO2",
+      "ontology": {"role": "reagent", "category": "gas"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "Flow rate 20 mL min-1 in carbonated water leaching variant",
+      "prov": ["Page 808"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Potassium pyrosulfate",
+      "molecular_formula": "K2S2O7",
+      "ontology": {"role": "sulfating agent", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Page 808"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dry mixing of spent cathode powder with graphite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_1", "chem_2"]},
+            "notes": ""
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": "K"}, "time": {"value": null, "unit": "min"}, "atmosphere": "", "pressure": {"value": null, "unit": "bar"}},
+        "prov": ["Page 807"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Vacuum carbothermal reduction of mixture",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {"inputs": ["step_1"], "temperature": {"value": 1273, "unit": "K"}, "time": {"value": 30, "unit": "min"}},
+            "notes": "Performed under vacuum (pressure not specified)"
+          }
+        ],
+        "conditions": {"temperature": {"value": 1273, "unit": "K"}, "time": {"value": 30, "unit": "min"}, "atmosphere": "vacuum", "pressure": {"value": null, "unit": "bar"}},
+        "prov": ["Page 807"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Wet magnetic separation of reduced product",
+        "operations": [
+          {
+            "action": "separate",
+            "parameters": {"method": "magnetic"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": "K"}, "time": {"value": null, "unit": "min"}, "atmosphere": "", "pressure": {"value": null, "unit": "bar"}},
+        "prov": ["Page 807"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Water leaching of roasted powders to dissolve Li2CO3",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {"inputs": ["chem_3", "step_3"]},
+            "notes": ""
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": "K"}, "time": {"value": null, "unit": "min"}, "atmosphere": "", "pressure": {"value": null, "unit": "bar"}},
+        "prov": ["Page 807"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Evaporation of filtrate to crystallize Li2CO3",
+        "operations": [
+          {
+            "action": "evaporate",
+            "parameters": {"inputs": ["step_4"]},
+            "notes": ""
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": "K"}, "time": {"value": null, "unit": "min"}, "atmosphere": "", "pressure": {"value": null, "unit": "bar"}},
+        "prov": ["Page 807"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Carbonated water leaching variant to form soluble LiHCO3",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {"inputs": ["chem_4", "chem_3", "step_3"], "flow_rate": {"value": 20, "unit": "mL min-1"}, "liquid_solid_ratio": "10:1"},
+            "duration": {"value": 120, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"temperature": {"value": 298, "unit": "K"}, "time": {"value": 120, "unit": "min"}, "atmosphere": "CO2", "pressure": {"value": null, "unit": "bar"}},
+        "prov": ["Page 808"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Sulfation roasting of LiCoO2 with K2S2O7",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_5", "chem_2"]},
+            "notes": ""
+          },
+          {
+            "action": "roast",
+            "parameters": {"temperature": {"value": 873, "unit": "K"}, "time": {"value": 30, "unit": "min"}},
+            "notes": "Temperature below 873 K"
+          }
+        ],
+        "conditions": {"temperature": {"value": 873, "unit": "K"}, "time": {"value": 30, "unit": "min"}, "atmosphere": "", "pressure": {"value": null, "unit": "bar"}},
+        "prov": ["Page 808"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Mix cathode powder with graphite."},
+      {"step_ref": "step_2", "description": "Vacuum carbothermal reduction <1000 °C for 30 min."},
+      {"step_ref": "step_3", "description": "Magnetic separation of metals/oxides."},
+      {"step_ref": "step_4", "description": "Water leaching to dissolve Li2CO3."},
+      {"step_ref": "step_5", "description": "Evaporation to crystallize Li2CO3 product."},
+      {"step_ref": "step_6", "description": "Optional CO2-assisted leaching to form LiHCO3 (improves Li concentration)."},
+      {"step_ref": "step_7", "description": "Alternative sulfation roasting with K2S2O7 below 600 °C for 0.5 h."}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified graphite amount and mixing ratio",
+        "excerpt": "graphite, stripped from the anode, was used as a reductant."
+      },
+      {
+        "issue": "Exact vacuum pressure not provided",
+        "excerpt": "The furnace was pumped to achieve a vacuum environment"
+      },
+      {
+        "issue": "Temperature only given as 'below 1000 °C'",
+        "excerpt": "carbothermal reduction was performed at a temperature below 1000/C14C for 30 min"
+      },
+      {
+        "issue": "Amount of K2S2O7 unspecified",
+        "excerpt": "sulfation was done by mixing a certain amount of K2S2O7 with LiCoO2 powder"
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {"value": null, "unit": "%"},
+    "capacity": {"value": null, "unit": "mAh g-1"},
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-06T09:56:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

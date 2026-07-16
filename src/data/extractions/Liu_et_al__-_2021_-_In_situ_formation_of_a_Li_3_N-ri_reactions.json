@@ -1,0 +1,492 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "In situ formation of a Li3N-rich interface between lithium and argyrodite solid electrolyte enabled by nitrogen doping",
+    "doi": "10.1039/d1ta03343c",
+    "authors": ["Yu Liu", "Han Su", "Min Li", "Jiayuan Xiang", "Xianzhang Wu", "Yu Zhong", "Xiuli Wang", "Xinhui Xia", "Changdong Gu", "Jiangping Tu"],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid electrolyte", "argyrodite", "nitrogen doping", "Li metal batteries"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6+xPS5−xNxCl (LPSNC-x, 0 ≤ x ≤ 1)",
+      "molecular_formula": "",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Experimental – Preparation of materials"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li6PS5Cl (LPSC)",
+      "molecular_formula": "",
+      "intended_role": "reference electrolyte product",
+      "prov": ["Experimental – Preparation of materials"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LCO/Li6PS5Cl composite cathode",
+      "molecular_formula": "",
+      "intended_role": "cathode composite",
+      "prov": ["Experimental – Preparation of materials"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "g"
+      },
+      "notes": "Part of 2 g total precursor mixture; exact fraction depends on stoichiometry.",
+      "prov": ["Experimental – Preparation of materials"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "g"
+      },
+      "notes": "Included in 2 g total precursor mixture; stoichiometric proportion unspecified.",
+      "prov": ["Experimental – Preparation of materials"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "g"
+      },
+      "notes": "Part of total precursor mix; precise mass not individually given.",
+      "prov": ["Experimental – Preparation of materials"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium nitride",
+      "molecular_formula": "Li3N",
+      "ontology": {
+        "role": "dopant/reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "g"
+      },
+      "notes": "Used to substitute Li2S; exact mass varies with x (0–1).",
+      "prov": ["Experimental – Preparation of materials"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium cobalt oxide",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mixed with Li6PS5Cl in 7:3 mass ratio for cathode composite.",
+      "prov": ["Experimental – Preparation of materials"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to fill glovebox and milling pot.",
+      "prov": ["Experimental – Preparation of materials"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as foil pieces in symmetric and full cells.",
+      "prov": ["Cell assembly and electrochemical measurements"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Stoichiometric weighing and mixing of precursors for LPSNC-x electrolytes",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "notes": "Amounts adjusted to achieve Li6+xPS5−xNxCl (0 ≤ x ≤ 1); total powder mass 2 g."
+          },
+          {
+            "action": "mix",
+            "parameters": {
+              "method": "manual transfer into zirconia pot",
+              "atmosphere": "Ar"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Preparation of materials"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-energy ball milling",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "equipment": "Retch Emax",
+              "speed": {
+                "value": 510,
+                "unit": "rpm"
+              },
+              "duration": {
+                "value": 780,
+                "unit": "min"
+              },
+              "container_volume": {
+                "value": 125,
+                "unit": "mL"
+              },
+              "media": "25 zirconia balls, 10 mm diameter"
+            },
+            "notes": "Conducted in Ar-filled zirconia pot."
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Preparation of materials"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heat treatment to form argyrodite phase",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "quartz tube"
+            },
+            "notes": ""
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 823,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 300,
+                "unit": "min"
+              },
+              "atmosphere": "sealed tube"
+            },
+            "notes": "Produces final Li6+xPS5−xNxCl argyrodite electrolyte."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Preparation of materials"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of LCO/Li6PS5Cl cathode composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_5", "target_2"],
+              "mass_ratio": "7:3",
+              "method": "hand mixing in agate mortar"
+            },
+            "notes": "Conducted in Ar-filled glovebox."
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental – Preparation of materials"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Weigh and mix precursors under Ar atmosphere."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Ball-mill mixture at 510 rpm for 13 h."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Anneal milled powder at 823 K for 5 h in sealed quartz tube to obtain LPSNC-x electrolyte."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Hand-mix LCO and Li6PS5Cl (7:3) for cathode composite."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometric masses of individual precursors not provided.",
+        "excerpt": "they were weighed stoichiometrically and placed in an argon gas-filled 125 mL zirconia pot ... The total mass of the powder mixture was 2 g."
+      },
+      {
+        "issue": "Thickness of electrolyte pellets approximated as “≈1 mm”; explicit value not given.",
+        "excerpt": "150 mg of LPSNC-x electrolyte powder was pressed into a pellet (10 mm in diameter, ≈1 mm in thickness)..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα (λ = 1.54178 Å)",
+        "scan_range": "10°–80° 2θ",
+        "instrument": "RIGAKU D/MAX 2550/PC"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "cubic argyrodite phase confirmed for x ≤ 0.25; impurities increase at higher x",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Characterization methods – XRD"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength": "532 nm",
+        "spectral_range": "300–550 cm-1"
+      },
+      "results": [
+        {
+          "metric": "A1 symmetric stretching of PS4^3−",
+          "value": "peak at ~425 cm-1",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Peak splitting at higher N content indicates structural change due to N substitution.",
+      "prov": ["Characterization methods – Raman spectra"]
+    },
+    {
+      "method": "SEM-EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "elemental distribution",
+          "value": "uniform for S, P, N, Cl in LPSNC-0.25",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results – Fig. S1"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "1 Hz–1 MHz",
+        "amplitude": "10 mV"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (Li6PS5Cl, x=0)",
+          "value": 3.86,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "activation energy (x ≤ 0.5)",
+          "value": 0.3,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Conductivity decreases with increasing N but remains >1 mS cm-1 for x ≤ 0.5.",
+      "prov": ["Results – Fig. 2"]
+    },
+    {
+      "method": "Galvanostatic cycling (Li/Li symmetric)",
+      "parameters": {
+        "current_density": "0.5 mA cm-2",
+        "capacity_limit": "0.5 mAh cm-2",
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "stable cycling time",
+          "value": 1000,
+          "unit": "h"
+        },
+        {
+          "metric": "critical current density (LPSNC-0.25)",
+          "value": 1.52,
+          "unit": "mA cm-2"
+        }
+      ],
+      "interpretation": "Li3N-rich SEI suppresses dendrite formation.",
+      "prov": ["Results – Fig. 3"]
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "scan_rate": "0.1 mV s-1",
+        "voltage_range": "0–5 V"
+      },
+      "results": [],
+      "interpretation": "LPSNC-0.25 shows better reduction stability than oxidation stability.",
+      "prov": ["Cell assembly and electrochemical measurements"]
+    },
+    {
+      "method": "Galvanostatic charge-discharge (full cell)",
+      "parameters": {
+        "voltage_range": "2.5–4.2 V",
+        "current_density": "0.05–1 C"
+      },
+      "results": [
+        {
+          "metric": "initial discharge capacity (0.05 C)",
+          "value": 114.6,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity after 100 cycles (0.1 C)",
+          "value": 82.3,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Capacity retention 86.5% after 100 cycles.",
+      "prov": ["Results – Fig. 6"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "source": "Al Kα (1486.6 eV)"
+      },
+      "results": [
+        {
+          "metric": "SEI composition",
+          "value": "Li2S, Li3P, LiCl, Li3N detected after cycling",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms in situ formation of Li3N-rich SEI.",
+      "prov": ["Results – Fig. 5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations",
+        "results": [
+          {
+            "equation": "ΔE(doping)=E(LPSNC)+E(Li2S)−E(LPSC)−E(Li3N)",
+            "value": -3.113,
+            "unit": "eV",
+            "notes": "Lowest mean doping energy for N at 16e site"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 114.6,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

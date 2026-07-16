@@ -1,0 +1,121 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Phosphates as Lithium-Ion Battery Cathodes: An Evaluation Based on High-Throughput ab Initio Calculations",
+    "doi": "10.1021/cm200949v",
+    "authors": ["Geoﬀroy Hautier", "Anubhav Jain", "Shyue Ping Ong", "Byoungwoo Kang", "Charles Moore", "Robert Doe", "Gerbrand Ceder"],
+    "journal": "Chemistry of Materials",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "battery cathode", "phosphates", "high-throughput"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiSn2(PO3)5",
+      "molecular_formula": "LiSn2P5O15",
+      "intended_role": "predicted_stable_phase",
+      "prov": ["Table 1, Page 3497"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiSb(PO3)4",
+      "molecular_formula": "LiSbP4O12",
+      "intended_role": "predicted_stable_phase",
+      "prov": ["Table 1, Page 3497"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li3Mo2(PO4)3",
+      "molecular_formula": "Li3Mo2P3O12",
+      "intended_role": "predicted_stable_phase",
+      "prov": ["Table 1, Page 3497"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li3Cr2(PO4)3",
+      "molecular_formula": "Li3Cr2P3O12",
+      "intended_role": "predicted_stable_phase",
+      "prov": ["Table 1, Page 3497"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li9Cr3(P2O7)3(PO4)2",
+      "molecular_formula": "Li9Cr3P8O30",
+      "intended_role": "predicted_stable_phase",
+      "prov": ["Table 1, Page 3497"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "High-throughput ab initio DFT calculations",
+        "parameters": {
+          "functional": "GGA-PBE",
+          "U_parameters": "element-specific (e.g., Co: 5.7 eV)",
+          "k_point_density": "≥ 500/(atoms in unit cell)",
+          "spin_state": "ferromagnetic",
+          "software": "VASP (PAW pseudopotentials)"
+        },
+        "results": [
+          {
+            "metric": "voltage standard deviation across redox couples",
+            "value": 0.49,
+            "unit": "V",
+            "prov": ["Section 3.4.1, Page 3499"]
+          },
+          {
+            "metric": "number_of_compounds_evaluated",
+            "value": 4074,
+            "unit": "",
+            "prov": ["Section 2.2, Page 3496"]
+          }
+        ],
+        "interpretation": "Computed voltages, capacities, energies, and thermal stabilities for thousands of phosphate compounds.",
+        "prov": ["Methods, Pages 3495-3498"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-25T13:31:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

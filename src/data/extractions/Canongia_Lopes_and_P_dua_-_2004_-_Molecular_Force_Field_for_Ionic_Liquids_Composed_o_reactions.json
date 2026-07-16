@@ -1,0 +1,293 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Molecular Force Field for Ionic Liquids Composed of Triflate or Bistriflylimide Anions",
+    "doi": "10.1021/jp0476545",
+    "authors": [
+      "José N. Canongia Lopes",
+      "Agílio A. H. Pádua"
+    ],
+    "journal": "The Journal of Physical Chemistry B",
+    "year": 2004
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational chemistry / force-field development",
+    "tags": [
+      "force field",
+      "ionic liquids",
+      "triflate",
+      "bistriflylimide"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "triflate anion force-field parameter set",
+      "molecular_formula": "CF3SO3-",
+      "intended_role": "model/parameter",
+      "prov": [
+        "Page 16893 Introduction"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "bistriflylimide anion force-field parameter set",
+      "molecular_formula": "(CF3SO2)2N-",
+      "intended_role": "model/parameter",
+      "prov": [
+        "Page 16893 Introduction"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "partial charge scheme for pyrrolidinium and trialkyl/tetraalkyl-ammonium cations",
+      "molecular_formula": "",
+      "intended_role": "model/parameter",
+      "prov": [
+        "Page 16894 Atomic Charges"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "triflate",
+      "molecular_formula": "CF3SO3-",
+      "ontology": {
+        "role": "subject",
+        "category": "anion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Throughout"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "bistriflylimide",
+      "molecular_formula": "(CF3SO2)2N-",
+      "ontology": {
+        "role": "subject",
+        "category": "anion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Throughout"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "dialkylimidazolium cations",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "subject",
+        "category": "cation"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 16893 Introduction"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "pyrrolidinium cations",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "subject",
+        "category": "cation"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 16894 Atomic Charges"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "trialkylammonium / tetraalkylammonium cations",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "subject",
+        "category": "cation"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 16894 Atomic Charges"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "char_1",
+        "description": "Quantum chemical geometry optimisations at HF/6-31G(d) followed by single-point energies at MP2/cc-pVTZ(-f)"
+      },
+      {
+        "step_ref": "char_2",
+        "description": "Electrostatic surface potential calculations (CHelpG) to derive partial atomic charges"
+      },
+      {
+        "step_ref": "char_3",
+        "description": "Molecular dynamics simulations to validate crystal structures and liquid densities"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Quantum chemical geometry optimisation",
+      "parameters": {
+        "theory_level": "HF/6-31G(d)",
+        "software": "Gaussian 98"
+      },
+      "results": [
+        {
+          "metric": "C–S bond length in CF3SO3-",
+          "value": 1.818,
+          "unit": "Å"
+        },
+        {
+          "metric": "S–O bond length in CF3SO3-",
+          "value": 1.442,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "method": "Single-point energy (torsion profile)",
+      "parameters": {
+        "theory_level": "MP2/cc-pVTZ(-f)"
+      },
+      "results": [
+        {
+          "metric": "S-N-S-C dihedral V1",
+          "value": 32.773,
+          "unit": "kJ mol-1"
+        },
+        {
+          "metric": "S-N-S-C dihedral V2",
+          "value": -10.420,
+          "unit": "kJ mol-1"
+        },
+        {
+          "metric": "S-N-S-C dihedral V3",
+          "value": -3.195,
+          "unit": "kJ mol-1"
+        }
+      ],
+      "interpretation": "Cosine series reproduces complex torsion profile",
+      "prov": [
+        "Table 3",
+        "Figure 1"
+      ]
+    },
+    {
+      "method": "Molecular dynamics (crystal validation)",
+      "parameters": {
+        "ensemble": "NpT",
+        "temperature": 298,
+        "temperature_unit": "K",
+        "cutoff_distance": 10,
+        "cutoff_unit": "Å"
+      },
+      "results": [
+        {
+          "metric": "Density deviation range",
+          "value": 0.6,
+          "unit": "%",
+          "notes": "−2.1 % to +4.8 % across four crystals"
+        }
+      ],
+      "interpretation": "Crystal densities reproduced within ~±5 %",
+      "prov": [
+        "Table 4"
+      ]
+    },
+    {
+      "method": "Molecular dynamics (liquid density)",
+      "parameters": {
+        "ensemble": "NpT",
+        "temperatures": [300, 343],
+        "temperature_unit": "K",
+        "system_size": 200,
+        "unit": "ion pairs"
+      },
+      "results": [
+        {
+          "metric": "Density deviation at 300 K (bmim tf2N)",
+          "value": 3.1,
+          "unit": "%"
+        },
+        {
+          "metric": "Density deviation at 300 K (emim tf)",
+          "value": 3.5,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Simulated liquid densities generally over-predicted by ~3–4 %",
+      "prov": [
+        "Table 5"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T00:00:00Z",
+    "source_file": "Provided text excerpt",
+    "processing_time": null
+  }
+}

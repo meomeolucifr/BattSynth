@@ -1,0 +1,458 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Dendrite nucleation in lithium-conductive ceramics",
+    "doi": "10.1039/c9cp03884a",
+    "authors": [
+      "Guanchen Li",
+      "Charles W. Monroe"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid-state battery",
+      "LLZO",
+      "dendrite nucleation",
+      "electrochemistry"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Page 20354"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly names the exemplary garnet-oxide material as “Li7La3Zr2O12 (LLZO)” on the first page (the page labeled 20354). This directly supports the extracted Target Formula value Li7La3Zr2O12. The alleged provenance “Page 20354” aligns with where it appears.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page 20354"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly identifies the exemplary garnet-oxide material as Li7La3Zr2O12 (LLZO) (on the first page of the provided text, page number 20354). However, nowhere in the document is an explicit chemical amount (mass, molarity used in synthesis, loading, etc.) for Li7La3Zr2O12 stated. Therefore the extraction 'Amount: Not specified in text' is consistent with the source.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page 20355"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper repeatedly discusses lithium metal electrodes and lithium plating (e.g., “metallic Li batteries,” “Planar Li|LLZO|Li cells,” “sandwiched between Li electrodes,” “Li-metal/electrolyte interfaces”), so the chemical identity “Lithium metal” is supported. However, nowhere in the provided text is an explicit *amount* of lithium metal (mass, moles, thickness, etc.) specified; lithium appears as an electrode material but not quantified. Therefore the extraction ‘Amount: Not specified in text’ is correct.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Assembly of planar Li|LLZO|Li cell and heating near Li melting temperature to lower interfacial impedance.",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "temperature": {
+              "value": 453,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Heated near lithium melting point (180 °C) as stated.",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.9,
+              "reasoning": "The paper discusses modeling, dendrite nucleation mechanisms, and experimental correlations in LLZO, but it does not describe a synthesis procedure or any synthesis operation such as “assemble.” The word “assemble” does not appear, nor is there any explicit step indicating an assembly operation as part of material synthesis.",
+              "suggested_fix": "Not specified"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 20354"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Planar cell assembly and thermal treatment.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper does not present a workflow timeline described as “Planar cell assembly and thermal treatment.” It contains a background statement that “Planar Li|LLZO|Li cells heated near Li’s melting point (180 °C) attain lower interfacial impedances…” but this is not a timeline/workflow for the study, nor does it mention an explicit assembly + thermal treatment sequence as a defined workflow timeline.",
+          "suggested_fix": "If the intended extracted item is a relevant experimental condition mentioned in the text, a supported phrasing would be: “Prior work reports planar Li|LLZO|Li cells heated near Li’s melting point (~180 °C) show reduced interfacial impedance and higher critical currents (effects persist after cooling).” Otherwise, for ‘Workflow Timeline’ the correct value is: “Not specified.”"
+        }
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "capacitance": {
+          "value": 10,
+          "unit": "µF cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "Temperature",
+          "value": 303,
+          "unit": "K"
+        },
+        {
+          "metric": "Critical current density (experiment)",
+          "value": 0.5,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Critical current density (model)",
+          "value": 0.32,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Ionic conductivity",
+          "value": 0.4,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Interfacial resistance",
+          "value": 514,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "Characteristic interfacial frequency",
+          "value": 0.03,
+          "unit": "kHz"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "All extracted impedance-spectroscopy-related metrics appear explicitly in Table 1 (page 4): T=303 K; ic(experiment)=0.5 A m−2; ic(model)=0.32 A m−2; ionic conductivity k=0.4 mS cm−1; interfacial areal resistance Rint=514 Ω cm2; characteristic interfacial frequency fint=0.03 kHz. These match the extracted values exactly for the 303 K row.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "capacitance": {
+          "value": 10,
+          "unit": "µF cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "Temperature",
+          "value": 343,
+          "unit": "K"
+        },
+        {
+          "metric": "Critical current density (experiment)",
+          "value": 2,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Critical current density (model)",
+          "value": 2.04,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Ionic conductivity",
+          "value": 1.2,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Interfacial resistance",
+          "value": 80,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "Characteristic interfacial frequency",
+          "value": 0.2,
+          "unit": "kHz"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "Table 1 (on page 4) explicitly lists the impedance-spectroscopy-related parameters for LLZO at different temperatures. For T = 343 K, the table reports: ic (experiment) = 2 A m−2, ic (model) = 2.04 A m−2, ionic conductivity k = 1.2 mS cm−1, interfacial areal resistance Rint = 80 Ω cm2, and characteristic interfacial frequency fint = 0.20 kHz. These exactly match the extracted values (within formatting).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "capacitance": {
+          "value": 10,
+          "unit": "µF cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "Temperature",
+          "value": 373,
+          "unit": "K"
+        },
+        {
+          "metric": "Critical current density (experiment)",
+          "value": 8,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Critical current density (model)",
+          "value": 10.87,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Ionic conductivity",
+          "value": 2.4,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Interfacial resistance",
+          "value": 15,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "Characteristic interfacial frequency",
+          "value": 1.06,
+          "unit": "kHz"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "All extracted impedance-spectroscopy-related metrics match Table 1 in the provided text (on Page 4). Table 1 lists at T=373 K: ic (experiment)=8 A m−2, ic (model)=10.87 A m−2, ionic conductivity k=2.4 mS cm−1, interfacial areal resistance Rint=15 Ω cm2, and characteristic interfacial frequency fint=1.06 kHz. These values explicitly appear in the table.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "capacitance": {
+          "value": 10,
+          "unit": "µF cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "Temperature",
+          "value": 403,
+          "unit": "K"
+        },
+        {
+          "metric": "Critical current density (experiment)",
+          "value": 35,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Critical current density (model)",
+          "value": 46.57,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Ionic conductivity",
+          "value": 4.3,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Interfacial resistance",
+          "value": 3.5,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "Characteristic interfacial frequency",
+          "value": 4.55,
+          "unit": "kHz"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Table 1 (on page 4) explicitly lists the impedance-spectroscopy-related parameters at T = 403 K: ionic conductivity k = 4.3 mS cm−1, interfacial areal resistance Rint = 3.5 Ω cm2, characteristic interfacial frequency fint = 4.55 kHz, as well as critical current density values ic (experiment) = 35 A m−2 and ic (model) = 46.57 A m−2. The extracted set matches these table entries.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "capacitance": {
+          "value": 10,
+          "unit": "µF cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "Temperature",
+          "value": 433,
+          "unit": "K"
+        },
+        {
+          "metric": "Critical current density (experiment)",
+          "value": 200,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Critical current density (model)",
+          "value": 181.09,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Ionic conductivity",
+          "value": 7.0,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Interfacial resistance",
+          "value": 0.9,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "Characteristic interfacial frequency",
+          "value": 17.68,
+          "unit": "kHz"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Table 1 (on page 4) explicitly lists the impedance-spectroscopy-related parameters at various temperatures. For T = 433 K, it reports: ic (experiment) = 200 A m−2, ic (model) = 181.09 A m−2, ionic conductivity k = 7.0 mS cm−1, interfacial areal resistance Rint = 0.9 Ω cm2, and characteristic interfacial frequency fint = 17.68 kHz. These match the extracted values (noting that the table calls Rint an interfacial areal resistance; the extraction labels it interfacial resistance).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical model (Eqn 5)",
+        "results": [
+          {
+            "equation": "ic = 2π fint √(6 ε |Dpc|)",
+            "value": -0.01,
+            "unit": "bar",
+            "description": "Critical interfacial pressure Dpc obtained by least-squares fit (negative sign indicates tensile relative to bulk)."
+          }
+        ],
+        "prov": [
+          "Page 20357"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The field 'Analysis Method' has an empty extracted value, but the paper text (including p. 20357) describes several analysis/modeling approaches (e.g., chemomechanics modeling, Poisson’s equation, MacInnes equation, Cauchy’s equation integration, least-squares fit of Table 1 to eqn (5), impedance spectroscopy/Nyquist plot interpretation). Therefore leaving the analysis method blank is not supported by the source; some method(s) are explicitly stated.",
+          "suggested_fix": "Analysis method includes theoretical chemomechanics/Poisson–Fermi (MacInnes) continuum modeling with equation integration, supported/validated by fitting to experimental literature data (least-squares fit) and using impedance spectroscopy-derived interfacial parameters (Nyquist plot/RC model)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

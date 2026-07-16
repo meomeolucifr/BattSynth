@@ -1,0 +1,836 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A multi-functional binder for high loading sulfur cathode",
+    "doi": "10.1016/j.jechem.2019.10.020",
+    "authors": [
+      "Ying Chu",
+      "Ning Chen",
+      "Ximing Cui",
+      "Anmin Liu",
+      "Liang Zhen",
+      "Qinmin Pan"
+    ],
+    "journal": "Journal of Energy Chemistry",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "Li–S batteries",
+      "binder",
+      "sulfur cathode",
+      "bio-adhesion"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "CNC binder (chitosan-nitrocatechol)",
+      "molecular_formula": "",
+      "intended_role": "binder",
+      "prov": [
+        "Section 2.2",
+        "Fig. 1a"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.88,
+        "reasoning": "The paper discusses the CNC binder structure and shows an illustration/inset of the CNC binder chemical structure in Fig. 1a, but it does not explicitly state a single “Target Formula” (as a molecular formula like CxHyNzO...). Section 2.2 only names the material as chitosan substituted with nitrocatechol (CNC) and refers to Fig. S1/S2 for structure characterization; no explicit formula is given in the provided full text.",
+        "suggested_fix": "Not specified (no explicit target molecular formula is provided in the text; only the name/description “chitosan-nitrocatechol (CNC)” and a structural depiction in Fig. 1a inset)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Sulfur cathode (S/CNC/Super P on Al or Ni current collector)",
+      "molecular_formula": "",
+      "intended_role": "electrode",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.87,
+        "reasoning": "The extracted value for “Target Formula” is blank, but the paper does specify the target/binder material identity and composition. In Section 2.2 the binder is explicitly named as chitosan substituted with nitrocatechol (chitosan-nitrocatechol, CNC), and Section 2.3 gives the cathode composition mass ratio sulfur:Super P:CNC = 6:3:1. Therefore a blank value is not supported by the source text (the information is present).",
+        "suggested_fix": "Target formula/material: chitosan-nitrocatechol (CNC; chitosan grafted/substituted with nitrocatechol/catecholic moiety). If “Target Formula” is meant for the cathode composition, report sulfur:Super P:CNC = 6:3:1 (mass ratio)."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "chitosan",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "Section 2.2 explicitly identifies the chemical as chitosan (used to make the CNC binder): “chitosan substituted with nitrocatechol (chitosan-nitrocatechol, CNC)”. However, Section 2.2 does not provide any quantity/amount of chitosan used in the synthesis—only a qualitative description referencing previously reported processes. Therefore the extracted statement “chitosan | Amount: Not specified in text” is consistent with the paper text (amount genuinely omitted in that section).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "nitrocatechol",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Section 2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Section 2.2 explicitly states that the CNC binder is “chitosan substituted with nitrocatechol (chitosan-nitrocatechol, CNC)”. However, no quantity/amount of nitrocatechol (or degree of substitution, stoichiometry, mass, concentration, etc.) is provided anywhere in the provided full text; it only references prior literature and Supporting Information (Fig. S1) for the synthesis. Therefore the identification is supported and the extractor correctly marked the amount as not specified in the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "sulfur powder",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mass ratio in slurry = 6 (with respect to Super P : CNC = 3 : 1)",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "Section 2.3 explicitly identifies the active material as “Sulfur powder” (“Sulfur powder, super P and CNC binder with a mass ratio of 6:3:1…”). The text does not provide an absolute amount of sulfur powder used (e.g., grams, mg, or mol) in the cathode preparation step—only a mass ratio and later sulfur loading values (mg cm−2). Therefore, the extraction “sulfur powder | Amount: Not specified in text” is consistent with the source.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Super P carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mass ratio in slurry = 3 (with respect to S : CNC = 6 : 1)",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "Section 2.3 explicitly lists “Sulfur powder, super P and CNC binder with a mass ratio of 6:3:1…”. This confirms the chemical identity (Super P carbon black) but provides only a mass ratio, not an absolute amount (e.g., grams, mg, wt%, mg cm−2) for Super P in the cathode formulation. Therefore the extractor’s note that the amount is not specified in the text is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "CNC binder",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mass ratio in slurry = 1 (with respect to S : Super P = 6 : 3)",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the binder as a CNC binder (chitosan substituted with nitrocatechol / chitosan-nitrocatechol, CNC) and gives its amount in the cathode formulation: sulfur powder, Super P, and CNC binder with a mass ratio of 6:3:1 (Section 2.3). Therefore, the claim that the amount is 'Not specified in text' is contradicted by the text.",
+        "suggested_fix": "CNC binder (chitosan-nitrocatechol). Amount: used in sulfur cathode slurry at sulfur:Super P:CNC mass ratio = 6:3:1 (i.e., CNC binder = 1 part out of 10 by mass, 10 wt% of the solids)."
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "Section 2.3 explicitly states: “Sulfur powder, super P and CNC binder … were mixed in deionized water to form a homogeneous slurry.” No quantity/amount of deionized water is given there or elsewhere in the provided text, so “Amount: Not specified in text” is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "alumina foil",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "current collector",
+        "category": "ceramic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Thickness 30 µm",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "Section 2.1 explicitly identifies the material as “Alumina foils with a thickness of 30 μm…”. Section 2.3 further states the slurry was “coated on an alumina foil or nickel foam,” confirming use of alumina foil in the work. No quantity/amount of alumina foil used is given anywhere in the provided text (only thickness and later the punched electrode circle diameter are specified), so “Amount: Not specified in text” is accurate under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "nickel foam",
+      "molecular_formula": "Ni",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "Section 2.3 states the slurry was “coated on an alumina foil or nickel foam,” confirming the chemical identity (nickel foam) as a substrate/current collector. No quantitative amount of nickel foam (mass, thickness, area beyond electrode diameter, etc.) is provided anywhere in the text; only electrode circle diameter (1.5 cm) is given. Thus “Amount: Not specified in text” is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Lithium bis(trifluoromethylsulphonyl)imide",
+      "molecular_formula": "LiTFSI",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.0,
+        "unit": "M"
+      },
+      "notes": "Concentration in DOL/DME electrolyte",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Section 2.3 explicitly states: “The electrolyte was 1.0 mol L−1 LiTFSI in DOL/DME with 2 wt% LiNO3 as additive.” LiTFSI is lithium bis(trifluoromethylsulphonyl)imide, and 1.0 mol L−1 corresponds to 1.0 M, matching the extracted chemical identity and amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "1,3-dioxolane",
+      "molecular_formula": "C3H6O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly lists 1,3-dioxolane (DOL) in the “Materials and chemicals” section (Section 2.1) and uses it in the electrolyte (“1.0 mol L−1 LiTFSI in DOL/DME…”, Section 2.3). Nowhere in the text is an amount given for 1,3-dioxolane itself (only the LiTFSI concentration and LiNO3 wt% are specified), so “Amount: Not specified in text” is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "1,2-dimethoxyethane",
+      "molecular_formula": "C4H10O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions the chemical 1,2-dimethoxyethane (DME) in the electrolyte composition (Sections 2.1 and 2.3: “DOL/DME”). However, no standalone “amount” for DME is given; the only quantitative info is that the electrolyte is 1.0 mol L−1 LiTFSI in DOL/DME with 2 wt% LiNO3, without specifying the DOL:DME ratio or a volume/mass of DME. Therefore, the identity is supported and the extracted ‘Amount: Not specified in text’ is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "lithium nitrate",
+      "molecular_formula": "LiNO3",
+      "ontology": {
+        "role": "additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "wt%"
+      },
+      "notes": "Percentage in electrolyte",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Section 2.3 explicitly states: “The electrolyte was 1.0 mol L−1 LiTFSI in DOL/DME with 2 wt% LiNO3 as additive.” This supports the chemical identity (lithium nitrate, LiNO3) and the amount (2 wt%) as an electrolyte additive.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "lithium foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Thickness 1 mm",
+      "prov": [
+        "Section 2.3"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "Section 2.3 explicitly specifies lithium foils as the counter electrode and gives a thickness: “lithium foils (with a thickness of 1 mm)”. Therefore, the amount/size parameter is not missing from the text, contradicting “Amount: Not specified in text.”",
+        "suggested_fix": "lithium foil (counter electrode) | Amount: thickness 1 mm"
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Reductive amination of chitosan with nitrocatechol to form CNC binder",
+        "operations": [
+          {
+            "action": "reductive amination",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Details follow previously reported procedure; not specified in text",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.99,
+              "reasoning": "The paper explicitly states that chitosan substituted with nitrocatechol (CNC) was synthesized “through a reductive amination” (Section 2.2, and reiterated in Results: “synthesized through a reductive amination”). Therefore the synthesis operation “reductive amination” is directly supported by the source text.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2.2"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of cathode slurry",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_3",
+                "chem_4",
+                "chem_5",
+                "chem_6"
+              ],
+              "ratio": "mass 6:3:1 (S:Super P:CNC)"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Form homogeneous slurry in deionized water",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The paper explicitly describes a mixing step during cathode preparation: “Sulfur powder, super P and CNC binder with a mass ratio of 6:3:1 were mixed in deionized water to form a homogeneous slurry” (Section 2.3, Page 2). This supports the synthesis operation being 'mix'.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2.3"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Coating and drying of slurry on current collector",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": [
+                "step_2 slurry"
+              ],
+              "substrate": [
+                "chem_7",
+                "chem_8"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "notes": "Dry at 60 °C (converted to 333 K)",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "The paper explicitly describes the cathode preparation step: “The slurry was then coated on an alumina foil or nickel foam.” This directly supports the synthesis/processing operation being a coating step (“coat”).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2.3"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Punching electrodes",
+        "operations": [
+          {
+            "action": "punch",
+            "parameters": {
+              "diameter": "1.5 cm"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly describes a punching step during sulfur cathode preparation: “After drying at 60 °C, the resulting foil was punched into circles with a diameter of 1.5 cm.” (Section 2.3). This is a synthesis/preparation operation.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2.3"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Assembly of coin cells",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "working_electrode": "step_4 discs",
+              "counter_electrode": "chem_13",
+              "electrolyte": "1 M chem_9 in chem_10/chem_11 with 2 wt% chem_12",
+              "environment": "argon-filled glovebox"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.66,
+              "reasoning": "The paper describes several synthesis/preparation steps (e.g., “synthesized through a reductive amination”), and separately describes “assembly of cells” (“Coin cells were assembled…”). However, there is no explicit standalone “Synthesis Operation” reported as simply “assemble,” nor is “assemble” used to describe the synthesis of the CNC binder or sulfur cathode itself (it is used only in the context of assembling coin cells). Thus the extracted value is not explicitly supported as the synthesis operation.",
+              "suggested_fix": "If the field intends the cell-fabrication step: \"assembled (coin cells were assembled in an argon-filled glove-box)\". If it intends the binder synthesis operation: \"synthesized via reductive amination\"."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The paper states: “Coin cells were assembled in an argon-filled glove-box” (Section 2.3, Preparation of sulfur cathodes and assembly of cells), which indicates an Ar atmosphere during cell assembly. No other synthesis atmosphere is described, but the Ar atmosphere is explicitly mentioned for the relevant preparation/assembly step.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Section 2.3"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of CNC binder",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper contains a section titled “2.2. Synthesis of the CNC binder” describing synthesis of the CNC binder, but the extracted value “Synthesis of CNC binder” does not represent a workflow timeline (i.e., a time-ordered schedule or dates/durations). No timeline information (dates, sequence with times, or durations) is provided—only a procedural section heading and brief description.",
+          "suggested_fix": "If the field is meant to capture a workflow step/phase label, use: “2.2. Synthesis of the CNC binder (chitosan-nitrocatechol, CNC) via reductive amination (previously reported processes)”. If it is truly a 'Workflow Timeline' field, the correct value would be: “Not specified (no timeline/durations given)”."
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of sulfur cathode slurry",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly describes the step \"Preparation of sulfur cathodes\" where a sulfur cathode slurry is prepared: \"Sulfur powder, super P and CNC binder with a mass ratio of 6:3:1 were mixed in deionized water to form a homogeneous slurry.\" This supports the workflow timeline item \"Preparation of sulfur cathode slurry.\"",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Coating and drying of cathode film",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper describes electrode fabrication steps including coating the slurry onto alumina foil/nickel foam and drying at 60 °C (“The slurry was then coated… After drying at 60 °C…” in Section 2.3). However, the extracted phrase “Coating and drying of cathode film” is not explicitly stated as a named workflow timeline step, nor is “cathode film” used in that wording. It is only indirectly implied by the preparation procedure.",
+          "suggested_fix": "Coat the sulfur/super P/CNC slurry onto alumina foil or nickel foam, then dry at 60 °C (Section 2.3)."
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Electrode punching",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The paper explicitly describes an electrode punching step during cathode preparation: “After drying at 60 °C, the resulting foil was punched into circles with a diameter of 1.5 cm” (Section 2.3, Page 2). This supports the workflow timeline item “Electrode punching.”",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Coin cell assembly",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly describes coin cell assembly in Experimental section 2.3: “Coin cells were assembled in an argon-filled glove-box…”. Therefore the workflow timeline item “Coin cell assembly” is supported by the source text.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing reaction details for CNC binder synthesis",
+        "excerpt": "\"chitosan substituted with nitrocatechol (chitosan-nitrocatechol, CNC) was synthesized through a reductive amination reported in the literatures (Fig. S1)\"",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly states that the CNC binder synthesis details are not provided in the main text and instead refer to previously reported processes and a reductive amination “reported in the literatures” with further details in Fig. S1 (Supporting Information): “The CNC binder was synthesized through our previously reported processes. Briefly, chitosan substituted with nitrocatechol … was synthesized through a reductive amination reported in the literatures (Fig. S1, Supporting Information) [29–31].” This supports the noted workflow ambiguity/missing reaction details in the main document text.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "CV",
+      "parameters": {
+        "scan_rate": {
+          "value": 0.5,
+          "unit": "mV s-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "redox_peaks",
+          "value": "1.90, 2.18, 2.51",
+          "unit": "V vs. Li/Li+"
+        }
+      ],
+      "interpretation": "High reversibility of sulfur conversion",
+      "prov": [
+        "Fig. 2a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper text explicitly states: “The CV curves in Fig. 2 (a) show anodic and cathodic peaks at 1.90, 2.18 and 2.51 V vs. Li/Li+ …” which matches the extracted redox peak values and unit. This is located in the Results and discussion section describing Fig. 2(a).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "GCD",
+      "parameters": {
+        "rate": "0.2 C"
+      },
+      "results": [
+        {
+          "metric": "initial_charge_capacity",
+          "value": 902.2,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "initial_discharge_capacity",
+          "value": 855.5,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "coulombic_efficiency",
+          "value": 94.8,
+          "unit": "%"
+        },
+        {
+          "metric": "capacity_after_100_cycles",
+          "value": 764.1,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "High capacity retention (89.3% after 100 cycles)",
+      "prov": [
+        "Fig. 2b",
+        "Fig. 2c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The exact GCD metrics appear verbatim in the main text describing Fig. 2(b) and Fig. 2(c): initial charge capacity 902.2 mAh g−1, initial discharge capacity 855.5 mAh g−1, coulombic efficiency 94.8%, and discharge capacity after 100 cycles 764.1 mAh g−1. These correspond to the alleged provenance (Fig. 2b/2c).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology_integrity",
+          "value": "intact after 100 cycles",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Binder maintains electrode structure",
+      "prov": [
+        "Fig. 3b",
+        "Fig. 3c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly states: “The strong adhesion was confirmed by the SEM observation performed on the sulfur cathode before and after 100 cycles (Fig. 3 b and c)... The images clearly show that the cycled cathode still keeps an integrated and compact morphology…” This supports the extracted SEM morphology integrity claim of being intact after 100 cycles, and it is correctly tied to Fig. 3b (before) and Fig. 3c (after 100 cycles).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Tensile test",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "shear_adhesion_strength",
+          "value": 245.4,
+          "unit": "kPa"
+        },
+        {
+          "metric": "breaking_strain",
+          "value": 15.7,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "CNC binder exhibits strong wet adhesion",
+      "prov": [
+        "Fig. 1b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports in the Results/Discussion section describing Fig. 1(b): “It shows a shearing strength up to 245.4 kPa and a breaking strain of 15.7%.” This directly matches the extracted metrics (shear_adhesion_strength = 245.4 kPa; breaking_strain = 15.7%). The alleged provenance (Fig. 1b) is consistent with the text reference to Fig. 1(b).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "C–S2- peak presence",
+          "value": "282.6–283.2 eV (C1s), 160.4 eV (S2p)",
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Evidence of polysulfide interaction with binder",
+      "prov": [
+        "Fig. 4"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper’s XPS discussion of Fig. 4 explicitly reports C–S2−-related peaks in the C1s spectrum at 282.6 and 283.2 eV, and in the S2p spectrum at 160.4 eV, attributed to the C–S2− component from interaction between polysulfide and CNC binder. These values appear in the text describing Fig. 4 (pages 4–6 of the provided text).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT adsorption energy calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": [
+          "Section 2.7",
+          "Fig. S6"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.7,
+          "reasoning": "The field \"Analysis Method\" has an empty extracted value. In the paper, Section 2.7 explicitly states the computational analysis method as density functional theory (DFT) using the PBE functional (GGA) with the DNP basis set in the DMol3 package, and Fig. S6 (SI) is referenced as supporting DFT results. Therefore, leaving the value blank is not supported by the text.",
+          "suggested_fix": "Density functional theory (DFT) calculations (PBE/GGA, DNP basis set) using DMol3 (Materials Studio)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 855.5,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100,
+    "_llm_flag": {
+      "is_supported": false,
+      "confidence": 0.92,
+      "reasoning": "The paper mentions electrochemical testing over ~100 cycles (e.g., “After charge-discharge for 100 cycles…”; “after test for 100 cycles…”) and reports capacities at the 100th cycle, but it does not state a cycle life value as a single number (e.g., cycle life = 100 cycles to a defined retention threshold). Thus “Cycle Life: 100” is not explicitly given as a cycle-life metric; 100 only appears as the number of cycles used in specific cycling tests.",
+      "suggested_fix": "Not specified (the paper reports performance after 98–100 cycles and up to 160 cycles depending on conditions, but does not define a single 'cycle life' value)."
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-07T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

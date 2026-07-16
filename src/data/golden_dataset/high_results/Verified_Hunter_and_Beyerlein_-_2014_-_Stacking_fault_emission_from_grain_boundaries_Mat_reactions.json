@@ -1,0 +1,667 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Stacking fault emission from grain boundaries: Material dependencies and grain size effects",
+    "doi": "10.1016/j.msea.2014.02.030",
+    "authors": [
+      "A. Hunter",
+      "I.J. Beyerlein"
+    ],
+    "journal": "Materials Science & Engineering A",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "stacking fault",
+      "grain boundary",
+      "DFT",
+      "phase field dislocation dynamics",
+      "fcc metals"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Aluminum",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1",
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly includes Aluminum as one of the studied fcc metals (e.g., Table 1 lists \u201cAluminum\u201d and Table 2 lists \u201cAluminum\u201d). However, the text/tables provide elastic constants, lattice constant, and stacking fault energy parameters\u2014not a chemical amount, concentration, mass, or composition fraction. Therefore the extractor\u2019s claim that the amount is \u201cNot specified in text\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Copper",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1",
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly includes Copper as one of the fcc metals studied (e.g., Table 1 lists material properties for Copper; Table 2 lists GSFE parameters for Copper). However, nowhere in the full text is any chemical amount/concentration/mass/stoichiometric quantity of Copper specified\u2014these tables only provide physical constants (lattice constant, elastic constants, stacking fault energies), not an amount. Therefore the extraction 'Copper | Amount: Not specified in text' is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1",
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly includes Gold as one of the fcc metals studied (e.g., \u201cAl, Cu, Ni, Au, Pd, and Ag\u201d) and lists Gold in Table 1 and Table 2 with properties/stacking fault energies. However, nowhere in the text or tables is there an experimental/processing \u201camount\u201d of gold (e.g., mass, molarity, wt%, at%, quantity used). Thus the extractor\u2019s claim \u201cGold | Amount: Not specified in text\u201d is consistent with the document: identity present, amount not provided.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Nickel",
+      "molecular_formula": "Ni",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1",
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly includes Nickel as one of the fcc metals studied (e.g., lists \u201cAl, Cu, Ni, Au, Pd, and Ag\u201d and provides Ni parameters in Tables 1 and 2), but nowhere provides a chemical amount (no mass, molar concentration, wt%, at%, or composition fraction for Ni). Tables 1 and 2 report material properties (elastic constants, \u03b3-surface coefficients, stacking fault energies) rather than amounts. Therefore, 'Nickel | Amount: Not specified in text' is supported by the document\u2019s omission of any Ni amount specification.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Palladium",
+      "molecular_formula": "Pd",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1",
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly includes Palladium (Pd) as one of the fcc metals studied (e.g., Page 4: \u201cAl, Cu, Ni, Au, Pd, and Ag\u201d), and it lists Palladium in Table 1 and Table 2 with elastic constants and stacking fault energies/coefficients. However, nowhere in Table 1, Table 2, or elsewhere does the text provide a chemical *amount* (e.g., mass, molarity, wt%, at%, concentration) for Palladium\u2014the context is computational material property data, not mixture/composition amounts. Therefore, identifying the chemical as Palladium while noting \u201cAmount: Not specified in text\u201d is supported by the document.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Silver",
+      "molecular_formula": "Ag",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1",
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly includes Silver (Ag) among the fcc metals studied (e.g., Tables 1 and 2 list material properties for Silver). However, nowhere in the text is there a chemical amount/concentration/mass/quantity given for Silver; the work is computational (DFT/PFDD) and reports parameters (lattice constant, elastic constants, stacking fault energies), not an amount used. Therefore the extractor\u2019s statement 'Amount: Not specified in text' is correct.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Elastic constants BG, E units and definitions not explicitly clarified (bulk modulus vs shear modulus).",
+        "excerpt": "Table 1 lists BG E \u03bd",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "Table 1 explicitly defines the elastic constants and their units: it lists C11, C12, C44, B, G, E, and \u03bd, and the caption states \"other elastic constants (units of GPa)\". Thus, units are clarified and B and G are explicitly labeled as bulk modulus (B) and shear modulus (G). The excerpted claim that BG and E units/definitions are not explicitly clarified is contradicted by the table caption and headings.",
+          "suggested_fix": "No workflow ambiguity here: Table 1 caption states elastic constants are in GPa; B is bulk modulus, G is shear modulus, E is Young\u2019s modulus, \u03bd is Poisson\u2019s ratio."
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (DFT)",
+      "parameters": {
+        "exchange_correlation": "PBE",
+        "pseudopotential": "PAW",
+        "k_point_scheme": "Monkhorst\u2013Pack",
+        "smearing": "Methfessel\u2013Paxton, 0.2 eV"
+      },
+      "results": [
+        {
+          "metric": "lattice constant a0",
+          "material": "Al",
+          "value": 4.04,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "C11",
+          "material": "Al",
+          "value": 109.9,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C12",
+          "material": "Al",
+          "value": 62.2,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C44",
+          "material": "Al",
+          "value": 31.4,
+          "unit": "GPa"
+        },
+        {
+          "metric": "BG",
+          "material": "Al",
+          "value": 78.1,
+          "unit": "GPa"
+        },
+        {
+          "metric": "E",
+          "material": "Al",
+          "value": 76.0,
+          "unit": "GPa"
+        },
+        {
+          "metric": "\u03bd",
+          "material": "Al",
+          "value": 0.338,
+          "unit": ""
+        },
+        {
+          "metric": "lattice constant a0",
+          "material": "Cu",
+          "value": 3.64,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "C11",
+          "material": "Cu",
+          "value": 168.2,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C12",
+          "material": "Cu",
+          "value": 122.8,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C44",
+          "material": "Cu",
+          "value": 75.7,
+          "unit": "GPa"
+        },
+        {
+          "metric": "BG",
+          "material": "Cu",
+          "value": 137.9,
+          "unit": "GPa"
+        },
+        {
+          "metric": "E",
+          "material": "Cu",
+          "value": 144.4,
+          "unit": "GPa"
+        },
+        {
+          "metric": "\u03bd",
+          "material": "Cu",
+          "value": 0.325,
+          "unit": ""
+        },
+        {
+          "metric": "lattice constant a0",
+          "material": "Au",
+          "value": 4.17,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "C11",
+          "material": "Au",
+          "value": 149.6,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C12",
+          "material": "Au",
+          "value": 130.9,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C44",
+          "material": "Au",
+          "value": 25.1,
+          "unit": "GPa"
+        },
+        {
+          "metric": "BG",
+          "material": "Au",
+          "value": 137.1,
+          "unit": "GPa"
+        },
+        {
+          "metric": "E",
+          "material": "Au",
+          "value": 54.0,
+          "unit": "GPa"
+        },
+        {
+          "metric": "\u03bd",
+          "material": "Au",
+          "value": 0.434,
+          "unit": ""
+        },
+        {
+          "metric": "lattice constant a0",
+          "material": "Ni",
+          "value": 3.52,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "C11",
+          "material": "Ni",
+          "value": 271.5,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C12",
+          "material": "Ni",
+          "value": 157.1,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C44",
+          "material": "Ni",
+          "value": 128.1,
+          "unit": "GPa"
+        },
+        {
+          "metric": "BG",
+          "material": "Ni",
+          "value": 195.2,
+          "unit": "GPa"
+        },
+        {
+          "metric": "E",
+          "material": "Ni",
+          "value": 255.7,
+          "unit": "GPa"
+        },
+        {
+          "metric": "\u03bd",
+          "material": "Ni",
+          "value": 0.282,
+          "unit": ""
+        },
+        {
+          "metric": "lattice constant a0",
+          "material": "Pd",
+          "value": 3.95,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "C11",
+          "material": "Pd",
+          "value": 200.1,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C12",
+          "material": "Pd",
+          "value": 153.5,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C44",
+          "material": "Pd",
+          "value": 60.7,
+          "unit": "GPa"
+        },
+        {
+          "metric": "BG",
+          "material": "Pd",
+          "value": 169.0,
+          "unit": "GPa"
+        },
+        {
+          "metric": "E",
+          "material": "Pd",
+          "value": 125.8,
+          "unit": "GPa"
+        },
+        {
+          "metric": "\u03bd",
+          "material": "Pd",
+          "value": 0.376,
+          "unit": ""
+        },
+        {
+          "metric": "lattice constant a0",
+          "material": "Ag",
+          "value": 4.16,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "C11",
+          "material": "Ag",
+          "value": 106.5,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C12",
+          "material": "Ag",
+          "value": 80.9,
+          "unit": "GPa"
+        },
+        {
+          "metric": "C44",
+          "material": "Ag",
+          "value": 37.3,
+          "unit": "GPa"
+        },
+        {
+          "metric": "BG",
+          "material": "Ag",
+          "value": 89.4,
+          "unit": "GPa"
+        },
+        {
+          "metric": "E",
+          "material": "Ag",
+          "value": 74.8,
+          "unit": "GPa"
+        },
+        {
+          "metric": "\u03bd",
+          "material": "Ag",
+          "value": 0.361,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The values come from Table 1, which lists DFT-calculated lattice constant a0 and elastic constants for Al, Cu, Au, Ni, Pd, Ag. However, the extracted list mislabels the bulk and shear moduli: Table 1 columns are \"B\" (bulk modulus) and \"G\" (shear modulus). The extraction includes \"BG\" with the numerical values that correspond to B (e.g., Al 78.1, Cu 137.9, Au 137.1, Ni 195.2, Pd 169.0, Ag 89.4) and separately labels \"C44\" etc. Also, for Al it assigns \"BG\"=78.1 while also assigning \"G\"=78.1, but Table 1 has G=28.4 for Al. Similar mismatches occur for other materials (e.g., Cu G=54.5, Au G=18.8, Ni G=99.7, Pd G=45.7, Ag G=27.5). Thus the extraction is not fully supported due to incorrect/modifier metric names and incorrect shear modulus values.",
+        "suggested_fix": "Use Table 1 with correct metrics: For each material report a0, C11, C12, C44, B, G, E, \u03bd. Example: Al a0=4.04 \u00c5; C11=109.9 GPa; C12=62.2 GPa; C44=31.4 GPa; B=78.1 GPa; G=28.4 GPa; E=76.0 GPa; \u03bd=0.338. Cu: B=137.9, G=54.5. Au: B=137.1, G=18.8. Ni: B=195.2, G=99.7. Pd: B=169.0, G=45.7. Ag: B=89.4, G=27.5."
+      }
+    },
+    {
+      "method": "Density Functional Theory (DFT)",
+      "parameters": {
+        "exchange_correlation": "PBE"
+      },
+      "results": [
+        {
+          "metric": "intrinsic stacking fault energy",
+          "material": "Al",
+          "value": 140.2,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "unstable stacking fault energy",
+          "material": "Al",
+          "value": 177.0,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "intrinsic stacking fault energy",
+          "material": "Cu",
+          "value": 38.5,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "unstable stacking fault energy",
+          "material": "Cu",
+          "value": 163.7,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "intrinsic stacking fault energy",
+          "material": "Au",
+          "value": 27.9,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "unstable stacking fault energy",
+          "material": "Au",
+          "value": 66.5,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "intrinsic stacking fault energy",
+          "material": "Ni",
+          "value": 144.5,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "unstable stacking fault energy",
+          "material": "Ni",
+          "value": 289.0,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "intrinsic stacking fault energy",
+          "material": "Pd",
+          "value": 138.1,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "unstable stacking fault energy",
+          "material": "Pd",
+          "value": 197.9,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "intrinsic stacking fault energy",
+          "material": "Ag",
+          "value": 17.8,
+          "unit": "mJ m^-2"
+        },
+        {
+          "metric": "unstable stacking fault energy",
+          "material": "Ag",
+          "value": 100.4,
+          "unit": "mJ m^-2"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "Supported by Table 2 (page 4). Table 2 lists intrinsic and unstable stacking fault energies (\u03b3isf, \u03b3usf) for the fcc metals. The values match exactly: Al \u03b3isf=140.2, \u03b3usf=177.0; Cu 38.5, 163.7; Au 27.9, 66.5; Ni 144.5, 289.0; Pd 138.1, 197.9; Ag 17.8, 100.4 (all in mJ/m^2).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Phase Field Dislocation Dynamics (PFDD)",
+      "parameters": {
+        "grain_sizes_analyzed_nm": "4.46\u2013131.58",
+        "ledge_size_nm": "\u22482.5\u20135.6"
+      },
+      "results": [
+        {
+          "metric": "equilibrium stacking fault width w0",
+          "material": "Al",
+          "value": 0.57,
+          "unit": "nm"
+        },
+        {
+          "metric": "equilibrium stacking fault width w0",
+          "material": "Cu",
+          "value": 2.31,
+          "unit": "nm"
+        },
+        {
+          "metric": "equilibrium stacking fault width w0",
+          "material": "Au",
+          "value": 2.66,
+          "unit": "nm"
+        },
+        {
+          "metric": "equilibrium stacking fault width w0",
+          "material": "Ni",
+          "value": 2.0,
+          "unit": "nm"
+        },
+        {
+          "metric": "equilibrium stacking fault width w0",
+          "material": "Pd",
+          "value": 1.4,
+          "unit": "nm"
+        },
+        {
+          "metric": "maximum stacking fault width wmax (selected example)",
+          "material": "Ni (63.74 nm grain)",
+          "value": 19.92,
+          "unit": "nm"
+        },
+        {
+          "metric": "maximum stacking fault area Amax (selected example)",
+          "material": "Ni (63.74 nm grain)",
+          "value": 579.46,
+          "unit": "nm^2"
+        }
+      ],
+      "interpretation": "PFDD predicts stacking fault widths significantly larger than equilibrium values, with strong dependence on intrinsic stacking fault energy and grain size.",
+      "prov": [
+        "Table 3",
+        "Fig. 6",
+        "Fig. 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Supported by Table 3 (page 8) and accompanying text (pages 7\u20138). Table 3 explicitly lists equilibrium stacking fault width w0 values: Al 0.57 nm, Cu 2.31 nm, Au 2.66 nm, Ni 2.00 nm, Pd 1.40 nm. Table 3 also lists for Ni at grain size 63.74 nm: wmax = 19.92 nm and Amax = 579.46 nm^2. These correspond to the extracted metrics/values. (Note: provenance is correct\u2014these are in Table 3; Fig. 6/7 are not necessary to verify the numeric values.)",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT-PFDD coupled simulation",
+        "results": [
+          {
+            "description": "Threshold stress for Shockley partial nucleation scales linearly with unstable stacking fault energy \u03b3U and is insensitive to grain size.",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.52,
+          "reasoning": "The paper explicitly discusses multiple analysis/modeling methods (DFT, PFDD, DFT-PFDD, and references to MD) throughout the text (e.g., abstract and Sections 2\u20133), so an empty extracted value is not supported by the document. The source clearly specifies the analysis methods used (a density functional theory\u2013phase field dislocation dynamics model, with DFT details such as PAW, PBE, Monkhorst\u2013Pack, Methfessel\u2013Paxton, etc.).",
+          "suggested_fix": "Density functional theory (DFT) integrated with phase-field dislocation dynamics (PFDD) (i.e., a DFT-PFDD model); DFT uses PAW potentials, PBE exchange-correlation, Monkhorst\u2013Pack k-point sampling, and Methfessel\u2013Paxton smearing."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-21T22:28:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

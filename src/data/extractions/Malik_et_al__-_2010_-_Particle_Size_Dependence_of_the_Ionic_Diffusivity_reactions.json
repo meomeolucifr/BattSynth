@@ -1,0 +1,286 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Particle Size Dependence of the Ionic Diffusivity",
+    "doi": "10.1021/nl1023595",
+    "authors": [
+      "Rahul Malik",
+      "Damian Burch",
+      "Martin Bazant",
+      "Gerbrand Ceder"
+    ],
+    "journal": "Nano Letters",
+    "year": 2010
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "batteries",
+      "diffusion",
+      "nano",
+      "ab initio",
+      "LiFePO4"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "intended_role": "studied material",
+      "prov": [
+        "Main text Page 4123"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text Page 4123"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li+",
+      "molecular_formula": "Li+",
+      "ontology": {
+        "role": "diffusing species",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text Page 4123"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiFe antisite defect (Li_Fe')",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "defect",
+        "category": "point defect"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Nearest-neighbor antisite pair Li_Fe'–Fe_Li·",
+      "prov": [
+        "Main text Page 4124"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "FeLi antisite defect (Fe_Li·)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "defect",
+        "category": "point defect"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text Page 4124"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (GGA+U)",
+      "parameters": {
+        "software": "VASP",
+        "approximation": "GGA+U"
+      },
+      "results": [
+        {
+          "metric": "antisite defect formation energy",
+          "value": 0.515,
+          "unit": "eV",
+          "notes": "lower bound of reported range 0.515-0.550 eV"
+        },
+        {
+          "metric": "antisite defect formation energy",
+          "value": 0.550,
+          "unit": "eV",
+          "notes": "upper bound of reported range"
+        }
+      ],
+      "interpretation": "Li_Fe'–Fe_Li· antisite has the lowest formation energy among considered defects.",
+      "prov": [
+        "Main text Page 4124"
+      ]
+    },
+    {
+      "method": "Nudged Elastic Band (DFT)",
+      "parameters": {
+        "supercell_size": "up to eight unit cells",
+        "images": 4
+      },
+      "results": [
+        {
+          "metric": "activation barrier for Li+ crossover via vacant Fe2+ site",
+          "value": 0.491,
+          "unit": "eV",
+          "notes": ""
+        }
+      ],
+      "interpretation": "Crossover migration enables Li+ to bypass channel-blocking defects.",
+      "prov": [
+        "Main text Page 4124"
+      ]
+    },
+    {
+      "method": "Computational diffusion calculation",
+      "parameters": {
+        "direction": "[010]",
+        "condition": "perfect crystal"
+      },
+      "results": [
+        {
+          "metric": "diffusion coefficient",
+          "value": 1.0e-8,
+          "unit": "cm2 s-1",
+          "notes": "Approximate; stated as D ∼ 10^-8 cm2 s^-1"
+        }
+      ],
+      "interpretation": "Very rapid Li+ diffusion in defect-free 1D channels.",
+      "prov": [
+        "Main text Page 4123"
+      ]
+    },
+    {
+      "method": "Experimental chemical diffusivity (literature)",
+      "parameters": {
+        "temperature": 423,
+        "particle_size": "millimeter"
+      },
+      "results": [
+        {
+          "metric": "chemical diffusion coefficient",
+          "value": 1.0e-9,
+          "unit": "cm2 s-1",
+          "notes": "Upper bound of reported 10^-9 – 10^-10 cm2 s^-1"
+        },
+        {
+          "metric": "chemical diffusion coefficient",
+          "value": 1.0e-10,
+          "unit": "cm2 s-1",
+          "notes": "Lower bound"
+        }
+      ],
+      "interpretation": "Macroscopic crystals show significantly slower and less anisotropic diffusion.",
+      "prov": [
+        "Main text Page 4123"
+      ]
+    },
+    {
+      "method": "Computed vacancy self-diffusion",
+      "parameters": {
+        "temperature": 300,
+        "defect_concentration": 0.005,
+        "direction": "[010]"
+      },
+      "results": [
+        {
+          "metric": "vacancy self-diffusion coefficient",
+          "value": 1.0e-10,
+          "unit": "cm2 s-1",
+          "notes": "At p_defect = 0.005"
+        }
+      ],
+      "interpretation": "Defects reduce diffusivity by >2 orders of magnitude at room temperature.",
+      "prov": [
+        "Main text Page 4125"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Probabilistic model of unblocked capacity",
+        "results": [
+          {
+            "equation": "C = 2 − (2 + N p_def) exp(−N p_def) − N p_def",
+            "value": null,
+            "unit": "",
+            "notes": "Equation (1) relating fraction of unblocked sites to channel length N and defect concentration p_def"
+          }
+        ],
+        "prov": [
+          "Main text Page 4124"
+        ]
+      },
+      {
+        "method_name": "Characteristic diffusion time model",
+        "results": [
+          {
+            "equation": "t = x_blocked^2 / D_blocked + x_unblocked^2 / D_unblocked",
+            "value": null,
+            "unit": "",
+            "notes": "Equation (2) combining blocked and unblocked diffusion pathways"
+          }
+        ],
+        "prov": [
+          "Main text Page 4125"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-25T14:30:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

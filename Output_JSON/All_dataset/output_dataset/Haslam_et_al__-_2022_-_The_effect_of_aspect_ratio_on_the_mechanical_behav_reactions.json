@@ -1,0 +1,513 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "The effect of aspect ratio on the mechanical behavior of Li metal in solid-state cells",
+    "doi": "10.1016/j.jpowsour.2021.230831",
+    "authors": [
+      "Catherine G. Haslam",
+      "Jeffery B. Wolfenstine",
+      "Jeff Sakamoto"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis_and_mechanical_testing",
+    "tags": [
+      "solid-state electrolyte",
+      "lithium metal",
+      "compression creep",
+      "LLZO"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6.5La3Ta0.5Zr1.5O12 pellet",
+      "molecular_formula": "Li6.5La3Ta0.5Zr1.5O12",
+      "intended_role": "solid-state electrolyte substrate",
+      "prov": [
+        "Section 2.1 Materials"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Ni/Li/LLZO/Li/Ni symmetric cell",
+      "molecular_formula": "",
+      "intended_role": "test specimen for compression creep",
+      "prov": [
+        "Section 2.1 Materials"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li6.5La3Ta0.5Zr1.5O12",
+      "molecular_formula": "Li6.5La3Ta0.5Zr1.5O12",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Powder synthesized by solid-state method, densified via rapid-induction hot pressing into 12.7 mm billets",
+      "prov": [
+        "Section 2.1 Materials"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium metal foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Initial thickness 750 µm, rolled to 100–700 µm; discs Ø ≈ 9.5 mm",
+      "prov": [
+        "Section 2.1 Materials"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Nickel foil",
+      "molecular_formula": "Ni",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "35 µm battery-grade Ni foil discs Ø ≈ 12.7 mm",
+      "prov": [
+        "Section 2.1 Materials"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Copper foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "alternative current collector (not used in final tests)",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Alloyed with Li during heat treatment, caused embrittlement; excluded from study",
+      "prov": [
+        "Section 2.1 Materials"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Glovebox atmosphere ≤1 ppm O2; also used during 400 °C heat treatment",
+      "prov": [
+        "Section 2.1 Materials"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Synthesize LLZO powder and densify into billets via rapid-induction hot pressing",
+        "operations": [
+          {
+            "action": "solid_state_synthesis",
+            "parameters": {},
+            "notes": "Detailed recipe previously reported"
+          },
+          {
+            "action": "hot_press",
+            "parameters": {
+              "diameter": "12.7 mm"
+            },
+            "notes": "Rapid-induction hot pressing"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": [
+          "Section 2.1 Materials"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Fabricate LLZO pellets",
+        "operations": [
+          {
+            "action": "cut",
+            "parameters": {
+              "thickness": "1.3 mm"
+            },
+            "notes": "Diamond saw"
+          },
+          {
+            "action": "grind_polish",
+            "parameters": {
+              "grit": "1200",
+              "final_polish": "0.1 µm diamond paste"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": [
+          "Section 2.1 Materials"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heat-treat polished LLZO pellets to remove surface contaminants",
+        "operations": [
+          {
+            "action": "heat_treat",
+            "parameters": {
+              "temperature": {
+                "value": 673.15,
+                "unit": "K"
+              },
+              "time": {
+                "value": 180,
+                "unit": "min"
+              }
+            },
+            "notes": "Conducted in argon-filled glovebox (≤1 ppm O2)"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 673.15,
+            "unit": "K"
+          },
+          "time": {
+            "value": 180,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "Ar"
+        },
+        "prov": [
+          "Section 2.1 Materials"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Prepare lithium metal foils of desired thickness",
+        "operations": [
+          {
+            "action": "roll",
+            "parameters": {
+              "initial_thickness": "750 µm",
+              "final_thickness_range": "100–700 µm"
+            },
+            "notes": "Performed in dry room (dew point −50 °C, room temp 293 K)"
+          },
+          {
+            "action": "scrape",
+            "parameters": {},
+            "notes": "Lightly scraped oxide layer"
+          },
+          {
+            "action": "punch",
+            "parameters": {
+              "diameter": "9.5 mm"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 293.15,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "Dry room / Ar (transfer)"
+        },
+        "prov": [
+          "Section 2.1 Materials"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Assemble symmetric Ni/Li/LLZO/Li/Ni cells",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "components": [
+                "chem_3",
+                "chem_2",
+                "target_1"
+              ]
+            },
+            "notes": "35 µm Ni on each Li face"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": "Ar glovebox"
+        },
+        "prov": [
+          "Section 2.1 Materials"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Heat-treat assembled symmetric cells to lower interfacial resistance and anneal Li",
+        "operations": [
+          {
+            "action": "heat_treat",
+            "parameters": {
+              "temperature": {
+                "value": 443.15,
+                "unit": "K"
+              },
+              "time": {
+                "value": 480,
+                "unit": "min"
+              },
+              "pressure": {
+                "value": 1,
+                "unit": "MPa"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 443.15,
+            "unit": "K"
+          },
+          "time": {
+            "value": 480,
+            "unit": "min"
+          },
+          "pressure": {
+            "value": 10,
+            "unit": "bar"
+          },
+          "atmosphere": "Ar"
+        },
+        "prov": [
+          "Section 2.1 Materials"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "LLZO powder synthesis and billet formation"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pellet fabrication and surface preparation"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Argon glovebox heat treatment of LLZO pellets"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Rolling, surface cleaning, and punching of Li foils"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Pressing Ni foils and assembling symmetric cells"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "170 °C, 8 h, 1 MPa anneal of assembled cells"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact parameters of solid-state synthesis and hot-pressing of LLZO powder not given",
+        "excerpt": "Powder with composition Li6.5La3Ta0.5Zr1.5O12 (LLZO) was synthesized by a solid-state method and densified into 12.7 mm diameter billets using rapid-induction hot-pressing, as previously reported [19]."
+      },
+      {
+        "issue": "Pressure unit during heat treatment originally reported in MPa; converted to bar for schema",
+        "excerpt": "heat-treated to 170 °C for 8 h at ~1 MPa"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase purity confirmation",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirmed phase purity of LLZO pellets after hot pressing",
+      "prov": [
+        "Section 2.1 Materials"
+      ]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "7 MHz–1 Hz",
+        "perturbation_voltage": "10 mV"
+      },
+      "results": [
+        {
+          "metric": "Li/LLZO interfacial resistance",
+          "value": 15,
+          "unit": "Ω cm2"
+        }
+      ],
+      "interpretation": "Low and consistent interfacial resistance indicating good adhesion",
+      "prov": [
+        "Section 2.2 Electrochemical impedance spectroscopy"
+      ]
+    },
+    {
+      "method": "Compression creep testing",
+      "parameters": {
+        "applied_stress": "1, 5, 10 MPa",
+        "hold_time": "180 min",
+        "temperature": "≈293 K",
+        "initial_strain_rate_to_load": "1.0×10^-3 s^-1"
+      },
+      "results": [
+        {
+          "metric": "maximum measured steady-state strain rate (700 µm Li, 10 MPa)",
+          "value": 5.2e-6,
+          "unit": "s^-1"
+        },
+        {
+          "metric": "measured strain rate at 1 MPa (all thicknesses)",
+          "value": 8e-7,
+          "unit": "s^-1"
+        }
+      ],
+      "interpretation": "Strain rate decreases with decreasing Li foil thickness; compression creep far slower than predicted by tensile data",
+      "prov": [
+        "Section 2.3 Compression creep",
+        "Figures 2–4"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Comparison with tensile power-law creep equation",
+        "results": [
+          {
+            "equation": "ε̇ = A σ^n (A=0.0069 MPa^-n s^-1, n=6.3)",
+            "value": 6.9e-3,
+            "unit": "s^-1"
+          }
+        ],
+        "interpretation": "Measured compression creep rates are ~10^3–10^4 times lower than tensile prediction"
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-05T14:35:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,731 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Critical stripping current leads to dendrite formation on plating in lithium anode solid electrolyte cells",
+    "doi": "10.1038/s41563-019-0438-9",
+    "authors": [
+      "Jitti Kasemchainan",
+      "Stefanie Zekoll",
+      "Dominic Spencer Jolly",
+      "Ziyang Ning",
+      "Gareth O. Hartley",
+      "James Marrow",
+      "Peter G. Bruce"
+    ],
+    "journal": "Nature Materials",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis",
+    "tags": [
+      "solid-state electrolyte",
+      "argyrodite",
+      "lithium battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl disc",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid electrolyte product",
+      "prov": [
+        "Methods"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in stoichiometric ratio for Li6PS5Cl",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in stoichiometric ratio for Li6PS5Cl",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in stoichiometric ratio for Li6PS5Cl",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Zirconium dioxide",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "milling media",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 50,
+        "unit": "g"
+      },
+      "notes": "10-mm diameter balls",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "supporting layer",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Graphite foil wrapped around quartz tube",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glovebox atmosphere (<1 ppm H2O/O2)",
+      "prov": [
+        "Methods"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Manual grinding of precursors",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Ground together in stoichiometric ratio for Li6PS5Cl"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Ball milling of powder",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": [
+                "step_1"
+              ],
+              "milling_media": "chem_4",
+              "rotation_speed": {
+                "value": 600,
+                "unit": "rpm"
+              }
+            },
+            "duration": {
+              "value": 840,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "1 g powder in ZrO2 jar with 50 g ZrO2 balls"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "First pressing into disc",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "step_2"
+              ],
+              "die_diameter": {
+                "value": 5,
+                "unit": "mm"
+              },
+              "load": {
+                "value": 1,
+                "unit": "t"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Vacuum sealing of disc",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "inputs": [
+                "step_3"
+              ],
+              "container": "quartz tube",
+              "vacuum_level": "<1×10^-5 mbar",
+              "support_layer": "chem_5"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "First heat treatment",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "step_4"
+              ],
+              "temperature": {
+                "value": 873.15,
+                "unit": "K"
+              },
+              "heating_time": {
+                "value": 15,
+                "unit": "min"
+              }
+            },
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 873.15,
+              "unit": "K"
+            },
+            "notes": "Original temperature 600 °C"
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "to_temperature": "room temperature"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Grinding of heat-treated disc",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": [
+                "step_5"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Using mortar and pestle"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Second pressing into disc",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "step_6"
+              ],
+              "die_diameter": {
+                "value": 5,
+                "unit": "mm"
+              },
+              "load": {
+                "value": 1,
+                "unit": "t"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Second heat treatment",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "inputs": [
+                "step_7"
+              ],
+              "container": "quartz tube"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "step_7"
+              ],
+              "temperature": {
+                "value": 573.15,
+                "unit": "K"
+              },
+              "heating_time": {
+                "value": 15,
+                "unit": "min"
+              }
+            },
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 573.15,
+              "unit": "K"
+            },
+            "notes": "Original temperature 300 °C"
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "to_temperature": "room temperature"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Polishing of sintered disc",
+        "operations": [
+          {
+            "action": "polish",
+            "parameters": {
+              "inputs": [
+                "step_8"
+              ],
+              "abrasive": "1200 grit SiC"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Mentioned earlier in main text"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Main text"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Stoichiometric precursors ground"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "High-energy ball milling (600 rpm, 14 h)"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Pressed into 5 mm disc (1 t)"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Vacuum sealed in quartz tube with graphite foil"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Heat treatment at 873 K for 15 min"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Disc ground to powder"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Re-pressed into disc (1 t)"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Second heat treatment at 573 K for 15 min"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Surface polishing with 1200-grit SiC"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact mass ratio of individual reactants not specified",
+        "excerpt": "Li2S, P2S5 and LiCl (Sigma-Aldrich) were ground together in the ratio corresponding to the stoichiometry of Li6PS5Cl."
+      },
+      {
+        "issue": "Pressing load given (1 t) but applied pressure not provided",
+        "excerpt": "pressed into a disc with a 5-mm-diameter stainless steel die set under a uniaxial load of 1 t."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Powder X-ray diffraction",
+      "parameters": {
+        "radiation": "Cu Kα1",
+        "scan_range": "10°–70° 2θ",
+        "step_size": "0.01°",
+        "temperature": "room temperature"
+      },
+      "results": [
+        {
+          "metric": "phase confirmation",
+          "value": "peaks characteristic of argyrodite structure",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Composition confirmed as Li6PS5Cl",
+      "prov": [
+        "Methods",
+        "Supplementary Fig. 1"
+      ]
+    },
+    {
+      "method": "X-ray photoelectron spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interfacial species",
+          "value": "dominant Li2S with smaller Li3P and phosphosulfides",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Electrolyte reduces to stable ionic conductors forming kinetically stable interface",
+      "prov": [
+        "Main text",
+        "Supplementary Fig. 3"
+      ]
+    },
+    {
+      "method": "Scanning electron microscopy",
+      "parameters": {
+        "cross_section": "ultrasonic cutter"
+      },
+      "results": [
+        {
+          "metric": "void and dendrite observation",
+          "value": "void accumulation and dendrite penetration visualized under different cycling conditions",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2"
+      ]
+    },
+    {
+      "method": "X-ray computed tomography",
+      "parameters": {
+        "current_density": "1.0 mA cm^-2"
+      },
+      "results": [
+        {
+          "metric": "void accumulation",
+          "value": "voids increase with cycle number",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 3"
+      ]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "1 MHz–1 Hz",
+        "amplitude": "5 mV"
+      },
+      "results": [],
+      "interpretation": "Interfacial resistance stabilizes after ~100 h",
+      "prov": [
+        "Main text",
+        "Supplementary Fig. 2"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Critical current determination by single stripping and plating",
+        "results": [
+          {
+            "description": "Critical current for plating (CCP)",
+            "value": 2.0,
+            "unit": "mA cm^-2",
+            "conditions": "3 and 7 MPa"
+          },
+          {
+            "description": "Critical current for stripping (CCS) at 3 MPa",
+            "value": 0.2,
+            "unit": "mA cm^-2",
+            "conditions": "3 MPa"
+          },
+          {
+            "description": "Critical current for stripping (CCS) at 7 MPa",
+            "value": 1.0,
+            "unit": "mA cm^-2",
+            "conditions": "7 MPa"
+          }
+        ],
+        "prov": [
+          "Main text",
+          "Fig. 5"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "extracted_text_chunk",
+    "processing_time": null
+  }
+}

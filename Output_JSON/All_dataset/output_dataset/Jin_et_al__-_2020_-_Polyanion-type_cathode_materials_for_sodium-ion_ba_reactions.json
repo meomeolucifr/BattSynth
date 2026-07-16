@@ -1,0 +1,213 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Polyanion-type cathode materials for sodium-ion batteries",
+    "doi": "10.1039/c9cs00846b",
+    "authors": [
+      "Ting Jin",
+      "Huangxu Li",
+      "Kunjie Zhu",
+      "Peng-Fei Wang",
+      "Pei Liu",
+      "Lifang Jiao"
+    ],
+    "journal": "Chemical Society Reviews",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": [
+      "sodium-ion batteries",
+      "polyanion cathodes"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "NaFePO4@C nanofibers",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": [
+        "Figure 3g"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "NaFePO4",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Figure 3g"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "N-doped carbon nanofibers",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive matrix",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Figure 3g"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Electrospinning synthesis of NaFePO4@C nanofibers by embedding amorphous NaFePO4 nanoparticles into porous N-doped carbon nanofibers.",
+        "operations": [
+          {
+            "action": "electrospin",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Figure 3g"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Electrochemical activation: electrode charged and held at 4.7 V for 12 h to transform maricite NaFePO4 into an amorphous phase.",
+        "operations": [
+          {
+            "action": "electrochemical hold",
+            "parameters": {
+              "potential": {
+                "value": 4.7,
+                "unit": "V vs. Na/Na+"
+              }
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Figure 3h"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Formation of NaFePO4@C composite nanofibers via electrospinning."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Post-synthetic electrochemical activation at 4.7 V for 12 h converting crystalline phase to amorphous."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis parameters such as solvent, precursor concentrations, and calcination temperature for electrospinning process.",
+        "excerpt": "Schematic illustration of the preparation process for NaFePO4@C nanofibers. (Figure 3g)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Phase disappearance",
+          "value": "",
+          "unit": "",
+          "notes": "XRD peaks disappeared after holding at 4.7 V for 12 h indicating transition to amorphous phase."
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 3h"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 61,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 6300
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-14T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

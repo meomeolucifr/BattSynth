@@ -1,0 +1,941 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recovery of metals from spent lithium-ion batteries using ionic liquid [P8888][Oleate]",
+    "doi": "10.1016/j.seppur.2020.117435",
+    "authors": [
+      "Enas A. Othman",
+      "Aloijsius G.J. van der Ham",
+      "Henk Miedema",
+      "Sascha R.A. Kersten"
+    ],
+    "journal": "Separation and Purification Technology",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "ionic liquid",
+      "solvent extraction",
+      "lithium-ion battery recycling",
+      "metal recovery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Tetraoctylphosphonium oleate",
+      "molecular_formula": "",
+      "intended_role": "ionic liquid product",
+      "prov": [
+        "Section 2.2"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Manganese(II) carbonate",
+      "molecular_formula": "MnCO3",
+      "intended_role": "recovered product",
+      "prov": [
+        "Section 3.1.2"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Nickel(II) carbonate",
+      "molecular_formula": "NiCO3",
+      "intended_role": "recovered product",
+      "prov": [
+        "Section 3.1.4"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Oleic acid",
+      "molecular_formula": "C18H34O2",
+      "ontology": {
+        "role": "reactant",
+        "category": "organic acid"
+      },
+      "amount": {
+        "value": 52.36,
+        "unit": "g"
+      },
+      "notes": "0.19 mol",
+      "prov": [
+        "Section 2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sodium hydroxide",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "base",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 12.74,
+        "unit": "g"
+      },
+      "notes": "0.32 mol in 800 mL water",
+      "prov": [
+        "Section 2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "800 mL for NaOH solution; 8 × 1 L washes; 10 wt% saturation",
+      "prov": [
+        "Section 2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Tetraoctylphosphonium bromide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "ionic liquid precursor"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "g"
+      },
+      "notes": "0.18 mol",
+      "prov": [
+        "Section 2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "[P8888][Oleate]",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "product",
+        "category": "ionic liquid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "density 0.894 g/mL; viscosity 0.134 Pa·s",
+      "prov": [
+        "Section 2.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Hydrochloric acid",
+      "molecular_formula": "HCl",
+      "ontology": {
+        "role": "leaching acid",
+        "category": "acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "4–8 M in feed solution",
+      "prov": [
+        "Section 3.1.1"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Cobalt(II) chloride hexahydrate",
+      "molecular_formula": "CoCl2·6H2O",
+      "ontology": {
+        "role": "metal salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1 g Co per L feed",
+      "prov": [
+        "Section 2.3"
+      ]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Nickel(II) chloride hexahydrate",
+      "molecular_formula": "NiCl2·6H2O",
+      "ontology": {
+        "role": "metal salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1.40 g/L Ni feed",
+      "prov": [
+        "Section 2.3"
+      ]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Manganese(II) chloride dihydrate",
+      "molecular_formula": "MnCl2·2H2O",
+      "ontology": {
+        "role": "metal salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1.14 g/L Mn feed",
+      "prov": [
+        "Section 2.3"
+      ]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "metal salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "0.39 g/L Li feed",
+      "prov": [
+        "Section 2.3"
+      ]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Ammonium hydroxide",
+      "molecular_formula": "NH4OH",
+      "ontology": {
+        "role": "regeneration reagent",
+        "category": "base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1 M in regeneration solution",
+      "prov": [
+        "Section 3.1.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Ammonium carbonate",
+      "molecular_formula": "(NH4)2CO3",
+      "ontology": {
+        "role": "regeneration reagent",
+        "category": "salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1.2 M in RS-2; 2 M in second regeneration",
+      "prov": [
+        "Section 3.1.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Ammonium sulfate",
+      "molecular_formula": "(NH4)2SO4",
+      "ontology": {
+        "role": "regeneration reagent",
+        "category": "salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1 M in RS-2",
+      "prov": [
+        "Section 3.1.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "Sodium carbonate",
+      "molecular_formula": "Na2CO3",
+      "ontology": {
+        "role": "regeneration reagent",
+        "category": "salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1 M in R-2; also used to pre-saturate IL",
+      "prov": [
+        "Section 3.1.4"
+      ]
+    },
+    {
+      "chemical_id": "chem_16",
+      "name": "Manganese(II) carbonate",
+      "molecular_formula": "MnCO3",
+      "ontology": {
+        "role": "precipitated product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "formed during regeneration R-1",
+      "prov": [
+        "Section 3.1.2"
+      ]
+    },
+    {
+      "chemical_id": "chem_17",
+      "name": "Nickel(II) carbonate",
+      "molecular_formula": "NiCO3",
+      "ontology": {
+        "role": "precipitated product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "formed during regeneration R-2",
+      "prov": [
+        "Section 3.1.4"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of sodium oleate",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "temperature": {
+              "value": 318,
+              "unit": "K"
+            },
+            "notes": "Oleic acid added to NaOH solution (800 mL)"
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 318,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Section 2.2"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Quaternary phosphonium exchange to form IL",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_4"
+              ]
+            },
+            "temperature": {
+              "value": 348,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 348,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Section 2.2"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Washing of organic phase",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": [
+                "chem_3"
+              ]
+            },
+            "notes": "8 × 1 L warm water at 45 °C"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 318,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Section 2.2"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Vacuum drying of IL",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 323,
+              "unit": "K"
+            },
+            "notes": "under vacuum"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Section 2.2"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Saturation of IL with water",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "10 wt% water for 24 h"
+          },
+          {
+            "action": "remove",
+            "parameters": {
+              "inputs": [
+                "chem_3"
+              ]
+            },
+            "notes": "remaining water removed (method not specified)"
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Section 2.2"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Extraction E-1 of Co and Mn",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_5",
+                "chem_7",
+                "chem_9",
+                "chem_8",
+                "chem_10",
+                "chem_6"
+              ]
+            },
+            "duration": {
+              "value": 5,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 295,
+              "unit": "K"
+            },
+            "notes": "5 mL feed + 5 mL IL, 40 rpm; pH < 0 (8 M HCl)"
+          },
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 295,
+              "unit": "K"
+            },
+            "notes": "3750 rpm"
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Section 2.3"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Regeneration R-1A (Co/Mn separation)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_11",
+                "chem_12",
+                "chem_13"
+              ]
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 295,
+              "unit": "K"
+            },
+            "notes": "1 M NH4OH, 1.2 M (NH4)2CO3, 1 M (NH4)2SO4, 5 mL"
+          },
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 295,
+              "unit": "K"
+            },
+            "notes": "3750 rpm"
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Section 3.1.2"
+        ]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Second regeneration R-1B for Mn",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_12"
+              ]
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 295,
+              "unit": "K"
+            },
+            "notes": "2 M (NH4)2CO3, 5 mL"
+          },
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 295,
+              "unit": "K"
+            },
+            "notes": "3750 rpm"
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Section 3.1.2"
+        ]
+      },
+      {
+        "step_id": "step_9",
+        "description": "pH adjustment of raffinate for Ni extraction",
+        "operations": [
+          {
+            "action": "adjust_pH",
+            "parameters": {
+              "inputs": [
+                "chem_2"
+              ]
+            },
+            "notes": "to pH 1–2 using NaOH"
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Section 3.1.3"
+        ]
+      },
+      {
+        "step_id": "step_10",
+        "description": "Extraction E-2 of Ni (and Li)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_5",
+                "chem_8",
+                "chem_10"
+              ]
+            },
+            "duration": {
+              "value": 5,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 295,
+              "unit": "K"
+            },
+            "notes": "IL pre-saturated with Na2CO3"
+          },
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 295,
+              "unit": "K"
+            },
+            "notes": "3750 rpm"
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Section 3.1.3"
+        ]
+      },
+      {
+        "step_id": "step_11",
+        "description": "Regeneration R-2 separating Ni and Li",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_14"
+              ]
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 295,
+              "unit": "K"
+            },
+            "notes": "1 M Na2CO3, 5 mL"
+          },
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 295,
+              "unit": "K"
+            },
+            "notes": "3750 rpm"
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Section 3.1.4"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesize sodium oleate"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "React with tetraoctylphosphonium bromide to form IL"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Wash organic phase"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Dry IL under vacuum"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Saturate IL with water"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "First extraction of Co/Mn from acidic feed"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Regeneration to separate Co (solution) and Mn (precipitate)"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Additional regeneration to improve Mn recovery"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "pH adjustment of raffinate"
+      },
+      {
+        "step_ref": "step_10",
+        "description": "Second extraction for Ni"
+      },
+      {
+        "step_ref": "step_11",
+        "description": "Regeneration yielding NiCO3 precipitate and Li in solution"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Water removal method after saturation not specified",
+        "excerpt": "After removal of the remaining water"
+      },
+      {
+        "issue": "Exact rpm during regeneration mixing not provided",
+        "excerpt": "regenerated with 5 mL ... solutions for 2 hrs."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "1H NMR",
+      "parameters": {
+        "frequency": "400 MHz",
+        "solvent": "CDCl3"
+      },
+      "results": [
+        {
+          "metric": "chemical shifts",
+          "value": "δ 5.35 (2H, m), 2.80 (~2H, br, water), 2.40 (12H, m), 2.21 (2H, t, J=7.7 Hz), 2.01 (4H, m), 1.59 (2H, m), 1.50 (14H, m), 1.30 (50H, d), 0.90 (15H, t, J=6.8 Hz)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Purity within 2% error of theoretical",
+      "prov": [
+        "Section 2.2"
+      ]
+    },
+    {
+      "method": "Karl Fischer titration",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "water content",
+          "value": "saturated at 10 wt%",
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Section 2.2"
+      ]
+    },
+    {
+      "method": "Physical property measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "density",
+          "value": 0.894,
+          "unit": "g mL-1"
+        },
+        {
+          "metric": "viscosity",
+          "value": 0.134,
+          "unit": "Pa s"
+        },
+        {
+          "metric": "pH",
+          "value": 9.7,
+          "unit": ""
+        },
+        {
+          "metric": "conductivity",
+          "value": 190,
+          "unit": "µS cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Section 2.2"
+      ]
+    },
+    {
+      "method": "FTIR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "MnCO3 signature",
+          "value": "matches literature",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms MnCO3 precipitate",
+      "prov": [
+        "Appendix E"
+      ]
+    },
+    {
+      "method": "FTIR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "NiCO3 signature",
+          "value": "matches standard sample",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms NiCO3 precipitate",
+      "prov": [
+        "Appendix E"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Extraction efficiency calculation",
+        "results": [
+          {
+            "equation": "E = (Cf,o – Cr,i)/Cf,o × 100%",
+            "value": 99,
+            "unit": "%",
+            "notes": "Co extraction at 8 M HCl, stage 1"
+          },
+          {
+            "equation": "E = (Cf,o – Cr,i)/Cf,o × 100%",
+            "value": 89,
+            "unit": "%",
+            "notes": "Mn extraction at 8 M HCl, stage 1"
+          }
+        ],
+        "prov": [
+          "Section 3.1.1",
+          "Table 4"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T10:30:00Z",
+    "source_file": "text_chunk_provided",
+    "processing_time": null
+  }
+}

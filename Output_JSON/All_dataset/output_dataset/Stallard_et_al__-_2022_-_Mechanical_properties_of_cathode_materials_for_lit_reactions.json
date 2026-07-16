@@ -1,0 +1,409 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Mechanical properties of cathode materials for lithium-ion batteries",
+    "doi": "10.1016/j.joule.2022.04.001",
+    "authors": [
+      "Joe C. Stallard",
+      "Laura Wheatcroft",
+      "Samuel G. Booth",
+      "Rebecca Boston",
+      "Serena A. Corr",
+      "Michaël F.L. De Volder",
+      "Beverley J. Inkson",
+      "Norman A. Fleck"
+    ],
+    "journal": "Joule",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": [
+      "lithium-ion batteries",
+      "cathode materials",
+      "mechanical properties"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNi0.33Mn0.33Co0.33O2 secondary particles",
+      "molecular_formula": "LiNi0.33Mn0.33Co0.33O2",
+      "intended_role": "cathode material",
+      "prov": [
+        "Page 996-998, Figure 13 A"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi0.33Mn0.33Co0.33O2",
+      "molecular_formula": "LiNi0.33Mn0.33Co0.33O2",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "polycrystalline secondary particles, grain size 0.5–1 µm mentioned",
+      "prov": [
+        "Page 996-997"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "",
+      "prov": [
+        "Page 998"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "component of electrolyte",
+      "prov": [
+        "Page 998"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "rinse solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Page 998"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "N-methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "suspension solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Page 998"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "polypropylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "component of electrolyte used for immersion tests",
+      "prov": [
+        "Page 998"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Electrolyte immersion of NMC333 particles",
+        "operations": [
+          {
+            "action": "immerse",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "1 M LiPF6 in ethylene carbonate for 48 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 998"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Rinsing of immersed particles",
+        "operations": [
+          {
+            "action": "rinse",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_4"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 998"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Suspension of particles in N-methyl-2-pyrrolidone",
+        "operations": [
+          {
+            "action": "suspend",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_5"
+              ]
+            },
+            "duration": {
+              "value": 30,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "notes": "reported as 80°C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 998"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Drying of particles after suspension",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 998"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "NMC333 particles immersed in 1 M LiPF6/ethylene carbonate electrolyte for 48 h"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Rinsed with dimethyl carbonate"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Suspended in N-methyl-2-pyrrolidone at 353 K for 30 min"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Dried particles"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear temperature notation",
+        "excerpt": "suspension in N- methyl-2-pyrrolidone at 80/C14C for 30 min"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Nanoindentation (Berkovich)",
+      "parameters": {
+        "tip_type": "3-sided pyramidal",
+        "measurement": "load–displacement"
+      },
+      "results": [
+        {
+          "metric": "indentation hardness",
+          "value": 6,
+          "unit": "GPa",
+          "notes": "lower range reported for cathode materials"
+        },
+        {
+          "metric": "indentation hardness",
+          "value": 18,
+          "unit": "GPa",
+          "notes": "upper range reported for cathode materials"
+        },
+        {
+          "metric": "Young's modulus",
+          "value": 80,
+          "unit": "GPa",
+          "notes": "lower range reported"
+        },
+        {
+          "metric": "Young's modulus",
+          "value": 200,
+          "unit": "GPa",
+          "notes": "upper range reported"
+        }
+      ],
+      "interpretation": "Mechanical properties of cathode materials comparable to glasses/ceramics",
+      "prov": [
+        "Figure 7, Page 992-993"
+      ]
+    },
+    {
+      "method": "Single particle compression (Brazil-nut test)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "fracture strength retention after one cycle",
+          "value": 44,
+          "unit": "%",
+          "notes": "NMC333 secondary particles retain 44% of pristine strength"
+        }
+      ],
+      "interpretation": "Delithiation-induced microcracking reduces particle strength",
+      "prov": [
+        "Figure 13 A, Page 996-997"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Griffith-based strength–grain size analysis",
+        "results": [
+          {
+            "equation": "s_F = K_IC / sqrt(pi a)",
+            "value": null,
+            "unit": "",
+            "notes": "Fracture toughness estimated between 0.05 and 0.3 MPa·m^1/2 for NMC333"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T14:35:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

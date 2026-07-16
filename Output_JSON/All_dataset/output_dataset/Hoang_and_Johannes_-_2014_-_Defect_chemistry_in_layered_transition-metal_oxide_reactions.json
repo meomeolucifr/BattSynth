@@ -1,0 +1,339 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Defect chemistry in layered transition-metal oxides from screened hybrid density functional calculations",
+    "doi": "10.1039/c4ta00673a",
+    "authors": ["Khang Hoang", "Michelle D. Johannes"],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "layered oxides", "battery cathode", "defect chemistry"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "studied material",
+      "prov": ["Page 5224–5225"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiNiO2",
+      "molecular_formula": "LiNiO2",
+      "intended_role": "studied material",
+      "prov": ["Page 5224–5225"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "host material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 5224–5225"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiNiO2",
+      "molecular_formula": "LiNiO2",
+      "ontology": {
+        "role": "host material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 5224–5225"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "O2",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "gas atmosphere",
+        "category": "elemental gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 3 description"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "High-temperature solid-state synthesis of LiCoO2 under conventional procedures resulting in ordered O3 layered structure.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 1073,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ">800 °C reported; exact time not specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 5224, Introduction"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Low-temperature synthesis (<400 °C) of LiCoO2 leading to Li/Co disorder and poor electrochemical performance.",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 673,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "≤400 °C reported; exact time not specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 5224, Introduction"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Preparation of lithium-excess Li1+xCoO2 using Li-rich (Li:Co >1) reaction mixtures.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Exact composition and conditions not specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 5229, Discussion"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "High-temperature synthesis >800 °C"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Low-temperature synthesis ≤400 °C"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Li-excess synthesis route"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis duration",
+        "excerpt": "\"synthesized by conventional high temperature (>800 °C) procedures\""
+      },
+      {
+        "issue": "Undefined Li-excess composition",
+        "excerpt": "\"LiCoO2 is often made deliberately with Li-excess\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT (HSE06)",
+      "parameters": {
+        "k_point_mesh": "7×7×7",
+        "cutoff_energy": "500 eV"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameters",
+          "value": "a = 2.80 Å, c = 14.03 Å",
+          "unit": "",
+          "sample": "LiCoO2"
+        },
+        {
+          "metric": "band_gap",
+          "value": 4.11,
+          "unit": "eV",
+          "sample": "LiCoO2"
+        },
+        {
+          "metric": "formation_enthalpy",
+          "value": -6.96,
+          "unit": "eV per formula unit",
+          "sample": "LiCoO2"
+        }
+      ],
+      "interpretation": "Calculated properties closely match experimental lattice constants.",
+      "prov": ["Page 5226"]
+    },
+    {
+      "method": "DFT (HSE06)",
+      "parameters": {
+        "k_point_mesh": "7×7×7",
+        "cutoff_energy": "500 eV"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameters",
+          "value": "a = 2.86 Å, c = 14.17 Å",
+          "unit": "",
+          "sample": "LiNiO2"
+        },
+        {
+          "metric": "band_gap",
+          "value": 1.93,
+          "unit": "eV",
+          "sample": "LiNiO2"
+        },
+        {
+          "metric": "formation_enthalpy",
+          "value": -6.10,
+          "unit": "eV per formula unit",
+          "sample": "LiNiO2"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 5226"]
+    },
+    {
+      "method": "Defect migration barrier calculation (NEB)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "hole_polaron_barrier",
+          "value": 0.10,
+          "unit": "eV",
+          "sample": "LiCoO2"
+        },
+        {
+          "metric": "lithium_vacancy_divacancy_barrier",
+          "value": 0.18,
+          "unit": "eV",
+          "sample": "LiCoO2"
+        },
+        {
+          "metric": "hole_polaron_barrier",
+          "value": 0.21,
+          "unit": "eV",
+          "sample": "LiNiO2"
+        },
+        {
+          "metric": "lithium_vacancy_divacancy_barrier",
+          "value": 0.26,
+          "unit": "eV",
+          "sample": "LiNiO2"
+        }
+      ],
+      "interpretation": "Low barriers indicate small-polaron hopping and vacancy migration as conduction mechanisms.",
+      "prov": ["Figure 6, Page 5231"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Chemical-potential phase stability analysis",
+        "results": [
+          {
+            "equation": "μ_Li + μ_M + 2 μ_O = ΔH_f(LiMO2)",
+            "value": "",
+            "unit": "",
+            "notes": "Stability region larger for LiCoO2 than LiNiO2"
+          }
+        ]
+      },
+      {
+        "method_name": "Defect formation energy calculation",
+        "results": [
+          {
+            "equation": "E_f(X^q)=E_tot(defect)−E_tot(bulk)−Σ n_i μ_i + q(E_v + μ_e)+Δ_q",
+            "value": "",
+            "unit": "",
+            "notes": "Formation energies summarized in Table 3"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-08-02T18:29:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

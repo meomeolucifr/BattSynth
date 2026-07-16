@@ -1,0 +1,372 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Enhancement of ionic conductivity in Li argyrodite solid electrolytes with bromide and borohydride anions for all-solid-state batteries",
+    "doi": "10.1039/d4ta04426f",
+    "authors": ["Hyungeun Seo", "Yong-Jin Jang", "Jaeseong Yoo", "Ji-Hoon Han", "Young-Su Lee", "Jae Yup Jung", "Soeun Lee", "Kyung-Woo Yi", "Young Whan Cho", "Woosuk Cho", "Jae-Hun Kim"],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2024
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid electrolyte", "argyrodite", "mechanical milling", "lithium-ion conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "β-Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "intended_role": "intermediate",
+      "prov": ["Page 27024 – Materials synthesis section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li argyrodite solid electrolyte",
+      "molecular_formula": "Li3PS4·(2.5−x)LiBH4·xLiBr",
+      "intended_role": "product",
+      "prov": ["Page 27024 – Experimental, Materials synthesis"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Optimised Li argyrodite solid electrolyte",
+      "molecular_formula": "Li3PS4·1.8LiBH4·0.7LiBr",
+      "intended_role": "product",
+      "prov": ["Page 27026 – Results, highest conductivity sample"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used at a 3:1 molar ratio with P2S5",
+      "prov": ["Page 27024 – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used at a 1 molar part versus 3 parts Li2S",
+      "prov": ["Page 27024 – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium borohydride",
+      "molecular_formula": "LiBH4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Content varied; total LiBH4 + LiBr fixed to 2.5 equivalents vs Li3PS4",
+      "prov": ["Page 27024 – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium bromide",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Content x varied between 0 and 2.5 in Li3PS4·(2.5−x)LiBH4·xLiBr",
+      "prov": ["Page 27024 – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Toluene",
+      "molecular_formula": "C7H8",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 75,
+        "unit": "mL"
+      },
+      "notes": "Process control agent during first milling step",
+      "prov": ["Page 27024 – Materials synthesis"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Planetary ball-milling of Li2S and P2S5 to form β-Li3PS4 precursor",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_5"],
+              "rpm": 650,
+              "duration": {
+                "value": 60,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "3:1 Li2S:P2S5 molar ratio; zirconia vial with 10 mm zirconia balls; milling paused every 5 min to limit heating"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 27024 – Materials synthesis"],
+        "outputs": ["target_1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Second planetary mill of β-Li3PS4 with LiBH4 and LiBr to form argyrodite solid electrolyte",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["target_1", "chem_3", "chem_4"],
+              "rpm": 650,
+              "duration": {
+                "value": 90,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "LiBH4 and LiBr added at various ratios (x = 0–2.5) keeping total (LiBH4+LiBr) = 2.5 equivalents vs Li3PS4"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 27024 – Materials synthesis"],
+        "outputs": ["target_2", "target_3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Formation of β-Li3PS4 precursor via ball milling"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Formation of Br/BH4 substituted argyrodite electrolyte via second ball milling"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses of solid reagents not stated",
+        "excerpt": "Li2S (Alfa Aesar, 200 mesh, 99.9%), P2S5 (Sigma Aldrich, 99%), LiBH4 (Acros Organic, 95%), and LiBr (Sigma Aldrich, 99%) powders were used as-received."
+      },
+      {
+        "issue": "Milling temperature not quantified",
+        "excerpt": "The ball milling process was paused every 5 min to avoid increasing the sample temperature."
+      },
+      {
+        "issue": "RPM units not covered in units policy",
+        "excerpt": "milled at 650 rpm for 1 h using a planetary mill (Retsch PM200)."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {
+        "instrument": "Bruker D8 ADVANCE"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "argyrodite phase confirmed; LiBr peaks appear for x ≥ 1.0",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 27024 – Results, Fig. 1"]
+    },
+    {
+      "method": "Rietveld refinement",
+      "parameters": {
+        "sample": "Li3PS4·2LiBH4·0.5LiBr"
+      },
+      "results": [
+        {
+          "metric": "BH4 occupancy at 4d",
+          "value": 0.47,
+          "unit": ""
+        },
+        {
+          "metric": "Br occupancy at 4d",
+          "value": 0.25,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 27025 – Table 1 & Fig. 2"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength": "514 nm"
+      },
+      "results": [
+        {
+          "metric": "PS4^3− stretch shift",
+          "value": "423 cm⁻¹ peak shifts to higher frequency with Br substitution",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 27025 – Fig. 3"]
+    },
+    {
+      "method": "31P MAS NMR",
+      "parameters": {
+        "magnetic_field": "400 MHz",
+        "MAS_rate": "22 kHz"
+      },
+      "results": [
+        {
+          "metric": "argyrodite phase proportion (x=0.5)",
+          "value": 95.7,
+          "unit": "%"
+        },
+        {
+          "metric": "argyrodite phase proportion (x=0)",
+          "value": 89.9,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Higher argyrodite content correlates with higher ionic conductivity",
+      "prov": ["Page 27026 – Fig. 4 & Table 2"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "1 MHz–100 Hz",
+        "amplitude": "100 mV",
+        "temperature_range": "298–393 K"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (x=0.7)",
+          "value": 14.4,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "activation energy (x=0.5)",
+          "value": 28.8,
+          "unit": "kJ mol-1"
+        }
+      ],
+      "interpretation": "Br substitution up to saturation improves conductivity and lowers activation energy",
+      "prov": ["Page 27026 – Fig. 5 & 6"]
+    },
+    {
+      "method": "FE-SEM with EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": "<10",
+          "unit": "µm"
+        }
+      ],
+      "interpretation": "Irregular particles with uniform S, P, Br distribution",
+      "prov": ["ESI Fig. S3, S4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical testing – ASSB",
+        "results": [
+          {
+            "equation": "",
+            "value": 182,
+            "unit": "mAh g-1",
+            "notes": "Discharge capacity at 0.05 C for Li3PS4·2LiBH4·0.5LiBr electrolyte cell"
+          },
+          {
+            "equation": "",
+            "value": 92,
+            "unit": "%",
+            "notes": "Capacity retention after 300 cycles at 0.5 C"
+          },
+          {
+            "equation": "",
+            "value": 2.3,
+            "unit": "mA cm-2",
+            "notes": "Critical current density for x=0.5 electrolyte"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 182,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 300
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-10-29T04:30:13Z",
+    "source_file": "journal_article_27022-27030.pdf",
+    "processing_time": null
+  }
+}

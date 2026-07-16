@@ -1,0 +1,365 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium garnets: Synthesis, structure, Li+ conductivity, Li+ dynamics and applications",
+    "doi": "",
+    "authors": [
+      "S. Ramakumar",
+      "C. Deviannapoorani",
+      "L. Dhivya",
+      "Lakshmi S. Shankar",
+      "Ramaswamy Murugan"
+    ],
+    "journal": "Progress in Materials Science",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": [
+      "lithium garnet",
+      "solid electrolyte",
+      "Li-ion conductivity"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li5La3Ta2O12",
+      "molecular_formula": "Li5La3Ta2O12",
+      "intended_role": "product",
+      "prov": ["Page 335, Section 2.1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li5La3Nb2O12",
+      "molecular_formula": "Li5La3Nb2O12",
+      "intended_role": "product",
+      "prov": ["Page 335, Section 2.1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "La(NO3)3·6H2O",
+      "molecular_formula": "LaN3O9·6H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 335, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "La2O3",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Pre-heated at 900 °C for 24 h (1173 K, 1440 min)",
+      "prov": ["Page 335, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiOH·H2O",
+      "molecular_formula": "LiHOH",
+      "ontology": {
+        "role": "reactant",
+        "category": "base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "10 wt % excess added",
+      "prov": ["Page 335, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Nb2O5",
+      "molecular_formula": "Nb2O5",
+      "ontology": {
+        "role": "reactant",
+        "category": "oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 335, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ta2O5",
+      "molecular_formula": "Ta2O5",
+      "ontology": {
+        "role": "reactant",
+        "category": "oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 335, Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "2-propanol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as milling medium",
+      "prov": ["Page 335, Section 2.1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Initial ball milling of precursors",
+        "operations": [
+          {
+            "action": "ball mill",
+            "parameters": {
+              "inputs": ["chem_1/chem_2", "chem_3", "chem_4 or chem_5"],
+              "medium": "chem_6"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Zirconia balls used"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 335, Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pre-calcination",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["output_step_1"]
+            },
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 973,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 335, Section 2.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Second ball milling",
+        "operations": [
+          {
+            "action": "ball mill",
+            "parameters": {
+              "medium": "chem_6"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 335, Section 2.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Pellet formation",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Hydraulic pressing"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 335, Section 2.1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Final sintering",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": ["pellets"]
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1173,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 335, Section 2.1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ball milling of starting oxides, nitrate, hydroxide in 2-propanol"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pre-calcination at 700 °C for 6 h"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Second milling to homogenize"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Pellet pressing"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Final sintering at 900 °C for 24 h"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        },
+        "electrodes": "reversible LiCoO2 or similar"
+      },
+      "results": [
+        {
+          "metric": "total ionic conductivity",
+          "value": 3.4e-6,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "bulk ionic conductivity",
+          "value": 1.2e-6,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Li5La3Ta2O12 shows fast Li-ion conduction at room temperature",
+      "prov": ["Table 2.1, entries for Li5La3Ta2O12"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T21:27:00Z",
+    "source_file": "progress_materials_science_2017_garnet_review.txt",
+    "processing_time": 11.2
+  }
+}

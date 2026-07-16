@@ -1,0 +1,534 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Role of Lithiophilic Metal Sites in Lithium Metal Anodes",
+    "doi": "10.1021/acs.energyfuels.1c01602",
+    "authors": [
+      "Xiao-Ru Chen",
+      "Xiang Chen",
+      "Chong Yan",
+      "Xue-Qiang Zhang",
+      "Qiang Zhang",
+      "Jia-Qi Huang"
+    ],
+    "journal": "Energy & Fuels",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research_article",
+    "tags": ["lithium metal anode", "lithiophilicity", "alloy nucleation", "electrochemistry"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li8Ag5",
+      "molecular_formula": "Li8Ag5",
+      "intended_role": "product",
+      "prov": ["Page 12748, Figure 3a"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiZn",
+      "molecular_formula": "LiZn",
+      "intended_role": "product",
+      "prov": ["Page 12748, Figure 3a"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiAl",
+      "molecular_formula": "LiAl",
+      "intended_role": "product",
+      "prov": ["Page 12748, Figure 3a"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter_electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "thickness 500 μm, diameter 16.0 mm",
+      "prov": ["Experimental Section, Raw Materials"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "1,2-dimethoxyethane",
+      "molecular_formula": "C4H10O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "battery grade",
+      "prov": ["Experimental Section, Raw Materials"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "1,3-dioxolane",
+      "molecular_formula": "C3H6O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "battery grade",
+      "prov": ["Experimental Section, Raw Materials"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiC2F6NO4S2",
+      "ontology": {
+        "role": "electrolyte_salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "1.0 M in DOL/DME, >99.9%",
+      "prov": ["Experimental Section, Raw Materials"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Silver foil",
+      "molecular_formula": "Ag",
+      "ontology": {
+        "role": "working_electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "diameter 13.0 mm",
+      "prov": ["Experimental Section, Raw Materials"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Zinc foil",
+      "molecular_formula": "Zn",
+      "ontology": {
+        "role": "working_electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "diameter 13.0 mm",
+      "prov": ["Experimental Section, Raw Materials"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Aluminum foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "working_electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "diameter 13.0 mm",
+      "prov": ["Experimental Section, Raw Materials"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Copper foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "working_electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "diameter 13.0 mm",
+      "prov": ["Experimental Section, Raw Materials"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective_atmosphere",
+        "category": "inorganic_gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used to protect samples during transfer",
+      "prov": ["Experimental Section, Material Characterization"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of electrolyte",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_4", "chem_2", "chem_3"],
+              "concentration": {"value": 1.0, "unit": "M"}
+            },
+            "temperature": {"value": null, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": "LiTFSI dissolved in DOL/DME (1:1 v/v) inside glovebox"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "inert (glovebox, O2 & H2O < 1.0 ppm)",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Experimental Section, Raw Materials"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Assembly of half cells",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["chem_1", "chem_5", "chem_6", "chem_7", "chem_8", "Celgard PP separator", "electrolyte from step_1"],
+              "electrolyte_volume": {"value": 0.05, "unit": "mL"}
+            },
+            "temperature": {"value": null, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": "2032 coin cells; working electrode varies (Ag, Zn, Al, Cu)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "inert (glovebox)",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Experimental Section, Electrochemical Measurement"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Galvanostatic Li plating to form alloy nuclei",
+        "operations": [
+          {
+            "action": "electroplating",
+            "parameters": {
+              "current_density": {"value": 1.0, "unit": "mA cm-2"},
+              "capacity": {"value": 2.0, "unit": "mAh cm-2"},
+              "duration": {"value": 120, "unit": "min"}
+            },
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "forms Li8Ag5, LiZn, or LiAl depending on substrate"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 12748, Figure 3a", "Experimental Section, Electrochemical Measurement"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Galvanostatic Li stripping (dealloying)",
+        "operations": [
+          {
+            "action": "electro-stripping",
+            "parameters": {
+              "cutoff_voltage": {"value": 0.5, "unit": "V"},
+              "current_density": {"value": 1.0, "unit": "mA cm-2"}
+            },
+            "temperature": {"value": null, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": "reverse process after plating"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 12748, Figure 2b"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Washing of plated electrodes",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_2"],
+              "purpose": "remove Li salt and impurities"
+            },
+            "temperature": {"value": null, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (chem_9)",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Experimental Section, Material Characterization"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Electrolyte prepared inside glovebox"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Coin cells assembled with various metal foils"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Li electroplated forming lithiophilic alloy nuclei"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Li stripped to evaluate reversibility"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Electrodes washed and protected for characterization"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Undefined amount of solvents used in electrolyte preparation",
+        "excerpt": "The electrolyte used in this work was 1.0 M LiTFSI in DOL/DME (1:1, v/v)."
+      },
+      {
+        "issue": "Temperature during electroplating not specified",
+        "excerpt": "Cells were monitored in galvanostatic mode using a Landt CT2001 multichannel battery tester."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "wavelength_nm": 0.154056
+      },
+      "results": [
+        {
+          "metric": "phases after plating",
+          "value": ["Li8Ag5", "LiZn", "LiAl"],
+          "unit": ""
+        },
+        {
+          "metric": "phases after stripping",
+          "value": ["Ag", "Li", "Li8Ag5 (residual)", "LiZn (residual)", "LiAl (residual)"],
+          "unit": ""
+        }
+      ],
+      "interpretation": "Formation of Li-metal alloys during plating is partially reversible",
+      "prov": ["Page 12748, Figure 3a"]
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate": {"value": 0.1, "unit": "mV s-1"}
+      },
+      "results": [
+        {
+          "metric": "alloying reduction peak (Ag)",
+          "value": 0.02,
+          "unit": "V"
+        },
+        {
+          "metric": "alloying reduction peak (Zn)",
+          "value": 0.11,
+          "unit": "V"
+        },
+        {
+          "metric": "alloying reduction peak (Al)",
+          "value": 0.22,
+          "unit": "V"
+        },
+        {
+          "metric": "plating peak (all)",
+          "value": -0.1,
+          "unit": "V"
+        },
+        {
+          "metric": "dealloying peak (Ag)",
+          "value": 0.34,
+          "unit": "V"
+        },
+        {
+          "metric": "dealloying peak (Zn)",
+          "value": 0.27,
+          "unit": "V"
+        },
+        {
+          "metric": "dealloying peak (Al)",
+          "value": 0.53,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Confirms alloying/dealloying processes",
+      "prov": ["Page 12747, Figure 2a"]
+    },
+    {
+      "method": "Galvanostatic Plating/Stripping",
+      "parameters": {
+        "current_density": {"value": 1.0, "unit": "mA cm-2"},
+        "capacity": {"value": 2.0, "unit": "mAh cm-2"}
+      },
+      "results": [
+        {
+          "metric": "nucleation_overpotential (Ag)",
+          "value": 30.4,
+          "unit": "mV"
+        },
+        {
+          "metric": "nucleation_overpotential (Zn)",
+          "value": 34.1,
+          "unit": "mV"
+        },
+        {
+          "metric": "nucleation_overpotential (Al alloy)",
+          "value": 4.1,
+          "unit": "mV"
+        },
+        {
+          "metric": "nucleation_overpotential (Cu)",
+          "value": 82.1,
+          "unit": "mV"
+        },
+        {
+          "metric": "coulombic_efficiency (Ag)",
+          "value": 46.5,
+          "unit": "%"
+        },
+        {
+          "metric": "coulombic_efficiency (Zn)",
+          "value": 42.6,
+          "unit": "%"
+        },
+        {
+          "metric": "coulombic_efficiency (Al)",
+          "value": 92.3,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Higher lithiophilicity yields lower overpotential and varied CE",
+      "prov": ["Pages 12746-12747, Figure 1b", "Page 12747, Figure 2b"]
+    },
+    {
+      "method": "In situ Optical Microscopy",
+      "parameters": {
+        "current_density": {"value": 5.3, "unit": "mA cm-2"}
+      },
+      "results": [
+        {
+          "metric": "Li growth on Cu after 0.5 min",
+          "value": "non-uniform dendritic nucleation",
+          "unit": ""
+        },
+        {
+          "metric": "Li growth on Ag after 5 min",
+          "value": "uniform, dendrite-free, golden surface",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Lithiophilic Ag promotes uniform plating",
+      "prov": ["Page 12749, Figure 4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations (VASP)",
+        "results": [
+          {
+            "equation": "E_b = E_total - E_slab - E_Li",
+            "value": null,
+            "unit": ""
+          },
+          {
+            "metric": "binding_energy_range_Li8Ag5(110)",
+            "value": [-1.83, -1.14],
+            "unit": "eV"
+          },
+          {
+            "metric": "binding_energy_range_LiZn(110)",
+            "value": [-1.80, -1.47],
+            "unit": "eV"
+          },
+          {
+            "metric": "binding_energy_range_LiAl(100)",
+            "value": [-1.97, -1.68],
+            "unit": "eV"
+          },
+          {
+            "metric": "formation_energy_Li8Ag5",
+            "value": -0.219,
+            "unit": "eV"
+          },
+          {
+            "metric": "formation_energy_LiZn",
+            "value": -0.219,
+            "unit": "eV"
+          },
+          {
+            "metric": "formation_energy_LiAl",
+            "value": -0.178,
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Pages 12747-12748, Figure 3b"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

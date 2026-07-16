@@ -1,0 +1,424 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Two-Dimensional Vanadium Carbide (MXene) as a High-Capacity Cathode Material for Rechargeable Aluminum Batteries",
+    "doi": "10.1021/acsnano.7b05350",
+    "authors": [
+      "Armin VahidMohammadi",
+      "Ali Hadjikhani",
+      "Sina Shahbazmohamadi",
+      "Majid Beidaghi"
+    ],
+    "journal": "ACS Nano",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "journal article",
+    "tags": ["MXene", "vanadium carbide", "aluminum battery", "intercalation cathode"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "V2CTx MXene",
+      "molecular_formula": "V2CTx",
+      "intended_role": "product",
+      "prov": ["Figure 1", "Materials and Methods"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "V2AlC MAX phase",
+      "molecular_formula": "V2AlC",
+      "intended_role": "intermediate",
+      "prov": ["Materials and Methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Vanadium powder",
+      "molecular_formula": "V",
+      "ontology": {"role": "reactant", "category": "element"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Used in 2:1.3:1 ratio with Al and C",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Aluminum powder",
+      "molecular_formula": "Al",
+      "ontology": {"role": "reactant", "category": "element"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Ratio 1.3 relative to V",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Graphite powder",
+      "molecular_formula": "C",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Ratio 1 relative to V",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Hydrofluoric acid (50% w/w)",
+      "molecular_formula": "HF",
+      "ontology": {"role": "etchant", "category": "acid"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "Concentrated 50% solution",
+      "prov": ["Figure 1", "Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Water (deionized)",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "washing solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Ethanol (absolute)",
+      "molecular_formula": "C2H6O",
+      "ontology": {"role": "washing solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Tetrabutylammonium hydroxide (40% w/w aqueous)",
+      "molecular_formula": "(C4H9)4NOH",
+      "ontology": {"role": "intercalant", "category": "organic base"},
+      "amount": {"value": 12.5, "unit": "mL"},
+      "notes": "Per 1 g MXene powder",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "1-Methyl-2-pyrrolidinone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "Used for delamination and slurry preparation",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "1-Ethyl-3-methylimidazolium chloride",
+      "molecular_formula": "C8H15ClN2",
+      "ontology": {"role": "electrolyte component", "category": "ionic liquid"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Dried at 423 K for 24 h",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Aluminum chloride (anhydrous)",
+      "molecular_formula": "AlCl3",
+      "ontology": {"role": "electrolyte component", "category": "inorganic salt"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "Mixed with EMIm-Cl in 1.3:1 mol ratio",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Carbon black (Super P)",
+      "molecular_formula": "C",
+      "ontology": {"role": "conductive additive", "category": "carbon"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "10 wt% in electrode",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Polyvinylidene fluoride (PVDF)",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {"role": "binder", "category": "polymer"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "10 wt% in electrode",
+      "prov": ["Materials and Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Synthesis of V2AlC MAX phase via solid-state reaction",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_1", "chem_2", "chem_3"]},
+            "notes": "ratio 2:1.3:1 V:Al:C"
+          },
+          {
+            "action": "ball_mill",
+            "parameters": {},
+            "duration": {"value": 1080, "unit": "min"},
+            "notes": "zirconia balls"
+          },
+          {
+            "action": "sinter",
+            "parameters": {"atmosphere": "argon"},
+            "temperature": {"value": 1773, "unit": "K"},
+            "duration": {"value": 240, "unit": "min"},
+            "notes": "heating rate 3 °C/min"
+          },
+          {
+            "action": "crush_mill_sieve",
+            "parameters": {},
+            "notes": "400 mesh; particle size ~32 µm"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Materials and Methods"],
+        "outputs": ["target_2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Etching of V2AlC to form multilayer V2CTx MXene",
+        "operations": [
+          {
+            "action": "immerse",
+            "parameters": {"inputs": ["target_2", "chem_4"]},
+            "temperature": {"value": 298, "unit": "K"},
+            "duration": {"value": 5520, "unit": "min"},
+            "stirring_rate": "200 rpm",
+            "notes": "50% HF"
+          },
+          {
+            "action": "wash",
+            "parameters": {"inputs": ["chem_5"]},
+            "notes": "centrifuge 4500 rpm 5 min cycles until pH > 4"
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "notes": "Celgard membrane"
+          },
+          {
+            "action": "rinse",
+            "parameters": {"inputs": ["chem_5", "chem_6"]},
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {"atmosphere": "vacuum"},
+            "duration": {"value": 1440, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Figure 1", "Materials and Methods"],
+        "outputs": ["target_1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Delamination of ML-V2CTx in NMP (FL-V2CTx)",
+        "operations": [
+          {
+            "action": "disperse",
+            "parameters": {"inputs": ["target_1", "chem_8"]},
+            "stirring_rate": "1000-1200 rpm",
+            "temperature": {"value": 333, "unit": "K"},
+            "duration": {"value": 1440, "unit": "min"},
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Results and Discussion", "Materials and Methods"],
+        "outputs": ["target_1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "TBAOH intercalation and further delamination",
+        "operations": [
+          {
+            "action": "intercalate",
+            "parameters": {"inputs": ["target_1", "chem_7"]},
+            "temperature": {"value": 298, "unit": "K"},
+            "duration": {"value": 240, "unit": "min"},
+            "notes": "1 g MXene : 12.5 mL 40% TBAOH"
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "notes": "remove excess TBAOH"
+          },
+          {
+            "action": "rinse",
+            "parameters": {"inputs": ["chem_5", "chem_6"]},
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {"atmosphere": "vacuum"},
+            "duration": {"value": null, "unit": "min"},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "overnight"
+          },
+          {
+            "action": "disperse",
+            "parameters": {"inputs": ["target_1", "chem_8"]},
+            "stirring_rate": "≈1000 rpm",
+            "temperature": {"value": 333, "unit": "K"},
+            "duration": {"value": 720, "unit": "min"},
+            "notes": "produces TBAOH-FL-V2CTx"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Figure 7", "Materials and Methods"],
+        "outputs": ["target_1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Preparation of AlCl3/[EMIm]Cl electrolyte",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {"inputs": ["chem_9"]},
+            "temperature": {"value": 423, "unit": "K"},
+            "duration": {"value": 1440, "unit": "min"},
+            "notes": "vacuum"
+          },
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_9", "chem_10"]},
+            "temperature": {"value": 298, "unit": "K"},
+            "duration": {"value": 30, "unit": "min"},
+            "notes": "1.3:1 molar ratio under Ar atmosphere"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Materials and Methods"],
+        "outputs": []
+      },
+      {
+        "step_id": "step_6",
+        "description": "Electrode slurry preparation and casting",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["target_1", "chem_11", "chem_12", "chem_8"]},
+            "notes": "weight ratio 80:10:10 MXene:carbon black:PVDF; stir 24 h"
+          },
+          {
+            "action": "cast",
+            "parameters": {},
+            "notes": "on carbon paper substrate"
+          },
+          {
+            "action": "dry",
+            "parameters": {"atmosphere": "vacuum"},
+            "temperature": {"value": 393, "unit": "K"},
+            "duration": {"value": 1440, "unit": "min"},
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Materials and Methods"],
+        "outputs": []
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "MAX phase synthesis"},
+      {"step_ref": "step_2", "description": "Selective etching to produce MXene"},
+      {"step_ref": "step_3", "description": "Delamination to few-layer MXene"},
+      {"step_ref": "step_4", "description": "TBAOH assisted interlayer expansion and delamination"},
+      {"step_ref": "step_5", "description": "Ionic liquid electrolyte preparation"},
+      {"step_ref": "step_6", "description": "Electrode fabrication"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact volumes of HF and NMP not specified",
+        "excerpt": "V2AlC MAX phase was treated with 50% concentrated hydrofluoric acid (ACS grade, BDH) for 92 h at room temperature"
+      },
+      {
+        "issue": "Drying time after TBAOH treatment termed 'overnight'",
+        "excerpt": "dried at room temperature under vacuum overnight"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {"radiation": "Cu Kα", "voltage": "40 kV", "current": "40 mA"},
+      "results": [{"metric": "c-lattice parameter increase on discharge", "value": 0.21, "unit": "Å"}],
+      "interpretation": "Minor expansion indicates Al3+ intercalation without phase change",
+      "prov": ["Figure 3c"]
+    },
+    {
+      "method": "HRTEM",
+      "parameters": {},
+      "results": [{"metric": "interlayer spacing after discharge", "value": 0.97, "unit": "nm"}],
+      "interpretation": "Marginal change consistent with XRD",
+      "prov": ["Figure 4"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {"metric": "vanadium oxidation state shift to V3+ on discharge", "value": null, "unit": ""}
+      ],
+      "interpretation": "Charge storage via redox of V centers",
+      "prov": ["Figure 5"]
+    },
+    {
+      "method": "EDS",
+      "parameters": {},
+      "results": [
+        {"metric": "Al content after discharge", "value": 6.82, "unit": "atom %"}
+      ],
+      "interpretation": "Confirms Al3+ intercalation",
+      "prov": ["Supporting Figure S1"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical charge/discharge",
+        "results": [
+          {"description": "Capacity of TBAOH-FL-V2CTx first cycle at 100 mA g-1", "value": 392, "unit": "mAh g-1"},
+          {"description": "Capacity after 5 cycles at 100 mA g-1", "value": 300, "unit": "mAh g-1"},
+          {"description": "Capacity at 5000 mA g-1", "value": 50, "unit": "mAh g-1"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 300,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T20:13:00Z",
+    "source_file": "acsnano_2017_v2ctx_mxene_al_battery.txt",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Cation Mixing Properties toward Co Diffusion at the LiCoO2 Cathode/ Sulfide Electrolyte Interface in a Solid-State Battery",
+    "doi": "10.1021/acsami.6b08435",
+    "authors": [
+      "Jun Haruyama",
+      "Keitaro Sodeyama",
+      "Yoshitaka Tateyama"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "DFT",
+      "solid-state battery",
+      "interface",
+      "Li-ion"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiNbO3",
+      "molecular_formula": "LiNbO3",
+      "ontology": {
+        "role": "buffer layer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Co",
+      "molecular_formula": "Co",
+      "ontology": {
+        "role": "transition metal (studied element)",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "P",
+      "molecular_formula": "P",
+      "ontology": {
+        "role": "studied element",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Nb",
+      "molecular_formula": "Nb",
+      "ontology": {
+        "role": "studied element",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (PBE + U)",
+      "parameters": {
+        "functional": "PBE",
+        "spin": "unpolarized",
+        "software": "QUANTUM ESPRESSO",
+        "interface_models": ["LCO(110)/LPS(010)", "LCO(110)/LNO(11̅0)", "LNO(11̅0)/LPS(010)"]
+      },
+      "results": [
+        {
+          "metric": "Co ↔ Li exchange energy range",
+          "value": "1–3",
+          "unit": "eV"
+        },
+        {
+          "metric": "Co ↔ P exchange energy (example Co2↔P3)",
+          "value": -2.18,
+          "unit": "eV"
+        },
+        {
+          "metric": "P1 ↔ Nb1 exchange energy",
+          "value": -1.1,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Negative Co–P exchange energies indicate energetically favorable mixing at LCO/LPS interface; buffer LNO layer suppresses mixing.",
+      "prov": ["Figure 1", "Figure 2", "Figure 3", "Main text"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "First-principles thermodynamic analysis",
+        "results": [
+          {
+            "equation": "E_ex = E_tot(A_i↔B_j) − E_tot^pristine",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

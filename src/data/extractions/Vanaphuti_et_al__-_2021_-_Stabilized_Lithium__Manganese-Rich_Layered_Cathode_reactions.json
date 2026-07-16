@@ -1,0 +1,447 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Stabilized Lithium, Manganese-Rich Layered Cathode Materials Enabled by Integrating Co-Doping and Nanocoating",
+    "doi": "10.1021/acsami.1c04718",
+    "authors": [
+      "Panawan Vanaphuti",
+      "Yangtao Liu",
+      "Xiaotu Ma",
+      "Jinzhao Fu",
+      "Yulin Lin",
+      "Jianguo Wen",
+      "Zhenzhen Yang",
+      "Yan Wang"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["Li-ion batteries", "LMR cathode", "AlF3 coating", "Na/F co-doping"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "CD-0.5 wt% AlF3 coated Na0.05Li1.15Mn0.54Ni0.13Co0.13F0.01O1.99",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Section 2.1, Page 22598"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "CD-1.0 wt% AlF3 coated Na0.05Li1.15Mn0.54Ni0.13Co0.13F0.01O1.99",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Section 2.1, Page 22598"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "CD-3.0 wt% AlF3 coated Na0.05Li1.15Mn0.54Ni0.13Co0.13F0.01O1.99",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Section 2.1, Page 22598"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "CD-5.0 wt% AlF3 coated Na0.05Li1.15Mn0.54Ni0.13Co0.13F0.01O1.99",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Section 2.1, Page 22598"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Aluminum fluoride",
+      "molecular_formula": "AlF3",
+      "ontology": {
+        "role": "coating precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used at 0.5–5.0 wt% relative to active powder",
+      "prov": ["Section 2.1, Page 22598"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "distilled water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Section 2.1, Page 22598"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Na0.05Li1.15Mn0.54Ni0.13Co0.13F0.01O1.99 (CD cathode powder)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Active cathode powder to be coated",
+      "prov": ["Section 2.1, Page 22598"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of AlF3 dispersion",
+        "operations": [
+          {
+            "action": "disperse",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "AlF3 powder dispersed in distilled water"
+          },
+          {
+            "action": "ultrasonicate",
+            "parameters": {},
+            "notes": "Until a homogeneous solution was obtained"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "duration": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1, Page 22598"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Mixing of active powder with AlF3 solution",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "notes": "Active cathode powder added to AlF3 dispersion"
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "duration": {
+            "value": 10,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1, Page 22598"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Drying of mixture",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "notes": "Solution heated on hot plate while stirring until dry"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 353,
+            "unit": "K"
+          },
+          "duration": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1, Page 22598"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Resintering to obtain coated product",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {},
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "notes": "Heating rate 3 K min-1"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 873,
+            "unit": "K"
+          },
+          "duration": {
+            "value": 300,
+            "unit": "min"
+          },
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1, Page 22598"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Disperse AlF3 in water and ultrasonicate to homogeneity"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Add CD powder and stir to allow coating precursor adsorption"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Heat to 80 °C while stirring until the mixture is dry"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Calcine at 600 °C for 5 h to form AlF3-coated cathode material"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact masses/volumes of AlF3, water, and CD powder not specified",
+        "excerpt": "“Different amounts of 0.5, 1.0, 3.0, and 5.0 wt % AlF3 powder ... were dispersed in distilled water”"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {
+        "instrument": "JEOL JSM 7000F"
+      },
+      "results": [
+        {
+          "metric": "particle size",
+          "value": 15,
+          "unit": "µm"
+        }
+      ],
+      "interpretation": "Secondary particles are plate-like and uniformly distributed",
+      "prov": ["Page 22598, Figure S1"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα (λ=1.54 Å)"
+      },
+      "results": [
+        {
+          "metric": "lattice parameter a/b",
+          "value": 2.8568,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameter c",
+          "value": 14.3312,
+          "unit": "Å"
+        },
+        {
+          "metric": "Li+/Ni2+ cation mixing",
+          "value": 1.19,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Coated sample retains layered R3̅m structure without impurities",
+      "prov": ["Table 1, Page 22599"]
+    },
+    {
+      "method": "STEM-EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "coating thickness",
+          "value": 250,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Al and F enriched at surface; gradient into bulk",
+      "prov": ["Figure 1c,d, Page 22599"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "beam": "Al Kα, 1486.6 eV"
+      },
+      "results": [
+        {
+          "metric": "Al 2p binding energy",
+          "value": 73.9,
+          "unit": "eV"
+        },
+        {
+          "metric": "F 1s binding energy",
+          "value": 685.1,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Confirms presence of AlF3 coating and Na/F doping",
+      "prov": ["Figure 2, Pages 22599-22600"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "10 mHz – 1 MHz",
+        "amplitude": "10 mV"
+      },
+      "results": [
+        {
+          "metric": "R_SEI (CD-1.0 wt%)",
+          "value": 1033.0,
+          "unit": "Ω"
+        },
+        {
+          "metric": "R_ct (CD-1.0 wt%)",
+          "value": 98.8,
+          "unit": "Ω"
+        }
+      ],
+      "interpretation": "Coating lowers interfacial and charge-transfer resistances",
+      "prov": ["Figure S9, Table S6"]
+    },
+    {
+      "method": "CV",
+      "parameters": {
+        "scan_rate": "0.1–1.6 mV s-1"
+      },
+      "results": [
+        {
+          "metric": "Li⁺ diffusion coefficient (anodic, CD-1.0 wt%)",
+          "value": 5.08e-11,
+          "unit": "cm2 s-1"
+        },
+        {
+          "metric": "Li⁺ diffusion coefficient (cathodic, CD-1.0 wt%)",
+          "value": 1.45e-11,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "Diffusion coefficients ~1.6× higher than pristine sample",
+      "prov": ["Figure 4, Page 22602"]
+    },
+    {
+      "method": "HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "rock-salt layer thickness (PR)",
+          "value": 6,
+          "unit": "nm"
+        },
+        {
+          "metric": "rock-salt layer thickness (CD-1.0 wt%)",
+          "value": 2,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Coating suppresses surface phase transformation",
+      "prov": ["Figure 6a, Page 22603"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Randles–Sevcik calculation",
+        "results": [
+          {
+            "equation": "Ip = 2.69×10^5 n^(3/2) A D^(1/2) v^(1/2) C",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 150
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-07T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

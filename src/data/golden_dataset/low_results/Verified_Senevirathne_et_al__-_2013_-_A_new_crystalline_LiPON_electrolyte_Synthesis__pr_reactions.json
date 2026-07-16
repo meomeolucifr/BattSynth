@@ -1,0 +1,824 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A new crystalline LiPON electrolyte: Synthesis, properties, and electronic structure",
+    "doi": "10.1016/j.ssi.2012.12.013",
+    "authors": [
+      "Keerthi Senevirathne",
+      "Cynthia S. Day",
+      "Michael D. Gross",
+      "Abdessadek Lachgar",
+      "N.A.W. Holzwarth"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid state synthesis",
+      "electrolyte",
+      "LiPON",
+      "ionic conductivity"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "SD-Li2PO2N",
+      "molecular_formula": "Li2PO2N",
+      "intended_role": "product",
+      "prov": [
+        "Methods 2.1",
+        "Abstract",
+        "Results 3.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly identifies the new crystalline compound as Li2PO2N multiple times, including the Abstract (\u201cThe new crystalline compound, Li2PO2N, was synthesized\u2026\u201d) and Methods 2.1 where the synthesis reaction is written with product Li2PO2N(s). Results/discussion also repeatedly refer to SD-Li2PO2N. Thus the extracted Target Formula matches the source text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li4P2O7",
+      "molecular_formula": "Li4P2O7",
+      "intended_role": "decomposition product",
+      "prov": [
+        "Results 3.4"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The paper\u2019s primary target compound is SD-Li2PO2N. Li4P2O7 appears only as an oxidation/decomposition product formed above ~600\u2013700 \u00b0C in air (Section 3.4: reaction shown and XRD identification). Therefore, stating the \u201cTarget Formula\u201d as Li4P2O7 is not supported by the text; it is not the target material being synthesized/studied.",
+        "suggested_fix": "Li2PO2N (SD-Li2PO2N)"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium oxide",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "molar ratio 1",
+      "prov": [
+        "Methods 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper identifies lithium oxide (Li2O) as a precursor material in Methods 2.1 (\u201cThe precursor materials, lithium oxide (Li2O, 99.5% purity, Alfa Aesar)\u2026\u201d), confirming the chemical identity. However, no specific amount of Li2O by mass or moles is given; only a molar ratio (1:0.2:0.3) for Li2O:P2O5:P3N5 and a total pressed powder mass (0.25 g) are provided. Thus \u201cAmount: Not specified in text\u201d is correct for Li2O as an absolute amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Phosphorus pentoxide",
+      "molecular_formula": "P2O5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "molar ratio 0.2",
+      "prov": [
+        "Methods 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies phosphorus pentoxide (P2O5) as a precursor in Methods 2.1 (\u201cphosphorous pentoxide (P2O5, 99.99% purity, Sigma-Aldrich)\u201d). However, it does not give a standalone mass/amount specifically for P2O5; it only states the precursors were weighed in a molar ratio of 1:0.2:0.3 (Li2O:P2O5:P3N5) and that 0.25 g of the mixed powder was pressed into a pellet. Therefore, the extractor\u2019s claim that the amount for phosphorus pentoxide is not specified is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Triphosphorus pentanitride",
+      "molecular_formula": "P3N5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic nitride"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "molar ratio 0.3; >99% purity",
+      "prov": [
+        "Methods 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly identifies triphosphorus pentanitride as a precursor (\u201ctriphosphorous pentanitride (P3N5)\u201d) in Methods 2.1. The text does not provide a standalone mass/amount for P3N5; it only gives a molar ratio (1:0.2:0.3 for Li2O:P2O5:P3N5) and a total powder mass (0.25 g) pressed into a pellet. Therefore the extractor\u2019s note that the amount is \u201cNot specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "glove box atmosphere",
+      "prov": [
+        "Methods 2.1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions argon as a chemical used (e.g., precursors weighed in an \u201cargon filled glove box\u201d; impedance collected in an \u201cAr atmosphere\u201d). However, no quantitative amount/volume/flow rate of argon is provided. Thus the identity \u201cArgon\u201d is supported and the statement \u201cAmount: Not specified in text\u201d is also supported. The alleged provenance (Methods 2.1) supports argon presence via \u201cargon filled glove box,\u201d though not any amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used for TEM dispersion, sonicated ~5 min",
+      "prov": [
+        "Methods 2.2.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "In Methods 2.2.2 (Transmission electron microscopy), the paper states the powder was \u201cdispersed in ethanol by sonication for ~5 min,\u201d but it does not give an amount/volume/concentration of ethanol. Therefore, the chemical identity (ethanol) is supported and the \u201cAmount: Not specified in text\u201d is also supported by the omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Silver ink",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrode material",
+        "category": "conductive ink"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "applied on pellets for EIS",
+      "prov": [
+        "Methods 2.2.5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Section 2.2.5 (Impedance measurements) explicitly states that \u201cSilver ink and silver wires were attached to the Li2PO2N pellets, serving as ion-blocking electrodes.\u201d No quantity/amount of silver ink is provided anywhere in the paper (no mass, volume, concentration, or vendor), so \u201cAmount: Not specified in text\u201d is accurate.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Silver wire",
+      "molecular_formula": "Ag",
+      "ontology": {
+        "role": "electrode material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "attached to pellets for EIS",
+      "prov": [
+        "Methods 2.2.5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "In Methods section 2.2.5 (Impedance measurements), the paper explicitly states: \u201cSilver ink and silver wires were attached to the Li2PO2N pellets, serving as ion-blocking electrodes.\u201d This supports the chemical identity being silver wire. The text does not provide any quantity/amount (e.g., mass, length, diameter, count) of the silver wire used, so \u201cAmount: Not specified in text\u201d is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Weighing and mixing of precursors in argon glove box",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ],
+              "molar_ratio": "1:0.2:0.3"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": [
+              "Methods 2.1"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "In Methods section 2.1 (Synthesis methods), the text explicitly states that the precursor materials \u201cwere weighed in an argon filled glove box in the molar ratio of 1:0.2:0.3\u2026\u201d. This directly supports the extracted synthesis operation \u201cweigh.\u201d",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "to form homogeneous mixture",
+            "prov": [
+              "Methods 2.1"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "In Methods section 2.1 (Synthesis methods), the text explicitly states the precursor materials were \u201cground for approximately 15 min to form a homogenous mixture\u201d and later that \u201cThe gray microcrystalline product was ground using mortar and pestle prior to further characterizations.\u201d These statements support the synthesis operation being grinding (\"grind\").",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.94,
+            "reasoning": "The paper explicitly states that precursor materials were weighed and all manipulations were done inside an argon-filled glove box (\u201cweighed in an argon filled glove box\u201d; \u201cAll manipulations were done inside an argon filled glove box\u201d), supporting Ar as the synthesis atmosphere/handling atmosphere for synthesis steps. Note the reaction was sealed under vacuum for heating, but Ar atmosphere is clearly used during synthesis preparation/handling.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods 2.1"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pellet pressing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "step_1_mixture"
+              ],
+              "mass": {
+                "value": 0.25,
+                "unit": "g"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "hand-held pellet press, cylindrical pellet",
+            "prov": [
+              "Methods 2.1"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "Methods 2.1 explicitly states: \u201c0.25 g of the powder was pressed into a cylindrical pellet using a hand-held pellet press\u2026\u201d. This directly supports the synthesis operation being a press/pressed-pellet step.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.9,
+            "reasoning": "The paper mentions an argon-filled glove box for weighing/handling precursors (\u201cweighed in an argon filled glove box\u201d; \u201cAll manipulations were done inside an argon filled glove box\u201d) and also mentions sealing the reaction tube under vacuum (\u201cprior to sealing under vacuum\u201d). It does not state that the synthesis/reaction atmosphere was Ar; rather, the firing occurs in sealed quartz tubes under vacuum. Therefore, assigning the overall \u201cSynthesis Atmosphere\u201d as \u201cAr\u201d is not explicitly supported.",
+            "suggested_fix": "Vacuum (sealed under vacuum); note that precursor handling/manipulations were in an argon-filled glove box."
+          }
+        },
+        "prov": [
+          "Methods 2.1"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Evacuation and sealing in quartz tube",
+        "operations": [
+          {
+            "action": "evacuate",
+            "parameters": {
+              "inputs": [
+                "step_2_pellet"
+              ]
+            },
+            "duration": {
+              "value": 45,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "connected to high vacuum line before sealing",
+            "prov": [
+              "Methods 2.1"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "Methods section 2.1 states that the quartz tube containing the pressed pellet was \u201cconnected to a high vacuum line for 45 min prior to sealing under vacuum.\u201d This describes an evacuation step (evacuating the tube) before sealing, supporting the extracted synthesis operation \u201cevacuate.\u201d",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "inputs": [
+                "step_2_pellet"
+              ],
+              "container": "quartz tube"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "sealed under vacuum",
+            "prov": [
+              "Methods 2.1"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "In Methods 2.1 (Synthesis methods), the text states: \u201cThe quartz tube\u2026 was connected to a high vacuum line for 45 min prior to sealing under vacuum. Sealed tubes were heated\u2026\u201d. This explicitly supports the synthesis operation being a sealing step (\u201cseal\u201d).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.95,
+            "reasoning": "The synthesis procedure explicitly states the quartz tube was \u201cconnected to a high vacuum line for 45 min prior to sealing under vacuum\u201d (Methods 2.1, Page 2). This directly supports that the synthesis atmosphere/condition was vacuum (sealed under vacuum during heating).",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods 2.1"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "High-temperature reaction",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "step_3_sealed_tube"
+              ],
+              "temperature": {
+                "value": 1223,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 600,
+                "unit": "min"
+              },
+              "heating_rate": "5 \u00b0C/min",
+              "cooling_rate": "5 \u00b0C/min"
+            },
+            "notes": "",
+            "prov": [
+              "Methods 2.1"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "Methods section 2.1 explicitly states: \u201cSealed tubes were heated at 950 \u00b0C for 10 h\u2026\u201d during synthesis of SD-Li2PO2N. This directly supports the synthesis operation being \u2018heat\u2019.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed vacuum tube",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The Methods section explicitly states that the powder pellet was placed in a quartz tube, connected to a high vacuum line, and then the tube was \u201cseal[ed] under vacuum\u201d prior to heating (\u201cSealed tubes were heated at 950 \u00b0C for 10 h\u2026\u201d). This supports the synthesis atmosphere being a sealed vacuum tube (i.e., sealed under vacuum in a quartz tube).",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Methods 2.1"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Product collection",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": [
+                "step_4_product"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "ground to microcrystalline powder",
+            "prov": [
+              "Methods 2.1"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "Methods section 2.1 explicitly states the precursors were \u201cground for approximately 15 min to form a homogenous mixture\u201d and later that the product \u201cwas ground using mortar and pestle prior to further characterizations.\u201d These statements directly support the synthesis operation being grinding.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods 2.1"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mix Li2O, P2O5, P3N5 in 1:0.2:0.3 molar ratio, grind 15 min in Ar glove box.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The Methods section (2.1 Synthesis methods, page 2) explicitly states that Li2O, P2O5, and P3N5 were weighed in an argon-filled glove box in the molar ratio 1:0.2:0.3 and ground for approximately 15 minutes to form a homogeneous mixture. This matches the extracted workflow timeline step.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Press 0.25 g of mixture into cylindrical pellet.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "Page 2 (Methods \u2192 2.1 Synthesis methods) explicitly states: \u201cThen, 0.25 g of the powder was pressed into a cylindrical pellet using a hand-held pellet press \u2026\u201d. This supports the extracted workflow step \u201cPress 0.25 g of mixture into cylindrical pellet.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Evacuate pellet in quartz tube for 45 min and seal under vacuum.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "Page 2 (Methods \u2192 2.1 Synthesis methods) explicitly states: \u201cThe quartz tube \u2026 was connected to a high vacuum line for 45 min prior to sealing under vacuum.\u201d This matches the extracted workflow step \u201cEvacuate pellet in quartz tube for 45 min and seal under vacuum.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Heat sealed tube at 1223 K for 600 min (5 \u00b0C min\u207b\u00b9 ramp) then cool; obtain gray microcrystalline SD-Li2PO2N.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The paper states: sealed quartz tubes were heated at 950 \u00b0C for 10 h with a heating/cooling rate of 5 \u00b0C/min, producing a gray microcrystalline product (SD-Li2PO2N). The extracted value incorrectly gives 1223 K (which would be 950 \u00b0C = 1223 K is correct) but states 600 min (10 h is 600 min is correct) and adds 'Heat sealed tube at 1223 K for 600 min ... then cool; obtain gray microcrystalline SD-Li2PO2N.' However, the text specifies the tube was sealed under vacuum before heating and explicitly gives the temperature in \u00b0C, not K; the main issue is the phrase 'heat sealed tube' (tube was sealed, then heated) and the ramp is both heating and cooling at 5 \u00b0C/min (not just ramp up). Also the synthesis section includes additional steps (0.25 g pressed pellet, vacuum line 45 min) that are omitted but omission alone isn't an error. The wording implies sealing by heat at 1223 K, which is not stated.",
+          "suggested_fix": "Seal the quartz tube under vacuum, then heat at 950 \u00b0C (1223 K) for 10 h (600 min) with heating and cooling rates of 5 \u00b0C/min; grind the resulting gray microcrystalline SD-Li2PO2N."
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Grind product powder for characterization.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The Methods section explicitly states: \u201cThe gray microcrystalline product was ground using mortar and pestle prior to further characterizations.\u201d This supports the workflow step of grinding the product powder for characterization.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Vacuum pressure not specified",
+        "excerpt": "connected to a high vacuum line for 45 min prior to sealing under vacuum",
+        "prov": "Methods 2.1",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "In Methods 2.1 (Synthesis methods), the paper states: \u201cThe quartz tube\u2026 was connected to a high vacuum line for 45 min prior to sealing under vacuum.\u201d Nowhere in the provided text is a numerical vacuum level/pressure (e.g., Torr/Pa/mbar) given for this step. Therefore, the extractor\u2019s issue that the vacuum pressure is not specified is supported by the document.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Powder X-ray diffraction",
+      "parameters": {
+        "radiation": "Cu K\u03b1 (\u03bb = 1.54184 \u00c5)",
+        "detector": "Lynxeye",
+        "instrument": "Bruker-AXS D2 Phaser",
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "space group",
+          "value": "Cmc21 (#36)",
+          "unit": ""
+        },
+        {
+          "metric": "lattice parameter a",
+          "value": 9.0692,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "lattice parameter b",
+          "value": 5.3999,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "lattice parameter c",
+          "value": 4.6856,
+          "unit": "\u00c5"
+        }
+      ],
+      "interpretation": "High crystallinity; structure matches computational prediction",
+      "prov": [
+        "Methods 2.2.1",
+        "Results 3.2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly states that Li2PO2N crystallizes in the orthorhombic space group Cmc21 (#36) with lattice constants a=9.0692(4) \u00c5, b=5.3999(2) \u00c5, and c=4.6856(2) \u00c5 (given in the abstract on Page 1 and again in Table 1 under Structural analysis). Methods 2.2.1 only describes XRD instrumentation/analysis software, while Results 3.2/Table 1 contain the crystallographic values; despite minor provenance mismatch, the extracted values match exactly.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Transmission Electron Microscopy",
+      "parameters": {
+        "instrument": "JEOL 1200 EX",
+        "voltage": "100 kV",
+        "sample_prep": "powder dispersed in ethanol, sonicated 5 min"
+      },
+      "results": [
+        {
+          "metric": "particle size",
+          "value": null,
+          "unit": "\u03bcm",
+          "description": "irregular shapes in micron range"
+        }
+      ],
+      "interpretation": "Electron diffraction confirms crystallinity matching XRD",
+      "prov": [
+        "Methods 2.2.2",
+        "Results 3.3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "TEM Results section 3.3 states: \u201cparticles exhibit irregular shape morphology with particle sizes in the micron range.\u201d No specific particle size value is reported. Therefore the extractor\u2019s value=None (i.e., not specified) is supported. The unit \u03bcm and description \u201cirregular shapes in micron range\u201d are consistent with the text, though the paper does not quantify a particle size in \u03bcm.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Thermogravimetric Analysis",
+      "parameters": {
+        "instrument": "Perkin Elmer Pyris 1",
+        "atmosphere": "air",
+        "heating_rate": "2 \u00b0C/min",
+        "max_temperature": {
+          "value": 1273,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "weight gain onset",
+          "value": 873,
+          "unit": "K"
+        },
+        {
+          "metric": "total weight gain",
+          "value": 11,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Oxidation above 600 \u00b0C leading to Li4P2O7 formation",
+      "prov": [
+        "Methods 2.2.3",
+        "Results 3.4"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.85,
+        "reasoning": "The paper reports a prominent TGA weight gain starting at approximately 600 \u00b0C and completing by 900 \u00b0C, with a total weight gain similar to the theoretical 11% (Results 3.4, Fig. 4a). However, the extracted 'weight gain onset' is given as 873 K, which corresponds to 600 \u00b0C (\u2248873 K), but the paper states the onset in \u00b0C, not explicitly in K. Since the extracted value is specifically '873 K' and that exact value/unit is not explicitly written in the text, it is not directly supported under strict verification of explicit reporting. The 11% total weight gain is explicitly supported as reported and tied to the theoretical oxidation weight gain (Results 3.4).",
+        "suggested_fix": "Change 'weight gain onset' to 'approximately 600 \u00b0C' (or, if you allow conversion, note '\u2248873 K' but mark as converted). Keep 'total weight gain: 11%'."
+      }
+    },
+    {
+      "method": "FTIR Spectroscopy",
+      "parameters": {
+        "instrument": "PerkinElmer Spectrum 100",
+        "range": "650\u20134000 cm-1"
+      },
+      "results": [
+        {
+          "metric": "vibrational peaks",
+          "value": "662, 696, 857, 935, 1013, 1060, 1117 cm-1",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Peaks match calculated lattice vibrational modes",
+      "prov": [
+        "Methods 2.2.4",
+        "Results 3.5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "Supported in Results 3.5 / Table 2. The paper explicitly lists measured (Exp) FTIR transmission peaks at 662, 696, 857, 935, 1013, 1060, and 1117 cm\u22121 (with minor noted comparison peaks like 669, 698, etc.). These match the extracted vibrational peak positions (unit cm\u22121). Methods 2.2.4 only describes acquisition range (650\u20134000 cm\u22121) and does not list peaks, but Results 3.5 does.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "instrument": "Gamry Series G750",
+        "frequency_range": "0.1 Hz \u2013 300 kHz",
+        "ac_perturbation": "1 V",
+        "dc_voltage": "0 V",
+        "atmosphere": "Ar"
+      },
+      "results": [
+        {
+          "metric": "activation energy",
+          "value": 0.57,
+          "unit": "eV"
+        },
+        {
+          "metric": "conductivity (80 \u00b0C)",
+          "value": 8.8e-07,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "conductivity (330 \u00b0C)",
+          "value": 0.0012,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Conductivity increases with pellet density; comparable to glassy LiPON",
+      "prov": [
+        "Methods 2.2.5",
+        "Results 3.7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "Section 3.7 (Ionic conductivity) explicitly reports: for the 78% dense sample, conductivity increases from 8.8\u00d710\u22127 S/cm at 80 \u00b0C to 1.2\u00d710\u22123 S/cm at 330 \u00b0C, and states the activation energy remains the same with a value of 0.57 eV. These match the extracted values (activation energy 0.57 eV; conductivity at 80 \u00b0C 8.8e-07 S cm\u22121; conductivity at 330 \u00b0C 0.0012 S cm\u22121). The abstract also mentions ~0.6 eV, consistent with 0.57 eV in results.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis of EIS data",
+        "results": [
+          {
+            "equation": "ln(\u03c3\u00b7T) versus 1000/T",
+            "value": 0.57,
+            "unit": "eV",
+            "description": "Activation energy for ionic conduction"
+          }
+        ],
+        "prov": [
+          "Results 3.7"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly lists multiple analysis methods in Section 2.2 (Analysis methods): X-ray powder diffraction (Bruker D2 Phaser; EVA/TOPAS with Rietveld refinement), transmission electron microscopy (JEOL 1200 EX TEM), thermogravimetric analysis (Perkin Elmer Pyris 1 TGA), infrared spectroscopy (PerkinElmer Spectrum 100 FTIR), and electrochemical impedance spectroscopy (Gamry G750 EIS). Therefore, leaving the field empty is not supported. The alleged provenance 'Results 3.7' discusses ionic conductivity results, not the general analysis methods list.",
+          "suggested_fix": "Analysis methods include: powder X-ray diffraction (XRD; indexing/ab initio structure determination and Rietveld refinement), transmission electron microscopy (TEM), thermogravimetric analysis (TGA), infrared spectroscopy (FTIR), and electrochemical impedance spectroscopy (EIS) for ionic conductivity."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": 90,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.98,
+      "reasoning": "Page 3, Section 3.1 states: \u201cApproximately 90% yield relative to initial weight of the precursor mixture was recovered after the completion of the reaction.\u201d This directly supports a final yield of 90%.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-26T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

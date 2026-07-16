@@ -1,0 +1,210 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Structures, Thermodynamics, and Li+ Mobility of Li10GeP2S12: A First-Principles Analysis",
+    "doi": "10.1021/jp5000039",
+    "authors": [
+      "Fuming Du",
+      "Xiaodong Ren",
+      "Jiong Yang",
+      "Jianjun Liu",
+      "Wenqing Zhang"
+    ],
+    "journal": "The Journal of Physical Chemistry C",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "solid electrolyte", "LGPS", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "material studied",
+      "prov": ["Article main text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "ontology": {
+        "role": "material of interest",
+        "category": "inorganic compound"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Superionic conductor studied via DFT",
+      "prov": ["Article main text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "ontology": {
+        "role": "decomposition product",
+        "category": "inorganic compound"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Predicted product in decomposition reaction",
+      "prov": ["Equation (1)"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li4GeS4",
+      "molecular_formula": "Li4GeS4",
+      "ontology": {
+        "role": "decomposition product",
+        "category": "inorganic compound"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Predicted product in decomposition reaction",
+      "prov": ["Equation (1)"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (VASP)",
+      "parameters": {
+        "functional": "PBE-GGA",
+        "energy_cutoff": {
+          "value": 400,
+          "unit": "eV"
+        },
+        "k_point_grid": "3×3×2 Monkhorst–Pack",
+        "energy_convergence": {
+          "value": 1.0e-6,
+          "unit": "eV"
+        },
+        "force_convergence": {
+          "value": 0.01,
+          "unit": "eV Å-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "relative energy of Z_2 vs others",
+          "value": 0.00,
+          "unit": "eV/f.u.",
+          "notes": "Z_2 is lowest among tested structures"
+        },
+        {
+          "metric": "cell volume (Z_2)",
+          "value": 989,
+          "unit": "Å3",
+          "notes": ""
+        }
+      ],
+      "interpretation": "Identified Z_2 (zigzag, 2 Li4) as most stable configuration.",
+      "prov": ["Computational Details", "Table 1"]
+    },
+    {
+      "method": "CI-NEB",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li+ migration barrier along c (Z_2)",
+          "value": 0.23,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li+ migration barrier along c (P_c_2)",
+          "value": 0.27,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li+ migration barrier along c (P_a_1)",
+          "value": 0.30,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li+ migration barrier in ab (Z_2)",
+          "value": 0.37,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li+ migration barrier in ab (P_c_2)",
+          "value": 0.27,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li+ migration barrier in ab (P_a_1)",
+          "value": 0.24,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Migration is slightly easier along c-axis; overall weak anisotropy.",
+      "prov": ["Figure 4", "Section 3.3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Thermodynamic calculation",
+        "results": [
+          {
+            "equation": "ΔS_total = ΔS_con + ΔS_mix + ΔS_vib",
+            "value": 1.16,
+            "unit": "meV f.u.^-1 K^-1"
+          },
+          {
+            "metric": "Stability temperature threshold",
+            "value": 276,
+            "unit": "K",
+            "notes": "Temperature required to counter decomposition reaction energy"
+          }
+        ],
+        "prov": ["Section 3.2"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-11T00:00:00Z",
+    "source_file": "provided_text",
+    "processing_time": null
+  }
+}

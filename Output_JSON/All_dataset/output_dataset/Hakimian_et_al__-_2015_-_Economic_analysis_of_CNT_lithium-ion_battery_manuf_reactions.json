@@ -1,0 +1,591 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Economic analysis of CNT lithium-ion battery manufacturing",
+    "doi": "10.1039/c5en00078",
+    "authors": [
+      "A. Hakimian",
+      "S. Kamarthi",
+      "S. Erbis",
+      "K. M. Abraham",
+      "T. P. Cullinane",
+      "J. A. Isaacs"
+    ],
+    "journal": "Environmental Science: Nano",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "lithium-ion battery",
+      "MWCNT",
+      "manufacturing",
+      "nanomaterials"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "MWCNT NMC lithium-ion battery (satellite application)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Table 9", "Text Page 468"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "MWCNT NMC lithium-ion battery (portable computer application)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Table 11", "Text Page 470"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Multi-walled carbon nanotubes",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "nanomaterial"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Assumed 1 % of total battery weight",
+      "prov": ["Table 4", "Text Page 466"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium nickel manganese cobalt oxide (NMC)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Table 4"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Polyvinylidene fluoride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Text Page 465"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "N-Methyl-2-pyrrolidone",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Text Page 465"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Text Page 465"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "anode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Table 4"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Copper",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "anode current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Table 4"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Aluminum",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "cathode current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Table 4"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Polyethylene",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "separator",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Table 4"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Organic carbonate solvent with lithium salt electrolyte",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "mixture"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Table 4"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Prepare cathode slurry by mixing active materials with binder and solvent",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_2",
+                "chem_1",
+                "chem_3",
+                "chem_5",
+                "chem_4"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 2", "Text Page 465"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Coat slurry onto aluminum foil and dry",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["step_1 product", "chem_8"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Fig. 2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calendaring to desired thickness and density",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Fig. 2"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Cut electrodes to proper size",
+        "operations": [
+          {
+            "action": "cut",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Fig. 2"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Cell assembly (stack or wind electrodes inside container)",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Fig. 2"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Electrolyte filling",
+        "operations": [
+          {
+            "action": "fill",
+            "parameters": {
+              "inputs": ["chem_10"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Fig. 2"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Sealing and welding of cells",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "weld",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Fig. 2"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Forming and testing (initial charge–discharge cycles)",
+        "operations": [
+          {
+            "action": "charge_discharge_cycles",
+            "parameters": {
+              "cycles": 2
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Cycle time reported as 24–72 h; mid-value 24 h stored"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Text Page 469"]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Final assembly and quality control",
+        "operations": [
+          {
+            "action": "inspect",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Fig. 2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mixing of active materials, binder and solvent"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Coating onto current collectors followed by drying"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Calendaring to achieve target thickness"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Cutting electrodes"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Cell assembly"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Electrolyte filling"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Sealing & welding"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Forming (2–3 charge/discharge cycles)"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Final inspection and assembly"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No explicit quantitative amounts for chemicals in mixing step",
+        "excerpt": "The active materials (NMC and MWCNT) are mixed with a binder and carbon black to make a cathode paste."
+      },
+      {
+        "issue": "Forming cycle duration range unclear",
+        "excerpt": "forming and testing step takes about 24 to 72 hours depending on the desired battery cycle life"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Battery performance testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Nominal capacity",
+          "value": 30,
+          "unit": "Ah"
+        },
+        {
+          "metric": "Specific energy",
+          "value": 125,
+          "unit": "Wh kg-1"
+        },
+        {
+          "metric": "Maximum specific power",
+          "value": 1800,
+          "unit": "W kg-1"
+        },
+        {
+          "metric": "Cycle life",
+          "value": 800,
+          "unit": "cycles"
+        },
+        {
+          "metric": "Nominal voltage",
+          "value": 3.6,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 9"]
+    },
+    {
+      "method": "Battery performance testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Nominal capacity",
+          "value": 2.5,
+          "unit": "Ah"
+        },
+        {
+          "metric": "Specific energy",
+          "value": 220,
+          "unit": "Wh kg-1"
+        },
+        {
+          "metric": "Maximum specific power",
+          "value": 200,
+          "unit": "W kg-1"
+        },
+        {
+          "metric": "Cycle life",
+          "value": 800,
+          "unit": "cycles"
+        },
+        {
+          "metric": "Nominal voltage",
+          "value": 3.6,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 11"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 800
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T14:30:00Z",
+    "source_file": "input_text_chunk",
+    "processing_time": null
+  }
+}

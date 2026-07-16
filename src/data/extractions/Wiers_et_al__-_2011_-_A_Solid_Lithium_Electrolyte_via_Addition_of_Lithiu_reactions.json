@@ -1,0 +1,524 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A Solid Lithium Electrolyte via Addition of Lithium Isopropoxide to a Metal–Organic Framework with Open Metal Sites",
+    "doi": "10.1021/ja205827z",
+    "authors": [
+      "Brian M. Wiers",
+      "Maw-Lin Foo",
+      "Nitash P. Balsara",
+      "Jeffrey R. Long"
+    ],
+    "journal": "Journal of the American Chemical Society",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": [
+      "solid electrolyte",
+      "MOF",
+      "lithium ion conductivity"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Mg2(dobdc)·0.35LiOiPr·0.25LiBF4·3EC·3DEC",
+      "molecular_formula": "",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Page 14523"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Mg2(dobdc)·0.06LiOiPr·xEC/DEC",
+      "molecular_formula": "",
+      "intended_role": "comparative electrolyte",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Mg2(dobdc)·0.05LiBF4·xEC/DEC",
+      "molecular_formula": "",
+      "intended_role": "comparative electrolyte",
+      "prov": ["Table 1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Mg2(dobdc)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal–organic framework"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "activated prior to grafting",
+      "prov": ["Page 14523"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "lithium isopropoxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "grafting reagent",
+        "category": "organolithium"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 14523"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "hexanes",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 14523"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "lithium tetrafluoroborate",
+      "molecular_formula": "LiBF4",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1 M in EC/DEC",
+      "prov": ["Page 14522"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "ethylene carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "mixed 1:1 with DEC",
+      "prov": ["Page 14522"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "diethyl carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "mixed 1:1 with EC",
+      "prov": ["Page 14522"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Activation of Mg2(dobdc) by heating under vacuum to remove all solvent.",
+        "operations": [
+          {
+            "action": "heat_under_vacuum",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "temperature not specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 14523"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Soaking activated Mg2(dobdc) in a hot solution of LiOiPr in hexanes.",
+        "operations": [
+          {
+            "action": "soak",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": 20160,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "solution described as hot; exact temperature not provided"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 14523"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Washing the LiOiPr-grafted solid with hexanes.",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 14523"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Drying the washed solid under reduced pressure.",
+        "operations": [
+          {
+            "action": "dry_under_vacuum",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 14523"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Soaking the LiOiPr-grafted material in a 1 M solution of LiBF4 in 1:1 EC/DEC.",
+        "operations": [
+          {
+            "action": "soak",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5", "chem_6"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 14523"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Drying to obtain a free-flowing powder of Mg2(dobdc)·0.35LiOiPr·0.25LiBF4·3EC·3DEC, which is then pressed into pellets.",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "press",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 300,
+              "unit": "K"
+            },
+            "notes": "pressed into pellets for conductivity measurements"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 14523"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Activation of MOF by heating under vacuum"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Grafting with lithium isopropoxide"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Washing grafted solid with hexanes"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Drying under reduced pressure"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Soaking in LiBF4 electrolyte solution"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Final drying and pellet pressing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Activation temperature/time not specified",
+        "excerpt": "Mg2(dobdc) was activated by heating under vacuum to remove all solvent"
+      },
+      {
+        "issue": "Soaking temperature for LiOiPr grafting described only as 'hot'",
+        "excerpt": "soaking for two weeks with a hot solution of LiOiPr in hexanes"
+      },
+      {
+        "issue": "Duration of soaking in LiBF4 solution not specified",
+        "excerpt": "Subsequent soaking of the material in a 1 M solution of LiBF4 in 1:1 EC/DEC resulted in uptake..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Infrared Spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "C–H stretch",
+          "value": 3200,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "C–O stretch",
+          "value": 1080,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "Mg–O stretch broadening",
+          "value": 450,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Indicates successful grafting of LiOiPr.",
+      "prov": ["Page 14523"]
+    },
+    {
+      "method": "Powder X-ray Diffraction",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "framework integrity",
+          "value": "preserved",
+          "unit": ""
+        }
+      ],
+      "interpretation": "MOF structure retained after modifications.",
+      "prov": ["Page 14523"]
+    },
+    {
+      "method": "Scanning Electron Microscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "film morphology",
+          "value": "polycrystalline thin films with channels normal to substrate",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 14524"]
+    },
+    {
+      "method": "AC Impedance Spectroscopy",
+      "parameters": {
+        "temperature": 300,
+        "unit": "K"
+      },
+      "results": [
+        {
+          "metric": "conductivity (pellet, final product)",
+          "value": 3.1e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "conductivity range (pellet, final product)",
+          "value": "0.9–4.4e-4",
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "conductivity (thin film)",
+          "value": 5.5e-5,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy (final product)",
+          "value": 0.15,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (LiBF4-only sample)",
+          "value": 0.31,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (LiOiPr-only sample)",
+          "value": 0.14,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Classified as superionic conductor.",
+      "prov": ["Table 1", "Figure 3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis of variable-temperature conductivity",
+        "results": [
+          {
+            "equation": "σ = σ0 exp(−Ea/kT)",
+            "value": 0.15,
+            "unit": "eV"
+          }
+        ]
+      },
+      {
+        "method_name": "Molar conductivity comparison",
+        "results": [
+          {
+            "metric": "ΛM (LiBF4 only)",
+            "value": 9.6e-6,
+            "unit": "S·cm-1·M-1"
+          },
+          {
+            "metric": "ΛM (LiOiPr only)",
+            "value": 5.2e-5,
+            "unit": "S·cm-1·M-1"
+          },
+          {
+            "metric": "ΛM (LiOiPr + LiBF4)",
+            "value": 2.4e-4,
+            "unit": "S·cm-1·M-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T00:00:00Z",
+    "source_file": "text_provided_by_user",
+    "processing_time": null
+  }
+}

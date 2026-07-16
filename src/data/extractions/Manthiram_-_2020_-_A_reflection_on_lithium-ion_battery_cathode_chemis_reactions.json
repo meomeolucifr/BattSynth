@@ -1,0 +1,225 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A reflection on lithium-ion battery cathode chemistry",
+    "doi": "10.1038/s41467-020-15355-0",
+    "authors": ["Arumugam Manthiram"],
+    "journal": "Nature Communications",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["lithium-ion batteries", "cathode chemistry"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "cathode material",
+      "prov": ["Text Page 3"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiMn2O4",
+      "molecular_formula": "LiMn2O4",
+      "intended_role": "cathode material",
+      "prov": ["Text Page 4"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiMn1.5Ni0.5O4",
+      "molecular_formula": "LiMn1.5Ni0.5O4",
+      "intended_role": "cathode material",
+      "prov": ["Text Page 5"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Fe2(SO4)3",
+      "molecular_formula": "Fe2(SO4)3",
+      "intended_role": "cathode material",
+      "prov": ["Text Page 5"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text Page 3"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiMn2O4",
+      "molecular_formula": "LiMn2O4",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text Page 4"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiMn1.5Ni0.5O4",
+      "molecular_formula": "LiMn1.5Ni0.5O4",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text Page 5"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Fe2(SO4)3",
+      "molecular_formula": "Fe2(SO4)3",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text Page 5"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Approximate capacity values denoted by '~'. Exact values not provided.",
+        "excerpt": "practical capacity of LiCoO2 is limited to ~140 mA h g–1"
+      },
+      {
+        "issue": "Approximate capacity values denoted by '~'.",
+        "excerpt": "LiMn2O4 ... practical capacity of <130 mA h g–1"
+      },
+      {
+        "issue": "Approximate capacity and voltage values denoted by '~'.",
+        "excerpt": "LiMn1.5Ni0.5O4 operates at ~4.7 V with a reversible capacity of ~135 mA h g–1"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "practical capacity",
+          "value": 140,
+          "unit": "mAh g-1",
+          "associated_target": "target_1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Text Page 3"]
+    },
+    {
+      "method": "electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "practical capacity",
+          "value": 130,
+          "unit": "mAh g-1",
+          "associated_target": "target_2",
+          "notes": "Reported as <130 mA h g–1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Text Page 4"]
+    },
+    {
+      "method": "electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "reversible capacity",
+          "value": 135,
+          "unit": "mAh g-1",
+          "associated_target": "target_3"
+        },
+        {
+          "metric": "operating voltage",
+          "value": 4.7,
+          "unit": "V",
+          "associated_target": "target_3"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Text Page 5"]
+    },
+    {
+      "method": "electrochemical testing",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "operating voltage",
+          "value": 3.6,
+          "unit": "V",
+          "associated_target": "target_4"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Text Page 5"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T20:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

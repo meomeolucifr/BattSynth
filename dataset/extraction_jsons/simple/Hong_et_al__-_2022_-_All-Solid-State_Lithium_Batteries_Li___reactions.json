@@ -1,0 +1,445 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "All-Solid-State Lithium Batteries: Li+-Conducting Ionomer Binder for Dry-Processed Composite Cathodes",
+    "doi": "10.1021/acsenergylett.1c02756",
+    "authors": [
+      "Seung-Bo Hong",
+      "Young-Jun Lee",
+      "Un-Hyuck Kim",
+      "Cheol Bak",
+      "Yong Min Lee",
+      "Woosuk Cho",
+      "Hoe Jin Hah",
+      "Yang-Kook Sun",
+      "Dong-Won Kim"
+    ],
+    "journal": "ACS Energy Letters",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "all-solid-state battery",
+      "composite cathode",
+      "ionomer binder",
+      "sulfide electrolyte"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "NCM/Li6PS5Cl/Carbon nanofiber/Ionomer composite cathode",
+      "molecular_formula": "LiNi0.7Co0.1Mn0.2O2/Li6PS5Cl",
+      "intended_role": "composite cathode (product)",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "NCM/Li6PS5Cl/Carbon nanofiber/PTFE composite cathode",
+      "molecular_formula": "LiNi0.7Co0.1Mn0.2O2/Li6PS5Cl",
+      "intended_role": "composite cathode (comparison product)",
+      "prov": [
+        "Main text"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi0.7Co0.1Mn0.2O2",
+      "molecular_formula": "LiNi0.7Co0.1Mn0.2O2",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "70 wt % of total solids in composite cathode (mass ratio 70:25:3:2)",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "25 wt % of total solids in composite cathode; also used with binder at 25:2 weight ratio for conductivity study",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Carbon nanofiber",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "3 wt % of total solids in composite cathode",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Poly(tetrafluoroethylene-co-perfluoro(3-oxa-4-pentenesulfonic acid)) lithium salt",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "ionomer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2 wt % of total solids in composite cathode; referred to as 'ionomer' in text",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Polytetrafluoroethylene",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2 wt % of total solids in comparison composite cathode",
+      "prov": [
+        "Main text"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dry mixing of powders for composite cathode",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4"
+              ],
+              "mass_ratio": "70:25:3:2",
+              "solvent": "none"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Solvent-free (dry) process; identical procedure using chem_5 instead of chem_4 for PTFE-based cathode"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Main text"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Cold pressing to form sheet-type composite cathode",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 430,
+                "unit": "Ma"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Cold pressing facilitated by ductility of Li6PS5Cl; unit 'Ma' as reported"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 430,
+            "unit": "Ma"
+          }
+        },
+        "prov": [
+          "Main text"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dry mixing of active material, solid electrolyte, carbon nanofiber, and binder at 70:25:3:2 weight ratio"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Cold pressing of mixed powders at 430 Ma to obtain composite cathode sheet"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear pressure unit 'Ma' in pressing step",
+        "excerpt": "\"pressing at 430 Ma\""
+      },
+      {
+        "issue": "Mixing time and temperature not specified",
+        "excerpt": "\"Composite cathodes were prepared by mixing...\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "FT-IR spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "peak position",
+          "value": 970,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "peak position",
+          "value": 1060,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "C–O–C and SO3− groups confirm ionomer structure",
+      "prov": [
+        "Figure S1b"
+      ]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "compound": "Li6PS5Cl",
+          "value": 4.1,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "ionic conductivity",
+          "compound": "Li6PS5Cl–PTFE composite",
+          "value": 2.9,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "ionic conductivity",
+          "compound": "dry ionomer",
+          "value": 1.6e-05,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Ionomer improves conductivity relative to PTFE composite",
+      "prov": [
+        "Figure S1c",
+        "Main text"
+      ]
+    },
+    {
+      "method": "7Li solid-state MAS NMR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "chemical shift",
+          "value": 2.5,
+          "unit": "ppm"
+        },
+        {
+          "metric": "chemical shift",
+          "value": -0.2,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "Distinct Li environments for Li6PS5Cl and ionomer; peak intensity decrease after cycling indicates Li exchange",
+      "prov": [
+        "Figure S1d"
+      ]
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electrochemical stability window",
+          "value": 3.9,
+          "unit": "V vs Li–In"
+        }
+      ],
+      "interpretation": "Both PTFE and ionomer stable up to 4.5 V vs Li/Li+",
+      "prov": [
+        "Figure S5"
+      ]
+    },
+    {
+      "method": "SEM (cross-section)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interfacial contact quality",
+          "value": "good",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Ionomer binder yields uniform distribution without fibrous structures",
+      "prov": [
+        "Figure S8a"
+      ]
+    },
+    {
+      "method": "TOF-SIMS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "SO3− distribution",
+          "value": "homogeneous",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms uniform ionomer dispersion",
+      "prov": [
+        "Figure S9"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic cycling",
+        "results": [
+          {
+            "description": "Discharge capacity at 0.1 C",
+            "value": 180.7,
+            "unit": "mAh g-1"
+          },
+          {
+            "description": "Areal capacity at 0.1 C",
+            "value": 3.05,
+            "unit": "mAh cm-2"
+          },
+          {
+            "description": "Capacity retention after 300 cycles at 0.5 C",
+            "value": 90,
+            "unit": "%"
+          },
+          {
+            "description": "Discharge capacity at 2.0 C",
+            "value": 123.4,
+            "unit": "mAh g-1"
+          }
+        ],
+        "prov": [
+          "Figure 1a–f",
+          "Main text"
+        ]
+      },
+      {
+        "method_name": "DC internal resistance (DC-IR)",
+        "results": [
+          {
+            "description": "Lower slope in ΔV–i plots for ionomer cathode indicates reduced internal resistance",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": [
+          "Figure 2c,d"
+        ]
+      },
+      {
+        "method_name": "GITT",
+        "results": [
+          {
+            "description": "Relative active surface area of NCM with ionomer binder",
+            "value": 2.17,
+            "unit": "S (relative units)"
+          }
+        ],
+        "prov": [
+          "Figure 2f"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 180.7,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 300
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-30T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

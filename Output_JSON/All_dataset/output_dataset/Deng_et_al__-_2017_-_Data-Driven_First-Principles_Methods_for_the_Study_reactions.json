@@ -1,0 +1,214 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Data-Driven First-Principles Methods for the Study and Design of Alkali Superionic Conductors",
+    "doi": "10.1021/acs.chemmater.6b02648",
+    "authors": [
+      "Zhi Deng",
+      "Zhuoying Zhu",
+      "Iek-Heng Chu",
+      "Shyue Ping Ong"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "alkali superionic conductor",
+      "DFT",
+      "AIMD",
+      "Li6PS5Cl"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "material studied",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li6.25PS5.25Cl0.75",
+      "molecular_formula": "Li6.25P1S5.25Cl0.75",
+      "intended_role": "material studied",
+      "prov": [
+        "Main text"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li6.25PS5.25Cl0.75",
+      "molecular_formula": "Li6.25P1S5.25Cl0.75",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Li excess variant",
+      "prov": [
+        "Main text"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Predicted conductivity differs from experimental by one order of magnitude; reason unclear.",
+        "excerpt": "The predicted conductivity of 14 mS/cm for Li excess Li6.25PS5.25Cl0.75 is about an order of magnitude higher than experimentally observed values of 1.1 mS/cm."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT structure optimization",
+      "parameters": {
+        "functional": "PBE-GGA",
+        "lattice_parameter_a": {
+          "value": 10.1,
+          "unit": "Å"
+        }
+      },
+      "results": [
+        {
+          "metric": "lattice parameter expansion vs experiment",
+          "value": 2.5,
+          "unit": "%",
+          "notes": "GGA underbinding"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Main text, Structure Generation and Relaxation section"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "0 K Phase Diagram (DFT)",
+        "results": [
+          {
+            "compound": "Li6PS5Cl",
+            "metric": "Ehull",
+            "value": 21,
+            "unit": "meV atom-1",
+            "prov": "Figure 3"
+          },
+          {
+            "compound": "Li6.25PS5.25Cl0.75",
+            "metric": "Ehull",
+            "value": 27,
+            "unit": "meV atom-1",
+            "prov": "Main text, Diffusivity section"
+          }
+        ]
+      },
+      {
+        "method_name": "Electrochemical Stability (Grand Potential)",
+        "results": [
+          {
+            "metric": "Intrinsic stability voltage window",
+            "value": "1.7–2.3",
+            "unit": "V vs Li/Li+",
+            "prov": "Figure 4"
+          }
+        ]
+      },
+      {
+        "method_name": "AIMD Arrhenius Analysis",
+        "results": [
+          {
+            "compound": "Li6PS5Cl",
+            "metric": "Activation energy",
+            "value": 524,
+            "unit": "meV",
+            "prov": "Figure 6"
+          },
+          {
+            "compound": "Li6PS5Cl",
+            "metric": "Predicted conductivity at 300 K",
+            "value": 0.002,
+            "unit": "mS cm-1",
+            "prov": "Figure 6"
+          },
+          {
+            "compound": "Li6.25PS5.25Cl0.75",
+            "metric": "Activation energy",
+            "value": 211,
+            "unit": "meV",
+            "prov": "Figure 6"
+          },
+          {
+            "compound": "Li6.25PS5.25Cl0.75",
+            "metric": "Predicted conductivity at 300 K",
+            "value": 14,
+            "unit": "mS cm-1",
+            "prov": "Figure 6"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T21:28:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

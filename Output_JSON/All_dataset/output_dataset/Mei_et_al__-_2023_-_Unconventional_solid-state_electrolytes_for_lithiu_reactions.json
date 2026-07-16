@@ -1,0 +1,409 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Unconventional solid-state electrolytes for lithium-based batteries: Recent advances and challenges",
+    "doi": "10.1016/j.jpowsour.2022.232257",
+    "authors": [
+      "Han-xin Mei",
+      "Paolo Piccardo",
+      "Alessandro Cingolani",
+      "Roberto Spotorno"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["solid-state electrolyte", "halide", "Li3InCl6", "Li2ZrCl6"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3InCl6",
+      "molecular_formula": "Li3InCl6",
+      "intended_role": "solid_state_electrolyte",
+      "prov": ["Page 11"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li2ZrCl6",
+      "molecular_formula": "Li2ZrCl6",
+      "intended_role": "solid_state_electrolyte",
+      "prov": ["Page 15"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 11", "Page 12"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "InCl3",
+      "molecular_formula": "InCl3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 11"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 11"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li3InCl6",
+      "molecular_formula": "Li3InCl6",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 11"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "ZrCl4 (implied precursor)",
+      "molecular_formula": "ZrCl4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 15"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "LIC_step_1",
+        "description": "Water-mediated dissolution of LiCl and InCl3",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Forms hydrated intermediate Li3InCl6·xH2O"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 11"]
+      },
+      {
+        "step_id": "LIC_step_2",
+        "description": "Vacuum dehydration to yield Li3InCl6",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["LIC_step_1"]
+            },
+            "temperature": {
+              "value": 373,
+              "unit": "K",
+              "notes": "approximately 100 °C"
+            },
+            "pressure": {
+              "value": null,
+              "unit": "bar",
+              "notes": "vacuum"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 11"]
+      },
+      {
+        "step_id": "LIC_mech_1",
+        "description": "Mechanochemical synthesis of Li3InCl6",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": 2160,
+              "unit": "min",
+              "notes": "36 h at 500 rpm"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 10"]
+      },
+      {
+        "step_id": "LIC_mech_2",
+        "description": "Annealing milled powder",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["LIC_mech_1"]
+            },
+            "temperature": {
+              "value": 533,
+              "unit": "K",
+              "notes": "260 °C"
+            },
+            "pressure": {
+              "value": 1e-3,
+              "unit": "bar",
+              "notes": "10 Pa vacuum"
+            },
+            "duration": {
+              "value": 300,
+              "unit": "min",
+              "notes": "5 h"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": 1e-3,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 10"]
+      },
+      {
+        "step_id": "LZC_step_1",
+        "description": "Ball-milling synthesis of Li2ZrCl6",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_5"]
+            },
+            "duration": {
+              "value": 600,
+              "unit": "min",
+              "notes": "10 h at 600 rpm"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "No subsequent annealing required"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 15"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "LIC_step_1",
+        "description": "Dissolve LiCl and InCl3 in water to form hydrated precursor"
+      },
+      {
+        "step_ref": "LIC_step_2",
+        "description": "Vacuum dry at ~100 °C to obtain anhydrous Li3InCl6"
+      },
+      {
+        "step_ref": "LIC_mech_1",
+        "description": "Alternative route: ball-mill LiCl and InCl3 for 36 h"
+      },
+      {
+        "step_ref": "LIC_mech_2",
+        "description": "Anneal milled powder at 260 °C under vacuum 5 h"
+      },
+      {
+        "step_ref": "LZC_step_1",
+        "description": "Mechanochemical synthesis of Li2ZrCl6 via 10 h milling"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing reagent quantities",
+        "excerpt": "LiCl and InCl3 were used, but amounts not specified (Page 11)"
+      },
+      {
+        "issue": "Unspecified milling atmosphere",
+        "excerpt": "ball milling at 500 rpm, atmosphere not stated (Page 10)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity (pre-anneal)",
+          "value": 0.84,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "ionic conductivity (post-anneal)",
+          "value": 1.49,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 10"]
+    },
+    {
+      "method": "Linear Sweep Voltammetry",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electrochemical stability window",
+          "value": "2.38–4.26",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 10"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity of Li2ZrCl6",
+          "value": 0.4,
+          "unit": "mS cm-1",
+          "notes": "30 °C"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 15"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Battery performance testing",
+        "results": [
+          {
+            "metric": "initial discharge capacity",
+            "value": 127,
+            "unit": "mAh g-1",
+            "notes": "LCO/LIC/In cell at 0.1C"
+          },
+          {
+            "metric": "capacity retention after 100 cycles",
+            "value": 74.8,
+            "unit": "%",
+            "notes": "LCO/LIC/In cell"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 127,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-22T12:00:00Z",
+    "source_file": "Provided_text_chunk",
+    "processing_time": 120
+  }
+}

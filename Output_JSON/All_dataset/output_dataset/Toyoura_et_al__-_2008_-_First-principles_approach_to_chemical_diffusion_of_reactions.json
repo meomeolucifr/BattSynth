@@ -1,0 +1,188 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "First-principles approach to chemical diffusion of lithium atoms in a graphite intercalation compound",
+    "doi": "10.1103/PhysRevB.78.214303",
+    "authors": [
+      "Kazuaki Toyoura",
+      "Yukinori Koyama",
+      "Akihide Kuwabara",
+      "Fumiyasu Oba",
+      "Isao Tanaka"
+    ],
+    "journal": "Physical Review B",
+    "year": 2008
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["first-principles", "diffusion", "graphite intercalation compound", "DFT", "NEB", "phonon"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiC6",
+      "molecular_formula": "LiC6",
+      "intended_role": "model system",
+      "prov": ["Introduction", "Methodology"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methodology"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Carbon",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methodology"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "",
+        "description": "No experimental synthesis; computational evaluation of Li diffusion in LiC6."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (DFT, PAW)",
+      "parameters": {
+        "functional": "LDA",
+        "plane_wave_cutoff": "350 eV",
+        "supercell": "3×3×2 (18 Li, 108 C atoms)",
+        "k_point_mesh": "3×3×6 Monkhorst-Pack",
+        "convergence_force": "0.02 eV Å-1 (NEB), 1e-5 eV Å-1 (phonon)"
+      },
+      "results": [
+        {
+          "metric": "potential barrier (interstitial mechanism)",
+          "value": 0.48,
+          "unit": "eV"
+        },
+        {
+          "metric": "potential barrier (vacancy mechanism – jump V1)",
+          "value": 0.47,
+          "unit": "eV"
+        },
+        {
+          "metric": "potential barrier (vacancy mechanism – jump V2)",
+          "value": 0.26,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Methodology", "Results"]
+    },
+    {
+      "method": "Phonon calculations (frozen phonon)",
+      "parameters": {
+        "displacement": "0.01 Å"
+      },
+      "results": [
+        {
+          "metric": "zero-point energy difference (interstitial jump)",
+          "value": 0.013,
+          "unit": "eV"
+        },
+        {
+          "metric": "zero-point energy difference (vacancy jumps)",
+          "value": 0.012,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Transition State Theory (quantum statistics)",
+        "results": [
+          {
+            "equation": "",
+            "value": 1e-11,
+            "unit": "cm2 s-1",
+            "condition": "Diffusion coefficient at 298 K, interstitial mechanism"
+          },
+          {
+            "equation": "",
+            "value": 1e-10,
+            "unit": "cm2 s-1",
+            "condition": "Diffusion coefficient at 298 K, vacancy mechanism"
+          },
+          {
+            "equation": "",
+            "value": 0.51,
+            "unit": "eV",
+            "condition": "Apparent activation energy (interstitial mechanism, 100–1000 K)"
+          },
+          {
+            "equation": "",
+            "value": 0.49,
+            "unit": "eV",
+            "condition": "Apparent activation energy (vacancy mechanism, 100–1000 K)"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

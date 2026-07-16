@@ -1,0 +1,421 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Comparison of reduction products from graphite oxide and graphene oxide for anode applications in lithium-ion batteries and sodium-ion batteries",
+    "doi": "10.1039/c6nr07650e",
+    "authors": ["Yige Sun", "Jie Tang", "Kun Zhang", "Jinshi Yuan", "Jing Li", "Da-Ming Zhu", "Kiyoshi Ozawa", "Lu-Chang Qin"],
+    "journal": "Nanoscale",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["graphene", "graphite oxide", "graphene oxide", "lithium-ion battery", "sodium-ion battery", "anode material"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "parallel oriented graphene (POG)",
+      "molecular_formula": "",
+      "intended_role": "anode material",
+      "prov": ["Section 2.1", "Section 3"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "randomly oriented graphene (ROG)",
+      "molecular_formula": "",
+      "intended_role": "anode material",
+      "prov": ["Section 2.2", "Section 3"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "graphite flakes",
+      "molecular_formula": "C",
+      "ontology": {"role": "precursor", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "sodium nitrate",
+      "molecular_formula": "NaNO3",
+      "ontology": {"role": "additive", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "sulfuric acid",
+      "molecular_formula": "H2SO4",
+      "ontology": {"role": "solvent", "category": "acid"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "added in ice-water bath",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "potassium permanganate",
+      "molecular_formula": "KMnO4",
+      "ontology": {"role": "oxidant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "hydrogen peroxide",
+      "molecular_formula": "H2O2",
+      "ontology": {"role": "reductant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "used to reduce excess KMnO4",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "",
+      "prov": ["Sections 2.1, 2.2"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "hydrazine monohydrate",
+      "molecular_formula": "N2H4·H2O",
+      "ontology": {"role": "reductant", "category": "organic"},
+      "amount": {"value": 3, "unit": "µL"},
+      "notes": "per 3 mg of (graphite or graphene) oxide",
+      "prov": ["Sections 2.1, 2.2"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "used for electrode fabrication",
+      "prov": ["Section 2.3"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Oxidation of graphite to graphite oxide via modified Hummers method",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_1", "chem_2"]},
+            "notes": "graphite flakes and NaNO3 mixed"
+          },
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_3"]},
+            "temperature": {"value": 273.15, "unit": "K"},
+            "notes": "H2SO4 added in ice-water bath"
+          },
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_4"]},
+            "notes": ""
+          },
+          {
+            "action": "stir",
+            "duration": {"value": 720, "unit": "min"},
+            "notes": ""
+          },
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_6"]},
+            "notes": "deionized water added"
+          },
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_5"]},
+            "notes": "H2O2 added to quench excess KMnO4"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Reduction of graphite oxide to parallel oriented graphene (POG)",
+        "operations": [
+          {
+            "action": "dilute",
+            "parameters": {"inputs": ["graphite oxide"], "ratio": "0.5 mg/mL"},
+            "notes": "using chem_6"
+          },
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_7"], "amount": {"value": 3, "unit": "µL"}},
+            "notes": "3 µL hydrazine per 3 mg graphite oxide"
+          },
+          {
+            "action": "heat",
+            "temperature": {"value": 371.15, "unit": "K"},
+            "duration": {"value": 1440, "unit": "min"},
+            "notes": "continuous stirring"
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "wash",
+            "parameters": {"inputs": ["chem_6"], "repetitions": 5},
+            "notes": "until pH 7"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Exfoliation of graphite oxide to graphene oxide",
+        "operations": [
+          {
+            "action": "sonicate",
+            "duration": {"value": 30, "unit": "min"},
+            "notes": "in chem_6"
+          },
+          {
+            "action": "centrifuge",
+            "parameters": {"speed": "35000 rpm"},
+            "repetitions": 5,
+            "notes": ""
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.2"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Reduction of graphene oxide to randomly oriented graphene (ROG)",
+        "operations": [
+          {
+            "action": "prepare_solution",
+            "parameters": {"concentration": "0.5 mg/mL"},
+            "notes": "graphene oxide in water"
+          },
+          {
+            "action": "add",
+            "parameters": {"inputs": ["chem_7"], "amount": {"value": 3, "unit": "µL"}},
+            "notes": "per 3 mg graphene oxide"
+          },
+          {
+            "action": "reflux",
+            "temperature": {"value": 371.15, "unit": "K"},
+            "duration": {"value": 1440, "unit": "min"},
+            "notes": ""
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "wash",
+            "parameters": {"inputs": ["chem_6"]},
+            "notes": "same as step 2"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.2"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Fabrication of binder-free graphene electrodes",
+        "operations": [
+          {
+            "action": "disperse",
+            "parameters": {"inputs": ["target_1/target_2", "chem_8"]},
+            "notes": "graphene powder in ethanol"
+          },
+          {
+            "action": "filter",
+            "parameters": {"filter_material": "PTFE 0.2 µm"},
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "duration": {"value": 1440, "unit": "min"},
+            "pressure": {"value": null, "unit": "bar"},
+            "notes": "vacuum"
+          },
+          {
+            "action": "cut",
+            "parameters": {"shape": "disk", "diameter": "15 mm"},
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "temperature": {"value": 383.15, "unit": "K"},
+            "duration": {"value": 720, "unit": "min"},
+            "notes": "vacuum"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Oxidation of graphite to graphite oxide"},
+      {"step_ref": "step_2", "description": "Hydrazine reduction to obtain POG"},
+      {"step_ref": "step_3", "description": "Sonication/centrifugation to form graphene oxide"},
+      {"step_ref": "step_4", "description": "Hydrazine reduction to obtain ROG"},
+      {"step_ref": "step_5", "description": "Electrode fabrication from POG or ROG"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact amounts of reagents (graphite, NaNO3, H2SO4, KMnO4, H2O2) not specified",
+        "excerpt": "In our study, graphite oxide was prepared using a modified Hummer’s method..."
+      },
+      {
+        "issue": "Pressure conditions during heating/reflux not stated",
+        "excerpt": "hydrazine monohydrate ... was added ... followed by reflux at 98 °C for 24 hours"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [{"metric": "domain size", "value": 10, "unit": "nm"}],
+      "interpretation": "POG shows parallel sheet domains; ROG shows random orientation",
+      "prov": ["Fig. 2(a,b)"]
+    },
+    {
+      "method": "HRTEM",
+      "parameters": {},
+      "results": [
+        {"metric": "interlayer spacing (POG)", "value": 0.37, "unit": "nm"},
+        {"metric": "interlayer spacing (ROG)", "value": 0.342, "unit": "nm"}
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 2(c-f)"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {"metric": "d002 POG before Li⁺", "value": 0.374, "unit": "nm"},
+        {"metric": "d002 POG after Li⁺", "value": 0.425, "unit": "nm"},
+        {"metric": "d002 ROG before Li⁺", "value": 0.342, "unit": "nm"},
+        {"metric": "d002 ROG after Li⁺", "value": 0.415, "unit": "nm"}
+      ],
+      "interpretation": "Interlayer expansion upon lithiation",
+      "prov": ["Fig. 6(c,d)"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {"metric": "C/O ratio POG", "value": 3.11, "unit": ""},
+        {"metric": "C/O ratio ROG", "value": 8.43, "unit": ""}
+      ],
+      "interpretation": "ROG more reduced than POG",
+      "prov": ["Fig. 3", "Fig. S2"]
+    },
+    {
+      "method": "Raman",
+      "parameters": {},
+      "results": [
+        {"metric": "ID/IG POG", "value": 0.98, "unit": ""},
+        {"metric": "ID/IG ROG", "value": 1.16, "unit": ""}
+      ],
+      "interpretation": "ROG contains more defects",
+      "prov": ["Fig. 4"]
+    },
+    {
+      "method": "BET N2 adsorption",
+      "parameters": {"temperature": {"value": 77, "unit": "K"}},
+      "results": [
+        {"metric": "surface area POG", "value": 523, "unit": "m2 g-1"},
+        {"metric": "surface area ROG", "value": 713, "unit": "m2 g-1"},
+        {"metric": "pore size POG", "value": 3.5, "unit": "nm"},
+        {"metric": "pore size ROG", "value": 3.7, "unit": "nm"}
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 5"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {"state_of_charge": "50%"},
+      "results": [
+        {"metric": "Rct POG (Li⁺)", "value": 67.92, "unit": "Ω"},
+        {"metric": "Rct ROG (Li⁺)", "value": 312.08, "unit": "Ω"},
+        {"metric": "Li⁺ diffusion coefficient POG", "value": 2.12e-11, "unit": "cm2 s-1"},
+        {"metric": "Li⁺ diffusion coefficient ROG", "value": 5.5e-12, "unit": "cm2 s-1"},
+        {"metric": "exchange current POG (Li⁺)", "value": 9.28e-4, "unit": "A cm-2"},
+        {"metric": "exchange current ROG (Li⁺)", "value": 1.48e-4, "unit": "A cm-2"},
+        {"metric": "Rct POG (Na⁺)", "value": 222.40, "unit": "Ω"},
+        {"metric": "Rct ROG (Na⁺)", "value": 428.93, "unit": "Ω"},
+        {"metric": "Na⁺ diffusion coefficient POG", "value": 5.3e-12, "unit": "cm2 s-1"},
+        {"metric": "Na⁺ diffusion coefficient ROG", "value": 8.3e-13, "unit": "cm2 s-1"}
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 11", "Fig. 12", "Table 1"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic cycling (Li-ion)",
+        "results": [
+          {"metric": "specific capacity POG at 50 mA g-1 (77th cycle)", "value": 917, "unit": "mAh g-1"},
+          {"metric": "rate capacity POG 50 mA g-1", "value": 733, "unit": "mAh g-1"},
+          {"metric": "rate capacity POG 1000 mA g-1", "value": 327, "unit": "mAh g-1"}
+        ],
+        "prov": ["Fig. 8", "Fig. 9", "Fig. 10"]
+      },
+      {
+        "method_name": "Galvanostatic cycling (Na-ion)",
+        "results": [
+          {"metric": "specific capacity POG at 50 mA g-1", "value": 225, "unit": "mAh g-1"},
+          {"metric": "rate capacity POG 1000 mA g-1", "value": 51, "unit": "mAh g-1"}
+        ],
+        "prov": ["Fig. 12(g)"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 917,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-17T20:24:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

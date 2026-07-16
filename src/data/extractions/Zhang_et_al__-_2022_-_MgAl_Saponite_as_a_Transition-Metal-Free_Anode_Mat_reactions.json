@@ -1,0 +1,755 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "MgAl Saponite as a Transition-Metal-Free Anode Material for Lithium-Ion Batteries",
+    "doi": "10.1021/acsami.2c17932",
+    "authors": ["Jian Zhang", "Tianlin Li", "Qingyan Yuan", "Yunjia Wu", "Yibo Dou", "Jingbin Han"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["layered silicate", "lithium-ion battery", "anode material"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "MgAl saponite (MA-SAP)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Experimental Section 2.2"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "MA-SAP-500",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Experimental Section 2.2"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Mg(NO3)2·6H2O",
+      "molecular_formula": "MgN2O12H12",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 21.44,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Experimental Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Al(NO3)3·9H2O",
+      "molecular_formula": "AlN3O18H18",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 3.56,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Experimental Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "NaOH",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "base",
+        "category": "inorganic base"
+      },
+      "amount": {
+        "value": 40,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Experimental Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "NaHCO3",
+      "molecular_formula": "NaHCO3",
+      "ontology": {
+        "role": "buffer",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 78,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Experimental Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Na2SiO3·9H2O",
+      "molecular_formula": "Na2SiO3·9H2O",
+      "ontology": {
+        "role": "silicate source",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 25,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Experimental Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 120,
+        "unit": "mL"
+      },
+      "notes": "20 mL used for metal salt solution, 100 mL for alkaline precipitant",
+      "prov": ["Experimental Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "N-methyl-2-pyrrolidone (NMP)",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used to adjust slurry viscosity; exact volume not specified",
+      "prov": ["Experimental Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Carbon ECP600JD",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "7:2:1 mass ratio with active material and PVDF",
+      "prov": ["Experimental Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Polyvinylidene fluoride (PVDF)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "7:2:1 mass ratio with active material and carbon",
+      "prov": ["Experimental Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Dissolved in EC/DEC/DMC 1:1:1 vol% with 1% EC additive",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Ethylene carbonate (EC)",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of electrolyte solvent mixture, 1:1:1 volume with DEC and DMC; additional 1% as SEI-forming agent",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Diethyl carbonate (DEC)",
+      "molecular_formula": "C5H10O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of electrolyte solvent mixture",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Dimethyl carbonate (DMC)",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of electrolyte solvent mixture",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "Lithium metal foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Experimental Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_15",
+      "name": "Copper foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as substrate for electrode coating",
+      "prov": ["Experimental Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_16",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used during calcination at 773 K",
+      "prov": ["Experimental Section 2.2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of metal salt solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_6"],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "21.44 mmol Mg(NO3)2·6H2O and 3.56 mmol Al(NO3)3·9H2O dissolved in 20 mL DI water"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section 2.2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of alkaline precipitant solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4", "chem_5", "chem_6"],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "40 mmol NaOH, 78 mmol NaHCO3, 25 mmol Na2SiO3·9H2O in 100 mL DI water"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section 2.2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Coprecipitation to form precursor slurry",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["step_1", "step_2"],
+              "addition": "dropwise",
+              "stirring": "vigorous"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Salt solution added to precipitant under vigorous stirring, forming white mixture"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section 2.2"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Hydrothermal crystallization",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 453.15,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 2880,
+                "unit": "min"
+              }
+            },
+            "notes": "Hydrothermal reaction at 180 °C for 48 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed autoclave",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section 2.2"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Work-up and washing",
+        "operations": [
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Repeat with DI water until supernatant pH ≈ 7"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental Section 2.2"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Drying to obtain MA-SAP",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "temperature": {
+                "value": 333.15,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "Overnight drying at 60 °C"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental Section 2.2"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Thermal dehydroxylation to prepare MA-SAP-500",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "temperature": {
+                "value": 773.15,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 180,
+                "unit": "min"
+              },
+              "heating_rate": "10 K min-1"
+            },
+            "notes": "Under N2 atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section 2.2"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Electrode slurry preparation",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["target_1", "chem_8", "chem_9"],
+              "duration": {
+                "value": 3,
+                "unit": "min"
+              }
+            },
+            "notes": "Mass ratio 7:2:1 (active:ECP:PVDF)"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_7"]
+            },
+            "notes": "Add NMP to adjust viscosity, followed by additional 3 min vibration ball milling"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental Section 2.3"]
+      },
+      {
+        "step_id": "step_9",
+        "description": "Coating and drying of electrode",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "substrate": "chem_15",
+              "thickness": "100 µm scraper"
+            },
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "temperature": {
+                "value": 363.15,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              },
+              "atmosphere": "vacuum"
+            },
+            "notes": "Overnight drying at 90 °C"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental Section 2.3"]
+      },
+      {
+        "step_id": "step_10",
+        "description": "Coin cell assembly",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "cell_type": "2032 coin",
+              "pressure": {
+                "value": 48.26,
+                "unit": "bar"
+              },
+              "duration": {
+                "value": 0.083,
+                "unit": "min"
+              }
+            },
+            "notes": "700 psi (~48.26 bar) for 5 s inside Ar glovebox (<0.1 ppm H2O/O2); electrolyte: 1 M LiPF6 in EC/DEC/DMC (1:1:1) + 1% EC; mass loading 0.7 mg cm-2; counter electrode Li metal"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (H2O/O2 <0.1 ppm)",
+          "pressure": {
+            "value": 1,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section 2.3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dissolution of Mg and Al nitrates"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of alkaline precipitant"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Coprecipitation of precursor slurry"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Hydrothermal synthesis of MA-SAP"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Washing and neutralization"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Drying to yield MA-SAP powder"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Calcination to yield MA-SAP-500"
+      },
+      {
+        "step_ref": "step_8",
+        "description": "Preparation of electrode slurry"
+      },
+      {
+        "step_ref": "step_9",
+        "description": "Coating and drying of electrodes"
+      },
+      {
+        "step_ref": "step_10",
+        "description": "Assembly of MA-SAP/Li coin cells"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact volume of NMP not provided",
+        "excerpt": "moderate NMP was used to adjust the viscosity of the slurry"
+      },
+      {
+        "issue": "Drying duration at 90 °C not specified numerically",
+        "excerpt": "dried at 90°C under vacuum overnight"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "basal spacing d001",
+          "value": 12.7,
+          "unit": "Å"
+        },
+        {
+          "metric": "layer spacing after cycling",
+          "value": 12.97,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "Layered structure retained; zero-strain behavior",
+      "prov": ["Figure 1b", "Figure 4b"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "flaky nanosheets (<10 nm thick)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1c", "Figure 1d"]
+    },
+    {
+      "method": "TG-DTA",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "weight loss 110–500 °C",
+          "value": null,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Indicates structural hydroxyl removal",
+      "prov": ["Figure 1e"]
+    },
+    {
+      "method": "27Al MAS NMR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "AlIV/AlVI ratio",
+          "value": 32.94,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Used to determine chemical formula",
+      "prov": ["Figure 1f"]
+    },
+    {
+      "method": "Electrochemical testing",
+      "parameters": {
+        "current_density": "200 mA g-1"
+      },
+      "results": [
+        {
+          "metric": "maximum capacity",
+          "value": 536,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity after 400 cycles",
+          "value": 472,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2a"]
+    },
+    {
+      "method": "Electrochemical testing",
+      "parameters": {
+        "current_density": "1 A g-1"
+      },
+      "results": [
+        {
+          "metric": "capacity after 1000 cycles",
+          "value": 155,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2h"]
+    },
+    {
+      "method": "GITT",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li+ diffusion coefficient",
+          "value": null,
+          "unit": "m2 s-1",
+          "notes": "10^-10 to 10^-13 across SOC/DOD"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 6f"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": "",
+            "notes": "Differential charge density shows increased electron density around Mg after dehydroxylation; formation energy of LiOH in 'cave' lowered by 3.2 eV."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 536,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1000
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-29T12:00:00Z",
+    "source_file": "input_text_chunk",
+    "processing_time": null
+  }
+}

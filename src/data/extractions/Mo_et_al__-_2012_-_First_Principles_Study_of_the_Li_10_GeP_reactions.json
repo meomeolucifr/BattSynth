@@ -1,0 +1,294 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "First Principles Study of the Li10GeP2S12 Lithium Super Ionic Conductor Material",
+    "doi": "10.1021/cm203303y",
+    "authors": ["Yifei Mo", "Shyue Ping Ong", "Gerbrand Ceder"],
+    "journal": "Chemistry of Materials",
+    "year": 2012
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["solid electrolyte", "first principles", "ionic conductivity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "study_target",
+      "prov": ["Main text, Title"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "ontology": {
+        "role": "study_target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Also referred to as LGPS",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode/reservoir",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 1 description"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "decomposition_product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Equation 1", "Discussion on decomposition"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li3P",
+      "molecular_formula": "Li3P",
+      "ontology": {
+        "role": "decomposition_product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 1a description"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Li15Ge4",
+      "molecular_formula": "Li15Ge4",
+      "ontology": {
+        "role": "decomposition_product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 1a description"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "ontology": {
+        "role": "reference_phase",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mentioned as ground state comparison",
+      "prov": ["Equation 1 description"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "GeS2",
+      "molecular_formula": "GeS2",
+      "ontology": {
+        "role": "decomposition_product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 1c description"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "decomposition_product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 1c description", "Passivation hypothesis"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "calc_1",
+        "description": "DFT phase stability calculations using VASP with GGA-PBE to construct Li–Ge–P–S phase diagram (0 K)."
+      },
+      {
+        "step_ref": "calc_2",
+        "description": "Lithium grand potential phase diagrams generated over various chemical potentials."
+      },
+      {
+        "step_ref": "calc_3",
+        "description": "Density of states of LGPS calculated using HSE06 hybrid functional."
+      },
+      {
+        "step_ref": "calc_4",
+        "description": "Ab initio molecular dynamics simulations (600–1500 K, 40 ps total, 2 fs timestep) to obtain Li diffusion coefficients."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Range given for predicted conductivity",
+        "excerpt": "The calculated diffusion extrapolates to a Li+ conductivity of 9 mS/cm (with a range of 2 to 40 mS/cm) at 300 K."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Ab initio molecular dynamics (VASP, Born–Oppenheimer)",
+      "parameters": {
+        "temperature_range_K": "600–1500",
+        "simulation_time_min": 6.7e-13,
+        "time_step_min": 3.3e-14
+      },
+      "results": [
+        {
+          "metric": "overall_activation_energy",
+          "value": 0.21,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation_energy_c_direction",
+          "value": 0.17,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation_energy_ab_plane",
+          "value": 0.28,
+          "unit": "eV"
+        },
+        {
+          "metric": "predicted_conductivity_overall_300K",
+          "value": 9,
+          "unit": "mS/cm"
+        },
+        {
+          "metric": "predicted_conductivity_c_direction_300K",
+          "value": 40,
+          "unit": "mS/cm"
+        },
+        {
+          "metric": "predicted_conductivity_ab_plane_300K",
+          "value": 0.9,
+          "unit": "mS/cm"
+        }
+      ],
+      "interpretation": "LGPS exhibits 3D Li diffusion with faster transport along the c-axis.",
+      "prov": ["Figure 4", "Main text"]
+    },
+    {
+      "method": "Density of States (HSE06)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "band_gap",
+          "value": 3.6,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Electrochemical window limited by band gap, smaller than reported >5 V.",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "DFT phase stability calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "reaction_energy_eq1",
+          "value": -0.025,
+          "unit": "eV/atom"
+        }
+      ],
+      "interpretation": "LGPS is metastable at 0 K with respect to decomposition.",
+      "prov": ["Equation 1 description"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis of diffusion coefficients",
+        "results": [
+          {
+            "equation": "D = D0 * exp(-Ea / kT)",
+            "Ea_overall_eV": 0.21
+          },
+          {
+            "Ea_c_direction_eV": 0.17
+          },
+          {
+            "Ea_ab_plane_eV": 0.28
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-26T22:20:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

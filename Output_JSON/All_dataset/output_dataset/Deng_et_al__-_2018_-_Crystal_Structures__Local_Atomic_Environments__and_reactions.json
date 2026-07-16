@@ -1,0 +1,389 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Crystal Structures, Local Atomic Environments, and Ion Diffusion Mechanisms of Scandium-Substituted Sodium Superionic Conductor (NASICON) Solid Electrolytes",
+    "doi": "10.1021/acs.chemmater.7b05237",
+    "authors": [
+      "Yue Deng",
+      "Christopher Eames",
+      "Long H. B. Nguyen",
+      "Oliver Pecher",
+      "Kent J. Griffith",
+      "Matthieu Courty",
+      "Benoit Fleutot",
+      "Jean-Noël Chotard",
+      "Clare P. Grey",
+      "M. Saiful Islam",
+      "Christian Masquelier"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": ["solid electrolyte", "NASICON", "sodium ion", "scandium substitution"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na3ScxZr2−x(SiO4)2−x(PO4)1+x  (0 ≤ x ≤ 1)",
+      "molecular_formula": "",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Methods – Synthesis section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na2ScyZr2−y(SiO4)1−y(PO4)2+y  (0 ≤ y ≤ 1)",
+      "molecular_formula": "",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Methods – Synthesis section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sodium carbonate",
+      "molecular_formula": "Na2CO3",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Scandium(III) oxide",
+      "molecular_formula": "Sc2O3",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconyl chloride octahydrate",
+      "molecular_formula": "ZrOCl2·8H2O",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Silicon dioxide (fumed)",
+      "molecular_formula": "SiO2",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Pre-dried at 773 K for 3 h",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ammonium dihydrogen phosphate",
+      "molecular_formula": "NH4H2PO4",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Zirconia beads",
+      "molecular_formula": "ZrO2",
+      "ontology": {"role": "milling_medium", "category": "equipment"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "beads/powder mass ratio 3/1 during ball-milling",
+      "prov": ["Methods – Synthesis"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Drying of SiO2",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {"inputs": ["chem_4"]},
+            "duration": {"value": 180, "unit": "min"},
+            "temperature": {"value": 773, "unit": "K"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Initial mixing and pellet pressing",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_1", "chem_3", "chem_5"]},
+            "notes": "mixed in mortar"
+          },
+          {
+            "action": "press",
+            "parameters": {},
+            "notes": "cold pressed into pellets"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "First thermal treatment to remove water",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {"value": 120, "unit": "min"},
+            "temperature": {"value": 443, "unit": "K"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Second thermal treatment to decompose NH4H2PO4",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {"value": 180, "unit": "min"},
+            "temperature": {"value": 673, "unit": "K"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Cooling to room temperature",
+        "operations": [
+          {
+            "action": "cool",
+            "parameters": {},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Grinding and mixing with remaining oxides",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "ground pellets"
+          },
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_2", "chem_4"]},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Ball-milling to obtain homogeneous powder",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {"inputs": ["chem_6"]},
+            "duration": {"value": 120, "unit": "min"},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "zirconia beads/powder mass ratio 3/1; 400 rpm"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Cold pressing of milled mixture",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {},
+            "notes": "cold pressed"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_9",
+        "description": "High-temperature firing",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {"value": 720, "unit": "min"},
+            "temperature": {"value": 1473, "unit": "K"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_10",
+        "description": "Cooling and pulverizing final product",
+        "operations": [
+          {
+            "action": "cool",
+            "parameters": {},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "cooled to ambient temperature"
+          },
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "pulverized to powder"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_11",
+        "description": "Spark plasma sintering for pellet preparation",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {},
+            "duration": {"value": 30, "unit": "min"},
+            "temperature": {"value": 973, "unit": "K"},
+            "notes": "heating rate 100 K min-1; pressure 100 MPa; vacuum"
+          }
+        ],
+        "conditions": {"atmosphere": "vacuum", "pressure": {"value": 100, "unit": "MPa"}},
+        "prov": ["Methods – AC Impedance section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Pre-dry SiO2"},
+      {"step_ref": "step_2", "description": "Mix initial salts and press"},
+      {"step_ref": "step_3", "description": "First calcination 443 K"},
+      {"step_ref": "step_4", "description": "Second calcination 673 K"},
+      {"step_ref": "step_5", "description": "Cool to RT"},
+      {"step_ref": "step_6", "description": "Add Sc2O3 & SiO2 and grind"},
+      {"step_ref": "step_7", "description": "Ball mill 400 rpm 2 h"},
+      {"step_ref": "step_8", "description": "Cold press"},
+      {"step_ref": "step_9", "description": "Fire at 1473 K 12 h"},
+      {"step_ref": "step_10", "description": "Cool & pulverize"},
+      {"step_ref": "step_11", "description": "Spark plasma sinter pellets"}
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Powder X-ray diffraction (SXRD)",
+      "parameters": {"wavelength": "0.414209 Å", "temperature": ["295 K", "473 K"], "beamline": "11BM"},
+      "results": [{"metric": "phase", "value": "β-NASICON at 295 K; γ-NASICON at 473 K", "unit": ""}],
+      "interpretation": "Phase transition from monoclinic C2/c to rhombohedral R3̅c for N3 compositions",
+      "prov": ["Methods – Diffraction", "Results – Figure 2"]
+    },
+    {
+      "method": "Neutron powder diffraction (NPD)",
+      "parameters": {"2θ_range": "0–130°", "step": "0.1°", "collection_time": "120 min"},
+      "results": [],
+      "interpretation": "",
+      "prov": ["Methods – Diffraction"]
+    },
+    {
+      "method": "Differential scanning calorimetry (DSC)",
+      "parameters": {"rate": "10 K min-1", "temperature_range": "238–623 K"},
+      "results": [{"metric": "phase transition temperature", "value": 435, "unit": "K"}],
+      "interpretation": "Confirms β→γ transition",
+      "prov": ["Methods – DSC", "Results – Figure 2c"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {"frequency_range": "30 MHz – 0.1 Hz", "excitation_voltage": "0.1 V", "measurement_temperature": "298–573 K"},
+      "results": [
+        {"metric": "ionic conductivity", "value": 1e-4, "unit": "S cm-1", "notes": "approximate value at 473 K"},
+        {"metric": "activation_energy", "value": 0.35, "unit": "eV", "notes": "Na2Zr2(SiO4)(PO4)2"},
+        {"metric": "activation_energy", "value": 0.50, "unit": "eV", "notes": "Na2ScZr(PO4)3"}
+      ],
+      "interpretation": "Higher Sc content increases activation energy and lowers conductivity",
+      "prov": ["Results – Figure 9,10"]
+    },
+    {
+      "method": "Solid-state NMR (23Na MAS)",
+      "parameters": {"MAS_frequency": "4 kHz", "field_strength": "9.4 T", "temperature_range": "320–875 K"},
+      "results": [{"metric": "spin-lattice relaxation minimum", "value": 416, "unit": "K"}],
+      "interpretation": "Indicates 2D local Na motion within 3D framework",
+      "prov": ["Methods – NMR", "Results – Figure 11"]
+    },
+    {
+      "method": "Solid-state NMR (31P, 29Si MAS)",
+      "parameters": {"31P_MAS": "30 kHz", "29Si_MAS": "14 kHz", "field_strengths": "9.4 T / 11.7 T"},
+      "results": [],
+      "interpretation": "Chemical shifts correlate with Na occupancy and Zr/Sc distribution",
+      "prov": ["Methods – NMR", "Results – Figure 8, S5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Molecular dynamics simulation",
+        "results": [
+          {"equation": "", "value": 1.40, "unit": "mS cm-1", "notes": "ionic conductivity for N3 (x=0) at 473 K"},
+          {"equation": "", "value": 0.67, "unit": "mS cm-1", "notes": "ionic conductivity for N2 (y=0) at 473 K"}
+        ]
+      },
+      {
+        "method_name": "DFT (GIPAW) NMR shielding calculations",
+        "results": [{"equation": "δiso = m σiso + σref", "value": null, "unit": "", "notes": "Provided regression parameters for 31P and 29Si"}]
+      },
+      {
+        "method_name": "Bond valence energy landscape & MEM/Rietveld",
+        "results": [{"metric": "Na+ diffusion pathway", "value": "3D interconnected network via Na(1)/Na(2) exchange", "unit": ""}]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

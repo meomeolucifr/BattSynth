@@ -1,0 +1,388 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Modeling the electrical double layer at solid-state electrochemical interfaces",
+    "doi": "10.1038/s43588-021-00041-y",
+    "authors": [
+      "Michael W. Swift",
+      "James W. Swift",
+      "Yue Qi"
+    ],
+    "journal": "Nature Computational Science",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "theoretical modeling",
+    "tags": [
+      "solid-state battery",
+      "electrical double layer",
+      "Poisson\u2013Fermi\u2013Dirac model"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiF",
+      "molecular_formula": "LiF",
+      "intended_role": "interlayer material (modeled)",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Table 1 explicitly lists \u201cLiF\u201d as a material (interlayer material) under the \u201cMaterial\u201d column, supporting the extracted Target Formula value LiF. The text also repeatedly references LiF as an interlayer material studied.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "intended_role": "interlayer material (modeled)",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly lists Li2CO3 as an interlayer material analyzed in contact with Li metal (e.g., page 1 abstract: \u201c...interlayer materials LiF, Li2O and Li2CO3\u201d) and includes a Li2CO3 row in Table 1 (\u201cLi2CO3\u201d). This directly supports the extracted target formula Li2CO3.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li2O (111)",
+      "molecular_formula": "Li2O",
+      "intended_role": "interlayer material (modeled)",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.94,
+        "reasoning": "The paper explicitly lists Li2O as an interlayer material analyzed and tabulated. Table 1 includes rows labeled \u201cLi2O (111)\u201d and \u201cLi2O (110)\u201d, and the text states they analyzed EDL in \u201cLiF, Li2CO3 and Li2O as interlayers\u201d. Therefore the target formula Li2O is supported (though not restricted to a single orientation).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li2O (110)",
+      "molecular_formula": "Li2O",
+      "intended_role": "interlayer material (modeled)",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly includes Li2O as one of the interlayer materials studied. In the abstract (page 1) it lists \u201cLiF, Li2O and Li2CO3,\u201d and Table 1 (page 4) contains rows \u201cLi2O (111)\u201d and \u201cLi2O (110)\u201d. Thus the target formula Li2O is supported (even though Table 1 specifies surface orientations).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li7La3Zr2O12 (LLZO)",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "solid electrolyte (modeled)",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly names the solid electrolyte as \u201cLi7La3Zr2O12 (LLZO)\u201d in the abstract on Page 1 and also lists \u201cLi7La3Zr2O12 (LLZO)\u201d among the materials tabulated in Table 1 (Page 4). This directly supports the target formula Li7La3Zr2O12.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "model_1",
+        "description": "Development and application of Poisson\u2013Fermi\u2013Dirac equation combined with DFT-predicted defect formation energies to compute EDL profiles for LiF, Li2CO3, Li2O and LLZO at Li metal interfaces.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The paper explicitly states it develops an EDL model based on the Poisson\u2013Fermi\u2013Dirac equation and combines it with DFT-predicted defect formation energies to compute self-consistent potential/defect (EDL) profiles. It also explicitly presents EDL structures/solutions for LiF, Li2CO3, Li2O, and LLZO in contact with Li metal (interfaces). This matches the extracted workflow description, though the paper frames it as developing a model and presenting solutions/profiles rather than as a step-by-step \u2018workflow timeline\u2019.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Poisson\u2013Fermi\u2013Dirac modeling",
+        "results": [
+          {
+            "material": "LiF",
+            "x1": {
+              "value": 4,
+              "unit": "\u00c5"
+            },
+            "phi_x1": {
+              "value": 1.02,
+              "unit": "V"
+            },
+            "x2": {
+              "value": 1550,
+              "unit": "\u00b5m"
+            },
+            "phi_x2": {
+              "value": 1.88,
+              "unit": "V"
+            },
+            "phi_infinity": {
+              "value": 1.92,
+              "unit": "V"
+            },
+            "dielectric_constant": 9.0,
+            "sigma_Li": {
+              "value": -2.44,
+              "unit": "e nm-2"
+            },
+            "capacitance_per_area": {
+              "value": 20.4,
+              "unit": "\u00b5F cm-2"
+            },
+            "prov": [
+              "Table 1"
+            ]
+          },
+          {
+            "material": "Li2CO3",
+            "x1": {
+              "value": 6,
+              "unit": "\u00c5"
+            },
+            "phi_x1": {
+              "value": 1.01,
+              "unit": "V"
+            },
+            "x2": {
+              "value": 702,
+              "unit": "\u00b5m"
+            },
+            "phi_x2": {
+              "value": 1.8,
+              "unit": "V"
+            },
+            "phi_infinity": {
+              "value": 1.84,
+              "unit": "V"
+            },
+            "dielectric_constant": 5.64,
+            "sigma_Li": {
+              "value": -1.01,
+              "unit": "e nm-2"
+            },
+            "capacitance_per_area": {
+              "value": 8.8,
+              "unit": "\u00b5F cm-2"
+            },
+            "prov": [
+              "Table 1"
+            ]
+          },
+          {
+            "material": "Li2O (111)",
+            "x1": {
+              "value": 4,
+              "unit": "\u00c5"
+            },
+            "phi_x1": {
+              "value": 1.4,
+              "unit": "V"
+            },
+            "x2": {
+              "value": 134,
+              "unit": "\u00b5m"
+            },
+            "phi_x2": {
+              "value": 2.14,
+              "unit": "V"
+            },
+            "phi_infinity": {
+              "value": 2.18,
+              "unit": "V"
+            },
+            "dielectric_constant": 7.27,
+            "sigma_Li": {
+              "value": -3.0,
+              "unit": "e nm-2"
+            },
+            "capacitance_per_area": {
+              "value": 22.0,
+              "unit": "\u00b5F cm-2"
+            },
+            "prov": [
+              "Table 1"
+            ]
+          },
+          {
+            "material": "Li2O (110)",
+            "x1": {
+              "value": null,
+              "unit": "\u00c5"
+            },
+            "phi_x1": {
+              "value": null,
+              "unit": "V"
+            },
+            "x2": {
+              "value": 134,
+              "unit": "\u00b5m"
+            },
+            "phi_x2": {
+              "value": 0.67,
+              "unit": "V"
+            },
+            "phi_infinity": {
+              "value": 0.71,
+              "unit": "V"
+            },
+            "dielectric_constant": 7.27,
+            "sigma_Li": {
+              "value": -0.07,
+              "unit": "e nm-2"
+            },
+            "capacitance_per_area": {
+              "value": 1.61,
+              "unit": "\u00b5F cm-2"
+            },
+            "prov": [
+              "Table 1"
+            ]
+          },
+          {
+            "material": "LLZO",
+            "x1": {
+              "value": 16,
+              "unit": "\u00c5"
+            },
+            "phi_x1": {
+              "value": 1.58,
+              "unit": "V"
+            },
+            "x2": {
+              "value": null,
+              "unit": "\u00b5m"
+            },
+            "phi_x2": {
+              "value": null,
+              "unit": "V"
+            },
+            "phi_infinity": {
+              "value": 1.62,
+              "unit": "V"
+            },
+            "dielectric_constant": 50.0,
+            "sigma_Li": {
+              "value": -5.33,
+              "unit": "e nm-2"
+            },
+            "capacitance_per_area": {
+              "value": 52.6,
+              "unit": "\u00b5F cm-2"
+            },
+            "prov": [
+              "Table 1"
+            ]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (LiF with LiPON)",
+            "value": 68.4,
+            "unit": "\u00c5",
+            "prov": [
+              "Table 2"
+            ]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (Li2CO3 with LiPON)",
+            "value": 122,
+            "unit": "\u00c5",
+            "prov": [
+              "Table 2"
+            ]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (Li2O (111) with LiPON)",
+            "value": 2.5,
+            "unit": "\u00c5",
+            "prov": [
+              "Table 2"
+            ]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (LiF with LLZO)",
+            "value": 101000,
+            "unit": "\u00c5",
+            "prov": [
+              "Table 2"
+            ]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (Li2CO3 with LLZO)",
+            "value": 183000,
+            "unit": "\u00c5",
+            "prov": [
+              "Table 2"
+            ]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (Li2O (111) with LLZO)",
+            "value": 52.9,
+            "unit": "\u00c5",
+            "prov": [
+              "Table 2"
+            ]
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.95,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly states the computational/analysis methods used, including density functional theory (DFT) calculations combined with a continuum Poisson\u2013Fermi\u2013Dirac (PFD) / Poisson equation model. The Methods section also specifies VASP with PBE-GGA, PAW, etc. Therefore, leaving the field empty is not supported by the source text.",
+          "suggested_fix": "Computational modeling combining density functional theory (DFT) defect/band-alignment calculations with a continuum Poisson\u2013Fermi\u2013Dirac (Poisson-based space-charge/EDL) model (DFT via VASP, PBE-GGA/PAW)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

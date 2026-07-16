@@ -1,0 +1,444 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Robust TiN nanoparticles polysulfide anchor for Li–S storage and diffusion pathways using first principle calculations",
+    "doi": "10.1016/j.cej.2019.123595",
+    "authors": ["Shahid Hussain", "Xiaoyong Yang", "Muhammad Kashif Aslam", "Asma Shaheen", "Muhammad Sufyan Javed", "Nimra Aslam", "Bilal Aslam", "Guiwu Liu", "Guanjun Qiao"],
+    "journal": "Chemical Engineering Journal",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["Li–S battery", "TiN nanoparticles", "DFT", "polysulfide adsorption"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "TiN nanoparticles",
+      "molecular_formula": "TiN",
+      "intended_role": "intermediate",
+      "prov": ["Page 1 (HIGHLIGHTS)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "TiN-NPs@S composite",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": ["Page 1 (ABSTRACT)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Titanium nitride",
+      "molecular_formula": "TiN",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "70 wt % content in TiN/S composite (TGA)",
+      "prov": ["Fig.1d"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Electrochemical performances section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used in TGA atmosphere",
+      "prov": ["Fig.1d caption"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Hot-to-cold synthesis of TiN nanoparticles via dry-freezing method",
+        "operations": [
+          {
+            "action": "synthesize",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Details referred to supplementary information",
+            "inputs": ["chem_1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 1 (HIGHLIGHTS)"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Formation of TiN-NPs@S composite via dry freezing method",
+        "operations": [
+          {
+            "action": "combine",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Resulting S content 70 wt %",
+            "inputs": ["chem_1", "chem_2"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Abstract", "Fig.1d"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Cathode fabrication and coin cell assembly with lithium foil counter electrode",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["target_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "CR2032 configuration; details in Supplementary information"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Electrochemical performances section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of TiN nanoparticles"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Loading sulfur to obtain TiN-NPs@S composite"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Assembly of Li–S coin cell"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing experimental parameters (temperatures, times, reagent amounts) for synthesis steps",
+        "excerpt": "The experimental procedure and cell fabrication process is given in Supplementary information."
+      },
+      {
+        "issue": "Conflicting statement of capacity after 100 cycles",
+        "excerpt": "TiN cathode after 100 cycles exhibits an excellent initial capacity of 1279 mAh g−1 at 0.5 C"
+      },
+      {
+        "issue": "Electrolyte composition not provided",
+        "excerpt": "electrolyte/electrode interface"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "peak_angles",
+          "value": [36.8, 43.2, 62.6, 75.1, 78.6],
+          "unit": "deg"
+        },
+        {
+          "metric": "crystal_structure",
+          "value": "cubic TiN (Fm3m, JCPDS 38-1420)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.1a"]
+    },
+    {
+      "method": "BET",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "specific_surface_area",
+          "value": 188,
+          "unit": "m2 g-1"
+        },
+        {
+          "metric": "pore_volume",
+          "value": 0.18,
+          "unit": "cm3 g-1"
+        },
+        {
+          "metric": "pore_size",
+          "value": 12,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.1b", "Fig.1c"]
+    },
+    {
+      "method": "TGA",
+      "parameters": {
+        "atmosphere": "N2"
+      },
+      "results": [
+        {
+          "metric": "sulfur_content",
+          "value": 70,
+          "unit": "wt%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.1d"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ti 2p3/2 binding energy",
+          "value": 458.19,
+          "unit": "eV"
+        },
+        {
+          "metric": "Ti 2p1/2 binding energy",
+          "value": 464.10,
+          "unit": "eV"
+        },
+        {
+          "metric": "N 1s binding energy",
+          "value": [397.78, 401.08],
+          "unit": "eV"
+        },
+        {
+          "metric": "S 2p3/2 binding energy",
+          "value": 164.4,
+          "unit": "eV"
+        },
+        {
+          "metric": "S 2p1/2 binding energy",
+          "value": 167,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.1f", "Fig.1g", "Fig.1h"]
+    },
+    {
+      "method": "SEM/TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle_size_TiN",
+          "value": [25, 30],
+          "unit": "nm"
+        },
+        {
+          "metric": "particle_size_TiN@S",
+          "value": [40, 45],
+          "unit": "nm"
+        },
+        {
+          "metric": "lattice_spacing",
+          "value": 0.24,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.3"]
+    },
+    {
+      "method": "EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "sulfur_distribution",
+          "value": "uniform before and after cycling; content decreased post-cycling",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.2a", "Fig.2b"]
+    },
+    {
+      "method": "CV",
+      "parameters": {
+        "scan_rate": 0.01,
+        "scan_rate_unit": "V s-1"
+      },
+      "results": [
+        {
+          "metric": "oxidation_peaks",
+          "value": [2.52, 2.40],
+          "unit": "V"
+        },
+        {
+          "metric": "reduction_peaks",
+          "value": [2.30, 2.05],
+          "unit": "V"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.6a"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electrolyte_resistance_Re",
+          "value": 3,
+          "unit": "ohm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.8b"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT (VASP)",
+        "results": [
+          {
+            "equation": "Ea (Li on N-top) = -1.35 eV",
+            "value": -1.35,
+            "unit": "eV"
+          },
+          {
+            "equation": "Ea (S on Ti-top) = -4.77 eV",
+            "value": -4.77,
+            "unit": "eV"
+          },
+          {
+            "equation": "Diffusion barrier Li",
+            "value": 0.167,
+            "unit": "eV"
+          },
+          {
+            "equation": "Diffusion barrier S",
+            "value": 0.306,
+            "unit": "eV"
+          },
+          {
+            "equation": "D(Li)=1.270×10^19 exp(-2367/T)",
+            "value": null,
+            "unit": "m2 s-1"
+          },
+          {
+            "equation": "D(S)=2.823×10^16 exp(-1352/T)",
+            "value": null,
+            "unit": "m2 s-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 1279,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-07T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

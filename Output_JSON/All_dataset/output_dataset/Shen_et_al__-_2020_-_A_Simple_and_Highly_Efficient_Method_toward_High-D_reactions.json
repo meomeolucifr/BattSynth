@@ -1,0 +1,343 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A Simple and Highly Efficient Method toward High-Density Garnet-Type LLZTO Solid-State Electrolyte",
+    "doi": "10.1021/acsami.0c04850",
+    "authors": ["Fei Shen", "Weichang Guo", "Dingyuan Zeng", "Zhouting Sun", "Jie Gao", "Jun Li", "Bin Zhao", "Bo He", "Xiaogang Han"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state electrolyte", "LLZTO", "oxygen-assisted sintering", "ceramics"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6.4La3Zr1.4Ta0.6O12 (LLZTO) pellet",
+      "molecular_formula": "Li6.4La3Zr1.4Ta0.6O12",
+      "intended_role": "solid-state electrolyte product",
+      "prov": ["Page 30313"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hydroxide",
+      "molecular_formula": "LiOH",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "stoichiometric + 15 wt% excess",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum oxide",
+      "molecular_formula": "La2O3",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "99.99% purity",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconium dioxide",
+      "molecular_formula": "ZrO2",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "99.99% purity",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Tantalum pentoxide",
+      "molecular_formula": "Ta2O5",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "99.99% purity",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Isopropanol",
+      "molecular_formula": "C3H8O",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "used as dispersant during ball milling",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "sintering atmosphere",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Air",
+      "molecular_formula": "",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "used in calcination and alternative sintering atmosphere",
+      "prov": ["Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {"role": "coating", "category": "metal"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "thin layer sputtered on pellet surfaces",
+      "prov": ["Experimental Section 2.2"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Lithium foil",
+      "molecular_formula": "Li",
+      "ontology": {"role": "electrode", "category": "metal"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "150 μm thickness for symmetric cell",
+      "prov": ["Experimental Section 2.2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of primary powder",
+        "operations": [
+          {
+            "action": "weigh_and_mix",
+            "parameters": {"inputs": ["chem_1", "chem_2", "chem_3", "chem_4"], "excess_LiOH": "15 wt%"},
+            "notes": ""
+          },
+          {
+            "action": "add_solvent",
+            "parameters": {"solvent": "chem_5"}
+          },
+          {
+            "action": "ball_mill",
+            "parameters": {"speed": {"value": 300, "unit": "rpm"}, "duration": {"value": 720, "unit": "min"}}
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "notes": "to obtain primary powder"
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": "K"}, "pressure": {"value": null, "unit": ""}, "atmosphere": ""},
+        "prov": ["Experimental Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Precalcination",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {"format": "pellet"},
+            "notes": ""
+          },
+          {
+            "action": "calcine",
+            "parameters": {
+              "temperature": {"value": 773, "unit": "K", "range_upper": 1073},
+              "duration": {"value": 600, "unit": "min"},
+              "atmosphere": "air"
+            },
+            "notes": "temperature range 500–800 °C"
+          },
+          {
+            "action": "crush_and_grind",
+            "parameters": {},
+            "notes": "to obtain precalcined powder"
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": ""}, "pressure": {"value": null, "unit": ""}, "atmosphere": "air"},
+        "prov": ["Experimental Section 2.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Secondary milling",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {"speed": {"value": 300, "unit": "rpm"}, "duration": {"value": 720, "unit": "min"}}
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "notes": "to obtain secondary powder"
+          }
+        ],
+        "conditions": {"temperature": {"value": null, "unit": ""}},
+        "prov": ["Experimental Section 2.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Green pellet formation",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {"value": 7000, "unit": "bar"},
+              "diameter": {"value": 12.5, "unit": "mm"}
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental Section 2.1"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Final sintering to obtain LLZTO pellets",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature": {"value": 1523, "unit": "K"},
+              "duration": {"value": 60, "unit": "min"},
+              "atmosphere": "oxygen or air"
+            },
+            "notes": "magnesia crucible"
+          }
+        ],
+        "conditions": {"atmosphere": "O2 or air"},
+        "prov": ["Experimental Section 2.1"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Post-treatment",
+        "operations": [
+          {"action": "store", "parameters": {"environment": "vacuum dryer"}},
+          {"action": "polish", "parameters": {}}
+        ],
+        "conditions": {},
+        "prov": ["Experimental Section 2.1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Mixing and primary milling of starting materials"},
+      {"step_ref": "step_2", "description": "Pelletizing and precalcination of primary powder"},
+      {"step_ref": "step_3", "description": "Secondary milling to produce fine powder"},
+      {"step_ref": "step_4", "description": "Pressing secondary powder into green pellets"},
+      {"step_ref": "step_5", "description": "High-temperature sintering in oxygen or air"},
+      {"step_ref": "step_6", "description": "Storage and surface polishing of final LLZTO pellets"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometric masses of reactants not specified",
+        "excerpt": "Stoichiometric amounts of LiOH, La2O3, ZrO2 and Ta2O5 were weighed and mixed together."
+      },
+      {
+        "issue": "Isopropanol volume not stated",
+        "excerpt": "ball‐milled with isopropanol as a dispersant at 300 rpm for 12 h"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {"instrument": "Bruker AXS diffractometer"},
+      "results": [{"metric": "crystal phase", "value": "cubic garnet phase confirmed", "unit": ""}],
+      "interpretation": "",
+      "prov": ["Figure S2"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {"mode": "cross-sectional"},
+      "results": [
+        {"metric": "porosity (air-sintered)", "value": "large internal pores present", "unit": ""},
+        {"metric": "porosity (O2-sintered)", "value": "no observable pores", "unit": ""}
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1"]
+    },
+    {
+      "method": "Relative density (Archimedes)",
+      "parameters": {},
+      "results": [
+        {"metric": "relative density LLZTO-air (700 °C precalcine)", "value": 95.76, "unit": "%"},
+        {"metric": "relative density LLZTO-O2 (700 °C precalcine)", "value": 97.54, "unit": "%"}
+      ],
+      "interpretation": "",
+      "prov": ["Table 1"]
+    },
+    {
+      "method": "Vickers hardness",
+      "parameters": {"load": {"value": 4.9, "unit": "N"}},
+      "results": [{"metric": "hardness LLZTO-O2", "value": 9.82, "unit": "GPa"}],
+      "interpretation": "",
+      "prov": ["Abstract", "Table S1"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {"frequency_range": "6 MHz–100 Hz", "temperature": "298 K"},
+      "results": [{"metric": "ionic conductivity LLZTO-O2 (600 °C precalcine)", "value": 6.13e-4, "unit": "S cm-1"}],
+      "interpretation": "",
+      "prov": ["Table 1", "Figure 4a"]
+    },
+    {
+      "method": "Arrhenius analysis",
+      "parameters": {"temperature_range": "308–358 K"},
+      "results": [{"metric": "activation energy LLZTO-O2 (600 °C precalcine)", "value": 0.398, "unit": "eV"}],
+      "interpretation": "",
+      "prov": ["Figure 4b", "Table 1"]
+    },
+    {
+      "method": "Symmetric Li||Li cycling",
+      "parameters": {"current_density": {"value": 0.4, "unit": "mA cm-2"}},
+      "results": [
+        {"metric": "cycle life LLZTO-O2", "value": 100, "unit": "cycles"},
+        {"metric": "cycle life LLZTO-air", "value": 25, "unit": "cycles"}
+      ],
+      "interpretation": "Oxygen-sintered pellets showed superior dendrite suppression",
+      "prov": ["Figure 4c", "Figure 4d"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius conductivity fitting",
+        "results": [
+          {"equation": "σT = σ0 exp(−Ea/kT)", "value": {"LLZTO-O2": 0.398, "LLZTO-air": 0.399}, "unit": "eV"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T22:43:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

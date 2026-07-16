@@ -1,0 +1,262 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Liquid metal batteries for future energy storage",
+    "doi": "10.1039/d1ee00531f",
+    "authors": [
+      "Shilin Zhang",
+      "Ye Liu",
+      "Qining Fan",
+      "Chaofeng Zhang",
+      "Tengfei Zhou",
+      "Kourosh Kalantar-Zadeh",
+      "Zaiping Guo"
+    ],
+    "journal": "Energy & Environmental Science",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["liquid metal battery", "energy storage", "alloy electrode", "molten salt electrolyte"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Bi–Ga alloy (70:30 mol%)",
+      "molecular_formula": "",
+      "intended_role": "positive electrode material",
+      "prov": ["Page 4182, paragraph mentioning Bi–Ga alloy"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Sb–Pb alloy (30:70 mol%)",
+      "molecular_formula": "",
+      "intended_role": "positive electrode material",
+      "prov": ["Page 4182, Li8Sb–Pb discussion"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "KxIny alloy protective film on NaK",
+      "molecular_formula": "",
+      "intended_role": "anode protective layer",
+      "prov": ["Page 4197, protective layer description"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Bismuth",
+      "molecular_formula": "Bi",
+      "ontology": {"role": "positive electrode component", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Part of Bi–Ga alloy 70:30 mol%",
+      "prov": ["Page 4182"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Gallium",
+      "molecular_formula": "Ga",
+      "ontology": {"role": "positive electrode component", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Part of Bi–Ga alloy 70:30 mol%",
+      "prov": ["Page 4182"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Antimony",
+      "molecular_formula": "Sb",
+      "ontology": {"role": "positive electrode component", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Part of Sb–Pb alloy 30:70 mol%",
+      "prov": ["Page 4182"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lead",
+      "molecular_formula": "Pb",
+      "ontology": {"role": "positive electrode component", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Part of Sb–Pb alloy 30:70 mol%",
+      "prov": ["Page 4182"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Indium(III) chloride",
+      "molecular_formula": "InCl3",
+      "ontology": {"role": "precursor", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Used to form KxIny alloy protective layer",
+      "prov": ["Page 4197"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Tetrahydrofuran",
+      "molecular_formula": "C4H8O",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Solvent for InCl3 dip-reaction",
+      "prov": ["Page 4197"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "NaK alloy",
+      "molecular_formula": "",
+      "ontology": {"role": "negative electrode", "category": "alloy"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "Liquid Na–K alloy anode",
+      "prov": ["Pages 4193-4197"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of KxIny protective film on NaK-loaded carbon paper via dip reaction.",
+        "operations": [
+          {
+            "action": "dip",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6", "chem_7"],
+              "duration": {"value": 0.5, "unit": "min"},
+              "temperature": {"value": 298, "unit": "K"}
+            },
+            "notes": "T-PCP-NaK sheet was dipped in InCl3/THF solution for 30 seconds inside glovebox, leading to formation of KCl, In metal, and KxIny alloy film on NaK surface."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "glovebox (inert)",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Page 4197"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Surface protection of NaK anode with KxIny alloy layer."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact concentration of InCl3 in THF not specified",
+        "excerpt": "direct reduction (dip-reacted strategy for 30 seconds in the glovebox) of the indium chlorides in tetrahydrofuran solution"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": {"value": 300, "unit": "mA cm-2"},
+        "temperature": {"value": 823, "unit": "K"},
+        "environment": ""
+      },
+      "results": [
+        {"metric": "cycle_number", "value": 1000, "unit": ""},
+        {"metric": "capacity_fade_per_cycle", "value": 0.004, "unit": "%"}
+      ],
+      "interpretation": "Li|LiCl–LiF|Bi cell shows excellent stability.",
+      "prov": ["Page 4182"]
+    },
+    {
+      "method": "Discharge voltage measurement",
+      "parameters": {
+        "current_density": {"value": 1200, "unit": "mA cm-2"},
+        "temperature": {"value": 773, "unit": "K"}
+      },
+      "results": [
+        {"metric": "discharge_voltage", "value": 0.54, "unit": "V"}
+      ],
+      "interpretation": "Bi–Ga alloy cathode enhances voltage.",
+      "prov": ["Page 4182"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": {"value": 275, "unit": "mA cm-2"},
+        "temperature": {"value": 773, "unit": "K"}
+      },
+      "results": [
+        {"metric": "capacity", "value": 62.0, "unit": "Ah"},
+        {"metric": "coulombic_efficiency", "value": 98, "unit": "%"},
+        {"metric": "discharge_voltage", "value": 0.69, "unit": "V"},
+        {"metric": "cycle_number", "value": 450, "unit": ""}
+      ],
+      "interpretation": "Li8Sb–Pb cell exhibits high efficiency and stability.",
+      "prov": ["Page 4183"]
+    },
+    {
+      "method": "Efficiency measurement",
+      "parameters": {
+        "temperature": {"value": null, "unit": "K"}
+      },
+      "results": [
+        {"metric": "coulombic_efficiency", "value": 94, "unit": "%"},
+        {"metric": "energy_efficiency", "value": 73, "unit": "%"}
+      ],
+      "interpretation": "Mg|NaCl–KCl–MgCl2|Sb cell efficiencies.",
+      "prov": ["Page 4180"]
+    },
+    {
+      "method": "Power density test",
+      "parameters": {
+        "temperature": {"value": 295, "unit": "K"}
+      },
+      "results": [
+        {"metric": "OCV", "value": 3.25, "unit": "V"},
+        {"metric": "power_density", "value": 65, "unit": "mW cm-2"}
+      ],
+      "interpretation": "K-BASE flow battery performance at room temperature.",
+      "prov": ["Page 4184"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_density": {"value": 10, "unit": "A g-1"},
+        "temperature": {"value": 423, "unit": "K"}
+      },
+      "results": [
+        {"metric": "cycle_number", "value": 300, "unit": ""},
+        {"metric": "peak_power_density", "value": 33.4, "unit": "mW cm-2"}
+      ],
+      "interpretation": "Li–CO2 cell shows high-rate capability.",
+      "prov": ["Page 4184"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T12:00:00Z",
+    "source_file": "Energy_Environ_Sci_2021_14_4177_review.txt",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Local Structural Investigations, Defect Formation, and Ionic Conductivity of the Lithium Ionic Conductor Li4P2S6",
+    "doi": "10.1021/acs.chemmater.6b04175",
+    "authors": [
+      "Christian Dietrich",
+      "Marcel Sadowski",
+      "Sabrina Sicolo",
+      "Dominik A. Weber",
+      "Stefan J. Sedlmaier",
+      "Kai S. Weldert",
+      "Sylvio Indris",
+      "Karsten Albe",
+      "Jürgen Janek",
+      "Wolfgang G. Zeier"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid electrolyte", "lithium thiophosphate", "Li4P2S6", "glass–ceramic"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li4P2S6",
+      "molecular_formula": "Li4P2S6",
+      "intended_role": "product",
+      "prov": ["Page 8765, Experimental Methods"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "67:33 Li2S:P2S5 glass",
+      "molecular_formula": "",
+      "intended_role": "reference material",
+      "prov": ["Page 8765, Experimental Methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": 0.200, "unit": "g"},
+      "notes": "4.354 mmol; purity 99.9%",
+      "prov": ["Page 8765, Synthesis of Crystalline Li4P2S6"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "red phosphorus",
+      "molecular_formula": "P",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": 0.1349, "unit": "g"},
+      "notes": "4.355 mmol; purity 98.9%",
+      "prov": ["Page 8765, Synthesis of Crystalline Li4P2S6"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "sulfur",
+      "molecular_formula": "S",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": 0.2792, "unit": "g"},
+      "notes": "8.709 mmol; purity 99.998%",
+      "prov": ["Page 8765, Synthesis of Crystalline Li4P2S6"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "glovebox atmosphere (<0.1 ppm O2/H2O)",
+      "prov": ["Page 8765, Synthesis of Crystalline Li4P2S6"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "stoichiometric amount for 5 g batch; purity 99%",
+      "prov": ["Page 8765, Synthesis of 67:33 Li2S:P2S5 Glass"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "ZrO2 milling media",
+      "molecular_formula": "ZrO2",
+      "ontology": {"role": "process aid", "category": "ceramic"},
+      "amount": {"value": 110, "unit": "g"},
+      "notes": "3 mm balls",
+      "prov": ["Page 8765, Synthesis of 67:33 Li2S:P2S5 Glass"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Grinding of starting materials for Li4P2S6",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {"inputs": ["chem_1", "chem_2", "chem_3"], "atmosphere": "argon"},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "agate mortar in Ar-filled glovebox (O2,H2O<0.1 ppm)"
+          }
+        ],
+        "conditions": {"atmosphere": "argon", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 8765, Experimental Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pelletizing the mixture",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {"pressure": {"value": 40, "unit": "MPa"}, "die_diameter": "10 mm"},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": ""
+          }
+        ],
+        "conditions": {"atmosphere": "argon", "pressure": {"value": 40, "unit": "MPa"}},
+        "prov": ["Page 8765, Experimental Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Sealing in evacuated silica ampule",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {"container": "silica glass ampule", "evacuated": true},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "wall 2 mm, ID 11 mm, length ~110 mm"
+          }
+        ],
+        "conditions": {"pressure": {"value": null, "unit": "bar"}, "atmosphere": "vacuum"},
+        "prov": ["Page 8765, Experimental Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat treatment to form crystalline Li4P2S6",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {"rate": {"value": 2, "unit": "K min-1"}, "target_temperature": {"value": 1173, "unit": "K"}},
+            "duration": {"value": 1440, "unit": "min"},
+            "temperature": {"value": 1173, "unit": "K"},
+            "notes": "hold 24 h at 900 °C"
+          },
+          {
+            "action": "anneal",
+            "parameters": {"target_temperature": {"value": 723, "unit": "K"}},
+            "duration": {"value": 4320, "unit": "min"},
+            "temperature": {"value": 723, "unit": "K"},
+            "notes": "72 h at 450 °C"
+          },
+          {
+            "action": "cool",
+            "parameters": {"rate": {"value": 1, "unit": "K min-1"}},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "to room temperature"
+          }
+        ],
+        "conditions": {"atmosphere": "sealed vacuum ampule", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 8765, Experimental Methods"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Recovery and grinding of Li4P2S6 powder",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {"inputs": ["target_1"]},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "resulting in dark yellow powder"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 8765, Experimental Methods"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Ball-milling synthesis of 67:33 Li2S:P2S5 glass",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_1", "chem_5"], "total_mass": {"value": 5, "unit": "g"}},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 298, "unit": "K"},
+            "notes": "stoichiometric amounts"
+          },
+          {
+            "action": "ball_mill",
+            "parameters": {"speed": {"value": 510, "unit": "rpm"}, "cycles": 300, "cycle_milling_time": {"value": 5, "unit": "min"}, "cycle_cooling_time": {"value": 15, "unit": "min"}, "media": "ZrO2 3 mm balls", "media_mass": {"value": 110, "unit": "g"}, "jar_volume": {"value": 45, "unit": "mL"}},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "until amorphization complete (no XRD reflections)"
+          }
+        ],
+        "conditions": {"atmosphere": "argon", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 8765, Experimental Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Preparation of reactant mixture under Ar"},
+      {"step_ref": "step_2", "description": "Pelletizing under 40 MPa"},
+      {"step_ref": "step_3", "description": "Vacuum sealing in silica ampule"},
+      {"step_ref": "step_4", "description": "Thermal formation and annealing to yield crystalline Li4P2S6"},
+      {"step_ref": "step_5", "description": "Final grinding to powder"},
+      {"step_ref": "step_6", "description": "Ball-milling route to obtain 67:33 Li2S:P2S5 glass"}
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Synchrotron X-ray diffraction",
+      "parameters": {"beamline": "APS 11-ID-B", "wavelength": {"value": 0.211364, "unit": "Å"}, "sample_detector_distance": "17–95 cm"},
+      "results": [{"metric": "space group", "value": "P3̅1m", "unit": ""}, {"metric": "lattice_parameters", "value": "a=b=6.0773 Å, c=6.5985 Å", "unit": ""}],
+      "interpretation": "Planar arrangement of P2S6 units confirmed",
+      "prov": ["Page 8766, Figure 2"]
+    },
+    {
+      "method": "Pair distribution function (PDF)",
+      "parameters": {"Qmax": {"value": 29, "unit": "Å-1"}},
+      "results": [{"metric": "local structure consistency", "value": "supports planar arrangement; presence of glassy PS4 units", "unit": ""}],
+      "interpretation": "Evidence of glassy component alongside crystalline phase",
+      "prov": ["Page 8766, Figure 3"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {"excitation_wavelength": {"value": 532, "unit": "nm"}, "power": {"value": 0.2, "unit": "mW"}, "spectral_range": "55–1555 cm-1"},
+      "results": [{"metric": "peak positions", "value": "385 cm-1 (Li4P2S6), 423 cm-1 (PS4^3-)", "unit": "cm-1"}],
+      "interpretation": "Mostly crystalline Li4P2S6 with minor glass signals",
+      "prov": ["Page 8768, Figure 4a"]
+    },
+    {
+      "method": "31P MAS NMR",
+      "parameters": {"magnetic_field": {"value": 11.7, "unit": "T"}, "spinning_speed": {"value": 30000, "unit": "Hz"}, "Larmor_frequency": {"value": 202.4, "unit": "MHz"}, "pulse_sequence": "Hahn echo", "recycle_delay": {"value": 60, "unit": "s"}},
+      "results": [{"metric": "glass fraction", "value": 0.20, "unit": "fraction"}, {"metric": "chemical shifts", "value": "two P2S6 environments observed"}, {"metric": "PO4 presence", "value": "trace"}, {"metric": "P1:P2 ratio", "value": "≈1.6", "unit": ""}],
+      "interpretation": "Approximately 20 % PS4-related units; confirms mixed phases",
+      "prov": ["Page 8768, Figure 4b"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {"frequency_range": "7 MHz–100 mHz", "voltage_amplitude": {"value": 20, "unit": "mV"}, "temperature_range": "298–338 K"},
+      "results": [{"metric": "ionic_conductivity", "value": 1.6e-10, "unit": "S cm-1"}, {"metric": "activation_energy", "value": 0.48, "unit": "eV"}],
+      "interpretation": "Composite exhibits low ionic conductivity",
+      "prov": ["Page 8769, Figure 5; Figure 6"]
+    },
+    {
+      "method": "DC polarization",
+      "parameters": {"voltage_range": "0.4–1.4 V", "step": {"value": 0.1, "unit": "V"}, "hold_time": {"value": 600, "unit": "min"}},
+      "results": [{"metric": "electronic_conductivity", "value": 4.8e-11, "unit": "S cm-1"}],
+      "interpretation": "Electronic contribution is minor",
+      "prov": ["Page 8769, Figure 5b"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density Functional Theory (VASP)",
+        "results": [
+          {"equation": "Frenkel defect formation energy", "value": 0.97, "unit": "eV"},
+          {"metric": "interstitial barrier int3→int1", "value": 0.05, "unit": "eV"},
+          {"metric": "vacancy barrier Li2→Li2", "value": 0.2, "unit": "eV"},
+          {"metric": "predicted intrinsic conductivity", "value": 2.9e-11, "unit": "S cm-1"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T18:27:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

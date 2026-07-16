@@ -1,0 +1,456 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Nature of Novel 2D van der Waals Heterostructures for Superior Potassium Ion Batteries",
+    "doi": "10.1002/aenm.202000884",
+    "authors": ["Jue Wang", "Bin Wang", "Bingan Lu"],
+    "journal": "Advanced Energy Materials",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research_article",
+    "tags": ["potassium ion batteries", "2D van der Waals heterostructure", "bimetallic oxychloride", "graphene oxide"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Bi0.51Sb0.49OCl/rGO heterostructure",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Figure 1", "Experimental Section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Bi0.52Sb0.48OCl nanosheets",
+      "molecular_formula": "",
+      "intended_role": "control_product",
+      "prov": ["Figure 1d,e", "Experimental Section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "graphene oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "carbon_material"
+      },
+      "amount": {
+        "value": 0.015,
+        "unit": "g"
+      },
+      "notes": "converted from 15 mg",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 15,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "sodium borohydride",
+      "molecular_formula": "NaBH4",
+      "ontology": {
+        "role": "reducing_agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2.5,
+        "unit": "mmol"
+      },
+      "notes": "≥97%, Tianjin Kermel",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "antimony(III) chloride",
+      "molecular_formula": "SbCl3",
+      "ontology": {
+        "role": "metal_source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "mmol"
+      },
+      "notes": "≥99.0%, Sinopharm",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "bismuth(III) nitrate pentahydrate",
+      "molecular_formula": "Bi(NO3)3·5H2O",
+      "ontology": {
+        "role": "metal_source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "mmol"
+      },
+      "notes": "≥99.0%, Sinopharm",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "ethylene glycol",
+      "molecular_formula": "C2H6O2",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic_solvent"
+      },
+      "amount": {
+        "value": 15,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "washing_solvent",
+        "category": "organic_solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "volume not specified",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of rGO dispersion",
+        "operations": [
+          {
+            "action": "disperse",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "technique": "ultrasonication",
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "GO dispersed in DI water"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "duration": {
+              "value": 30,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "NaBH4 added to reduce GO to rGO under ice water bath with stirring"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of metal precursor solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5", "chem_6"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Bi and Sb sources dissolved in ethylene glycol"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Formation of Bi0.51Sb0.49OCl nanosheets on rGO",
+        "operations": [
+          {
+            "action": "add_dropwise",
+            "parameters": {
+              "inputs": ["step_2_solution", "step_1_dispersion"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Added under vigorous stirring in ice water bath"
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Stirred for about 12 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Isolation and drying",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_7", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Washed several times"
+          },
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "freeze_dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "GO dispersion and reduction to rGO"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Metal precursor preparation"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Synthesis of 2D van der Waals heterostructure"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Purification and drying"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Temperature of ice water bath not specified",
+        "excerpt": "ice water bath"
+      },
+      {
+        "issue": "Exact volumes of ethanol for washing not provided",
+        "excerpt": "cleaned by ethanol and deionized water for several times"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "key_peaks_2theta": [26.02, 32.85, 41.00, 47.14, 54.56]
+      },
+      "results": [
+        {
+          "metric": "phase_identification",
+          "value": "BiOCl-type structure with peak shifts due to Sb substitution",
+          "unit": ""
+        },
+        {
+          "metric": "lattice_spacing",
+          "value": 0.342,
+          "unit": "nm",
+          "notes": "(101) facet of Bi0.51Sb0.49OCl"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1h"]
+    },
+    {
+      "method": "Raman",
+      "parameters": {
+        "laser_wavelength": 532,
+        "unit": "nm"
+      },
+      "results": [
+        {
+          "metric": "D band",
+          "value": 1350,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "G band",
+          "value": 1590,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Confirms presence of rGO",
+      "prov": ["Figure 1i"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "2D nanosheets well dispersed on rGO",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1f,g"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations (CASTEP)",
+        "results": [
+          {
+            "equation": "Intercalation energy of 1st K+",
+            "value": -1.99,
+            "unit": "eV"
+          },
+          {
+            "equation": "Intercalation energy of 2nd K+",
+            "value": -2.91,
+            "unit": "eV"
+          },
+          {
+            "metric": "volume_expansion_after_2_K+",
+            "value": 92.52,
+            "unit": "%"
+          }
+        ],
+        "prov": ["Figure 4", "Table 1"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 360,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1000
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "provided_text",
+    "processing_time": null
+  }
+}

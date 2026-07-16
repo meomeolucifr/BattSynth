@@ -1,0 +1,442 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Unveiling the Stable Nature of the Solid Electrolyte Interphase between Lithium Metal and LiPON via Cryogenic Electron Microscopy",
+    "doi": "10.1016/j.joule.2020.08.013",
+    "authors": ["Diyi Cheng", "Thomas A. Wynn", "Xuefeng Wang", "Shen Wang", "Minghao Zhang", "Ryosuke Shimizu", "Shuang Bai", "Han Nguyen", "Chengcheng Fang", "Min-cheol Kim", "Weikang Li", "Bingyu Lu", "Suk Jun Kim", "Ying Shirley Meng"],
+    "journal": "Joule",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": ["solid-state battery", "LiPON", "thin film", "interface"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiPON thin film",
+      "molecular_formula": "",
+      "intended_role": "solid_electrolyte",
+      "prov": ["Sample Preparation (Page 2496)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li/LiPON/LNMO thin-film full cell",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": ["Sample Preparation (Pages 2495-2496)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li3PO4 (sputtering target)",
+      "molecular_formula": "Li3PO4",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2-inch diameter crystalline target (ambiguous unit in text)",
+      "prov": ["Sample Preparation (Page 2496)"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Nitrogen gas (UHP)",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "sputtering_gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": 15,
+        "unit": "mTorr"
+      },
+      "notes": "process pressure during RF sputtering",
+      "prov": ["Sample Preparation (Page 2496)"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode_material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": 1.5,
+        "unit": "µm"
+      },
+      "notes": "thickness for interface sample; other thicknesses (100 nm, 570 nm) also used (see ambiguities)",
+      "prov": ["Results (Page 2486)", "Sample Preparation (Page 2496)"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiNi0.5Mn1.5O4 (LNMO)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "cathode_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 650,
+        "unit": "nm"
+      },
+      "notes": "film thickness by PLD",
+      "prov": ["Sample Preparation (Page 2496)"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Platinum (substrate layer)",
+      "molecular_formula": "Pt",
+      "ontology": {
+        "role": "substrate_coating",
+        "category": "metal"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "nm"
+      },
+      "notes": "Pt layer on alumina substrate for cathode",
+      "prov": ["Sample Preparation (Page 2496)"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte_salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "in EC:EMC (3:7 wt%) for liquid cell comparison",
+      "prov": ["Liquid Cell Fabrication (Page 2496)"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Ethylene carbonate (EC)",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic_solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of liquid electrolyte (3:7 wt% EC:EMC)",
+      "prov": ["Liquid Cell Fabrication (Page 2496)"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Ethyl methyl carbonate (EMC)",
+      "molecular_formula": "C4H8O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic_solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of liquid electrolyte (3:7 wt% EC:EMC)",
+      "prov": ["Liquid Cell Fabrication (Page 2496)"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "RF sputter deposition of LiPON thin film",
+        "operations": [
+          {
+            "action": "sputter_deposit",
+            "parameters": {
+              "target": "chem_1",
+              "substrate": "Pt/Cr/SiO2/Si",
+              "gas": "chem_2",
+              "power": {"value": 50, "unit": "W"},
+              "pressure": {"value": 0.015, "unit": "bar", "notes": "15 mTorr"},
+              "base_pressure": {"value": 3e-6, "unit": "Torr"},
+              "growth_rate": {"value": 0.46, "unit": "Å min-1"},
+              "thickness": {"value": 1, "unit": "µm"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "",
+            "prov": ["Sample Preparation (Page 2496)"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {"value": 0.015, "unit": "bar"}
+        },
+        "prov": ["Sample Preparation (Page 2496)"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Transfer LiPON-coated substrate to thermal evaporation chamber with environment isolation",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {},
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "minimized air exposure",
+            "prov": ["Sample Preparation (Page 2496)"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Sample Preparation (Page 2496)"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Thermal evaporation of lithium metal onto LiPON",
+        "operations": [
+          {
+            "action": "evaporate",
+            "parameters": {
+              "material": "chem_3",
+              "base_pressure": {"value": 3e-8, "unit": "Torr"},
+              "growth_rate": {"value": 1.53, "unit": "Å s-1"},
+              "thickness": {"value": 1.5, "unit": "µm"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "",
+            "prov": ["Results (Page 2486)", "Sample Preparation (Page 2496)"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "high vacuum",
+          "pressure": {"value": 3e-8, "unit": "Torr"}
+        },
+        "prov": ["Sample Preparation (Page 2496)"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Pulsed-laser deposition (PLD) of LNMO cathode film",
+        "operations": [
+          {
+            "action": "pulsed_laser_deposit",
+            "parameters": {
+              "material": "chem_4",
+              "laser_fluence": {"value": 2, "unit": "J cm-2"},
+              "repetition_rate": {"value": 10, "unit": "Hz"},
+              "substrate_temperature": {"value": 873, "unit": "K", "notes": "600 °C"},
+              "oxygen_partial_pressure": {"value": 0.2, "unit": "Torr"},
+              "thickness": {"value": 650, "unit": "nm"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": 873, "unit": "K"},
+            "notes": "",
+            "prov": ["Sample Preparation (Page 2496)"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2",
+          "pressure": {"value": 0.2, "unit": "Torr"}
+        },
+        "prov": ["Sample Preparation (Page 2496)"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Assembly of Li/LiPON/LNMO thin-film full cell",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "anode": "chem_3",
+              "electrolyte": "target_1",
+              "cathode": "chem_4"
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Li metal thickness 570 nm for full cell",
+            "prov": ["Sample Preparation (Page 2496)", "Electrochemical Measurement (Page 2496)"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "inert",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Sample Preparation (Page 2496)"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "LiPON film deposition via RF sputtering"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Isolated transfer to evaporation chamber"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Lithium metal film evaporation"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "LNMO cathode film deposition"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Full cell assembly"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear diameter unit for Li3PO4 target",
+        "excerpt": "\"200in diameter\" from Sample Preparation"
+      },
+      {
+        "issue": "Temperature notation",
+        "excerpt": "\"600/C14C\" in PLD conditions"
+      },
+      {
+        "issue": "Multiple lithium film thickness values (100 nm, 570 nm, 1.5 µm)",
+        "excerpt": "Results and Sample Preparation sections list differing Li thicknesses"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {
+        "voltage_window": "3.5–5.1 V",
+        "rate_initial": "C/10",
+        "rate_rest": "5C",
+        "cycles": 535
+      },
+      "results": [
+        {
+          "metric": "Coulombic efficiency",
+          "value": 99.85,
+          "unit": "%",
+          "notes": "after 400 cycles"
+        },
+        {
+          "metric": "Coulombic efficiency",
+          "value": 99.70,
+          "unit": "%",
+          "notes": "after 100 cycles"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1A-B (Page 2486-2487)"]
+    },
+    {
+      "method": "Cryo-TEM/HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Interphase thickness",
+          "value": 76,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Multilayer-mosaic SEI with Li2O, Li3N, Li3PO4 nanocrystals in amorphous matrix",
+      "prov": ["Figures 2A-K (Pages 2488-2489)"]
+    },
+    {
+      "method": "Cryo-STEM-EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "P and N concentration gradients observed",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1D-G (Pages 2486-2488)"]
+    },
+    {
+      "method": "Cryo-STEM-EELS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Presence of Li2O, Li3N, Li3PO4 signatures",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3A-C (Pages 2490-2491)"]
+    },
+    {
+      "method": "XPS depth profiling",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Sequential appearance of Li2O, Li3N, Li3PO4 signals",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms multilayer structure",
+      "prov": ["Figure 4 (Page 2491)"]
+    },
+    {
+      "method": "Cryo-XRD",
+      "parameters": {
+        "temperature": {"value": 100, "unit": "K"}
+      },
+      "results": [
+        {
+          "metric": "LiPON phase",
+          "value": "amorphous",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure S4 (supplementary reference)"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 10000
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-30T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Accelerated Workflow for Antiperovskite-based Solid State Electrolytes",
+    "doi": "10.1002/batt.202300041",
+    "authors": [
+      "Benjamin H. Sjølin",
+      "Peter B. Jørgensen",
+      "Andrea Fedrigucci",
+      "Tejs Vegge",
+      "Arghya Bhowmik",
+      "Ivano E. Castelli"
+    ],
+    "journal": "Batteries & Supercaps",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational screening",
+    "tags": [
+      "solid-state electrolyte",
+      "antiperovskite",
+      "DFT",
+      "high-throughput",
+      "migration barrier"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "t1",
+      "compound_name": "Li3SI",
+      "molecular_formula": "Li3SI",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t2",
+      "compound_name": "Li3FSe",
+      "molecular_formula": "Li3FSe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t3",
+      "compound_name": "Li3FTe",
+      "molecular_formula": "Li3FTe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t4",
+      "compound_name": "Li3HSe",
+      "molecular_formula": "Li3HSe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t5",
+      "compound_name": "Li3HTe",
+      "molecular_formula": "Li3HTe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t6",
+      "compound_name": "Li3OCl",
+      "molecular_formula": "Li3OCl",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t7",
+      "compound_name": "Li3OBr",
+      "molecular_formula": "Li3OBr",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t8",
+      "compound_name": "Na3FSe",
+      "molecular_formula": "Na3FSe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t9",
+      "compound_name": "Na3SI",
+      "molecular_formula": "Na3SI",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t10",
+      "compound_name": "Na3OCl",
+      "molecular_formula": "Na3OCl",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t11",
+      "compound_name": "Na3FTe",
+      "molecular_formula": "Na3FTe",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t12",
+      "compound_name": "Na3OBr",
+      "molecular_formula": "Na3OBr",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t13",
+      "compound_name": "Na3OI",
+      "molecular_formula": "Na3OI",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    },
+    {
+      "target_id": "t14",
+      "compound_name": "Mg3NAs",
+      "molecular_formula": "Mg3NAs",
+      "intended_role": "candidate solid-state electrolyte",
+      "prov": ["Table 2"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "wf1",
+        "description": "DFT structural relaxation (PBE, 520 eV cutoff, 7x7x7 k-grid) of 1317 antiperovskite compositions."
+      },
+      {
+        "step_ref": "wf2",
+        "description": "Antiperovskite structure check based on geometric criteria (unit cell angles, lengths, X–A/B distances, octahedral angles)."
+      },
+      {
+        "step_ref": "wf3",
+        "description": "Thermodynamic stability assessment via energy above convex hull (<0.2 eV/atom)."
+      },
+      {
+        "step_ref": "wf4",
+        "description": "Electronic property filter: bandgap ≥0.5 eV (PBE)."
+      },
+      {
+        "step_ref": "wf5",
+        "description": "Electrochemical stability window computed with Grand Potential Phase Diagrams; requirement ≥1 V."
+      },
+      {
+        "step_ref": "wf6",
+        "description": "Migration barrier estimation with Surrogate NEB (S-NEB); top 10 lowest barriers selected."
+      },
+      {
+        "step_ref": "wf7",
+        "description": "Benchmark Climbing-Image NEB (CI-NEB) calculations for 28 compounds to validate S-NEB."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Ambiguous formula transcription for last compound in Table 2",
+        "excerpt": "\"Mg3Nas\" appears in text; interpreted as \"Mg3NAs\" (Mg3NAs)."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT (PBE)",
+      "parameters": {
+        "energy_cutoff": "520 eV",
+        "k_point_grid": "7x7x7 (unit cell), 4x4x4 (supercell)"
+      },
+      "results": [
+        {"target_id": "t1", "metric": "bandgap", "value": 3.7, "unit": "eV"},
+        {"target_id": "t2", "metric": "bandgap", "value": 3.8, "unit": "eV"},
+        {"target_id": "t3", "metric": "bandgap", "value": 3.0, "unit": "eV"},
+        {"target_id": "t4", "metric": "bandgap", "value": 3.6, "unit": "eV"},
+        {"target_id": "t5", "metric": "bandgap", "value": 3.1, "unit": "eV"},
+        {"target_id": "t6", "metric": "bandgap", "value": 4.9, "unit": "eV"},
+        {"target_id": "t7", "metric": "bandgap", "value": 4.5, "unit": "eV"},
+        {"target_id": "t8", "metric": "bandgap", "value": 2.0, "unit": "eV"},
+        {"target_id": "t9", "metric": "bandgap", "value": 2.5, "unit": "eV"},
+        {"target_id": "t10", "metric": "bandgap", "value": 2.0, "unit": "eV"},
+        {"target_id": "t11", "metric": "bandgap", "value": 2.1, "unit": "eV"},
+        {"target_id": "t12", "metric": "bandgap", "value": 1.9, "unit": "eV"},
+        {"target_id": "t13", "metric": "bandgap", "value": 2.0, "unit": "eV"},
+        {"target_id": "t14", "metric": "bandgap", "value": 1.3, "unit": "eV"}
+      ],
+      "interpretation": "All selected candidates are semiconductors/insulators with bandgap ≥1.3 eV.",
+      "prov": ["Table 2"]
+    },
+    {
+      "method": "Grand Potential Phase Diagram (GPPD)",
+      "parameters": {},
+      "results": [
+        {"target_id": "t1", "metric": "ESW", "value": 2.52, "unit": "V"},
+        {"target_id": "t2", "metric": "ESW", "value": 2.13, "unit": "V"},
+        {"target_id": "t3", "metric": "ESW", "value": 1.58, "unit": "V"},
+        {"target_id": "t4", "metric": "ESW", "value": 1.01, "unit": "V"},
+        {"target_id": "t5", "metric": "ESW", "value": 1.03, "unit": "V"},
+        {"target_id": "t6", "metric": "ESW", "value": 2.86, "unit": "V"},
+        {"target_id": "t7", "metric": "ESW", "value": 2.80, "unit": "V"},
+        {"target_id": "t8", "metric": "ESW", "value": 1.58, "unit": "V"},
+        {"target_id": "t9", "metric": "ESW", "value": 2.01, "unit": "V"},
+        {"target_id": "t10", "metric": "ESW", "value": 1.73, "unit": "V"},
+        {"target_id": "t11", "metric": "ESW", "value": 1.40, "unit": "V"},
+        {"target_id": "t12", "metric": "ESW", "value": 1.85, "unit": "V"},
+        {"target_id": "t13", "metric": "ESW", "value": 1.15, "unit": "V"},
+        {"target_id": "t14", "metric": "ESW", "value": 1.21, "unit": "V"}
+      ],
+      "interpretation": "All candidates exceed the 1 V minimum stability window.",
+      "prov": ["Table 2"]
+    },
+    {
+      "method": "Climbing-Image NEB (CI-NEB)",
+      "parameters": {
+        "optimizer": "FIRE",
+        "internal_images": "1 for Li/Na, 3 for Mg"
+      },
+      "results": [
+        {"target_id": "t1", "metric": "migration barrier", "value": 175, "unit": "meV"},
+        {"target_id": "t2", "metric": "migration barrier", "value": 194, "unit": "meV"},
+        {"target_id": "t3", "metric": "migration barrier", "value": 198, "unit": "meV"},
+        {"target_id": "t4", "metric": "migration barrier", "value": 265, "unit": "meV"},
+        {"target_id": "t5", "metric": "migration barrier", "value": 293, "unit": "meV"},
+        {"target_id": "t6", "metric": "migration barrier", "value": 380, "unit": "meV"},
+        {"target_id": "t7", "metric": "migration barrier", "value": 419, "unit": "meV"},
+        {"target_id": "t8", "metric": "migration barrier", "value": 279, "unit": "meV"},
+        {"target_id": "t9", "metric": "migration barrier", "value": 313, "unit": "meV"},
+        {"target_id": "t10", "metric": "migration barrier", "value": 329, "unit": "meV"},
+        {"target_id": "t11", "metric": "migration barrier", "value": 355, "unit": "meV"},
+        {"target_id": "t12", "metric": "migration barrier", "value": 459, "unit": "meV"},
+        {"target_id": "t13", "metric": "migration barrier", "value": 553, "unit": "meV"},
+        {"target_id": "t14", "metric": "migration barrier", "value": 616, "unit": "meV"}
+      ],
+      "interpretation": "Li and Na antiperovskites exhibit lower migration barriers compared to Mg-based compound.",
+      "prov": ["Table 2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Convex Hull Stability Analysis",
+        "results": [
+          {"target_id": "t1", "metric": "energy_above_hull", "value": 0.195, "unit": "eV atom-1"},
+          {"target_id": "t2", "metric": "energy_above_hull", "value": 0.057, "unit": "eV atom-1"},
+          {"target_id": "t3", "metric": "energy_above_hull", "value": 0.065, "unit": "eV atom-1"},
+          {"target_id": "t4", "metric": "energy_above_hull", "value": 0.017, "unit": "eV atom-1"},
+          {"target_id": "t5", "metric": "energy_above_hull", "value": 0.012, "unit": "eV atom-1"},
+          {"target_id": "t6", "metric": "energy_above_hull", "value": 0.145, "unit": "eV atom-1"},
+          {"target_id": "t7", "metric": "energy_above_hull", "value": 0.157, "unit": "eV atom-1"},
+          {"target_id": "t8", "metric": "energy_above_hull", "value": 0.044, "unit": "eV atom-1"},
+          {"target_id": "t9", "metric": "energy_above_hull", "value": 0.172, "unit": "eV atom-1"},
+          {"target_id": "t10", "metric": "energy_above_hull", "value": 0.139, "unit": "eV atom-1"},
+          {"target_id": "t11", "metric": "energy_above_hull", "value": 0.022, "unit": "eV atom-1"},
+          {"target_id": "t12", "metric": "energy_above_hull", "value": 0.138, "unit": "eV atom-1"},
+          {"target_id": "t13", "metric": "energy_above_hull", "value": 0.138, "unit": "eV atom-1"},
+          {"target_id": "t14", "metric": "energy_above_hull", "value": 0.053, "unit": "eV atom-1"}
+        ],
+        "prov": ["Table 2"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-19T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

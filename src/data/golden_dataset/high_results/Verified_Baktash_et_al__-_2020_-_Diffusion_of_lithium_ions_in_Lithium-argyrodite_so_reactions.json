@@ -1,0 +1,324 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Diffusion of lithium ions in Lithium-argyrodite solid-state electrolytes",
+    "doi": "10.1038/s41524-020-00432-1",
+    "authors": [
+      "Ardeshir Baktash",
+      "James C. Reid",
+      "Tanglaw Roman",
+      "Debra J. Searles"
+    ],
+    "journal": "npj Computational Materials",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid-state electrolyte",
+      "ab initio molecular dynamics",
+      "ionic conductivity",
+      "Li6PS5Cl",
+      "Li5PS4Cl2"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li5PS4Cl2",
+      "molecular_formula": "Li5PS4Cl2",
+      "intended_role": "solid-state electrolyte candidate",
+      "prov": [
+        "Text: \"using ab initio nonequilibrium molecular dynamics simulations we are able to obtain accurate estimates of the diffusion coefficients of Li ions in Li6PS5Cl and Li5PS4Cl2\""
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly mentions the compound formula Li5PS4Cl2 multiple times, including in the abstract sentence quoted in the alleged provenance (\u201c\u2026diffusion coefficients of Li ions in Li6PS5Cl and Li5PS4Cl2\u2026\u201d) and throughout the Results/Methods sections discussing the Li5PS4Cl2 structure and its conductivity. Therefore the extracted Target Formula Li5PS4Cl2 is directly supported by the source text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid-state electrolyte",
+      "prov": [
+        "Text: \"Li6PS5Cl is reported to have a conductivity of ~10\u22123 S cm\u22121 at room temperature\""
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly studies and discusses the lithium argyrodite electrolyte with formula Li6PS5Cl multiple times (e.g., Page 1 abstract: \u201cdiffusion coefficients of Li ions in Li6PS5Cl\u2026\u201d, Page 2: \u201cLi6PS5Cl is reported to have a conductivity of ~10\u22123 S cm\u22121\u2026\u201d). Therefore the extracted Target Formula \u201cLi6PS5Cl\u201d is directly supported by the document text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li5.75PS4.75Cl1.25",
+      "molecular_formula": "Li5.75PS4.75Cl1.25",
+      "intended_role": "defective solid-state electrolyte model",
+      "prov": [
+        "Text: \"giving a new structure of Li5.75PS4.75Cl1.25\""
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states: \u201cremove two Li ions\u2026 replace two S2 ions with two Cl ions\u2026 giving a new structure of Li5.75PS4.75Cl1.25\u201d (Page 6). This directly supports the extracted target formula.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_1",
+        "description": "Construction of supercell models (pure, disordered, vacancy-containing) followed by ab initio equilibrium and nonequilibrium molecular dynamics simulations at multiple temperatures (300\u20131000 K) to evaluate Li-ion diffusion.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.84,
+          "reasoning": "The paper explicitly describes (i) construction of supercell models and defective/disordered/vacancy-containing variants based on Li6PS5Cl (2\u00d7 unit-cell supercell, 104 atoms) and Li5PS4Cl2 derived by S2\u2192Cl substitution plus Li removal for charge balance; (ii) use of both equilibrium (EMD) and nonequilibrium (NEMD, color diffusion) ab initio molecular dynamics simulations; and (iii) simulations at multiple temperatures spanning 300\u20131000 K for Li5PS4Cl2 (300, 600, 800, 1000 K) to evaluate Li-ion diffusion (self-diffusion coefficient/ionic conductivity). It also states Li6PS5Cl diffusion at room temperature is estimated by extrapolation from 600 and 800 K NEMD. Thus the described workflow timeline is supported in substance, though for Li6PS5Cl the explicit temperatures are 300/450/600/800 K (not 1000 K).",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Charge balance ambiguity for vacancy-containing model",
+        "excerpt": "we remove two Li ions from the Li6PS5Cl supercell ... giving a new structure of Li5.75PS4.75Cl1.25, which is similar to the empirical formula given in the literature (Li5.8PS4.8Cl1.2)",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "Supported. The paper explicitly discusses charge-balance ambiguity for the empirical formula Li5.6PS4.8Cl1.2 (\u201cWe note that the charges are not balanced\u2026\u201d), and then describes constructing a vacancy/extra-Cl model by removing two Li from the Li6PS5Cl supercell and replacing two S2 with two Cl, yielding \u201cLi5.75PS4.75Cl1.25,\u201d stated to be similar to \u201c(Li5.8PS4.8Cl1.2)\u201d. This directly matches the extracted issue and excerpt.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Ab initio Equilibrium Molecular Dynamics (EMD)",
+      "parameters": {
+        "temperatures": [
+          300,
+          600,
+          800,
+          1000
+        ],
+        "time_per_run": "20\u201345 ps",
+        "replicas": 10
+      },
+      "results": [
+        {
+          "target": "target_1",
+          "metric": "Self-diffusion coefficient Ds",
+          "conditions": "300 K",
+          "value": 2.9e-06,
+          "unit": "cm2 s-1"
+        },
+        {
+          "target": "target_1",
+          "metric": "Ionic conductivity \u03c3",
+          "conditions": "300 K",
+          "value": 0.35,
+          "unit": "S cm-1"
+        },
+        {
+          "target": "target_1",
+          "metric": "Self-diffusion coefficient Ds",
+          "conditions": "600 K",
+          "value": 2.9e-05,
+          "unit": "cm2 s-1"
+        },
+        {
+          "target": "target_1",
+          "metric": "Ionic conductivity \u03c3",
+          "conditions": "600 K",
+          "value": 1.8,
+          "unit": "S cm-1"
+        },
+        {
+          "target": "target_1",
+          "metric": "Self-diffusion coefficient Ds",
+          "conditions": "800 K",
+          "value": 5.6e-05,
+          "unit": "cm2 s-1"
+        },
+        {
+          "target": "target_1",
+          "metric": "Ionic conductivity \u03c3",
+          "conditions": "800 K",
+          "value": 2.5,
+          "unit": "S cm-1"
+        },
+        {
+          "target": "target_1",
+          "metric": "Self-diffusion coefficient Ds",
+          "conditions": "1000 K",
+          "value": 8.9e-05,
+          "unit": "cm2 s-1"
+        },
+        {
+          "target": "target_1",
+          "metric": "Ionic conductivity \u03c3",
+          "conditions": "1000 K",
+          "value": 3.2,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "EMD results show high Li-ion mobility in Li5PS4Cl2; conductivity reaches 0.35 S cm-1 at 300 K.",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Table 1 in the provided text explicitly reports Li5PS4Cl2 (target_1) EMD results at 300, 600, 800, and 1000 K for both self-diffusion coefficient Ds (cm2 s\u22121) and ionic conductivity \u03c3 (S cm\u22121): 300 K Ds = 2.9(4)\u00d710\u22126, \u03c3 = 0.35(5); 600 K Ds = 2.9(2)\u00d710\u22125, \u03c3 = 1.8(1); 800 K Ds = 5.6(3)\u00d710\u22125, \u03c3 = 2.5(1); 1000 K Ds = 8.9(4)\u00d710\u22125, \u03c3 = 3.2(2). The extracted values match the central reported values (ignoring the parenthetical uncertainties), and the units/conditions align.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Ab initio Nonequilibrium Molecular Dynamics (NEMD)",
+      "parameters": {
+        "temperatures": [
+          300,
+          600,
+          800,
+          1000
+        ],
+        "color_field_range": "0\u20130.04 eV \u00c5-1"
+      },
+      "results": [
+        {
+          "target": "target_1",
+          "metric": "Self-diffusion coefficient Ds",
+          "conditions": "300 K",
+          "value": 3.3e-06,
+          "unit": "cm2 s-1"
+        },
+        {
+          "target": "target_1",
+          "metric": "Ionic conductivity \u03c3",
+          "conditions": "300 K",
+          "value": 0.4,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "NEMD values align with EMD within error, validating method for highly diffusive systems.",
+      "prov": [
+        "Table 1",
+        "Figure 4",
+        "Figure 5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Supported by Table 1 (page 3). Under NEMD at 300 K for Li5PS4Cl2 (the system used in the EMD/NEMD comparison), the paper reports Ds = 3.3(4) \u00d7 10\u22126 cm2 s\u22121 and ionic conductivity \u03c3 = 0.40(5) S cm\u22121. These match the extracted values 3.3e-06 cm2 s\u22121 and 0.4 S cm\u22121 (rounding/omitting uncertainties). Alleged provenance includes Table 1 (correct); Figures 4\u20135 relate to color current/field dependence but are not needed for the numeric values.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "NEMD with Arrhenius extrapolation",
+      "parameters": {
+        "temperatures_used": [
+          600,
+          800
+        ]
+      },
+      "results": [
+        {
+          "target": "target_2",
+          "metric": "Ionic conductivity \u03c3 (predicted)",
+          "conditions": "300 K, pure structure",
+          "value": null,
+          "unit": "S cm-1",
+          "range": "6e-5\u20133e-4"
+        },
+        {
+          "target": "target_2",
+          "metric": "Ionic conductivity \u03c3 (predicted)",
+          "conditions": "300 K, S\u2013Cl disorder",
+          "value": null,
+          "unit": "S cm-1",
+          "range": "6e-3\u20131e-1"
+        },
+        {
+          "target": "target_3",
+          "metric": "Ionic conductivity \u03c3",
+          "conditions": "300 K, Li-vacancy & disorder",
+          "value": 0.09,
+          "unit": "S cm-1",
+          "error": "\u00b10.03"
+        }
+      ],
+      "interpretation": "Disorder and Li-vacancies markedly enhance conductivity compared to pristine Li6PS5Cl.",
+      "prov": [
+        "Figure 7",
+        "Table 2",
+        "Text: \"The ionic conductivity of this structure at 300 K was calculated to be 0.09 \u00b1 0.03 S cm\u22121\""
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "All three extracted items are explicitly supported by the paper text and Table 2/Fig. 7 discussion. For pure Li6PS5Cl at 300 K, the text states the conductivity is predicted to be 10\u22125\u201310\u22124 S cm\u22121 (Fig. 7 discussion) and later gives a more specific range: \u201cpristine Li6PS5Cl \u2026 (6 \u00d7 10\u22125\u20133 \u00d7 10\u22124 S cm\u22121)\u201d (Page 6) and Table 2 lists \u201c6 \u00d7 10\u22125 \u2013 3 \u00d7 10\u22124 \u2026 This work (NEMD)\u201d. For S\u2013Cl disorder, the text states the estimated value is \u201c(6 \u00d7 10\u22123\u20131 \u00d7 10\u22121 S cm\u22121)\u201d (Page 6) and Table 2 lists \u201c6 \u00d7 10\u22123 \u2013 0.1 \u2026 This work (EMD)\u201d. For the Li-vacancy & disorder (Li5.75PS4.75Cl1.25) structure, the text explicitly states: \u201cThe ionic conductivity of this structure at 300 K was calculated to be 0.09 \u00b1 0.03 S cm\u22121\u201d (Page 6), matching the extracted value and error. The extractor\u2019s use of value=None with a provided range is acceptable here because only a range (not a single point estimate) is given for the first two cases.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius extrapolation",
+        "results": [
+          {
+            "equation": "\u03c3T = \u03c30 exp(\u2212Ea / kB T)",
+            "value": null,
+            "unit": "",
+            "notes": "Used to extrapolate conductivity of Li6PS5Cl from 600\u2013800 K to 300 K; yields 6\u00d710\u22125\u20133\u00d710\u22124 S cm\u22121 for pure crystal."
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.25,
+          "reasoning": "The paper explicitly describes the analysis/simulation methods used (ab initio Born\u2013Oppenheimer molecular dynamics using CP2K/Quickstep; equilibrium MD (EMD) and nonequilibrium MD (NEMD) with the color diffusion algorithm; MSD/Einstein relation and Nernst\u2013Einstein equation; Arrhenius extrapolation). However, the extracted value for 'Analysis Method' is blank, so it is not supported as-is by the document because information is clearly provided rather than missing.",
+          "suggested_fix": "Ab initio Born\u2013Oppenheimer molecular dynamics (CP2K/Quickstep) using equilibrium MD (EMD) and nonequilibrium MD (NEMD, color diffusion algorithm); diffusion from MSD/Einstein relation; conductivity via Nernst\u2013Einstein; Arrhenius extrapolation."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-15T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

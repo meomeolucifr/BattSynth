@@ -1,0 +1,333 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Progress in the Development of Sodium-Ion Solid Electrolytes",
+    "doi": "10.1002/smtd.201700219",
+    "authors": ["Jung-Joon Kim", "Kyungho Yoon", "Inchul Park", "Kisuk Kang"],
+    "journal": "Small Methods",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["sodium-ion", "solid electrolyte", "ceramic", "glass-ceramic"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "cubic Na3PS4 glass-ceramic",
+      "molecular_formula": "Na3PS4",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page 6"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "β″-Al2O3",
+      "molecular_formula": "Na2O·(5–7)Al2O3",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page 3"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Na2S",
+      "molecular_formula": "Na2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 75,
+        "unit": "mol%"
+      },
+      "notes": "",
+      "prov": ["Page 6"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 25,
+        "unit": "mol%"
+      },
+      "notes": "",
+      "prov": ["Page 6"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "α-Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Na2CO3",
+      "molecular_formula": "Na2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "stabilizer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "MgO",
+      "molecular_formula": "MgO",
+      "ontology": {
+        "role": "stabilizer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 3"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of cubic Na3PS4 glass-ceramic",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "ratio": "75:25 mol%"
+            },
+            "notes": "Mechanical milling"
+          },
+          {
+            "action": "mill",
+            "parameters": {
+              "duration": {
+                "value": 90,
+                "unit": "min"
+              }
+            },
+            "notes": ""
+          },
+          {
+            "action": "heat_treat",
+            "parameters": {
+              "temperature": {
+                "value": 543,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 120,
+                "unit": "min"
+              }
+            },
+            "notes": "Heat treatment to crystallize cubic phase"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 6"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Synthesis of β″-Al2O3 solid electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4", "chem_5", "chem_6"]
+            },
+            "notes": "Wet ball milling"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "heat_treat",
+            "parameters": {
+              "temperature": {
+                "value": 1473,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "Initial calcination for several hours"
+          },
+          {
+            "action": "mill",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature": {
+                "value": 1873,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "75:25 mol% Na2S:P2S5 milling 1.5 h, heat at 270 °C 2 h to obtain cubic Na3PS4"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Wet ball mill α-Al2O3, Na2CO3, Li2CO3/MgO; calcine 1200 °C; re-mill; sinter 1600 °C 30 min to form β″-Al2O3"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing exact amounts for β″-Al2O3 precursors and duration of 1200 °C calcination",
+        "excerpt": "heat treated at ≈1200 °C for several hours"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": "298 K"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 4.6e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy",
+          "value": 19,
+          "unit": "kJ mol-1"
+        }
+      ],
+      "interpretation": "High conductivity achieved for cubic Na3PS4 glass-ceramic",
+      "prov": ["Page 6"]
+    },
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": "573 K"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 0.28,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Polycrystalline β″-Al2O3 exhibits high conductivity at elevated temperature",
+      "prov": ["Page 3"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical cell testing",
+        "results": [
+          {
+            "equation": "",
+            "value": 90,
+            "unit": "mAh g-1",
+            "notes": "Reversible capacity for Na–Sn/Na3PS4/TiS2 cell over 10 cycles"
+          }
+        ],
+        "prov": ["Page 6"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 90,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 10
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T14:00:00Z",
+    "source_file": "review1700219.pdf",
+    "processing_time": null
+  }
+}

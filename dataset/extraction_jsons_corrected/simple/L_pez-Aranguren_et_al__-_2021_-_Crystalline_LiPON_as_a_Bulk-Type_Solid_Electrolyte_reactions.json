@@ -1,0 +1,439 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Crystalline LiPON as a Bulk-Type Solid Electrolyte",
+    "doi": "10.1021/acsenergylett.0c02336",
+    "authors": [
+      "Pedro López-Aranguren",
+      "Marine Reynaud",
+      "Paweł Głuchowski",
+      "Ainhoa Bustinza",
+      "Montserrat Galceran",
+      "Juan Miguel López del Amo",
+      "Michel Armand",
+      "Montse Casas-Cabanas"
+    ],
+    "journal": "ACS Energy Letters",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid electrolyte",
+      "LiPON",
+      "bulk synthesis",
+      "solid-state batteries"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "b-Li3.6PO3.4N0.6",
+      "molecular_formula": "Li3.6P1O3.4N0.6",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Abstract",
+        "Figure 2",
+        "Table 1",
+        "Experimental section"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiPO3",
+      "molecular_formula": "LiPO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods description"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li3N",
+      "molecular_formula": "Li3N",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods description"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods description"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used in symmetric cells",
+      "prov": [
+        "Electrochemical testing section"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanochemical synthesis of crystalline LiPON",
+        "operations": [
+          {
+            "action": "ball mill",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ],
+              "atmosphere": "Ar"
+            },
+            "duration": {
+              "value": 20,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "simple mechanical milling under Ar"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental description"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-pressure low-temperature densification of LiPON powder",
+        "operations": [
+          {
+            "action": "press/sinter",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ]
+            },
+            "duration": {
+              "value": 2,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 473,
+              "unit": "K"
+            },
+            "pressure": {
+              "value": 55000,
+              "unit": "bar"
+            },
+            "notes": "quasi-isostatic pressing (HPLT); ambient atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 55000,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Results – densification paragraph"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ball-milling LiPO3 and Li3N under Ar for 20 min to form b-Li3.6PO3.4N0.6 precursor powder."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "High-pressure (5.5 GPa), 200 °C, 2 min pressing to obtain dense LiPON pellets."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing reactant quantities and milling parameters (speed, ball-to-powder ratio).",
+        "excerpt": "crystalline b-LiPON was prepared through simple mechanical milling of the low-cost precursors LiPO3 and Li3N for 20 min under Ar"
+      },
+      {
+        "issue": "Exact atmosphere during pressing not specified (stated 'under ambient atmosphere').",
+        "excerpt": "powder quasi-isostatically pressed at 5.5 GPa for 2 min at temperatures ranging from 200 °C to 450 °C, under ambient atmosphere"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "space group",
+          "value": "P21/m",
+          "unit": ""
+        },
+        {
+          "metric": "cell parameters",
+          "value": "a = 5.098 Å, b = 6.158 Å, c = 5.324 Å, β = 90.60°",
+          "unit": ""
+        },
+        {
+          "metric": "density",
+          "value": 2.38,
+          "unit": "g cm-3"
+        }
+      ],
+      "interpretation": "Confirmed new crystalline phase.",
+      "prov": [
+        "Figure 2a",
+        "Table 1"
+      ]
+    },
+    {
+      "method": "NPD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "refined composition",
+          "value": "Li3.6PO3.4N0.6",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 2b"
+      ]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": "0.1–1 μm",
+          "unit": "µm"
+        },
+        {
+          "metric": "pellet morphology",
+          "value": "fully and uniformly densified",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figures S1a–f"
+      ]
+    },
+    {
+      "method": "Solid-state NMR",
+      "parameters": {
+        "nuclei": "7Li, 31P"
+      },
+      "results": [
+        {
+          "metric": "7Li resonance",
+          "value": "single",
+          "unit": ""
+        },
+        {
+          "metric": "31P site distribution",
+          "value": "PO4 4.7%, PO3N 56.3%, PO2N2 39%",
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Indicates rapid Li exchange and three distinct P environments.",
+      "prov": [
+        "Figure 2d"
+      ]
+    },
+    {
+      "method": "TGA/DTA/MS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "decomposition onset",
+          "value": 723,
+          "unit": "K"
+        },
+        {
+          "metric": "decomposition end",
+          "value": 923,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Exothermic decomposition with N loss between 450–650 °C.",
+      "prov": [
+        "Figure S2a"
+      ]
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 5e-06,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "temperature",
+          "value": 343,
+          "unit": "K"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.55,
+          "unit": "eV"
+        },
+        {
+          "metric": "conductivity (25 °C)",
+          "value": 3e-07,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Enhanced conductivity compared to previous bulk LiPON phases.",
+      "prov": [
+        "Figure 3a",
+        "Table S2"
+      ]
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate": 0.5,
+        "scan_rate_unit": "mV s-1"
+      },
+      "results": [
+        {
+          "metric": "stability window",
+          "value": "-0.15 to 5",
+          "unit": "V vs Li/Li+"
+        },
+        {
+          "metric": "oxidative current",
+          "value": 12,
+          "unit": "nA cm-2"
+        }
+      ],
+      "interpretation": "Electrolyte stable up to 5 V.",
+      "prov": [
+        "Figure 3b"
+      ]
+    },
+    {
+      "method": "Galvanostatic cycling (symmetric cell)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "cycle count",
+          "value": 35,
+          "unit": ""
+        },
+        {
+          "metric": "total time",
+          "value": 140,
+          "unit": "h"
+        },
+        {
+          "metric": "overpotential",
+          "value": 180,
+          "unit": "mV"
+        }
+      ],
+      "interpretation": "No short-circuit; homogeneous lithium plating/stripping.",
+      "prov": [
+        "Figure 3c"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "σ = σ0 exp(-Ea/RT)",
+            "value": 0.55,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 35
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

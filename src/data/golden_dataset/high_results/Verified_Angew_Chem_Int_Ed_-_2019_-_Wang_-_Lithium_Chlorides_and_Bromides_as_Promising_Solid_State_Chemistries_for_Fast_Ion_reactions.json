@@ -1,0 +1,459 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium Chlorides and Bromides as Promising Solid-State Chemistries for Fast Ion Conductors with Good Electrochemical Stability",
+    "doi": "10.1002/anie.201901938",
+    "authors": [
+      "Shuo Wang",
+      "Qiang Bai",
+      "Adelaide M. Nolan",
+      "Yunsheng Liu",
+      "Sheng Gong",
+      "Qiang Sun",
+      "Yifei Mo"
+    ],
+    "journal": "Angewandte Chemie International Edition",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid electrolytes",
+      "lithium-ion batteries",
+      "halides",
+      "AIMD",
+      "DFT"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3YCl6",
+      "molecular_formula": "Li3YCl6",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Page 8039-8043, text",
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly discusses the solid electrolyte \u201cLi3YCl6 (LYC)\u201d multiple times (Abstract/Page 1) and lists \u201cLi3YCl6\u201d as a composition in Table 1 (Page 3). Therefore the target formula Li3YCl6 is directly supported by the source text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3YBr6",
+      "molecular_formula": "Li3YBr6",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Page 8039-8043, text",
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly mentions Li3YBr6 multiple times: in the Abstract (\u201cLi3YCl6 and Li3YBr6\u201d), throughout the text referring to LYB as Li3YBr6, and in Table 1 where the composition row lists \u201cLi3YBr6\u201d. Therefore the target formula Li3YBr6 is directly supported by the source text (including Table 1).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li3ScCl6",
+      "molecular_formula": "Li3ScCl6",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The formula Li3ScCl6 is explicitly present in Table 1 (listed as a composition with calculated conductivity/activation energy). Therefore the extracted Target Formula is supported, even though the alleged provenance 'Table 1' is correct but the table appears on Page 3 in the provided text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li3HoCl6",
+      "molecular_formula": "Li3HoCl6",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The formula Li3HoCl6 is explicitly listed in Table 1 (page 3) as one of the studied compositions (\u201cLi3HoCl6\u201d with calculated conductivity and activation energy). Although the alleged provenance says 'Table 1', the full text includes Table 1 containing this exact composition, so the extracted Target Formula is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li3ScBr6",
+      "molecular_formula": "Li3ScBr6",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The formula Li3ScBr6 is explicitly listed in Table 1 (Page 3) among the compositions evaluated (\u201cLi3ScBr6\u201d with conductivity and activation energy values). Although the alleged provenance says Table 1 (no page), the document text shows it in Table 1 on Page 3, fully supporting the extracted Target Formula.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "Li3HoBr6",
+      "molecular_formula": "Li3HoBr6",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The formula Li3HoBr6 is explicitly listed in Table 1 (page 3) as one of the studied compositions (\u201cLi3HoBr6\u201d). This directly supports the extracted Target Formula, although the alleged provenance \u201cTable 1\u201d is correct but the table appears on page 3 rather than page 1.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li3YCl6",
+      "molecular_formula": "Li3YCl6",
+      "ontology": {
+        "role": "material of interest",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 8039-8043"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly discusses the chemical identity Li3YCl6 (also abbreviated as LYC) multiple times (e.g., Abstract/Page 1 and Table 1/Page 3). The document is a computational study and does not specify any experimental quantity/amount used for Li3YCl6 (no masses, molarities, loadings, or synthesis amounts are provided). Therefore, the extracted statement 'Amount: Not specified in text' is supported by the absence of such information in the full text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li3YBr6",
+      "molecular_formula": "Li3YBr6",
+      "ontology": {
+        "role": "material of interest",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 8039-8043"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly discusses the chemical identity Li3YBr6 (abbreviated as LYB) multiple times (e.g., Abstract/Page 1 and Table 1/Page 3). Nowhere in the provided full text is an explicit 'amount' (mass, molarity, volume, loading, stoichiometric weighed quantity, etc.) for Li3YBr6 given; the work is computational and reports properties (conductivity, activation energy, electrochemical window) rather than synthesis quantities. Thus 'Amount: Not specified in text' is correctly identified as missing.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li3ScCl6",
+      "molecular_formula": "Li3ScCl6",
+      "ontology": {
+        "role": "material of interest",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The document explicitly lists the chemical identity \u201cLi3ScCl6\u201d in Table 1 (Page 3). The paper provides calculated conductivity and activation energy for Li3ScCl6 but does not state any chemical amount (e.g., mass, molarity, loading, or quantity used). Therefore, the extracted note \u201cAmount: Not specified in text\u201d is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li3HoCl6",
+      "molecular_formula": "Li3HoCl6",
+      "ontology": {
+        "role": "material of interest",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly includes the chemical identity \u201cLi3HoCl6\u201d in Table 1 (listed among compositions with computed conductivities/activation energies). The main text does not state a synthesis amount, concentration, mass, or molar quantity for Li3HoCl6; it is only discussed as a modeled/computed composition. Therefore \u201cAmount: Not specified in text\u201d is consistent with the document.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Li3ScBr6",
+      "molecular_formula": "Li3ScBr6",
+      "ontology": {
+        "role": "material of interest",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions the compound Li3ScBr6 in Table 1 (listed among calculated Li+ conductivities/activation energies). The main text/table do not provide a chemical amount (e.g., mass, molar quantity, concentration, or loading) for Li3ScBr6\u2014only properties like conductivity and activation energy\u2014so \u201cAmount: Not specified in text\u201d is accurate.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Li3HoBr6",
+      "molecular_formula": "Li3HoBr6",
+      "ontology": {
+        "role": "material of interest",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions the composition Li3HoBr6 in Table 1 (listed with calculated conductivity 3.8 mS/cm and activation energy 0.26 \u00b1 0.04 eV). Nowhere in the provided full text is any material amount (e.g., mass, molar quantity, wt%, or stoichiometric batch amount) specified for Li3HoBr6, so the extractor\u2019s 'Amount: Not specified in text' is consistent with the document.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "",
+        "description": "No experimental synthesis steps described; study is computational.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The paper repeatedly states it is a first-principles computational study (DFT with VASP, AIMD simulations, modeling electrochemical windows using Materials Project), and it discusses/compares to prior experimental reports rather than describing any experimental synthesis workflow. No experimental procedures, reagents, or synthesis steps are provided in the text.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Ab initio molecular dynamics (AIMD)",
+      "parameters": {
+        "temperature": {
+          "value": 300,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "Li+ conductivity (Li3YCl6)",
+          "value": 14,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Activation energy (Li3YCl6)",
+          "value": 0.19,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li+ conductivity (Li3YBr6)",
+          "value": 2.2,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Activation energy (Li3YBr6)",
+          "value": 0.28,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li+ conductivity (Li3ScCl6)",
+          "value": 29,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Activation energy (Li3ScCl6)",
+          "value": 0.18,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li+ conductivity (Li3HoCl6)",
+          "value": 21,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Activation energy (Li3HoCl6)",
+          "value": 0.19,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li+ conductivity (Li3ScBr6)",
+          "value": 1.4,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Activation energy (Li3ScBr6)",
+          "value": 0.3,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li+ conductivity (Li3HoBr6)",
+          "value": 3.8,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Activation energy (Li3HoBr6)",
+          "value": 0.26,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "AIMD simulations indicate fast Li-ion diffusion in halide solid electrolytes.",
+      "prov": [
+        "Table 1",
+        "Page 8040"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "All listed AIMD-derived Li+ conductivities at 300 K and activation energies for Li3YCl6, Li3YBr6, Li3ScCl6, Li3HoCl6, Li3ScBr6, and Li3HoBr6 are explicitly reported in Table 1 of the provided text (page 8041). Additionally, the Li3YCl6 and Li3YBr6 AIMD values (14 mS/cm & 0.19 eV; 2.2 mS/cm & 0.28 eV) are also stated in the AIMD discussion on page 8040. Units match (mS/cm; eV) and no conversion is required.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Hybrid DFT (HSE)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Band gap (Li3YCl6)",
+          "value": 6.02,
+          "unit": "eV"
+        },
+        {
+          "metric": "Band gap (Li3YBr6)",
+          "value": 5.05,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Large band gaps indicate poor electronic conductivity, desirable for solid electrolytes.",
+      "prov": [
+        "Figure 2c,d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states: \u201cOur calculations based on Heyd\u2013Scuseria\u2013Ernzerhof functional found that LYC and LYB have large band gaps of 6.02 eV and 5.05 eV (Figure 2c,d), respectively.\u201d This directly supports the extracted HSE band gaps for Li3YCl6 (6.02 eV) and Li3YBr6 (5.05 eV).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical window calculation",
+        "results": [
+          {
+            "description": "Anodic limit (Li3YCl6)",
+            "value": 4.21,
+            "unit": "V"
+          },
+          {
+            "description": "Cathodic limit (Li3YCl6)",
+            "value": 0.62,
+            "unit": "V"
+          },
+          {
+            "description": "Anodic limit (Li3YBr6)",
+            "value": 3.15,
+            "unit": "V"
+          },
+          {
+            "description": "Cathodic limit (Li3YBr6)",
+            "value": 0.59,
+            "unit": "V"
+          }
+        ],
+        "prov": [
+          "Figure 2a,b"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.86,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly states multiple analysis/computational methods used (e.g., first principles/DFT calculations with VASP using PAW-PBE(GGA), ab initio molecular dynamics (AIMD) simulations, HSE functional calculations for DOS/band gaps, and electrochemical window calculations using a Materials Project-based scheme). Therefore, leaving this field empty is not supported by the source text. Also, the alleged provenance (Figure 2a,b) does not specify an analysis method; methods are described in the main text (Page 2\u20133).",
+          "suggested_fix": "First-principles computations: DFT (VASP, PAW, PBE-GGA) and ab initio molecular dynamics (AIMD); additional HSE DOS calculations and Materials Project-based electrochemical window calculations."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-10-28T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

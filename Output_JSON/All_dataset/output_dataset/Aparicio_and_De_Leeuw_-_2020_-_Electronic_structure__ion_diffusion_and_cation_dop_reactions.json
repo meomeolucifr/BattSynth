@@ -1,0 +1,294 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Electronic structure, ion diffusion and cation doping in the Na4VO(PO4)2 compound as a cathode material for Na-ion batteries",
+    "doi": "10.1039/c9cp05559b",
+    "authors": [
+      "Pablo A. Aparicio",
+      "Nora H. de Leeuw"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "sodium-ion batteries",
+      "vanadium phosphate",
+      "DFT",
+      "molecular dynamics"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na4VO(PO4)2",
+      "molecular_formula": "Na4VO(PO4)2",
+      "intended_role": "cathode material",
+      "prov": [
+        "Page 6653–6654"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na4V1−xMxO(PO4)2 (M = Al3+, Co2+, Fe3+, Mn4+, Ni2+, Ti4+)",
+      "molecular_formula": "",
+      "intended_role": "doped cathode materials",
+      "prov": [
+        "Page 6655–6656"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Na4VO(PO4)2",
+      "molecular_formula": "Na4VO(PO4)2",
+      "ontology": {
+        "role": "study subject",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 6653–6654"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Al3+",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 6655"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Co2+",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 6655"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Fe3+",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 6655"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Mn4+",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 6655"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Ni2+",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 6655"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Ti4+",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "dopant",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 6655"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Molecular Dynamics Simulation",
+      "parameters": {
+        "temperature": {
+          "value": 300,
+          "unit": "K"
+        },
+        "time_step": {
+          "value": 1,
+          "unit": "fs"
+        },
+        "simulation_time": {
+          "value": 10,
+          "unit": "ns"
+        }
+      },
+      "results": [
+        {
+          "metric": "diffusion coefficient",
+          "value": 5.1e-11,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "High Na-ion mobility observed with 3D diffusion channels.",
+      "prov": [
+        "Page 6656–6657"
+      ]
+    },
+    {
+      "method": "Density Functional Theory (DFT+U)",
+      "parameters": {
+        "Ueff(V)": {
+          "value": 4.0,
+          "unit": "eV"
+        },
+        "energy_cutoff": {
+          "value": 520,
+          "unit": "eV"
+        }
+      },
+      "results": [
+        {
+          "metric": "cell voltage",
+          "value": 3.3,
+          "unit": "V vs. Na/Na+"
+        },
+        {
+          "metric": "band gap",
+          "value": 1.8,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Computed voltage matches experimental trend; material is a semiconductor.",
+      "prov": [
+        "Page 6655–6656",
+        "Figure 3",
+        "Figure 4"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "ln(D) vs 1/T",
+            "value": 0.49,
+            "unit": "eV",
+            "metric": "activation energy"
+          }
+        ],
+        "prov": [
+          "Figure 5"
+        ]
+      },
+      {
+        "method_name": "DFT voltage trend upon doping",
+        "results": [
+          {
+            "metric": "maximum voltage increase",
+            "value": 1.1,
+            "unit": "V vs. Na/Na+"
+          }
+        ],
+        "prov": [
+          "Page 6655–6656",
+          "Figure 3"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-06T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

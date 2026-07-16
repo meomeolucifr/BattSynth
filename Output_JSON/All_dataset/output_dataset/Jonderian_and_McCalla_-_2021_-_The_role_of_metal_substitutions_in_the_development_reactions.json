@@ -1,0 +1,268 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "The role of metal substitutions in the development of Li batteries, part II: solid electrolytes",
+    "doi": "10.1039/d1ma00082a",
+    "authors": ["Antranik Jonderian", "Eric McCalla"],
+    "journal": "Materials Advances",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["solid electrolytes", "Li batteries", "metal substitution"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3xLa(2/3−x)TiO3 (LLTO) pellet",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 2848"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li7La3Zr2O12 (LLZO) pellet",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 2848"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li3xLa(2/3−x)TiO3 (LLTO)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2848"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li7La3Zr2O12 (LLZO)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2848"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "carbon dioxide",
+      "molecular_formula": "CO2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2848"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "alumina crucible",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "apparatus",
+        "category": "container"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2848"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Sintering of LLTO pellet",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "temperature": {
+                "value": 1523,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 300,
+                "unit": "min"
+              }
+            },
+            "notes": "Li content drops from 0.5 to 0.3 per formula unit during sintering",
+            "prov": ["Page 2848"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 2848"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-temperature sintering of LLZO pellet in alumina crucible",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": ["chem_2", "chem_4"],
+              "temperature": {
+                "value": 1493,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "notes": "Side in contact with alumina shows 16 at% unintentional Al contamination",
+            "prov": ["Page 2848"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 2848"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heat treatment of unsubstituted LLZO reagents mixture under CO2 to mitigate lithium loss",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_2", "chem_3"],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "Stabilizes cubic phase",
+            "prov": ["Page 2848"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "CO2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 2848"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "LLTO sintering at 1523 K for 300 min"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "LLZO sintering at 1493 K for 720 min in alumina crucible"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Heat treatment of LLZO mixture under CO2 atmosphere"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometry of LLTO not fully specified",
+        "excerpt": "during the sintering of Li3xLa(2/3)/C0xTiO3 (LLTO) at 1250 1C for 5 h the Li content drops from 0.5 to 0.3 per formula unit"
+      },
+      {
+        "issue": "Temperature and time for CO2 heat treatment not provided",
+        "excerpt": "heating the unsubstituted LLZO reagents mixture under CO2 can mitigate the lithium loss"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "density measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "relative density after O2-assisted sintering",
+          "value": 97,
+          "unit": "%",
+          "prov": ["Page 2848"]
+        },
+        {
+          "metric": "relative density after air sintering",
+          "value": 95,
+          "unit": "%",
+          "prov": ["Page 2848"]
+        }
+      ],
+      "interpretation": "O2-assisted sintering slightly increases pellet densification compared to air",
+      "prov": ["Page 2848"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T05:02:00Z",
+    "source_file": "extracted_review_chunk.txt",
+    "processing_time": null
+  }
+}

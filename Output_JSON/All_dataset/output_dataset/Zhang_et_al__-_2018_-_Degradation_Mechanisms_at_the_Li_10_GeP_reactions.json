@@ -1,0 +1,423 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Degradation Mechanisms at the Li10GeP2S12/LiCoO2 Cathode Interface in an All-Solid-State Lithium-Ion Battery",
+    "doi": "10.1021/acsami.8b05132",
+    "authors": ["Wenbo Zhang", "Felix H. Richter", "Sean P. Culver", "Thomas Leichtweiss", "Juan G. Lozano", "Christian Dietrich", "Peter G. Bruce", "Wolfgang G. Zeier", "Jürgen Janek"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state battery", "interface degradation", "Li10GeP2S12", "LiCoO2"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12 pellet",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "solid electrolyte",
+      "prov": ["Experimental Section – Solid Electrolyte"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Composite cathode (c-LiCoO2/Li10GeP2S12 70:30 wt%)",
+      "molecular_formula": "",
+      "intended_role": "cathode",
+      "prov": ["Cell Assembly"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.08,
+        "unit": "g"
+      },
+      "notes": "80 mg powder pressed into pellet (10 mm diameter)",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Coated LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "mixed with LGPS in 70:30 wt %",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Indium foil",
+      "molecular_formula": "In",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "8 mm diameter, 0.125 mm thick, 99.99 %",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li4Ti5O12",
+      "molecular_formula": "Li4Ti5O12",
+      "ontology": {
+        "role": "anode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.02,
+        "unit": "g"
+      },
+      "notes": "20 mg composite anode (Li4Ti5O12/SE/C65 = 30:60:10 wt %)",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Carbon black (C65)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10 wt % in anode composite",
+      "prov": ["Cell Assembly"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Poly(ether ether ketone) cylinder",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "mold/support",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as pressing die (10 mm diameter)",
+      "prov": ["Cell Assembly"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Cold-pressing of solid electrolyte pellet",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "force": "1 t",
+              "duration": {
+                "value": 1,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "notes": "10 mm diameter pellet formed inside PEEK cylinder"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Cell Assembly"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of composite cathode",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_2", "chem_1"],
+              "weight_ratio": "70:30"
+            },
+            "notes": "hand-mixed to form composite powder"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Cell Assembly"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Pressing composite cathode onto LGPS pellet",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["step_2"],
+              "mass_deposited": {
+                "value": 0.01,
+                "unit": "g"
+              },
+              "force": "3.5 t",
+              "duration": {
+                "value": 2,
+                "unit": "min"
+              }
+            },
+            "notes": "loading corresponds to 1.1 mAh cm-2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Cell Assembly"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of anode side",
+        "operations": [
+          {
+            "action": "attach",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "force": "1.5 t",
+              "duration": {
+                "value": 2,
+                "unit": "min"
+              }
+            },
+            "notes": "alternative: composite anode containing Li4Ti5O12/SE/C65 (20 mg) pressed similarly"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Cell Assembly"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Final cell assembly and application of constant uniaxial pressure",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["step_1", "step_3", "step_4", "chem_6"],
+              "pressure": {
+                "value": 70,
+                "unit": "bar"
+              }
+            },
+            "notes": "Pressure derived from 10 N m torque on screw (≈ 70 MPa)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 70,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Cell Assembly"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Formation of LGPS pellet"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Hand-mixing c-LiCoO2 with LGPS"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Pressing composite cathode onto electrolyte pellet"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Attaching anode (In foil or LTO composite)"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Final assembly under constant pressure"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Force units not directly convertible to pressure without pellet area.",
+        "excerpt": "\"cold-pressed with 1 t for 1 min (10 mm diameter)\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "current_rate": "0.1 C",
+        "voltage_window": "2.0–3.6 V vs In/InLi or 1.1–2.7 V vs Li4Ti5O12/Li7Ti5O12",
+        "cycles": 300
+      },
+      "results": [
+        {
+          "metric": "capacity after 300 cycles",
+          "value": 75,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Capacity faded to 55 % of original",
+      "prov": ["Figure 1a"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy",
+      "parameters": {
+        "frequency_range": "7 MHz–10 mHz",
+        "excitation_voltage": "10 mV",
+        "measurement_state": "charged (3.6 V vs In/InLi)"
+      },
+      "results": [
+        {
+          "metric": "total impedance after 100 cycles",
+          "value": 393,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "HF semicircle diameter after 1 cycle",
+          "value": 2,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "HF semicircle diameter after 100 cycles",
+          "value": 157,
+          "unit": "Ω cm2"
+        }
+      ],
+      "interpretation": "Growth of interface resistance attributed to SE decomposition",
+      "prov": ["Figure 2", "Table S1"]
+    },
+    {
+      "method": "X-ray Diffraction",
+      "parameters": {
+        "radiation": "Cu Kα (λ1 = 154.056 pm, λ2 = 154.539 pm)",
+        "2θ_range": "10–80°",
+        "step_size": "0.026°",
+        "time_per_step": "300 s"
+      },
+      "results": [
+        {
+          "metric": "reflection broadening",
+          "value": "",
+          "unit": "",
+          "notes": "Broadening observed for both LiCoO2 and LGPS after 100 cycles"
+        }
+      ],
+      "interpretation": "Indicates reduced crystallite size and possible phase changes",
+      "prov": ["Figure 5a"]
+    },
+    {
+      "method": "X-ray Photoelectron Spectroscopy",
+      "parameters": {
+        "xray_source": "Al Kα, 100 W",
+        "pass_energy_highres": "23.5 eV",
+        "temperature": "-60 to -80 °C"
+      },
+      "results": [
+        {
+          "metric": "formation of oxidized sulfur species",
+          "value": "",
+          "unit": "",
+          "notes": "Appearance of peaks at 162.3 eV, 163.3 eV, 163.9–164.6 eV (S 2p)"
+        }
+      ],
+      "interpretation": "Evidence of LGPS decomposition and Li-depleted layer",
+      "prov": ["Figure 6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Capacity retention analysis",
+        "results": [
+          {
+            "description": "Capacity decreased to 75 mAh g-1 after 300 cycles (55 % of original)."
+          }
+        ]
+      },
+      {
+        "method_name": "Impedance growth evaluation",
+        "results": [
+          {
+            "description": "Total cell impedance increased five-fold to 393 Ω cm2 after 100 cycles."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 75,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 300
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

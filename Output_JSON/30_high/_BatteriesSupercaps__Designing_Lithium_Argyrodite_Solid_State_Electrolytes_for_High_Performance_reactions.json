@@ -1,0 +1,205 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Designing Lithium Argyrodite Solid-State Electrolytes for High-Performance All-Solid-State Lithium Batteries",
+    "doi": "10.1002/batt.202100288",
+    "authors": ["Chongxing Li", "Shuxian Zhang", "Xianguang Miao", "Cong Wang", "Chengxiang Wang", "Zhiwei Zhang", "Rutao Wang", "Longwei Yin"],
+    "journal": "Batteries & Supercaps",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["solid-state electrolyte", "lithium argyrodite", "Li6PS5Cl"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid-state electrolyte product",
+      "prov": ["Page 26, Paragraph describing low-speed milling followed by annealing"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 26"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 26"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 26"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Low-speed mechanical grinding of precursors",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "rotation_speed_rpm": 110
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Initial low-speed milling to homogenize reactants"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 26"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Annealing of milled precursors to form Li6PS5Cl",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "duration": {
+              "value": 600,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 823,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 26"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Low-speed milling at 110 rpm for 1 h"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Annealing at 823 K for 10 h to crystallize Li6PS5Cl"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Atmosphere during milling and annealing not specified",
+        "excerpt": "then anneal the mixed precursors at 550°C for 10 h"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 299.4,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 4.96e-3,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 26"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T18:35:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

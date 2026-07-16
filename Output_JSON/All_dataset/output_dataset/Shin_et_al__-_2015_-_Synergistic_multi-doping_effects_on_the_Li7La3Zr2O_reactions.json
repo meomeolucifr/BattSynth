@@ -1,0 +1,513 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Synergistic multi-doping effects on the Li7La3Zr2O12 solid electrolyte for fast lithium ion conduction",
+    "doi": "10.1038/srep18053",
+    "authors": [
+      "Dong Ok Shin",
+      "Kyungbae Oh",
+      "Kwang Man Kim",
+      "Kyu-Young Park",
+      "Byungju Lee",
+      "Young-Gi Lee",
+      "Kisuk Kang"
+    ],
+    "journal": "Scientific Reports",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research_article",
+    "tags": ["solid electrolyte", "LLZO", "multi-doping", "lithium ion conduction"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Single Al-doped cubic LLZO",
+      "molecular_formula": "Li7−3x−yAlxLa3Zr2−yTayO12 (x=0.2,y=0)",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Methods", "Fig.2a", "Preparation section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Multi-doped cubic LLZO",
+      "molecular_formula": "Li7−3x−yAlxLa3Zr2−yTayO12 (x=0.2,y=0.2)",
+      "intended_role": "solid electrolyte product",
+      "prov": ["Methods", "Fig.2a", "Preparation section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "La2O3",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "ZrO2",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Al2O3 nanopowder",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "<50 nm particle size",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ta2O5",
+      "molecular_formula": "Ta2O5",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Isopropyl alcohol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Boron nitride",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "crucible coating",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used as coating on Al2O3 crucible",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Copper",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "electrode material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "≈6 μm thick evaporated layer on pellets",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Stoichiometric weighing and mixing of precursor oxides/carbonate with solvent",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5"]
+            },
+            "notes": "amounts according to target stoichiometry"
+          },
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5", "chem_6"],
+              "method": "planetary ball milling",
+              "speed": {
+                "value": 200,
+                "unit": "rpm"
+              }
+            },
+            "duration": {
+              "value": 600,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Drying of the mixed slurry",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calcination to form cubic LLZO powder",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1273,
+              "unit": "K"
+            },
+            "notes": "2 h for multi-doped; 4 h (240 min) for single Al-doped"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods", "Fig.2a"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Regrinding of calcined powder",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {},
+            "notes": "manual or mechanical"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Pellet pressing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 500,
+                "unit": "bar"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 500,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Sintering to densify pellets",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1473,
+              "unit": "K"
+            },
+            "notes": "Duration varied 60–1440 min; 720 min gives highest conductivity"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods", "Fig.3a"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Deposition of Cu current collector",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["chem_8"],
+              "method": "thermal evaporation",
+              "thickness": {
+                "value": 6,
+                "unit": "µm"
+              }
+            },
+            "notes": "Both sides of pellet"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ball milling of precursors in isopropyl alcohol for 10 h at 200 rpm"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Drying of milled slurry"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Calcination at 1000 °C (2–4 h) to obtain cubic LLZO powder"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Regrinding of calcined powder"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Cold pressing into pellets at 50 MPa"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Sintering at 1200 °C (1–24 h; optimal 12 h) with mother powder cover"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Cu evaporation (~6 µm) on pellet surfaces for impedance testing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact precursor masses not specified",
+        "excerpt": "The whole precursor materials were weighed according to the stoichiometry..."
+      },
+      {
+        "issue": "Drying conditions unspecified",
+        "excerpt": "After drying the mixture, the collected powder was calcined..."
+      },
+      {
+        "issue": "Atmosphere during calcination and sintering not stated",
+        "excerpt": "calcined at 1000 ˚C for 2–4 h ... sintered at 1200 ˚C from 1 to 24 h"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα (λ = 1.54056 Å)"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "cubic LLZO confirmed; multi-doped stabilizes cubic in 2 h",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.2a", "Methods"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "microstructure",
+          "value": "dense grains after 12 h sintering; porous at 1 h",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.3a", "Fig.3b"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "10^-1–10^5 Hz",
+        "temperature_range": "-20–100 °C"
+      },
+      "results": [
+        {
+          "metric": "total ionic conductivity (multi-doped, 12 h)",
+          "value": 6.14e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "total ionic conductivity (single Al-doped, 12 h)",
+          "value": 2.54e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy (multi-doped)",
+          "value": 0.29,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (single Al-doped)",
+          "value": 0.36,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig.3c", "Methods"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "σ = A exp(-Ea/kT)",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

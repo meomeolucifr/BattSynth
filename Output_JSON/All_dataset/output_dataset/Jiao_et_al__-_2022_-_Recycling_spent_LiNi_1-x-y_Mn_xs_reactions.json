@@ -1,0 +1,509 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recycling spent LiNi1-x-yMnxCoyO2 cathodes to bifunctional NiMnCo catalysts for zinc-air batteries",
+    "doi": "10.1073/pnas.2202202119",
+    "authors": [
+      "Miaolun Jiao",
+      "Qi Zhang",
+      "Chenliang Ye",
+      "Zhibo Liu",
+      "Xiongwei Zhong",
+      "Junxiong Wang",
+      "Chuang Li",
+      "Lixin Dai",
+      "Guangmin Zhou",
+      "Hui-Ming Cheng"
+    ],
+    "journal": "Proceedings of the National Academy of Sciences",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["battery recycling", "catalysis", "NiMnCo", "rapid thermal radiation", "zinc–air battery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "NiMnCo-activated carbon catalyst (NiMnCo-AC)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 2 ‘The NiMnCo-AC catalyst was fabricated…’"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Spent NMC cathode powder",
+      "molecular_formula": "LiNi1–x–yMnxCoyO2",
+      "ontology": {
+        "role": "feedstock",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Collected from disassembled lithium-ion batteries",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "N-methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Oxalic acid (1 M)",
+      "molecular_formula": "H2C2O4",
+      "ontology": {
+        "role": "leaching agent",
+        "category": "organic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1 M aqueous solution",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Nitric acid",
+      "molecular_formula": "HNO3",
+      "ontology": {
+        "role": "dissolution solvent",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Activated carbon",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "support",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "coconut-shell based",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Carbon cloth",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "thermal radiation source",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Heated resistively to 2000 K",
+      "prov": ["Materials and Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Removal of binder and collection of NMC powder",
+        "operations": [
+          {
+            "action": "immerse",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Cathodes immersed in NMP to dissolve PVDF binder"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Obtained black NMC powders"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Acid leaching with oxalic acid to precipitate metal oxalates",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3"]
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 368,
+              "unit": "K"
+            },
+            "notes": "Continuous stirring"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Conversion of metal oxalates to mixed NiMnCo nitrate solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Precipitates dissolved in nitric acid; insolubles removed by filtration"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Impregnation of activated carbon with NiMnCo solution and drying",
+        "operations": [
+          {
+            "action": "impregnate",
+            "parameters": {
+              "inputs": ["chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Metal loading ≈2 wt % NiMnCo"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 323,
+              "unit": "K"
+            },
+            "notes": "Formed NiMnCo-AC precursor"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Rapid thermal radiation to form NiMnCo nanoparticles on AC",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["chem_6", "chem_7"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 2000,
+              "unit": "K"
+            },
+            "notes": "Precursor moved across hot carbon cloth at 0.5 cm s⁻¹ in Ar"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods", "Fig. 1B"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Optional oxidation to obtain NiMnCoO4-AC (control sample)",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 513,
+              "unit": "K"
+            },
+            "notes": "In air at 240 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Binder removal and powder collection"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Oxalic-acid leaching to separate Li and precipitate Ni/Mn/Co oxalates"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Nitric-acid dissolution to form mixed NiMnCo solution"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Impregnation of activated carbon and drying to give NiMnCo-AC precursor"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Rapid thermal radiation (2000 K) yielding NiMnCo-AC catalyst"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Optional low-temperature oxidation to make NiMnCoO4-AC control"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact precursor composition and volume of solutions not specified",
+        "excerpt": "A certain amount of the mixed NiMnCo solution was loaded onto activated carbon support (coconut shell –based activated carbon) with a mass loading of NiMnCo ∼2 wt %."
+      },
+      {
+        "issue": "Atmospheric pressure during rapid thermal radiation not specified",
+        "excerpt": "The rapid thermal radiation was conducted in a home-made argon-ﬁlled reactor."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "ICP-OES",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ni concentration",
+          "value": 1.73,
+          "unit": "g L-1"
+        },
+        {
+          "metric": "Mn concentration",
+          "value": 0.97,
+          "unit": "g L-1"
+        },
+        {
+          "metric": "Co concentration",
+          "value": 0.68,
+          "unit": "g L-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 2, Fig. S2"]
+    },
+    {
+      "method": "BET surface area",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Specific surface area",
+          "value": 760,
+          "unit": "m2 g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["SI Appendix, Fig. S5"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Average particle size",
+          "value": 6.38,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Nanoparticles well dispersed on AC",
+      "prov": ["Fig. 2B-C"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Core phase",
+          "value": "fcc Ni",
+          "unit": ""
+        },
+        {
+          "metric": "Shell phase",
+          "value": "spinel NiMnCoO4",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms Ni@NiMnCoO4 core-shell structure",
+      "prov": ["Fig. 3F"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical performance in Zn–air battery",
+        "results": [
+          {
+            "equation": "",
+            "value": 187.7,
+            "unit": "mW cm-2",
+            "label": "Maximum power density"
+          },
+          {
+            "equation": "",
+            "value": 0.72,
+            "unit": "V",
+            "label": "Voltage gap (initial three cycles)"
+          },
+          {
+            "equation": "",
+            "value": 200,
+            "unit": "h",
+            "label": "Stable cycling duration at 10 mA cm-2"
+          }
+        ],
+        "prov": ["Fig. 5"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 779,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-26T20:48:00Z",
+    "source_file": "PNAS_2022_e2202202119_text",
+    "processing_time": null
+  }
+}

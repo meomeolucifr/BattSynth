@@ -1,0 +1,668 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Graphene-modified LiFePO4 cathode for lithium ion battery beyond theoretical capacity",
+    "doi": "10.1038/ncomms2705",
+    "authors": [
+      "Lung-Hao Hu",
+      "Feng-Yu Wu",
+      "Cheng-Te Lin",
+      "Andrei N. Khlobystov",
+      "Lain-Jong Li"
+    ],
+    "journal": "Nature Communications",
+    "year": 2013
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["lithium-ion battery", "graphene", "LiFePO4", "cathode", "electrochemical exfoliation"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Electrochemically exfoliated graphene (EG) flakes",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Methods – Synthesis of electrochemically EG"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "EG-wrapped carbon-coated LiFePO4 (EG/cLFP) composite",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": ["Methods – Synthesis of EG-wrapped LFP"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Graphite rod",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as working electrode and graphene source",
+      "prov": ["Methods – Synthesis of electrochemically EG"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Platinum wire",
+      "molecular_formula": "Pt",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods – Synthesis of electrochemically EG"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sulfuric acid",
+      "molecular_formula": "H2SO4",
+      "ontology": {
+        "role": "electrolyte component",
+        "category": "acid"
+      },
+      "amount": {
+        "value": 2.4,
+        "unit": "g"
+      },
+      "notes": "98% purity, dissolved in 100 mL water",
+      "prov": ["Methods – Synthesis of electrochemically EG"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Potassium hydroxide",
+      "molecular_formula": "KOH",
+      "ontology": {
+        "role": "pH adjuster",
+        "category": "base"
+      },
+      "amount": {
+        "value": 11,
+        "unit": "mL"
+      },
+      "notes": "30% solution, added to reach pH ~12",
+      "prov": ["Methods – Synthesis of electrochemically EG"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "mL"
+      },
+      "notes": "De-ionized, used to prepare electrolyte",
+      "prov": ["Methods – Synthesis of electrochemically EG"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Dimethylformamide",
+      "molecular_formula": "C3H7NO",
+      "ontology": {
+        "role": "dispersion solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used to redisperse EG (concentration ≈250 ppm)",
+      "prov": ["Methods – Synthesis of electrochemically EG"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiFePO4 (carbon-coated, cLFP)",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "active cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Particle diameter ~300 nm, pre-coated with amorphous carbon",
+      "prov": ["Morphology of the graphene-coated LiFePO4"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Super P carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10 wt% in electrode slurry",
+      "prov": ["Electrochemical test"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Polyvinylidene difluoride (PVDF)",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10 wt% in electrode slurry; dissolved in NMP",
+      "prov": ["Electrochemical test"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "N-Methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Used to prepare slurry",
+      "prov": ["Electrochemical test"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "LiPF6 (electrolyte salt)",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "in EMC/DMC/VC (1:1:1 v/v/v)",
+      "prov": ["Electrochemical test"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Ethyl methyl carbonate",
+      "molecular_formula": "C4H8O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of electrolyte (1:1:1 mixture)",
+      "prov": ["Electrochemical test"]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Dimethyl carbonate",
+      "molecular_formula": "C3H6O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of electrolyte (1:1:1 mixture)",
+      "prov": ["Electrochemical test"]
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "Vinylene carbonate",
+      "molecular_formula": "C3H2O3",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "carbonate"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of electrolyte (1:1:1 mixture)",
+      "prov": ["Electrochemical test"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of alkaline sulfate electrolyte",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_3", "chem_5"]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "2.4 g H2SO4 in 100 mL water"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "notes": "11 mL 30 % KOH added to reach pH ≈12"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis of electrochemically EG"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Electrochemical exfoliation of graphite to produce EG flakes",
+        "operations": [
+          {
+            "action": "electrolyze",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "voltage_initial": "+2.5 V",
+              "time_initial": {
+                "value": 5,
+                "unit": "min"
+              },
+              "voltage_final": "+10 V",
+              "time_final": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "Graphite rod as anode; Pt wire as cathode; electrolyte from step_1"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis of electrochemically EG"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Collection and purification of EG flakes",
+        "operations": [
+          {
+            "action": "filter",
+            "parameters": {
+              "inputs": ["target_1"]
+            },
+            "notes": "Collected exfoliated sheets"
+          },
+          {
+            "action": "redisperse",
+            "parameters": {
+              "inputs": ["target_1", "chem_6"],
+              "concentration": {
+                "value": 250,
+                "unit": "ppm"
+              }
+            },
+            "notes": ""
+          },
+          {
+            "action": "centrifuge",
+            "parameters": {
+              "inputs": ["target_1"]
+            },
+            "notes": "Optimized to remove thick graphite particles"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Synthesis of electrochemically EG"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Formation of EG-wrapped cLFP composite",
+        "operations": [
+          {
+            "action": "add_dropwise",
+            "parameters": {
+              "inputs": ["target_1", "chem_7"],
+              "solvent": "chem_6"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Gentle stirring; temperature reported as 180 °C/176 °C (ambiguous)"
+          },
+          {
+            "action": "evaporate",
+            "parameters": {},
+            "notes": "DMF gradually evaporated during mixing"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Morphology of the graphene-coated LiFePO4"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Preparation of electrode slurry",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_8", "chem_9", "chem_10", "target_2"],
+              "ratio_wt%": "10:10:80 (Super P : PVDF : active)"
+            },
+            "notes": "Ball-milled with stainless steel balls at 400 rpm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Electrochemical test"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Electrode coating and drying",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "substrate": "Al foil"
+            },
+            "notes": "Slurry pasted onto foil"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 383,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Electrochemical test"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Prepare alkaline sulfate electrolyte"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Electrochemically exfoliate graphite to EG"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Purify and redisperse EG flakes"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Wrap cLFP particles with EG to form composite"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Prepare electrode slurry with EG/cLFP, Super P, PVDF"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Coat slurry on Al foil and dry to obtain cathode"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear mixing temperature",
+        "excerpt": "\"dropwise added to cLFP powders with gentle stirring at 180 /C176C.\""
+      },
+      {
+        "issue": "Duration of high-bias exfoliation not specified",
+        "excerpt": "\"ramping the bias to +10 V for graphene exfoliation.\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "AFM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "thickness range",
+          "value": "1.5–4.2",
+          "unit": "nm"
+        },
+        {
+          "metric": "average thickness",
+          "value": 2.5,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1b,c"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "excitation_wavelength": "473 nm"
+      },
+      "results": [
+        {
+          "metric": "presence of D and 2D bands",
+          "value": "observed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates good graphitic structure with some defects",
+      "prov": ["Figure 1d"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {
+        "scan": "C1s"
+      },
+      "results": [
+        {
+          "metric": "C=C",
+          "value": 71.4,
+          "unit": "%"
+        },
+        {
+          "metric": "C-O",
+          "value": 13.4,
+          "unit": "%"
+        },
+        {
+          "metric": "C=O",
+          "value": 5.6,
+          "unit": "%"
+        },
+        {
+          "metric": "COOH",
+          "value": 9.6,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Confirms oxygen-containing functional groups",
+      "prov": ["Figure 1e"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "EG flakes wrapping cLFP particles",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2a,b"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "graphene coating thickness (charged)",
+          "value": "1.5–2",
+          "unit": "nm"
+        },
+        {
+          "metric": "interlayer spacing (charged)",
+          "value": 0.32,
+          "unit": "nm"
+        },
+        {
+          "metric": "interlayer spacing (discharged)",
+          "value": 0.38,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Expansion indicates Li+ insertion into EG layers",
+      "prov": ["Figure 3a,b"]
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "oxidation peak",
+          "value": "3.5–4.5",
+          "unit": "V"
+        },
+        {
+          "metric": "reduction peak",
+          "value": "2.5–3.5",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Reversible redox reaction contributing to capacity of EG",
+      "prov": ["Figure 4b"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge/discharge",
+        "results": [
+          {
+            "sample": "2 wt% EG/cLFP cathode",
+            "value": 208,
+            "unit": "mAh g-1"
+          },
+          {
+            "sample": "0.8 wt% EG/cLFP cathode",
+            "value": 187,
+            "unit": "mAh g-1"
+          }
+        ]
+      },
+      {
+        "method_name": "Specific capacity estimation for EG",
+        "results": [
+          {
+            "equation": "difference method (Fig.2, 4a)",
+            "value": 2720,
+            "unit": "mAh g-1"
+          }
+        ]
+      },
+      {
+        "method_name": "Energy density calculation",
+        "results": [
+          {
+            "sample": "2 wt% EG/cLFP",
+            "value": 686,
+            "unit": "Wh kg-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 208,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

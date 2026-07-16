@@ -1,0 +1,429 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Two-Dimensional Titanium Carbide MXene As a Cathode Material for Hybrid Magnesium/Lithium-Ion Batteries",
+    "doi": "10.1021/acsami.6b04198",
+    "authors": ["Ayeong Byeon", "Meng-Qiang Zhao", "Chang E. Ren", "Joseph Halim", "Sankalp Kota", "Patrick Urbankowski", "Babak Anasori", "Michel W. Barsoum", "Yury Gogotsi"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["MXene", "hybrid Mg/Li battery", "Ti3C2Tx", "energy storage"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "d-Ti3C2Tx/CNT composite paper",
+      "molecular_formula": "Ti3C2Tx + CNT",
+      "intended_role": "cathode material",
+      "prov": ["Page 4297, paragraph beginning \"After delamination...\""]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "ML-Ti3C2Tx composite electrode",
+      "molecular_formula": "Ti3C2Tx + carbon black + PTFE",
+      "intended_role": "cathode material",
+      "prov": ["Page 4297, paragraph beginning \"The ML-Ti3C2Tx-based cathode was prepared...\""]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Mo2CTx MXene cathode",
+      "molecular_formula": "Mo2CTx",
+      "intended_role": "cathode material",
+      "prov": ["Page 4298, paragraph beginning \"However, since modeling and experimental results suggest...\""]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ti3C2Tx",
+      "molecular_formula": "Ti3C2Tx",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "carbon nanotubes",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "spacer",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used in composite paper",
+      "prov": ["Page 4297, paragraph on CNT addition"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "wt%"
+      },
+      "notes": "",
+      "prov": ["Page 4297, cathode preparation sentence"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "polytetrafluoroethylene",
+      "molecular_formula": "(C2F4)n",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "wt%"
+      },
+      "notes": "abbreviated PTFE",
+      "prov": ["Page 4297, cathode preparation sentence"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "tetrahydrofuran",
+      "molecular_formula": "C4H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "solvent for electrolyte",
+      "prov": ["Page 4296, description of electrolyte"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "added to APC electrolyte",
+      "prov": ["Page 4296, description of electrolyte"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "all-phenyl complex (APC)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "electrolyte component",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 4296, description of electrolyte"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "magnesium",
+      "molecular_formula": "Mg",
+      "ontology": {
+        "role": "anode material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 4296, battery schematic description"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Mo2CTx",
+      "molecular_formula": "Mo2CTx",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 4298, paragraph on Mo2CTx"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of delaminated Ti3C2Tx/CNT composite paper via vacuum-assisted filtration.",
+        "operations": [
+          {
+            "action": "filter",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "vacuum-assisted filtration to form free-standing flexible paper"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4297, paragraph on fabrication of paper"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Fabrication of ML-Ti3C2Tx composite electrode by mixing active material, carbon black, and PTFE binder.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_3", "chem_4"]
+            },
+            "ratio": "80:10:10 wt%",
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4297, cathode preparation sentence"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Assembly of hybrid Mg2+/Li+ coin cell with Ti3C2Tx cathode, Mg anode, and APC-LiCl/THF electrolyte.",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["target_1", "chem_8", "chem_7", "chem_6", "chem_5"]
+            },
+            "notes": "no current collector used"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 4297, sentence on assembly in coin cells"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Delamination and paper formation of Ti3C2Tx with CNT spacers."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of multilayer Ti3C2Tx composite electrode."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Coin cell assembly for electrochemical testing."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "CNT proportion not specified",
+        "excerpt": "This delaminated MXene ... can in turn be fabricated into free-standing and flexible “paper” with the addition of carbon nanotubes (CNTs) by a simple vacuum-assisted filtration method"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "stacked Ti3C2Tx flakes resembling exfoliated graphite",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2a"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "flake thickness",
+          "value": "1–few",
+          "unit": "nm"
+        },
+        {
+          "metric": "lateral size",
+          "value": "hundreds of nm to several μm",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2b"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "film thickness",
+          "value": 5,
+          "unit": "μm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2c"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "002 peak ML-Ti3C2Tx",
+          "value": 7.3,
+          "unit": "deg"
+        },
+        {
+          "metric": "002 peak d-Ti3C2Tx/CNT",
+          "value": 6.2,
+          "unit": "deg"
+        },
+        {
+          "metric": "c-lattice parameter ML",
+          "value": 24.2,
+          "unit": "Å"
+        },
+        {
+          "metric": "c-lattice parameter d-Ti3C2Tx/CNT",
+          "value": 28.4,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "increase in interlayer spacing after delamination",
+      "prov": ["Figure 2d"]
+    },
+    {
+      "method": "CV",
+      "parameters": {
+        "scan_rate": {
+          "value": 0.2,
+          "unit": "mV s-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "broad Li+ intercalation peaks",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3a"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge/discharge",
+        "results": [
+          {
+            "condition": "0.1 C",
+            "value": 105,
+            "unit": "mAh g-1",
+            "sample": "d-Ti3C2Tx/CNT cathode"
+          },
+          {
+            "condition": "5 C",
+            "value": 65,
+            "unit": "mAh g-1",
+            "sample": "d-Ti3C2Tx/CNT cathode"
+          },
+          {
+            "condition": "10 C",
+            "value": 50,
+            "unit": "mAh g-1",
+            "sample": "d-Ti3C2Tx/CNT cathode"
+          },
+          {
+            "condition": "1 C after 500 cycles",
+            "value": 80,
+            "unit": "mAh g-1",
+            "sample": "d-Ti3C2Tx/CNT cathode"
+          }
+        ],
+        "prov": ["Page 4296-4298, performance data"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 105,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 500
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T10:25:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

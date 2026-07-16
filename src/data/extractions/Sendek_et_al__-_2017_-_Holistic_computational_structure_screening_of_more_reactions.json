@@ -1,0 +1,122 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Holistic computational structure screening of more than 12 000 candidates for solid lithium-ion conductor materials",
+    "doi": "10.1039/c6ee02697d",
+    "authors": [
+      "Austin D. Sendek",
+      "Qian Yang",
+      "Ekin D. Cubuk",
+      "Karel-Alexander N. Duerloo",
+      "Yi Cui",
+      "Evan J. Reed"
+    ],
+    "journal": "Energy & Environmental Science",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational screening",
+    "tags": ["solid electrolyte", "lithium-ion", "high-throughput screening"]
+  },
+  "targets": [
+    {"target_id":"t1","compound_name":"BaLiBS3","molecular_formula":"BaLiBS3","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t2","compound_name":"Li5B7S13","molecular_formula":"Li5B7S13","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t3","compound_name":"Sr2LiCBr3N2","molecular_formula":"Sr2LiCBr3N2","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t4","compound_name":"SrLi(BS2)3","molecular_formula":"SrLiB3S6","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t5","compound_name":"LiErSe2","molecular_formula":"LiErSe2","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t6","compound_name":"Li2B2S5","molecular_formula":"Li2B2S5","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t7","compound_name":"Li3ErCl6","molecular_formula":"Li3ErCl6","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t8","compound_name":"Li2HIO","molecular_formula":"Li2HIO","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t9","compound_name":"Li2GePbS4","molecular_formula":"Li2GePbS4","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t10","compound_name":"LiSO3F","molecular_formula":"LiSO3F","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t11","compound_name":"LiCl","molecular_formula":"LiCl","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t12","compound_name":"LiSmS2","molecular_formula":"LiSmS2","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t13","compound_name":"Li3InCl6","molecular_formula":"Li3InCl6","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t14","compound_name":"CsLi2BS3","molecular_formula":"CsLi2BS3","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t15","compound_name":"LiMgB3(H9N)2","molecular_formula":"LiMgB3H9N2","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t16","compound_name":"RbLiS","molecular_formula":"RbLiS","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t17","compound_name":"LiDyS2","molecular_formula":"LiDyS2","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t18","compound_name":"LiHoS2","molecular_formula":"LiHoS2","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t19","compound_name":"LiErS2","molecular_formula":"LiErS2","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t20","compound_name":"LiHo3Ge2(O4F)2","molecular_formula":"LiHo3Ge2O4F2","intended_role":"candidate solid electrolyte","prov":["Table 3"]},
+    {"target_id":"t21","compound_name":"KLiS","molecular_formula":"KLiS","intended_role":"candidate solid electrolyte","prov":["Table 3"]}
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "w1",
+        "description": "Screened 12,831 Li-containing crystalline solids for band gap ≥1 eV, Ehull = 0 eV per atom, estimated oxidation voltage ≥4 V, and no transition metals, reducing candidates to 317."
+      },
+      {
+        "step_ref": "w2",
+        "description": "Developed logistic regression model using 20 structural features and 40 experimental conductivity data points; selected 5-feature model with 10% cross-validated misclassification rate."
+      },
+      {
+        "step_ref": "w3",
+        "description": "Applied model to 317 candidates; selected 21 structures with predicted superionic probability ≥50%."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Logistic regression model",
+        "parameters": {
+          "features_used": 5,
+          "training_set_size": 40
+        },
+        "results": [
+          {
+            "metric": "training misclassification rate",
+            "value": 10,
+            "unit": "%"
+          },
+          {
+            "metric": "cross-validated misclassification rate",
+            "value": 10,
+            "unit": "%"
+          }
+        ],
+        "interpretation": "Model predicts superionic conductors with approximately 90% accuracy on leave-one-out validation.",
+        "prov": ["Figure 2(a)"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-22T19:45:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

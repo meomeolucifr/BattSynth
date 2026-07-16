@@ -1,0 +1,343 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Fundamental degradation mechanisms of layered oxide Li-ion battery cathode materials: Methodology, insights and novel approaches",
+    "doi": "10.1016/j.mseb.2014.11.014",
+    "authors": ["R. Hausbrand", "G. Cherkashinin", "H. Ehrenberg", "M. Gröting", "K. Albe", "C. Hess", "W. Jaegermann"],
+    "journal": "Materials Science and Engineering B",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["Li-ion battery", "cathode", "thin film", "solid electrolyte", "degradation"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiPON thin film",
+      "molecular_formula": "Li2.9PO3.3N0.36",
+      "intended_role": "solid electrolyte",
+      "prov": ["Section 8.1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiCoO2 thin film (HT phase)",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "cathode",
+      "prov": ["Section 8.2"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li(Ni,Co)O2 thin film (LNCO)",
+      "molecular_formula": "",
+      "intended_role": "cathode",
+      "prov": ["Section 8.2"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li(Mn,Ni,Co)O2 thin film (LMNCO)",
+      "molecular_formula": "",
+      "intended_role": "cathode",
+      "prov": ["Section 8.2"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li3PO4",
+      "molecular_formula": "Li3PO4",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as sputtering target for LiPON",
+      "prov": ["Section 8.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "reactive gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Reactive gas during LiPON sputtering",
+      "prov": ["Section 8.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Diethyl carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Adsorbate in interface studies",
+      "prov": ["Section 6.2"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Dimethyl carbonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Adsorbate in interface studies",
+      "prov": ["Section 6.2"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Electrolyte salt",
+      "prov": ["Section 6.2"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "LiClO4",
+      "molecular_formula": "LiClO4",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Electrolyte salt",
+      "prov": ["Section 6.2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Deposition of LiPON solid electrolyte thin film",
+        "operations": [
+          {
+            "action": "rf-magnetron sputtering",
+            "parameters": {
+              "target": "chem_1",
+              "reactive_gas": "chem_2"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Room temperature deposition; nitrogen used as reactive gas; composition achieved Li2.9PO3.3N0.36"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2 (reactive sputter)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 8.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Growth of LiCoO2 thin film cathode",
+        "operations": [
+          {
+            "action": "rf-sputtering",
+            "parameters": {},
+            "temperature": {
+              "value": 823,
+              "unit": "K"
+            },
+            "notes": "High-temperature phase formed between 400–650 °C; example grown at 550 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 8.2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Co-sputter deposition of Li(Ni,Co)O2 thin film",
+        "operations": [
+          {
+            "action": "rf co-sputtering",
+            "parameters": {},
+            "temperature": {
+              "value": 1023,
+              "unit": "K"
+            },
+            "notes": "LNCO film grown at 750 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 8.2"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Co-sputter deposition of Li(Mn,Ni,Co)O2 thin film",
+        "operations": [
+          {
+            "action": "rf co-sputtering",
+            "parameters": {},
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "notes": "LMNCO film grown at 600 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Section 8.2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Formation of solid electrolyte LiPON film"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Preparation of LiCoO2 cathode thin film"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Preparation of LNCO cathode thin film"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Preparation of LMNCO cathode thin film"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Sputtering pressure and power not provided",
+        "excerpt": "Typically, LiPON is deposited as thin film by rf-magnetron sputter deposition at room temperature using Li3PO4 as target and nitrogen as reactive gas [163]."
+      },
+      {
+        "issue": "Exact composition of LNCO and LMNCO not specified",
+        "excerpt": "Li(Ni,Co)O2(LNCO) film grown at 750°C ... Li(Mn,Ni,Co)O2(LMNCO) film grown at 600°C."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 2e-6,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "electronic conductivity",
+          "value": 1e-14,
+          "unit": "S cm-1",
+          "notes": "<10^-14 S/cm"
+        }
+      ],
+      "interpretation": "LiPON exhibits high ionic and negligible electronic conductivity at room temperature.",
+      "prov": ["Section 8.1"]
+    },
+    {
+      "method": "Photoelectron spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "valence band offset (LiCoO2/LiPON, RT deposition)",
+          "value": 1.15,
+          "unit": "eV"
+        },
+        {
+          "metric": "valence band offset (LiCoO2/LiPON, 200 °C deposition)",
+          "value": 0.65,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Interface electronic alignment depends on LiPON deposition temperature.",
+      "prov": ["Figure 31"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

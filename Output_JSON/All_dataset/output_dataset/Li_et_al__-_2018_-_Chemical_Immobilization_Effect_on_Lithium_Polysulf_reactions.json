@@ -1,0 +1,228 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Chemical Immobilization Effect on Lithium Polysulfides for Lithium–Sulfur Batteries",
+    "doi": "10.1002/smll.201701986",
+    "authors": ["Caixia Li", "Zhucong Xi", "Dexiang Guo", "Xiangju Chen", "Longwei Yin"],
+    "journal": "Small",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["lithium–sulfur batteries", "polysulfide immobilization", "composite cathodes"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "MCM/Nb2O5/S composite cathode",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Text p.2 (MCM/Nb2O5/S cathodes)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Nb2O5",
+      "molecular_formula": "Nb2O5",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text p.2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "mesoporous carbon microspheres",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "host",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text p.2"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "sulfur",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Text p.2"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of Nb2O5-dispersed mesoporous carbon microspheres (MCM/Nb2O5) via wet impregnation.",
+        "operations": [
+          {
+            "action": "impregnate",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Described as an 'easy wet impregnation method'; no further details provided."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Text p.2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Incorporation of sulfur into MCM/Nb2O5 to form the MCM/Nb2O5/S composite cathode.",
+        "operations": [
+          {
+            "action": "infuse",
+            "parameters": {
+              "inputs": ["chem_3", "target_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Method not detailed; inferred from phrase 'MCM/Nb2O5/S cathodes'."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Text p.2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of MCM/Nb2O5 host material."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Loading sulfur into the host to obtain final composite cathode."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing quantitative synthesis parameters",
+        "excerpt": "‘MCM/Nb2O5 ... by an easy wet impregnation method’ – no amounts, temperature, or time specified."
+      },
+      {
+        "issue": "Unspecified sulfur infusion conditions",
+        "excerpt": "Phrase ‘MCM/Nb2O5/S cathodes’ without procedural details."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "binding energy Li2S6–Nb2O5",
+          "value": 65.16,
+          "unit": "kcal mol-1"
+        }
+      ],
+      "interpretation": "Strong Li–O and Nb–S interactions indicate high polysulfide affinity.",
+      "prov": ["Figure 2b"]
+    },
+    {
+      "method": "Electrochemical testing (galvanostatic cycling)",
+      "parameters": {
+        "current_rate": "0.5 C"
+      },
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 1289,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity after 200 cycles",
+          "value": 913,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "fade rate per cycle",
+          "value": 0.14,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Composite shows high capacity retention over long cycling.",
+      "prov": ["Text p.2"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 1289,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-28T20:48:00Z",
+    "source_file": "review1701986_excerpt.txt",
+    "processing_time": null
+  }
+}

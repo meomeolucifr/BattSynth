@@ -1,0 +1,467 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Microstructure Manipulation for Enhancing the Resistance of Garnet-Type Solid Electrolytes to “Short Circuit” by Li Metal Anodes",
+    "doi": "10.1021/acsami.8b17954",
+    "authors": ["Yaoyu Ren", "Yang Shen", "Yuanhua Lin", "Ce-Wen Nan"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid-state electrolyte", "garnet", "lithium battery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7−xLa3Zr2−xTaxO12 powder",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Page 5929, Experimental Section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "0.8Ta-LLZO sintered pellet",
+      "molecular_formula": "Li6.2La3Zr1.2Ta0.8O12",
+      "intended_role": "final product",
+      "prov": ["Abstract", "Page 5930"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hydroxide monohydrate",
+      "molecular_formula": "LiOH·H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Stoichiometric with 10 wt% excess",
+      "prov": ["Page 5929"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lanthanum oxide",
+      "molecular_formula": "La2O3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Calcined at 900 °C for 12 h before use",
+      "prov": ["Page 5929"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Zirconium dioxide",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 5929"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Tantalum pentoxide",
+      "molecular_formula": "Ta2O5",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "99.99% purity",
+      "prov": ["Page 5929"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Aluminium oxide",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "sintering aid",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "0.15 mol per mol LLZO",
+      "prov": ["Page 5929"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "2-Propanol",
+      "molecular_formula": "C3H8O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 5929"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used for Li/LLZO/Li symmetric cell tests",
+      "prov": ["Page 5929"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Gold",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Sputtered as Li-ion-blocking electrodes",
+      "prov": ["Page 5929"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Ball-milling of precursors",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5", "chem_6"],
+              "duration": {
+                "value": 480,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "notes": "YSZ milling media; stoichiometric mixture with 10 wt% excess LiOH·H2O",
+            "prov": ["Page 5929"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5929"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Calcination of milled slurry",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "temperature": {
+                "value": 1173,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 360,
+                "unit": "min"
+              }
+            },
+            "notes": "",
+            "prov": ["Page 5929"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5929"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Post-calcination milling and drying",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "duration": {
+                "value": 780,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "notes": "in 2-propanol",
+            "prov": ["Page 5929"]
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "notes": "",
+            "prov": ["Page 5929"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5929"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Pellet pressing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 3000,
+                "unit": "bar"
+              },
+              "other": {
+                "diameter": "12 mm"
+              }
+            },
+            "notes": "",
+            "prov": ["Page 5929"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 3000,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5929"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Sintering of pressed pellets",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "temperature_range": {
+                "min": 1398,
+                "max": 1473,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 240,
+                "unit": "min"
+              }
+            },
+            "notes": "Representative optimum for 0.8Ta-LLZO: 1423 K (1150 °C)",
+            "prov": ["Page 5929"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 5929"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Milling of precursors in 2-propanol"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Calcination to form garnet powder"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Further milling and drying"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Compaction into green pellets"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "High-temperature sintering to dense pellets"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometric masses not provided",
+        "excerpt": "Typically, stoichiometric amounts of LiOH·H2O ... were thoroughly ball-milled"
+      },
+      {
+        "issue": "Atmosphere during milling and drying not stated",
+        "excerpt": "thoroughly ball-milled with YSZ milling media in 2-propanol for 8 h"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα"
+      },
+      "results": [
+        {
+          "metric": "phase",
+          "value": "cubic garnet structure confirmed for all xTa-LLZO powders",
+          "unit": ""
+        },
+        {
+          "metric": "lattice parameter trend",
+          "value": "decreases with increasing Ta content",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure S1, Page 5929"]
+    },
+    {
+      "method": "Particle size analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "average particle size trend",
+          "value": "decreased with higher Ta doping",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1a, Page 5929"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle morphology",
+          "value": "more spherical at higher Ta levels",
+          "unit": ""
+        },
+        {
+          "metric": "relative density (0.8Ta-LLZO, 1150 °C)",
+          "value": 96.2,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 4, Page 5932"]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "100 Hz–8 MHz",
+        "temperature_range": "298–353 K"
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (x=0.125, 1150 °C)",
+          "value": 4.55e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "ionic conductivity (x=0.25, 1150 °C)",
+          "value": 8.53e-4,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy range",
+          "value": "0.33–0.41",
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2b, Page 5930"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DC polarization test",
+        "results": [
+          {
+            "description": "0.8Ta-LLZO pellet (1150 °C) endured 0.5 mA cm-2 for >8 h with no short circuit; total charge 4 mAh cm-2",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": ["Figure 3c, Page 5930"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-10-15T00:14:31Z",
+    "source_file": "acsami.8b17954.pdf",
+    "processing_time": null
+  }
+}

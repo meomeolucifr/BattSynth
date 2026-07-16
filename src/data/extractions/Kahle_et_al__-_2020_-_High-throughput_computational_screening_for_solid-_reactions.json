@@ -1,0 +1,102 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "High-throughput computational screening for solid-state Li-ion conductors",
+    "doi": "",
+    "authors": ["Leonid Kahle", "Aris Marcolongo", "Nicola Marzari"],
+    "journal": "",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "supplementary_information",
+    "tags": ["computational screening", "Li-ion conductors", "bandgap", "diffusion coefficients"]
+  },
+  "targets": [],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "PBE bandgap calculation",
+      "parameters": {
+        "configurations_compared": ["experimental volume (Vexp)", "relaxed volume (Vrel)"],
+        "number_of_structures": 717
+      },
+      "results": [
+        {
+          "metric": "bandgap_correlation",
+          "value": "",
+          "unit": "",
+          "notes": "Figure S1 shows strong correlation between bandgaps calculated at Vexp and Vrel."
+        }
+      ],
+      "interpretation": "Bandgap at experimental volume can be used as an estimate for bandgap at relaxed volume.",
+      "prov": ["Fig. S1"]
+    },
+    {
+      "method": "Molecular dynamics (MD) simulation",
+      "parameters": {
+        "time_window_for_slope": "8–10 ps",
+        "total_time_for_MSD": "50 ps"
+      },
+      "results": [
+        {
+          "metric": "diffusion_coefficient_correlation",
+          "value": "",
+          "unit": "",
+          "notes": "Figure S2 compares diffusion coefficients obtained from total MSD at 50 ps and from slope between 8–10 ps."
+        }
+      ],
+      "interpretation": "For highly diffusive systems, both estimation methods agree; Eq. (1) overestimates diffusion for non-diffusive systems.",
+      "prov": ["Fig. S2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Einstein relation for diffusion coefficient (Eq. 1)",
+        "results": []
+      },
+      {
+        "method_name": "Time-derivative of MSD (Eq. 2)",
+        "results": []
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

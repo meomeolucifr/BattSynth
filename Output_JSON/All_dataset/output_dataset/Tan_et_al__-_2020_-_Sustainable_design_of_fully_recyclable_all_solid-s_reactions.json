@@ -1,0 +1,511 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Sustainable design of fully recyclable all solid-state batteries",
+    "doi": "10.1557/mre.2020.25",
+    "authors": [
+      "Darren H. S. Tan",
+      "Panpan Xu",
+      "Hedi Yang",
+      "Min-cheol Kim",
+      "Han Nguyen",
+      "Erik A. Wu",
+      "Jean-Marie Doux",
+      "Abhik Banerjee",
+      "Ying Shirley Meng",
+      "Zheng Chen"
+    ],
+    "journal": "MRS Energy & Sustainability: A Review Journal",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "battery recycling study",
+    "tags": [
+      "all-solid-state battery",
+      "recycling",
+      "Li6PS5Cl",
+      "LiCoO2"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "recycled solid electrolyte",
+      "prov": ["Figure 3", "Table 3"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "recycled cathode material",
+      "prov": ["Figure 4", "Table 3"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Fully recycled Li | Li6PS5Cl | LiCoO2 all-solid-state battery",
+      "molecular_formula": "",
+      "intended_role": "product cell",
+      "prov": ["Figure 4"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": []
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used to dissolve solid electrolyte during recycling",
+      "prov": ["Figure 1", "Text"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used to remove CEI layer from recovered LiCoO2",
+      "prov": ["Figure 4(a)"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "lithium hydroxide",
+      "molecular_formula": "LiOH",
+      "ontology": {
+        "role": "lithiation precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used in hydrothermal re-lithiation of LiCoO2",
+      "prov": ["Text"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "lithiation precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "alternative lithiation precursor mentioned",
+      "prov": ["Text"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "fresh foil used in rebuilt cell",
+      "prov": ["Figure 4"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dissolution of spent ASSB stack in ethanol to dissolve Li6PS5Cl and liberate LiCoO2 particles.",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Performed after removal of cell packaging."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1(b)"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Phase-separation of suspension into solid cathode fraction and SSE-containing solution by filtration or centrifugal decanting.",
+        "operations": [
+          {
+            "action": "separate",
+            "parameters": {
+              "method": "filtration / centrifugal decanting"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1(c)"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Recovery of Li6PS5Cl from ethanol by solvent evaporation/drying.",
+        "operations": [
+          {
+            "action": "evaporate",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "High vapor pressure of ethanol aids low-energy recovery."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1(d)"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Thermal annealing of recovered Li6PS5Cl to restore crystallinity and ionic conductivity.",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Annealed under vacuum; exact temperature not specified."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Text near Table 3", "Figure 3"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Water treatment of recovered LiCoO2 to remove surface CEI products.",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 4(a)"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Hydrothermal re-lithiation of washed LiCoO2 using lithium precursors to regenerate stoichiometry.",
+        "operations": [
+          {
+            "action": "hydrothermal_treatment",
+            "parameters": {
+              "inputs": ["chem_2", "chem_5", "chem_6"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Restores Li content to Li1.06CoO2."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 4(a)", "Table 3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ethanol dissolution of spent ASSB components."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Solid–liquid separation to isolate cathode and SSE fractions."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Evaporation of solvent to recover Li6PS5Cl."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Vacuum annealing of recovered Li6PS5Cl."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Water washing of LiCoO2 to remove CEI."
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Hydrothermal re-lithiation of LiCoO2."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing processing temperatures, times, and reagent quantities.",
+        "excerpt": "no specific temperature, duration, or solvent volume values were provided for dissolution, annealing, or hydrothermal steps."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size change",
+          "value": "decrease after solution process",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3(a)", "Figure 3(b)"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase retention",
+          "value": "bulk structure retained after regeneration",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3(c)"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "thiophosphate unit retention",
+          "value": "observed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3(d)"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity (pristine)",
+          "value": 1.62,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "ionic conductivity (recovered)",
+          "value": 0.11,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "ionic conductivity (regenerated)",
+          "value": 1.48,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 3", "Figure 3(e)"]
+    },
+    {
+      "method": "ICP-MS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li content pristine",
+          "value": 1.05,
+          "unit": "mol ratio (Li per formula unit)"
+        },
+        {
+          "metric": "Li content recovered",
+          "value": 1.01,
+          "unit": "mol ratio"
+        },
+        {
+          "metric": "Li content regenerated",
+          "value": 1.06,
+          "unit": "mol ratio"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 3"]
+    },
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {
+        "current_rate": "0.1C",
+        "temperature": "ambient",
+        "pressure": "5 MPa",
+        "active_mass_loading": "10 mg cm-2"
+      },
+      "results": [
+        {
+          "metric": "cycle number before recycling",
+          "value": 100,
+          "unit": "cycles"
+        }
+      ],
+      "interpretation": "Recycled cell exhibited similar capacity retention and Coulombic efficiency (>99.9% after 5th cycle) to pristine cell.",
+      "prov": ["Figure 4(b)", "Figure 4(c)"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-19T04:27:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Supplemental Material: First-principles prediction of potentials and space-charge layers in all-solid-state batteries",
+    "doi": "",
+    "authors": [],
+    "journal": "",
+    "year": null
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "all-solid-state batteries", "chemical potentials", "band structure"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "material studied",
+      "prov": ["Supplemental Material, Sections S.I–S.V"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "SD-Li2PO2N (LiPON)",
+      "molecular_formula": "Li2PO2N",
+      "intended_role": "material studied",
+      "prov": ["Supplemental Material, Sections S.I–S.V"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li metal",
+      "molecular_formula": "Li",
+      "intended_role": "reference electrode material",
+      "prov": ["Supplemental Material, Section S.III"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Supplemental Material"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "SD-Li2PO2N (LiPON)",
+      "molecular_formula": "Li2PO2N",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Supplemental Material"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Supplemental Material"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (vacuum alignment)",
+      "parameters": {
+        "surface": "(104)",
+        "functional": "optPBE+U",
+        "U_value_eV": 3.32
+      },
+      "results": [
+        {
+          "metric": "ionization potential",
+          "value": 5.33,
+          "unit": "V",
+          "notes": "LiCoO2 low-energy (104) surface"
+        },
+        {
+          "metric": "ionization potential",
+          "value": 6.38,
+          "unit": "V",
+          "notes": "Li0.5CoO2 same surface"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Section S.III"]
+    },
+    {
+      "method": "DFT (vacuum alignment)",
+      "parameters": {
+        "surface": "(110)",
+        "functional": "PBE"
+      },
+      "results": [
+        {
+          "metric": "work function",
+          "value": 3.14,
+          "unit": "V",
+          "notes": "Li metal"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Section S.III"]
+    },
+    {
+      "method": "DFT (vacuum alignment)",
+      "parameters": {
+        "surface": "(1 1 0)",
+        "functional": "PBE"
+      },
+      "results": [
+        {
+          "metric": "ionization potential",
+          "value": 5.56,
+          "unit": "V",
+          "notes": "Lowest-energy non-polar surface of SD-Li2PO2N (LiPON)"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Section S.III"]
+    },
+    {
+      "method": "DFT band structure",
+      "parameters": {
+        "functional": "optPBE+U"
+      },
+      "results": [
+        {
+          "metric": "band gap",
+          "value": 2.20,
+          "unit": "eV",
+          "notes": "LiCoO2"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure S.4"]
+    },
+    {
+      "method": "DFT band structure",
+      "parameters": {
+        "functional": "PBE"
+      },
+      "results": [
+        {
+          "metric": "band gap",
+          "value": 5.69,
+          "unit": "eV",
+          "notes": "SD-Li2PO2N"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure S.5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Phase diagram construction (PyCDT)",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": "",
+            "notes": "Chemical potential regions for Li-Co-O system and Li-P-O-N system determined"
+          }
+        ],
+        "prov": ["Section S.I"]
+      },
+      {
+        "method_name": "Point defect formation energy",
+        "results": [
+          {
+            "equation": "Ef[Xq] = Etot[Xq] − Etot[bulk] − Σ ni μi + q EF",
+            "value": null,
+            "unit": "",
+            "notes": "Defect energetics for LiCoO2 and LiPON"
+          }
+        ],
+        "prov": ["Section S.IV"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

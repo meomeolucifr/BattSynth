@@ -1,0 +1,833 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Co-modification by LiAlO2-coating and Al-doping for LiNi0.5Co0.2Mn0.3O2 as a high-performance cathode material for lithium-ion batteries with a high cutoff voltage",
+    "doi": "10.1016/j.jallcom.2018.07.223",
+    "authors": [
+      "Liansheng Li",
+      "Zhen Zhang",
+      "Sihan Fu",
+      "Zongze Liu",
+      "Yameng Liu"
+    ],
+    "journal": "Journal of Alloys and Compounds",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "lithium-ion battery",
+      "cathode material",
+      "surface coating",
+      "doping"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiAlO2-coated and Al-doped LiNi0.5Co0.2Mn0.3O2",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Experimental section",
+        "Figure 1"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper repeatedly specifies the target cathode material as LiNi0.5Co0.2Mn0.3O2 (including for Al-modified samples, described as LiAlO2-coated and Al-doped LiNi0.5Co0.2Mn0.3O2). However, the Extracted Value for “Target Formula” is blank/empty, which is not an explicitly stated value and does not match the clearly provided formula in the text (title, abstract, experimental section, and Figure 1 caption).",
+        "suggested_fix": "LiNi0.5Co0.2Mn0.3O2 (Al-modified version: LiAlO2-coated and Al-doped LiNi0.5Co0.2Mn0.3O2)"
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiNi0.5Co0.2Mn0.3O2 (bare NCM)",
+      "molecular_formula": "",
+      "intended_role": "control",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.72,
+        "reasoning": "The paper explicitly identifies the target cathode material as LiNi0.5Co0.2Mn0.3O2 (with variants described as LiAlO2-coated and Al-doped LiNi0.5Co0.2Mn0.3O2). However, the extracted value for “Target Formula” is blank/missing, so it is not supported as an extracted value. The document does contain a clear target formula that should have been extracted.",
+        "suggested_fix": "LiNi0.5Co0.2Mn0.3O2 (Al-modified variant: LiAlO2-coated and Al-doped LiNi0.5Co0.2Mn0.3O2)"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ni(CH3COO)2·4H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "stoichiometric amount",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.83,
+        "reasoning": "In the Experimental section (2.1 Sample preparation), the paper explicitly lists Ni(CH3COO)2·4H2O as a precursor: “stoichiometric amounts of Ni(CH3COO)2·4H2O, Co(CH3COO)2·4H2O, and Mn(CH3COO)2·4H2O were dissolved…”. However, no specific mass, molar amount, or volume for Ni(CH3COO)2·4H2O is provided—only that “stoichiometric amounts” were used and that the resulting mixed solution concentration was 1 mol L−1. Therefore the extracted statement that the chemical is present and its amount is not specified is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Co(CH3COO)2·4H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "stoichiometric amount",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "In the Experimental section (2.1 Sample preparation), Co(CH3COO)2·4H2O is explicitly listed as a starting reagent (“stoichiometric amounts of Ni(CH3COO)2·4H2O, Co(CH3COO)2·4H2O, and Mn(CH3COO)2·4H2O were dissolved…”). However, the paper does not provide a specific mass, molar amount, or volume for Co(CH3COO)2·4H2O alone—only that “stoichiometric amounts” were used and that the resulting solution was 1 mol L−1 in 50 mL water. Therefore, the extracted statement that the amount is not specified is supported by the text’s omission of an explicit Co(CH3COO)2·4H2O quantity.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Mn(CH3COO)2·4H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "stoichiometric amount",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "In the Experimental section (Sample preparation), the paper explicitly lists Mn(CH3COO)2·4H2O as a starting reagent: “stoichiometric amounts of Ni(CH3COO)2·4H2O, Co(CH3COO)2·4H2O, and Mn(CH3COO)2·4H2O were dissolved…”. However, no explicit mass, moles, or volume for Mn(CH3COO)2·4H2O is provided—only “stoichiometric amounts” and a general statement that the solution is 1 mol L−1. Therefore the extractor’s claim that the chemical identity is present and the amount is not specified is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 50,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "In the Experimental section (2.1 Sample preparation), the paper explicitly states that the stoichiometric amounts of Ni(CH3COO)2·4H2O, Co(CH3COO)2·4H2O, and Mn(CH3COO)2·4H2O were dissolved in \"50 mL of deionized water\" to form an aqueous solution. This directly supports the extracted value \"deionized water | Amount: 50 mL\".",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Na2CO3",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precipitant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "aqueous solution, concentration not specified",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The Experimental section (2.1 Sample preparation) explicitly states that “an aqueous Na2CO3 solution was rapidly added” and that “appropriate solutions of Na2CO3 and Al(NO3)3·9H2O were added…”, confirming Na2CO3 is used. However, the text does not provide a concentration, mass, volume, molar amount, or stoichiometric quantity for the Na2CO3 solution(s)—it is only described as “an aqueous Na2CO3 solution” and “appropriate solutions of Na2CO3”. Therefore, the extractor’s note that the amount is not specified is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Al(NO3)3·9H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "coating precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "appropriate amount for 1, 2, 4 wt% Al (as Al2O3)",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "In the Experimental section (2.1 Sample preparation), Al(NO3)3·9H2O is explicitly mentioned as being added dropwise during the 80 °C treatment: “appropriate solutions of Na2CO3 and Al(NO3)3·9H2O were added…”. However, the paper does not provide a numeric mass/volume/moles for Al(NO3)3·9H2O; it only says “appropriate solutions” and later reports target Al content as 1 wt.%, 2 wt.%, 4 wt.% (as Al2O3 basis) without back-calculating the Al(NO3)3·9H2O amount. Therefore, ‘Amount: Not specified in text’ is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Li2CO3",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "lithium source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "mixed with precursor before sintering",
+      "prov": [
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Experimental section (2.1 Sample preparation) explicitly states the precursor was mixed with lithium carbonate (Li2CO3) but does not provide a mass, molar ratio, or any quantitative amount for Li2CO3. Therefore the chemical identity Li2CO3 is supported and the extractor’s note that the amount is not specified is also supported by the text’s omission.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of mixed metal acetate solution",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4"
+              ],
+              "concentration": {
+                "value": 1,
+                "unit": "M"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Stoichiometric amounts dissolved in 50 mL water",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "In the Sample preparation section, the paper explicitly states that the acetate salts “were dissolved in 50 mL of deionized water to form an aqueous solution,” which directly supports the synthesis operation being “dissolve.”",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Co-precipitation of carbonate precursor",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_5"
+              ]
+            },
+            "duration": {
+              "value": 600,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Na2CO3 solution rapidly added, vigorous stirring at room temperature",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.76,
+              "reasoning": "The paper’s synthesis description includes operations such as “dissolved”, “added”, “stirred”, “increased temperature”, “added … dropwise”, “washed, filtered and dried”, “mixed”, and “sintered”. While the verb “added” appears, the extracted value is the operation “add” as a standalone/normalized operation, and the document does not explicitly present a synthesis step labeled simply as “add” (nor is there a single definitive synthesis operation—there are multiple). Without a defined schema showing that “add” is the intended normalized label for any of these steps, this extraction is not explicitly supported as-is.",
+              "suggested_fix": "If the field expects a specific operation verb from the procedure, use one explicitly stated in the text, e.g., “added (Na2CO3 solution)” or “added dropwise (Na2CO3 and Al(NO3)3·9H2O solutions)”, or list multiple operations (dissolve, add, stir, heat, wash/filter/dry, mix, sinter)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Al(OH)3 coating deposition",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 353.15,
+              "unit": "K"
+            },
+            "notes": "Temperature raised to 80 °C and held",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.66,
+              "reasoning": "The paper’s synthesis/sample preparation describes stirring, heating to 80 °C, drying, and especially sintering/calcining at 450 °C and 850 °C. However, the word/operation \"heat\" is not explicitly stated as a synthesis operation; instead, specific operations are given (\"temperature was increased to 80 °C\", \"held\", \"dried\", \"sintered\"). Thus the extracted generic operation \"heat\" is not directly quoted/explicitly supported, even though heating is implied by the described steps.",
+              "suggested_fix": "Use an explicitly stated operation such as \"sintered\" (450 °C for 5 h then 850 °C for 12 h) or \"temperature increased to 80 °C and held for 2 h\"."
+            }
+          },
+          {
+            "action": "add_dropwise",
+            "parameters": {
+              "inputs": [
+                "chem_5",
+                "chem_6"
+              ]
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 353.15,
+              "unit": "K"
+            },
+            "notes": "Na2CO3 and Al(NO3)3 solutions added simultaneously",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes adding solutions “in a dropwise manner” during synthesis: “appropriate solutions of Na2CO3 and Al(NO3)3·9H2O were added to the mixture in a dropwise manner” (Experimental, Sample preparation, Page 2). This supports the synthesis operation concept of add_dropwise.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Isolation of Al(OH)3-coated precursor",
+        "operations": [
+          {
+            "action": "wash_filter_dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.94,
+              "reasoning": "The paper’s sample preparation explicitly states: “The resulting Al(OH)3-coated Ni0.5Co0.2Mn0.3CO3 was washed, filtered and dried.” This directly supports the synthesis operation sequence wash → filter → dry (wash_filter_dry).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Lithiation of precursor",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_7"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Precursor mixed with Li2CO3",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.77,
+              "reasoning": "The paper’s synthesis description uses operations such as dissolving, adding (rapidly/dropwise), stirring, washing/filtering/drying, mixing with Li2CO3, and sintering. While “mixed with lithium carbonate; then, the mixture was sintered…” appears, the generic operation word “mix” is not explicitly used as a named synthesis operation step (and the dominant described step is coprecipitation/coating). Thus the extracted value “mix” is not explicitly supported as the synthesis operation in the text.",
+              "suggested_fix": "coprecipitation (with subsequent mixing with Li2CO3 and sintering)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "First calcination",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {},
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 723.15,
+              "unit": "K"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.95,
+              "reasoning": "The paper explicitly describes a sintering step in the synthesis: in Sample preparation it states the precursor mixed with Li2CO3 was \"sintered at 450 °C for 5 h and then at 850 °C for 12 h\" to form the materials. This directly supports the synthesis operation being sintering (\"sinter\").",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Second calcination to form final product",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {},
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 1123.15,
+              "unit": "K"
+            },
+            "notes": "Produces LiAlO2-coated and Al-doped LiNi0.5Co0.2Mn0.3O2 (1, 2, 4 wt% Al)",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.95,
+              "reasoning": "The paper explicitly describes a sintering step in the synthesis. In Section 2.1 Sample preparation: “the mixture was sintered at 450 °C for 5 h and then at 850 °C for 12 h…”. This directly supports the extracted synthesis operation “sinter”.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Experimental section"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of metal acetate solution",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.71,
+          "reasoning": "The phrase/value \"Preparation of metal acetate solution\" is not explicitly stated as a workflow timeline step in the paper. While the Sample preparation section says that stoichiometric amounts of Ni(CH3COO)2·4H2O, Co(CH3COO)2·4H2O, and Mn(CH3COO)2·4H2O were dissolved in deionized water to form an aqueous solution (1 mol L−1), it does not label this step as \"Preparation of metal acetate solution\" nor present a named workflow timeline field. Therefore the extracted value is a paraphrase rather than an explicitly supported timeline entry.",
+          "suggested_fix": "If a timeline/workflow step must be extracted verbatim, use: \"Stoichiometric amounts of Ni(CH3COO)2·4H2O, Co(CH3COO)2·4H2O, and Mn(CH3COO)2·4H2O were dissolved in 50 mL of deionized water to form an aqueous solution (1 mol L−1).\""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Co-precipitation of Ni0.5Co0.2Mn0.3CO3",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.64,
+          "reasoning": "The paper does mention the precursor “Ni0.5Co0.2Mn0.3CO3” and that it is obtained during the synthesis (via coprecipitation) and later coated with Al(OH)3, but it does not explicitly state “Co-precipitation of Ni0.5Co0.2Mn0.3CO3” as a standalone workflow timeline step. The term used is “coprecipitation method,” and the described workflow is broader (metal acetates + Na2CO3 → precipitate; then at 80 °C add Na2CO3 and Al(NO3)3 to obtain Al(OH)3-coated Ni0.5Co0.2Mn0.3CO3).",
+          "suggested_fix": "Coprecipitation synthesis producing a Ni0.5Co0.2Mn0.3CO3 precursor (later Al(OH)3-coated), followed by mixing with Li2CO3 and calcination to form LiAlO2-coated/Al-doped LiNi0.5Co0.2Mn0.3O2."
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Deposition of Al(OH)3 coating at 80 °C",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper does mention an 80 °C step where Al(OH)3 coating is formed: during sample preparation, the mixture is heated to 80 °C for 2 h while Na2CO3 and Al(NO3)3·9H2O are added dropwise “to obtain Al(OH)3-coated Ni0.5Co0.2Mn0.3CO3.” However, the extracted value claims “Deposition of Al(OH)3 coating at 80 °C” (implying an Al(OH)3 coating on the final cathode, or an explicit “deposition” statement). The text does not explicitly describe “deposition of Al(OH)3 coating” as a workflow timeline event; it describes formation of an Al(OH)3-coated precursor at 80 °C, which is later sintered to yield LiAlO2-coated, Al-doped NCM. Thus the extracted phrasing is not strictly supported as written.",
+          "suggested_fix": "Heat mixture to 80 °C (held 2 h) while adding Na2CO3 and Al(NO3)3·9H2O dropwise to obtain Al(OH)3-coated Ni0.5Co0.2Mn0.3CO3 precursor."
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Isolation and drying of coated precursor",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper’s workflow (Sample preparation, Section 2.1) includes the step “The resulting Al(OH)3-coated Ni0.5Co0.2Mn0.3CO3 was washed, filtered and dried,” which supports “drying of coated precursor.” However, it does not mention an explicit “isolation” step beyond washing/filtering, nor does it present a workflow timeline item labeled “Isolation and drying of coated precursor.” Thus the extracted workflow-timeline phrase is not explicitly supported verbatim, though a closely related step is described.",
+          "suggested_fix": "Washed, filtered and dried the resulting Al(OH)3-coated Ni0.5Co0.2Mn0.3CO3 precursor (Section 2.1 Sample preparation)."
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Mixing with Li2CO3",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.94,
+          "reasoning": "The workflow step \"Mixing with Li2CO3\" is explicitly described in the Sample preparation section: \"Finally, the as-synthesized precursor was mixed with lithium carbonate (Li2CO3); then, the mixture was sintered...\" This directly supports the extracted workflow timeline item.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Pre-calcination at 450 °C",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The Experimental section explicitly describes a two-step sintering process: the precursor mixed with Li2CO3 was first sintered at 450 °C for 5 h and then at 850 °C for 12 h. This first 450 °C step corresponds to a pre-calcination/pre-sintering step at 450 °C, supporting the extracted workflow timeline value.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_7",
+        "description": "High-temperature calcination at 850 °C to obtain final Al-modified NCM",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The Experimental section (2.1 Sample preparation) explicitly describes the final sintering/calcination step: the precursor mixed with Li2CO3 was “sintered at 450 °C for 5 h and then at 850 °C for 12 h” to form LiAlO2-coated and Al-doped LiNi0.5Co0.2Mn0.3O2 (Al-modified NCM). This supports that high-temperature calcination at 850 °C is part of the workflow to obtain the final Al-modified NCM.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact stoichiometric amounts of metal acetates and Na2CO3 concentrations not specified",
+        "excerpt": "First, stoichiometric amounts of Ni(CH3COO)2·4H2O, Co(CH3COO)2·4H2O, and Mn(CH3COO)2·4H2O were dissolved...",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "In the Sample preparation section, the paper states: “First, stoichiometric amounts of Ni(CH3COO)2·4H2O, Co(CH3COO)2·4H2O, and Mn(CH3COO)2·4H2O were dissolved … to form an aqueous solution (1 mol L−1). … as the precipitant, an aqueous Na2CO3 solution was rapidly added…” and later “appropriate solutions of Na2CO3 and Al(NO3)3·9H2O were added…”. Nowhere in the full text are the exact masses/moles of the metal acetates given, nor is any Na2CO3 solution concentration specified (only that the metal-acetate solution is 1 mol L−1). Therefore, the identified ambiguity—missing exact stoichiometric amounts and Na2CO3 concentration—is correctly supported by the document’s omission.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Room temperature value not specified",
+        "excerpt": "The resulting mixture was vigorously stirred at room temperature for 10 h.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The paper states: “The resulting mixture was vigorously stirred at room temperature for 10 h.” (Experimental, Sample preparation). Nowhere in the provided full text is a numerical room-temperature value (e.g., 25 °C) defined or specified; the only explicit temperatures given are 80 °C, 450 °C, 850 °C, and separate testing temperatures of 25 °C and 85 °C for electrochemistry. Thus, the workflow ambiguity note that the room-temperature value is not specified is supported.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "scan_range": "10–90 ° (2θ)",
+        "scan_rate": "5 °/min",
+        "step_size": "0.02 °"
+      },
+      "results": [
+        {
+          "metric": "phase",
+          "value": "layered hexagonal a-NaFeO2 structure (R-3m)",
+          "unit": ""
+        },
+        {
+          "metric": "lattice_parameter_a",
+          "value": 0.28684,
+          "unit": "nm"
+        },
+        {
+          "metric": "lattice_parameter_c",
+          "value": 1.42554,
+          "unit": "nm"
+        },
+        {
+          "metric": "c/a ratio",
+          "value": 4.9698,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Al substitution broadened slab spacing and maintained layered structure",
+      "prov": [
+        "Table 1",
+        "Figure 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly states from XRD that all peaks are indexed to the layered hexagonal α-NaFeO2 structure with space group R-3m (Fig. 2(b), Page 3). Table 1 (Page 3) lists lattice parameters for the 2 wt.% Al-modified NCM sample: a = 0.28684 nm, c = 1.42554 nm, and c/a = 4.9698, matching the extracted values exactly. Alleged provenance (Table 1, Figure 2) is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "coating_thickness",
+          "value": 4.3,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Continuous LiAlO2 coating layer observed",
+      "prov": [
+        "Figure 4"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly states that TEM confirms “a uniform LiAlO2 coating layer…with a thickness of approximately 4.3 nm” on Al-modified NCM, in the discussion of Fig. 4 (TEM images). This directly supports the extracted TEM coating_thickness value of 4.3 nm (provenance should correspond to Fig. 4, not Fig. 4 in the alleged provenance says 'Figure 4' which matches).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "primary_particle_size_range",
+          "value": "200–700",
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Al-modified sample shows reduced agglomeration",
+      "prov": [
+        "Figure 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The source text explicitly states in the SEM discussion: “both bare and Al-modified NCM are composed of irregular primary particles with sizes ranging from 200 to 700 nm” (describing Fig. 3 SEM results). This directly supports a primary particle size range of 200–700 nm. The alleged provenance cites Figure 3, which matches the SEM section (though the exact numeric range appears in the text accompanying Fig. 3).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "elemental_ratio_Ni:Co:Mn",
+          "value": "≈5:2:3",
+          "unit": ""
+        },
+        {
+          "metric": "Al_presence",
+          "value": "confirmed",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Uniform distribution of Al indicating uniform coating",
+      "prov": [
+        "Figure 3e-f",
+        "Figure 4d-h"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly reports EDS results for both bare and Al-modified NCM in the discussion of Fig. 3(e,f): it states that the Ni:Co:Mn ratio is approximately 5:2:3 and that the Al content in Al-modified NCM is nearly equal to the theoretically calculated value (confirming Al presence). Additionally, EDS mapping for Al is shown/described in Fig. 4(d–h), indicating uniform Al distribution. Thus both the elemental ratio and Al presence are supported, though the provenance for Al presence aligns more directly with Fig. 3(f) and Fig. 4(g) rather than Fig. 4(d–h) generically.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical testing",
+        "results": [
+          {
+            "description": "Capacity retention after 200 cycles at 0.5 C (3.0–4.6 V)",
+            "value": 82.06,
+            "unit": "%"
+          },
+          {
+            "description": "Discharge capacity at 10 C",
+            "value": 142.73,
+            "unit": "mAh g-1"
+          }
+        ],
+        "prov": [
+          "Abstract",
+          "Figure 5"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.72,
+          "reasoning": "The document explicitly lists multiple analysis/characterization methods (XRD, SEM, TEM/EDS; electrochemical tests including galvanostatic charge/discharge, cyclic voltammetry (CV), electrochemical impedance spectroscopy (EIS)) in the Introduction and in Sections 2.2–2.3. However, the extracted value for “Analysis Method” is blank, so it is not supported as-is. The alleged provenance (Abstract, Figure 5) does not specify analysis methods; the methods are described elsewhere (notably Section 2.2 and 2.3, and also mentioned on Page 2).",
+          "suggested_fix": "XRD; SEM; TEM (with EDS); galvanostatic charge/discharge testing; cyclic voltammetry (CV); electrochemical impedance spectroscopy (EIS)."
+        }
+      },
+      {
+        "method_name": "EIS",
+        "results": [
+          {
+            "equation": "Charge-transfer resistance Rct after 1st cycle",
+            "value": 11.62,
+            "unit": "Ω"
+          },
+          {
+            "equation": "Charge-transfer resistance Rct after 100th cycle",
+            "value": 139.15,
+            "unit": "Ω"
+          }
+        ],
+        "prov": [
+          "Figure 7",
+          "Table 2"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.72,
+          "reasoning": "The paper text around Figure 7 and Table 2 discusses EIS (electrochemical impedance spectroscopy), equivalent circuit fitting, and impedance parameters (Rs, RSEI, Rct). However, the extracted value for “Analysis Method” is blank (no method provided). Since the document does specify analysis/characterization methods (e.g., XRD, SEM, TEM/EDS, charge-discharge, CV, EIS), a blank extracted value is not supported by the source text.",
+          "suggested_fix": "Electrochemical impedance spectroscopy (EIS) with equivalent-circuit fitting (Figure 7, Table 2). More broadly, the study uses XRD, SEM, TEM/EDS, galvanostatic charge/discharge, cyclic voltammetry (CV), and EIS."
+        }
+      },
+      {
+        "method_name": "Li+ diffusion coefficient calculation",
+        "results": [
+          {
+            "value": 4.72e-10,
+            "unit": "cm2 s-1",
+            "description": "DLi+ for Al-modified NCM, first cycle"
+          }
+        ],
+        "prov": [
+          "Figure 8",
+          "Table 3"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.72,
+          "reasoning": "Neither Figure 8 nor Table 3 (nor elsewhere in the provided paper text) states an explicit named \"Analysis Method\" (e.g., a single method like \"EIS\" or \"XRD\") as the value to populate that field. The document does list multiple characterization/analysis techniques (XRD, SEM, TEM/EDS, galvanostatic charge/discharge, CV, EIS) in Section 2.2–2.3, but the extracted value is blank and thus not an explicitly supported value. Figure 8 and Table 3 specifically concern Warburg analysis/relationships and calculated Li+ diffusion coefficients (from EIS), not a general analysis-method field entry.",
+          "suggested_fix": "If the field expects the analysis techniques used in the study: XRD; SEM; TEM (with EDS); galvanostatic charge/discharge testing; cyclic voltammetry (CV); electrochemical impedance spectroscopy (EIS). If it expects the method used for Table 3/Fig. 8: Electrochemical impedance spectroscopy (EIS) with Warburg-factor analysis to calculate Li+ diffusion coefficient."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 142.73,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.92,
+      "reasoning": "The paper explicitly reports cycling performance measured over 200 cycles. In the Abstract and in the Results section (Fig. 5c discussion), it states performance “after 200 cycles” at 0.5 C in 3.0–4.6 V (e.g., “After 200 cycles… capacity retention…”, and “82.06% at 0.5 C after 200 repeated cycles”). This supports a cycle life value of 200 cycles for the reported test condition.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-28T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

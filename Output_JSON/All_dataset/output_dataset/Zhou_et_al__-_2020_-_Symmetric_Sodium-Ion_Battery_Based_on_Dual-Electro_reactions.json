@@ -1,0 +1,535 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Symmetric Sodium-Ion Battery Based on Dual-Electron Reactions of NASICON-Structured Na3MnTi(PO4)3 Material",
+    "doi": "10.1021/acsami.0c05784",
+    "authors": ["Yu Zhou", "Xiji Shao", "Kwok-ho Lam", "You Zheng", "Lingzhi Zhao", "Kedong Wang", "Jinzhu Zhao", "Fuming Chen", "Xianhua Hou"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": ["NASICON", "sodium-ion battery", "sol-gel synthesis", "symmetric cell"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "carbon-coated Na3MnTi(PO4)3 nanocomposite",
+      "molecular_formula": "Na3MnTi(PO4)3",
+      "intended_role": "electrode material / product",
+      "prov": ["Experimental Section – Preparation of Na3MnTi(PO4)3"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sodium acetate",
+      "molecular_formula": "C2H3NaO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Experimental Section – Preparation"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Manganese acetate tetrahydrate",
+      "molecular_formula": "C4H6MnO4·4H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Experimental Section – Preparation"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ammonium dihydrogen phosphate",
+      "molecular_formula": "NH4H2PO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Experimental Section – Preparation"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Citric acid monohydrate",
+      "molecular_formula": "C6H8O7·H2O",
+      "ontology": {
+        "role": "chelating agent / carbon source",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "mmol"
+      },
+      "notes": "molar ratio of citric acid to total transition metal (Ti+Mn) = 3:2",
+      "prov": ["Experimental Section – Preparation"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Titanium isopropoxide",
+      "molecular_formula": "C12H28O4Ti",
+      "ontology": {
+        "role": "reactant",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "mmol"
+      },
+      "notes": "99.9% purity, supplier: Aladdin",
+      "prov": ["Experimental Section – Preparation"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 30,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Experimental Section – Preparation"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Absolute ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 20,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Experimental Section – Preparation"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used during sintering",
+      "prov": ["Experimental Section – Preparation"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of Solution A",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_6"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "All solids dissolved in 30 mL deionized water to form Solution A"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section – Preparation"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of Solution B",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_5", "chem_7"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Titanium isopropoxide dissolved in 20 mL absolute ethanol to obtain transparent Solution B"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section – Preparation"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Mixing of solutions",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["step_2"],
+              "to": "step_1",
+              "mode": "dropwise"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Solution B added dropwise into Solution A"
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "notes": "Sealed and stirred in water bath"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section – Preparation"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Evaporation and drying",
+        "operations": [
+          {
+            "action": "evaporate",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Mixture uncovered until moisture completely evaporated to yield light-yellow precursor"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Precursor kept in oven; then ground into powder"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section – Preparation"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Calcination / sintering",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "heating_rate": {
+                "value": 5,
+                "unit": "K min-1",
+                "notes": ""
+              },
+              "final_temperature": {
+                "value": 923,
+                "unit": "K"
+              },
+              "duration_at_temp": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "temperature": {
+              "value": 923,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "Sintering under argon atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section – Preparation"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Solution A preparation"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Solution B preparation"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Combination and stirring at 80 °C"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Drying and grinding to precursor powder"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Argon sintering at 650 °C to obtain product"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα",
+        "wavelength": "0.15406 nm",
+        "voltage": "40 kV",
+        "current": "40 mA"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "rhombohedral Na3MnTi(PO4)3",
+          "unit": ""
+        },
+        {
+          "metric": "lattice parameters a",
+          "value": 8.73352,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameters c",
+          "value": 21.84703,
+          "unit": "Å"
+        },
+        {
+          "metric": "Rietveld R value",
+          "value": 4.32,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2a – XRD"]
+    },
+    {
+      "method": "TG",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "carbon content",
+          "value": 11.59,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2b – TG"]
+    },
+    {
+      "method": "Raman",
+      "parameters": {
+        "laser_wavelength": "532 nm"
+      },
+      "results": [
+        {
+          "metric": "IG/ID ratio",
+          "value": 1.14,
+          "unit": ""
+        }
+      ],
+      "interpretation": "indicates amorphous carbon presence",
+      "prov": ["Figure 2c – Raman"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [],
+      "interpretation": "particle sizes from nanometers to micrometers",
+      "prov": ["Figure 2d – SEM"]
+    },
+    {
+      "method": "TEM/HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "carbon coating thickness",
+          "value": 3,
+          "unit": "nm"
+        },
+        {
+          "metric": "lattice fringe d(104)",
+          "value": 0.442,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2e,f – TEM"]
+    },
+    {
+      "method": "SAED",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "observed planes",
+          "value": "(024), (104), (300)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2g – SAED"]
+    },
+    {
+      "method": "CV",
+      "parameters": {
+        "scan_rate": "0.1 mV s-1",
+        "voltage_range": "1.5–4.3 V vs Na/Na+"
+      },
+      "results": [
+        {
+          "metric": "redox peak potentials",
+          "value": "2.04/2.22, 3.46/3.66, 3.99/4.10",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "correspond to Ti3+/4+, Mn2+/3+, Mn3+/4+",
+      "prov": ["Figure 3a – CV"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "1 mHz – 100 kHz"
+      },
+      "results": [],
+      "interpretation": "charge-transfer resistances show little change across states",
+      "prov": ["Supporting Information – EIS"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Diffusion coefficient calculation (Randles–Sevcik)",
+        "results": [
+          {
+            "equation": "Ip = 2.69×10^5 n^(3/2) A C D^(1/2) v^(1/2)",
+            "value": {
+              "peak_1_DNa+": "3.86e-11 cm2 s-1",
+              "peak_2_DNa+": "3.14e-11 cm2 s-1",
+              "peak_3_DNa+": "7.66e-11 cm2 s-1",
+              "peak_4_DNa+": "1.00e-11 cm2 s-1",
+              "peak_5_DNa+": "1.59e-11 cm2 s-1",
+              "peak_6_DNa+": "2.44e-10 cm2 s-1"
+            },
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 160,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": "discharge capacity 107.9 mAh g-1 after 360 cycles at 5 C (76.2% retention)"
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-21T13:30:00Z",
+    "source_file": "ACS Appl. Mater. Interfaces 2020, 12, 30328−30335",
+    "processing_time": null
+  }
+}

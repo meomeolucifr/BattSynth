@@ -1,0 +1,266 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "High-throughput screening of high-capacity electrodes for hybrid Li-ion–Li–O2 cells",
+    "doi": "10.1039/c4cp03597f",
+    "authors": [
+      "S. Kirklin",
+      "M. K. Y. Chan",
+      "L. Trahey",
+      "M. M. Thackeray",
+      "C. Wolverton"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "Li–O2 batteries",
+      "DFT screening",
+      "electrode materials",
+      "high capacity"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li5FeO4",
+      "molecular_formula": "Li5FeO4",
+      "intended_role": "candidate electrode material",
+      "prov": ["Fig. 6", "Table 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li6MnO4",
+      "molecular_formula": "Li6MnO4",
+      "intended_role": "candidate electrode material",
+      "prov": ["Fig. 6", "Table 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li6CoO4",
+      "molecular_formula": "Li6CoO4",
+      "intended_role": "candidate electrode material",
+      "prov": ["Fig. 6", "Table 1"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li4MoO5",
+      "molecular_formula": "Li4MoO5",
+      "intended_role": "candidate electrode material",
+      "prov": ["Fig. 7", "Table 2"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li8IrO6",
+      "molecular_formula": "Li8IrO6",
+      "intended_role": "candidate electrode material",
+      "prov": ["Fig. 6", "Table 1"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "Li6ZnO4",
+      "molecular_formula": "Li6ZnO4",
+      "intended_role": "candidate electrode material",
+      "prov": ["Fig. 6", "Table 1"]
+    },
+    {
+      "target_id": "target_7",
+      "compound_name": "Li8PtO6",
+      "molecular_formula": "Li8PtO6",
+      "intended_role": "candidate electrode material",
+      "prov": ["Fig. 6", "Table 1"]
+    },
+    {
+      "target_id": "target_8",
+      "compound_name": "Li5SbO5",
+      "molecular_formula": "Li5SbO5",
+      "intended_role": "candidate electrode material",
+      "prov": ["Fig. 6", "Table 1"]
+    },
+    {
+      "target_id": "target_9",
+      "compound_name": "Li6TeO6",
+      "molecular_formula": "Li6TeO6",
+      "intended_role": "candidate electrode material",
+      "prov": ["Fig. 6", "Table 1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reactant",
+        "category": "elemental"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 22073"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "reactant",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 22073"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li5FeO4",
+      "molecular_formula": "Li5FeO4",
+      "ontology": {
+        "role": "electrode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Table 1"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "analysis_1",
+        "description": "High-throughput DFT calculations used to screen ICSD compounds for Li/O removal reactions, yielding 22 high-capacity candidate electrode materials."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No experimental synthesis procedure described for candidate materials.",
+        "excerpt": "prepare and characterize these materials. Experimental screening of a large number of materials can therefore be a challenging and arduous task."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical charge–discharge test",
+      "parameters": {
+        "cell_type": "Li/Li5FeO4–O2",
+        "charge_voltage_range": "3.7–4.6 V",
+        "discharge_voltage_range": "3.2–2.9 V"
+      },
+      "results": [
+        {
+          "metric": "specific capacity",
+          "value": 475,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "overpotential reduction",
+          "value": 0.8,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Capacity on discharge matched charge; lower overpotential compared with Li–O2 cell without Li5FeO4.",
+      "prov": ["Page 22073–22074"]
+    },
+    {
+      "method": "DFT calculation",
+      "parameters": {
+        "functional": "PBE",
+        "plane_wave_cutoff": "400 eV",
+        "temperature": "0 K"
+      },
+      "results": [
+        {
+          "metric": "predicted discharge voltage deviation",
+          "value": 0.2,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "DFT reproduced experimental discharge voltage within ~200 mV.",
+      "prov": ["Fig. 1"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT high-throughput screening",
+        "results": [
+          {
+            "material": "Li6MnO4",
+            "capacity": 1001,
+            "unit": "mAh g-1",
+            "voltage": 2.8
+          },
+          {
+            "material": "Li6CoO4",
+            "capacity": 977,
+            "unit": "mAh g-1",
+            "voltage": 2.9
+          },
+          {
+            "material": "Li5FeO4",
+            "capacity": 867,
+            "unit": "mAh g-1",
+            "voltage": 3.6
+          },
+          {
+            "material": "Li8IrO6",
+            "capacity": 624,
+            "unit": "mAh g-1",
+            "voltage": 2.9
+          },
+          {
+            "material": "Li4MoO5",
+            "capacity": 526,
+            "unit": "mAh g-1",
+            "voltage": 4.0
+          }
+        ],
+        "prov": ["Table 1", "Table 2"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 475,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

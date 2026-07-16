@@ -1,0 +1,254 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Defect chemistry and lithium transport in Li3OCl anti-perovskite superionic conductors",
+    "doi": "10.1039/c5cp05722a",
+    "authors": [
+      "Ziheng Lu",
+      "Chi Chen",
+      "Zarah Medina Baiyee",
+      "Xin Chen",
+      "Chunming Niu",
+      "Francesco Ciucci"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid electrolyte",
+      "lithium transport",
+      "anti-perovskite",
+      "DFT",
+      "molecular dynamics"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3OCl",
+      "molecular_formula": "Li3OCl",
+      "intended_role": "studied_material",
+      "prov": ["Page 32547–32555"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3−xOCl1−x (LiCl-deficient Li3OCl)",
+      "molecular_formula": "",
+      "intended_role": "studied_material",
+      "prov": ["Throughout text; e.g., Table 6"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li3−xO0.5xCl (Li2O-deficient Li3OCl)",
+      "molecular_formula": "",
+      "intended_role": "studied_material",
+      "prov": ["Table 6"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li3+xO1+xCl1−x (Li-excess Li3OCl)",
+      "molecular_formula": "",
+      "intended_role": "studied_material",
+      "prov": ["Table 6"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li3OCl",
+      "molecular_formula": "Li3OCl",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Anti-perovskite solid electrolyte studied via DFT and MD.",
+      "prov": ["Page 32547"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "byproduct/defect component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Appears in LiCl Schottky pair defect reaction.",
+      "prov": ["Defect reactions section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "byproduct/defect component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Appears in Li2O Schottky pair defect reaction.",
+      "prov": ["Defect reactions section"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "WF1",
+        "description": "Density functional theory (DFT) calculations to compute defect formation energies, binding energies, and migration barriers (Page 32548–32550)."
+      },
+      {
+        "step_ref": "WF2",
+        "description": "Classical molecular dynamics (MD) simulations (LAMMPS) to obtain lithium diffusion coefficients and activation energies at various defect concentrations (Page 32550–32553)."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear migration barrier values in Table 4 (e.g., '1018' meV appears inconsistent with earlier reported values of 367 meV).",
+        "excerpt": "Table 4 ... V0LiV¨O ... Migration barrier/meV 1018"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT",
+      "parameters": {
+        "functional": "PBE-GGA",
+        "plane_wave_cutoff": "600 eV",
+        "supercell": "3×3×3 (135 atoms)",
+        "k_points": "3×3×3 Monkhorst–Pack"
+      },
+      "results": [
+        {
+          "metric": "formation_energy_LiCl_Schottky",
+          "value": 1.41,
+          "unit": "eV"
+        },
+        {
+          "metric": "formation_energy_Li2O_Schottky",
+          "value": 1.60,
+          "unit": "eV"
+        },
+        {
+          "metric": "formation_energy_Li_interstitial_plus_O_Cl",
+          "value": 1.67,
+          "unit": "eV"
+        },
+        {
+          "metric": "formation_energy_Li_Frenkel_pair",
+          "value": 2.02,
+          "unit": "eV"
+        },
+        {
+          "metric": "binding_energy_VLi–VCl",
+          "value": 0.145,
+          "unit": "eV"
+        },
+        {
+          "metric": "binding_energy_VLi–VO",
+          "value": 0.736,
+          "unit": "eV"
+        },
+        {
+          "metric": "binding_energy_Li_i–O_Cl",
+          "value": 0.642,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "LiCl Schottky defects show lowest binding energy, favoring lithium vacancy diffusion.",
+      "prov": ["Table 2", "Table 4"]
+    },
+    {
+      "method": "Molecular Dynamics",
+      "parameters": {
+        "software": "LAMMPS",
+        "force_field": "Buckingham potential",
+        "time_step": "1 fs",
+        "supercell": "10×10×10 (~5000 atoms)",
+        "temperatures": "various (e.g., 300–800 K)"
+      },
+      "results": [
+        {
+          "metric": "activation_energy_Li3−xOCl1−x (x=0.01)",
+          "value": 0.347,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation_energy_Li3−xOCl1−x (x=0.15)",
+          "value": 0.312,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation_energy_Li3−xO0.5xCl (x=0.01)",
+          "value": 0.455,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation_energy_Li3+xO1+xCl1−x (x=0.01)",
+          "value": 0.545,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "LiCl-deficient systems exhibit highest ionic conductivity and lowest activation energy.",
+      "prov": ["Table 6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Nernst–Einstein Relation",
+        "results": [
+          {
+            "equation": "σ = D·n·q^2/(kT) (assuming thermodynamic factor =1)",
+            "value": null,
+            "unit": "S cm-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T09:37:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

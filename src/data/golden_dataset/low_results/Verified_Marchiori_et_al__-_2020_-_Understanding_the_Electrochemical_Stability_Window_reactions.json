@@ -1,0 +1,507 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Understanding the Electrochemical Stability Window of Polymer Electrolytes in Solid-State Batteries from Atomic-Scale Modeling: The Role of Li-Ion Salts",
+    "doi": "10.1021/acs.chemmater.0c01489",
+    "authors": [
+      "Cleber F. N. Marchiori",
+      "Rodrigo P. Carvalho",
+      "Mahsa Ebadi",
+      "Daniel Brandell",
+      "C. Moyses Araujo"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "DFT",
+      "polymer electrolytes",
+      "electrochemical stability window"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Poly(ethylene oxide)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer host",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper clearly identifies the polymer host as poly(ethylene oxide) (PEO) (e.g., Introduction: \u201cmaterials based on poly(ethylene oxide) (PEO)\u201d). However, the document is a computational/DFT modeling study and does not specify a preparation recipe or any explicit amount (mass, concentration, wt%, mol%, EO:Li ratio, etc.) for PEO as a chemical input. Therefore the extractor\u2019s statement that the amount is \u201cNot specified in text\u201d is supported by the absence of such quantitative amount information.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Poly(ethylenimine)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer host",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions the polymer polyethylenimine (PEI) as one of the polymer hosts investigated (e.g., Page 2: \u201c...PEO, PVA, PEC, PTMC, PCL, polyethylenimine (PEI), and polyacrylonitrile (PAN)...\u201d). However, the document does not specify any quantitative amount (mass, concentration, molar ratio, etc.) for PEI; it discusses computational models (e.g., oligomers of five monomers) but not an experimental or compositional \u201camount\u201d of PEI. Therefore, \u201cPoly(ethylenimine) | Amount: Not specified in text\u201d is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Poly(vinyl alcohol)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer host",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions poly(vinyl alcohol) (PVA) as one of the investigated polymer host materials (Introduction, Page 1). However, throughout the provided full text there is no explicit quantity/amount given for PVA (e.g., wt%, mol%, concentration, mass, or polymer:salt ratio) because the study is computational and discusses oligomer models rather than experimental formulations. Therefore, the extracted statement that the amount is not specified in the text is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Polyacrylonitrile",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer host",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly mentions polyacrylonitrile (PAN) as one of the polymer host materials studied (e.g., listed among polymers investigated on Page 2 and discussed in Results on Page 4). However, the extracted identity is given as \u201cPolyacrylonitrile\u201d while the amount is claimed to be \u201cNot specified in text.\u201d The text does specify the modeled polymer amount in the sense of oligomer size: \u201coligomers comprising five monomers have been considered for all other polymeric systems\u201d and PAN is included in that set. Thus, an amount/size is provided (5 monomers), so \u201cNot specified\u201d is not correct.",
+        "suggested_fix": "Polyacrylonitrile (PAN) | Amount/size in model: oligomer of 5 monomer units (five-monomer oligomer, ethyl end-capped)."
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Poly(ethylene carbonate)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer host",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.94,
+        "reasoning": "The paper explicitly mentions poly(ethylene carbonate) (PEC) as a polymer host material investigated (\u201cpoly(ethylene carbonate) (PEC)\u201d in the Introduction). Nowhere in the provided full text is an explicit amount (e.g., wt%, mol%, concentration, or ratio) given for poly(ethylene carbonate) itself; the work is primarily computational and discusses oligomer models and polymer/salt complexes without specifying an experimental amount of PEC. Therefore, the extracted statement \u201cPoly(ethylene carbonate) | Amount: Not specified in text\u201d is supported by the document (identity present; amount indeed not specified).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Poly(\u03b5-caprolactone)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer host",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the polymer host material as the polyester poly(\u03b5-caprolactone) (PCL) in the Introduction (page 1) and discusses PCL throughout as one of the studied polymers. Nowhere in the provided full text is an explicit amount (mass, wt%, mol%, concentration, EO:Li ratio, etc.) of PCL specified\u2014this is a computational/DFT modeling study describing oligomer models (e.g., five monomers) rather than experimental formulation amounts. Therefore, the statement 'Amount: Not specified in text' is supported by the text\u2019s omission of any quantitative amount for PCL in an electrolyte formulation.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Poly(trimethylene carbonate)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer host",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions the polymer host material \u201cpoly(trimethylene carbonate) (PTMC)\u201d in the Introduction (Page 1). However, nowhere in the provided full text does it specify an experimental or formulation amount (e.g., mass, mol%, wt%, molar ratio) of PTMC\u2014this is a computational/DFT study discussing oligomer models and complexes, not reporting material quantities. Therefore, the identification of PTMC is supported and the statement that the amount is not specified is also supported by omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "LiTFSI",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly names the salt lithium bis(trifluoromethanesulfonyl)imide (LiTFSI) among the three Li salts investigated (\u201c...three different Li salts... lithium bis(trifluoromethanesulfonyl)imide (LiTFSI), ...\u201d, Page 2). However, nowhere in the provided full text is an experimental or compositional amount/concentration/ratio of LiTFSI specified (the work is computational and discusses models/complexes but does not give a mass, molarity, or polymer:salt ratio). Therefore the identification is supported and the 'Amount: Not specified in text' is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Lithium bis(fluorosulfonyl)imide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "LiFSI",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.84,
+        "reasoning": "The paper explicitly includes lithium bis(fluorosulfonyl)imide (LiFSI) as one of the three Li-ion salts studied (Page 2: \u201clithium bis(fluorosulfonyl)imide (LiFSI)\u201d). However, the document does not provide a specific amount/concentration/loading for LiFSI (or any salt) because the work is based on molecular/DFT models rather than experimental formulations. Therefore, the extractor\u2019s statement that the amount is \u201cNot specified in text\u201d is supported by the omission.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Lithium trifluoromethanesulfonate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "LiCF3SO3",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly includes lithium trifluoromethanesulfonate (LiCF3SO3) as one of the three Li-ion salts studied (Page 2: \u201c...lithium trifluoromethanesulfonate (LiCF3SO3)\u201d). However, the document does not specify an amount (e.g., concentration, wt%, molar ratio) for LiCF3SO3; it discusses polymer/salt complexes in a computational modeling context without giving a quantitative amount. Therefore, \u201cAmount: Not specified in text\u201d is correctly extracted as missing.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Butyl ethanoate",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Continuum solvent in SMD model (\u03b5 = 4.99)",
+      "prov": [
+        "Text"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.62,
+        "reasoning": "The paper explicitly mentions the chemical identity \u201cbutyl ethanoate\u201d (as the chosen solvent) and even gives its dielectric constant (\u03b5 = 4.99). However, no explicit \u201camount\u201d is provided, and the extraction frames this as a combined field \u201cChemical Identity and Amount: Butyl ethanoate | Amount: Not specified in text\u201d. Since the chemical is present but the field implies an amount should accompany it, the extracted entry is only partially correct; the document supports the identity but does not state an amount. For a strict verification of the whole extracted value string, it is not fully supported because it conflates presence with an amount entry rather than separating them.",
+        "suggested_fix": "Butyl ethanoate (used as solvent; \u03b5 = 4.99); Amount: not specified."
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "",
+        "description": "Computational workflow: (1) Geometry optimizations with wB97XD/6-31G(d); (2) Frequency calculations for thermal corrections at 298 K; (3) Single-point energies at wB97XD/6-311G(d,p); (4) Solvation free energy with SMD in butyl ethanoate; (5) Calculation of Gibbs free energies and redox potentials via Nernst equation.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.97,
+          "reasoning": "The paper explicitly describes this computational workflow in the Methodology section (page 3). It states: geometries optimized at wB97XD/6-31G(d); vibrational frequency calculations at the same level to obtain thermal corrections for Gibbs free energy at 298 K; single-point electronic energies at wB97XD/6-311G(d,p); solvation free energies computed using SMD continuum solvation; solvent chosen as butyl ethanoate; and redox potentials computed from Gibbs free energies using the Nernst equation (eq 1). These steps match the extracted timeline.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Several oxidation and reduction potentials for some polymers are described qualitatively without explicit numeric values.",
+        "excerpt": "PEI has a very low reduction potential, indicating higher stability... however, this material displayed the narrowest ESW (around 6.32 V) by having a comparatively low oxidation potential (see Figure 1a)",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.76,
+          "reasoning": "The paper does not describe oxidation/reduction potentials for the polymers only \u201cqualitatively without explicit numeric values.\u201d In fact, it explicitly provides numeric values (or explicit numeric ESW/oxidation/reduction potentials) for the pristine polymers and discusses them in text. Example: for PEI it states \u201cvery low reduction potential\u201d and also gives a numeric ESW \u201caround 6.32 V\u201d and indicates the reason is a comparatively low oxidation potential (Fig. 1a). Elsewhere it gives explicit numeric oxidation and reduction potentials for PAN (4.46 V and \u22123.65 V vs SHE) and numeric ESWs for several polymers (e.g., PVA 7.48 V, PEO 9.12 V). Thus the claimed workflow ambiguity (lack of numeric values) is not supported by the provided text.",
+          "suggested_fix": "Revise the issue to reflect that many potentials are reported numerically (often in Figure 1a/2) and in some cases described comparatively/qualitatively alongside those numbers. If you mean some specific polymer(s) or complex(es) lack explicit numeric oxidation/reduction potentials in the narrative text, specify which ones; otherwise mark no ambiguity."
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT",
+      "parameters": {
+        "functional": "wB97XD",
+        "basis_sets": "6-31G(d) (optimizations, frequencies); 6-311G(d,p) (single-point)",
+        "solvation_model": "SMD",
+        "solvent": "butyl ethanoate (\u03b5 = 4.99)",
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": [
+        "Methodology section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The extracted value is an empty list for \u201cCharacterization: DFT\u201d, which implies no DFT characterization details were present. This is not correct: the paper explicitly states extensive DFT-based calculations in the Methodology section (pages 2\u20133), including use of the DFT framework with the wB97XD functional, basis sets (6-31G(d), 6-311G(d,p)), SMD solvation model in Gaussian16, and related thermodynamic/redox potential computation approach. Therefore, the source does contain DFT characterization/method details; an empty extraction is not supported as 'missing'.",
+        "suggested_fix": "Populate the field with the DFT method details, e.g., \"DFT calculations using range-separated hybrid functional wB97XD; geometry optimizations at wB97XD/6-31G(d), single-point energies at wB97XD/6-311G(d,p); SMD continuum solvation (butyl ethanoate, \u03b5=4.99) in Gaussian16; Gibbs free energies and redox potentials via Born\u2013Haber cycle and Nernst equation (298 K).\""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT redox potential calculations",
+        "results": [
+          {
+            "measurement": "PAN electrochemical stability window",
+            "value": 8.11,
+            "unit": "V",
+            "notes": "Pristine PAN",
+            "prov": [
+              "Figure 1a"
+            ]
+          },
+          {
+            "measurement": "PAN oxidation potential",
+            "value": 4.46,
+            "unit": "V",
+            "notes": "vs SHE",
+            "prov": [
+              "Figure 1a"
+            ]
+          },
+          {
+            "measurement": "PAN reduction potential",
+            "value": -3.65,
+            "unit": "V",
+            "notes": "vs SHE",
+            "prov": [
+              "Figure 1a"
+            ]
+          },
+          {
+            "measurement": "PEO electrochemical stability window",
+            "value": 9.12,
+            "unit": "V",
+            "notes": "Pristine PEO",
+            "prov": [
+              "Figure 1a"
+            ]
+          },
+          {
+            "measurement": "LiCF3SO3 reduction potential",
+            "value": -2.19,
+            "unit": "V",
+            "notes": "vs SHE; pristine salt",
+            "prov": [
+              "Figure 1a"
+            ]
+          },
+          {
+            "measurement": "LiCF3SO3 electrochemical stability window",
+            "value": 6.23,
+            "unit": "V",
+            "notes": "Pristine salt",
+            "prov": [
+              "Figure 1a"
+            ]
+          },
+          {
+            "measurement": "LiTFSI electrochemical stability window",
+            "value": 5.04,
+            "unit": "V",
+            "notes": "Pristine salt",
+            "prov": [
+              "Figure 1a"
+            ]
+          },
+          {
+            "measurement": "LiFSI electrochemical stability window",
+            "value": 4.77,
+            "unit": "V",
+            "notes": "Pristine salt",
+            "prov": [
+              "Figure 1a"
+            ]
+          },
+          {
+            "measurement": "PEO/LiTFSI complex ESW",
+            "value": 3.57,
+            "unit": "V",
+            "notes": "",
+            "prov": [
+              "Figure 2a"
+            ]
+          },
+          {
+            "measurement": "PEO/LiFSI complex ESW",
+            "value": 2.02,
+            "unit": "V",
+            "notes": "",
+            "prov": [
+              "Figure 2b"
+            ]
+          },
+          {
+            "measurement": "PEO/LiCF3SO3 complex ESW",
+            "value": 4.33,
+            "unit": "V",
+            "notes": "",
+            "prov": [
+              "Figure 2c"
+            ]
+          },
+          {
+            "measurement": "PVA/LiCF3SO3 reduction potential",
+            "value": -2.85,
+            "unit": "V",
+            "notes": "vs SHE",
+            "prov": [
+              "Text"
+            ]
+          },
+          {
+            "measurement": "PCL/LiCF3SO3 oxidation potential",
+            "value": 3.8,
+            "unit": "V",
+            "notes": "vs SHE",
+            "prov": [
+              "Text"
+            ]
+          },
+          {
+            "measurement": "Theoretical bilayer ESW (PVA/LiCF3SO3 + PCL/LiCF3SO3)",
+            "value": 6.6,
+            "unit": "V",
+            "notes": "Proposed",
+            "prov": [
+              "Text"
+            ]
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly states the analysis/computational method used: it evaluates electrochemical stability windows via first-principles thermodynamics calculations based on atomic-scale modeling, using density functional theory (DFT) (wB97XD functional; also mentions M06 for benchmarking), Gibbs free energies and the Nernst equation, with SMD continuum solvation in Gaussian16. Since the document clearly specifies methods, leaving the field empty is not supported.",
+          "suggested_fix": "Analysis Method: First-principles thermodynamics/atomic-scale modeling using density functional theory (DFT) calculations (wB97XD; some M06 benchmarking), Gibbs free energy via Born\u2013Haber cycle and redox potentials via the Nernst equation; SMD continuum solvation (Gaussian16)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-06T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

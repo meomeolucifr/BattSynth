@@ -1,0 +1,489 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Experiment and simulation of the fabrication process of lithium-ion battery cathodes for determining microstructure and mechanical properties",
+    "doi": "10.1016/j.jpowsour.2016.02.014",
+    "authors": [
+      "Mehdi M. Forouzan",
+      "Chien-Wei Chao",
+      "Danilo Bustamante",
+      "Brian A. Mazzeo",
+      "Dean R. Wheeler"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium-ion battery", "cathode fabrication", "slurry processing", "electrode microstructure"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Carbon-only dried electrode film",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 178–179 (Section 3.1)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "NCM-523 composite cathode film",
+      "molecular_formula": "LiNi0.5Co0.2Mn0.3O2 + carbon black/PVDF binder",
+      "intended_role": "product",
+      "prov": ["Page 178–179 (Section 3.1)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "N-Methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 14.397,
+        "unit": "g"
+      },
+      "notes": "Part of 15.66 g binder solution containing 92 wt% NMP",
+      "prov": ["Page 178 (Section 3.1)"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Poly(vinylidene fluoride)",
+      "molecular_formula": "(C2H2F2)n",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 1.253,
+        "unit": "g"
+      },
+      "notes": "8 wt% of 15.66 g binder solution",
+      "prov": ["Page 178 (Section 3.1)"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Carbon black (TIMCAL Super C45)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.25,
+        "unit": "g"
+      },
+      "notes": "For both carbon and active slurries; mass equals PVDF mass to maintain 50:50 carbon:binder in carbon slurry and 5 wt% in active slurry",
+      "prov": ["Page 178 (Section 3.1)"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiNi0.5Co0.2Mn0.3O2 (NCM-523)",
+      "molecular_formula": "LiNi0.5Co0.2Mn0.3O2",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 22.5,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 178 (Section 3.1)"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Aluminum foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Current collector",
+      "prov": ["Page 178 (Section 3.1)"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Gallium (liquid)",
+      "molecular_formula": "Ga",
+      "ontology": {
+        "role": "etchant",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to dissolve Al current collector for delamination",
+      "prov": ["Page 179 (Section 3.2)"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of binder solution",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "temperature": {
+                "value": 353,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 20,
+                "unit": "min"
+              }
+            },
+            "notes": "Binder (PVDF) dissolved in NMP at 80 °C in closed vessel"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 178 (Section 3.1)"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of carbon-only slurry",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "to": "binder solution from step_1"
+            },
+            "notes": ""
+          },
+          {
+            "action": "ultrasonic_homogenize",
+            "parameters": {
+              "duration": {
+                "value": 15,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": null,
+                "unit": ""
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 178 (Section 3.1)"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Preparation of active-material slurry",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_4", "chem_3"],
+              "equipment": "mortar and pestle"
+            },
+            "notes": "Dry grinding"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["ground powder"],
+              "to": "binder solution from step_1"
+            },
+            "notes": ""
+          },
+          {
+            "action": "ultrasonic_homogenize",
+            "parameters": {
+              "duration": {
+                "value": 15,
+                "unit": "min"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 178 (Section 3.1)"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Coating onto aluminum foil",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["slurry from step_2 or step_3", "chem_5"],
+              "thickness_wet": {
+                "value": 0.177,
+                "unit": "mm"
+              },
+              "coating_rate": {
+                "value": 0.6,
+                "unit": "m min-1",
+                "notes": "Approx. 1 cm s−1 doctor blade pass"
+              }
+            },
+            "notes": "Multiple passes decreasing blade gap to 200 µm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 178 (Section 3.1)"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Drying of coated electrodes",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "equipment": "vacuum oven",
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": null,
+                "unit": ""
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 178 (Section 3.1)"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Delamination for elasticity testing (optional)",
+        "operations": [
+          {
+            "action": "etch",
+            "parameters": {
+              "inputs": ["chem_6"],
+              "target": "chem_5"
+            },
+            "notes": "Liquid gallium dissolves Al current collector"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 179 (Section 3.2)"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Binder solution preparation at 80 °C for 20 min"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Carbon slurry formation by adding carbon black and ultrasonication"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Active-material slurry formation with ground NCM-523/carbon and ultrasonication"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Doctor-blade coating of slurry onto aluminum foil (177 µm wet thickness)"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Vacuum-oven drying for 30 min"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Optional gallium etch to remove Al current collector for mechanical testing"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact mass of carbon black in carbon slurry not directly stated; inferred to match 50:50 carbon:binder",
+        "excerpt": "The carbon slurry first was made by mixing carbon black (TIMCAL Super C45) with 15.66 g binder solution ... to maintain a carbon-binder dry weight ratio of 50:50."
+      },
+      {
+        "issue": "Drying temperature not specified for vacuum oven",
+        "excerpt": "Finally, the wet electrodes were placed in a vacuum oven for 30 min."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Rheology (rotational rheometer)",
+      "parameters": {
+        "shear_rate_range": "1–1100 s-1",
+        "temperature": "300 K"
+      },
+      "results": [
+        {
+          "metric": "viscosity (carbon slurry)",
+          "value": "shear-thinning; matches simulation curve",
+          "unit": ""
+        },
+        {
+          "metric": "viscosity (active slurry)",
+          "value": "shear-thinning; matches simulation curve",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 179–180, Fig. 7"]
+    },
+    {
+      "method": "Mechanical testing (force sensor & micrometer)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Young's modulus (carbon film)",
+          "value": 9.32,
+          "unit": "MPa"
+        },
+        {
+          "metric": "Young's modulus (active film)",
+          "value": 11.32,
+          "unit": "MPa"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 179, Fig. 5", "Table 2"]
+    },
+    {
+      "method": "Thickness measurement (micrometer)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Wet film thickness",
+          "value": 0.177,
+          "unit": "mm"
+        },
+        {
+          "metric": "Dry carbon film thickness",
+          "value": 0.0205,
+          "unit": "mm"
+        },
+        {
+          "metric": "Dry active film thickness",
+          "value": 0.0539,
+          "unit": "mm"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 178 (Section 3.1)"]
+    },
+    {
+      "method": "Density measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Slurry density (carbon)",
+          "value": 1.03,
+          "unit": "g cm-3"
+        },
+        {
+          "metric": "Solid density (carbon film)",
+          "value": 0.696,
+          "unit": "g cm-3"
+        },
+        {
+          "metric": "Slurry density (active)",
+          "value": 1.65,
+          "unit": "g cm-3"
+        },
+        {
+          "metric": "Solid density (active film)",
+          "value": 2.029,
+          "unit": "g cm-3"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Table 2"]
+    },
+    {
+      "method": "SEM/FIB imaging",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Microstructure visualization",
+          "value": "Observed macropores and CBD aggregation",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 180–181, Fig. 8"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-21T18:34:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

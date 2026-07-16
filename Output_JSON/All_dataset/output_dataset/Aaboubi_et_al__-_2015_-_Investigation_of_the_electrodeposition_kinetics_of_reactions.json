@@ -1,0 +1,369 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Investigation of the electrodeposition kinetics of Ni–Mo alloys in the presence of magnetic ﬁeld",
+    "doi": "10.1016/j.jelechem.2014.10.014",
+    "authors": [
+      "O. Aaboubi",
+      "A.Y. Ali Omar",
+      "A. Franczak",
+      "K. Msellak"
+    ],
+    "journal": "Journal of Electroanalytical Chemistry",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["electrodeposition", "Ni–Mo alloy", "magnetic field", "electrochemistry"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ni–Mo alloy deposit",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 227, Table 1", "Experimental conditions section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Nickel(II) sulfate heptahydrate",
+      "molecular_formula": "NiSO4·7H2O",
+      "ontology": {
+        "role": "nickel source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.5,
+        "unit": "M"
+      },
+      "notes": "Concentration in electrolyte bath",
+      "prov": ["Experimental conditions"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sodium molybdate",
+      "molecular_formula": "Na2MoO4",
+      "ontology": {
+        "role": "molybdenum source",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.05,
+        "unit": "M"
+      },
+      "notes": "Concentration in electrolyte bath",
+      "prov": ["Experimental conditions"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sodium citrate",
+      "molecular_formula": "Na3C6H5O7",
+      "ontology": {
+        "role": "complexing agent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.45,
+        "unit": "M"
+      },
+      "notes": "Concentration in electrolyte bath",
+      "prov": ["Experimental conditions"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Deionised water used throughout",
+      "prov": ["Experimental conditions"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Sulfuric acid",
+      "molecular_formula": "H2SO4",
+      "ontology": {
+        "role": "pH adjuster",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to adjust pH to 6.2 ± 0.2",
+      "prov": ["Experimental conditions"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Sodium hydroxide",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "pH adjuster",
+        "category": "inorganic base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to adjust pH to 6.2 ± 0.2",
+      "prov": ["Experimental conditions"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of citrate electrolyte bath",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "temperature": {
+              "value": 310.15,
+              "unit": "K"
+            },
+            "notes": "Concentrations: 0.5 M NiSO4·7H2O, 0.05 M Na2MoO4, 0.45 M Na3C6H5O7 in deionised water; bath temperature maintained 37 ± 0.5 °C"
+          },
+          {
+            "action": "adjust_pH",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6"]
+            },
+            "target_pH": 6.2,
+            "notes": "pH adjusted to 6.2 ± 0.2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental conditions"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of working electrode surface",
+        "operations": [
+          {
+            "action": "polish",
+            "parameters": {
+              "inputs": [],
+              "media": "emery paper P1200 & P4000 followed by 1 µm alumina on felt"
+            },
+            "notes": "Platinum or titanium disk, 5 mm or 11 mm diameter respectively"
+          },
+          {
+            "action": "rinse",
+            "parameters": {
+              "inputs": ["chem_4"]
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {}
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental conditions"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Pre-deposition of thin Ni–Mo layer",
+        "operations": [
+          {
+            "action": "electrodeposit",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"],
+              "potential": {
+                "value": -1.2,
+                "unit": "V",
+                "reference": "SCE"
+              },
+              "current_density": {
+                "value": 35,
+                "unit": "mA cm-2"
+              },
+              "duration": {
+                "value": 2,
+                "unit": "min"
+              }
+            },
+            "notes": "Resulting pre-deposit thickness reported ~2 µm"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental conditions"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Electrodeposition of Ni–Mo alloy under variable magnetic field",
+        "operations": [
+          {
+            "action": "electrodeposit",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"],
+              "current_density": {
+                "value": 35,
+                "unit": "mA cm-2"
+              },
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              },
+              "magnetic_field": {
+                "values": [0, 0.5, 1],
+                "unit": "T"
+              },
+              "electrode_orientation": "vertical"
+            },
+            "notes": "Deposition carried out at bath temperature 310.15 K; composition measured afterwards"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Page 227, Experimental conditions", "Table 1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Electrolyte bath formulation"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Working electrode surface preparation"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Initial thin Ni–Mo layer electrodeposited"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Main Ni–Mo electrodeposition investigated under magnetic field"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear pre-deposit thickness unit due to text encoding ('/C252lm thick')",
+        "excerpt": "A Ni–Mo pre-deposit ( /C252lm thick) was then plated..."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Energy-dispersive X-ray spectroscopy (EDX)",
+      "parameters": {
+        "instrument": "",
+        "sample_prep": "Deposits obtained at 35 mA cm-2 for 30 min"
+      },
+      "results": [
+        {
+          "metric": "Ni atomic percent",
+          "value": 74,
+          "unit": "at%",
+          "conditions": "B = 0.5 T"
+        },
+        {
+          "metric": "Mo atomic percent",
+          "value": 26,
+          "unit": "at%",
+          "conditions": "B = 0.5 T"
+        },
+        {
+          "metric": "Ni atomic percent",
+          "value": 73,
+          "unit": "at%",
+          "conditions": "B = 0 T"
+        },
+        {
+          "metric": "Mo atomic percent",
+          "value": 27,
+          "unit": "at%",
+          "conditions": "B = 0 T"
+        }
+      ],
+      "interpretation": "Composition remains practically the same with or without magnetic field",
+      "prov": ["Table 1"]
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "scan_rate": {
+          "value": 0.25,
+          "unit": "mV s-1"
+        },
+        "temperature": {
+          "value": 310.15,
+          "unit": "K"
+        }
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Figures 1 and 2"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy (EIS)",
+      "parameters": {
+        "frequency_range": "65 kHz – 1 mHz",
+        "amplitude": {
+          "value": 10,
+          "unit": "mV"
+        },
+        "temperature": {
+          "value": 310.15,
+          "unit": "K"
+        }
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Figures 4, 5"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T14:30:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,426 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Systematic analysis of the impact of slurry coating on manufacture of Li-ion battery electrodes via explainable machine learning",
+    "doi": "10.1016/j.ensm.2022.06.036",
+    "authors": [
+      "Mona Faraji Niri",
+      "Carl Reynolds",
+      "Luis AA Román Ramírez",
+      "Emma Kendrick",
+      "James Marco"
+    ],
+    "journal": "Energy Storage Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["lithium-ion battery", "slurry coating", "graphite anode", "machine learning"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Graphite-coated copper anode electrode",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Section 2.2 Experimental"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Graphite anode slurry",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Section 2.2 Experimental"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Graphite (BTR S360-L2)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 95.25,
+        "unit": "%",
+        "type": "wt%"
+      },
+      "notes": "Weight percentage in solids formulation",
+      "prov": ["Section 2.2 Experimental"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Carbon black (Imerys C45)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "%",
+        "type": "wt%"
+      },
+      "notes": "Weight percentage in solids formulation",
+      "prov": ["Section 2.2 Experimental"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Carboxymethyl Cellulose (CMC)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 1.5,
+        "unit": "%",
+        "type": "wt%"
+      },
+      "notes": "Binder 1 weight percentage in solids formulation",
+      "prov": ["Section 2.2 Experimental"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Styrene-butadiene rubber (SBR)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 2.25,
+        "unit": "%",
+        "type": "wt%"
+      },
+      "notes": "Binder 2 weight percentage in solids formulation",
+      "prov": ["Section 2.2 Experimental"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Amount adjusted to reach slurry solid content 30–50 wt%",
+      "prov": ["Section 2.2 Experimental"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of graphite anode slurry",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "notes": "Formulation ratio 95.25:1:1.5:2.25 wt%"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_5"],
+              "target_solid_content": {
+                "value_range": [30, 50],
+                "unit": "%",
+                "type": "wt%"
+              }
+            },
+            "notes": ""
+          },
+          {
+            "action": "mix",
+            "parameters": {
+              "equipment": "THINKY mixer"
+            },
+            "notes": "",
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.2 Experimental"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Coating of slurry onto current collector using doctor blade",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "equipment": "RK K Paint applicator with micrometer adjustable doctor blade",
+              "substrate": "Copper foil",
+              "coating_gap_range": {
+                "value_range": [70, 350],
+                "unit": "µm"
+              },
+              "coating_speed_range": {
+                "value_range": [2, 15],
+                "unit": "m min-1"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.2 Experimental"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Initial drying on hotplate",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": 20,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 323,
+              "unit": "K",
+              "notes": "50 °C stated in text"
+            },
+            "notes": "Hotplate drying to remove bulk water"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.2 Experimental"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Vacuum oven drying overnight",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "equipment": "Vacuum oven"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 393,
+              "unit": "K",
+              "notes": "120 °C stated; duration described as 'overnight'"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.2 Experimental"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Electrode punching and weighing",
+        "operations": [
+          {
+            "action": "cut",
+            "parameters": {
+              "area": {
+                "value": 10,
+                "unit": "cm^2"
+              }
+            },
+            "notes": "Discs cut from centre of coating"
+          },
+          {
+            "action": "weigh",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "measure_thickness",
+            "parameters": {
+              "equipment": "Micrometer thickness gauge"
+            },
+            "notes": "Multiple points averaged"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Section 2.2 Experimental"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Slurry preparation with graphite, additives, binders and water"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Doctor blade coating of slurry onto copper foil"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Hotplate drying at 323 K for 20 min"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Vacuum oven drying at 393 K overnight"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Electrode disc punching, weighing and thickness measurement"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Solvent amount not specified explicitly; assumed water",
+        "excerpt": "The formulation used was ... prepared as different weight percentages between 30 and 50%."
+      },
+      {
+        "issue": "Overnight drying duration not defined",
+        "excerpt": "before being dried overnight at 120 •C in a vacuum oven."
+      },
+      {
+        "issue": "Mixing time and speed in THINKY mixer not provided",
+        "excerpt": "The slurries were prepared in a THINKY mixer"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Surface tension (Wilhelmy Plate tensiometer)",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        },
+        "repeats": 3
+      },
+      "results": [
+        {
+          "metric": "surface tension range",
+          "value": "44.0–76.6",
+          "unit": "mN/m"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Section 2.2 Experimental", "Table 2"]
+    },
+    {
+      "method": "Rheology (Kinexus Pro+ parallel plate)",
+      "parameters": {
+        "plate_diameter": {
+          "value": 40,
+          "unit": "mm"
+        },
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        },
+        "shear_rate_range": "10–1000 s^-1"
+      },
+      "results": [
+        {
+          "metric": "viscosity range",
+          "value": "0.15–2.00",
+          "unit": "Pa·s"
+        }
+      ],
+      "interpretation": "Viscosity fitted with power law η=K·γ^(n-1), R²≥0.99",
+      "prov": ["Section 2.2 Experimental", "Table 2"]
+    },
+    {
+      "method": "Thickness measurement",
+      "parameters": {
+        "equipment": "Wet comb & micrometer gauge"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Section 2.2 Experimental"]
+    },
+    {
+      "method": "Mass measurement",
+      "parameters": {
+        "balance": ""
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Section 2.2 Experimental"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Capacity calculation",
+        "results": [
+          {
+            "equation": "capacity (mAh) = coat weight (g) × 320 mAh g^-1",
+            "value": null,
+            "unit": "mAh"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T12:00:00Z",
+    "source_file": "Energy_Storage_Materials_51_2022_223-238.pdf",
+    "processing_time": null
+  }
+}

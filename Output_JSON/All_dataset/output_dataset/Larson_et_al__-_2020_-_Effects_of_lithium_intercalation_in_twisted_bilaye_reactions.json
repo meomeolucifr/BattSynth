@@ -1,0 +1,224 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Effects of lithium intercalation in twisted bilayer graphene",
+    "doi": "10.1103/PhysRevB.101.075407",
+    "authors": [
+      "Daniel T. Larson",
+      "Stephen Carr",
+      "Georgios A. Tritsaris",
+      "Efthimios Kaxiras"
+    ],
+    "journal": "Physical Review B",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "DFT",
+      "graphene",
+      "lithium intercalation",
+      "twisted bilayer"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "twisted bilayer graphene",
+      "molecular_formula": "C",
+      "intended_role": "substrate",
+      "prov": [
+        "Introduction"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "lithium-intercalated twisted bilayer graphene",
+      "molecular_formula": "Li_xC",
+      "intended_role": "product",
+      "prov": [
+        "Results"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "intercalant",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Throughout text"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "graphene",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Throughout text"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_1",
+        "description": "DFT calculations performed with VASP using PBE functional, 400 eV cutoff, DFT-D3 dispersion; supercells with twist angles 7.34° (244 C atoms) and 2.45° (2188 C atoms) built and fully relaxed."
+      },
+      {
+        "step_ref": "comp_2",
+        "description": "Bader charge analysis executed to quantify electron transfer from Li to graphene."
+      },
+      {
+        "step_ref": "comp_3",
+        "description": "Continuum model calculations with modified AA/AB interlayer couplings carried out to compare with DFT band structures."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT",
+      "parameters": {
+        "functional": "PBE",
+        "cutoff_energy": {
+          "value": 400,
+          "unit": "eV"
+        },
+        "k_point_mesh": "Γ-centered 3×3"
+      },
+      "results": [
+        {
+          "metric": "interlayer spacing (empty bilayer)",
+          "value": 3.54,
+          "unit": "Å"
+        },
+        {
+          "metric": "interlayer spacing with single Li",
+          "value": 3.59,
+          "unit": "Å"
+        },
+        {
+          "metric": "Li intercalation energy at AA site",
+          "value": -620,
+          "unit": "meV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Computational Methods",
+        "Figure 1"
+      ]
+    },
+    {
+      "method": "Bader charge analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electron transfer per Li",
+          "value": 0.85,
+          "unit": "e"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Section V",
+        "Figure 4"
+      ]
+    },
+    {
+      "method": "Continuum model",
+      "parameters": {
+        "AA coupling increase": "≈20–30%"
+      },
+      "results": [
+        {
+          "metric": "band inversion threshold",
+          "value": 20,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Section V",
+        "Figure 3"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Intercalation energy profiling",
+        "results": [
+          {
+            "equation": "f(r/ℓ) = [−620 − 90 cos(π r/ℓ)] meV",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      },
+      {
+        "method_name": "Li–Li interaction energy study",
+        "results": [
+          {
+            "description": "Minimum average intercalation energy reached at Li–Li separation d7 = 14.7 Å for seven-Li cluster.",
+            "value": 14.7,
+            "unit": "Å"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T20:25:00Z",
+    "source_file": "user_provided_text_chunk",
+    "processing_time": null
+  }
+}

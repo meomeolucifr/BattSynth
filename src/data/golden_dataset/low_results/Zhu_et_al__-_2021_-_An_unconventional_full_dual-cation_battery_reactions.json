@@ -1,0 +1,480 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "An unconventional full dual-cation battery",
+    "doi": "10.1016/j.nanoen.2020.105539",
+    "authors": [
+      "Yunpei Zhu",
+      "Yongjiu Lei",
+      "Zhixiong Liu",
+      "Youyou Yuan",
+      "Husam N. Alshareef"
+    ],
+    "journal": "Nano Energy",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["dual-ion battery", "Prussian Blue", "MXene", "aqueous electrolyte"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "defective Prussian Blue nanostructure",
+      "molecular_formula": "Fe[Fe(CN)6]0.75·3.5H2O",
+      "intended_role": "cathode",
+      "prov": ["Fig. 2a-i", "Methods (text)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Ti3C2Tx MXene nanosheets",
+      "molecular_formula": "Ti3C2Tx",
+      "intended_role": "anode",
+      "prov": ["Fig. 6a-c", "Methods (text)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Fe[Fe(CN)6]0.75·3.5H2O",
+      "molecular_formula": "Fe4[Fe(CN)6]3·3.5H2O",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic framework"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Defective Prussian Blue prepared hydrothermally",
+      "prov": ["Fig. 2"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ti3C2Tx MXene",
+      "molecular_formula": "Ti3C2Tx",
+      "ontology": {
+        "role": "product",
+        "category": "2D material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Obtained via MILD etching/delamination",
+      "prov": ["Fig. 6"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Potassium nitrate",
+      "molecular_formula": "KNO3",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Base electrolyte for both half-cells and full battery",
+      "prov": ["Text p.2-3"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Nitric acid",
+      "molecular_formula": "HNO3",
+      "ontology": {
+        "role": "electrolyte additive",
+        "category": "acid"
+      },
+      "amount": {
+        "value": 10,
+        "unit": "mM"
+      },
+      "notes": "Added to KNO3 to enable H+ co-intercalation",
+      "prov": ["Text Fig. 5c"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Aqueous medium for electrolytes and hydrothermal synthesis",
+      "prov": []
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Hydrothermal synthesis of defective Prussian Blue nanostructures",
+        "operations": [
+          {
+            "action": "hydrothermal_reaction",
+            "parameters": {
+              "inputs": [],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "Described as a 'facile hydrothermal method' (details in Supplementary Information)",
+            "prov": ["Text p.4 'synthesized by a facile hydrothermal method'"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods mention"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Synthesis of Ti3C2Tx MXene via MILD etching/delamination",
+        "operations": [
+          {
+            "action": "etch_delaminate",
+            "parameters": {
+              "inputs": [],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "Minimal Intensive Layer Delamination (MILD) strategy referenced; detailed recipe in SI",
+            "prov": ["Text p.8 'synthesized ... through a classical minimal intensive layer delamination (MILD) strategy'"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": []
+      },
+      {
+        "step_id": "step_3",
+        "description": "Formation of free-standing MXene anode film",
+        "operations": [
+          {
+            "action": "drop_cast",
+            "parameters": {
+              "inputs": ["chem_2"],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": "min"
+              }
+            },
+            "notes": "Drop-casting method previously developed; produces free-standing electrode",
+            "prov": ["Text p.8 'followed by a drop-casting method we developed previously'"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": []
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of mixed aqueous electrolyte",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4", "chem_5"],
+              "concentrations": [
+                {"chemical": "chem_3", "value": 1, "unit": "M"},
+                {"chemical": "chem_4", "value": 10, "unit": "mM"}
+              ]
+            },
+            "notes": "Formulated to enable K+ and H+ co-intercalation",
+            "prov": ["Text p.6-7"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": []
+      },
+      {
+        "step_id": "step_5",
+        "description": "Assembly of full dual-cation battery",
+        "operations": [
+          {
+            "action": "assemble_cell",
+            "parameters": {
+              "inputs": ["target_1", "target_2", "electrolyte (step_4)"],
+              "cell_configuration": "PB cathode | mixed electrolyte | Ti3C2Tx MXene anode",
+              "voltage_window": {"value": 1.8, "unit": "V"}
+            },
+            "notes": "",
+            "prov": ["Fig. 1 schematic"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": []
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesize defective Prussian Blue nanostructures hydrothermally"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Produce Ti3C2Tx MXene nanosheets via MILD route"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Fabricate free-standing MXene anode by drop-casting"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Prepare 1 M KNO3 + 10 mM HNO3 aqueous electrolyte"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Assemble full dual-cation battery (PB||MXene)"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis parameters",
+        "excerpt": "‘synthesized by a facile hydrothermal method (see the experimental details in Supplementary Information)’"
+      },
+      {
+        "issue": "No explicit etching conditions for MXene MILD synthesis",
+        "excerpt": "‘synthesized Ti3C2Tx MXene nanosheets through a classical minimal intensive layer delamination (MILD) strategy’"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "structure",
+          "value": "face-centered cubic, slight lattice shrinkage on K+ insertion, reversible",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 4a"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "nanoflower of thin nanosheets with open voids",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 2d"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "tunnel size",
+          "value": 3,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 2h"]
+    },
+    {
+      "method": "STEM-EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "oxygen content",
+          "value": 22.4,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "confirms structural water",
+      "prov": ["Fig. 2i"]
+    },
+    {
+      "method": "FT-IR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "water vibration bands",
+          "value": "present, unchanged after cycling",
+          "unit": ""
+        }
+      ],
+      "interpretation": "structural water retained",
+      "prov": ["Fig. S2", "Fig. S7"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "K 2p signal",
+          "value": "appears on discharge, disappears on charge",
+          "unit": ""
+        }
+      ],
+      "interpretation": "reversible K+ intercalation",
+      "prov": ["Fig. 4c"]
+    },
+    {
+      "method": "MAS NMR",
+      "parameters": {
+        "nuclei": ["39K", "1H", "13C"]
+      },
+      "results": [
+        {
+          "metric": "39K shifts",
+          "value": "−2 ppm and −272 ppm",
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "two K+ environments (site 8c and 24e)",
+      "prov": ["Fig. 4d", "Fig. 4e"]
+    },
+    {
+      "method": "Electrochemical CV",
+      "parameters": {
+        "scan_rate": "0.2–0.8 mV s-1 (half cell), 10–50 mV s-1 (full cell)"
+      },
+      "results": [
+        {
+          "metric": "redox peaks",
+          "value": "two pairs at ~0.85 V and ~0.2 V vs Ag/AgCl",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "stepwise K+ intercalation",
+      "prov": ["Fig. 3a", "Fig. 7a"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic charge–discharge",
+        "results": [
+          {
+            "sample": "PB cathode in 1 M KNO3",
+            "value": 83,
+            "unit": "mAh g-1",
+            "conditions": "0.8 A g-1"
+          },
+          {
+            "sample": "PB cathode in mixed electrolyte",
+            "value": 120,
+            "unit": "mAh g-1",
+            "conditions": "0.8 A g-1"
+          },
+          {
+            "sample": "MXene anode",
+            "value": 73,
+            "unit": "mAh g-1",
+            "conditions": "1 A g-1"
+          },
+          {
+            "sample": "Full PB||MXene cell",
+            "value": 45,
+            "unit": "mAh g-1",
+            "conditions": "0.7 A g-1"
+          }
+        ]
+      },
+      {
+        "method_name": "Energy/Power density calculation",
+        "results": [
+          {
+            "value": 41.5,
+            "unit": "Wh kg-1",
+            "conditions": "628 W kg-1"
+          },
+          {
+            "value": 16.6,
+            "unit": "Wh kg-1",
+            "conditions": "5030 W kg-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 45,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 3000
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,427 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Intrinsic voltage plateau of a Nb2CTx MXene cathode in an aqueous electrolyte induced by high-voltage scanning",
+    "doi": "10.1016/j.joule.2021.09.006",
+    "authors": ["Xinliang Li", "Xinyao Ma", "Yue Hou", "Zhenhua Zhang", "Yue Lu", "Zhaodong Huang", "Guojin Liang", "Mian Li", "Qi Yang", "Jiale Ma", "Na Li", "Binbin Dong", "Qing Huang", "Furong Chen", "Jun Fan", "Chunyi Zhi"],
+    "journal": "Joule",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["MXene", "aqueous zinc battery", "high-voltage scanning"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Nb2CTx MXene",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": ["Page 3002, Experimental Procedures"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Ti3C2Tx MXene",
+      "molecular_formula": "",
+      "intended_role": "cathode material (comparison)",
+      "prov": ["Page 3002, Experimental Procedures"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Nb2AlC MAX",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 3002"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ti3AlC2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 3002"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "hydrofluoric acid (40 wt%)",
+      "molecular_formula": "HF",
+      "ontology": {
+        "role": "etchant",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": 20,
+        "unit": "mL"
+      },
+      "notes": "40 wt% aqueous solution",
+      "prov": ["Page 3002"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "washing solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 3002"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiTFSI",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "ionic compound"
+      },
+      "amount": {
+        "value": 0.21,
+        "unit": "mol"
+      },
+      "notes": "dissolved in 10 mL H2O (21 M)",
+      "prov": ["Page 3002"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "zinc bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "Zn(OTf)2",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "ionic compound"
+      },
+      "amount": {
+        "value": 0.01,
+        "unit": "mol"
+      },
+      "notes": "added to 10 mL H2O with LiTFSI",
+      "prov": ["Page 3002"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "N-Methylpyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used for electrode slurry",
+      "prov": ["Page 3002"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "7:2:1 ratio with MXene and PTFE",
+      "prov": ["Page 3002"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "polytetrafluoroethylene",
+      "molecular_formula": "(C2F4)n",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "7:2:1 ratio with MXene and carbon black",
+      "prov": ["Page 3002"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Etching of MAX precursor to obtain MXene",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "into": "chem_3"
+            },
+            "temperature": {
+              "value": 313.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 2880,
+              "unit": "min"
+            },
+            "notes": "slow addition under ice bath stated; temperature listed as 40 °C in text"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 3002"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Washing of etched product",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "solvent": "chem_4"
+            },
+            "notes": "washed several times until neutral pH"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 3002"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Drying of washed MXene",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 343.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "under vacuum"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 3002"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Etching Nb2AlC (or Ti3AlC2) with HF to produce Nb2CTx (or Ti3C2Tx) MXene"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Washing the etched slurry with deionized water"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Vacuum drying to obtain dry MXene powder"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Conflicting temperature description during etching (ice bath vs 40 °C)",
+        "excerpt": "\"1 g ... was slowly added into 20 mL of 40 wt % HF solution under an ice bath and vigorously stirred for 48 h at 40/C14C.\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle morphology",
+          "value": "loose layered MXene particles ~6 µm length",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1B, 1C"]
+    },
+    {
+      "method": "HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interlayer spacing",
+          "value": 10.9,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure S1"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "(002) plane 2θ",
+          "value": 8.05,
+          "unit": "degree"
+        },
+        {
+          "metric": "calculated d-spacing",
+          "value": 10.0,
+          "unit": "Å"
+        }
+      ],
+      "interpretation": "Peak shift and disappearance of (103) confirm successful etching",
+      "prov": ["Figure 1D"]
+    },
+    {
+      "method": "EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Al residual content",
+          "value": 1.2,
+          "unit": "at %"
+        }
+      ],
+      "interpretation": "High etching efficiency",
+      "prov": ["Figure S2B"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "F1s binding energy",
+          "value": 685,
+          "unit": "eV"
+        },
+        {
+          "metric": "Al2p peak intensity",
+          "value": "almost undetectable",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Surface terminations -F, -OH, =O confirmed; minimal Al",
+      "prov": ["Figure S3"]
+    },
+    {
+      "method": "Electrochemical CV",
+      "parameters": {
+        "scan_rate": 5,
+        "unit": "mV s-1",
+        "voltage_window": "0.1–2.4 V vs Zn/Zn2+"
+      },
+      "results": [
+        {
+          "metric": "discharge plateau voltage",
+          "value": 1.55,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Battery-type behavior after high-voltage scanning",
+      "prov": ["Figure 2B"]
+    },
+    {
+      "method": "Galvanostatic charge–discharge",
+      "parameters": {
+        "current_density": 0.5,
+        "unit": "A g-1"
+      },
+      "results": [
+        {
+          "metric": "specific capacity",
+          "value": 145,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 4A"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Molecular dynamics simulation",
+        "results": [
+          {
+            "equation": "",
+            "value": 20,
+            "unit": "mC cm-2",
+            "description": "Minimum charge density required for Zn2+ insertion into Nb2CTx interlayer"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 145,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 1800
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T20:34:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,587 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A Li-rich layered oxide cathode with negligible voltage decay",
+    "doi": "10.1038/s41560-023-01289-6",
+    "authors": ["Dong Luo", "He Zhu", "Yi Xia", "Zijia Yin", "Yan Qin", "Tianyi Li", "Qinghua Zhang", "Lin Gu", "Yong Peng", "Junwei Zhang", "Kamila M. Wiaderek", "Yalan Huang", "Tingting Yang", "Yu Tang", "Si Lan", "Yang Ren", "Wenquan Lu", "Christopher M. Wolverton", "Qi Liu"],
+    "journal": "Nature Energy",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["lithium-ion batteries", "Li-rich layered oxide", "cathode material", "voltage decay"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li1.1(Ni0.21Mn0.65Al0.04)O2",
+      "molecular_formula": "Li1.1Ni0.21Mn0.65Al0.04O2",
+      "intended_role": "product",
+      "prov": ["Methods – Materials synthesis"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "NiSO4·6H2O",
+      "molecular_formula": "NiSO4·6H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2 M aqueous solution used",
+      "prov": ["Methods – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "MnSO4·H2O",
+      "molecular_formula": "MnSO4·H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2 M aqueous solution; Ni:Mn = 1:3",
+      "prov": ["Methods – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "NH3·H2O",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "pH control agent",
+        "category": "base"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "0.5 M aqueous solution",
+      "prov": ["Methods – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Na2CO3",
+      "molecular_formula": "Na2CO3",
+      "ontology": {
+        "role": "precipitating agent",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2 M aqueous solution for co-precipitation; also added later as solid additive",
+      "prov": ["Methods – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "H2O",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Mn0.75Ni0.25CO3",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "intermediate",
+        "category": "carbonate precursor"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "microspherical precursor",
+      "prov": ["Methods – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "dopant",
+        "category": "oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "ontology": {
+        "role": "lithium source",
+        "category": "carbonate"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "LiNO3",
+      "molecular_formula": "LiNO3",
+      "ontology": {
+        "role": "ion-exchange salt",
+        "category": "nitrate"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "component of molten salt",
+      "prov": ["Methods – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "ion-exchange salt",
+        "category": "halide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "component of molten salt",
+      "prov": ["Methods – Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "salt"
+      },
+      "amount": {
+        "value": 1.2,
+        "unit": "M"
+      },
+      "notes": "in EC/EMC (3/7 w/w)",
+      "prov": ["Methods – Electrode preparation"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of electrolyte (3/7 w/w with EMC)",
+      "prov": ["Methods – Electrode preparation"]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "ethyl methyl carbonate",
+      "molecular_formula": "C4H8O3",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of electrolyte (3/7 w/w with EC)",
+      "prov": ["Methods – Electrode preparation"]
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "N2",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used during co-precipitation (inert atmosphere)",
+      "prov": ["Methods – Materials synthesis"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Co-precipitation of Mn0.75Ni0.25CO3 precursor",
+        "operations": [
+          {
+            "action": "co-precipitate",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4", "chem_5"],
+              "atmosphere": "N2",
+              "pH": "8.4 ± 0.2"
+            },
+            "temperature": {
+              "value": 323,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "NiSO4 and MnSO4 (2 M) solutions with Ni:Mn = 1:3 and NH3·H2O (0.5 M) & Na2CO3 (2 M) pumped simultaneously into CSTR under N2"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods – Materials synthesis"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Post-treatment of precipitate",
+        "operations": [
+          {
+            "action": "filter",
+            "parameters": {
+              "inputs": ["step_1"]
+            },
+            "notes": ""
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_5"],
+              "repetitions": "several"
+            },
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 363,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "vacuum oven"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods – Materials synthesis"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Mixing precursor with dopants/lithium sources",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_6", "chem_7", "chem_4", "chem_8"]
+            },
+            "notes": "1.05 g precursor mixed uniformly with Al2O3, Na2CO3, Li2CO3"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods – Materials synthesis"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Calcination to form P2 precursor",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["step_3"],
+              "atmosphere": "air"
+            },
+            "temperature": {
+              "value": 1053,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 600,
+              "unit": "min"
+            },
+            "notes": ""
+          },
+          {
+            "action": "cool",
+            "parameters": {},
+            "notes": "to room temperature"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods – Materials synthesis"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Ion-exchange in molten LiNO3/LiCl",
+        "operations": [
+          {
+            "action": "ion-exchange",
+            "parameters": {
+              "inputs": ["step_4", "chem_9", "chem_10"]
+            },
+            "temperature": {
+              "value": 573,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "notes": "molten salt mixture"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods – Materials synthesis"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Final washing, filtration and drying",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_5"]
+            },
+            "notes": ""
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 453,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "dried overnight"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods – Materials synthesis"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Co-precipitation of Ni/Mn carbonates under N2 at 323 K"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Filtration, washing and drying of carbonate precursor at 363 K"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Mixing precursor with Al2O3, Li2CO3 and Na2CO3"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Calcination in air at 1053 K for 600 min to form P2 precursor"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Ion-exchange in molten LiNO3/LiCl at 573 K for 240 min"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Washing, filtering and drying at 453 K overnight to yield CH-LMR"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Drying duration unspecified (‘overnight’)",
+        "excerpt": "…dried overnight at 180 °C."
+      },
+      {
+        "issue": "Exact volumes/amounts of solutions not stated",
+        "excerpt": "An aqueous solution (2 mol l−1) of NiSO4‧6H2O and MnSO4‧H2O… were separately pumped…"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα (λ = 0.154 nm)"
+      },
+      "results": [],
+      "interpretation": "Confirmed composite O2-type structure with LiTMO2 and Li2MnO3 components",
+      "prov": ["Structural characterization section"]
+    },
+    {
+      "method": "STEM-HAADF",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "periodicity of honeycomb structure",
+          "value": 0.409,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Observed TMLi ions capping honeycomb sites",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "rate": "0.1 C",
+        "voltage_window": "2.0–4.7 V"
+      },
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 254.4,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Electrochemical performance"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "rate": "2 C"
+      },
+      "results": [
+        {
+          "metric": "discharge capacity",
+          "value": 206,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Demonstrates good rate capability",
+      "prov": ["Figure 1c"]
+    },
+    {
+      "method": "Galvanostatic cycling",
+      "parameters": {
+        "rate": "C/3",
+        "cycles": 50
+      },
+      "results": [
+        {
+          "metric": "capacity retention",
+          "value": 96,
+          "unit": "%"
+        },
+        {
+          "metric": "voltage decay per cycle",
+          "value": 0.02,
+          "unit": "mV"
+        }
+      ],
+      "interpretation": "Negligible voltage decay",
+      "prov": ["Figure 1d"]
+    },
+    {
+      "method": "In-situ synchrotron XRD",
+      "parameters": {
+        "beam_energy": "λ = 0.1173 Å",
+        "rate": "C/3"
+      },
+      "results": [],
+      "interpretation": "Honeycomb superstructure maintained during cycling",
+      "prov": ["Figure 4a-c"]
+    },
+    {
+      "method": "In-situ DEMS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "O2 evolution",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Barely detectable O2 release, confirming oxygen stabilization",
+      "prov": ["Figure 4d"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations (GGA+U)",
+        "results": [
+          {
+            "equation": "Energy difference Li1 vs Li3 site occupancy = 0.86 eV",
+            "value": 0.86,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 254.4,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 50
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-20T12:00:00Z",
+    "source_file": "provided_text_chunk.txt",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,589 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Enhanced lithium ion conduction and the size effect on interfacial phase in Li2ZnI4–mesoporous alumina composite electrolyte",
+    "doi": "10.1016/j.ssi.2007.10.018",
+    "authors": [
+      "Hideki Maekawa",
+      "Takashi Iwatani",
+      "Hangyan Shen",
+      "Tsutomu Yamamura",
+      "Junichi Kawamura"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2008
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "ionic conductor composite",
+      "lithium ion conductivity",
+      "mesoporous alumina"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2ZnI4–mesoporous Al2O3 composite electrolyte",
+      "molecular_formula": "Li2ZnI4",
+      "intended_role": "product",
+      "prov": [
+        "Page 1638 (Fig. 2, 3)"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "mesoporous Al2O3",
+      "molecular_formula": "Al2O3",
+      "intended_role": "intermediate",
+      "prov": [
+        "Page 1637 (Experimental)"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li2ZnI4",
+      "molecular_formula": "Li2ZnI4",
+      "intended_role": "intermediate",
+      "prov": [
+        "Page 1637 (Experimental)"
+      ]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "LiI·H2O",
+      "molecular_formula": "LiI·H2O",
+      "intended_role": "reference material",
+      "prov": [
+        "Page 1637 (Experimental)"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiI",
+      "molecular_formula": "LiI",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "99.999% purity (Aldrich)",
+      "prov": [
+        "Page 1637 (Experimental)"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "ZnI2",
+      "molecular_formula": "ZnI2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "99.999% purity (Aldrich)",
+      "prov": [
+        "Page 1637 (Experimental)"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "mesoporous Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "matrix",
+        "category": "oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Pore sizes 2.4–9.6 nm; BET ~400 m2 g-1",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "X114 surfactant",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "template",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "neutral surfactant; Aldrich",
+      "prov": [
+        "Page 1637 (Experimental)"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "cyclohexane",
+      "molecular_formula": "C6H12",
+      "ontology": {
+        "role": "swelling agent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Page 1637 (Experimental)"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "distilled water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": [
+        "Page 1637 (Experimental)"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Synthesis of mesoporous Al2O3 via sol–gel route",
+        "operations": [
+          {
+            "action": "sol-gel synthesis",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "notes": "Neutral surfactant X114 and cyclohexane used to control pore size"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 573,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "Heated under vacuum to remove adsorbed water"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 1637 (Experimental)"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Synthesis of crystalline Li2ZnI4",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "notes": ""
+          },
+          {
+            "action": "calcine",
+            "parameters": {},
+            "temperature": {
+              "value": 473,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1800,
+              "unit": "min"
+            },
+            "notes": "Sealed Pyrex glass tube"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed tube",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 1637 (Experimental)"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Fabrication of Li2ZnI4–mesoporous Al2O3 composite pellet",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "target_2",
+                "target_3"
+              ]
+            },
+            "notes": "Mixing performed in glovebox (<1 ppm H2O)"
+          },
+          {
+            "action": "press",
+            "parameters": {},
+            "notes": "Pressed into pellet"
+          },
+          {
+            "action": "seal",
+            "parameters": {},
+            "notes": "Pellet sealed into Pyrex glass"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 753,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "notes": ""
+          },
+          {
+            "action": "calcine",
+            "parameters": {},
+            "temperature": {
+              "value": 473,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 1800,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed tube",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 1637 (Experimental)"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of LiI·H2O reference compound",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_6"
+              ]
+            },
+            "notes": ""
+          },
+          {
+            "action": "seal",
+            "parameters": {},
+            "notes": "Sealed in Pyrex glass"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 383.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed tube",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 1637 (Experimental)"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mesoporous Al2O3 synthesized and activated."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Crystalline Li2ZnI4 prepared."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Composite electrolyte fabricated from Li2ZnI4 and mesoporous Al2O3."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "LiI·H2O prepared as reference material."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified composition units",
+        "excerpt": "\"0.46 LiZn0.5I2–0.54 mesoporous-Al2O3\" (exact basis—mole or weight fraction—was not defined)"
+      },
+      {
+        "issue": "Missing reagent quantities",
+        "excerpt": "No masses or molar ratios were provided for LiI and ZnI2 during Li2ZnI4 synthesis."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "N2 adsorption/desorption (BET)",
+      "parameters": {
+        "temperature": {
+          "value": 77,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "pore_size",
+          "value": 2.4,
+          "unit": "nm"
+        },
+        {
+          "metric": "pore_size",
+          "value": 5.0,
+          "unit": "nm"
+        },
+        {
+          "metric": "pore_size",
+          "value": 9.5,
+          "unit": "nm"
+        },
+        {
+          "metric": "pore_size",
+          "value": 9.6,
+          "unit": "nm"
+        },
+        {
+          "metric": "BET_surface_area",
+          "value": 368,
+          "unit": "m2 g-1",
+          "notes": "pore size 2.4 nm sample"
+        },
+        {
+          "metric": "BET_surface_area",
+          "value": 455,
+          "unit": "m2 g-1",
+          "notes": "pore size 5.0 nm sample"
+        },
+        {
+          "metric": "BET_surface_area",
+          "value": 421,
+          "unit": "m2 g-1",
+          "notes": "pore size 9.5 nm sample"
+        },
+        {
+          "metric": "BET_surface_area",
+          "value": 367,
+          "unit": "m2 g-1",
+          "notes": "pore size 9.6 nm sample"
+        },
+        {
+          "metric": "pore_volume",
+          "value": 0.15,
+          "unit": "cm3 g-1",
+          "notes": "pore size 2.4 nm sample"
+        },
+        {
+          "metric": "pore_volume",
+          "value": 0.76,
+          "unit": "cm3 g-1",
+          "notes": "pore size 5.0 nm sample"
+        },
+        {
+          "metric": "pore_volume",
+          "value": 1.28,
+          "unit": "cm3 g-1",
+          "notes": "pore size 9.5 nm sample"
+        },
+        {
+          "metric": "pore_volume",
+          "value": 1.12,
+          "unit": "cm3 g-1",
+          "notes": "pore size 9.6 nm sample"
+        }
+      ],
+      "interpretation": "Sharp BJH peaks indicate well-ordered cylindrical pores.",
+      "prov": [
+        "Table 1",
+        "Fig. 1"
+      ]
+    },
+    {
+      "method": "XRD (Cu Kα)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "crystallite_size",
+          "value": 20,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Composite shows peaks identical to Li2ZnI4; crystallites (~20 nm) located outside mesopores.",
+      "prov": [
+        "Fig. 4 (a)"
+      ]
+    },
+    {
+      "method": "6Li MAS-NMR",
+      "parameters": {
+        "field_strength": "14 T",
+        "spinning_rate": "4 mm rotor (speed not provided)"
+      },
+      "results": [
+        {
+          "metric": "chemical_shift",
+          "value": -4.9,
+          "unit": "ppm"
+        },
+        {
+          "metric": "chemical_shift",
+          "value": -0.8,
+          "unit": "ppm"
+        },
+        {
+          "metric": "chemical_shift",
+          "value": -2.8,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "−0.8 ppm assigned to Li+ near surface OH−; −2.8 ppm corresponds to new interfacial conducting phase.",
+      "prov": [
+        "Fig. 5"
+      ]
+    },
+    {
+      "method": "6Li CP MAS-NMR",
+      "parameters": {
+        "field_strength": "7 T"
+      },
+      "results": [
+        {
+          "metric": "chemical_shift",
+          "value": -0.8,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "Confirms proximity of Li+ at −0.8 ppm to protons.",
+      "prov": [
+        "Fig. 6 (b)"
+      ]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "conductivity_increase_factor",
+          "value": 50,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Composite conductivity exceeds pure Li2ZnI4 by >50×; enhancement linked to −2.8 ppm NMR signal.",
+      "prov": [
+        "Fig. 2",
+        "Fig. 3"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Correlation analysis",
+        "results": [
+          {
+            "description": "Intensity of −2.8 ppm NMR peak scales with conductivity enhancement."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-25T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

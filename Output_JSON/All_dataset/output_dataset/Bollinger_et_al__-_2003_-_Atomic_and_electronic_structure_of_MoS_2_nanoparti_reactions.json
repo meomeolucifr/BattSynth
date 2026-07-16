@@ -1,0 +1,216 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Atomic and electronic structure of MoS2 nanoparticles",
+    "doi": "10.1103/PhysRevB.67.085410",
+    "authors": [
+      "M. V. Bollinger",
+      "K. W. Jacobsen",
+      "J. K. Nørskov"
+    ],
+    "journal": "Physical Review B",
+    "year": 2003
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "theoretical study",
+    "tags": [
+      "DFT",
+      "STM",
+      "MoS2",
+      "Edge states"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "MoS2 nanoparticles (single-layer, triangular)",
+      "molecular_formula": "MoS2",
+      "intended_role": "product",
+      "prov": [
+        "Introduction",
+        "Figure 19"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Hydrogen",
+      "molecular_formula": "H2",
+      "ontology": {
+        "role": "reactant",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Partial pressures reported: 2 bar during sulfidation, 10 bar under HDS conditions.",
+      "prov": [
+        "Table II"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Hydrogen sulfide",
+      "molecular_formula": "H2S",
+      "ontology": {
+        "role": "sulfur source",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Partial pressures reported: 1.0×10⁻¹² bar during sulfidation, 0.1 bar under HDS conditions.",
+      "prov": [
+        "Table II"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Gold (Au(111) substrate)",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Reconstructed Au(111) surface used as growth template.",
+      "prov": [
+        "Sections VI, XI"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Growth (sulfidation) of single-layer triangular MoS2 nanoparticles on reconstructed Au(111) surface.",
+        "operations": [
+          {
+            "action": "sulfidation",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "temperature": {
+              "value": 673,
+              "unit": "K"
+            },
+            "pressure": {
+              "value": 2,
+              "unit": "bar"
+            },
+            "notes": "pH2S = 1.0×10⁻¹² bar; pH2 = 2 bar (99.8 % H2S purity gas mixture).",
+            "duration": {
+              "value": null,
+              "unit": "min"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "H2/H2S mixture",
+          "pressure": {
+            "value": 2,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Table II (S)",
+          "Section XI"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Sulfidation growth of MoS2 on Au(111) at 673 K under H2/H2S atmosphere."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact duration and gas flow rates for sulfidation not provided.",
+        "excerpt": "They were synthesized on a reconstructed Au(111) substrate and were reported to have a triangular morphology."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "STM",
+      "parameters": {
+        "bias_voltage": {
+          "value": 5.3,
+          "unit": "mV"
+        },
+        "tunneling_current": {
+          "value": 1.28,
+          "unit": "nA"
+        },
+        "temperature": {
+          "value": 300,
+          "unit": "K"
+        },
+        "scan_area": "48×53 Å²"
+      },
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "Triangular islands with bright brim of high conductance along edges",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Edges identified as Mo-terminated with S dimers based on comparison with simulated images.",
+      "prov": [
+        "Figure 19"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density-functional theory (PW91, 25 Ry cutoff)",
+        "results": []
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-14T12:00:00Z",
+    "source_file": "extracted_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,729 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Exfoliated MoS2 Sheets and Reduced Graphene Oxide-An Excellent and Fast Anode for Sodium-ion Battery",
+    "doi": "10.1038/srep12571",
+    "authors": ["Tuhin Subhra Sahu", "Sagar Mitra"],
+    "journal": "Scientific Reports",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": ["MoS2", "graphene oxide", "sodium-ion battery", "hydrothermal synthesis", "composite anode"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "MoS2 nanoflowers",
+      "molecular_formula": "MoS2",
+      "intended_role": "product",
+      "prov": ["Methods"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Graphene Oxide (GO)",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Methods"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Reduced Graphene Oxide (rGO)",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Methods"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "MoS2/rGO composite (MoS-G)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sodium molybdate dihydrate",
+      "molecular_formula": "Na2MoO4·2H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1.0,
+        "unit": "g"
+      },
+      "notes": "4.133 mmol",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Polyvinylpyrrolidone",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "stabilizer",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": 0.2,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Thioacetamide",
+      "molecular_formula": "C2H5NS",
+      "ontology": {
+        "role": "sulfur source",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 0.9308,
+        "unit": "g"
+      },
+      "notes": "12.39 mmol",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Water (deionized)",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 90,
+        "unit": "mL"
+      },
+      "notes": "used in MoS2 synthesis",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethanol (absolute)",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "washing solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used for washing products",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Hydrogen",
+      "molecular_formula": "H2",
+      "ontology": {
+        "role": "carrier gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "5% in N2 during annealing",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "carrier gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "95% in annealing atmosphere",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Natural graphite flakes",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "reactant",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Sulfuric acid",
+      "molecular_formula": "H2SO4",
+      "ontology": {
+        "role": "acid",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": 120,
+        "unit": "mL"
+      },
+      "notes": "part of 9:1 H2SO4:H3PO4 mixture",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Phosphoric acid",
+      "molecular_formula": "H3PO4",
+      "ontology": {
+        "role": "acid",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": 40,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Potassium permanganate",
+      "molecular_formula": "KMnO4",
+      "ontology": {
+        "role": "oxidant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 6,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "Hydrogen peroxide (20%)",
+      "molecular_formula": "H2O2",
+      "ontology": {
+        "role": "quenching agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 3,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "carrier gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used in rGO synthesis (900 °C)",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "N-Methylpyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "mL"
+      },
+      "notes": "used for MoS2 dispersion",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_15",
+      "name": "rGO suspension",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "component",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": 20,
+        "unit": "mL"
+      },
+      "notes": "0.25 mg/mL in NMP",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Hydrothermal synthesis of MoS2 nanoflowers",
+        "operations": [
+          {
+            "action": "dissolve",
+            "parameters": {
+              "inputs": ["chem_1", "chem_4"]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "time": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Na2MoO4·2H2O in DI water"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "notes": "PVP added to solution"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "time": {
+              "value": 15,
+              "unit": "min"
+            },
+            "notes": "thioacetamide added and stirred"
+          },
+          {
+            "action": "transfer",
+            "parameters": {},
+            "notes": "solution moved to 120 mL Teflon-lined autoclave"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 453,
+              "unit": "K"
+            },
+            "time": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "notes": "hydrothermal reaction at 180 °C for 24 h"
+          },
+          {
+            "action": "cool",
+            "parameters": {},
+            "notes": "natural cooling to room temperature"
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5"]
+            },
+            "time": {
+              "value": 5,
+              "unit": "min"
+            },
+            "notes": "centrifugation at 10000 rpm, 2× water, 1× ethanol"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "time": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "air oven overnight"
+          },
+          {
+            "action": "anneal",
+            "parameters": {
+              "atmosphere": "5% H2 / 95% N2"
+            },
+            "temperature": {
+              "value": 973,
+              "unit": "K"
+            },
+            "time": {
+              "value": 240,
+              "unit": "min"
+            },
+            "notes": "heating rate 5 K/min"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Synthesis of Graphene Oxide (GO)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_8", "chem_9", "chem_10"]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "graphite in 9:1 H2SO4:H3PO4"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_11"]
+            },
+            "time": {
+              "value": 60,
+              "unit": "min"
+            },
+            "notes": "KMnO4 added slowly"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 328,
+              "unit": "K"
+            },
+            "time": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "maintained at 55 °C for 12 h"
+          },
+          {
+            "action": "quench",
+            "parameters": {
+              "inputs": ["chem_12"]
+            },
+            "notes": "poured on ice, H2O2 added dropwise"
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5"]
+            },
+            "time": {
+              "value": 15,
+              "unit": "min"
+            },
+            "notes": "centrifugation 5000 rpm until pH 7"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "notes": "air oven overnight"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Thermal reduction of GO to rGO",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["target_2"]
+            },
+            "temperature": {
+              "value": 1173,
+              "unit": "K"
+            },
+            "time": {
+              "value": 60,
+              "unit": "min"
+            },
+            "notes": "argon atmosphere, 5 K/min"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of MoS2/rGO composite (MoS-G)",
+        "operations": [
+          {
+            "action": "disperse",
+            "parameters": {
+              "inputs": ["target_1", "chem_14"]
+            },
+            "time": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "100 mg MoS2 in 100 mL NMP, stirred 15 min then aged overnight"
+          },
+          {
+            "action": "sonicate",
+            "parameters": {},
+            "time": {
+              "value": 30,
+              "unit": "min"
+            },
+            "notes": "probe sonicator 250 W, 35% amplitude"
+          },
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_15"]
+            },
+            "notes": "20 mL rGO suspension added dropwise under vigorous stirring"
+          },
+          {
+            "action": "sonicate",
+            "parameters": {},
+            "time": {
+              "value": 10,
+              "unit": "min"
+            },
+            "notes": "additional ultrasonication"
+          },
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "time": {
+              "value": 5,
+              "unit": "min"
+            },
+            "notes": "10000 rpm"
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_4", "chem_5"]
+            },
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {
+              "value": 373,
+              "unit": "K"
+            },
+            "time": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "vacuum oven"
+          }
+        ],
+        "conditions": {},
+        "prov": ["Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Hydrothermal synthesis and annealing of MoS2 nanoflowers"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Oxidative exfoliation of graphite to produce GO"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Thermal reduction of GO to rGO under argon"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Liquid-phase exfoliation and assembly of MoS2 with rGO to form MoS-G composite"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "shift in (002) peak",
+          "value": "from 14.04° to 13.80° 2θ",
+          "unit": "degree"
+        },
+        {
+          "metric": "interlayer spacing expansion",
+          "value": null,
+          "unit": "nm",
+          "notes": "qualitative confirmation of expanded spacing"
+        }
+      ],
+      "interpretation": "Indicates increased interlayer spacing in MoS-G compared to MoS",
+      "prov": ["Figure 1a"]
+    },
+    {
+      "method": "Raman",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "E2g^1 mode",
+          "value": 381,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "A1g mode",
+          "value": 407,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "2LA(M) mode",
+          "value": 454,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "D-band (rGO)",
+          "value": 1343,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "G-band (rGO)",
+          "value": 1590,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Confirms presence of MoS2 and rGO in composite",
+      "prov": ["Figure 1c"]
+    },
+    {
+      "method": "HR-TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interlayer spacing before sonication",
+          "value": "0.62–0.63",
+          "unit": "nm"
+        },
+        {
+          "metric": "interlayer spacing after 30 min sonication",
+          "value": "0.64–0.69",
+          "unit": "nm"
+        },
+        {
+          "metric": "interlayer spacing after 40 min sonication",
+          "value": "0.68–0.69",
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Ultrasonication expands MoS2 layers",
+      "prov": ["Figure 3d–f"]
+    },
+    {
+      "method": "Electrochemical (Galvanostatic charge–discharge)",
+      "parameters": {
+        "current_density": "100 mA g-1",
+        "voltage_window": "0.01–2.6 V vs Na/Na+"
+      },
+      "results": [
+        {
+          "metric": "reversible capacity (MoS-G)",
+          "value": 575,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "High capacity and stability of composite",
+      "prov": ["Figure 4b"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "lower charge transfer resistance of MoS-G vs MoS",
+          "value": null,
+          "unit": "",
+          "notes": "qualitative comparison"
+        }
+      ],
+      "interpretation": "rGO improves interfacial kinetics",
+      "prov": ["Supplementary Fig. S4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical performance summary",
+        "results": [
+          {
+            "equation": "",
+            "value": 218,
+            "unit": "mAh g-1",
+            "notes": "MoS-G at 50 mA g-1 within 0.4–2.6 V window"
+          },
+          {
+            "equation": "",
+            "value": 1080,
+            "unit": "mAh g-1",
+            "notes": "Initial discharge capacity of MoS-G at 100 mA g-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 575,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 50
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-11T00:00:00Z",
+    "source_file": "provided_text",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,520 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Two-dimensional lithium diffusion behavior and probable hybrid phase transformation kinetics in olivine lithium iron phosphate",
+    "doi": "10.1038/s41467-017-01315-8",
+    "authors": ["Liang Hong", "Linsen Li", "Yuchen-Karen Chen-Wiegart", "Jiajun Wang", "Kai Xiang", "Liyang Gan", "Wenjie Li", "Fei Meng", "Fan Wang", "Jun Wang", "Yet-Ming Chiang", "Song Jin", "Ming Tang"],
+    "journal": "Nature Communications",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["lithium-ion batteries", "LiFePO4", "hydrothermal synthesis", "phase transformation", "operando X-ray"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiFePO4 microrods",
+      "molecular_formula": "LiFePO4",
+      "intended_role": "product",
+      "prov": ["Methods – Synthesis of the LiFePO4 microrods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Ammonium dihydrogen phosphate",
+      "molecular_formula": "NH4H2PO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 6,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium hydroxide monohydrate",
+      "molecular_formula": "LiOH·H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 6,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Nitrilotriacetic acid",
+      "molecular_formula": "C6H9NO6",
+      "ontology": {
+        "role": "complexing agent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 6,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": 60,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ammonium hydroxide (concentrated NH3·H2O)",
+      "molecular_formula": "NH4OH",
+      "ontology": {
+        "role": "pH adjuster",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Added 1–2 mL to reach pH 9",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Iron(II) sulfate heptahydrate",
+      "molecular_formula": "FeSO4·7H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 6,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Methods – Synthesis"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "washing solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for washing, quantity not specified",
+      "prov": ["Methods – Synthesis"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Initial dissolution and mixing of precursors",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Stirred for 15 min"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "pH adjustment to 9 with concentrated NH3·H2O",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "1–2 mL NH3·H2O added until pH 9"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Addition of iron(II) sulfate and further stirring",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_6"]
+            },
+            "duration": {
+              "value": 15,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Stirred 15 min after addition"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Hydrothermal treatment",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {
+              "inputs": ["step_3"]
+            },
+            "notes": "Suspension transferred to Teflon-lined autoclave"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 473,
+              "unit": "K"
+            },
+            "notes": "Heated in oven"
+          },
+          {
+            "action": "cool",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Cooled naturally to room temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Collection of precipitate",
+        "operations": [
+          {
+            "action": "centrifuge",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Washing of product",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_4", "chem_7"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Washed several times with water and ethanol"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Drying",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "notes": "Dried in oven"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods – Synthesis"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mixing of precursors in water with stirring"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "pH adjusted to 9 using NH3·H2O"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Addition of FeSO4·7H2O and further stirring"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Hydrothermal reaction at 473 K for 24 h"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Centrifugation to collect precipitate"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Washing with deionized water and ethanol"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Drying at 333 K to obtain LiFePO4 microrods"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Range value for NH3·H2O amount",
+        "excerpt": "Then 1 –2 mL of concentrated NH3·H2O were micropipetted into the solution until a pH of 9 was attained."
+      },
+      {
+        "issue": "Drying duration not specified",
+        "excerpt": "before drying in an oven at 60 °C."
+      },
+      {
+        "issue": "Assumed room temperature for stirring steps",
+        "excerpt": "the solution was stirred for 15 min."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "PXRD",
+      "parameters": {
+        "wavelength": "0.2128 Å"
+      },
+      "results": [
+        {
+          "metric": "phase",
+          "value": "orthorhombic LiFePO4 (space group Pmna)",
+          "unit": ""
+        },
+        {
+          "metric": "Bragg factor R",
+          "value": 3.50,
+          "unit": "%"
+        },
+        {
+          "metric": "refined formula",
+          "value": "Li0.93Fe0.035Fe1.001PO4",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 1a"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle morphology",
+          "value": "well-faceted microrods, 2–7 µm thickness/height, tens of µm length",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 1b"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "crystallinity",
+          "value": "single crystal",
+          "unit": ""
+        },
+        {
+          "metric": "orientation",
+          "value": "long-axis along [010]",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 1d"]
+    },
+    {
+      "method": "ICP-AES",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Fe:Li ratio",
+          "value": 1.11,
+          "unit": ""
+        },
+        {
+          "metric": "anti-site defect concentration",
+          "value": 3.5,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results – Synthesis and characterization section"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "GITT",
+        "results": [
+          {
+            "metric": "Li diffusivity",
+            "value": 0.70e-11,
+            "unit": "cm2 s-1",
+            "conditions": "measured at x=0.01 for Li1−xFePO4"
+          }
+        ],
+        "prov": ["Results – Operando X-ray spectroscopic imaging"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T20:31:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

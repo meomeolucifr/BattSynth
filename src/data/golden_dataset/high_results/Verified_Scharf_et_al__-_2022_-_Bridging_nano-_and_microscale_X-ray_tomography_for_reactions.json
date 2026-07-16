@@ -1,0 +1,235 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Bridging nano- and microscale X-ray tomography for battery research by leveraging artificial intelligence",
+    "doi": "10.1038/s41565-022-01081-9",
+    "authors": [
+      "Jonathan Scharf",
+      "Mehdi Chouchane",
+      "Donal P. Finegan",
+      "Bingyu Lu",
+      "Christopher Redquest",
+      "Min-cheol Kim",
+      "Weiliang Yao",
+      "Alejandro A. Franco",
+      "Dan Gostovic",
+      "Zhao Liu",
+      "Mark Riccio",
+      "Franti\u0161ek Zelenka",
+      "Jean-Marie Doux",
+      "Ying Shirley Meng"
+    ],
+    "journal": "Nature Nanotechnology",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": [
+      "X-ray computed tomography",
+      "battery characterization",
+      "artificial intelligence",
+      "machine learning"
+    ]
+  },
+  "targets": [],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "X-ray computed tomography (CT)",
+      "parameters": {
+        "voxel_size": {
+          "value": 50,
+          "unit": "nm"
+        },
+        "system_type": "laboratory nano-CT"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": [
+        "Page 447"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper clearly discusses X-ray computed tomography (CT) as a characterization technique throughout (including on page 447), but the extracted value is an empty list []. For a boolean/presence-style field like \u201cCharacterization: X-ray computed tomography (CT)\u201d, an empty list would imply CT is not used/mentioned, which is contradicted by the text (CT is the central topic). Therefore the extraction is not supported.",
+        "suggested_fix": "Indicate CT is present/used (for example: [\"X-ray computed tomography (CT)\"] or a True/Yes value depending on the schema)."
+      }
+    },
+    {
+      "method": "X-ray computed tomography (CT)",
+      "parameters": {
+        "voxel_size": {
+          "value": 500,
+          "unit": "nm"
+        },
+        "system_type": "laboratory micro-CT"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": [
+        "Page 448"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper extensively discusses X-ray computed tomography (CT) as a characterization technique (including micro-CT, nano-CT, and synchrotron CT) across multiple pages, including around Nature Nanotechnology p. 448. Therefore, CT characterization is clearly present in the source text. However, the extracted value is an empty list [], which implies CT was not used/specified; that is contradicted by the document content.",
+        "suggested_fix": "Populate the field to indicate CT is used/discussed, e.g. include \"X-ray computed tomography (CT)\" (and optionally subtypes: micro-CT, nano-CT, synchrotron/SRXTM; in situ/operando/ex situ)."
+      }
+    },
+    {
+      "method": "X-ray computed tomography (CT)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "volume expansion",
+          "value": 250,
+          "unit": "%",
+          "notes": "SnO electrode during lithiation",
+          "prov": [
+            "Page 448"
+          ]
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Page 448"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The source text explicitly states: \u201cEbner et al. evaluated the volume expansion of a SnO electrode as it was lithiated\u2026 revealed a 250% volume expansion due to lithiation\u201d (Page 449 in the provided text, not Page 448). This matches the extracted metric (volume expansion), value (250), unit (%), and notes (SnO electrode during lithiation).",
+        "suggested_fix": "Provenance should be corrected to Page 449 (provided text pagination), not Page 448."
+      }
+    },
+    {
+      "method": "X-ray computed tomography (CT)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "volume expansion",
+          "value": 280,
+          "unit": "%",
+          "notes": "Si anode (Li15Si4 formation)",
+          "prov": [
+            "Page 448"
+          ]
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Page 448"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The review explicitly states: \u201cCT volume extraction has also proved particularly useful for silicon anode batteries\u2026 in the evaluation of volume expansion during lithiation (up to 280% for Li15Si4)\u201d on page 449 of the provided text (not page 448). This directly supports a 280% volume expansion associated with Li15Si4 formation in Si anodes, in the context of CT/SRXTM measurements.",
+        "suggested_fix": "Update provenance to Page 449 (not 448)."
+      }
+    },
+    {
+      "method": "X-ray computed tomography (CT)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "porosity",
+          "value": 51.1,
+          "unit": "%",
+          "notes": "LiNi0.5Mn1.5O4 cathode",
+          "prov": [
+            "Figure 3"
+          ]
+        },
+        {
+          "metric": "active_material_fraction",
+          "value": 38.6,
+          "unit": "%",
+          "notes": "LiNi0.5Mn1.5O4 cathode",
+          "prov": [
+            "Figure 3"
+          ]
+        },
+        {
+          "metric": "binder_additive_fraction",
+          "value": 10.4,
+          "unit": "%",
+          "notes": "LiNi0.5Mn1.5O4 cathode",
+          "prov": [
+            "Figure 3"
+          ]
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 3"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Figure 3 (specifically Fig. 3e captioned \u201cSegmented filtered tomogram and volume fraction of the three phases\u201d) reports the LiNi0.5Mn1.5O4 cathode phase volume fractions as 51.1% porosity, 38.6% AM (active material), and 10.4% binder + additive. These match the extracted values and units.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Tortuosity factor equation",
+        "results": [
+          {
+            "equation": "k = \u03b5 * D_bulk / D_eff",
+            "value": null,
+            "unit": "",
+            "notes": "Definition of tortuosity factor"
+          }
+        ],
+        "prov": [
+          "Page 450"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.35,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank. The paper explicitly discusses analysis methods for X-ray CT data (for example, species segmentation approaches such as thresholding/global thresholding, adaptive local segmentation including Bayesian Markov random field, watershed, and converging active contours; ML-based Trainable Weka Segmentation; and a CT workflow of preprocessing/segmentation/postprocessing in Box 1, plus artefact filtering methods in Box 2). Therefore, leaving the field empty is not supported by the source text. The alleged provenance \u201cPage 450\u201d is not reliable; relevant analysis-method discussion appears around pages 449\u2013453 (Box 1/2) and elsewhere.",
+          "suggested_fix": "Populate \u201cAnalysis Method\u201d with an explicit method mentioned in the text, e.g., \u201cX-ray CT data analysis using species segmentation (thresholding/global thresholding, adaptive local segmentation such as watershed/Bayesian Markov random field, and ML-based Trainable Weka Segmentation) with preprocessing/filtering and postprocessing denoising (Box 1; artefact filtering in Box 2).\u201d"
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

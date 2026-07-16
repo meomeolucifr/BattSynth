@@ -1,0 +1,387 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "IONIC CONDUCTION IN SPACE CHARGE REGIONS",
+    "doi": "",
+    "authors": [
+      "Joachim Maier"
+    ],
+    "journal": "Progress in Solid State Chemistry",
+    "year": 1995
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": [
+      "ionic conduction",
+      "space charge",
+      "composite electrolytes",
+      "heterogeneous doping",
+      "grain boundaries"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiI\u2013Al2O3 composite electrolyte",
+      "molecular_formula": "",
+      "intended_role": "composite electrolyte",
+      "prov": [
+        "Page 172\u2013173"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The provided paper text (including the cited pages 172\u2013173) discusses ionic conduction in space-charge regions and gives example material systems (e.g., LiI\u2013Al2O3, AgBr\u2013AgI, AgCl\u2013AgI), but it does not state a single explicit \u201cTarget Formula\u201d for the paper. The Extracted Value field is blank, and no specific target chemical formula is identified in the document as a designated target. Therefore the extraction is not explicitly supported as given.",
+        "suggested_fix": "If the intended target is the model ionic conductor used throughout, the text uses the generic matrix formula \u201cM+X\u2212\u201d (often written as MX) (e.g., Chapter 2.1: \u201cmatrix \u2018M+X\u2212\u2019\u201d). Otherwise, if a specific system is required, specify it explicitly (e.g., \u201cLiI\u201d for the Liang example LiI\u2013Al2O3)."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "AgCl\u2013Al2O3 composite electrolyte",
+      "molecular_formula": "",
+      "intended_role": "composite electrolyte",
+      "prov": [
+        "Figure 15",
+        "Page 189\u2013190"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.68,
+        "reasoning": "The field \"Target Formula\" has an empty extracted value. Scanning the provided full text (including Figure 15 and surrounding pages 189\u2013190), Figure 15 is an impedance spectroscopy plot and does not state any chemical target formula. No explicit \"target formula\" corresponding to the extraction is provided there, and an empty value is not a verifiable explicit statement from the paper.",
+        "suggested_fix": "If the intent was the sample/system in Fig. 15, it is \"Ag/AgCl:Al2O3/Ag\" (AgCl:Al2O3 composite, with Ag electrodes), but the paper does not present this as a single 'target formula'."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiI",
+      "molecular_formula": "LiI",
+      "ontology": {
+        "role": "ion conductor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as matrix in composite electrolytes; typical volume composition with Al2O3 10\u201340 v/o.",
+      "prov": [
+        "Page 172"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper repeatedly mentions the compound LiI (lithium iodide), e.g., in the introduction discussing Liang\u2019s experiments on the two-phase system \u201cLiI\u2013Al2O3\u201d and in Fig. 1 referencing conductivity of \u201cpure LiI\u201d. However, the text does not specify an explicit amount (mass, molarity, wt%, mol%, etc.) for LiI itself; only general composite volume fractions of second phase (e.g., 10\u201340 v/o Al2O3) are discussed. Therefore, identifying LiI with amount \u201cNot specified in text\u201d is consistent with the document content.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "second phase",
+        "category": "inorganic oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Mean particle diameter reported as <1 \u00b5m; specific surface ca. 100 m\u00b2 g\u207b\u00b9 (y-Al2O3).",
+      "prov": [
+        "Page 172",
+        "Page 190"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.87,
+        "reasoning": "The paper repeatedly mentions Al2O3 as part of composite systems (e.g., LiI\u2013Al2O3, AgCl:Al2O3, AgBr:Al2O3, TlCl:Al2O3) and discusses alumina effects, but it does not provide a specific numeric amount/mass/mole quantity of Al2O3 for the general chemical identity field. While some examples give volume fractions (e.g., \u201cTypical volume compositions comprise 10\u201340 v/o second phase\u201d and specific cases like \u201cAgCl : Al2O3 (13 v/o)\u201d or \u201cLiI + 40 m/o Al2O3\u201d in figures), there is no single explicit \u2018amount of Al2O3\u2019 stated as a definitive parameter tied to a unique sample in the way this extracted field seems to expect. Therefore, the extractor\u2019s claim that the amount is not specified is acceptable under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "AgCl",
+      "molecular_formula": "AgCl",
+      "ontology": {
+        "role": "ion conductor",
+        "category": "inorganic halide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Throughout",
+        "Figure 15"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper repeatedly discusses the AgCl\u2013AgI system (e.g., \u201cA more detailed study of the system AgCl-AgI is described\u2026\u201d in the early pages) and many other AgCl examples throughout. However, no explicit quantity/amount for AgCl is given as a standalone \u201cchemical amount\u201d (no masses, molarities, wt%, etc. specifically for AgCl). The text provides amounts for other components in mixtures (e.g., Al2O3 volume fractions, particle sizes) and discusses AgCl generally and in composites, but does not specify an amount of AgCl itself. Therefore the extraction \u201cAgCl | Amount: Not specified in text\u201d is consistent with the document. The alleged provenance \u2018Figure 15\u2019 is not about an AgCl amount; it is an impedance plot caption without specifying an AgCl amount.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "AgBr",
+      "molecular_formula": "AgBr",
+      "ontology": {
+        "role": "ion conductor",
+        "category": "inorganic halide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 196"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly discusses the AgBr\u2013AgI system and AgBr-based composites (e.g., Fig. 3 \u201cSpecific conductivities in the system AgBr-AgI\u2026\u201d and multiple mentions of \u201cAgBr:Al2O3\u201d), so the chemical identity \u201cAgBr\u201d is supported. However, nowhere in the provided text is there an explicit statement of an \u201camount\u201d of AgBr used (e.g., mass, molarity, or a specific fixed quantity). While some figures/discussions mention mole fraction of AgBr in mixtures or volume fractions of second phases (e.g., Al2O3), that is not an explicit standalone \u2018amount of AgBr\u2019 entry. Therefore, the extractor\u2019s note \u201cAmount: Not specified in text\u201d is supported under the null-handling rule. The alleged provenance \u2018Page 196\u2019 is not reliable; relevant AgBr mentions occur earlier (e.g., around the AgBr\u2013AgI figure and AgBr:Al2O3 discussion).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "CH3Li",
+      "molecular_formula": "CH3Li",
+      "ontology": {
+        "role": "surface modifier",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to convert surface \u2013OH groups on Al2O3 to \u2013OLi.",
+      "prov": [
+        "Page 201"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly mentions CH3Li (methyl lithium) in the reaction used to pretreat Al2O3 surfaces: \u201c-OH + CH3Li \u2192 -CH4 -OLi (R6)\u201d and states \u201cthe use of Al2O3 whose surface protons have been exchanged for Li+ by reaction with CH3Li.\u201d However, no quantity/amount (mass, molarity, volume, etc.) of CH3Li is given anywhere in the provided text. Therefore the extracted value \u2018CH3Li | Amount: Not specified in text\u2019 is supported. The alleged provenance \u2018Page 201\u2019 is inaccurate; CH3Li appears on Page 31\u201332 (Fig. 28 discussion and reaction R6).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "(CH3)3SiCl",
+      "molecular_formula": "C3H9SiCl",
+      "ontology": {
+        "role": "surface modifier",
+        "category": "organosilane"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Reacted with \u2013OH groups on Al2O3 to produce \u2013OSi(CH3)3 surface groups.",
+      "prov": [
+        "Page 201"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly mentions chemical pretreatment of alumina surfaces by reaction with (CH3)3SiCl (trimethylsilyl chloride) in Section 2.3.7, including the reaction scheme \u201c-OH + (CH3)3SiCl \u2192 -OSiCH3 + HCl\u201d and later notes subsequent reaction of pellets with (CH3)3SiCl. However, the text does not state any quantity/amount used (no mass, volume, concentration, or molar amount for (CH3)3SiCl). Therefore the extracted value \u201c(CH3)3SiCl | Amount: Not specified in text\u201d is supported under the null-handling rule. The alleged provenance 'Page 201' is inaccurate; the relevant mention is on page 34\u201335 of the provided text (around the discussion leading to reaction (R5)).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "NH3",
+      "molecular_formula": "NH3",
+      "ontology": {
+        "role": "probe gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to test sensor response of AgCl films; adsorption increases conductivity.",
+      "prov": [
+        "Page 238\u2013240"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The document explicitly discusses NH3 (ammonia) as a gas/nucleophilic species affecting conductivity (e.g., sections on the \u201cammonia effect\u201d, reaction Eq. (64), and gas-interface discussion with NH3 partial pressure). However, nowhere does the text specify a quantitative amount/concentration for NH3 in a \u201cChemical Identity and Amount\u201d sense (it refers qualitatively to NH3 pressure/partial pressure and shows response curves, but no explicit NH3 amount value is given). Therefore the extracted claim \u201cNH3 | Amount: Not specified in text\u201d is supported. Provenance pages 238\u2013240 are broadly consistent with where NH3 is discussed (around the grain boundary/gas interface section).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "(CN)2",
+      "molecular_formula": "C2N2",
+      "ontology": {
+        "role": "probe gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Caused similar conductivity effect to NH3 on AgCl films.",
+      "prov": [
+        "Figure 68"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "Figure 68 explicitly discusses a \u201cconductivity effect of the (CN)2 contact phase at room temperature\u201d and the text states \u201cthe same effect is also observed with (CN)2 (INC - CNI) (Fig. 68).\u201d However, neither Fig. 68 nor the surrounding text provides any quantitative amount/concentration/pressure of (CN)2. Therefore the chemical identity (CN)2 is supported and the statement that the amount is not specified is also supported.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "microstructure observation",
+          "value": "non-blocking versus blocking arrangements in AgCl:Al2O3 composites",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Particle distribution influences conductivity pathways.",
+      "prov": [
+        "Figure 14"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.78,
+        "reasoning": "Figure 14 explicitly discusses SEM (and optical micrograph) observations of AgCl:Al2O3 composites and contrasts \u201cnonblocking\u201d vs \u201cblocking\u201d regions/arrangements (left vs right in the SEM), i.e., different microstructural arrangements that correspond to non-blocking versus blocking behavior. This matches the extracted statement about microstructure observation of non-blocking versus blocking arrangements in AgCl:Al2O3 composites.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Contact angle measurement",
+      "parameters": {
+        "temperature": {
+          "value": null,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "contact angle on \u03b1-Al2O3 basal plane",
+          "value": 45,
+          "unit": "\u00b0"
+        },
+        {
+          "metric": "contact angle on \u03b1-Al2O3 prism plane",
+          "value": 90,
+          "unit": "\u00b0"
+        }
+      ],
+      "interpretation": "Indicates stronger interaction (wetting) on basal plane compared to prism plane.",
+      "prov": [
+        "Figures 30 and 31"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Supported. The paper explicitly reports wetting (contact) angles for solidified AgCl melt on specific crystallographic planes of \u03b1-Al2O3. In the text near Figs. 30 and 31 it states: basal plane contact angle is ~45\u00b0 and prism plane contact angle is ~90\u00b0. Figures 30 and 31 captions also show \u201cwetting angle: = 45\u00b0\u201d for the basal plane and \u201cwetting angle: = 90\u00b0\u201d for the prism plane. These match the extracted values.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "cell_constant": {
+          "value": 0.306,
+          "unit": "cm\u207b\u00b9"
+        },
+        "temperature": {
+          "value": 298,
+          "unit": "K",
+          "notes": "25 \u00b0C"
+        }
+      },
+      "results": [
+        {
+          "metric": "Nyquist plot shows two semicircles",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "High-frequency semicircle attributed to interfacial fast paths, low-frequency to blocking effects.",
+      "prov": [
+        "Figure 15"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Figure 15 (impedance spectroscopy of Ag/AgCl:Al2O3/Ag at 25\u00b0C) is described in the text as showing a high-frequency branch and low-frequency blocking effects. The text explicitly states that in the quasi-parallel-switching regime there is a high-frequency semicircle, and that with blocking effects \u201cthe second semicircle increases\u2026 In the proper blocking regime mostly one depressed large semicircle remains.\u201d This supports the statement that the Nyquist(-type) impedance plot shows two semicircles (under conditions where blocking effects are present).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Conductivity measurement",
+        "results": [
+          {
+            "equation": "",
+            "value": 50,
+            "unit": "\u00d7",
+            "notes": "Maximum conductivity increase of LiI with Al2O3 relative to pure LiI."
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.38,
+          "reasoning": "The extracted value for \u201cAnalysis Method\u201d is blank, but the paper explicitly describes multiple analysis/measurement methods (e.g., impedance spectroscopy, Wagner\u2013Hebb polarization, wetting angle measurements, microstructure via optical/scanning electron microscopy, EDX/Auger maps, X-ray methods, etc.). Therefore a blank/empty value is not supported by the source text.",
+          "suggested_fix": "Populate \u201cAnalysis Method\u201d with methods explicitly mentioned in the paper, e.g.: \u201cImpedance spectroscopy\u201d (frequently used throughout, e.g., Sec. 2.3.2, 2.6, 4), and depending on the intended context also: \u201cWagner\u2013Hebb polarization\u201d, \u201cwetting angle (contact angle) measurements\u201d, \u201coptical/SEM micrographs\u201d, \u201cEDX and Auger mapping\u201d, \u201cX-ray methods\u201d."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-21T16:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

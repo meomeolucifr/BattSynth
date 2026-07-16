@@ -1,0 +1,407 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Structural, conductivity and dielectric properties of Li2SO4",
+    "doi": "10.1051/epjap/2014130433",
+    "authors": [
+      "Samudrala Rama Rao",
+      "Chittari Bheema Lingam",
+      "Desapogu Rajesh",
+      "Raguru Pandu Vijayalakshmi",
+      "Channappayya Shamanna Sunandana"
+    ],
+    "journal": "European Physical Journal Applied Physics",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and characterization",
+    "tags": [
+      "Li2SO4",
+      "ionic conductivity",
+      "dielectric properties"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Lithium sulfate (anhydrous)",
+      "molecular_formula": "Li2SO4",
+      "intended_role": "product",
+      "prov": [
+        "Experimental section"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfate monohydrate",
+      "molecular_formula": "Li2SO4·H2O",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "98% purity, supplier: Loba-Chmi",
+      "prov": [
+        "Section 2.1 Synthesis"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium sulfate (anhydrous)",
+      "molecular_formula": "Li2SO4",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "obtained after melt cooling and grinding",
+      "prov": [
+        "Section 2.1 Synthesis"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Melting of lithium sulfate monohydrate",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "temperature": {
+              "value": 1153.15,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "notes": "rapid heating up to 880 °C followed by continuous heating for 3 h"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2.1 Synthesis"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Cooling of the melt to room temperature",
+        "operations": [
+          {
+            "action": "cool",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "slow furnace cooling to room temperature"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2.1 Synthesis"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Grinding of cooled ingot",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": [
+                "chem_2"
+              ]
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Section 2.1 Synthesis"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Rapid heating of Li2SO4·H2O to form melt"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Slow cooling to obtain crystalline Li2SO4"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Grinding of product powder for characterization"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing quantity of starting material",
+        "excerpt": "The raw material used in this experiment was 98% Li2SO4·H2O (Loba-chmi, Bombay, India)."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Co Kα",
+        "wavelength": "1.7889 Å"
+      },
+      "results": [
+        {
+          "metric": "crystal system",
+          "value": "monoclinic",
+          "unit": ""
+        },
+        {
+          "metric": "space group",
+          "value": "P21/c",
+          "unit": ""
+        },
+        {
+          "metric": "lattice parameter a",
+          "value": 8.45,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameter b",
+          "value": 4.95,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice parameter c",
+          "value": 8.21,
+          "unit": "Å"
+        },
+        {
+          "metric": "beta angle",
+          "value": 107.5,
+          "unit": "deg"
+        }
+      ],
+      "interpretation": "Confirms monoclinic β-Li2SO4 phase",
+      "prov": [
+        "Figure 1a",
+        "Table 1"
+      ]
+    },
+    {
+      "method": "FESEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "rod-like particles",
+          "unit": ""
+        },
+        {
+          "metric": "diameter",
+          "value": 100,
+          "unit": "nm"
+        },
+        {
+          "metric": "diameter_max",
+          "value": 130,
+          "unit": "nm"
+        },
+        {
+          "metric": "length",
+          "value": 2,
+          "unit": "µm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1c"
+      ]
+    },
+    {
+      "method": "EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "stoichiometry confirmation",
+          "value": "Li, S, O detected in near stoichiometric ratio",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1d"
+      ]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "excitation": "514.5 nm",
+        "temperature": "300 K"
+      },
+      "results": [
+        {
+          "metric": "ν1 band position",
+          "value": 1014,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "ν2 band positions",
+          "value": "514, 619",
+          "unit": "cm-1"
+        },
+        {
+          "metric": "ν3 band positions",
+          "value": "1130, 1147, 1194",
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Bands correspond to SO4 group vibrations",
+      "prov": [
+        "Figure 3a"
+      ]
+    },
+    {
+      "method": "DSC",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "endotherm 1",
+          "value": 438.15,
+          "unit": "K"
+        },
+        {
+          "metric": "endotherm 2",
+          "value": 843.15,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "First endotherm due to dehydration; second due to monoclinic-to-cubic phase transition",
+      "prov": [
+        "Figure 3b"
+      ]
+    },
+    {
+      "method": "AC conductivity",
+      "parameters": {
+        "frequency_range": "100 Hz–120 kHz",
+        "temperature_range": "443–523 K"
+      },
+      "results": [
+        {
+          "metric": "σ_DC at 473 K",
+          "value": 2e-7,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "σ_DC at 523 K",
+          "value": 2e-6,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy",
+          "value": 1.10,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Li+ ion conduction dominant",
+      "prov": [
+        "Figure 4a",
+        "Figure 4b"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis of conductivity",
+        "results": [
+          {
+            "equation": "σ = σ0 exp(-E/kT)",
+            "value": 1.10,
+            "unit": "eV"
+          }
+        ]
+      },
+      {
+        "method_name": "DFT (GGA-G06)",
+        "results": [
+          {
+            "metric": "band gap",
+            "value": 6.15,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-01T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

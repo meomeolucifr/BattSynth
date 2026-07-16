@@ -1,0 +1,810 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Unveiling the Stable Nature of the Solid Electrolyte Interphase between Lithium Metal and LiPON via Cryogenic Electron Microscopy",
+    "doi": "10.1016/j.joule.2020.08.013",
+    "authors": [
+      "Diyi Cheng",
+      "Thomas A. Wynn",
+      "Xuefeng Wang",
+      "Shen Wang",
+      "Minghao Zhang",
+      "Ryosuke Shimizu",
+      "Shuang Bai",
+      "Han Nguyen",
+      "Chengcheng Fang",
+      "Min-cheol Kim",
+      "Weikang Li",
+      "Bingyu Lu",
+      "Suk Jun Kim",
+      "Ying Shirley Meng"
+    ],
+    "journal": "Joule",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": [
+      "solid-state battery",
+      "LiPON",
+      "thin film",
+      "interface"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiPON thin film",
+      "molecular_formula": "",
+      "intended_role": "solid_electrolyte",
+      "prov": [
+        "Sample Preparation (Page 2496)"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The extracted value for “Target Formula” is blank, but the paper clearly specifies target materials/formulas used in sample preparation: it states LiPON was RF-sputtered using a crystalline Li3PO4 target (“using a crystalline Li3PO4 target...”). Therefore a non-empty target formula is explicitly provided in the source text, so a blank extraction is not supported.",
+        "suggested_fix": "Li3PO4"
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li/LiPON/LNMO thin-film full cell",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": [
+        "Sample Preparation (Pages 2495-2496)"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The extracted value for \"Target Formula\" is blank, but the paper explicitly specifies relevant chemical formulas multiple times (e.g., the solid electrolyte is lithium phosphorus oxynitride, LiPON; the sputtering target is crystalline Li3PO4; and interphase components include Li2O, Li3N, Li3PO4). Therefore, leaving the field empty is not supported by the document text.",
+        "suggested_fix": "If \"Target Formula\" refers to the target material (sputtering target): Li3PO4. If it refers to the solid electrolyte studied: LiPON (lithium phosphorus oxynitride)."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li3PO4 (sputtering target)",
+      "molecular_formula": "Li3PO4",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2-inch diameter crystalline target (ambiguous unit in text)",
+      "prov": [
+        "Sample Preparation (Page 2496)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "In the Sample Preparation section, the paper explicitly states: \"LiPON thin film was deposited ... by radio-frequency (RF) sputtering using a crystalline Li3PO4 target (200 in diameter, from Plasmaterials, Inc.)\" confirming Li3PO4 as the sputtering target. The text does not specify an amount/mass of the Li3PO4 target used (only its diameter), so the extracted note \"Amount: Not specified in text\" is also correct per the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Nitrogen gas (UHP)",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "sputtering_gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": 15,
+        "unit": "mTorr"
+      },
+      "notes": "process pressure during RF sputtering",
+      "prov": [
+        "Sample Preparation (Page 2496)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper’s Sample Preparation section states LiPON was RF sputtered “in UHP nitrogen atmosphere” and that deposition used “nitrogen gas pressure of 15 mTorr.” This supports the extracted chemical identity (nitrogen gas, UHP) and amount/pressure (15 mTorr).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode_material",
+        "category": "metal"
+      },
+      "amount": {
+        "value": 1.5,
+        "unit": "µm"
+      },
+      "notes": "thickness for interface sample; other thicknesses (100 nm, 570 nm) also used (see ambiguities)",
+      "prov": [
+        "Results (Page 2486)",
+        "Sample Preparation (Page 2496)"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The document clearly identifies the chemical as lithium metal, but the extracted amount \"1.5 µm\" is not supported. In the Results section it states: \"1.5-mm lithium metal deposited on a LiPON thin film\" (page 2487), i.e., 1.5 mm, not 1.5 µm. In Sample Preparation it also reports lithium metal anode thickness values of 570 nm (full cell) and 100 nm (XPS sample), none of which are 1.5 µm. Thus the amount appears to be a unit error (mm misread as µm).",
+        "suggested_fix": "Lithium metal | Amount: 1.5 mm (as stated: \"1.5-mm lithium metal deposited on a LiPON thin film\")."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiNi0.5Mn1.5O4 (LNMO)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "cathode_material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 650,
+        "unit": "nm"
+      },
+      "notes": "film thickness by PLD",
+      "prov": [
+        "Sample Preparation (Page 2496)"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.87,
+        "reasoning": "The paper does mention the chemical identity LiNi0.5Mn1.5O4 (LNMO) as the cathode material. However, the extracted “Amount: 650 nm” is not an amount of LNMO; it is explicitly the LNMO film thickness (“LNMO film had a thickness of 650 nm”) in the Sample Preparation section. Thus, the field label “Chemical Identity and Amount” is mismatched: the only 650 nm value refers to thickness, not a quantity/amount of LNMO (e.g., mass, moles, wt%).",
+        "suggested_fix": "Either (a) keep chemical identity as “LiNi0.5Mn1.5O4 (LNMO)” and set Amount to “Not specified” (if Amount is meant as quantity like mass/loading), or (b) change the field to “Thickness” (or “Film thickness”) with value “650 nm” for the LNMO cathode film."
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Platinum (substrate layer)",
+      "molecular_formula": "Pt",
+      "ontology": {
+        "role": "substrate_coating",
+        "category": "metal"
+      },
+      "amount": {
+        "value": 100,
+        "unit": "nm"
+      },
+      "notes": "Pt layer on alumina substrate for cathode",
+      "prov": [
+        "Sample Preparation (Page 2496)"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper mentions platinum in the substrate stack (\"Pt/Cr/SiO2/Si substrate\") and separately mentions a \"Pt-coated (100-nm thick)\" alumina substrate for cathode deposition, but it does not state a \"Platinum (substrate layer)\" thickness of 100 nm for the Pt/Cr/SiO2/Si substrate. The only explicit 100 nm Pt thickness refers to the Pt-coated alumina substrate used for LNMO deposition, not the LiPON substrate layer in general. Therefore the extracted pairing \"Platinum (substrate layer) | Amount: 100 nm\" is not explicitly supported as written.",
+        "suggested_fix": "If the intent is the cathode current collector/substrate: \"Pt-coated alumina substrate | Pt thickness: 100 nm\". If the intent is the LiPON deposition substrate: \"Pt/Cr/SiO2/Si substrate\" (Pt thickness not specified)."
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "LiPF6",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte_salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "in EC:EMC (3:7 wt%) for liquid cell comparison",
+      "prov": [
+        "Liquid Cell Fabrication (Page 2496)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The full text under the section “Liquid Cell Fabrication” explicitly states: “50 mL electrolyte (1M LiPF6 in EC:EMC = 3:7 wt %).” This directly supports the extracted chemical identity LiPF6 and the amount/concentration 1 M. The alleged provenance page number appears off (it is on the Liquid Cell Fabrication section around page 2496–2497), but the value is clearly present in the provided text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Ethylene carbonate (EC)",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic_solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of liquid electrolyte (3:7 wt% EC:EMC)",
+      "prov": [
+        "Liquid Cell Fabrication (Page 2496)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.85,
+        "reasoning": "The paper’s “Liquid Cell Fabrication” section specifies an electrolyte of “1M LiPF6 in EC:EMC = 3:7 wt %,” which explicitly includes ethylene carbonate (EC). However, the requested “Amount” for EC alone is not given as an absolute quantity; only the overall electrolyte volume (50 mL) and EC:EMC weight ratio are provided, not the mass/volume of EC by itself. Thus, the identification of EC is supported and the statement that the EC amount is not specified (as a standalone amount) is consistent with the text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Ethyl methyl carbonate (EMC)",
+      "molecular_formula": "C4H8O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic_solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "part of liquid electrolyte (3:7 wt% EC:EMC)",
+      "prov": [
+        "Liquid Cell Fabrication (Page 2496)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "In the “Liquid Cell Fabrication” section (page 2496), the electrolyte is explicitly described as “1M LiPF6 in EC:EMC = 3:7 wt %”. This confirms the chemical identity includes ethyl methyl carbonate (EMC). The text does not provide a separate quantity for EMC itself (only the solvent ratio and total electrolyte volume of 50 mL are given), so “Amount: Not specified in text” for EMC is correct under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "RF sputter deposition of LiPON thin film",
+        "operations": [
+          {
+            "action": "sputter_deposit",
+            "parameters": {
+              "target": "chem_1",
+              "substrate": "Pt/Cr/SiO2/Si",
+              "gas": "chem_2",
+              "power": {
+                "value": 50,
+                "unit": "W"
+              },
+              "pressure": {
+                "value": 0.015,
+                "unit": "bar",
+                "notes": "15 mTorr"
+              },
+              "base_pressure": {
+                "value": 3e-06,
+                "unit": "Torr"
+              },
+              "growth_rate": {
+                "value": 0.46,
+                "unit": "Å min-1"
+              },
+              "thickness": {
+                "value": 1,
+                "unit": "µm"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "prov": [
+              "Sample Preparation (Page 2496)"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly states that LiPON thin film was deposited by radio-frequency (RF) sputtering (“LiPON thin film was deposited… by radio-frequency (RF) sputtering…”) in the Sample Preparation section. This supports the synthesis operation being a sputter deposition process. (Note: lithium metal was deposited by thermal evaporation, but the LiPON synthesis step is sputtering.)",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": 0.015,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.93,
+            "reasoning": "The paper explicitly states in the Sample Preparation section that LiPON was deposited by RF sputtering in an \"UHP nitrogen atmosphere,\" i.e., N2. This supports the extracted synthesis atmosphere value.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Sample Preparation (Page 2496)"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Transfer LiPON-coated substrate to thermal evaporation chamber with environment isolation",
+        "operations": [
+          {
+            "action": "transfer",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "minimized air exposure",
+            "prov": [
+              "Sample Preparation (Page 2496)"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.93,
+              "reasoning": "The paper explicitly discusses sample preparation including “sample preparation, transfer, and imaging” and states: “we have applied a method of transferring a lamella from the bulk sample to the FIB grid…” (Results section, interface sample preparation). It also describes that “The TEM sample was transferred into the TEM column…” and later outlines transfer steps in Experimental Procedures. Thus, a synthesis/sample-preparation operation of “transfer” is directly supported by the text (though it is transfer of the prepared lamella/sample, not a chemical synthesis step).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Sample Preparation (Page 2496)"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Thermal evaporation of lithium metal onto LiPON",
+        "operations": [
+          {
+            "action": "evaporate",
+            "parameters": {
+              "material": "chem_3",
+              "base_pressure": {
+                "value": 3e-08,
+                "unit": "Torr"
+              },
+              "growth_rate": {
+                "value": 1.53,
+                "unit": "Å s-1"
+              },
+              "thickness": {
+                "value": 1.5,
+                "unit": "µm"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "",
+            "prov": [
+              "Results (Page 2486)",
+              "Sample Preparation (Page 2496)"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.74,
+              "reasoning": "The paper explicitly uses the term “evaporated”/“evaporated on” to describe the lithium metal deposition step, which corresponds to an evaporation operation. Examples: (1) Results section mentions “LiPON thin films exposed to evaporated lithium” and later XPS depth profiling was done on samples with “lithium metal evaporated on the top of the LiPON.” (2) Sample Preparation states “Lithium metal thin film was evaporated on LiPON in a high-vacuum chamber…”. Thus “evaporate” is supported as a synthesis/deposition operation (specifically thermal evaporation of Li).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "high vacuum",
+          "pressure": {
+            "value": 3e-08,
+            "unit": "Torr"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.92,
+            "reasoning": "The paper explicitly states that lithium metal thin film was evaporated on LiPON in a “high-vacuum chamber with a base pressure lower than 3 × 10−8 Torr” (Experimental Procedures: Sample Preparation, Page 14). This supports the extracted synthesis atmosphere as high vacuum (indeed ultra-high vacuum by pressure).",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Sample Preparation (Page 2496)"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Pulsed-laser deposition (PLD) of LNMO cathode film",
+        "operations": [
+          {
+            "action": "pulsed_laser_deposit",
+            "parameters": {
+              "material": "chem_4",
+              "laser_fluence": {
+                "value": 2,
+                "unit": "J cm-2"
+              },
+              "repetition_rate": {
+                "value": 10,
+                "unit": "Hz"
+              },
+              "substrate_temperature": {
+                "value": 873,
+                "unit": "K",
+                "notes": "600 °C"
+              },
+              "oxygen_partial_pressure": {
+                "value": 0.2,
+                "unit": "Torr"
+              },
+              "thickness": {
+                "value": 650,
+                "unit": "nm"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": [
+              "Sample Preparation (Page 2496)"
+            ],
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.92,
+              "reasoning": "The paper’s Sample Preparation section (p. 2495–2496) states LiPON was deposited by RF sputtering and lithium metal by thermal evaporation. Pulsed laser deposition (PLD) is mentioned only for depositing the LNMO cathode (“LNMO cathode was first deposited… by pulsed laser deposition (PLD)…”), not as the overall synthesis operation for the LiPON/Li interface sample. Therefore, labeling the Synthesis Operation as pulsed_laser_deposit is not supported for the main material/system under study.",
+              "suggested_fix": "RF sputtering (for LiPON) and thermal evaporation (for Li metal). If the field refers specifically to LNMO cathode synthesis: pulsed laser deposition (PLD)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "O2",
+          "pressure": {
+            "value": 0.2,
+            "unit": "Torr"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.88,
+            "reasoning": "The paper does not state that the synthesis/deposition atmosphere was O2. Instead, it explicitly says LiPON thin film was deposited by RF sputtering in an ultra-high-purity (UHP) nitrogen atmosphere (Sample Preparation section). Oxygen is only mentioned as a partial pressure during LNMO cathode deposition (0.2 Torr) and in contexts of oxidation/oxygen contamination, not as the LiPON synthesis atmosphere.",
+            "suggested_fix": "UHP nitrogen (N2) atmosphere (for LiPON RF sputtering)."
+          }
+        },
+        "prov": [
+          "Sample Preparation (Page 2496)"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Assembly of Li/LiPON/LNMO thin-film full cell",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "anode": "chem_3",
+              "electrolyte": "target_1",
+              "cathode": "chem_4"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Li metal thickness 570 nm for full cell",
+            "prov": [
+              "Sample Preparation (Page 2496)",
+              "Electrochemical Measurement (Page 2496)"
+            ],
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.78,
+              "reasoning": "The paper’s “Sample Preparation” and “Electrochemical Measurement” sections (around p. 2496) describe deposition (RF sputtering, thermal evaporation), cell fabrication, cycling conditions, and cryo-FIB/TEM preparation/transfer. Nowhere in the provided full text does it explicitly state a synthesis operation as “assemble” (or “assembly/assembled” as an operation step). The provenance pages discuss preparation and measurement but do not use the term “assemble” for the synthesis operation.",
+              "suggested_fix": "Not specified (no explicit synthesis operation labeled as “assemble” in the text)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "inert",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.78,
+            "reasoning": "The paper explicitly states that LiPON thin film was deposited by RF sputtering “in UHP nitrogen atmosphere” (Sample Preparation section, Page 14). This indicates an inert/protective atmosphere (nitrogen) used during synthesis/deposition, supporting the extracted value “inert.”",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Sample Preparation (Page 2496)"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "LiPON film deposition via RF sputtering",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The paper explicitly states in the Experimental Procedures (Sample Preparation) that “LiPON thin film was deposited … by radio-frequency (RF) sputtering…”. This directly supports the extracted workflow step “LiPON film deposition via RF sputtering.”",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Isolated transfer to evaporation chamber",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper discusses transfers between sputtering chamber and thermal evaporation chamber, and transfers of TEM lamella/sample into FIB grid and TEM column, but it never explicitly states a workflow step described as “Isolated transfer to evaporation chamber.” The closest wording is that the LiPON film was transferred with environmental isolation from the sputtering chamber to the thermal evaporation chamber to minimize air exposure; however, “isolated transfer” as a named timeline step is not present.",
+          "suggested_fix": "Transferred with environmental isolation from the sputtering chamber to the thermal evaporation chamber (to minimize air exposure)"
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Lithium metal film evaporation",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.83,
+          "reasoning": "The paper explicitly describes lithium metal film deposition by thermal evaporation as part of sample preparation: “Lithium metal thin film was evaporated on LiPON...” and also references “100-nm-thick lithium metal evaporated on the top of the LiPON” (Sample Preparation / XPS depth profiling sections). This supports the workflow step of lithium metal film evaporation.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "LNMO cathode film deposition",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.65,
+          "reasoning": "The document discusses an ASSB thin-film battery using an LNMO cathode and provides deposition details for LiPON (RF sputtering) and lithium metal (thermal evaporation). It also states that for full cell fabrication the LNMO cathode was deposited by pulsed laser deposition (PLD) (Sample Preparation section). However, the exact phrase/value \"Workflow Timeline: LNMO cathode film deposition\" is not presented as a workflow timeline item, and the extraction is incomplete/ambiguous because it does not specify that LNMO deposition was by PLD nor provide timing/order explicitly as a 'timeline'.",
+          "suggested_fix": "If this field is meant to capture the cathode deposition step: \"LNMO cathode film deposited by pulsed laser deposition (PLD) on Pt-coated alumina substrate (Sample Preparation).\" If it's meant to capture an ordered workflow: \"LNMO deposited by PLD, then LiPON deposited by RF sputtering, then Li metal deposited by thermal evaporation.\""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Full cell assembly",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.62,
+          "reasoning": "The paper describes full cell electrochemical testing and explicitly states the thin film battery consists of an LNMO cathode, LiPON solid electrolyte, and Li metal anode, and later provides full cell fabrication procedures. However, the extracted value is a timeline/workflow step label (“Full cell assembly”), and the text does not explicitly present a workflow timeline entry with that wording. It discusses fabrication but not as a named timeline milestone.",
+          "suggested_fix": "If the field expects a workflow step, use wording supported by the text, e.g., “Thin film full cell fabrication (LNMO/LiPON/Li metal)” or “Full cell fabrication/assembly: LNMO cathode + LiPON electrolyte + Li metal anode (deposited sequentially).”"
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear diameter unit for Li3PO4 target",
+        "excerpt": "\"200in diameter\" from Sample Preparation",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.82,
+          "reasoning": "The source text explicitly contains the phrase in the Sample Preparation section: \"using a crystalline Li3PO4 target (200 in diameter, from Plasmaterials, Inc.)\". The unit is written as \"in\" without clarification (and in context it is ambiguous/likely erroneous, e.g., could be inches vs mm), so flagging a workflow ambiguity about the diameter unit is supported by the document text. The excerpt is accurately quoted (aside from spacing).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Temperature notation",
+        "excerpt": "\"600/C14C\" in PLD conditions",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.92,
+          "reasoning": "The full text specifies the PLD substrate temperature as “600°C” (see Sample Preparation: “During deposition, substrate temperature was 600°C”). The excerpted ambiguous notation “600/C14C” does not appear anywhere in the provided document text, so this specific temperature-notation issue is not directly supported by the source.",
+          "suggested_fix": "Replace the excerpt with the actual temperature notation used in the paper: “substrate temperature was 600°C” (PLD conditions for LNMO)."
+        }
+      },
+      {
+        "issue": "Multiple lithium film thickness values (100 nm, 570 nm, 1.5 µm)",
+        "excerpt": "Results and Sample Preparation sections list differing Li thicknesses",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The full text explicitly contains multiple lithium film thickness values in different contexts: (1) Results/sample prep for cryo-FIB lamella: “1.5-mm lithium metal deposited on a LiPON thin film” (Page 5, Fig. 1C description). (2) XPS depth profiling sample: “100-nm-thick lithium metal evaporated” (Page 9). (3) Full-cell fabrication in Experimental Procedures: “The thickness of lithium metal anode was 570 nm” (Page 14). These differing thicknesses can create workflow ambiguity if treated as a single consistent parameter, and they indeed occur across Results/Sample Preparation/Methods.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {
+        "voltage_window": "3.5–5.1 V",
+        "rate_initial": "C/10",
+        "rate_rest": "5C",
+        "cycles": 535
+      },
+      "results": [
+        {
+          "metric": "Coulombic efficiency",
+          "value": 99.85,
+          "unit": "%",
+          "notes": "after 400 cycles"
+        },
+        {
+          "metric": "Coulombic efficiency",
+          "value": 99.7,
+          "unit": "%",
+          "notes": "after 100 cycles"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1A-B (Page 2486-2487)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The text on Page 4 (Results section) explicitly states: “Figure 1B displays the Coulombic efficiency (CE) change as cycling proceeded, where the CE was stabilized beyond 99.70% after 100 cycles and 99.85% after 400 cycles...” This directly supports both extracted Coulombic efficiency values and the associated cycle counts. Provenance pointing to Figure 1A-B is consistent with this description (though the explicit numbers appear in the main text).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cryo-TEM/HRTEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Interphase thickness",
+          "value": 76,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Multilayer-mosaic SEI with Li2O, Li3N, Li3PO4 nanocrystals in amorphous matrix",
+      "prov": [
+        "Figures 2A-K (Pages 2488-2489)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states the Li/LiPON interphase width/thickness is ~76 nm. In the STEM-EDS section it says: \"Based on the concentration gradient in Figure S5, the width of Li/LiPON interphase region was about 76 nm.\" Later, summarizing cryo-TEM/EDS: \"the width of Li/LiPON interphase was about 76 nm\" and \"interphase with an average thickness of 76.4 nm\" (Figure 2K). Thus an interphase thickness of 76 nm (nm units) is supported by the text and associated with the Figure 2 analysis (even though the alleged provenance cites Figures 2A–K pages 2488–2489, the statement also appears in the main text around those figures).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cryo-STEM-EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "P and N concentration gradients observed",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 1D-G (Pages 2486-2488)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper’s cryo-STEM-EDS results explicitly report concentration gradients of phosphorus (P) and nitrogen (N) across the Li/LiPON interphase. In the section “Concentration Gradient across the Li/LiPON Interface” describing Figure 1D–G, it states that P and N are observed in the lithium metal region and that an EDS line scan shows both P and N increase across the interphase (with N extending deeper than P), i.e., clear concentration gradients. Since the extracted value’s 'value' is None (no numeric value specified) and the source provides only qualitative observation (no explicit gradient magnitude), recording the metric without a numeric value is appropriate.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cryo-STEM-EELS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Presence of Li2O, Li3N, Li3PO4 signatures",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 3A-C (Pages 2490-2491)"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper’s cryo-STEM-EELS section (Figure 3A–C; pp. 2490–2491) does discuss EELS spectra across the interphase and compares them to simulated spectra of Li2O and Li3PO4 (and Li3P, LiPON). Elsewhere, cryo-(HR)TEM/FFT and the conclusion explicitly identify SEI components including Li2O, Li3N, and Li3PO4 at the interphase. Therefore, the document does contain explicit signatures/identification of Li2O, Li3N, and Li3PO4 rather than omitting them. The extracted value of None is not supported.",
+        "suggested_fix": "[{'metric':'Presence of Li2O, Li3N, Li3PO4 signatures','value':'Yes','unit':''}]"
+      }
+    },
+    {
+      "method": "XPS depth profiling",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Sequential appearance of Li2O, Li3N, Li3PO4 signals",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms multilayer structure",
+      "prov": [
+        "Figure 4 (Page 2491)"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "Figure 4/XPS depth profiling section explicitly reports a sequential emergence of species/signals during etching: initially only O 1s and Li 1s (surface Li2CO3 and interphase Li2O), then N 1s appears and is assigned to Li3N, and later P 2p emerges and is attributed mainly to phosphate groups (consistent with Li3PO4). The extracted entry sets value=None, but the document does specify this sequential appearance, so 'None' is not supported.",
+        "suggested_fix": "Set value to a statement reflecting the sequential emergence during XPS depth profiling, e.g., 'O 1s/Li 1s (Li2O) detected first; N 1s (Li3N) appears at etching depth ~54; P 2p (phosphate/Li3PO4) appears at etching depth ~138, indicating sequential O-, N-, then P-containing species.'"
+      }
+    },
+    {
+      "method": "Cryo-XRD",
+      "parameters": {
+        "temperature": {
+          "value": 100,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "LiPON phase",
+          "value": "amorphous",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure S4 (supplementary reference)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The main text explicitly states: “the amorphous phase of LiPON at cryogenic temperature was confirmed by cryo-XRD, as shown in Figure S4” (page 5). This directly supports the extracted metric that the LiPON phase is amorphous, and it matches the alleged provenance to Figure S4.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 10000,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.9,
+      "reasoning": "The paper explicitly states that an all-solid-state thin film battery using LiPON achieved \"a capacity retention of 90% over 10,000 cycles\" (Page 3). This directly supports a cycle life value of 10000 cycles (as a demonstrated cycling duration).",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-30T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

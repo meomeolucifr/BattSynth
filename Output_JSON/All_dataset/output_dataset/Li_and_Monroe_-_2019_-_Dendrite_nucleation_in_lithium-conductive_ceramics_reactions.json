@@ -1,0 +1,392 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Dendrite nucleation in lithium-conductive ceramics",
+    "doi": "10.1039/c9cp03884a",
+    "authors": [
+      "Guanchen Li",
+      "Charles W. Monroe"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid-state battery",
+      "LLZO",
+      "dendrite nucleation",
+      "electrochemistry"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Page 20354"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page 20354"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page 20355"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Assembly of planar Li|LLZO|Li cell and heating near Li melting temperature to lower interfacial impedance.",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "temperature": {
+              "value": 453,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Heated near lithium melting point (180 °C) as stated."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 20354"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Planar cell assembly and thermal treatment."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "capacitance": {
+          "value": 10,
+          "unit": "µF cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "Temperature",
+          "value": 303,
+          "unit": "K"
+        },
+        {
+          "metric": "Critical current density (experiment)",
+          "value": 0.5,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Critical current density (model)",
+          "value": 0.32,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Ionic conductivity",
+          "value": 0.4,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Interfacial resistance",
+          "value": 514,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "Characteristic interfacial frequency",
+          "value": 0.03,
+          "unit": "kHz"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "capacitance": {
+          "value": 10,
+          "unit": "µF cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "Temperature",
+          "value": 343,
+          "unit": "K"
+        },
+        {
+          "metric": "Critical current density (experiment)",
+          "value": 2,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Critical current density (model)",
+          "value": 2.04,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Ionic conductivity",
+          "value": 1.2,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Interfacial resistance",
+          "value": 80,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "Characteristic interfacial frequency",
+          "value": 0.20,
+          "unit": "kHz"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "capacitance": {
+          "value": 10,
+          "unit": "µF cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "Temperature",
+          "value": 373,
+          "unit": "K"
+        },
+        {
+          "metric": "Critical current density (experiment)",
+          "value": 8,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Critical current density (model)",
+          "value": 10.87,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Ionic conductivity",
+          "value": 2.4,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Interfacial resistance",
+          "value": 15,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "Characteristic interfacial frequency",
+          "value": 1.06,
+          "unit": "kHz"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "capacitance": {
+          "value": 10,
+          "unit": "µF cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "Temperature",
+          "value": 403,
+          "unit": "K"
+        },
+        {
+          "metric": "Critical current density (experiment)",
+          "value": 35,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Critical current density (model)",
+          "value": 46.57,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Ionic conductivity",
+          "value": 4.3,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Interfacial resistance",
+          "value": 3.5,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "Characteristic interfacial frequency",
+          "value": 4.55,
+          "unit": "kHz"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "method": "Impedance spectroscopy",
+      "parameters": {
+        "capacitance": {
+          "value": 10,
+          "unit": "µF cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "Temperature",
+          "value": 433,
+          "unit": "K"
+        },
+        {
+          "metric": "Critical current density (experiment)",
+          "value": 200,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Critical current density (model)",
+          "value": 181.09,
+          "unit": "A m-2"
+        },
+        {
+          "metric": "Ionic conductivity",
+          "value": 7.0,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "Interfacial resistance",
+          "value": 0.9,
+          "unit": "Ω cm2"
+        },
+        {
+          "metric": "Characteristic interfacial frequency",
+          "value": 17.68,
+          "unit": "kHz"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical model (Eqn 5)",
+        "results": [
+          {
+            "equation": "ic = 2π fint √(6 ε |Dpc|)",
+            "value": -0.01,
+            "unit": "bar",
+            "description": "Critical interfacial pressure Dpc obtained by least-squares fit (negative sign indicates tensile relative to bulk)."
+          }
+        ],
+        "prov": [
+          "Page 20357"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

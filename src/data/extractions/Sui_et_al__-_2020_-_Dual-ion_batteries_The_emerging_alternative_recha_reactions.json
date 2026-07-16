@@ -1,0 +1,296 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Dual-ion batteries: The emerging alternative rechargeable batteries",
+    "doi": "10.1016/j.ensm.2019.11.003",
+    "authors": ["Yiming Sui","Chaofeng Liu","Robert C. Masse","Zachary G. Neale","Muhammad Atif","Mohamad AlSalhi","Guozhong Cao"],
+    "journal": "Energy Storage Materials",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review_article",
+    "tags": ["dual-ion batteries","graphite cathode","electrolyte formulation"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Electrochemically generated nanoflake graphite (EGN)",
+      "molecular_formula": "",
+      "intended_role": "positive electrode material",
+      "prov": ["Page 9, Fig. 14d-f"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Surface-modified graphite (SMG) with SEI layer",
+      "molecular_formula": "",
+      "intended_role": "positive electrode material",
+      "prov": ["Page 12, Fig. 16a-d"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Calcium chloride",
+      "molecular_formula": "CaCl2",
+      "ontology": {
+        "role": "molten_salt_electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in molten state for cathodic polarization at 1100 K",
+      "prov": ["Page 9, description of EGN synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Amorphous carbon",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "carbon_material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 9, description of EGN synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte_salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Concentration in EMS solvent during SEI formation",
+      "prov": ["Page 12, Fig. 16a"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Ethyl methyl sulfone",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Solvent for LiPF6 during SEI formation",
+      "prov": ["Page 12, Fig. 16a"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon_material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Electrochemical generation of nanoflake graphite (EGN)",
+        "operations": [
+          {
+            "action": "electrochemical_polarization",
+            "parameters": {
+              "inputs": ["chem_2","chem_1"],
+              "temperature": {
+                "value": 1100,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Cathodic polarization of amorphous carbon in molten CaCl2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 9, description of EGN synthesis"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Formation of SEI layer on graphite positive electrode",
+        "operations": [
+          {
+            "action": "electrochemical_cycling",
+            "parameters": {
+              "inputs": ["chem_5","chem_3","chem_4"],
+              "current_density": {
+                "value": 100,
+                "unit": "mA g-1"
+              },
+              "potential_window": "0.3–2.0 V vs Li/Li+",
+              "cycles": 5
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Pre-charging/discharging to generate SEI"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 12, Fig. 16a-d"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesize nanoflake graphite (EGN) via molten-salt electrochemical method"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Generate protective SEI on graphite through controlled pre-cycling"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing polarization parameters for EGN synthesis",
+        "excerpt": "porous graphite with nano flake morphology ... synthesized through cathodic polarizing amorphous carbons in molten CaCl2 at 1100 K"
+      },
+      {
+        "issue": "Duration of SEI-forming cycling not specified",
+        "excerpt": "pre-charged/discharged at 100 mA g-1 for 5 cycles within potential range of 0.3 V –2.0 V"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "SEI thickness",
+          "value": 8,
+          "unit": "nm",
+          "notes": "Average thickness 8–10 nm"
+        }
+      ],
+      "interpretation": "Confirms uniform SEI layer on graphite surface",
+      "prov": ["Page 12, Fig. 16b"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Surface elements",
+          "value": "C 1s, O 1s, F 1s, Li 1s detected",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates formation of fluorine- and lithium-containing SEI compounds",
+      "prov": ["Page 12, Fig. 16c"]
+    },
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {
+        "current_density": {
+          "value": 200,
+          "unit": "mA g-1"
+        },
+        "upper_cutoff_voltage": "5 V vs Li/Li+",
+        "cycles": 500
+      },
+      "results": [
+        {
+          "metric": "Capacity retention",
+          "value": 96,
+          "unit": "%",
+          "notes": "Relative to initial capacity"
+        }
+      ],
+      "interpretation": "SEI-coated graphite shows enhanced stability",
+      "prov": ["Page 12, Fig. 16d"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic performance of EGN",
+        "results": [
+          {
+            "equation": "",
+            "value": 116,
+            "unit": "mAh g-1",
+            "notes": "Capacity at 1800 mA g-1 between 2.25–5 V"
+          },
+          {
+            "equation": "",
+            "value": 92,
+            "unit": "%",
+            "notes": "Capacity retention at 10 A g-1 (high-rate cycling)"
+          }
+        ],
+        "prov": ["Page 9, Fig. 14f"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 116,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 500
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-05T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

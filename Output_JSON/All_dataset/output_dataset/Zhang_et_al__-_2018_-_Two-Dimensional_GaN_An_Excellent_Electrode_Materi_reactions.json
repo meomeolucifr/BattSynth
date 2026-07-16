@@ -1,0 +1,282 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Two-Dimensional GaN: An Excellent Electrode Material Providing Fast Ion Diffusion and High Storage Capacity for Li-Ion and Na-Ion Batteries",
+    "doi": "10.1021/acsami.8b15139",
+    "authors": [
+      "Xiaoming Zhang",
+      "Lei Jin",
+      "Xuefang Dai",
+      "Guifeng Chen",
+      "Guodong Liu"
+    ],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["2D materials", "battery anode", "first-principles calculations"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "GaN monolayer",
+      "molecular_formula": "GaN",
+      "intended_role": "anode material",
+      "prov": ["Page 38978"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "GaN",
+      "molecular_formula": "GaN",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "monolayer, hydrogen-passivated",
+      "prov": ["Page 38978"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "adsorbate/ion",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 38979"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Na",
+      "molecular_formula": "Na",
+      "ontology": {
+        "role": "adsorbate/ion",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 38979"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "H",
+      "molecular_formula": "H",
+      "ontology": {
+        "role": "surface-passivation",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "hydrogen atoms passivating GaN surfaces",
+      "prov": ["Page 38979"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Formation-energy calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "formation energy difference (H-passivated vs unpassivated)",
+          "value": -0.91,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Hydrogen passivation stabilizes GaN monolayer.",
+      "prov": ["Page 38979"]
+    },
+    {
+      "method": "Adsorption energy calculation",
+      "parameters": {
+        "site": "T2"
+      },
+      "results": [
+        {
+          "metric": "Li adsorption energy",
+          "value": -0.46,
+          "unit": "eV"
+        },
+        {
+          "metric": "Na adsorption energy",
+          "value": -0.25,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Negative values indicate energetically favorable adsorption.",
+      "prov": ["Page 38979"]
+    },
+    {
+      "method": "Bader charge analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electron transfer per Li atom",
+          "value": 0.863,
+          "unit": "e"
+        },
+        {
+          "metric": "electron transfer per Na atom",
+          "value": 0.830,
+          "unit": "e"
+        }
+      ],
+      "interpretation": "Significant charge transfer from Li/Na to GaN.",
+      "prov": ["Table 1, Page 38980"]
+    },
+    {
+      "method": "Density of States (DOS)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electronic character after Li/Na adsorption",
+          "value": "metallic",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Semiconductor-to-metal transition upon adsorption.",
+      "prov": ["Figure 3, Page 38980"]
+    },
+    {
+      "method": "NEB diffusion barrier calculation",
+      "parameters": {
+        "path": "P2"
+      },
+      "results": [
+        {
+          "metric": "Li diffusion barrier",
+          "value": 0.079,
+          "unit": "eV"
+        },
+        {
+          "metric": "Na diffusion barrier",
+          "value": 0.022,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Extremely low barriers imply fast ion diffusion.",
+      "prov": ["Figure 4, Page 38980"]
+    },
+    {
+      "method": "Voltage profile calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "average OCV (Li)",
+          "value": 0.16,
+          "unit": "V"
+        },
+        {
+          "metric": "average OCV (Na)",
+          "value": 0.10,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Low voltages suitable for anode materials.",
+      "prov": ["Figure 5, Page 38981"]
+    },
+    {
+      "method": "Capacity calculation",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "maximum Li storage capacity",
+          "value": 938.1,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "maximum Na storage capacity",
+          "value": 625.4,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "High theoretical capacities compared to other 2D anodes.",
+      "prov": ["Figure 5, Page 38981"]
+    },
+    {
+      "method": "AIMD simulation",
+      "parameters": {
+        "temperature": 323,
+        "duration": 3,
+        "duration_unit": "ps"
+      },
+      "results": [
+        {
+          "metric": "structural stability after simulation",
+          "value": "retained",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Intercalated phases stable near room temperature.",
+      "prov": ["Figure 6, Page 38981"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Comparative performance analysis",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 938.1,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-06T19:16:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

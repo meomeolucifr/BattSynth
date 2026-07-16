@@ -1,0 +1,295 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Deconvoluting the impacts of the active material skeleton and the inactive phase morphology on the performance of lithium ion battery electrodes",
+    "doi": "10.1016/j.ensm.2022.02.016",
+    "authors": ["Mehdi Chouchane", "Alejandro A. Franco"],
+    "journal": "Energy Storage Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["Li-ion battery", "electrode modelling", "NMC111", "CBD morphology"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "High-porosity NMC111 electrode with CBD aggregates (HP agg)",
+      "molecular_formula": "",
+      "intended_role": "electrode model",
+      "prov": ["Page 650 (Fig.1, text)"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "High-porosity NMC111 electrode with CBD film (HP film)",
+      "molecular_formula": "",
+      "intended_role": "electrode model",
+      "prov": ["Page 650 (Fig.1, text)"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Low-porosity NMC111 electrode with CBD aggregates (LP agg)",
+      "molecular_formula": "",
+      "intended_role": "electrode model",
+      "prov": ["Page 650 (Fig.1, text)"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Low-porosity NMC111 electrode with CBD film (LP film)",
+      "molecular_formula": "",
+      "intended_role": "electrode model",
+      "prov": ["Page 650 (Fig.1, text)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi1/3Mn1/3Co1/3O2",
+      "molecular_formula": "LiNi0.33Mn0.33Co0.33O2",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Part of electrode with weight ratio 94 wt% vs CBD",
+      "prov": ["Page 649–650"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Carbon binder domains (CBD)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "inactive phase",
+        "category": "mixture"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "6 wt% of electrode; consists of carbon additives and binder, assumed 50% microporosity.",
+      "prov": ["Page 649–650"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used as anode in half-cell simulations.",
+      "prov": ["Page 650"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium ion",
+      "molecular_formula": "Li⁺",
+      "ontology": {
+        "role": "charge carrier",
+        "category": "ion"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Stochastic generation of NMC111 particle skeletons with defined porosities.",
+        "operations": [
+          {
+            "action": "generate_structure",
+            "parameters": {
+              "porosity_total": [
+                {"value": 33, "unit": "%", "notes": "High porosity (25% bulk + 8% CBD micropores)"},
+                {"value": 25, "unit": "%", "notes": "Low porosity (15% bulk + 10% CBD micropores)"}
+              ],
+              "dimension": {"value": [40, 40, 60], "unit": "µm", "notes": "Electrode size"}
+            },
+            "duration": {"value": null, "unit": "min"},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "Four skeletons generated: HP-1, HP-2, LP-1, LP-2 using in-house library.",
+            "prov": ["Page 650 (text, Fig.1a)"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 650"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Addition of carbon binder domains either as film or as aggregates using INNOV algorithm.",
+        "operations": [
+          {
+            "action": "add_inactive_phase",
+            "parameters": {
+              "CBD_morphology": ["film", "aggregate"],
+              "NMC:CBD_weight_ratio": {"value": [94, 6], "unit": "%"}
+            },
+            "duration": {"value": null, "unit": "min"},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "Each skeleton processed twice per morphology (e.g., HP-1 film-1/film-2).",
+            "prov": ["Page 650 (text, Fig.1b,c)"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 650"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Voxel-based meshing of the generated electrode mesostructures.",
+        "operations": [
+          {
+            "action": "mesh",
+            "parameters": {
+              "software": "INNOV",
+              "particle_identification": "individual"
+            },
+            "duration": {"value": null, "unit": "min"},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "",
+            "prov": ["Page 650"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 650"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "3-D electrochemical simulation of galvanostatic discharge.",
+        "operations": [
+          {
+            "action": "simulate_discharge",
+            "parameters": {
+              "current_rate": {"value": 3, "unit": "C"},
+              "model": "Newman-based 3-D, solved in COMSOL Multiphysics"
+            },
+            "duration": {"value": null, "unit": "min"},
+            "temperature": {"value": null, "unit": "K"},
+            "notes": "Half-cell vs Li; separator assumed homogeneous.",
+            "prov": ["Page 650–651"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": "bar"}
+        },
+        "prov": ["Page 650–651"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Generate NMC skeletons with desired porosity."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Introduce CBD as film or aggregates to create full electrode structures."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Mesh the multiphase electrode volumes for simulation."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Run 3-D galvanostatic discharge simulations at 3C."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Electrolyte composition not specified",
+        "excerpt": "homogeneous separator ... Li+ can migrate but not intercalate"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "GeoDict electronic conductivity calculation",
+      "parameters": {},
+      "results": [
+        {"metric": "effective electronic conductivity (HP agg)", "value": "1.27–3.78", "unit": "S m-1"},
+        {"metric": "effective electronic conductivity (LP agg)", "value": 7.08, "unit": "S m-1"},
+        {"metric": "effective electronic conductivity (LP film)", "value": 2.03, "unit": "S m-1"}
+      ],
+      "interpretation": "CBD aggregates provide better electronic pathways than film morphology, especially at high porosity.",
+      "prov": ["Page 651–652 (text)"]
+    },
+    {
+      "method": "TauFactor tortuosity analysis",
+      "parameters": {},
+      "results": [
+        {"metric": "qualitative trend", "value": "Higher τ_liq for low-porosity and film configurations", "unit": ""}
+      ],
+      "interpretation": "Film morphology and lower porosity hinder Li+ transport.",
+      "prov": ["Page 651–652 (text, Fig.3a)"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "3-D electrochemical simulation",
+        "results": [
+          {
+            "equation": "",
+            "value": "41–54",
+            "unit": "mAh g-1",
+            "notes": "Specific capacities for LP film electrodes at 3C; capacity values vary with NMC skeleton."
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-25T14:30:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

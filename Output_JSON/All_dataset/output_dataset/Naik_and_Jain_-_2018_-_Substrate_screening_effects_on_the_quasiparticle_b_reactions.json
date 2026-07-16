@@ -1,0 +1,314 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Substrate screening effects on the quasiparticle band gap and defect charge transition levels in MoS2",
+    "doi": "10.1103/PhysRevMaterials.2.084002",
+    "authors": ["Mit H. Naik", "Manish Jain"],
+    "journal": "Physical Review Materials",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "GW", "band gap", "substrate screening", "MoS2", "defect physics"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Monolayer MoS2",
+      "molecular_formula": "MoS2",
+      "intended_role": "material of interest",
+      "prov": ["Main text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "MoS2",
+      "molecular_formula": "MoS2",
+      "ontology": {
+        "role": "target",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Monolayer used in simulations",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Graphene",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Monolayer graphene substrate",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Bilayer graphene",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Trilayer graphene",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Graphite",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Hexagonal boron nitride",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "h-BN",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Silicon dioxide",
+      "molecular_formula": "SiO2",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Bulk SiO2 substrate",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Sulfur",
+      "molecular_formula": "S8",
+      "ontology": {
+        "role": "reference chemical",
+        "category": "elemental"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as chemical potential reference for sulfur-rich condition",
+      "prov": ["Main text"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Molybdenum (bcc)",
+      "molecular_formula": "Mo",
+      "ontology": {
+        "role": "reference chemical",
+        "category": "elemental"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as reference for sulfur-poor condition",
+      "prov": ["Main text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_1",
+        "description": "DFT calculations using QUANTUM ESPRESSO with LDA, 250 Ry cutoff, 12×12×1 k-point grid; relaxed lattice parameter 3.15 Å; vacuum 35 Å."
+      },
+      {
+        "step_ref": "comp_2",
+        "description": "GW quasiparticle calculations using BERKELEYGW; 24×24×1 k-point grid; 8400 bands for unit cell; dielectric cutoff 35 Ry."
+      },
+      {
+        "step_ref": "comp_3",
+        "description": "Supercell defect calculations (5×5) with sulfur vacancy; GW with 19,000 bands; k-point 2×2×1."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (LDA)",
+      "parameters": {
+        "energy_cutoff": {
+          "value": 250,
+          "unit": "Ry"
+        },
+        "k_point_grid": "12×12×1",
+        "vacuum_thickness": {
+          "value": 35,
+          "unit": "Å"
+        }
+      },
+      "results": [
+        {
+          "metric": "band gap (pristine monolayer)",
+          "value": 1.7,
+          "unit": "eV",
+          "notes": "Kohn-Sham gap (implicit from underestimation; explicit value not directly given but implied ≈1.7 eV)"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Computation details section"]
+    },
+    {
+      "method": "GW",
+      "parameters": {
+        "bands_used": 8400,
+        "k_point_grid": "24×24×1"
+      },
+      "results": [
+        {
+          "metric": "quasiparticle band gap (free-standing MoS2)",
+          "value": 2.7,
+          "unit": "eV",
+          "notes": ""
+        },
+        {
+          "metric": "band gap with graphene substrate",
+          "value": 2.4,
+          "unit": "eV",
+          "notes": "Renormalized from 2.7 eV"
+        },
+        {
+          "metric": "band gap with graphite substrate",
+          "value": 2.2,
+          "unit": "eV",
+          "notes": ""
+        },
+        {
+          "metric": "band gap with BN substrate",
+          "value": 2.66,
+          "unit": "eV",
+          "notes": "40 meV reduction"
+        },
+        {
+          "metric": "band gap with SiO2 substrate",
+          "value": 2.61,
+          "unit": "eV",
+          "notes": "90 meV reduction"
+        }
+      ],
+      "interpretation": "Metallic substrates induce larger band-gap renormalization due to screening.",
+      "prov": ["Figure 2", "Main text"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT+GW charge transition level calculation",
+        "results": [
+          {
+            "equation": "ε(+1/0) = E_QP + E_relax",
+            "value": 0.1,
+            "unit": "eV",
+            "notes": "Above pristine VBM"
+          },
+          {
+            "equation": "ε(0/−1) = E_QP + E_relax",
+            "value": 2.2,
+            "unit": "eV",
+            "notes": "Above pristine VBM"
+          }
+        ]
+      },
+      {
+        "method_name": "Substrate-dependent CTL shift",
+        "results": [
+          {
+            "description": "ε(+1/0) pinned within 0.1 eV of VBM for all substrates",
+            "value": null,
+            "unit": ""
+          },
+          {
+            "description": "ε(0/−1) remains ~0.5 eV below CBM after substrate screening",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

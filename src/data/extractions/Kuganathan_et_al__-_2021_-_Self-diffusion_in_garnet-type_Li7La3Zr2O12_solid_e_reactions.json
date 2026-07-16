@@ -1,0 +1,266 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Self-diffusion in garnet-type Li7La3Zr2O12 solid electrolytes",
+    "doi": "10.1038/s41598-020-79919-2",
+    "authors": [
+      "Navaratnarajah Kuganathan",
+      "Michael J. D. Rushton",
+      "Robin W. Grimes",
+      "John A. Kilner",
+      "Evangelos I. Gkanas",
+      "Alexander Chroneos"
+    ],
+    "journal": "Scientific Reports",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid electrolyte",
+      "garnet",
+      "defect chemistry",
+      "DFT",
+      "ionic conductivity"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "product",
+      "prov": [
+        "Page 1"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 1"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "byproduct",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "formed via Schottky-like process",
+      "prov": [
+        "Page 4"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Classical pair potential simulation (GULP)",
+      "parameters": {
+        "supercell": "2×2×2 (1536 atoms)",
+        "potential": "Buckingham"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameter_a_b",
+          "value": 12.907,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice_parameter_c",
+          "value": 12.624,
+          "unit": "Å"
+        },
+        {
+          "metric": "Li_migration_activation_energy",
+          "value": 0.45,
+          "unit": "eV"
+        },
+        {
+          "metric": "O_migration_activation_energy",
+          "value": 1.65,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1",
+        "Page 5"
+      ]
+    },
+    {
+      "method": "Density Functional Theory (VASP, PBE)",
+      "parameters": {
+        "cutoff_energy": "500 eV",
+        "kpoint_mesh": "2×2×2 (geometry), 4×4×4 (DOS)"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameter_a_b",
+          "value": 13.113,
+          "unit": "Å"
+        },
+        {
+          "metric": "lattice_parameter_c",
+          "value": 12.556,
+          "unit": "Å"
+        },
+        {
+          "metric": "band_gap",
+          "value": 4.50,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1",
+        "Figure 7"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Intrinsic defect energetics (classical simulation)",
+        "results": [
+          {
+            "equation": "Li2O Schottky-like defect enthalpy",
+            "value": 0.87,
+            "unit": "eV per defect"
+          }
+        ]
+      },
+      {
+        "method_name": "Li vacancy migration paths (A–D)",
+        "results": [
+          {
+            "path": "A",
+            "value": 0.44,
+            "unit": "eV"
+          },
+          {
+            "path": "B",
+            "value": 0.35,
+            "unit": "eV"
+          },
+          {
+            "path": "C",
+            "value": 0.26,
+            "unit": "eV"
+          },
+          {
+            "path": "D",
+            "value": 0.45,
+            "unit": "eV"
+          }
+        ]
+      },
+      {
+        "method_name": "O vacancy migration paths (P–Y)",
+        "results": [
+          {
+            "path": "P",
+            "value": 0.84,
+            "unit": "eV"
+          },
+          {
+            "path": "Q",
+            "value": 0.83,
+            "unit": "eV"
+          },
+          {
+            "path": "R",
+            "value": 0.85,
+            "unit": "eV"
+          },
+          {
+            "path": "S",
+            "value": 1.73,
+            "unit": "eV"
+          },
+          {
+            "path": "T",
+            "value": 1.70,
+            "unit": "eV"
+          },
+          {
+            "path": "U",
+            "value": 0.93,
+            "unit": "eV"
+          },
+          {
+            "path": "V",
+            "value": 1.04,
+            "unit": "eV"
+          },
+          {
+            "path": "X",
+            "value": 1.65,
+            "unit": "eV"
+          },
+          {
+            "path": "Y",
+            "value": 1.35,
+            "unit": "eV"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T14:25:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Defect Detection in Solid-State Battery Electrolytes Using Lock-In Thermal Imaging",
+    "doi": "10.1149/2.0131814jes",
+    "authors": [
+      "Dana B. Sulas",
+      "Steve Johnston",
+      "Natalie Seitzman",
+      "Heather Platt",
+      "Mowafak Al-Jassim",
+      "Harvey Guthrey"
+    ],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state battery", "thermal imaging", "defect detection"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "β-Li3PS4 pellet",
+      "molecular_formula": "Li3PS4",
+      "intended_role": "solid electrolyte",
+      "prov": ["Page A3206 Experimental Materials section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li/β-Li3PS4/Li symmetric cell",
+      "molecular_formula": "",
+      "intended_role": "electrochemical cell",
+      "prov": ["Page A3206 Experimental Materials section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "β-Li3PS4",
+      "molecular_formula": "Li3PS4",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Powder supplied by Solid Power",
+      "prov": ["Page A3206 Experimental Materials section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "elemental metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Disks, supplier MTI",
+      "prov": ["Page A3206 Experimental Materials section"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Polyaryletheretherketone",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "die material",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "PEEK die, diameter 1.6 cm",
+      "prov": ["Page A3206 Experimental Materials section"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Calcium fluoride",
+      "molecular_formula": "CaF2",
+      "ontology": {
+        "role": "window",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Infrared-transparent window for thermal imaging",
+      "prov": ["Page A3206 Thermal imaging section"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Steel",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "current collector",
+        "category": "alloy"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Post and foil contacts; foil coated with black spray paint",
+      "prov": ["Page A3206 Thermal imaging section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pelletization of β-Li3PS4 powder",
+        "operations": [
+          {
+            "action": "compress",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "die_material": "chem_3",
+              "die_diameter": {
+                "value": 1.6,
+                "unit": "cm"
+              },
+              "force": {
+                "value": 6,
+                "unit": "metric ton"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Performed in inert glove box",
+            "prov": ["Page A3206 Experimental Materials section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (glove box)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page A3206 Experimental Materials section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Attachment of Li metal electrodes",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["chem_2", "target_1"],
+              "force": {
+                "value": 0.5,
+                "unit": "metric ton"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Page A3206 Experimental Materials section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (glove box)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page A3206 Experimental Materials section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Cell assembly in imaging holder",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["target_2", "chem_4", "chem_5"],
+              "spring_pressure": {
+                "value": null,
+                "unit": "bar"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Compressed with CaF2 window and spring/o-ring assembly to maintain electrode contact",
+            "prov": ["Page A3206 Thermal imaging section"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon (sealed chamber)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page A3206 Thermal imaging section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Pelletization of β-Li3PS4 powder in PEEK die"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Pressing Li metal disks onto both faces of pellet"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Assembly of symmetric cell into imaging holder with CaF2 window and steel contacts"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Force units not directly convertible to pressure per schema",
+        "excerpt": "\"compressing β-Li3PS4 powder at 6 metric tons\""
+      },
+      {
+        "issue": "No explicit durations provided for pressing steps",
+        "excerpt": "Experimental Materials section lacks time information"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Lock-in thermography",
+      "parameters": {
+        "camera": "FLIR SC5000MB InSb",
+        "spectral_range": "3–5 µm",
+        "window_material": "chem_4",
+        "current_modulation_amplitude": {
+          "value": 4.4,
+          "unit": "mA cm-2"
+        },
+        "modulation_frequency": {
+          "value": 0.2,
+          "unit": "Hz"
+        }
+      },
+      "results": [
+        {
+          "metric": "modulated temperature rise",
+          "value": 60,
+          "unit": "mK"
+        },
+        {
+          "metric": "detectable current density threshold",
+          "value": 1.8,
+          "unit": "mA cm-2"
+        },
+        {
+          "metric": "heat signature type",
+          "value": "point-like hot spots correlated with dendrites",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Heating attributed to resistive current flow through dendrites after breakdown",
+      "prov": ["Pages A3207–A3209 Figures 4–6"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "40 Hz–30 MHz",
+        "dc_bias": {
+          "value": 0,
+          "unit": "V"
+        },
+        "ac_amplitude": {
+          "value": 5,
+          "unit": "mV"
+        },
+        "instrument": "Agilent 4294A"
+      },
+      "results": [
+        {
+          "metric": "Re(Z) before cycling (low f)",
+          "value": 1.4,
+          "unit": "kΩ"
+        },
+        {
+          "metric": "Re(Z) after conditioning (low f)",
+          "value": 0.58,
+          "unit": "kΩ"
+        },
+        {
+          "metric": "circuit behavior post-breakdown",
+          "value": "low-resistance inductive",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Transition from capacitive to inductive response indicates dendrite shorting",
+      "prov": ["Pages A3206–A3207 Figure 3"]
+    },
+    {
+      "method": "Current/Voltage cycling",
+      "parameters": {
+        "cycle_duration": {
+          "value": 60,
+          "unit": "min"
+        },
+        "data_interval": {
+          "value": 12,
+          "unit": "s"
+        },
+        "instrument": "Keithley 2401"
+      },
+      "results": [
+        {
+          "metric": "critical breakdown current density",
+          "value": 0.62,
+          "unit": "mA cm-2"
+        }
+      ],
+      "interpretation": "Stable up to ±0.09 mA cm-2; failure at ±0.62 mA cm-2",
+      "prov": ["Page A3206 Figure 2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Equivalent circuit fitting",
+        "results": [
+          {
+            "equation": "two RC elements pre-breakdown; inductive element post-breakdown",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-10T00:00:00Z",
+    "source_file": "provided_text",
+    "processing_time": null
+  }
+}

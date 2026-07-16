@@ -1,0 +1,589 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "All-Solid-State Lithium Batteries: Li+-Conducting Ionomer Binder for Dry-Processed Composite Cathodes",
+    "doi": "10.1021/acsenergylett.1c02756",
+    "authors": [
+      "Seung-Bo Hong",
+      "Young-Jun Lee",
+      "Un-Hyuck Kim",
+      "Cheol Bak",
+      "Yong Min Lee",
+      "Woosuk Cho",
+      "Hoe Jin Hah",
+      "Yang-Kook Sun",
+      "Dong-Won Kim"
+    ],
+    "journal": "ACS Energy Letters",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "all-solid-state battery",
+      "composite cathode",
+      "ionomer binder",
+      "sulfide electrolyte"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "NCM/Li6PS5Cl/Carbon nanofiber/Ionomer composite cathode",
+      "molecular_formula": "",
+      "intended_role": "composite cathode (product)",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.88,
+        "reasoning": "The paper explicitly provides formulas for several materials (e.g., binder: poly(tetrafluoroethylene-co-perfluoro(3-oxa-4-pentenesulfonic acid)) lithium salt; active material: LiNi0.7Co0.1Mn0.2O2; electrolyte: Li6PS5Cl). However, the extracted value for the field 'Target Formula' is blank/empty and therefore is not explicitly supported as a value in the text.",
+        "suggested_fix": "If 'Target Formula' refers to the cathode active material, use LiNi0.7Co0.1Mn0.2O2. If it refers to the solid electrolyte, use Li6PS5Cl. If it refers to the binder/ionomer, use poly(tetrafluoroethylene-co-perfluoro(3-oxa-4-pentenesulfonic acid)) lithium salt."
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "NCM/Li6PS5Cl/Carbon nanofiber/PTFE composite cathode",
+      "molecular_formula": "",
+      "intended_role": "composite cathode (comparison product)",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.76,
+        "reasoning": "The paper explicitly provides formulas for several materials (e.g., active material LiNi0.7Co0.1Mn0.2O2 (NCM) and solid electrolyte Li6PS5Cl), but the extracted value for the field \"Target Formula\" is blank/empty. An empty value is not explicitly supported as the target formula; the document does specify relevant formulas.",
+        "suggested_fix": "If the intended target is the cathode active material, use: LiNi0.7Co0.1Mn0.2O2. If the intended target is the solid electrolyte, use: Li6PS5Cl."
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi0.7Co0.1Mn0.2O2",
+      "molecular_formula": "LiNi0.7Co0.1Mn0.2O2",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "70 wt % of total solids in composite cathode (mass ratio 70:25:3:2)",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly identifies the cathode active material as LiNi0.7Co0.1Mn0.2O2 (NCM). However, the extracted claim that the “Amount” is not specified is not correct: the text specifies a mass ratio for the composite cathode components (NCM:Li6PS5Cl:carbon nanofiber:binder = 70:25:3:2) and also gives an NCM mass loading of 16.9 mg cm−2. Therefore, an amount related to this chemical identity is provided in the main text.",
+        "suggested_fix": "LiNi0.7Co0.1Mn0.2O2 (NCM) | Amount: composite cathode mass ratio 70:25:3:2 (NCM:Li6PS5Cl:carbon nanofiber:binder) and NCM mass loading 16.9 mg cm−2."
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "25 wt % of total solids in composite cathode; also used with binder at 25:2 weight ratio for conductivity study",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly identifies the solid electrolyte as Li6PS5Cl (e.g., Abstract: \"solid electrolyte (Li6PS5Cl)\"; main text: \"A solid electrolyte (Li6PS5Cl)\"). However, no absolute amount of Li6PS5Cl (e.g., grams, mg, mmol) is given anywhere in the provided full text; only composition/mass ratios are reported (e.g., composite cathode mass ratio 70:25:3:2; Li6PS5Cl:binder 25:2 by weight). Therefore, the extraction \"Li6PS5Cl | Amount: Not specified in text\" is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Carbon nanofiber",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "3 wt % of total solids in composite cathode",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly specifies the carbon type and its amount in the composite cathode recipe. It states: “Composite cathodes were prepared by mixing … conducting carbon (carbon nanofiber) … at a mass ratio of 70:25:3:2.” Thus, the amount is specified (3 parts by mass in the stated ratio), so the extracted claim “Amount: Not specified in text” is contradicted by the source text.",
+        "suggested_fix": "Carbon nanofiber | Amount: mass ratio 70:25:3:2 (NCM:Li6PS5Cl:carbon nanofiber:binder), i.e., carbon = 3 wt parts in the mix"
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Poly(tetrafluoroethylene-co-perfluoro(3-oxa-4-pentenesulfonic acid)) lithium salt",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "ionomer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2 wt % of total solids in composite cathode; referred to as 'ionomer' in text",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the binder as “poly(tetrafluoroethylene-co-perfluoro(3-oxa-4-pentenesulfonic acid)) lithium salt” (Pages 1–2). However, it does not provide a standalone purchased/added amount for this chemical in isolation. It only states mixture mass ratios for composites/cathodes (e.g., Li6PS5Cl−binder = 25:2 by weight; and cathode ratio 70:25:3:2 including binder), which are not an explicit ‘amount’ of the chemical by itself. Therefore, ‘Amount: Not specified in text’ is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Polytetrafluoroethylene",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2 wt % of total solids in comparison composite cathode",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly mentions the chemical identity “polytetrafluoroethylene (PTFE)” as a representative polymer binder for the dry process (Page 2). However, it does not provide a standalone amount for PTFE itself; instead, it only gives mixture/composite ratios (e.g., composite cathode mass ratio 70:25:3:2 for active material:solid electrolyte:carbon:binder, and Li6PS5Cl−binder = 25:2 by weight). No explicit PTFE-specific amount is stated apart from being one possible binder. Therefore, the extraction ‘PTFE | Amount: Not specified in text’ is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dry mixing of powders for composite cathode",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4"
+              ],
+              "mass_ratio": "70:25:3:2",
+              "solvent": "none"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Solvent-free (dry) process; identical procedure using chem_5 instead of chem_4 for PTFE-based cathode",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.82,
+              "reasoning": "The paper explicitly describes the synthesis/fabrication operation for the composite cathode as “prepared by mixing” the active material, solid electrolyte, conducting carbon, and polymer binder (PTFE or ionomer) at a specified mass ratio (Page 2: “Composite cathodes were prepared by mixing ...”). This directly supports the extracted operation “mix”.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Main text"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Cold pressing to form sheet-type composite cathode",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 430,
+                "unit": "Ma"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Cold pressing facilitated by ductility of Li6PS5Cl; unit 'Ma' as reported",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper explicitly describes fabrication steps involving pressing: it states good interfacial contact can be achieved by \"cold pressing\" and also mentions \"pressing at 430 MPa\" for the composite cathode with the ionomer (Page 5). This supports that a synthesis/fabrication operation includes pressing.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 430,
+            "unit": "Ma"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.95,
+            "reasoning": "The paper mentions pressing “at 430 Ma” (Page 5: “during pressing at 430 Ma”), which is almost certainly intended to be 430 MPa (megapascals) as a pressure unit. The extracted value “430 Ma” uses a time unit (mega-annum) and is not a valid pressure unit, indicating a unit/parsing error. Thus, the extraction as written is not supported.",
+            "suggested_fix": "430 MPa (pressing pressure; written in the text as “430 Ma” but context indicates MPa)"
+          }
+        },
+        "prov": [
+          "Main text"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dry mixing of active material, solid electrolyte, carbon nanofiber, and binder at 70:25:3:2 weight ratio",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.86,
+          "reasoning": "The paper explicitly states the **mass ratio** of the composite cathode components as **70:25:3:2** for active material (NCM), solid electrolyte (Li6PS5Cl), conducting carbon (carbon nanofiber), and polymer binder (PTFE or ionomer): “Composite cathodes were prepared by mixing … at a mass ratio of 70:25:3:2.” However, the extracted value adds the step “**Dry mixing**,” which is not explicitly stated in the quoted sentence (it only says “prepared by mixing”). While the work discusses a solvent-free (dry) process in general, the specific phrase “dry mixing” for this step is not explicitly supported by the provided text.",
+          "suggested_fix": "Mixing of active material (NCM), solid electrolyte (Li6PS5Cl), carbon nanofiber, and polymer binder (PTFE or ionomer) at a mass ratio of 70:25:3:2."
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Cold pressing of mixed powders at 430 Ma to obtain composite cathode sheet",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.88,
+          "reasoning": "The paper does mention cold pressing at “430 Ma” (page 5): “good interfacial contact … can be achieved by cold pressing … during pressing at 430 Ma”. However, it does not explicitly state that cold pressing at 430 Ma was performed specifically on “mixed powders” for the purpose “to obtain composite cathode sheet.” The text discusses achieving interfacial contact in composite cathodes via cold pressing and pore filling during pressing, but does not describe this as a discrete workflow step exactly as extracted (mixed powders → composite cathode sheet) nor explicitly tie 430 Ma to producing a sheet.",
+          "suggested_fix": "Cold pressing is used to achieve good interfacial contact in the composite cathode; pressing at 430 Ma is mentioned (Page 5: “during pressing at 430 Ma”)."
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unclear pressure unit 'Ma' in pressing step",
+        "excerpt": "\"pressing at 430 Ma\"",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The paper explicitly contains the phrase indicating an unclear pressure unit: \"pressing at 430 Ma\" (Page 5, in the SEM discussion). In this context, cold-pressing pressure is normally reported in MPa, so \"Ma\" appears to be a typographical/ambiguous unit and the extraction correctly flags workflow ambiguity.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Mixing time and temperature not specified",
+        "excerpt": "\"Composite cathodes were prepared by mixing...\"",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper explicitly describes composite cathode preparation by mixing components and even provides the composition (mass ratio 70:25:3:2), but it does not state the mixing time or mixing temperature anywhere in the provided full text. Therefore, the claimed workflow ambiguity \"Mixing time and temperature not specified\" is only half-correct: it is true for time/temperature, but the excerpt \"Composite cathodes were prepared by mixing...\" is not evidence of an ambiguity by itself; it's simply a preparation statement. Since the extracted value bundles the issue with an excerpt as if it supports an ambiguity, it is not explicitly supported as written.",
+          "suggested_fix": "Revise to: {'issue': 'Mixing time and temperature not specified (not reported in text)', 'excerpt': ''} or keep the excerpt but clarify it is only the preparation statement and that the document omits time/temperature."
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "FT-IR spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "peak position",
+          "value": 970,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "peak position",
+          "value": 1060,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "C–O–C and SO3− groups confirm ionomer structure",
+      "prov": [
+        "Figure S1b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper text explicitly states: “the FT-IR spectrum of the PTFE-based ionomer shows new peaks at 970 and 1060 cm−1” (Page 2), matching the extracted peak positions (970 cm−1 and 1060 cm−1). Alleged provenance Figure S1b is consistent with the statement referencing Figure S1b for the ionomer FT-IR spectrum.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "compound": "Li6PS5Cl",
+          "value": 4.1,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "ionic conductivity",
+          "compound": "Li6PS5Cl–PTFE composite",
+          "value": 2.9,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "ionic conductivity",
+          "compound": "dry ionomer",
+          "value": 1.6e-05,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Ionomer improves conductivity relative to PTFE composite",
+      "prov": [
+        "Figure S1c",
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.82,
+        "reasoning": "Two of the three conductivity entries are explicitly stated in the paper text: Li6PS5Cl = 4.1 mS cm−1 and Li6PS5Cl–PTFE composite = 2.9 mS cm−1 (“The ionic conductivity of Li6PS5Cl, 4.1 mS cm−1, exceeds that of the Li6PS5Cl−PTFE composite, 2.9 mS cm−1 …”). The third entry is also stated, but the compound is mislabeled: the text reports “The ionic conductivity of the ionomer in the fully dry state was measured to be 1.6 × 10−5 S cm−1 at 25 °C.” The extracted value lists this as ‘dry ionomer’ (reasonable), but the field says ‘compound’: ‘dry ionomer’ rather than ‘ionomer’/‘PTFE-based ionomer’. Also, the alleged provenance ‘Figure S1c’ is incorrect for the conductivity measurement context in the main text (conductivities were determined by AC impedance spectroscopy in Figure S2; Figure S1c is referenced only parenthetically for the PTFE comparison). Because the extracted list includes an incorrect compound label for the third item and provenance mismatch, the extraction as given is not fully correct.",
+        "suggested_fix": "Update the third record compound to ‘ionomer (fully dry state)’ or ‘PTFE-based ionomer (fully dry state)’ with value 1.6×10−5 S cm−1 at 25 °C. Provenance: main text (page 2) and conductivity measurement figure noted as Figure S2 (with PTFE comparison referencing Figure S1c)."
+      }
+    },
+    {
+      "method": "7Li solid-state MAS NMR",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "chemical shift",
+          "value": 2.5,
+          "unit": "ppm"
+        },
+        {
+          "metric": "chemical shift",
+          "value": -0.2,
+          "unit": "ppm"
+        }
+      ],
+      "interpretation": "Distinct Li environments for Li6PS5Cl and ionomer; peak intensity decrease after cycling indicates Li exchange",
+      "prov": [
+        "Figure S1d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The source text explicitly states: “The spectra can be resolved into two peaks that are centered at 2.5 and −0.2 ppm, corresponding to characteristic 7Li peaks of Li6PS5Cl and the ionomer, respectively” in the paragraph discussing Figure S1d (7Li solid-state MAS NMR). This directly supports the two extracted chemical shifts (2.5 ppm and −0.2 ppm).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electrochemical stability window",
+          "value": 3.9,
+          "unit": "V vs Li–In"
+        }
+      ],
+      "interpretation": "Both PTFE and ionomer stable up to 4.5 V vs Li/Li+",
+      "prov": [
+        "Figure S5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly states: “The cyclic voltammograms of the Li6PS5Cl–binder composites (Figure S5) confirm that both PTFE and the ionomer are electrochemically stable up to 3.9 V vs Li–In (4.5 V vs Li/Li+).” This directly supports an electrochemical stability window/limit of 3.9 V vs Li–In referenced to Figure S5.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SEM (cross-section)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "interfacial contact quality",
+          "value": "good",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Ionomer binder yields uniform distribution without fibrous structures",
+      "prov": [
+        "Figure S8a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The text explicitly states: “A cross-sectional SEM image of a composite cathode prepared with the ionomer (Figure S8a) shows good interfacial contact between the NCM particles, solid electrolyte, and conducting carbon.” This directly supports the extracted metric ‘interfacial contact quality’ with value ‘good’ for SEM (cross-section), and matches the alleged provenance (Figure S8a).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TOF-SIMS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "SO3− distribution",
+          "value": "homogeneous",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms uniform ionomer dispersion",
+      "prov": [
+        "Figure S9"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The text explicitly states: “A TOF-SIMS image mapping the SO3− groups of a composite cathode prepared with the ionomer (Figure S9) confirms its homogeneous distribution.” This directly supports the extracted metric (SO3− distribution) and value (homogeneous), with provenance Figure S9.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Galvanostatic cycling",
+        "results": [
+          {
+            "description": "Discharge capacity at 0.1 C",
+            "value": 180.7,
+            "unit": "mAh g-1"
+          },
+          {
+            "description": "Areal capacity at 0.1 C",
+            "value": 3.05,
+            "unit": "mAh cm-2"
+          },
+          {
+            "description": "Capacity retention after 300 cycles at 0.5 C",
+            "value": 90,
+            "unit": "%"
+          },
+          {
+            "description": "Discharge capacity at 2.0 C",
+            "value": 123.4,
+            "unit": "mAh g-1"
+          }
+        ],
+        "prov": [
+          "Figure 1a–f",
+          "Main text"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.75,
+          "reasoning": "The field \"Analysis Method\" has no extracted value, and the paper does list multiple analysis/characterization methods in the main text and figures (e.g., AC impedance spectroscopy/EIS, FT-IR, X-ray fluorescence spectrometry, 7Li solid-state MAS NMR, SEM/EDS, TOF-SIMS, XRD, cyclic voltammetry, DC-IR, GITT, SAICAS, nanoindentation). Therefore leaving the value blank is not supported by the document text; a method (or set of methods) is clearly specified.",
+          "suggested_fix": "Populate \"Analysis Method\" with the methods explicitly mentioned, e.g., \"AC impedance spectroscopy (EIS), FT-IR, X-ray fluorescence spectrometry, 7Li solid-state MAS NMR, SEM/EDS, TOF-SIMS, XRD, cyclic voltammetry, DC-IR, GITT, SAICAS, nanoindentation\" (or select the relevant one depending on what the field is intended to capture)."
+        }
+      },
+      {
+        "method_name": "DC internal resistance (DC-IR)",
+        "results": [
+          {
+            "description": "Lower slope in ΔV–i plots for ionomer cathode indicates reduced internal resistance",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": [
+          "Figure 2c,d"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.96,
+          "reasoning": "The extracted value for \"Analysis Method\" is blank, but the paper explicitly states analysis/measurement methods associated with Figure 2c,d: the internal resistance was determined via direct current internal resistance (DC-IR) experiments, and the internal resistance was obtained by linear regression analysis of ΔV vs current (ΔV–i) plots (Figure 2c,d). Therefore, leaving the field empty is not supported by the source text.",
+          "suggested_fix": "Direct current internal resistance (DC-IR) measurement; internal resistance determined by linear regression of ΔV vs current (ΔV–i) (Figure 2c,d)."
+        }
+      },
+      {
+        "method_name": "GITT",
+        "results": [
+          {
+            "description": "Relative active surface area of NCM with ionomer binder",
+            "value": 2.17,
+            "unit": "S (relative units)"
+          }
+        ],
+        "prov": [
+          "Figure 2f"
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.98,
+          "reasoning": "The extracted value for “Analysis Method” is blank, but the paper explicitly states multiple analysis/characterization methods, including AC impedance spectroscopy, 7Li solid-state MAS NMR spectroscopy, SEM/EDS, XRD, TOF-SIMS, cyclic voltammetry, DC-IR testing, GITT, SAICAS, and nanoindentation. Figure 2f specifically reports “relative active surface area … calculated from the GITT results,” so an analysis method (GITT) is clearly present. Therefore a blank value is not supported.",
+          "suggested_fix": "Analysis Method: Galvanostatic intermittent titration technique (GITT) (for Figure 2f). (More broadly in the paper: EIS/AC impedance, 7Li MAS NMR, SEM/EDS, XRD, TOF-SIMS, CV, SAICAS, nanoindentation, DC-IR)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 180.7,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 300,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.93,
+      "reasoning": "The paper explicitly reports cycling up to 300 cycles: the Abstract states the ASSLB retains 90% of its initial capacity after 300 cycles at 0.5 C, and the main text (Page 3) repeats retaining 90% after 300 cycles. Thus a cycle life value of 300 cycles is supported.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-30T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

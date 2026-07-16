@@ -1,0 +1,380 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Ion Pairing, Clustering and Transport in a LiFSI-TMP Electrolyte as Functions of Salt Concentration using Molecular Dynamics Simulations",
+    "doi": "10.1149/1945-7111/abf0d8",
+    "authors": ["Diego E. Galvez-Aranda", "Jorge M. Seminario"],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["electrolyte", "lithium-ion battery", "molecular dynamics", "LiFSI", "trimethyl phosphate"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiFSI/TMP electrolyte 0.70 M",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Page 7, Density section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiFSI/TMP electrolyte 1.43 M",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Page 7, Density section"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiFSI/TMP electrolyte 3.82 M",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": ["Page 7, Density section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium bis(fluorosulfonyl)imide",
+      "molecular_formula": "F2LiNO4S2",
+      "ontology": {
+        "role": "salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Trimethyl phosphate",
+      "molecular_formula": "C3H9O4P",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "",
+      "prov": ["Page 3"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Build simulation box for 0.70 M electrolyte with 27 LiFSI and 243 TMP molecules (box 31.59×31.59×52.122 Å³).",
+        "operations": [
+          {
+            "action": "pack",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Initial density 0.85 g cm−3 (pure TMP); became 1.00 g cm−3 after equilibration.",
+            "prov": ["Page 6"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "periodic boundary",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 6"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Thermal protocol applied to all simulation boxes.",
+        "operations": [
+          {
+            "action": "equilibrate",
+            "parameters": {
+              "ensemble": "NPT"
+            },
+            "duration": {
+              "value": 500,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 5,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Page 6"]
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "rate": ""
+            },
+            "duration": {
+              "value": 500,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 300,
+              "unit": "K"
+            },
+            "notes": "NPT ensemble",
+            "prov": ["Page 6"]
+          },
+          {
+            "action": "equilibrate",
+            "parameters": {
+              "ensemble": "NPT"
+            },
+            "duration": {
+              "value": 500,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 300,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Page 6"]
+          },
+          {
+            "action": "simulate",
+            "parameters": {
+              "ensemble": "NVT",
+              "timestep": "1 fs"
+            },
+            "duration": {
+              "value": 10000,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 300,
+              "unit": "K"
+            },
+            "notes": "Production run 10 ns",
+            "prov": ["Page 6"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "periodic boundary",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 6"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Construction of electrolyte simulation boxes at specified concentrations."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Thermal equilibration, heating, and long-time molecular-dynamics production runs."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "TMP molecular formula confirmation",
+        "excerpt": "\"TMP =(CH3O)3PO\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Classical Molecular Dynamics (CMD)",
+      "parameters": {
+        "ensemble": "NVT/NPT",
+        "temperature": "300 K",
+        "time_step": "1 fs",
+        "simulation_time": "10 ns"
+      },
+      "results": [
+        {
+          "metric": "density",
+          "value": 1.00,
+          "unit": "g cm-3",
+          "notes": "0.70 M final density",
+          "prov": ["Page 7, Table IV"]
+        },
+        {
+          "metric": "density",
+          "value": 1.07,
+          "unit": "g cm-3",
+          "notes": "1.43 M final density",
+          "prov": ["Page 7, Table IV"]
+        },
+        {
+          "metric": "density",
+          "value": 1.25,
+          "unit": "g cm-3",
+          "notes": "3.82 M final density",
+          "prov": ["Page 7, Table IV"]
+        },
+        {
+          "metric": "diffusion_coefficient_Li",
+          "value": 2.32e-06,
+          "unit": "cm2 s-1",
+          "notes": "0.70 M",
+          "prov": ["Page 16, Table VIII"]
+        },
+        {
+          "metric": "diffusion_coefficient_Li",
+          "value": 2.14e-06,
+          "unit": "cm2 s-1",
+          "notes": "1.43 M",
+          "prov": ["Page 16, Table VIII"]
+        },
+        {
+          "metric": "diffusion_coefficient_Li",
+          "value": 2.75e-08,
+          "unit": "cm2 s-1",
+          "notes": "3.82 M",
+          "prov": ["Page 16, Table VIII"]
+        },
+        {
+          "metric": "ionic_conductivity",
+          "value": 5.36,
+          "unit": "mS cm-1",
+          "notes": "0.70 M",
+          "prov": ["Page 18"]
+        },
+        {
+          "metric": "ionic_conductivity",
+          "value": 5.34,
+          "unit": "mS cm-1",
+          "notes": "1.43 M",
+          "prov": ["Page 18"]
+        },
+        {
+          "metric": "ionic_conductivity",
+          "value": 1.29,
+          "unit": "mS cm-1",
+          "notes": "3.82 M",
+          "prov": ["Page 18"]
+        },
+        {
+          "metric": "ionicity_ratio",
+          "value": 0.82,
+          "unit": "",
+          "notes": "Λ/ΛNE at 0.70 M",
+          "prov": ["Page 19"]
+        },
+        {
+          "metric": "ionicity_ratio",
+          "value": 0.78,
+          "unit": "",
+          "notes": "Λ/ΛNE at 1.43 M",
+          "prov": ["Page 19"]
+        },
+        {
+          "metric": "ionicity_ratio",
+          "value": 0.66,
+          "unit": "",
+          "notes": "Λ/ΛNE at 3.82 M",
+          "prov": ["Page 19"]
+        }
+      ],
+      "interpretation": "Increased salt concentration leads to decreased diffusivity and conductivity, and more correlated ion motion.",
+      "prov": ["Entire Results section"]
+    },
+    {
+      "method": "Ab-initio Molecular Dynamics (AIMD)",
+      "parameters": {
+        "functional": "PBE",
+        "temperature": "297 K",
+        "time_step": "1 fs"
+      },
+      "results": [
+        {
+          "metric": "density_dilute_box",
+          "value": 1.21,
+          "unit": "g cm-3",
+          "notes": "1 LiFSI + 9 TMP",
+          "prov": ["Page 4"]
+        },
+        {
+          "metric": "density_concentrated_box",
+          "value": 1.25,
+          "unit": "g cm-3",
+          "notes": "5 LiFSI + 5 TMP",
+          "prov": ["Page 4"]
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 3–4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Diffusion analysis using Einstein relation",
+        "results": [
+          {
+            "equation": "D = lim_{t→∞} MSD/(6t)",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      },
+      {
+        "method_name": "Molar conductivity calculation",
+        "results": [
+          {
+            "equation": "Λ = lim_{t→∞} (Ne^2 / (6k_B T V)) Σ_ij z_i z_j ⟨Δr_i·Δr_j⟩",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-23T10:27:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Addressing cation mixing in layered structured cathodes for lithium-ion batteries: A critical review",
+    "doi": "10.1016/j.nanoms.2022.09.001",
+    "authors": [
+      "Jingxi Li",
+      "Gemeng Liang",
+      "Wei Zheng",
+      "Shilin Zhang",
+      "Kenneth Davey",
+      "Wei Kong Pang",
+      "Zaiping Guo"
+    ],
+    "journal": "Nano Materials Science",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review article",
+    "tags": ["cation mixing", "layered oxide cathodes", "lithium-ion batteries"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNi0.5Co0.2Mn0.3O2 (NCM523)",
+      "molecular_formula": "LiNi0.5Co0.2Mn0.3O2",
+      "intended_role": "cathode material",
+      "prov": ["Page 411"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiNi0.8Co0.1Mn0.1O2 (NCM811)",
+      "molecular_formula": "LiNi0.8Co0.1Mn0.1O2",
+      "intended_role": "cathode material",
+      "prov": ["Page 413"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiNi0.7Co0.15Mn0.15O2 (NCM71515)",
+      "molecular_formula": "LiNi0.7Co0.15Mn0.15O2",
+      "intended_role": "cathode material",
+      "prov": ["Page 412"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as sintering atmosphere (40% O2 mentioned).",
+      "prov": ["Page 411"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as sintering atmosphere.",
+      "prov": ["Page 411"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Sintering of NCM523 in different atmospheres",
+        "operations": [
+          {
+            "action": "sinter",
+            "parameters": {
+              "inputs": ["target_1", "chem_1", "chem_2"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "atmosphere": "N2, air, or 40% O2",
+            "notes": "Sintered samples exhibited varying Li/Ni mixing degrees (0.6% in O2, 8.3% in N2)."
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": "variable as above"
+        },
+        "prov": ["Page 411"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Calcination of NCM71515",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["target_3"]
+            },
+            "temperature": {
+              "value": 1123,
+              "unit": "K",
+              "notes": "850°C reported; converted to K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Sample sintered at 850°C showed lowest Li/Ni mixing and highest discharge capacity."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 412"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calcination of NCM811",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": ["target_2"]
+            },
+            "temperature": {
+              "value": 1073,
+              "unit": "K",
+              "notes": "800°C reported; converted to K"
+            },
+            "duration": {
+              "value": 600,
+              "unit": "min",
+              "notes": "10 h reported"
+            },
+            "notes": "Resulted in lowest Li/Ni mixing (1.08%) for the sample."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 412"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Atmosphere-controlled sintering of NCM523 cathode material."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "High-temperature calcination of NCM71515 at 1123 K."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Calcination of NCM811 at 1073 K for 600 min."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing sintering temperature and time for NCM523.",
+        "excerpt": "NCM523 sintered in N2, air and 40% O2"
+      },
+      {
+        "issue": "Atmosphere not specified for NCM71515 and NCM811 calcination.",
+        "excerpt": "NCM71515 sintered at 850 °C ... NCM811 samples sintered at 800 °C for 10 h"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRPD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li/Ni mixing degree (NCM523, O2 atmosphere)",
+          "value": 0.6,
+          "unit": "%",
+          "prov": ["Page 411"]
+        },
+        {
+          "metric": "Li/Ni mixing degree (NCM523, N2 atmosphere)",
+          "value": 8.3,
+          "unit": "%",
+          "prov": ["Page 411"]
+        }
+      ],
+      "interpretation": "Lower mixing correlated with O2 atmosphere."
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 176.4,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-25T14:30:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

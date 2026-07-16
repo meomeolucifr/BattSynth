@@ -1,0 +1,251 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Functional data-driven framework for fast forecasting of electrode slurry rheology simulated by molecular dynamics",
+    "doi": "https://doi.org/10.1038/s41524-022-00819-2",
+    "authors": ["Marc Duquesnoy", "Teo Lombardo", "Fernando Caro", "Florent Haudiquez", "Alain C. Ngandjong", "Jiahui Xu", "Hassan Oularbi", "Alejandro A. Franco"],
+    "journal": "NPJ Computational Materials",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["battery manufacturing", "slurry rheology", "molecular dynamics", "machine learning"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "NMC-111 electrode slurry",
+      "molecular_formula": "",
+      "intended_role": "simulation subject",
+      "prov": ["Page 2, Figure 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Graphite electrode slurry",
+      "molecular_formula": "",
+      "intended_role": "simulation subject",
+      "prov": ["Page 2, Figure 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiFePO4 electrode slurry",
+      "molecular_formula": "",
+      "intended_role": "simulation subject",
+      "prov": ["Page 2, Figure 1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi0.33Mn0.33Co0.33O2",
+      "molecular_formula": "LiNi0.33Mn0.33Co0.33O2",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2, Figure 1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2, Figure 1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiFePO4",
+      "molecular_formula": "LiFePO4",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 2, Figure 1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Set up coarse-grained molecular dynamics (CGMD) model of electrode slurry containing active material and carbon-binder domain particles.",
+        "operations": [
+          {
+            "action": "initialize_simulation",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "notes": "Simulation executed with LAMMPS; force fields include attractive and repulsive forces between particles."
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": ["Page 2, paragraph beginning 'As an example of what happens during the slurry...'"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Perform non-equilibrium molecular dynamics (NEMD) simulation to compute viscosity–shear rate curve of the slurry.",
+        "operations": [
+          {
+            "action": "simulate",
+            "parameters": {
+              "shear_rate_range": "0.1–1000 s^-1",
+              "time_frames_total": "1450–1800"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Average number of time frames 1734; last 1000 frames used to compute final viscosity statistics."
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "atmosphere": ""
+        },
+        "prov": ["Page 3, Figure 2a", "Page 5, paragraph 'Datasets'"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "CGMD model initialization for slurry microstructure."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "NEMD simulation under shear to obtain viscosity curve."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "NEMD simulation",
+      "parameters": {
+        "shear_rate_range": "0.1–1000 s^-1",
+        "time_frames_used_for_result": 1000
+      },
+      "results": [
+        {
+          "metric": "viscosity range of interest",
+          "value": "0.1–50",
+          "unit": "Pa s"
+        }
+      ],
+      "interpretation": "Viscosity values within this range considered representative of experimental slurries.",
+      "prov": ["Page 4, paragraph 'In our viscosity tests we applied...'"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Functional Principal Component Analysis (FPCA) + K-Nearest Neighbors (KNN) classification",
+        "results": [
+          {
+            "metric": "Recall",
+            "value": 0.84,
+            "unit": ""
+          },
+          {
+            "metric": "F1 score",
+            "value": 0.90,
+            "unit": ""
+          },
+          {
+            "metric": "speed-up for screening",
+            "value": 17,
+            "unit": "×"
+          }
+        ],
+        "prov": ["Page 6, Figure 5a–c", "Page 6, paragraph 'Computational cost decrease'"]
+      },
+      {
+        "method_name": "FPCA + KNN regression",
+        "results": [
+          {
+            "metric": "R2 score (μ−σ)",
+            "value": 0.97,
+            "unit": ""
+          },
+          {
+            "metric": "R2 score (μ+σ)",
+            "value": 0.96,
+            "unit": ""
+          },
+          {
+            "metric": "speed-up for forecasting",
+            "value": 11,
+            "unit": "×"
+          }
+        ],
+        "prov": ["Page 6, Figure 6", "Page 6, paragraph 'Computational cost decrease'"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T18:18:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Point defects in garnet-type solid electrolyte (c-Li7La3Zr2O12) for Li-ion batteries",
+    "doi": "10.1016/j.ssi.2014.04.021",
+    "authors": [
+      "Santosh K.C.",
+      "Roberto C. Longo",
+      "Ka Xiong",
+      "Kyeongjae Cho"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "solid electrolyte", "LLZO", "defect chemistry"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "cubic Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "studied material",
+      "prov": ["Page 100-101"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "analyzed material",
+        "category": "inorganic oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 100-101"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "comp_1",
+        "description": "Ab initio DFT calculations (GGA and GGA+U) performed on Li7La3Zr2O12 supercell to study electronic structure and point defects."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (GGA)",
+      "parameters": {
+        "plane_wave_cutoff": {
+          "value": 450,
+          "unit": "eV"
+        },
+        "k_point_mesh": "2×2×2",
+        "supercell_size": "192 atoms (8 formula units)"
+      },
+      "results": [
+        {
+          "metric": "band gap",
+          "value": 4.31,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Wide band gap insulator",
+      "prov": ["Page 102"]
+    },
+    {
+      "method": "DFT (GGA+U)",
+      "parameters": {
+        "U_La": {
+          "value": 2.3,
+          "unit": "eV"
+        },
+        "U_Zr": {
+          "value": 3.5,
+          "unit": "eV"
+        },
+        "plane_wave_cutoff": {
+          "value": 450,
+          "unit": "eV"
+        }
+      },
+      "results": [
+        {
+          "metric": "band gap",
+          "value": 4.44,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Slightly increased band gap compared to pure GGA",
+      "prov": ["Page 102"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Defect formation energy calculation",
+        "results": [
+          {
+            "defect_type": "Li vacancy (neutral)",
+            "value": 3.54,
+            "unit": "eV"
+          },
+          {
+            "defect_type": "Li interstitial (neutral)",
+            "value": 5.8,
+            "unit": "eV"
+          },
+          {
+            "defect_type": "Li interstitial at Li vacancy site (neutral)",
+            "value": 2.45,
+            "unit": "eV"
+          },
+          {
+            "defect_type": "Li vacancy–interstitial Frenkel pair",
+            "value": -0.01,
+            "unit": "eV",
+            "notes": "lowest reported; range up to -0.23 eV"
+          }
+        ],
+        "prov": ["Pages 102-104"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T20:23:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

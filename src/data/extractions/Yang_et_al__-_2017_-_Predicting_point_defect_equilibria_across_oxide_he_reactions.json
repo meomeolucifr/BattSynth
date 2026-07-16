@@ -1,0 +1,178 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Predicting point defect equilibria  across oxide hetero-interfaces: model system of ZrO2/Cr2O3",
+    "doi": "",
+    "authors": [
+      "Jing Yang",
+      "Mostafa Youssef",
+      "Bilge Yildiz"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2016
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "point defects",
+      "oxide interface",
+      "continuum model",
+      "molecular dynamics",
+      "DFT"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "m-ZrO2(001)/Cr2O3(1-102) interface slab",
+      "molecular_formula": "",
+      "intended_role": "model system",
+      "prov": [
+        "Figure S1",
+        "Supplemental Text"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "ZrO2",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Monoclinic phase; dielectric constant assumed 20",
+      "prov": [
+        "Supplemental Text"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Cr2O3",
+      "molecular_formula": "Cr2O3",
+      "ontology": {
+        "role": "component",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Dielectric constant calculated",
+      "prov": [
+        "Supplemental Text"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "char_1",
+        "description": "Molecular dynamics simulation of the relaxed interface slab at 600 K for 1 ps with a 2 fs time step to test structural stability."
+      },
+      {
+        "step_ref": "char_2",
+        "description": "Density-functional perturbation theory calculation of dielectric tensor of Cr2O3."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Molecular Dynamics (MD)",
+      "parameters": {
+        "temperature": {
+          "value": 600,
+          "unit": "K"
+        },
+        "duration": {
+          "value": 0.016666666666666666,
+          "unit": "min",
+          "notes": "1 ps converted to minutes"
+        },
+        "time_step": {
+          "value": 2,
+          "unit": "fs"
+        }
+      },
+      "results": [
+        {
+          "metric": "structural stability",
+          "value": "slab remains intact with only small distortions at the interface",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Interface configuration considered stable.",
+      "prov": [
+        "Figure S1"
+      ]
+    },
+    {
+      "method": "Density-Functional Perturbation Theory (DFPT)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "dielectric constant (a axis)",
+          "value": 11.0,
+          "unit": ""
+        },
+        {
+          "metric": "dielectric constant (c axis)",
+          "value": 12.7,
+          "unit": ""
+        },
+        {
+          "metric": "off-diagonal terms",
+          "value": 0,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Results in reasonable agreement with experimental values (13.0 and 11.8).",
+      "prov": [
+        "Supplemental Text, Section 2"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-19T18:55:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

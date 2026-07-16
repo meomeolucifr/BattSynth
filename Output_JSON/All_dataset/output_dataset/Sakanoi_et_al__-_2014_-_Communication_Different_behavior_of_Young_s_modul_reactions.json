@@ -1,0 +1,188 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Communication: Different behavior of Young's modulus and fracture strength of CeO2: Density functional theory calculations",
+    "doi": "10.1063/1.4869515",
+    "authors": [
+      "Ryota Sakanoi",
+      "Tomomi Shimazaki",
+      "Jingxiang Xu",
+      "Yuji Higuchi",
+      "Nobuki Ozawa",
+      "Kazuhisa Sato",
+      "Toshiyuki Hashida",
+      "Momoji Kubo"
+    ],
+    "journal": "The Journal of Chemical Physics",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "DFT",
+      "mechanical properties",
+      "ceria",
+      "fracture strength",
+      "Young's modulus"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "CeO2",
+      "molecular_formula": "CeO2",
+      "intended_role": "material under study",
+      "prov": [
+        "Title",
+        "Main text"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "CeO2",
+      "molecular_formula": "CeO2",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Ceria bulk model investigated via DFT",
+      "prov": [
+        "Main text Fig. 1"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "",
+        "description": "Density functional theory calculations of bulk and surface CeO2 to determine mechanical properties, followed by Griffith theory analysis of crack-length dependence."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT",
+      "parameters": {
+        "functional": "PW91",
+        "software": "DMol3",
+        "basis_set": "double-numeric polarized",
+        "global_cutoff": {
+          "value": 5.8,
+          "unit": "Å"
+        },
+        "k_point_grid": "4×4×4",
+        "strain_range": "0–0.13 (dimensionless)"
+      },
+      "results": [
+        {
+          "metric": "lattice constant",
+          "value": 5.4707,
+          "unit": "Å"
+        },
+        {
+          "metric": "Young's modulus",
+          "value": 221.8,
+          "unit": "GPa"
+        },
+        {
+          "metric": "fracture strength (crack-free)",
+          "value": 22.7,
+          "unit": "GPa"
+        },
+        {
+          "metric": "surface energy",
+          "value": 1.545,
+          "unit": "J m-2"
+        }
+      ],
+      "interpretation": "Young's modulus agrees with experiment; ideal fracture strength is much higher due to absence of cracks.",
+      "prov": [
+        "Table I",
+        "Figure 2",
+        "Main text"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Griffith theory calculation",
+        "results": [
+          {
+            "equation": "σf = sqrt(2γsY / (πa))",
+            "value": 0.660,
+            "unit": "GPa",
+            "conditions": {
+              "crack_length": {
+                "value": 1.0,
+                "unit": "µm"
+              }
+            }
+          },
+          {
+            "equation": "σf = sqrt(2γsY / (πa))",
+            "value": 0.467,
+            "unit": "GPa",
+            "conditions": {
+              "crack_length": {
+                "value": 2.0,
+                "unit": "µm"
+              }
+            }
+          },
+          {
+            "equation": "Estimated crack length for experimental σf = 0.250 GPa",
+            "value": 7.0,
+            "unit": "µm",
+            "conditions": {}
+          }
+        ],
+        "prov": [
+          "Figure 3",
+          "Main text"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

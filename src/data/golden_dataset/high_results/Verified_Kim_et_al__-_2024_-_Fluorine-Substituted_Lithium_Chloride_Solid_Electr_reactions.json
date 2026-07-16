@@ -1,0 +1,615 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Fluorine-Substituted Lithium Chloride Solid Electrolytes for High-Voltage All-Solid-State Lithium-Ion Batteries",
+    "doi": "10.1021/acsenergylett.3c02307",
+    "authors": [
+      "Sooyeon Kim",
+      "Yongheum Lee",
+      "Kwangnam Kim",
+      "Brandon C. Wood",
+      "Sang Soo Han",
+      "Seungho Yu"
+    ],
+    "journal": "ACS Energy Letters",
+    "year": 2024
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid electrolyte",
+      "halide",
+      "fluorine substitution",
+      "all-solid-state battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3YCl6",
+      "molecular_formula": "Li3YCl6",
+      "intended_role": "product",
+      "prov": [
+        "Page 43"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly discusses the compound Li3YCl6 multiple times (e.g., Page 1: \u201cF substitution in Li3YCl6 \u2026\u201d; Page 6\u20137: \u201cLi3YCl6\u2212xFx\u201d with x=0.0 corresponding to Li3YCl6). Thus the target formula Li3YCl6 is supported by the document text, even though the alleged provenance 'Page 43' is incorrect (the article pages shown are 38\u201347 and Li3YCl6 appears on Pages 1/6/7 of the provided text).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3YCl5.5F0.5",
+      "molecular_formula": "Li3YCl5.5F0.5",
+      "intended_role": "product",
+      "prov": [
+        "Page 43"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The exact target formula \u201cLi3YCl5.5F0.5\u201d is explicitly present in the paper (e.g., Page 6, Fig. 4 caption: \u201cF0.5 correspond to \u2026 Li3YCl5.5F0.5\u201d, and Page 7 lists ionic conductivity for \u201cLi3YCl5.5F0.5\u201d). However, the extracted value is \u201cLi3YCl5.5F0.5\u201d under the field name \u201cTarget Formula,\u201d while the alleged provenance \u201cPage 43\u201d is incorrect (paper pages are 38\u201347) and, more importantly, the value is supported on Page 6/7, not Page 43. Still, since the value itself is supported, the only issue is provenance; but the task is to verify explicit support in the source text. The value is supported; yet the extracted value includes decimal stoichiometry and matches exactly. Wait: extracted value is Li3YCl5.5F0.5, which is indeed in text. Therefore it should be supported despite wrong provenance. (Marking unsupported would be wrong.)",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li3YCl5F",
+      "molecular_formula": "Li3YCl5F",
+      "intended_role": "product",
+      "prov": [
+        "Page 43"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The target formula Li3YCl5F is explicitly stated multiple times in the paper (e.g., Page 1 abstract: \u201cThe proposed material design strategy is validated through the synthesis of Li3YCl5F\u201d; Page 2: \u201cvalidated through the synthesis of Li3YCl5F\u201d; Page 4 Fig. 2 caption includes \u201cLi3YCl5F\u201d; Page 7 discusses \u201cLi3YCl5F\u201d conductivity and battery results). The alleged provenance 'Page 43' is incorrect; the value appears on Pages 1\u20138 of the provided text (ACS pages 38\u201345).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li3YCl4.5F1.5",
+      "molecular_formula": "Li3YCl4.5F1.5",
+      "intended_role": "product",
+      "prov": [
+        "Page 43"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The formula \u201cLi3YCl4.5F1.5\u201d is explicitly mentioned in the paper (Page 6: \u201cThe XRD patterns of Li3YCl4.5F1.5 (x = 1.5)\u2026\u201d). However, the requested field is \u201cTarget Formula\u201d, and throughout the paper the synthesized/validated target composition is Li3YCl5F (x = 1.0), repeatedly described as the key F-substituted electrolyte validated by synthesis. Li3YCl4.5F1.5 is discussed as an over-substituted (x=1.5) composition that shows impurities and exceeds the mixing limit, not as the target formula. Also, the alleged provenance \u2018Page 43\u2019 is incorrect (the mention is on Page 6 / printed page 43 in the PDF header, but in the provided text it is Page 6).",
+        "suggested_fix": "Li3YCl5F"
+      }
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li2ZrCl6",
+      "molecular_formula": "Li2ZrCl6",
+      "intended_role": "product",
+      "prov": [
+        "Page 44"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly mentions the compound Li2ZrCl6 as a lithium ternary chloride solid electrolyte (Page 1: \u201c...Li3MCl6 ... and Li2ZrCl6, demonstrate high ionic conductivity...\u201d; Page 7: \u201cLi2ZrCl6 and F-substituted Li2ZrCl6...\u201d; Page 8: synthesis/characterization of \u201cLi2ZrCl6 and Li2ZrCl5F\u201d). Therefore the extracted target formula Li2ZrCl6 is supported, although the alleged provenance 'Page 44' is incorrect for this document (pages are 1\u201310).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "Li2ZrCl5F",
+      "molecular_formula": "Li2ZrCl5F",
+      "intended_role": "product",
+      "prov": [
+        "Page 44"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.97,
+        "reasoning": "The paper discusses fluorine-substituted zirconium chloride electrolytes as Li2ZrCl6\u2212xFx and explicitly mentions/synthesizes Li2ZrCl5F (e.g., Page 7: \u201cLi2ZrCl6 and Li2ZrCl5F\u2026\u201d). Nowhere in the provided full text is the target formula \u201cLi2ZrCl5F\u201d stated; \u201cLi2ZrCl5F\u201d corresponds to the Zr4+-based system, while the paper\u2019s main F-substituted Li3MCl6 system yields formulas like Li3MCl5F. Therefore the extracted value has an incorrect lithium stoichiometry (Li2 instead of Li3).",
+        "suggested_fix": "Li2ZrCl5F"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li3YCl6",
+      "molecular_formula": "Li3YCl6",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 43"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The document explicitly mentions the chemical identity Li3YCl6 multiple times (e.g., discussion of Li3YCl6\u2212xFx and Table 1 listing Li3MCl6 for M=Y, and Figure 4 caption noting F0.0 corresponds to Li3YCl6). Nowhere in the provided full text is an explicit amount (mass, molar amount, concentration, stoichiometric batch quantities) given for Li3YCl6; synthesis details are deferred to Supporting Information. Therefore, the extractor\u2019s 'Amount: Not specified in text' is accurate for the main text provided.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li3YCl5.5F0.5",
+      "molecular_formula": "Li3YCl5.5F0.5",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 43"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The document explicitly mentions Li3YCl5.5F0.5 as a composition (e.g., Page 6/Figure 4 caption and Page 7 conductivity section). However, the extracted chemical identity is written as \u201cLi3YCl5.5F0.5\u201d, which implies 5.5 Cl and 0.5 F, while the paper uses this same composition but in the form Li3YCl5.5F0.5 (not \u201cLi3YCl5.5F0.5 | Amount: Not specified\u201d is fine). The main issue is the identity is supported, but the extractor\u2019s chemical identity field includes an amount statement; and the alleged provenance 'Page 43' is incorrect (the relevant content is on journal Page 43 of the PDF? In the provided text it appears on Page 6-7). Additionally, the paper provides amounts in some contexts (ionic conductivities) but does not specify a synthesis amount (mass/moles) for Li3YCl5.5F0.5. So 'Amount: Not specified in text' is supported, but the overall field as given is a compound+amount pair; since chemical identity is correct, I would only flag if the identity were wrong\u2014which it is not. The only unsupported part is the provenance and the combined formatting as a single extracted value.",
+        "suggested_fix": "Chemical Identity: Li3YCl5.5F0.5; Amount (mass/moles used): Not specified in the text. (Relevant mentions occur on provided Page 6\u20137, e.g., Figure 4 caption and conductivity section.)"
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li3YCl5F",
+      "molecular_formula": "Li3YCl5F",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 43"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly mentions the synthesis/validation of the composition Li3YCl5F multiple times (e.g., Abstract on Page 1 and in the main text on Page 2). The provided source text does not specify a single \u201camount\u201d of Li3YCl5F (e.g., mass, molar quantity, wt%, loading) as a standalone value; it discusses substitution levels x and reports measured properties, but no explicit prepared quantity of Li3YCl5F is given. Therefore, 'Amount: Not specified in text' is supported under the null-handling rule. The alleged provenance 'Page 43' is incorrect; relevant mentions occur around Pages 1\u20132 (and discussion on Pages 6\u20138).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li3YCl4.5F1.5",
+      "molecular_formula": "Li3YCl4.5F1.5",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 43"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.76,
+        "reasoning": "The paper mentions the composition Li3YCl4.5F1.5 (Page 6, XRD discussion). However, the extracted chemical identity is \"Li3YCl4.5F1.5\" only partially: it is correct that this composition appears, but the extracted value claims \"Li3YCl4.5F1.5\" as part of \"Chemical Identity and Amount\" while also stating \"Amount: Not specified in text.\" The paper does specify amounts in terms of substitution level x (x = 1.5 corresponding to Li3YCl4.5F1.5), but it does not provide a weighed mass/quantity amount for synthesis in the provided main-text excerpt (those details are said to be in Supporting Information). Therefore, the chemical identity is supported, but the extraction as a combined field value is not fully supported because it omits/does not reflect the explicitly provided x=1.5 context and the identity string in the extracted value also includes a separator (\"|\") not present in the paper. ",
+        "suggested_fix": "Chemical identity: Li3YCl4.5F1.5 (x = 1.5). Amount (mass/volume): not specified in the provided main text (likely in Supporting Information)."
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Li2ZrCl6",
+      "molecular_formula": "Li2ZrCl6",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 44"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions the chemical identity Li2ZrCl6 (e.g., Page 1: \u201cLi2ZrCl6, demonstrate high ionic conductivity\u2026\u201d; Page 7: \u201cLi2ZrCl6 and F-substituted Li2ZrCl6\u2026\u201d). However, the document text provided does not specify an \u201camount\u201d (no mass, molarity, wt%, stoichiometric quantity used, etc.) associated with Li2ZrCl6. Therefore the extractor\u2019s statement \u201cAmount: Not specified in text\u201d is supported. The alleged provenance \u2018Page 44\u2019 is incorrect for this excerpt; the relevant mentions occur around Pages 1 and 7\u20138.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Li2ZrCl5F",
+      "molecular_formula": "Li2ZrCl5F",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 44"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.97,
+        "reasoning": "The paper mentions Li2ZrCl5F (fluorine-substituted Li2ZrCl6) and discusses its properties and synthesis (e.g., Pages 2 and 7\u20138), but it does not mention the compound Li2ZrCl5F anywhere in the provided full text. Therefore the chemical identity is incorrect. Since the identity is wrong, the associated note 'Amount: Not specified in text' cannot be credited as a correct extraction for Li2ZrCl5F (even though the paper generally does not give an 'amount' for a chemical identity field).",
+        "suggested_fix": "Chemical identity should be: Li2ZrCl5F (not Li2ZrCl5F). Amount: Not specified in text."
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanochemical synthesis of Li3YCl6\u2212xFx (x = 0, 0.5, 1.0, 1.5) via solid-state reactions.",
+        "operations": [
+          {
+            "action": "mechanochemical_milling",
+            "parameters": {
+              "inputs": [],
+              "details": "solid-state mechanochemical reactions"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly describes using solid-state mechanochemical reactions to synthesize Li3YCl6\u2212xFx: \u201cwe produced four different levels of F-substitution \u2026 through solid-state mechanochemical reactions\u201d (Page 6). It also discusses \u201chigh-energy mechanochemical synthesis\u201d as a synthesis route for metastable phases (Page 4) and references mechanochemical synthesis in context of these materials (Page 7). This supports the extracted synthesis operation being mechanochemical milling/mechanochemical synthesis.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 43"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Mechanochemical synthesis of Li2ZrCl6 and Li2ZrCl5F.",
+        "operations": [
+          {
+            "action": "mechanochemical_milling",
+            "parameters": {
+              "inputs": [],
+              "details": "solid-state mechanochemical reactions"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "The paper explicitly describes producing Li3YCl6\u2212xFx compositions \u201cthrough solid-state mechanochemical reactions\u201d (Page 6: \u201cwe produced four different levels of F-substitution \u2026 through solid-state mechanochemical reactions\u201d), which corresponds to a mechanochemical milling-type synthesis operation. It also references \u201chigh-energy mechanochemical synthesis\u201d as a synthesis route for metastable phases (Pages 4 and 7).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Page 44"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of fluorine-substituted Li3YCl6 solid electrolytes.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.55,
+          "reasoning": "The paper explicitly discusses and reports the synthesis/validation of fluorine-substituted Li3YCl6 (notably Li3YCl5F) via mechanochemical reactions. However, the extracted value states \u201cSynthesis of fluorine-substituted Li3YCl6 solid electrolytes,\u201d which is not itself a workflow timeline (no timeline/dates or step timing are provided). Thus, as a value for the field \u201cWorkflow Timeline,\u201d it is not supported; it is a topic/activity statement rather than a timeline.",
+          "suggested_fix": "If the field must be \u201cWorkflow Timeline\u201d: Not specified (the paper does not provide a chronological timeline). If the intended field is \u201cWorkflow/Process\u201d: Synthesis of F-substituted Li3YCl6\u2212xFx (x = 0.0, 0.5, 1.0, 1.5), validated via synthesis of Li3YCl5F."
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Synthesis of fluorine-substituted Li2ZrCl6 solid electrolytes.",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.86,
+          "reasoning": "The paper discusses fluorine-substituted lithium chloride solid electrolytes primarily in the Li3MCl6\u2212xFx family and includes an additional section on Zr4+-based Li2ZrCl6 and its F-substituted form (Li2ZrCl5F). It does not mention or describe the synthesis of fluorine-substituted Li2ZrCl6 solid electrolytes as part of a 'Workflow Timeline' entry for 'fluorine-substituted Li2ZrCl6'; instead, it explicitly states synthesis/validation for Li3YCl5F and later for Li2ZrCl6 and Li2ZrCl5F. There is no mention of 'Li2ZrCl6' being fluorine-substituted as a named synthesized product, nor any mention of a 'workflow timeline' item phrased as in the extracted value.",
+          "suggested_fix": "Synthesis of Li3YCl5F (and separately, synthesis of Li2ZrCl6 and Li2ZrCl5F as experimental validation of Zr4+-based design guidelines)."
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis details (precursor identities, milling time, atmosphere).",
+        "excerpt": "we produced four different levels of F-substitution (x=0.0,0.5,1.0,1.5) through solid-state mechanochemical reactions.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.78,
+          "reasoning": "The main text states they synthesized Li3YCl6\u2212xFx via \u201csolid-state mechanochemical reactions\u201d and gives only the substitution levels (x = 0.0, 0.5, 1.0, 1.5) (Page 6). The paper explicitly defers \u201cDetails of methods for\u2026 materials synthesis and characterization\u201d to the Supporting Information and does not provide key synthesis parameters in the provided full text (e.g., specific precursor identities/amounts, milling time/speed, jar/ball details, or milling atmosphere). Therefore, the flagged workflow ambiguity (missing synthesis details) is supported by the omission in the provided document text.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "hcp trigonal P3m1 for Li3YCl6\u2212xFx (x=0.0,0.5,1.0)",
+          "unit": ""
+        },
+        {
+          "metric": "impurity phases",
+          "value": "LiCl and YF3 detected for Li3YCl4.5F1.5",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Substitution of Cl by F causes lattice shrinkage; mixing limit exceeded at x=1.5.",
+      "prov": [
+        "Figure 4a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Page 6 explicitly states: (1) \u201cThe XRD patterns of Li3YCl6\u2212xFx (x = 0.0, 0.5, 1.0, and 1.5) in Figure 4a indicate that the main peaks correspond to the hexagonal close-packed (hcp) trigonal structure (space group: P3m1).\u201d This supports phase identification for x = 0.0, 0.5, 1.0. (2) It also states: \u201cThe XRD patterns of Li3YCl4.5F1.5 (x = 1.5) exhibit LiCl and YF3 impurities,\u201d supporting the impurity phases for Li3YCl4.5F1.5. Alleged provenance Figure 4a aligns with the text description of Figure 4a.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Y 3d binding energy",
+          "value": 160.7,
+          "unit": "eV"
+        },
+        {
+          "metric": "Cl 2p3/2 binding energy",
+          "value": 198.9,
+          "unit": "eV"
+        },
+        {
+          "metric": "F 1s binding energy",
+          "value": 685.4,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Confirms Y3+ state and successful F substitution at Cl sites.",
+      "prov": [
+        "Figure 4b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The XPS binding energies are explicitly stated in the text describing Figure 4b (Page 7). It reports Y 3d peaks at ~160.7 eV (Y 3d3/2) and 158.7 eV (Y 3d5/2); Cl 2p3/2 at ~198.9 eV (with Cl 2p1/2 at ~200.5 eV); and F 1s at ~685.4 eV. These match the extracted values (Y 3d binding energy 160.7 eV; Cl 2p3/2 198.9 eV; F 1s 685.4 eV).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (Li3YCl6)",
+          "value": 0.65,
+          "unit": "mS/cM"
+        },
+        {
+          "metric": "ionic conductivity (Li3YCl5.5F0.5)",
+          "value": 0.38,
+          "unit": "mS/cM"
+        },
+        {
+          "metric": "ionic conductivity (Li3YCl5F)",
+          "value": 0.22,
+          "unit": "mS/cM"
+        },
+        {
+          "metric": "activation energy (Li3YCl6)",
+          "value": 0.395,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (Li3YCl5.5F0.5)",
+          "value": 0.405,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (Li3YCl5F)",
+          "value": 0.422,
+          "unit": "eV"
+        },
+        {
+          "metric": "ionic conductivity (Li2ZrCl6)",
+          "value": 0.34,
+          "unit": "mS/cM"
+        }
+      ],
+      "interpretation": "Fluorine substitution decreases conductivity but remains above 0.2 mS cm-1.",
+      "prov": [
+        "Figure 4c",
+        "Figure S20c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports EIS-derived ionic conductivities at 25 \u00b0C for Li3YCl6\u2212xFx in the text describing Figure 4c: 0.65, 0.38, and 0.22 mS/cm for Li3YCl6, Li3YCl5.5F0.5, and Li3YCl5F, respectively. It also explicitly reports activation energies derived from Arrhenius plots (Table S16; Figures S14\u2013S15): 0.395, 0.405, and 0.422 eV for the same three compositions. For Li2ZrCl6, the text describing Figure S20c,d states: \u201cThe ionic conductivity of Li2ZrCl6 is 0.34 mS/cm.\u201d These match the extracted values (units mS/cm and eV).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "CV",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "oxidation onset (Li3YCl6\u2212xFx)",
+          "value": 3.87,
+          "unit": "V vs Li/Li+"
+        },
+        {
+          "metric": "integrated oxidation current (Li3YCl6)",
+          "value": 0.56,
+          "unit": "mA V g-1"
+        },
+        {
+          "metric": "integrated oxidation current (Li3YCl5F)",
+          "value": 0.24,
+          "unit": "mA V g-1"
+        }
+      ],
+      "interpretation": "F substitution forms passivating interface leading to enhanced oxidation stability beyond 4.3 V.",
+      "prov": [
+        "Figure 4d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Supported by the text describing Figure 4d (CV). It states the oxidation reaction for Li3YCl6\u2212xFx occurs at ~3.87 V vs Li/Li+ and reports integrated current values decreasing with F content: \u201cLi3YCl6: 0.56 mA V/g vs Li3YCl5F: 0.24 mA V/g\u201d. These match the extracted metrics/values/units (formatting differences only).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Battery testing",
+      "parameters": {
+        "cathode": "NCM811",
+        "temperature": {
+          "value": 303,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "discharge capacity (Li3YCl6, 0.1C, 4.5 V)",
+          "value": 198,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "discharge capacity (Li3YCl5.5F0.5, 0.1C, 4.5 V)",
+          "value": 210,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "discharge capacity (Li3YCl6, 0.1C, 4.7 V)",
+          "value": 197.4,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "discharge capacity (Li3YCl5F, 0.1C, 4.7 V)",
+          "value": 213.1,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention after 100 cycles (Li3YCl6, 0.5C, 4.7 V)",
+          "value": 51.8,
+          "unit": "%"
+        },
+        {
+          "metric": "capacity retention after 100 cycles (Li3YCl5F, 0.5C, 4.7 V)",
+          "value": 69.2,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Fluorine-substituted electrolyte improves high-voltage capacity and cycle stability.",
+      "prov": [
+        "Figure 4e",
+        "Figure 4f",
+        "Figure 4g"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.82,
+        "reasoning": "Most values are explicitly stated in the text describing Figures 4e\u20134g: at 0.1 C and 4.5 V, Li3YCl6 = 198 mAh/g and Li3YCl5.5F0.5 \u2248 210 mAh/g; at 0.1 C and 4.7 V, Li3YCl6 = 197.4 mAh/g and Li3YCl5F = 213.1 mAh/g; and at 0.5 C and 4.7 V after 100 cycles, capacity retention is 51.8% (Li3YCl6) and 69.2% (Li3YCl5F). However, the extracted entry 'discharge capacity (Li3YCl5.5F0.5, 0.1C, 4.5 V) = 210 mAh g-1' is only given approximately in the paper ('reaching approximately 210 mAh/g') and is grouped for both Li3YCl5.5F0.5 and Li3YCl5F rather than reported as an exact Li3YCl5.5F0.5-specific value. Therefore the extraction overstates precision/specificity for that item, making the overall list not fully supported as written.",
+        "suggested_fix": "Revise the 4.5 V, 0.1C value for Li3YCl5.5F0.5 to reflect the paper\u2019s wording, e.g., '\u2248210 mAh g-1 (Li3YCl5.5F0.5 and Li3YCl5F, 0.1C, 2.9\u20134.5 V)' or extract the exact per-composition values directly from Figure 4e (not provided numerically in the text). All other entries can remain as-is."
+      }
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 213.1,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 100,
+    "_llm_flag": {
+      "is_supported": false,
+      "confidence": 0.9,
+      "reasoning": "The paper reports long-term cycling data at 0.5 C and explicitly states: \u201cafter 100 cycles at a rate of 0.5 C, Li3YCl5F exhibited a capacity retention of 69.2% (Q1/Q100)\u201d. However, it does not state a cycle life value of 100 as a standalone metric (e.g., \u2018cycle life = 100 cycles\u2019 to a defined retention threshold). The number 100 appears only as the cycle count used for reporting retention, not as an explicit \u2018cycle life\u2019 specification.",
+      "suggested_fix": "If the intended field is \u2018number of cycles tested/shown\u2019: 100 cycles (at 0.5 C) is supported. If the intended field is \u2018cycle life\u2019: Not explicitly specified (only retention after 100 cycles is given)."
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2025-03-24T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

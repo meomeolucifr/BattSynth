@@ -1,0 +1,388 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recycling lithium-ion batteries from electric vehicles",
+    "doi": "10.1038/s41586-019-1682-5",
+    "authors": [
+      "Gavin Harper",
+      "Roberto Sommerville",
+      "Emma Kendrick",
+      "Laura Driscoll",
+      "Peter Slater",
+      "Rustam Stolkin",
+      "Allan Walton",
+      "Paul Christensen",
+      "Oliver Heidrich",
+      "Simon Lambert",
+      "Andrew Abbott",
+      "Karl Ryder",
+      "Linda Gaines",
+      "Paul Anderson"
+    ],
+    "journal": "Nature",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["battery recycling", "lithium-ion", "electric vehicles"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Metal alloy fraction (Co, Cu, Fe, Ni)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 80"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Cobalt sulfate",
+      "molecular_formula": "CoSO4",
+      "intended_role": "product",
+      "prov": ["Page 80"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Lithium sulfate",
+      "molecular_formula": "Li2SO4",
+      "intended_role": "product",
+      "prov": ["Page 80"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Lithium carbonate",
+      "molecular_formula": "Li2CO3",
+      "intended_role": "product",
+      "prov": ["Page 78"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium cobalt oxide",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 80"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Sulfuric acid",
+      "molecular_formula": "H2SO4",
+      "ontology": {
+        "role": "leaching acid",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 80"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Hydrogen peroxide",
+      "molecular_formula": "H2O2",
+      "ontology": {
+        "role": "reducing agent",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Page 80"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "inert atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 78"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Carbon dioxide",
+      "molecular_formula": "CO2",
+      "ontology": {
+        "role": "inert atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 78"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "inert atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 78"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Sodium phosphate",
+      "molecular_formula": "Na3PO4",
+      "ontology": {
+        "role": "brine salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 79"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pyrometallurgical smelting of spent lithium-ion batteries to recover metal alloy fraction.",
+        "operations": [
+          {
+            "action": "smelt",
+            "parameters": {
+              "inputs": [],
+              "atmosphere": "",
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "High-temperature furnace reduces metal oxides to alloy of Co, Cu, Fe and Ni."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 80"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Hydrometallurgical leaching of LiCoO2 with H2SO4 and H2O2 producing cobalt and lithium sulfates.",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Reaction: 2 LiCoO2 + 3 H2SO4 + H2O2 → 2 CoSO4 + Li2SO4 + 4 H2O + O2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 80"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Stabilization of batteries by shredding/crushing under inert gas atmosphere.",
+        "operations": [
+          {
+            "action": "shred",
+            "parameters": {
+              "inputs": [],
+              "atmosphere": "chem_4/chem_5/chem_6 mixture (<4% O2)"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "inert gas",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 78"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Discharge of low-voltage modules in sodium phosphate brine prior to processing.",
+        "operations": [
+          {
+            "action": "discharge",
+            "parameters": {
+              "inputs": ["chem_7"],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Brine discharge to passivate cells; produces gases via electrolysis."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 79"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Pyrometallurgical smelting to obtain metal alloy fraction."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Acid leaching of cathode material to recover cobalt and lithium as sulfates."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Stabilization via inert-atmosphere shredding."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Salt-solution discharge of cells/modules."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No quantitative conditions provided for smelting temperature.",
+        "excerpt": "Pyrometallurgical metals reclamation uses a high-temperature furnace"
+      },
+      {
+        "issue": "Exact concentrations and temperatures for H2SO4/H2O2 leaching not specified.",
+        "excerpt": "By far the most common combination of reagents reported is H2SO4/H2O2"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {},
+      "results": [],
+      "interpretation": "Used for assessing state of health of cells, modules and packs.",
+      "prov": ["Page 77"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Resource requirement comparison",
+        "results": [
+          {
+            "metric": "Spodumene ore per lithium produced",
+            "value": 250000000,
+            "unit": "g",
+            "notes": "Original value 250 tons ore per ton Li",
+            "prov": ["Page 76"]
+          },
+          {
+            "metric": "Brine per lithium produced",
+            "value": 750000000,
+            "unit": "g",
+            "notes": "Original value 750 tons brine per ton Li",
+            "prov": ["Page 76"]
+          },
+          {
+            "metric": "Used LIBs required per lithium produced",
+            "value": 28000000,
+            "unit": "g",
+            "notes": "Original value 28 tons used LIBs per ton Li",
+            "prov": ["Page 76"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-09T15:30:00Z",
+    "source_file": "input_text_chunk.txt",
+    "processing_time": null
+  }
+}

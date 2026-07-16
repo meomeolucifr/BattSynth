@@ -1,0 +1,240 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Ultrafast and Directional Diffusion of Lithium in Phosphorene for High-Performance Lithium-Ion Battery",
+    "doi": "10.1021/nl504336h",
+    "authors": [
+      "Weifeng Li",
+      "Yanmei Yang",
+      "Gang Zhang",
+      "Yong-Wei Zhang"
+    ],
+    "journal": "Nano Letters",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "theoretical study",
+    "tags": ["DFT", "Li-ion battery", "phosphorene", "diffusion"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "phosphorene",
+      "molecular_formula": "P",
+      "intended_role": "anode material candidate",
+      "prov": ["Main text"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "black phosphorus",
+      "molecular_formula": "P",
+      "intended_role": "anode material candidate",
+      "prov": ["Main text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "phosphorene",
+      "molecular_formula": "P",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Computational details"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "black phosphorus",
+      "molecular_formula": "P",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Computational details"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "adsorbate",
+        "category": "alkali metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Main text"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT binding energy calculation",
+      "parameters": {
+        "supercell": "4×3 primitive cells",
+        "exchange_correlation": "GGA-PBE",
+        "plane_wave_cutoff": "500 eV"
+      },
+      "results": [
+        {
+          "metric": "binding energy Li on phosphorene",
+          "value": -1.97,
+          "unit": "eV"
+        },
+        {
+          "metric": "binding energy Li in black phosphorus",
+          "value": -2.24,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Strong Li–P interaction",
+      "prov": ["Main text Figure 1b", "Figure 3 description"]
+    },
+    {
+      "method": "CI-NEB diffusion barrier calculation",
+      "parameters": {
+        "paths": ["zigzag", "armchair"]
+      },
+      "results": [
+        {
+          "metric": "diffusion barrier (zigzag, phosphorene)",
+          "value": 0.08,
+          "unit": "eV"
+        },
+        {
+          "metric": "diffusion barrier (armchair, phosphorene)",
+          "value": 0.68,
+          "unit": "eV"
+        },
+        {
+          "metric": "diffusion barrier (zigzag, black phosphorus)",
+          "value": 0.05,
+          "unit": "eV"
+        },
+        {
+          "metric": "diffusion barrier (armchair, black phosphorus)",
+          "value": 0.20,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Highly anisotropic Li diffusion",
+      "prov": ["Figure 2a", "Figure 3a"]
+    },
+    {
+      "method": "Average voltage calculation",
+      "parameters": {
+        "Li/P ratio range": "0–0.25"
+      },
+      "results": [
+        {
+          "metric": "average voltage (phosphorene)",
+          "value": 2.9,
+          "unit": "V"
+        },
+        {
+          "metric": "average voltage (black phosphorus)",
+          "value": 1.7,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Phosphorene provides higher open-circuit voltage",
+      "prov": ["Figure 5", "Voltage discussion"]
+    },
+    {
+      "method": "Electronic band structure",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "band gap (pristine phosphorene)",
+          "value": null,
+          "unit": "eV"
+        },
+        {
+          "metric": "metallic transition upon Li doping",
+          "value": null,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Li intercalation induces semiconducting-to-metallic transition",
+      "prov": ["Figure 7"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius estimation of diffusion mobility",
+        "results": [
+          {
+            "equation": "D ∝ exp(-Ea/kBT)",
+            "value": 1e10,
+            "unit": "relative (zigzag vs armchair, phosphorene)",
+            "notes": "Diffusion along zigzag estimated 10^10 times faster than armchair at 300 K"
+          },
+          {
+            "equation": "",
+            "value": 7.2e2,
+            "unit": "relative (phosphorene vs MoS2)",
+            "notes": "Mobility ratio at room temperature"
+          },
+          {
+            "equation": "",
+            "value": 1.4e4,
+            "unit": "relative (phosphorene vs graphene)",
+            "notes": "Mobility ratio at room temperature"
+          }
+        ],
+        "prov": ["Main text"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-06T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

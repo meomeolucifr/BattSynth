@@ -1,0 +1,541 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "On the synthesis of lithium boron nitride (Li3BN2)",
+    "doi": "10.1016/j.ceramint.2018.01.200",
+    "authors": [
+      "Karan Sahni",
+      "Maziar Ashuri",
+      "Satyanarayana Emani",
+      "James A. Kaduk",
+      "Károly Németh",
+      "Leon L. Shaw"
+    ],
+    "journal": "Ceramics International",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis",
+    "tags": ["solid-state reaction", "lithium boron nitride", "ceramics"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3BN2",
+      "molecular_formula": "Li3BN2",
+      "intended_role": "product",
+      "prov": ["Article text (Experimental, Results)"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium nitride",
+      "molecular_formula": "Li3N",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Molar ratio to h-BN = 1.1",
+      "prov": ["Page 7734"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Hexagonal boron nitride",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Molar ratio to Li3N = 1",
+      "prov": ["Page 7734"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {
+        "role": "protective gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Continuous flow during induction furnace reaction",
+      "prov": ["Page 7735"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Glovebox atmosphere (<1 ppm O2) and purging gas (99.998 %)",
+      "prov": ["Page 7734", "Page 7736"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Tantalum foil",
+      "molecular_formula": "Ta",
+      "ontology": {
+        "role": "container",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "0.05 mm thick, used to make tub and wrapping",
+      "prov": ["Page 7734", "Page 7736"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Graphite crucible",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "container",
+        "category": "apparatus"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in induction furnace",
+      "prov": ["Page 7734"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Loose Li3N (sacrificial powder)",
+      "molecular_formula": "Li3N",
+      "ontology": {
+        "role": "sacrificial oxygen getter",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Surrounds wrapped pellet in quartz-tube method",
+      "prov": ["Page 7736"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mix Li3N and h-BN powders inside Ar-filled glovebox in a molar ratio of 1.1 : 1",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "",
+            "duration": null,
+            "temperature": null
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (<1 ppm O2)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 7734"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-energy ball milling of the powder mixture",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["step_1"],
+              "ball_to_powder_ratio": "20:1 (w/w)"
+            },
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "temperature": null,
+            "notes": "SPEX 8000 M Mixer/Mill; stainless steel canister and balls"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox closed canister",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 7734"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Press 0.5 g milled powder into pellet",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "mass": {
+                "value": 0.5,
+                "unit": "g"
+              },
+              "die_diameter": "0.5 inch",
+              "pressure_applied": "1500 psi"
+            },
+            "duration": null,
+            "temperature": null,
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 7734"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Encapsulate pellet in Ta tub inside graphite crucible for induction furnace synthesis",
+        "operations": [
+          {
+            "action": "encapsulate",
+            "parameters": {
+              "container": "Ta tub (chem_5) in graphite crucible (chem_6)"
+            },
+            "duration": null,
+            "temperature": null,
+            "notes": "Crucible lid has hole covered with Parafilm during transfer"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar during transfer",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 7734"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Heat treatment in induction furnace under flowing N2",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "heating_rate": {
+                "value": 10,
+                "unit": "K min-1"
+              },
+              "target_temperatures": [
+                {
+                  "value": 973,
+                  "unit": "K"
+                },
+                {
+                  "value": 1073,
+                  "unit": "K"
+                },
+                {
+                  "value": 1173,
+                  "unit": "K"
+                }
+              ],
+              "hold_times": [
+                {
+                  "value": 30,
+                  "unit": "min"
+                },
+                {
+                  "value": 60,
+                  "unit": "min"
+                }
+              ],
+              "cooling_rate": {
+                "value": 20,
+                "unit": "K min-1"
+              }
+            },
+            "temperature": null,
+            "duration": null,
+            "notes": "Chamber evacuated and purged with N2 three times before heating; continuous N2 flow"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2 (chem_3)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 7735"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Retrieve and grind product inside Ar glovebox",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["step_5"]
+            },
+            "duration": null,
+            "temperature": null,
+            "notes": "Mortar and pestle"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 7735"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Alternative quartz-tube synthesis under high vacuum / Ar",
+        "operations": [
+          {
+            "action": "encapsulate",
+            "parameters": {
+              "container": "Ta-wrapped pellet surrounded by loose Li3N (chem_7) inside quartz tube"
+            },
+            "duration": null,
+            "temperature": null,
+            "notes": ""
+          },
+          {
+            "action": "evacuate_backfill",
+            "parameters": {
+              "vacuum_level": "10^-2 Torr",
+              "cycles": 2,
+              "backfill_gas": "Ar 99.998 %"
+            },
+            "duration": null,
+            "temperature": null,
+            "notes": ""
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "heating_rate": {
+                "value": 10,
+                "unit": "K min-1"
+              },
+              "target_temperature": {
+                "value": 973,
+                "unit": "K"
+              },
+              "hold_time": {
+                "value": 60,
+                "unit": "min"
+              },
+              "cooling_rate": {
+                "value": 20,
+                "unit": "K min-1"
+              }
+            },
+            "duration": null,
+            "temperature": null,
+            "notes": "Maintained at 10^-2 Torr during heating"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "High vacuum / Ar traces",
+          "pressure": {
+            "value": 1e-4,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 7736"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mixing of Li3N and h-BN powders in Ar glovebox"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "10-min high-energy ball milling"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Pellet pressing at 1500 psi"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Encapsulation in Ta tub / graphite crucible"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Heat treatment at 700-900 °C for 30-60 min under N2"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Product retrieval and grinding"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Alternative quartz-tube vacuum/Ar synthesis at 700 °C for 1 h"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Pressure unit for pellet pressing (psi not in standard unit set)",
+        "excerpt": "pressed using a 0.5\" die to a 1500 psi pressure"
+      },
+      {
+        "issue": "Exact mass of individual chemicals not provided",
+        "excerpt": "Both chemicals were mixed together in a glass vial. The molar ratio between Li3N and h-BN was set as 1.1:1."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα (λ=1.54056 Å)",
+        "2theta_range": "10°–100°",
+        "step_size": "0.0202144°",
+        "count_time": "8 s/step",
+        "specimen_holder": "quartz capillary 1 mm Ø"
+      },
+      "results": [
+        {
+          "metric": "phase composition (700 °C, 30 min)",
+          "value": "91.5 wt% Li3BN2; 4.5 wt% Li2O; 1.8 wt% Li2CN2; 2.3 wt% Li1.6(NH)0.6(NH2)0.4",
+          "unit": ""
+        },
+        {
+          "metric": "phase composition (800 °C, 30 min)",
+          "value": "87.3 wt% Li3BN2; 9.6 wt% Li2O; 3.0 wt% Li2CN2",
+          "unit": ""
+        },
+        {
+          "metric": "phase composition (900 °C, 30 min)",
+          "value": "75.6 wt% Li3BN2; 20.1 wt% Li2O; 4.2 wt% Li2CN2",
+          "unit": ""
+        },
+        {
+          "metric": "phase composition (700 °C, 60 min)",
+          "value": "84.5 wt% Li3BN2; 11.8 wt% Li2O; 3.6 wt% Li2CN2",
+          "unit": ""
+        },
+        {
+          "metric": "phase composition (800 °C, 60 min)",
+          "value": "62.4 wt% Li3BN2; 29.3 wt% Li2O; 8.3 wt% Li2CN2",
+          "unit": ""
+        },
+        {
+          "metric": "phase composition (900 °C, 60 min)",
+          "value": "24.1 wt% Li3BN2; 58.1 wt% Li2O; 17.2 wt% Li2CN2; 0.6 wt% TaN",
+          "unit": ""
+        },
+        {
+          "metric": "phase composition (quartz-tube, 700 °C, 60 min)",
+          "value": "92.8 wt% Li3BN2; 7.2 wt% Li2O",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Higher temperature or longer time increases oxidation (Li2O) and decreases Li3BN2 purity.",
+      "prov": ["Figures 5,6,8; Tables 1,2"]
+    },
+    {
+      "method": "SEM",
+      "parameters": {
+        "coating": "Au sputter",
+        "accelerating_voltage": "20 kV"
+      },
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "Product particles appear as fused aggregates of smaller particles; size larger than precursors",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figures 2,3,4"]
+    },
+    {
+      "method": "TGA",
+      "parameters": {
+        "heating_rate": "5 K min-1",
+        "atmosphere": "flowing Ar"
+      },
+      "results": [
+        {
+          "metric": "Li3N decomposition onset",
+          "value": 993,
+          "unit": "K"
+        },
+        {
+          "metric": "Li3N+BN mixture decomposition postponed to",
+          "value": 1173,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Reaction with BN suppresses Li3N decomposition ‘explosion’ until higher temperature.",
+      "prov": ["Figure 7"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-09T23:53:00Z",
+    "source_file": "ceramics_int_2018_li3bn2.pdf (excerpt)",
+    "processing_time": null
+  }
+}

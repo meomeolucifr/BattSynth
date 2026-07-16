@@ -1,0 +1,308 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Insights into Boron-Based Polyanion-Tuned High-Nickel Cathodes for High-Energy-Density Lithium-Ion Batteries",
+    "doi": "10.1021/acs.chemmater.9b02916",
+    "authors": ["Qiang Xie", "Wangda Li", "Andrei Dolocan", "Arumugam Manthiram"],
+    "journal": "Chemistry of Materials",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": ["lithium-ion battery", "high-nickel cathode", "boron doping", "layered oxide"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNi0.94Co0.06O2",
+      "molecular_formula": "LiNi0.94Co0.06O2",
+      "intended_role": "product",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "B2O3–LiNi0.94Co0.06O2",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "NiSO4·6H2O",
+      "molecular_formula": "NiSO4·6H2O",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "mmol"},
+      "notes": "1.0 M mixed aqueous solution with CoSO4·7H2O, Ni:Co = 94:6",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "CoSO4·7H2O",
+      "molecular_formula": "CoSO4·7H2O",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "mmol"},
+      "notes": "Part of 1.0 M mixed solution, Ni:Co = 94:6",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "KOH",
+      "molecular_formula": "KOH",
+      "ontology": {"role": "base", "category": "inorganic"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "2.0 M solution fed continuously",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "NH4OH",
+      "molecular_formula": "NH4OH",
+      "ontology": {"role": "complexing_agent", "category": "inorganic"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "concentrated solution fed continuously",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "water",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "deionized; used for washing",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Ni0.94Co0.06(OH)2",
+      "molecular_formula": "",
+      "ontology": {"role": "intermediate", "category": "inorganic"},
+      "amount": {"value": null, "unit": "g"},
+      "notes": "precursor produced by coprecipitation",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiOH·H2O",
+      "molecular_formula": "LiOH·H2O",
+      "ontology": {"role": "lithium_source", "category": "inorganic"},
+      "amount": {"value": null, "unit": "mmol"},
+      "notes": "Li:(Ni+Co)=1.03:1 (for NC) or Li:(Ni+Co+B)=1.03:1 (for B–NC)",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "oxygen",
+      "molecular_formula": "O2",
+      "ontology": {"role": "atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "calcination atmosphere",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "B2O3",
+      "molecular_formula": "B2O3",
+      "ontology": {"role": "dopant", "category": "inorganic"},
+      "amount": {"value": null, "unit": "mmol"},
+      "notes": "B:(Ni+Co)=3:97",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {"role": "solvent", "category": "solvent"},
+      "amount": {"value": null, "unit": "mL"},
+      "notes": "absolute ethanol used for mixing with B2O3",
+      "prov": ["Page 8887 Experimental Section 2.1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Coprecipitation of Ni0.94Co0.06(OH)2 precursor",
+        "operations": [
+          {
+            "action": "coprecipitate",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"],
+              "pH": "10-11"
+            },
+            "temperature": {"value": 323, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": "1.0 M Ni/Co sulfate solution pumped with KOH (2.0 M) and NH4OH into batch reactor; stirring 800 rpm"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 8887 Experimental Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Isolation and drying of precursor",
+        "operations": [
+          {"action": "wash", "parameters": {"inputs": ["chem_5"]}, "notes": ""},
+          {"action": "filter", "parameters": {}, "notes": ""},
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {"value": 373, "unit": "K"},
+            "duration": {"value": null, "unit": "min"},
+            "notes": "overnight"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 8887 Experimental Section 2.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Calcination to form LiNi0.94Co0.06O2 (NC)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_6", "chem_7"]},
+            "notes": "Li:(Ni+Co)=1.03:1"
+          },
+          {
+            "action": "calcine",
+            "parameters": {},
+            "temperature": {"value": 913, "unit": "K"},
+            "duration": {"value": 900, "unit": "min"},
+            "notes": "under oxygen atmosphere"
+          }
+        ],
+        "conditions": {"atmosphere": "oxygen", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 8887 Experimental Section 2.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of B2O3–LiNi0.94Co0.06O2 (B–NC)",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_6", "chem_9", "chem_10"]},
+            "notes": "B:(Ni+Co)=3:97 in absolute ethanol"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "temperature": {"value": null, "unit": ""},
+            "duration": {"value": null, "unit": "min"},
+            "notes": "dried until complete evaporation of ethanol"
+          },
+          {
+            "action": "calcine",
+            "parameters": {"inputs": ["chem_7"]},
+            "temperature": {"value": 953, "unit": "K"},
+            "duration": {"value": 900, "unit": "min"},
+            "notes": "Li:(Ni+Co+B)=1.03:1, under oxygen atmosphere"
+          }
+        ],
+        "conditions": {"atmosphere": "oxygen", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Page 8887 Experimental Section 2.1"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Coprecipitation of Ni/Co hydroxide precursor"},
+      {"step_ref": "step_2", "description": "Purification and drying of precursor"},
+      {"step_ref": "step_3", "description": "Lithiation and calcination to obtain NC"},
+      {"step_ref": "step_4", "description": "Boron incorporation and calcination to obtain B–NC"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Amounts of several reagents not specified (e.g., volumes of KOH, NH4OH, ethanol)",
+        "excerpt": "A 1.0 M mixed aqueous solution ... was pumped ... accompanied by a continuous feeding of 2.0 M KOH solution and concentrated NH4OH solution."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {"instrument": "FEI Quanta 650"},
+      "results": [{"metric": "morphology", "value": "spherical secondary particles ~12 µm", "unit": ""}],
+      "interpretation": "",
+      "prov": ["Page 8888 Figure 1a,b"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {"instrument": "Rigaku Miniflex 600", "radiation": "Cu Kα", "scan_range": "10–80°", "step": "0.02°"},
+      "results": [{"metric": "phase", "value": "rhombohedral α-NaFeO2, R3m", "unit": ""}],
+      "interpretation": "",
+      "prov": ["Page 8888 Figure S1"]
+    },
+    {
+      "method": "TOF-SIMS",
+      "parameters": {"instrument": "TOF.SIMS 5", "primary_ion": "30 keV Bi1+", "sputter": "500 eV Cs+ or 1 keV O2+"},
+      "results": [{"metric": "species distribution", "value": "presence of BOx− and LiBO2− on surface and interior of B–NC", "unit": ""}],
+      "interpretation": "",
+      "prov": ["Page 8888 Figure 1c–f"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {"instrument": "Axis Ultra DLD", "source": "Al Kα 1486.6 eV"},
+      "results": [{"metric": "B–O peak", "value": "≈192.5 eV detected in B–NC", "unit": "eV"}],
+      "interpretation": "",
+      "prov": ["Page 8892 Figure 6c"]
+    },
+    {
+      "method": "DSC",
+      "parameters": {"heating_rate": {"value": 1, "unit": "K min-1"}, "temperature_range": "303–623 K"},
+      "results": [
+        {"metric": "exothermic_peak_temperature", "value": 450, "unit": "K", "notes": "NC"},
+        {"metric": "heat_release", "value": 1700, "unit": "J g-1", "notes": "NC"},
+        {"metric": "exothermic_peak_temperature", "value": 458, "unit": "K", "notes": "B–NC"},
+        {"metric": "heat_release", "value": 1250, "unit": "J g-1", "notes": "B–NC"}
+      ],
+      "interpretation": "",
+      "prov": ["Page 8894 Figure 7f"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical testing",
+        "results": [
+          {"equation": "", "value": 223, "unit": "mAh g-1", "notes": "Capacity of B–NC at C/3"},
+          {"equation": "", "value": 80, "unit": "%", "notes": "Capacity retention of B–NC after 400 cycles (full cell)"},
+          {"equation": "", "value": 61, "unit": "%", "notes": "Capacity retention of NC after 400 cycles"},
+          {"equation": "", "value": 125, "unit": "mAh g-1", "notes": "Discharge capacity of 30-day air-stored B–NC at 10C"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 223,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 400
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

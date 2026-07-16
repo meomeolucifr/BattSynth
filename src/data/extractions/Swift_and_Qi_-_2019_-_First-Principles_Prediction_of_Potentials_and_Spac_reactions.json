@@ -1,0 +1,260 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "First-Principles Prediction of Potentials and Space-Charge Layers in All-Solid-State Batteries",
+    "doi": "10.1103/PhysRevLett.122.167701",
+    "authors": [
+      "Michael W. Swift",
+      "Yue Qi"
+    ],
+    "journal": "Physical Review Letters",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "all-solid-state batteries",
+      "first-principles modeling",
+      "DFT"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiPON",
+      "molecular_formula": "Li2PO2N (model SD-Li2PO2N)",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Main text Page 2"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "cathode (fully lithiated)",
+      "prov": [
+        "Main text Page 2"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li0.5CoO2",
+      "molecular_formula": "Li0.5CoO2",
+      "intended_role": "cathode (partially lithiated)",
+      "prov": [
+        "Main text Page 2"
+      ]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li | LiPON | LixCoO2 all-solid-state battery system",
+      "molecular_formula": "",
+      "intended_role": "device/system",
+      "prov": [
+        "Main text Page 1"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text Page 1"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiPON",
+      "molecular_formula": "Li2PO2N",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Model structure SD-Li2PO2N used for calculations",
+      "prov": [
+        "Main text Page 3"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text Page 2"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li0.5CoO2",
+      "molecular_formula": "Li0.5CoO2",
+      "ontology": {
+        "role": "cathode (charged state)",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Main text Page 2"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (DFT)",
+      "parameters": {
+        "software": "VASP",
+        "cutoff_energy": {
+          "value": 520,
+          "unit": "eV"
+        },
+        "functional": "PBE (optPBE for van der Waals)",
+        "U_value_Co_d": {
+          "value": 3.32,
+          "unit": "eV"
+        }
+      },
+      "results": [
+        {
+          "metric": "OCV (LiCoO2)",
+          "value": 4.02,
+          "unit": "V"
+        },
+        {
+          "metric": "OCV (Li0.5CoO2)",
+          "value": 4.15,
+          "unit": "V"
+        },
+        {
+          "metric": "Ionization potential (Li metal)",
+          "value": 3.14,
+          "unit": "eV"
+        },
+        {
+          "metric": "Ionization potential (LiPON)",
+          "value": 5.56,
+          "unit": "eV"
+        },
+        {
+          "metric": "Ionization potential (LiCoO2)",
+          "value": 5.33,
+          "unit": "eV"
+        },
+        {
+          "metric": "Ionization potential (Li0.5CoO2)",
+          "value": 6.38,
+          "unit": "eV"
+        },
+        {
+          "metric": "Electrostatic potential drop (Li | LiPON)",
+          "value": 0.28,
+          "unit": "eV"
+        },
+        {
+          "metric": "Electrostatic potential drop (LiPON | LiCoO2)",
+          "value": 0.59,
+          "unit": "eV"
+        },
+        {
+          "metric": "Electrostatic potential drop (LiPON | Li0.5CoO2)",
+          "value": -0.33,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "First-principles calculations predict interfacial potential drops and their dependence on state of charge.",
+      "prov": [
+        "Table I",
+        "Main text Pages 3-4"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical OCV calculation (Equation 3)",
+        "results": [
+          {
+            "equation": "V = −(E[LixCoO2] − E[CoO2] − xE[Li]) / (x e)",
+            "value": 4.02,
+            "unit": "V",
+            "notes": "for x = 1"
+          },
+          {
+            "equation": "V = −(E[LixCoO2] − E[CoO2] − xE[Li]) / (x e)",
+            "value": 4.15,
+            "unit": "V",
+            "notes": "for x = 0.5"
+          }
+        ],
+        "prov": [
+          "Main text Page 3"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-11T22:42:00Z",
+    "source_file": "user_provided_text",
+    "processing_time": null
+  }
+}

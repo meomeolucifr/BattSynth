@@ -1,0 +1,477 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A cost-effective and humidity-tolerant chloride solid electrolyte for lithium batteries",
+    "doi": "10.1038/s41467-021-24697-2",
+    "authors": ["Kai Wang", "Qingyong Ren", "Zhenqi Gu", "Chaomin Duan", "Jinzhu Wang", "Feng Zhu", "Yuanyuan Fu", "Jipeng Hao", "Jinfeng Zhu", "Lunhua He", "Chin-Wei Wang", "Yingying Lu", "Jie Ma", "Cheng Ma"],
+    "journal": "Nature Communications",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid electrolyte", "lithium battery", "chloride", "mechanochemical synthesis"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2ZrCl6",
+      "molecular_formula": "Li2ZrCl6",
+      "intended_role": "product",
+      "prov": ["Methods", "Results"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li2ZrF6",
+      "molecular_formula": "Li2ZrF6",
+      "intended_role": "product",
+      "prov": ["Methods", "Supplementary Fig. 2"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "LiZrCl5",
+      "molecular_formula": "LiZrCl5",
+      "intended_role": "product",
+      "prov": ["Supplementary Fig. 18"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li3ZrCl7",
+      "molecular_formula": "Li3ZrCl7",
+      "intended_role": "product",
+      "prov": ["Supplementary Fig. 18"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Stoichiometric proportion with ZrCl4",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "ZrCl4",
+      "molecular_formula": "ZrCl4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Stoichiometric proportion with LiCl",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li2ZrCl6",
+      "molecular_formula": "Li2ZrCl6",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "As-milled and annealed forms (α and β phases)",
+      "prov": ["Results"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "LiF",
+      "molecular_formula": "LiF",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for Li2ZrF6 synthesis",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "ZrF4",
+      "molecular_formula": "ZrF4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for Li2ZrF6 synthesis",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Stoichiometric mixing of LiCl and ZrCl4",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Loaded into WC milling pot"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Mechanochemical synthesis of Li2ZrCl6",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["step_1"],
+              "speed": "500 rpm",
+              "ball_to_powder_ratio": "10:1",
+              "media": "WC balls, 5 mm"
+            },
+            "duration": {
+              "value": 2700,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Planetary mill (Pulverisette 7 premium line)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Annealing to obtain β-Li2ZrCl6",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["step_2"],
+              "temperature": {
+                "value": 623,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 300,
+                "unit": "min"
+              }
+            },
+            "notes": "Sealed in vacuum quartz tube"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods", "Results"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Optional higher temperature treatment leading to melting",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["step_2"],
+              "temperature": {
+                "value": 723,
+                "unit": "K"
+              },
+              "duration": {
+                "value": null,
+                "unit": ""
+              }
+            },
+            "notes": "Material begins to melt"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Results"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mix LiCl and ZrCl4 in stoichiometric ratio"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Planetary milling at 500 rpm for 45 h to yield as-milled Li2ZrCl6 (α phase)"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Anneal at 350 °C for 5 h to obtain β-Li2ZrCl6 with C2/m symmetry"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact amounts of LiCl and ZrCl4 not specified",
+        "excerpt": "Li2ZrCl6 (LZC) was mechanochemically synthesized from a stoichiometric mixture of LiCl and ZrCl4."
+      },
+      {
+        "issue": "Atmosphere during milling not explicitly stated",
+        "excerpt": "The milling was performed in a planetary mill ... No mention of inert atmosphere."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα1"
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "α-LZC (P3m1) as-milled; β-LZC (C2/m) after 350 °C anneal",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Phase transition from α to β upon annealing",
+      "prov": ["Fig. 3a"]
+    },
+    {
+      "method": "Neutron powder diffraction",
+      "parameters": {
+        "temperature_range": "300–700 K",
+        "atmosphere": "Ar"
+      },
+      "results": [
+        {
+          "metric": "phase transition onset",
+          "value": "277 °C",
+          "unit": "°C"
+        }
+      ],
+      "interpretation": "α and β phases coexist 277–350 °C",
+      "prov": ["Fig. 3b"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (as-milled)",
+          "value": 0.81,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "ionic conductivity (350 °C-annealed)",
+          "value": 0.00581,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "High conductivity retained in as-milled sample",
+      "prov": ["Fig. 2a", "Fig. 2b"]
+    },
+    {
+      "method": "DC polarization",
+      "parameters": {
+        "bias": "1 V"
+      },
+      "results": [
+        {
+          "metric": "electronic conductivity (as-milled)",
+          "value": 9.22e-8,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "electronic conductivity (350 °C-annealed)",
+          "value": 3.59e-8,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Electronic conductivity four orders lower than ionic",
+      "prov": ["Fig. 2c"]
+    },
+    {
+      "method": "Arrhenius analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "activation energy (as-milled)",
+          "value": 0.35,
+          "unit": "eV"
+        },
+        {
+          "metric": "activation energy (350 °C-annealed)",
+          "value": 0.50,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Higher barrier after annealing",
+      "prov": ["Fig. 2d"]
+    },
+    {
+      "method": "CV",
+      "parameters": {
+        "scan_rate": "0.1 mV s-1"
+      },
+      "results": [
+        {
+          "metric": "electrochemical stability window",
+          "value": "1.75–4.25",
+          "unit": "V vs Li/Li+"
+        }
+      ],
+      "interpretation": "Stable up to 4 V class cathodes",
+      "prov": ["Supplementary Fig. 12"]
+    },
+    {
+      "method": "Battery testing",
+      "parameters": {
+        "cell": "Li-In | LPSCl-LZC | scNMC811",
+        "current": "200 mA g-1"
+      },
+      "results": [
+        {
+          "metric": "specific capacity after 200 cycles",
+          "value": 150,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Stable capacity over long cycling",
+      "prov": ["Abstract", "Fig. 6d"]
+    },
+    {
+      "method": "Humidity exposure test",
+      "parameters": {
+        "relative_humidity": "5%",
+        "duration": {
+          "value": 1440,
+          "unit": "min"
+        }
+      },
+      "results": [
+        {
+          "metric": "conductivity change",
+          "value": "negligible",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Material is moisture resistant",
+      "prov": ["Fig. 7d"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Bond valence site energy (BVSE)",
+        "results": [
+          {
+            "equation": "",
+            "value": 0.803,
+            "unit": "eV",
+            "notes": "Effective Li-ion migration barrier in α-LZC"
+          },
+          {
+            "equation": "",
+            "value": 0.809,
+            "unit": "eV",
+            "notes": "Highest possible migration barrier in β-LZC"
+          }
+        ]
+      },
+      {
+        "method_name": "Cost estimation",
+        "results": [
+          {
+            "equation": "",
+            "value": 1.38,
+            "unit": "USD m-2",
+            "notes": "Raw-material cost of Li2ZrCl6 at 50 µm thickness"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 150,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 200
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

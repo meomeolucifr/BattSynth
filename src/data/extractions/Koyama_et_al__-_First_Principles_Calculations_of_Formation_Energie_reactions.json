@@ -1,0 +1,148 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "First Principles Calculations of Formation Energies and Electronic Structures of Defects in Oxygen-Deficient LiMn2O4",
+    "doi": "10.1149/1.1522720",
+    "authors": [
+      "Yukinori Koyama",
+      "Isao Tanaka",
+      "Hirohiko Adachi",
+      "Yoshiharu Uchimoto",
+      "Masataka Wakihara"
+    ],
+    "journal": "Journal of The Electrochemical Society",
+    "year": 2003
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "first-principles",
+      "defect chemistry",
+      "LiMn2O4"
+    ]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiMn2O4",
+      "molecular_formula": "LiMn2O4",
+      "ontology": {
+        "role": "material studied",
+        "category": "inorganic compound"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page A63-A67"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "First-principles plane-wave pseudopotential calculations (CASTEP)",
+        "parameters": {
+          "supercell": "56 atoms (Li8Mn16O32)",
+          "functional": "LSDA",
+          "plane_wave_cutoff": {
+            "value": 500,
+            "unit": "eV"
+          },
+          "k_point_mesh": "2×2×2",
+          "pseudopotentials": "ultrasoft",
+          "convergence_energy_variation": {
+            "value": 0.01,
+            "unit": "eV"
+          }
+        },
+        "results": [
+          {
+            "metric": "Formation energy – simple oxygen monovacancy",
+            "value": 2.17,
+            "unit": "eV",
+            "prov": ["Table I, Page A64"]
+          },
+          {
+            "metric": "Formation energy – modified oxygen trivacancy",
+            "value": 2.82,
+            "unit": "eV",
+            "prov": ["Table I, Page A64"]
+          },
+          {
+            "metric": "Formation energy – simple Li & Mn interstitials (Fig. 2a)",
+            "value": 1.83,
+            "unit": "eV",
+            "prov": ["Table III, Page A65"]
+          },
+          {
+            "metric": "Formation energy – Li & Mn interstitials with Li shift (Fig. 2b)",
+            "value": 1.46,
+            "unit": "eV",
+            "prov": ["Table III, Page A65"]
+          },
+          {
+            "metric": "Formation energy – Li interstitial (16c) + Mn substituted (8a)",
+            "value": 1.46,
+            "unit": "eV",
+            "prov": ["Table III, Page A65"]
+          },
+          {
+            "metric": "Relative energy – Li interstitial models (Fig. 2b vs 2a)",
+            "value": -0.07,
+            "unit": "eV",
+            "prov": ["Table II, Page A65"]
+          },
+          {
+            "metric": "Relative energy – Mn interstitial models (Fig. 2b vs 2a)",
+            "value": -0.70,
+            "unit": "eV",
+            "prov": ["Table II, Page A65"]
+          }
+        ],
+        "interpretation": "Metal-excess (Li/Mn interstitial or Mn substitution) defects are energetically favored over oxygen-vacancy defects in oxygen-deficient LiMn2O4.",
+        "prov": ["Computational Procedure and Results sections"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

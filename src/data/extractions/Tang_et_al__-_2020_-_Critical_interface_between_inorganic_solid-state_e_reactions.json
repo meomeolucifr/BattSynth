@@ -1,0 +1,219 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Critical interface between inorganic solid-state electrolyte and sodium metal",
+    "doi": "10.1016/j.mattod.2020.08.016",
+    "authors": [
+      "Bin Tang",
+      "Prem Wicram Jaschin",
+      "Xin Li",
+      "Shou-Hang Bo",
+      "Zhen Zhou"
+    ],
+    "journal": "Materials Today",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": [
+      "solid-state electrolyte",
+      "sodium batteries",
+      "interface stability"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "cubic Na3PS4",
+      "molecular_formula": "Na3PS4",
+      "intended_role": "solid-state electrolyte product",
+      "prov": [
+        "Page 204 – text paragraph on c-Na3PS4 preparation"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "tetragonal Na3PS4",
+      "molecular_formula": "Na3PS4",
+      "ontology": {
+        "role": "intermediate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Page 204"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "cubic Na3PS4",
+      "molecular_formula": "Na3PS4",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "High ionic conductivity (4.6×10^-4 S cm^-1 at 298 K)",
+      "prov": [
+        "Page 204"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Conversion of tetragonal Na3PS4 to cubic Na3PS4",
+        "operations": [
+          {
+            "action": "heat_treatment",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ]
+            },
+            "temperature": {
+              "value": 543,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Product designated cubic Na3PS4",
+            "prov": [
+              "Page 204"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 204"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Heat treat tetragonal Na3PS4 at 543 K to obtain cubic phase."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing treatment time",
+        "excerpt": "The c-Na3PS4 could be obtained by employing mechanochemical methods and consequent heat treatment at 270 °C"
+      },
+      {
+        "issue": "No precursor details for mechanochemical synthesis",
+        "excerpt": "tetragonal phase synthesized at low temperature (i.e., 251 °C)…"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {
+        "frequency_range": "7 MHz – 100 mHz",
+        "amplitude": "20 mV"
+      },
+      "results": [
+        {
+          "metric": "interfacial resistance (initial)",
+          "value": 60,
+          "unit": "Ω"
+        },
+        {
+          "metric": "interfacial resistance (after 12 h)",
+          "value": 120,
+          "unit": "Ω"
+        }
+      ],
+      "interpretation": "Resistance doubled in 12 h indicating interface degradation.",
+      "prov": [
+        "Page 205 – Fig. 3a, 3b description"
+      ]
+    },
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 4.6e-4,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "High conductivity of cubic Na3PS4 prepared at low temperature.",
+      "prov": [
+        "Page 204"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Electrochemical stability window prediction (ab-initio)",
+        "results": [
+          {
+            "equation": "",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-17T18:47:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

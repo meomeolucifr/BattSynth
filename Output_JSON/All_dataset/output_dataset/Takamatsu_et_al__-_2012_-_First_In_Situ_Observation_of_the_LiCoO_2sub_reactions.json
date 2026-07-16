@@ -1,0 +1,453 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "First In Situ Observation of the LiCoO2 Electrode/Electrolyte Interface by Total-Reflection X-ray Absorption Spectroscopy",
+    "doi": "10.1002/anie.201203910",
+    "authors": [
+      "Daiko Takamatsu",
+      "Yukinori Koyama",
+      "Yuki Orikasa",
+      "Shinichiro Mori",
+      "Takayuki Nakatsutsumi",
+      "Tatsumi Hirano",
+      "Hajime Tanida",
+      "Hajime Arai",
+      "Yoshiharu Uchimoto",
+      "Zempachi Ogumi"
+    ],
+    "journal": "Angewandte Chemie International Edition",
+    "year": 2012
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and characterization",
+    "tags": ["Li-ion battery", "thin film electrode", "TRF-XAS", "surface analysis", "pulsed laser deposition"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiCoO2 thin film",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "electrode material",
+      "prov": ["Experimental Section", "Figure 1", "Main Text"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Deposited as 50 nm thin film",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Platinum",
+      "molecular_formula": "Pt",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mechanically polished polycrystalline substrate",
+      "prov": ["Experimental Section", "Figure 2c"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Figure 2c"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium perchlorate",
+      "molecular_formula": "LiClO4",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Concentration in EC/DEC mixture",
+      "prov": ["Figure 2c"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of 1:1 volumetric mixture with DEC",
+      "prov": ["Figure 2c"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Diethyl carbonate",
+      "molecular_formula": "C5H10O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of 1:1 volumetric mixture with EC",
+      "prov": ["Figure 2c"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Helium",
+      "molecular_formula": "He",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Flowing gas filling free space of cell",
+      "prov": ["Figure 2c"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanical polishing of platinum substrate",
+        "operations": [
+          {
+            "action": "polish",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pulsed laser deposition of LiCoO2 thin film on platinum substrate",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "duration": {
+              "value": 30,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "notes": "PLD at 600 °C produced 50 nm thick film"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Assembly of spectro-electrochemical cell and electrolyte soaking",
+        "operations": [
+          {
+            "action": "assemble_cell",
+            "parameters": {
+              "inputs": ["target_1", "chem_3", "chem_4", "chem_5", "chem_6"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Separator: CELGARD 3501; cell sealed; helium atmosphere"
+          },
+          {
+            "action": "soak",
+            "parameters": {
+              "inputs": ["target_1", "chem_4", "chem_5", "chem_6"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Immersion prior to TRF-XAS"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "He",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 2c", "Main Text"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Electrochemical lithium intercalation/de-intercalation",
+        "operations": [
+          {
+            "action": "electrochemical_cycle",
+            "parameters": {
+              "inputs": ["target_1"],
+              "potential_window": "3.2–4.2 V vs Li/Li+",
+              "sweep_rate": "0.1 mV s-1"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Performed between TRF-XAS measurements"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 1", "Experimental Section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of polished Pt substrate"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Deposition of 50 nm LiCoO2 thin film by PLD at 873 K for 30 min"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Assembly of electrochemical cell with electrolyte and soaking of electrode"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Electrochemical cycling for in-situ characterization"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Total-Reflection Fluorescence X-ray Absorption Spectroscopy (TRF-XAS)",
+      "parameters": {
+        "edge": "Co K-edge",
+        "incident_energy": {
+          "value": 7.7,
+          "unit": "keV"
+        },
+        "wavelength": {
+          "value": 1.61,
+          "unit": "Å"
+        },
+        "angles": {
+          "critical_angle": {
+            "value": 0.28,
+            "unit": "deg"
+          },
+          "surface_angle": {
+            "value": 0.2,
+            "unit": "deg"
+          },
+          "bulk_angle": {
+            "value": 2.2,
+            "unit": "deg"
+          }
+        }
+      },
+      "results": [
+        {
+          "metric": "penetration_depth_surface",
+          "value": 3,
+          "unit": "nm"
+        },
+        {
+          "metric": "penetration_depth_bulk",
+          "value": 100,
+          "unit": "nm",
+          "notes": ">100 nm"
+        },
+        {
+          "metric": "Co oxidation state shift after electrolyte soaking",
+          "value": "reduction to Co2+ at surface",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Surface Co ions reduced upon electrolyte contact; irreversible behavior observed during first cycle.",
+      "prov": ["Figure 2", "Figure 3", "Figure 4", "Main Text"]
+    },
+    {
+      "method": "Cyclic Voltammetry (CV)",
+      "parameters": {
+        "potential_window": "3.2–4.2 V vs Li/Li+",
+        "sweep_rate": {
+          "value": 0.1,
+          "unit": "mV s-1"
+        }
+      },
+      "results": [
+        {
+          "metric": "peak_potential_1",
+          "value": 3.9,
+          "unit": "V"
+        },
+        {
+          "metric": "peak_potential_2",
+          "value": 4.06,
+          "unit": "V"
+        },
+        {
+          "metric": "peak_potential_3",
+          "value": 4.18,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Peak intensity decreases and separation increases with cycling, indicating decreased reversibility.",
+      "prov": ["Figure 1"]
+    },
+    {
+      "method": "Electrochemical Impedance Spectroscopy (EIS)",
+      "parameters": {
+        "measurement_potential": {
+          "value": 4.0,
+          "unit": "V"
+        }
+      },
+      "results": [
+        {
+          "metric": "charge_transfer_resistance_trend",
+          "value": "increases with cycles",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Growing resistance indicates interfacial degradation over cycles.",
+      "prov": ["Figure 1 inset"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density Functional Theory (DFT) defect calculations",
+        "results": [
+          {
+            "equation": "Equilibrium defect concentration vs oxygen chemical potential",
+            "value": "Antisite Co_Li2+ concentration increases for μ_O ≤ −1 eV; electrolyte μ_O ≈ −2 eV",
+            "unit": ""
+          }
+        ],
+        "prov": ["Figure 3c", "Main Text"]
+      },
+      {
+        "method_name": "Proposed surface reduction reaction",
+        "results": [
+          {
+            "equation": "LiCoO2 + S → Co_Li• + e′ + Li2O + SO",
+            "value": null,
+            "unit": ""
+          }
+        ],
+        "prov": ["Main Text Equation (1)"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-02-17T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

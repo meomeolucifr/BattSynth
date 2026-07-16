@@ -1,0 +1,194 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Synthesis and characterization of lithium aluminum-doped spinel for lithium secondary battery",
+    "doi": "",
+    "authors": [
+      "Yun-Sung Lee",
+      "Naoki Kumada",
+      "Masaki Yoshio"
+    ],
+    "journal": "",
+    "year": null
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": []
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiAlxMn2-xO4 spinel",
+      "molecular_formula": "",
+      "intended_role": "cathode material",
+      "prov": [
+        "Title"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.76,
+        "reasoning": "The field \"Target Formula\" has an empty extracted value, but the paper title and body clearly specify the compound/formula being studied (Al-doped spinel), e.g., \"LiAlxMn2−xO4\" / \"LiAlxMn2−xO4\" (also written as LiAlxMn2−xO4 with x in the range ~0–0.12). Since a target formula is explicitly present in the document, an empty extraction is not supported.",
+        "suggested_fix": "LiAlxMn2−xO4 (Al-doped spinel lithium manganese oxide; x varied ~0–0.12)"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Al(NO3)3",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Body Text"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.74,
+        "reasoning": "The paper discusses Al-doped spinel synthesis and lists aluminum starting materials such as Al(OH)(CH3COO)2 (aluminum acetate hydroxide), Al(NO3)3, Al2O3, and AlCl3 (as “Al(NO3)3”, “Al2O3”, “AlCl3”, and an Al-acetate-based compound) (see Page 2, Experimental: starting materials list). However, the text does specify amounts at least in terms of stoichiometry: it states “A stoichiometric amount of LiOH·H2O, MnO2 (or γ-MnOOH), and aluminum-based materials … were mixed in various cationic ratios (x in LiAlxMn2−xO4, x = 0–0.12).” Therefore it is not correct to say the amount is “Not specified in text” in a general sense; stoichiometric amounts/ratios are specified even if exact grams are not.",
+        "suggested_fix": "Al(NO3)3 | Amount: stoichiometric amount (varied by cationic ratio x in LiAlxMn2−xO4, x = 0–0.12); exact mass not given."
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Al(OH)3",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Body Text"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper discusses Al-doped spinel materials and lists aluminum starting materials such as Al(OH)3/AlO(OH) (written as AlOOH), Al2O3, Al(NO3)3? (not clearly), and Al-acetate is mentioned in prior work context. However, Al(OH)3 is not explicitly identified anywhere in the provided text (the hydroxide form is not named). Since the chemical identity itself is not supported, the paired statement 'Al(OH)3 | Amount: Not specified' is not supported overall (even though amounts for Al sources are generally not given, Al(OH)3 is not the source used/mentioned).",
+        "suggested_fix": "Chemical identity should be one of the explicitly listed Al starting materials, e.g., AlO(OH) (AlOOH), Al2O3, or Al(NO3)3/Al-acetate depending on what is intended; amount: not specified (only 'stoichiometric amount' and mixing ratios are mentioned, no explicit mass/moles for Al source)."
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "High-temperature calcination of precursor mixture",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": [],
+              "temperature": {
+                "value": 1073,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 1200,
+                "unit": "min"
+              }
+            },
+            "notes": "Reported as \"800 °C for 20 h\"",
+            "prov": [
+              "Body Text"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly describes a calcination step during synthesis: e.g., Page 2 states the mixed starting materials were “precalcined” and then “re-ground and calcined” at high temperature (e.g., 700–900°C) to obtain the Al-doped spinel. This supports the synthesis operation being calcination (“calcine”).",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air or oxygen",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.98,
+            "reasoning": "The paper explicitly states that the samples were calcined/synthesized “in air or oxygen atmosphere.” Examples include Page 1: “at 700–800°C for 20 h in air or oxygen atmosphere,” Page 2 (Experimental): “calcined … for 20 h in air or oxygen atmosphere,” and Page 8 (Conclusion): “for 20 h in air or oxygen atmosphere.” This directly supports the extracted synthesis atmosphere value “air or oxygen.”",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Body Text"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Calcination of mixed precursors at 800 °C for 20 h",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.93,
+          "reasoning": "The paper’s synthesis workflow states that precursors were precalcined at 700 or 850 °C for 10 h, then (after regrinding) calcined at 800–900 °C for 20 h in air or oxygen to obtain the Al-doped spinel. There is no step described as “calcination of mixed precursors at 800 °C for 20 h” as a single specific condition; 800 °C is only one option within a broader 800–900 °C range, and “mixed precursors” is not tied specifically to 800 °C in the text.",
+          "suggested_fix": "Reground materials were calcined at 800–900 °C for 20 h in air or oxygen atmosphere (after precalcination at 700 or 850 °C for 10 h)."
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Incomplete decoding of text prevents extraction of full precursor list and quantities.",
+        "excerpt": "/C… encoded text",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The provided FULL source text is heavily garbled/partially undecodable (many sections appear as non-ASCII/encoded characters), and while some starting materials are partially readable (e.g., LiOH·H2O, MnO2, several Al sources such as Al(OH)3, Al(NO3)3?, Al2O3, AlCl3?), the document does not consistently present a clean, fully decodable “full precursor list and quantities” in a way that can be reliably extracted from this text dump. The extracted issue statement (‘Incomplete decoding of text prevents extraction of full precursor list and quantities.’) is therefore supported by the state of the provided text itself, and the excerpt indicator (‘/C… encoded text’) matches the observed encoding corruption throughout.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

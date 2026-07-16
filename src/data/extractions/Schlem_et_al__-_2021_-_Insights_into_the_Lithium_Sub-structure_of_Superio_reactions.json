@@ -1,0 +1,513 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Insights into the Lithium Sub-structure of Superionic Conductors Li3YCl6 and Li3YBr6",
+    "doi": "10.1021/acs.chemmater.0c04352",
+    "authors": [
+      "Roman Schlem",
+      "Ananya Banik",
+      "Saneyuki Ohno",
+      "Emmanuelle Suard",
+      "Wolfgang G. Zeier"
+    ],
+    "journal": "Chemistry of Materials",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "solid electrolyte",
+      "halide",
+      "mechanochemical synthesis",
+      "neutron diffraction"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li3YCl6",
+      "molecular_formula": "Li3YCl6",
+      "intended_role": "product",
+      "prov": ["Experimental Section 2.2, 2.3"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li3YBr6",
+      "molecular_formula": "Li3YBr6",
+      "intended_role": "product",
+      "prov": ["Experimental Section 2.2, 2.3"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "99.99% purity (ChemPur)",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "YCl3",
+      "molecular_formula": "YCl3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "anhydrous, 99.9% (Alfa Aesar); used with ~10 wt% excess",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "LiBr",
+      "molecular_formula": "LiBr",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "99.99% purity (ChemPur), pre-dried at 473 K for 1440 min",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "YBr3",
+      "molecular_formula": "YBr3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "ultra-dry, 99.9% (Alfa Aesar); used with ~10 wt% excess",
+      "prov": ["Section 2.1"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "ZrO2 milling media",
+      "molecular_formula": "ZrO2",
+      "ontology": {
+        "role": "auxiliary",
+        "category": "equipment"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "3 mm diameter; 30:1 mass ratio to precursor powder",
+      "prov": ["Section 2.3"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "All handling inside Ar-filled glovebox",
+      "prov": ["Section 2.1"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Pre-dry LiBr",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "temperature": {
+                "value": 473,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 1440,
+                "unit": "min"
+              }
+            },
+            "notes": "",
+            "prov": ["Section 2.1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Prepare and pre-heat quartz ampules",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 1073,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 90,
+                "unit": "min"
+              }
+            },
+            "notes": "dynamic vacuum",
+            "prov": ["Section 2.1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Dry ball-mill cups",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "temperature": {
+                "value": 333,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 720,
+                "unit": "min"
+              }
+            },
+            "notes": "dynamic vacuum",
+            "prov": ["Section 2.1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.1"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Mechanochemical synthesis of Li3YCl6 or Li3YBr6",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1/chem_2 OR chem_3/chem_4"],
+              "notes": "Hand-ground mixtures prepared under Ar"
+            },
+            "prov": ["Section 2.3"]
+          },
+          {
+            "action": "mill",
+            "parameters": {
+              "vessel_volume": {
+                "value": 45,
+                "unit": "mL"
+              },
+              "media": "chem_5",
+              "media_to_powder_mass_ratio": "30:1",
+              "cycle_details": "297 cycles; each cycle: 5 min at 500 rpm followed by 15 min rest",
+              "total_cycles": 297
+            },
+            "prov": ["Section 2.3"]
+          },
+          {
+            "action": "homogenize",
+            "parameters": {
+              "frequency": "after every 99 cycles",
+              "environment": "Ar glovebox"
+            },
+            "prov": ["Section 2.3"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.3"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Crystallization of mechanochemically milled powder",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["milled powder batches"],
+              "amount": {
+                "value": 1,
+                "unit": "g"
+              },
+              "batch_count": 3,
+              "method": "hand grinding",
+              "duration": {
+                "value": 15,
+                "unit": "min"
+              }
+            },
+            "prov": ["Section 2.3"]
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 823,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 5,
+                "unit": "min"
+              },
+              "furnace_status": "pre-heated & equilibrated 60 min"
+            },
+            "prov": ["Section 2.3"]
+          },
+          {
+            "action": "quench",
+            "parameters": {
+              "method": "air quench",
+              "notes": "ampule removed from furnace and placed upright in corundum crucible"
+            },
+            "prov": ["Section 2.3"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.3"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Ampule (solid-state) synthesis route",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "method": "uniaxial pressing",
+              "notes": "dense pellets, dimension not specified"
+            },
+            "prov": ["Section 2.2"]
+          },
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "quartz ampule (~10 cm length, 10 mm ID)"
+            },
+            "prov": ["Section 2.2"]
+          },
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 823,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 10080,
+                "unit": "min"
+              }
+            },
+            "prov": ["Section 2.2"]
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "method": "slow cooling"
+            },
+            "prov": ["Section 2.2"]
+          },
+          {
+            "action": "mix",
+            "parameters": {
+              "notes": "Three 1 g batches combined and hand-ground 15 min"
+            },
+            "prov": ["Section 2.2"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Section 2.2"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Pre-dry LiBr precursor"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Prepare reaction vessels (quartz ampules)"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Dry milling equipment"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Mechanochemical synthesis of precursor powders"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Short high-temperature crystallization & quench"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Conventional solid-state ampule synthesis"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact reagent masses and stoichiometry not specified apart from 10 wt % excess of rare-earth halide",
+        "excerpt": "were used with around 10 wt % excess of the rare-earth halide"
+      },
+      {
+        "issue": "Mass ratio 30:1 given without explicit masses for ZrO2 media and powder",
+        "excerpt": "30:1 mass ratio of 3 mm ZrO2 milling medium/precursor powder"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Neutron powder diffraction",
+      "parameters": {
+        "instrument": "D2B (ILL, Grenoble)",
+        "wavelength": "1.594 Å",
+        "scan_step": "0.05° in 2θ (25 steps)",
+        "repetitions": 10,
+        "pattern_time": {
+          "value": 240,
+          "unit": "min"
+        },
+        "temperature_control": "cryo-furnace"
+      },
+      "results": [
+        {
+          "metric": "lattice thermal expansion observed",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Data used to analyze lithium sub-structure and polyhedral distortions",
+      "prov": ["Section 2.4"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "7 MHz – 100 mHz",
+        "voltage_amplitude": "10 mV",
+        "temperature_range": "-40 °C to 60 °C",
+        "pressure_during_pellet_press": {
+          "value": 382,
+          "unit": "MPa"
+        }
+      },
+      "results": [
+        {
+          "metric": "Capacitance (Li3YCl6 bulk)",
+          "value": 36,
+          "unit": "pF cm-2"
+        },
+        {
+          "metric": "Capacitance (Li3YCl6 grain boundary)",
+          "value": 6300,
+          "unit": "pF cm-2"
+        },
+        {
+          "metric": "Capacitance (Li3YBr6 bulk)",
+          "value": 64,
+          "unit": "pF cm-2"
+        },
+        {
+          "metric": "Capacitance (Li3YBr6 electrode contribution)",
+          "value": 0.94,
+          "unit": "µF cm-2"
+        }
+      ],
+      "interpretation": "Mechanochemical Li3YCl6 shows higher ionic conductivity than ampule sample; opposite trend for Li3YBr6",
+      "prov": ["Section 2.8"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-04T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,577 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Crystalline LiPON as a Bulk-Type Solid Electrolyte",
+    "doi": "10.1021/acsenergylett.0c02336",
+    "authors": [
+      "Pedro López-Aranguren",
+      "Marine Reynaud",
+      "Paweł Głuchowski",
+      "Ainhoa Bustinza",
+      "Montserrat Galceran",
+      "Juan Miguel López del Amo",
+      "Michel Armand",
+      "Montse Casas-Cabanas"
+    ],
+    "journal": "ACS Energy Letters",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid electrolyte",
+      "LiPON",
+      "bulk synthesis",
+      "solid-state batteries"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "b-Li3.6PO3.4N0.6",
+      "molecular_formula": "Li3.6P1O3.4N0.6",
+      "intended_role": "solid electrolyte",
+      "prov": [
+        "Abstract",
+        "Figure 2",
+        "Table 1",
+        "Experimental section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports the target composition/formula as Li3.6PO3.4N0.6 (e.g., Abstract: “bulk Li3.6PO3.4N0.6”; Figure 2 caption: “b-Li3.6PO3.4N0.6”; Table 1 title; and text: “chemical composition Li3.6(1)PO3.4(1)N0.6(1)”). The extracted value “Li3.6P1O3.4N0.6” is not written in the paper and incorrectly inserts “P1” instead of simply “P” (implying a separate stoichiometric coefficient formatting that is not used).",
+        "suggested_fix": "Li3.6PO3.4N0.6"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiPO3",
+      "molecular_formula": "LiPO3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods description"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.87,
+        "reasoning": "The paper explicitly identifies LiPO3 as a precursor used to synthesize bulk crystalline LiPON: “prepared through simple mechanical milling of the low-cost precursors LiPO3 and Li3N…” (Page 3) and reiterates this in the conclusion (Page 5). However, the text does not specify the *amount* (mass/moles/ratio) of LiPO3 used; it refers readers to Supporting Information for further details. Therefore, the extracted statement “LiPO3 | Amount: Not specified in text” is supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li3N",
+      "molecular_formula": "Li3N",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Methods description"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper does mention Li3N as a precursor (“mechanical milling of the low-cost precursors LiPO3 and Li3N”), but it does not report the amounts used. However, the extracted field claims the chemical identity as “Li3N” with amount not specified; this is incomplete/misleading because Li3N is not the main product studied (the bulk electrolyte is b-Li3.6PO3.4N0.6) and Li3N is only identified as a starting material. Thus the extraction as written (“Chemical Identity and Amount: Li3N”) is not supported as the primary chemical identity; only its presence as a precursor is supported, and the amount is indeed not specified in the provided text.",
+        "suggested_fix": "Chemical identity should be: b-Li3.6PO3.4N0.6 (bulk crystalline LiPON). If the intent is to capture precursors, list: LiPO3 and Li3N (amounts not specified in provided text)."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Methods description"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly states that the precursors (LiPO3 and Li3N) were mechanically milled “for 20 min under Ar,” confirming Argon was used as an atmosphere (chemical identity supported). However, nowhere in the provided full text is an argon amount/flow rate/pressure/purity specified—only “under Ar”—so “Amount: Not specified in text” is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Li metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used in symmetric cells",
+      "prov": [
+        "Electrochemical testing section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.78,
+        "reasoning": "The paper clearly indicates lithium metal is used (e.g., symmetric cells “Li|b-Li3.6PO3.4N0.6|Li”, “using Li metal disk”), so the chemical identity “Li metal” is supported. However, the extracted claim that the Li metal amount is “Not specified in text” is not supported because the text does specify the form/amount as a “Li metal disk” (even though it does not give a mass or thickness). Since some quantity description is present, “Not specified” is too strong.",
+        "suggested_fix": "Li metal | Amount: Li metal disk (mass/thickness not specified)"
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanochemical synthesis of crystalline LiPON",
+        "operations": [
+          {
+            "action": "ball mill",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ],
+              "atmosphere": "Ar"
+            },
+            "duration": {
+              "value": 20,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "simple mechanical milling under Ar",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "The paper explicitly states that the crystalline b-LiPON was prepared via a \"simple ball-milling procedure\" (Abstract, Page 1) and further describes preparation \"through simple mechanical milling\" of LiPO3 and Li3N for 20 min under Ar (Page 3). This supports the synthesis operation being ball milling.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.97,
+            "reasoning": "The paper explicitly states that crystalline b-LiPON was prepared by mechanical milling of LiPO3 and Li3N \"for 20 min under Ar\" (Page 3). This directly supports the extracted synthesis atmosphere being argon (Ar).",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental description"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "High-pressure low-temperature densification of LiPON powder",
+        "operations": [
+          {
+            "action": "press/sinter",
+            "parameters": {
+              "inputs": [
+                "target_1"
+              ]
+            },
+            "duration": {
+              "value": 2,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 473,
+              "unit": "K"
+            },
+            "pressure": {
+              "value": 55000,
+              "unit": "bar"
+            },
+            "notes": "quasi-isostatic pressing (HPLT); ambient atmosphere",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.86,
+              "reasoning": "The paper describes a processing route that includes pressing and sintering/densification. It states that the material is prepared via mechanical milling, then pellets are made by quasi-isostatic pressing at high pressure (e.g., 5.5 GPa) and elevated temperatures (200–450 °C) using a “high-pressure and low-temperature (HPLT) sintering technique,” and also refers to a pellet “sintered at 350 °C.” These operations match the extracted synthesis operation label “press/sinter.”",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": 55000,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.92,
+            "reasoning": "The paper reports pellets prepared by quasi-isostatic pressing at **5.5 GPa** (e.g., “pressed at 5.5 GPa for 2 min” and “HPLT at 5.5 GPa”), which equals **55,000 bar**. However, this is the **pressing/sintering pressure** used for pellet densification, not the **synthesis pressure** of the material itself. The synthesis is described as mechanical milling of LiPO3 and Li3N under Ar, with no pressure specified for the milling step. Therefore assigning 55,000 bar to “Synthesis Pressure” is not supported by the text.",
+            "suggested_fix": "If the field is intended as pellet pressing/sintering pressure: **5.5 GPa (≈55,000 bar)**. If it must be synthesis pressure (mechanochemical milling): **Not specified**."
+          }
+        },
+        "prov": [
+          "Results – densification paragraph"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Ball-milling LiPO3 and Li3N under Ar for 20 min to form b-Li3.6PO3.4N0.6 precursor powder.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "Page 3 explicitly states: “crystalline b-LiPON was prepared through simple mechanical milling of the low-cost precursors LiPO3 and Li3N for 20 min under Ar”. This supports the workflow/timeline description of ball-milling LiPO3 and Li3N under Ar for 20 min to form the b-Li3.6PO3.4N0.6 powder precursor (as-synthesized b-LiPON).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "High-pressure (5.5 GPa), 200 °C, 2 min pressing to obtain dense LiPON pellets.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The paper explicitly states: “Pellets ca. 1 mm thick were prepared from the as-synthesized powder quasi-isostatically pressed at 5.5 GPa for 2 min at temperatures ranging from 200 °C to 450 °C...” and later highlights conductivity data for “the pellet pressed at 5.5 GPa and 200 °C”. This supports the workflow step of high-pressure (5.5 GPa), 200 °C, 2 min pressing to obtain dense pellets (HPLT pellets reach 87–95% relative density).",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing reactant quantities and milling parameters (speed, ball-to-powder ratio).",
+        "excerpt": "crystalline b-LiPON was prepared through simple mechanical milling of the low-cost precursors LiPO3 and Li3N for 20 min under Ar",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.86,
+          "reasoning": "The paper states that crystalline b-LiPON was prepared by mechanical milling of LiPO3 and Li3N for 20 min under Ar, but it does not provide the reactant quantities (masses/molar ratios) or key milling parameters such as milling speed (rpm/Hz) or ball-to-powder ratio in the main text, instead referring readers to the Supporting Information for further details. Therefore, flagging workflow ambiguity due to missing quantities/parameters is supported by the provided full text.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Exact atmosphere during pressing not specified (stated 'under ambient atmosphere').",
+        "excerpt": "powder quasi-isostatically pressed at 5.5 GPa for 2 min at temperatures ranging from 200 °C to 450 °C, under ambient atmosphere",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The source text explicitly states that pellets were \"quasi-isostatically pressed at 5.5 GPa for 2 min at temperatures ranging from 200 °C to 450 °C, under ambient atmosphere.\" This supports the extracted ambiguity issue: the atmosphere is only given generically as \"ambient atmosphere\" (no explicit gas composition, humidity, oxygen partial pressure, glovebox/air details).",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "space group",
+          "value": "P21/m",
+          "unit": ""
+        },
+        {
+          "metric": "cell parameters",
+          "value": "a = 5.098 Å, b = 6.158 Å, c = 5.324 Å, β = 90.60°",
+          "unit": ""
+        },
+        {
+          "metric": "density",
+          "value": 2.38,
+          "unit": "g cm-3"
+        }
+      ],
+      "interpretation": "Confirmed new crystalline phase.",
+      "prov": [
+        "Figure 2a",
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The source text explicitly reports the XRD/structure metrics. Table 1 (page 2) lists the space group as P21/m and the density as ρ = 2.38 g cm−3. The same table (XRD pattern section) gives the cell parameters a = 5.098(4) Å, b = 6.158(4) Å, c = 5.324(4) Å, and β = 90.60(4)° (the extractor omits uncertainties, which is acceptable). Additionally, page 3 reiterates these XRD-indexed cell parameters and space group. Provenance is broadly correct (Table 1 is sufficient); Figure 2a is not necessary for these numeric values.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "NPD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "refined composition",
+          "value": "Li3.6PO3.4N0.6",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly discusses the NPD/XRD combined Rietveld refinement for the bulk phase and repeatedly identifies it as b-Li3.6PO3.4N0.6. Figure 2 caption states: \"Results of the combined Rietveld refinement of ... (b) the NPD pattern of b-Li3.6PO3.4N0.6.\" The text also states the overall refined composition agrees with \"Li3.6(1)PO3.4(1)N0.6(1)\". Thus the refined composition value Li3.6PO3.4N0.6 is supported (even if the exact refined composition statement is in the body text rather than only Figure 2b).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": "0.1–1 μm",
+          "unit": "µm"
+        },
+        {
+          "metric": "pellet morphology",
+          "value": "fully and uniformly densified",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figures S1a–f"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.96,
+        "reasoning": "Both extracted SEM characterization statements are explicitly supported in the paper text. Page 3 states: “SEM images of the as-synthesized b-LiPON (Figures S1a and S1b …) revealed … sizes ranging from 0.1 μm to 1 μm…”. Page 4 states: “The morphology of the surface and cross section of the HPLT bodies observed by SEM (Figures S1e and S1f …) shows a fully and uniformly densified structure.” The alleged provenance ‘Figures S1a–f’ is consistent with these statements (S1a,b for particle size; S1e,f for pellet densification).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Solid-state NMR",
+      "parameters": {
+        "nuclei": "7Li, 31P"
+      },
+      "results": [
+        {
+          "metric": "7Li resonance",
+          "value": "single",
+          "unit": ""
+        },
+        {
+          "metric": "31P site distribution",
+          "value": "PO4 4.7%, PO3N 56.3%, PO2N2 39%",
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Indicates rapid Li exchange and three distinct P environments.",
+      "prov": [
+        "Figure 2d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The source text explicitly states: (1) “The 7Li solid-state NMR spectrum of b-Li3.6PO3.4N0.6 shows a single resonance…” (Page 3, referring to Figure 2d), supporting “7Li resonance: single”. (2) It also explicitly gives the 31P NMR site distribution: “PO4 (4.7%), PO3N (56.3%), and PO2N2 (39%)” (Page 3; also described as the attribution/quantification indicated in Figure 2d), supporting the extracted percentages.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "TGA/DTA/MS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "decomposition onset",
+          "value": 723,
+          "unit": "K"
+        },
+        {
+          "metric": "decomposition end",
+          "value": 923,
+          "unit": "K"
+        }
+      ],
+      "interpretation": "Exothermic decomposition with N loss between 450–650 °C.",
+      "prov": [
+        "Figure S2a"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.85,
+        "reasoning": "The paper text (referring to Figure S2a) states that an exothermic decomposition with irreversible N loss occurs between 450 °C and 650 °C. The extracted values 723 K and 923 K correspond to 450 °C and 650 °C, respectively, but the extraction labels them as “decomposition onset” and “decomposition end” in Kelvin without the text explicitly providing these temperatures in Kelvin or explicitly defining them as onset/end points. The document only gives the decomposition range in °C, not onset/end values in K.",
+        "suggested_fix": "Report the decomposition temperature range as 450–650 °C (or 723–923 K only if explicitly converted/allowed), with metric phrased as “decomposition occurs between 450 and 650 °C (irreversible N loss)” rather than explicit onset/end in K."
+      }
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 5e-06,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "temperature",
+          "value": 343,
+          "unit": "K"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.55,
+          "unit": "eV"
+        },
+        {
+          "metric": "conductivity (25 °C)",
+          "value": 3e-07,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Enhanced conductivity compared to previous bulk LiPON phases.",
+      "prov": [
+        "Figure 3a",
+        "Table S2"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.82,
+        "reasoning": "The paper text supports several elements but not the extracted ionic conductivity value at 343 K. Specifically, it states conductivity reaches 6.5 × 10−6 S cm−1 at 70 °C (343 K) for the HPLT pellet (page 4) and also reports 5.0 × 10−6 S cm−1 at 70 °C (abstract and conclusion). Thus the extracted 5e-06 S cm−1 at 343 K is not uniquely/explicitly supported as the EIS value at 70 °C in the main EIS discussion; the explicit EIS number there is 6.5 × 10−6 S cm−1. The activation energy 0.55 eV is explicitly stated (page 4; Table S2). The conductivity at 25 °C of 3.0 × 10−7 S cm−1 is explicitly stated in the conclusion (page 5), though page 4 also gives other 25 °C values (5.6 × 10−8 for low-pressure pellet; order-of-magnitude higher for HPLT).",
+        "suggested_fix": "Use: ionic conductivity = 6.5e-06 S cm−1 at 343 K (70 °C) for the HPLT pellet (Figure 3a discussion). Keep activation energy = 0.55 eV. For 25 °C conductivity, 3.0e-07 S cm−1 is supported (conclusion), but ensure it refers to the HPLT dense pellets, not the low-pressure pellet (5.6e-08 S cm−1 at 25 °C)."
+      }
+    },
+    {
+      "method": "Cyclic Voltammetry",
+      "parameters": {
+        "scan_rate": 0.5,
+        "scan_rate_unit": "mV s-1"
+      },
+      "results": [
+        {
+          "metric": "stability window",
+          "value": "-0.15 to 5",
+          "unit": "V vs Li/Li+"
+        },
+        {
+          "metric": "oxidative current",
+          "value": 12,
+          "unit": "nA cm-2"
+        }
+      ],
+      "interpretation": "Electrolyte stable up to 5 V.",
+      "prov": [
+        "Figure 3b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.94,
+        "reasoning": "The source text (describing Figure 3b) states that cyclic voltammograms were acquired at 70 °C in the “−0.15–5 V range vs Li0/Li+” and reports an “extremely low oxidative current below 12 nA cm−2”. This supports the extracted stability window of −0.15 to 5 V vs Li/Li+ and oxidative current of 12 nA cm−2 (as an upper bound).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Galvanostatic cycling (symmetric cell)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "cycle count",
+          "value": 35,
+          "unit": ""
+        },
+        {
+          "metric": "total time",
+          "value": 140,
+          "unit": "h"
+        },
+        {
+          "metric": "overpotential",
+          "value": 180,
+          "unit": "mV"
+        }
+      ],
+      "interpretation": "No short-circuit; homogeneous lithium plating/stripping.",
+      "prov": [
+        "Figure 3c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The text describing Figure 3c explicitly states: “35 cycles (140 h)” and “overpotential of ca. 180 mV in both directions” during prolonged galvanostatic cycling in a symmetric Li|b-Li3.6PO3.4N0.6|Li cell. This directly supports the extracted cycle count, total time, and overpotential values (units and approximate wording match).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "σ = σ0 exp(-Ea/RT)",
+            "value": 0.55,
+            "unit": "eV"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.9,
+          "reasoning": "The extracted value for “Analysis Method” is blank, but the paper explicitly reports multiple analysis/characterization methods (e.g., XRD, neutron powder diffraction (NPD), Rietveld refinement, SEM, solid-state MAS NMR, TGA/DTA/MS, EIS, cyclic voltammetry, chronoamperometry, galvanostatic cycling; also EDX, ICP-OES, elemental analysis). Therefore, leaving this field empty is not supported by the source text.",
+          "suggested_fix": "Analysis methods mentioned include: powder X-ray diffraction (XRD) with combined Rietveld refinement; neutron powder diffraction (NPD); SEM; solid-state MAS NMR (7Li, 31P); simultaneous TGA/DTA/MS; EIS; cyclic voltammetry; chronoamperometry; galvanostatic stripping/plating cycling; plus compositional analyses (EDX, ICP-OES, elemental analysis)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 35,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.95,
+      "reasoning": "Page 4 explicitly states: \"The SE exhibits an impressive cycling performance with 35 cycles (140 h) without dendrite propagation leading to a short circuit.\" This directly supports a cycle life value of 35 (cycles) for the symmetric Li|b-Li3.6PO3.4N0.6|Li cell test at 70 °C.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-12T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

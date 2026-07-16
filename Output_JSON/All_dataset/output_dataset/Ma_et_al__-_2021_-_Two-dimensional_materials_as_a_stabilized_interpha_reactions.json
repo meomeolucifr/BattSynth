@@ -1,0 +1,242 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Two-dimensional materials as a stabilized interphase for the solid-state electrolyte Li10GeP2S12 in lithium metal batteries",
+    "doi": "10.1039/d0ta07589b",
+    "authors": ["Jiachen Ma", "Ruge Quhe", "Zheyu Zhang", "Chen Yang", "Xiuying Zhang", "Jingzhen Li", "Lin Xu", "Jie Yang", "Bowen Shi", "Shiqi Liu", "Linqiang Xu", "Xiaotian Sun", "Jing Lu"],
+    "journal": "Journal of Materials Chemistry A",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["solid-state electrolyte", "Li10GeP2S12", "DFT", "2D materials", "SEI", "lithium metal batteries"]
+  },
+  "targets": [],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "ontology": {
+        "role": "solid_state_electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 4810-4811"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 4810"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "h-BN",
+      "molecular_formula": "BN",
+      "ontology": {
+        "role": "SEI_candidate",
+        "category": "2D material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 4814"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "a-BNyne",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "SEI_candidate",
+        "category": "2D material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 4814"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (PBE)",
+      "parameters": {
+        "software": "VASP",
+        "energy_cutoff": "500 eV",
+        "k_points": "3×3×2 (geometry); 6×6×4 (static)",
+        "vdW_correction": "optB86b",
+        "functional": "PBE"
+      },
+      "results": [
+        {
+          "metric": "band_gap",
+          "value": 2.28,
+          "unit": "eV",
+          "notes": "Intrinsic LGPS band gap (PBE)"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 4812, Fig.1"]
+    },
+    {
+      "method": "DFT (HSE06)",
+      "parameters": {
+        "software": "VASP",
+        "functional": "HSE06"
+      },
+      "results": [
+        {
+          "metric": "band_gap",
+          "value": 3.37,
+          "unit": "eV",
+          "notes": "Intrinsic LGPS band gap (HSE06)"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 4812, Fig.1"]
+    },
+    {
+      "method": "CI-NEB",
+      "parameters": {
+        "images": "≥3",
+        "system": "Interface migration along interface"
+      },
+      "results": [
+        {
+          "metric": "Li-ion diffusion barrier LGPS/Li",
+          "value": 0.23,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li-ion diffusion barrier LGPS/h-BN/Li",
+          "value": 0.28,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li-ion diffusion barrier LGPS/a-BNyne/Li",
+          "value": 0.09,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 4816-4817, Fig.7 a-c"]
+    },
+    {
+      "method": "CI-NEB",
+      "parameters": {
+        "images": "≥3",
+        "system": "Interface migration across interface"
+      },
+      "results": [
+        {
+          "metric": "Li-ion diffusion barrier LGPS/Li",
+          "value": 0.26,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li-ion diffusion barrier LGPS/h-BN(BNV)/Li",
+          "value": 0.76,
+          "unit": "eV"
+        },
+        {
+          "metric": "Li-ion diffusion barrier LGPS/a-BNyne/Li",
+          "value": 0.19,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 4817, Fig.7 d-f"]
+    },
+    {
+      "method": "Layer-resolved PDOS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electrochemical_window_expansion_with_h-BN",
+          "value": 2.41,
+          "unit": "eV"
+        },
+        {
+          "metric": "electrochemical_window_expansion_with_a-BNyne",
+          "value": 2.08,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 4814-4816, Fig.5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "First-principles thermodynamic calculation",
+        "results": [
+          {
+            "equation": "E_form = (E_LGPS + E_Li + E_2D − E_interface)/m",
+            "value": {
+              "LGPS/Li": 0.0627,
+              "LGPS/h-BN/Li": 0.0136,
+              "LGPS/a-BNyne/Li": -0.0047
+            },
+            "unit": "eV atom-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T17:14:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

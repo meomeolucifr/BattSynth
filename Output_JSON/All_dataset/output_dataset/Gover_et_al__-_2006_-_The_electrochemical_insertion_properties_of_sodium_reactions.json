@@ -1,0 +1,454 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "The electrochemical insertion properties of sodium vanadium fluorophosphate, Na3V2(PO4)2F3",
+    "doi": "10.1016/j.ssi.2006.07.028",
+    "authors": [
+      "R.K.B. Gover",
+      "A. Bryan",
+      "P. Burns",
+      "J. Barker"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 2006
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "solid-state synthesis",
+      "fluorophosphate cathode",
+      "electrochemistry",
+      "lithium-ion batteries"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na3V2(PO4)2F3",
+      "molecular_formula": "Na3V2(PO4)2F3",
+      "intended_role": "product",
+      "prov": [
+        "Page 1495 (Abstract)",
+        "Equation (2)"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "V2O5",
+      "molecular_formula": "V2O5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Equation (1)"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "(NH4)2HPO4",
+      "molecular_formula": "(NH4)2HPO4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Equation (1)"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "carbon",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "reducing agent",
+        "category": "element"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "high surface area particulate carbon",
+      "prov": [
+        "Equation (1)",
+        "Page 1496 (CTR description)"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "VPO4",
+      "molecular_formula": "VPO4",
+      "ontology": {
+        "role": "intermediate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "prepared by carbothermal reduction (CTR)",
+      "prov": [
+        "Equation (1)",
+        "Equation (2)"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "NaF",
+      "molecular_formula": "NaF",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Alfa Aesar",
+      "prov": [
+        "Equation (2)"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "flowing argon atmosphere during solid-state reaction",
+      "prov": [
+        "Page 1496 (Experimental)"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Na3V2(PO4)2F3",
+      "molecular_formula": "Na3V2(PO4)2F3",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Equation (2)"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Carbothermal reduction (CTR) to prepare VPO4",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "notes": "mixed following methodology previously described for LiVPO4F synthesis"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "atmosphere": "",
+            "notes": "Exact heating conditions not specified in current text; see ambiguity note."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Equation (1)",
+          "Page 1496 (Experimental)"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Solid-state synthesis of Na3V2(PO4)2F3",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "notes": "stoichiometric ratio per Equation (2)"
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5"
+              ]
+            },
+            "notes": "pressed into pellets"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "temperature": {
+              "value": 873,
+              "unit": "K"
+            },
+            "temperature_range": {
+              "low": 873,
+              "high": 1073,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 480,
+              "unit": "min"
+            },
+            "atmosphere": "argon",
+            "notes": "tube furnace, flowing Ar; original temperature range 600–800 °C"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Equation (2)",
+          "Page 1496 (Experimental)"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of VPO4 intermediate via carbothermal reduction"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Formation of Na3V2(PO4)2F3 by reacting VPO4 with NaF at 873–1073 K for 8 h under Ar"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing synthesis parameters for CTR step",
+        "excerpt": "The VPO4 intermediate was prepared according to the method previously described for LiVPO4F synthesis [20]."
+      },
+      {
+        "issue": "Stoichiometric amounts of reactants not provided",
+        "excerpt": "The Na3V2(PO4)2F3 material is prepared by mixing the CTR prepared VPO4 with the stoichiometric amount of NaF according to the equation presented below"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Powder X-ray diffraction (XRD)",
+      "parameters": {
+        "instrument": "Siemens D5000",
+        "geometry": "Bragg–Brentano",
+        "radiation": "Cu Kα"
+      },
+      "results": [
+        {
+          "metric": "unit cell a",
+          "value": 9.0378,
+          "unit": "Å"
+        },
+        {
+          "metric": "unit cell c",
+          "value": 10.7482,
+          "unit": "Å"
+        },
+        {
+          "metric": "unit cell volume",
+          "value": 877.94,
+          "unit": "Å3"
+        },
+        {
+          "metric": "impurity phase Na3VF6",
+          "value": 2,
+          "unit": "wt%"
+        }
+      ],
+      "interpretation": "Phase is predominantly Na3V2(PO4)2F3 with minor Na3VF6 impurity",
+      "prov": [
+        "Figure 1",
+        "Table 1",
+        "Page 1496"
+      ]
+    },
+    {
+      "method": "Electrochemical Voltage Spectroscopy (EVS)",
+      "parameters": {
+        "rate": "C/20",
+        "temperature": 296,
+        "voltage_window": "3.0–5.0 V vs Li",
+        "step_size": "10 mV"
+      },
+      "results": [
+        {
+          "metric": "charge capacity (first cycle)",
+          "value": 165,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "charge efficiency (assumed 3 Na)",
+          "value": 86,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Three distinct voltage plateaus correspond to sequential Na extraction; full Na removal possible but partially irreversible",
+      "prov": [
+        "Figure 3",
+        "Page 1497"
+      ]
+    },
+    {
+      "method": "Electrochemical Voltage Spectroscopy (EVS)",
+      "parameters": {
+        "rate": "C/20",
+        "temperature": 296,
+        "voltage_window": "3.0–4.6 V vs Li",
+        "step_size": "5 mV"
+      },
+      "results": [
+        {
+          "metric": "reversible specific capacity",
+          "value": 120,
+          "unit": "mAh g-1"
+        }
+      ],
+      "interpretation": "Capacity corresponds to cycling of two alkali ions per formula unit",
+      "prov": [
+        "Figure 4",
+        "Page 1497"
+      ]
+    },
+    {
+      "method": "Constant current cycling",
+      "parameters": {
+        "rates": "C/15 and C/7",
+        "temperature": 296,
+        "voltage_window": "3.0–4.6 V vs Li"
+      },
+      "results": [
+        {
+          "metric": "initial capacity (C/15)",
+          "value": 108,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention after 220 cycles",
+          "value": 90,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Low capacity fade over 220 cycles indicates stable insertion reactions",
+      "prov": [
+        "Figure 6",
+        "Page 1498"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Theoretical capacity calculation",
+        "results": [
+          {
+            "equation": "Assuming 3 Na per formula unit",
+            "value": 192,
+            "unit": "mAh g-1"
+          }
+        ],
+        "prov": [
+          "Page 1495 (Introduction)"
+        ]
+      },
+      {
+        "method_name": "Weight loss calculation on charged cathode",
+        "results": [
+          {
+            "metric": "mass loss corresponding to full Na extraction",
+            "value": 16.5,
+            "unit": "%"
+          }
+        ],
+        "prov": [
+          "Page 1497 (Results)"
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 120,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 220
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T10:55:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

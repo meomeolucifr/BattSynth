@@ -1,0 +1,341 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium Diffusion in Graphitic Carbon",
+    "doi": "10.1021/jz100188d",
+    "authors": [
+      "Kristin Persson",
+      "Vijay A. Sethuraman",
+      "Laurence J. Hardwick",
+      "Yoyo Hinuma",
+      "Ying Shirley Meng",
+      "Anton van der Ven",
+      "Venkat Srinivasan",
+      "Robert Kostecki",
+      "Gerbrand Ceder"
+    ],
+    "journal": "Journal of Physical Chemistry Letters",
+    "year": 2010
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["lithium diffusion", "graphite", "battery anode", "HOPG", "electrochemistry"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Thin HOPG membrane",
+      "molecular_formula": "C",
+      "intended_role": "membrane/electrode",
+      "prov": ["Page 1177, inset Figure 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Thick HOPG membrane (drilled)",
+      "molecular_formula": "C",
+      "intended_role": "membrane/electrode",
+      "prov": ["Page 1177, inset Figure 2"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li-intercalated HOPG",
+      "molecular_formula": "LixC",
+      "intended_role": "intermediate (activated anode)",
+      "prov": ["Page 1177–1178"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1.2 M in EC/EMC (1:1) electrolyte",
+      "prov": ["Page 1176–1177"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ethylene carbonate",
+      "molecular_formula": "C3H4O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Component of EC/EMC (1:1) electrolyte",
+      "prov": ["Page 1176–1177"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Ethyl methyl carbonate",
+      "molecular_formula": "C4H8O3",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Component of EC/EMC (1:1) electrolyte",
+      "prov": ["Page 1176–1177"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reference/counter electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 1176–1177"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Highly Oriented Pyrolytic Graphite (HOPG)",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate/electrode",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as membrane (20 μm thin or 3 mm thick variants)",
+      "prov": ["Page 1176–1177"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Mechanical modification of thick HOPG to create diffusion pathways",
+        "operations": [
+          {
+            "action": "drill",
+            "parameters": {
+              "inputs": ["chem_5"],
+              "hole_diameter": {"value": 1, "unit": "mm"},
+              "hole_spacing": {"value": 0.5, "unit": "mm"}
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Two partial and overlapping holes drilled from opposing sides of 3 mm thick HOPG membrane"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Page 1177, inset Figure 2"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Assembly of Devanathan–Stachurski two-compartment cell with HOPG membrane",
+        "operations": [
+          {
+            "action": "assemble_cell",
+            "parameters": {
+              "membrane": ["chem_5"],
+              "electrolyte_components": ["chem_1", "chem_2", "chem_3"],
+              "reference_and_counter": ["chem_4"]
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "HOPG served as common working electrode for compartments A and B"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Page 1176–1177"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Galvanostatic lithium intercalation (activation) on side A of cell",
+        "operations": [
+          {
+            "action": "galvanostatic_intercalation",
+            "parameters": {
+              "current_density": {"value": 25, "unit": "μA cm-2"},
+              "electrode": ["chem_5"],
+              "electrolyte": ["chem_1"]
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Constant-rate lithium insertion into HOPG (compartment A)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Page 1177"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Maintenance of anodic potential on side B to oxidize traversing Li",
+        "operations": [
+          {
+            "action": "potentiostatic_hold",
+            "parameters": {
+              "potential": {"value": 3, "unit": "V vs Li/Li+"},
+              "electrode": ["chem_5"]
+            },
+            "duration": {"value": null, "unit": ""},
+            "temperature": {"value": null, "unit": ""},
+            "notes": "Immediate oxidation of Li reaching side B"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {"value": null, "unit": ""}
+        },
+        "prov": ["Page 1177"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Drill holes in thick HOPG membrane"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Assemble two-compartment electrochemical cell with HOPG membrane and electrolyte"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Insert Li galvanostatically into HOPG (compartment A)"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Hold 3 V vs Li/Li+ on compartment B to capture traversing Li"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Experimental temperature not specified",
+        "excerpt": "The text does not report the temperature for galvanostatic intercalation or diffusion measurements."
+      },
+      {
+        "issue": "Electrolyte volume not provided",
+        "excerpt": "\"compartments were filled with 1.2 M LiPF6 in EC/EMC (1:1) electrolyte\" (Page 1176–1177)"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Chronoamperometry (Devanathan–Stachurski cell)",
+      "parameters": {
+        "current_density_A": {"value": 25, "unit": "μA cm-2"},
+        "potential_B": {"value": 3, "unit": "V vs Li/Li+"}
+      },
+      "results": [
+        {
+          "metric": "time_delay_thin_membrane",
+          "value": 17,
+          "unit": "h"
+        },
+        {
+          "metric": "plateau_time_thin_membrane",
+          "value": 80,
+          "unit": "h"
+        },
+        {
+          "metric": "time_delay_thick_membrane",
+          "value": 170,
+          "unit": "s"
+        },
+        {
+          "metric": "plateau_time_thick_membrane",
+          "value": 20,
+          "unit": "min"
+        },
+        {
+          "metric": "Li diffusivity perpendicular to graphene planes",
+          "value": 8.7e-12,
+          "unit": "cm2 s-1"
+        },
+        {
+          "metric": "Li diffusivity parallel to graphene planes",
+          "value": 4.4e-6,
+          "unit": "cm2 s-1"
+        }
+      ],
+      "interpretation": "Diffusion along graphene planes is ~5 orders of magnitude faster than across them.",
+      "prov": ["Page 1177–1178", "Figures 1 & 2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "First-principles calculations (DFT + cluster expansion + kinetic Monte Carlo)",
+        "results": [
+          {
+            "equation": "",
+            "value": 1e-7,
+            "unit": "cm2 s-1",
+            "notes": "Computed Li diffusivity parallel to graphene planes at room temperature"
+          },
+          {
+            "equation": "",
+            "value": "308–400",
+            "unit": "meV",
+            "notes": "Effective Li migration barriers varying with concentration (x=0.2–1.0)"
+          }
+        ],
+        "prov": ["Page 1178–1179", "Figure 3"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T20:34:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

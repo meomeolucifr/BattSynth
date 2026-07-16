@@ -1,0 +1,201 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Modeling the electrical double layer at solid-state electrochemical interfaces",
+    "doi": "10.1038/s43588-021-00041-y",
+    "authors": ["Michael W. Swift", "James W. Swift", "Yue Qi"],
+    "journal": "Nature Computational Science",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "theoretical modeling",
+    "tags": ["solid-state battery", "electrical double layer", "Poisson–Fermi–Dirac model"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiF",
+      "molecular_formula": "LiF",
+      "intended_role": "interlayer material (modeled)",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li2CO3",
+      "molecular_formula": "Li2CO3",
+      "intended_role": "interlayer material (modeled)",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li2O (111)",
+      "molecular_formula": "Li2O",
+      "intended_role": "interlayer material (modeled)",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li2O (110)",
+      "molecular_formula": "Li2O",
+      "intended_role": "interlayer material (modeled)",
+      "prov": ["Table 1"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li7La3Zr2O12 (LLZO)",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "solid electrolyte (modeled)",
+      "prov": ["Table 1"]
+    }
+  ],
+  "chemicals": [],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "model_1",
+        "description": "Development and application of Poisson–Fermi–Dirac equation combined with DFT-predicted defect formation energies to compute EDL profiles for LiF, Li2CO3, Li2O and LLZO at Li metal interfaces."
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Poisson–Fermi–Dirac modeling",
+        "results": [
+          {
+            "material": "LiF",
+            "x1": {"value": 4, "unit": "Å"},
+            "phi_x1": {"value": 1.02, "unit": "V"},
+            "x2": {"value": 1550, "unit": "µm"},
+            "phi_x2": {"value": 1.88, "unit": "V"},
+            "phi_infinity": {"value": 1.92, "unit": "V"},
+            "dielectric_constant": 9.00,
+            "sigma_Li": {"value": -2.44, "unit": "e nm-2"},
+            "capacitance_per_area": {"value": 20.4, "unit": "µF cm-2"},
+            "prov": ["Table 1"]
+          },
+          {
+            "material": "Li2CO3",
+            "x1": {"value": 6, "unit": "Å"},
+            "phi_x1": {"value": 1.01, "unit": "V"},
+            "x2": {"value": 702, "unit": "µm"},
+            "phi_x2": {"value": 1.80, "unit": "V"},
+            "phi_infinity": {"value": 1.84, "unit": "V"},
+            "dielectric_constant": 5.64,
+            "sigma_Li": {"value": -1.01, "unit": "e nm-2"},
+            "capacitance_per_area": {"value": 8.80, "unit": "µF cm-2"},
+            "prov": ["Table 1"]
+          },
+          {
+            "material": "Li2O (111)",
+            "x1": {"value": 4, "unit": "Å"},
+            "phi_x1": {"value": 1.40, "unit": "V"},
+            "x2": {"value": 134, "unit": "µm"},
+            "phi_x2": {"value": 2.14, "unit": "V"},
+            "phi_infinity": {"value": 2.18, "unit": "V"},
+            "dielectric_constant": 7.27,
+            "sigma_Li": {"value": -3.00, "unit": "e nm-2"},
+            "capacitance_per_area": {"value": 22.0, "unit": "µF cm-2"},
+            "prov": ["Table 1"]
+          },
+          {
+            "material": "Li2O (110)",
+            "x1": {"value": null, "unit": "Å"},
+            "phi_x1": {"value": null, "unit": "V"},
+            "x2": {"value": 134, "unit": "µm"},
+            "phi_x2": {"value": 0.67, "unit": "V"},
+            "phi_infinity": {"value": 0.71, "unit": "V"},
+            "dielectric_constant": 7.27,
+            "sigma_Li": {"value": -0.07, "unit": "e nm-2"},
+            "capacitance_per_area": {"value": 1.61, "unit": "µF cm-2"},
+            "prov": ["Table 1"]
+          },
+          {
+            "material": "LLZO",
+            "x1": {"value": 16, "unit": "Å"},
+            "phi_x1": {"value": 1.58, "unit": "V"},
+            "x2": {"value": null, "unit": "µm"},
+            "phi_x2": {"value": null, "unit": "V"},
+            "phi_infinity": {"value": 1.62, "unit": "V"},
+            "dielectric_constant": 50.0,
+            "sigma_Li": {"value": -5.33, "unit": "e nm-2"},
+            "capacitance_per_area": {"value": 52.6, "unit": "µF cm-2"},
+            "prov": ["Table 1"]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (LiF with LiPON)",
+            "value": 68.4,
+            "unit": "Å",
+            "prov": ["Table 2"]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (Li2CO3 with LiPON)",
+            "value": 122,
+            "unit": "Å",
+            "prov": ["Table 2"]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (Li2O (111) with LiPON)",
+            "value": 2.5,
+            "unit": "Å",
+            "prov": ["Table 2"]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (LiF with LLZO)",
+            "value": 101000,
+            "unit": "Å",
+            "prov": ["Table 2"]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (Li2CO3 with LLZO)",
+            "value": 183000,
+            "unit": "Å",
+            "prov": ["Table 2"]
+          },
+          {
+            "metric": "Optimal interlayer thickness for smooth potential (Li2O (111) with LLZO)",
+            "value": 52.9,
+            "unit": "Å",
+            "prov": ["Table 2"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

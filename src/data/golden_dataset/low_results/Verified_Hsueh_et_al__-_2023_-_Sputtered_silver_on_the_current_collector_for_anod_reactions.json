@@ -1,0 +1,748 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Sputtered silver on the current collector for anode-less NMC111 gel polymer electrolyte lithium batteries",
+    "doi": "10.1016/j.elecom.2023.107478",
+    "authors": [
+      "Tien-Hsiang Hsueh",
+      "Min-Chuan Wang",
+      "Shang-En Liu",
+      "Bo-Hsien Wu",
+      "Yu-Chen Li",
+      "Ding-Guey Tsai",
+      "Shu-Mei Chang",
+      "Angus Shiue",
+      "Kai-Yen Chin"
+    ],
+    "journal": "Electrochemistry Communications",
+    "year": 2023
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "short communication",
+    "tags": [
+      "anode-less battery",
+      "gel polymer electrolyte",
+      "NMC111",
+      "silver sputtering"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Ag/CCB-coated aluminum current collector",
+      "molecular_formula": "",
+      "intended_role": "anode-less current collector",
+      "prov": [
+        "Fig. 2",
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.86,
+        "reasoning": "The paper explicitly provides the cathode/target material formula as lithium nickel manganese cobalt oxide, LiNi0.33Mn0.33Co0.33O2 (NMC111), in the Abstract and Experimental methods. However, the Extracted Value field is blank, so it is not supported as-is.",
+        "suggested_fix": "LiNi0.33Mn0.33Co0.33O2 (NMC111)"
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Gel polymer electrolyte (sulfolane/acrylonitrile/LiPF6)",
+      "molecular_formula": "",
+      "intended_role": "electrolyte",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The extracted value for \u201cTarget Formula\u201d is blank. The paper explicitly states the cathode/target material formula as lithium nickel manganese cobalt oxide \u201cLiNi0.33Mn0.33Co0.33O2 (NMC111)\u201d (Abstract and Experimental methods). Therefore, a blank value is not supported by the source text.",
+        "suggested_fix": "LiNi0.33Mn0.33Co0.33O2 (NMC111)"
+      }
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Coin-type anode-less NMC111 GPE lithium battery",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": [
+        "Fig. 1",
+        "Experimental methods",
+        "Results"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.85,
+        "reasoning": "The paper explicitly states the cathode/active material formula as LiNi0.33Mn0.33Co0.33O2 (NMC111) (Abstract and Experimental methods). However, the extracted value for \u201cTarget Formula\u201d is blank/empty, so it is not supported as-is.",
+        "suggested_fix": "LiNi0.33Mn0.33Co0.33O2 (NMC111)"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Silver",
+      "molecular_formula": "Ag",
+      "ontology": {
+        "role": "protective layer",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Deposited as 100 nm-thick film by DC sputtering",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly specifies the silver amount/thickness: in Experimental methods it states a \u201c100 nm-thick Ag thin film\u201d deposited by DC sputtering on the CCB-coated Al current collector. Therefore, the extracted claim \u201cAmount: Not specified in text\u201d is contradicted by the source text.",
+        "suggested_fix": "Silver (Ag) | Amount: 100 nm-thick Ag thin film (protective layer) deposited on CCB-coated Al current collector"
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Conductive carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1 \u03bcm-thick layer coated on aluminum current collector",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies \u201cconductive carbon black (CCB)\u201d as part of the cell/current collector structure (e.g., \u201cAg/ conductive carbon black (CCB) coated aluminum current collectors\u201d in the Abstract and \u201c1 \u03bcm-thick thin CCB-coated aluminum current collector\u201d in Experimental methods). However, no compositional amount/mass/ratio/loading for the conductive carbon black itself is provided anywhere in the text (only thickness is given: 1 \u03bcm). Therefore, the extraction \u2018Conductive carbon black | Amount: Not specified in text\u2019 is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Aluminum",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "current collector substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper repeatedly identifies aluminum (Al) as part of the \u201cAg/CCB-coated aluminum current collector\u201d (e.g., Abstract and Experimental methods), but it does not provide a mass, molar amount, thickness of the aluminum foil/substrate itself, or any quantitative amount specifically for aluminum. Therefore, the extractor\u2019s note \u201cAmount: Not specified in text\u201d is consistent with the source text (null-handling rule).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Sulfolane",
+      "molecular_formula": "C4H8O2S",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Weight ratio in GPE: 66.2 %",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly states in Experimental methods that the GPE contained sulfolane and gives a specific composition: \u201cThe GPE contained sulfolane (C4H8O2S), acrylonitrile, and lithium hexafluorophosphate (LiPF6), with a weight ratio of 66.2:6.6:24.3.\u201d Therefore, the amount/composition for sulfolane is specified (66.2 wt% relative to the listed components), contradicting the extracted claim that the amount is not specified.",
+        "suggested_fix": "Sulfolane (C4H8O2S) | Amount: 66.2 wt% (in GPE; weight ratio sulfolane:acrylonitrile:LiPF6 = 66.2:6.6:24.3)"
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Acrylonitrile",
+      "molecular_formula": "C3H3N",
+      "ontology": {
+        "role": "monomer/plasticizer",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Weight ratio in GPE: 6.6 %",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.96,
+        "reasoning": "The paper explicitly states acrylonitrile is a component of the GPE and provides its amount via a weight ratio. In Experimental methods: \u201cThe GPE contained sulfolane (C4H8O2S), acrylonitrile, and lithium hexafluorophosphate (LiPF6), with a weight ratio of 66.2:6.6:24.3\u2026\u201d. Therefore, the amount is specified (6.6 wt% relative to the total of those three components).",
+        "suggested_fix": "Acrylonitrile | Amount: 6.6 (weight-ratio component; i.e., ~6.6 wt% in the sulfolane/acrylonitrile/LiPF6 mixture; ratio 66.2:6.6:24.3)"
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium hexafluorophosphate",
+      "molecular_formula": "LiPF6",
+      "ontology": {
+        "role": "lithium salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Weight ratio in GPE: 24.3 %",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly states the presence and amount (as a weight ratio component) of lithium hexafluorophosphate in the GPE formulation. In Experimental methods (Page 2): \u201cThe GPE contained sulfolane (C4H8O2S), acrylonitrile, and lithium hexafluorophosphate (LiPF6), with a weight ratio of 66.2:6.6:24.3\u2026\u201d. Therefore, the extracted claim \u201cAmount: Not specified in text\u201d is contradicted by the text.",
+        "suggested_fix": "Lithium hexafluorophosphate (LiPF6) | Amount: 24.3 (weight ratio component in GPE; GPE components sulfolane:acrylonitrile:LiPF6 = 66.2:6.6:24.3)"
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "LiNi0.33Mn0.33Co0.33O2 (NMC111)",
+      "molecular_formula": "LiNi0.33Mn0.33Co0.33O2",
+      "ontology": {
+        "role": "cathode active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Areal discharge capacity 2 mAh/cm2, 1 cm2 cathode",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the cathode material as lithium nickel manganese cobalt oxide with formula LiNi0.33Mn0.33Co0.33O2 (NMC111) in both the Abstract and Experimental methods. However, while it provides areal discharge capacity (2 mAh/cm2 for the cathode design and measured discharge capacities like 0.935 mAh/cm2), cathode loading/mass/amount of NMC111 (e.g., mg, wt%, thickness) is not stated anywhere in the provided text. Therefore, 'Amount: Not specified in text' is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "inert atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used in glove box during GPE preparation and battery assembly",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions argon: \u201cThe GPE preparation and battery assembly were all conducted in an argon-filled glove box\u201d (Experimental methods, Page 2). However, it does not provide any quantitative amount/flow/pressure for argon\u2014only the atmosphere used. Therefore, the extracted value \u2018Argon | Amount: Not specified in text\u2019 is consistent with the source (correctly noting the amount is not given).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Deposition of silver protective layer on CCB-coated aluminum current collector",
+        "operations": [
+          {
+            "action": "sputter",
+            "parameters": {
+              "inputs": [
+                "chem_1"
+              ],
+              "substrate": "chem_2 + chem_3",
+              "thickness": {
+                "value": 100,
+                "unit": "nm"
+              }
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "DC sputtering system",
+            "prov": [
+              "Experimental methods"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "The paper explicitly describes deposition by sputtering. In the Experimental methods section it states: \u201ca 100 nm-thick Ag thin film acted as a protective layer deposited by DC sputtering system\u2026\u201d. The title and introduction also refer to \u201cSputtered silver (Ag) film\u201d. Therefore the synthesis/fabrication operation includes sputtering, matching the extracted value \u201csputter\u201d.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation of gel polymer electrolyte precursor",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_4",
+                "chem_5",
+                "chem_6"
+              ],
+              "weight_ratio": "66.2:6.6:24.3"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "",
+            "prov": [
+              "Experimental methods"
+            ],
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.9,
+              "reasoning": "In the Experimental methods section, the described synthesis/preparation operations are heating the GPE precursor to 130 \u00b0C and casting the viscous solution into a Teflon mold, followed by assembly in a glove box. The document also mentions DC sputter deposition of Ag on CCB-coated Al. Nowhere does the paper explicitly state a synthesis operation as 'mix' (or 'mixing').",
+              "suggested_fix": "Use an operation explicitly stated, e.g., 'heat' and 'cast' for GPE preparation and/or 'DC sputtering' for Ag film deposition (plus 'assemble' for coin-cell assembly)."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heating of GPE precursor",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "target_2"
+              ]
+            },
+            "temperature": {
+              "value": 403,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Heated to 130 \u00b0C until viscous",
+            "prov": [
+              "Experimental methods"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.96,
+              "reasoning": "Supported. In the Experimental methods section, the paper explicitly states: \u201cAfter the GPE precursor is heated to 130 \u25e6C\u2026\u201d. This is a synthesis/preparation operation involving heating.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Casting of GPE film",
+        "operations": [
+          {
+            "action": "cast",
+            "parameters": {
+              "inputs": [
+                "target_2"
+              ],
+              "mold": "Teflon",
+              "film_thickness": {
+                "value": 200,
+                "unit": "\u00b5m"
+              }
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "Casting performed immediately after heating",
+            "prov": [
+              "Experimental methods"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.97,
+              "reasoning": "The Experimental methods section explicitly states: \u201cthe viscous solution was immediately cast in a Teflon mold to produce a 200 \u03bcm-thick GPE thin film.\u201d This directly supports the synthesis operation being casting.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Assembly of coin-type anode-less NMC111 GPE lithium battery",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": [
+                "chem_7",
+                "target_2",
+                "target_1"
+              ]
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "1 cm2 NMC111 cathode; assembly conducted in argon-filled glove box",
+            "prov": [
+              "Experimental methods"
+            ],
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The paper explicitly uses the verb \u201cassembled\u201d to describe the synthesis/assembly step of the battery cell. It appears in the Introduction (\u201cwe successfully assembled\u2026\u201d) and in Experimental methods (\u201cFinally, the GPE and Ag/CCB-coated aluminum current collector have been assembled\u2026 into a coin-type\u2026 battery\u201d). This directly supports the extracted synthesis operation as assemble.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "chem_8",
+          "pressure": {
+            "value": 1,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.74,
+            "reasoning": "The paper explicitly states the synthesis/preparation atmosphere as an \u201cargon-filled glove box\u201d for GPE preparation and battery assembly (\u201cThe GPE preparation and battery assembly were all conducted in an argon-filled glove box.\u201d). The extracted value \u201cchem_8\u201d is not a meaningful atmosphere description and does not appear anywhere in the text, so it is not supported.",
+            "suggested_fix": "Argon-filled glove box (argon atmosphere)"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Silver sputtering on CCB/Al current collector",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.74,
+          "reasoning": "The paper discusses depositing a 100 nm Ag thin film by DC sputtering onto a 1 \u03bcm CCB-coated Al current collector (i.e., silver sputtering on CCB/Al current collector). However, the extracted value is labeled under the field name \u201cWorkflow Timeline,\u201d and the source text does not present this phrase as a timeline entry or a workflow/timeline step; it is a fabrication method/detail rather than an explicit workflow timeline item.",
+          "suggested_fix": "If the field is meant to capture a fabrication step (not a timeline), use: \u201cDeposited 100 nm Ag thin film by DC sputtering onto 1 \u03bcm CCB-coated Al current collector.\u201d If it must be a \u2018Workflow Timeline\u2019 field, the paper does not explicitly provide a timeline; set to \u201cNot specified\u201d or similar."
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Mixing sulfolane, acrylonitrile, and LiPF6 for GPE",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.62,
+          "reasoning": "The paper explicitly states the GPE composition: it \u201ccontained sulfolane (C4H8O2S), acrylonitrile, and lithium hexafluorophosphate (LiPF6)\u201d with a weight ratio of 66.2:6.6:24.3 (Experimental methods, Page 2). However, the extracted value frames this as a workflow/timeline step (\u201cMixing \u2026 for GPE\u201d). The text supports that these components are used together for the GPE precursor (heated to 130 \u00b0C to form a viscous solution), but it does not explicitly use the word \u201cmixing\u201d or present a step-by-step timeline beyond describing the preparation in prose.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Heating GPE precursor to 403 K",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The paper explicitly states in Experimental methods: \u201cAfter the GPE precursor is heated to 130 \u25e6C\u2026\u201d. 130 \u00b0C corresponds to 403 K, so \u201cHeating GPE precursor to 403 K\u201d is supported (same temperature expressed in Kelvin).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Casting 200 \u00b5m-thick GPE film",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The paper explicitly states in the Experimental methods section: after heating the GPE precursor to 130 \u00b0C, the viscous solution was \u201cimmediately cast in a Teflon mold to produce a 200 \u03bcm-thick GPE thin film at room temperature.\u201d This directly supports the extracted workflow step \u201cCasting 200 \u00b5m-thick GPE film.\u201d",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Assembly of coin-type anode-less NMC111 GPE lithium battery in Ar glove box",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The paper explicitly states: \u201cThe GPE preparation and battery assembly were all conducted in an argon-filled glove box.\u201d It also describes the final assembly step as assembling the GPE and Ag/CCB-coated Al current collector with a 1 cm\u00b2 NMC111 cathode into a \u201ccoin-type \u2026 lithium battery (anode-less NMC111 GPE lithium battery).\u201d Together, this supports \u2018Assembly of coin-type anode-less NMC111 GPE lithium battery in Ar glove box.\u2019",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No explicit duration provided for heating and sputtering steps",
+        "excerpt": "After the GPE precursor is heated to 130 \u2022C, the viscous solution was immediately cast...",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The paper specifies temperatures/thicknesses/compositions, but it does not state any time duration for (1) heating the GPE precursor to 130 \u00b0C or (2) the DC sputtering deposition (only that a 100 nm Ag film was deposited). The cited sentence (\u201cAfter the GPE precursor is heated to 130 \u25e6C, the viscous solution was immediately cast\u2026\u201d) confirms the heating step but provides no duration. Therefore the extraction correctly identifies missing explicit durations for heating and sputtering steps.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Capacity reported as areal (mAh/cm2) not mass specific (mAh g-1)",
+        "excerpt": "The areal capacity of 0.935 mAh/cm2 is achieved...",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.96,
+          "reasoning": "The paper explicitly reports capacity in areal units (mAh/cm2), not mass-specific (mAh g\u22121). It states in the Abstract: \u201cdischarge capacity of 0.935 mAh/cm2,\u201d and again in Conclusions: \u201cThe areal capacity of 0.935 mAh/cm2 is achieved\u2026\u201d. Table 1 also lists \u201c1st Discharge Capacity (mAh/cm2)\u201d with 0.935 for this work. No mass-specific capacity (mAh g\u22121) is provided, so flagging workflow ambiguity about areal vs mass-specific is appropriate and supported by the text.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "FESEM",
+      "parameters": {
+        "instrument": "Hitachi S-4800"
+      },
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "Uniform coverage of 100 nm Ag on CCB and Al substrate",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 2"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The text describing Fig. 2 explicitly supports the stated FESEM/SEM morphology: it says the 1 \u00b5m-thick CCB particles are spread uniformly on the Al substrate (Fig. 2b) and that both the Al substrate and CCB particles are covered with a 100 nm-thick Ag thin film (Fig. 2c), with the cross-section also showing the Al + CCB covered with 100 nm Ag (Fig. 2d). Although the method is described as FESEM, the figure caption/text refers to SEM images; this does not contradict the morphology claim.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Galvanostatic charge\u2013discharge",
+      "parameters": {
+        "voltage_window": "3.6\u20134.3 V",
+        "current_density": {
+          "value": 0.2,
+          "unit": "mA cm-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "1st charge capacity",
+          "value": 2,
+          "unit": "mAh"
+        },
+        {
+          "metric": "1st discharge capacity",
+          "value": 0.935,
+          "unit": "mAh"
+        },
+        {
+          "metric": "1st cycle coulombic efficiency",
+          "value": 46.8,
+          "unit": "%"
+        },
+        {
+          "metric": "30th discharge capacity",
+          "value": 0.805,
+          "unit": "mAh"
+        },
+        {
+          "metric": "capacity retention (30 cycles)",
+          "value": 86.1,
+          "unit": "%"
+        },
+        {
+          "metric": "coulombic efficiency after 1st cycle",
+          "value": 96.2,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Fig. 3(a)",
+        "Fig. 3(c)"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "Most metrics match the paper text around Fig. 3(a)/(c): 1st discharge capacity = 0.935 mAh (also stated as 0.935 mAh/cm2 elsewhere), 1st cycle coulombic efficiency = 46.8%, 30th discharge capacity = 0.805 mAh, capacity retention after 30 cycles = 86.1%, and coulombic efficiency increases to ~96.2% after the 1st cycle (stated as 96.2% in the 30th cycle). However, the extracted '1st charge capacity = 2 mAh' is not explicitly supported as an exact value: the text says the charge capacity is 'over 2 mAh' (not equal to 2 mAh). Also, the units in the extracted list are given as mAh, while the paper reports areal quantities (mAh/cm2) in the abstract/conclusion/table; Fig. 3(a) discussion uses mAh without '/cm2', creating ambiguity. The main hard error is treating 'over 2 mAh' as exactly 2 mAh.",
+        "suggested_fix": "Change '1st charge capacity' to '> 2 mAh' (or 'over 2 mAh'). Optionally report areal units consistently as 0.935 mAh/cm2 (and 0.805 mAh/cm2) if the field expects areal capacity."
+      }
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "100 MHz \u2013 35 MHz",
+        "amplitude": {
+          "value": 20,
+          "unit": "mV"
+        },
+        "states_tested": "3.6 V and 4.3 V"
+      },
+      "results": [
+        {
+          "metric": "GPE film resistance",
+          "value": 120,
+          "unit": "Ohm"
+        }
+      ],
+      "interpretation": "Three semicircles at 3.6 V attributed to SEI resistances; one semicircle at 4.3 V corresponds to charge transfer resistance.",
+      "prov": [
+        "Fig. 3(b)"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly states in the EIS discussion of Fig. 3(b): \u201cthe resistance of GPE film is about 120 Ohm.\u201d This directly supports the extracted metric/value/unit (GPE film resistance = 120 Ohm).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Ionic conductivity of GPE",
+          "value": 0.00015,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "Lithium transference number",
+          "value": 1,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.92,
+        "reasoning": "The paper\u2019s Experimental methods section states: ionic conductivity of the GPE is \u201capproximately 1.5 \u00d7 10\u22124 S/cm\u201d at room temperature, which matches 0.00015 S cm\u22121. However, it states \u201cthe lithium transference number is about 1,\u201d i.e., approximate, not exactly 1. The extracted value reports an exact value of 1 without the stated approximation.",
+        "suggested_fix": "Set lithium transference number to ~1 (about 1) at room temperature (optionally record as 1 with an uncertainty/qualifier). Ionic conductivity of GPE: ~1.5\u00d710\u22124 S/cm (0.00015 S cm\u22121) at room temperature."
+      }
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 30,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.94,
+      "reasoning": "The paper explicitly reports performance \u201cafter 30 cycles\u201d multiple times: the Abstract states \u201ccapacity retention of 86.1% after 30 cycles,\u201d Fig. 3(c) discussion says \u201cAfter 30 times charge/discharge cycle tests\u2026,\u201d and the Conclusions repeat \u201cafter 30 cycles.\u201d This directly supports a cycle life (tested cycle count) of 30 cycles.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,759 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A Battery Made from a Single Material",
+    "doi": "10.1002/adma.201500180",
+    "authors": [
+      "Fudong Han",
+      "Tao Gao",
+      "Yujie Zhu",
+      "Karen J. Gaskell",
+      "Chunsheng Wang"
+    ],
+    "journal": "Advanced Materials",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "all-solid-state battery",
+      "LGPS",
+      "single-material battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "intended_role": "electrolyte/active material",
+      "prov": [
+        "Experimental Section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly identifies the target material as Li10GeP2S12 (LGPS) multiple times, including in the main text (“Li10GeP2S12 was used as a model material…”) and in the Experimental Section (“Synthesis: Li10GeP2S12 was prepared…”). Therefore the extracted Target Formula is directly supported.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li10GeP2S12–carbon composite",
+      "molecular_formula": "",
+      "intended_role": "electrode material",
+      "prov": [
+        "Figure 5",
+        "Experimental Section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.95,
+        "reasoning": "The extracted value for “Target Formula” is blank, but the paper explicitly identifies the target/single material repeatedly as Li10GeP2S12 (abbreviated LGPS), including in Figure 1 caption (“single-Li10GeP2S12”), throughout the text, and in the Experimental Section (“Synthesis: Li10GeP2S12 was prepared…”). Therefore a blank value is not supported by the source text.",
+        "suggested_fix": "Li10GeP2S12"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in molar ratio 5 relative to P2S5 and GeS2",
+      "prov": [
+        "Experimental Section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.93,
+        "reasoning": "The paper does mention lithium sulfide (Li2S) as a starting material in the Experimental Section and explicitly gives its molar ratio in the precursor mix (Li2S/P2S5/GeS2 = 5/1/1). Therefore, it is incorrect to say the amount is “not specified in text.” However, the text does not provide a mass or volume amount for Li2S, only purity and molar ratio.",
+        "suggested_fix": "Lithium sulfide (Li2S) — used as starting material; weighed in molar ratio Li2S/P2S5/GeS2 = 5/1/1 (no explicit mass given)."
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in molar ratio 1 relative to Li2S and GeS2",
+      "prov": [
+        "Experimental Section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.94,
+        "reasoning": "The paper mentions P2S5 (phosphorus pentasulfide) as a starting material in the Experimental Section, but it also explicitly states the amount used via a molar ratio: “Li2S (…), P2S5 (…), and GeS2 (…) … weighed in the molar ratio of Li2S/P2S5/GeS2 = 5/1/1.” Therefore, the claim that the amount is “Not specified in text” is not correct.",
+        "suggested_fix": "Phosphorus pentasulfide (P2S5) | Amount: present as starting material, weighed in molar ratio Li2S:P2S5:GeS2 = 5:1:1 (no absolute mass given)."
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Germanium disulfide",
+      "molecular_formula": "GeS2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in molar ratio 1 relative to Li2S and P2S5",
+      "prov": [
+        "Experimental Section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.9,
+        "reasoning": "The paper’s “Experimental Section” and main text do not identify the chemical as “Germanium disulfide” as the subject material. Instead, the studied/synthesized material is Li10GeP2S12 (LGPS). GeS2 (germanium disulfide) is mentioned only as a starting material (“GeS2 ... were used as starting materials”) with a specified molar ratio (Li2S/P2S5/GeS2 = 5/1/1) and later as an anode analog (“GeS2 is a well-accepted anode...”), so the chemical identity/amount statement is incorrect. Also, the text does provide amounts (e.g., 10 mg LGPS–C, 120 mg LGPS, 30 mg LGPS–C) in the electrochemistry section, so “Amount: Not specified” is not accurate if referring to GeS2 or to the overall materials used.",
+        "suggested_fix": "Chemical identity should be Li10GeP2S12 (LGPS). If the intent is the GeS2 reagent: it is used as a starting material in molar ratio Li2S/P2S5/GeS2 = 5/1/1 (no absolute mass given). If the intent is cell component amounts: e.g., all-solid-state full cell uses 10 mg LGPS–C (anode), 120 mg LGPS (electrolyte), 30 mg LGPS–C (cathode)."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mixed with LGPS in 75:25 weight ratio for electrodes",
+      "prov": [
+        "Main text",
+        "Experimental Section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.82,
+        "reasoning": "The paper clearly specifies the conductive additive used is carbon black and provides explicit amounts/ratios in multiple places (e.g., “LGPS:carbon is 75:25 in weight”; composite electrodes prepared with LGPS and carbon black 75:25; and specific masses such as 10 mg LGPS–C powder with 120 mg LGPS, and 10/120/30 mg for anode/electrolyte/cathode). Therefore the statement “Amount: Not specified in text” is contradicted by the source.",
+        "suggested_fix": "Carbon black | Amount: 25 wt% relative to LGPS in LGPS–C composite (LGPS:carbon = 75:25 by weight). (Also, for specific cells: LGPS–C powder masses of 10 mg (half-cell electrode), and 10 mg anode + 30 mg cathode in the full cell; plus 10 wt% PVDF binder in slurry electrodes.)"
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Poly(vinylidene fluoride)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "10 wt% in electrode slurry",
+      "prov": [
+        "Experimental Section"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.98,
+        "reasoning": "The paper’s Experimental Section explicitly states the binder: “10 wt% polyvinylidene fluoride (PVDF) and n-methylpyrrolidinone (NMP) to make the electrode slurries.” Thus PVDF is present and its amount is specified (10 wt%), contradicting the extracted claim that the amount is not specified.",
+        "suggested_fix": "Poly(vinylidene fluoride) (PVDF) | Amount: 10 wt% (in electrode slurry formulation)"
+      }
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "N-Methyl-2-pyrrolidone",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Solvent for electrode slurry",
+      "prov": [
+        "Experimental Section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The Experimental Section explicitly lists “n-methylpyrrolidinone (NMP)” as a component used to make electrode slurries (“mixed with 10 wt% polyvinylidene fluoride (PVDF) and n-methylpyrrolidinone (NMP) to make the electrode slurries.”). However, no quantity/amount for NMP is given anywhere in the provided text (no mass, volume, concentration, or ratio for NMP), so “Amount: Not specified in text” is correct.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "salt",
+        "category": "electrolyte salt"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "Dissolved in 1:1 TEGDME/PYR13TFSI",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "The paper explicitly states the liquid electrolyte composition as “1 M lithium bis(trifluoromethanesulfonyl)imide (LiTFSI) in tetraethylene glycol dimethyl ether (TEGDME) and n-methyl-(n-butyl) pyrrolidinium bis(trifluoromethanesulfonyl)imide (PYR13TFSI)” (Page 4; also repeated in Experimental Section). This supports the chemical identity (LiTFSI) and the amount (1 M).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Tetraethylene glycol dimethyl ether",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of liquid electrolyte (1:1 with PYR13TFSI)",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.78,
+        "reasoning": "The paper explicitly mentions tetraethylene glycol dimethyl ether (TEGDME) as part of the liquid electrolyte: “1 M LiTFSI in tetraethylene glycol dimethyl ether (TEGDME) and n-methyl-(n-butyl) pyrrolidinium … (PYR13TFSI)” and later “1 M LiTFSI in a mixture of 1:1 volume ratio of TEGDME and PYR13TFSI”. However, it does not state a specific absolute amount (e.g., mL, g) of TEGDME used—only concentration (1 M) and mixture volume ratio (1:1). Therefore, the identity is supported and the ‘Amount: Not specified in text’ is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "N-methyl-N-butylpyrrolidinium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "ionic liquid"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Part of liquid electrolyte (1:1 with TEGDME)",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions the ionic liquid component n-methyl-(n-butyl) pyrrolidinium bis(trifluoromethanesulfonyl)imide (PYR13TFSI) as part of the liquid electrolyte (Page 4 and again in Experimental Section: “1 M LiTFSI in a mixture of 1:1 volume ratio of TEGDME and PYR13 TFSI”). However, the text provides only a 1:1 volume ratio with TEGDME and does not specify an absolute amount (mass/volume/moles) of PYR13TFSI used. Therefore, the ‘Amount: Not specified in text’ is correctly extracted.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter/reference electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "100 µm thick foil used in half-cells",
+      "prov": [
+        "Experimental Section"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly mentions use of lithium metal in multiple places (e.g., Li/LGPS/Pt cell; Li/LGPS/LGPS–C half-cells; “using a lithium metal foil as the counter electrode”; “a 100 µm thick lithium metal was then attached ... as a counter and reference electrode”). However, the text does not specify the *amount/mass* of lithium metal used—only a thickness (100 µm) and that it is a foil/counter electrode. Therefore the identity “Lithium metal” is supported and “Amount: Not specified in text” is also supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Weighing and mixing precursors",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ],
+              "molar_ratio": "5:1:1"
+            },
+            "notes": "All operations carried out in Ar-filled glove box",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.85,
+              "reasoning": "The Experimental Section explicitly states: “These materials were weighed in the molar ratio of Li2S/P2S5/GeS2 = 5/1/1 …” indicating that weighing is a synthesis operation performed during preparation of Li10GeP2S12.",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ],
+              "method": "high-energy vibrating mill",
+              "duration": {
+                "value": 30,
+                "unit": "min"
+              }
+            },
+            "notes": "Mixed in zirconia ceramic vial (SPEX 8000M)",
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.78,
+              "reasoning": "The paper explicitly describes a mixing step in the synthesis and electrode preparation, e.g., starting materials “mixed for 30 min using a high-energy vibrating mill” and LGPS/carbon composites made by “hand-grinding” or “ball-milled for 20 h” to mix LGPS with carbon. This supports the synthesis operation being a mix step.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          },
+          "_llm_flag": {
+            "is_supported": true,
+            "confidence": 0.92,
+            "reasoning": "The Experimental Section (Synthesis and Electrochemistry) explicitly states multiple steps were performed in an argon-filled glove box/Ar atmosphere: starting materials were weighed “in an argon (Ar)-filled glove box,” LGPS pellets were pressed “in an Ar atmosphere,” and electrode preparation/cell assembly were “performed in the Ar-filled glove box.” This supports the extracted synthesis atmosphere as argon.",
+            "suggested_fix": ""
+          }
+        },
+        "prov": [
+          "Experimental Section"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Pelletizing the mixed powder",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "step_1"
+              ]
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.9,
+              "reasoning": "The paper explicitly describes pressing as part of synthesis/cell fabrication. In Experimental Section (Synthesis) it states “The powder obtained was then pressed into pellets…”. In Electrochemistry it also mentions “cold-pressed” assembly steps (e.g., “cold-pressed together under 360 MPa” and “direct cold-pressing…”). Thus the extracted synthesis operation “press” is supported.",
+              "suggested_fix": ""
+            }
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental Section"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Sealing under vacuum",
+        "operations": [
+          {
+            "action": "seal",
+            "parameters": {
+              "container": "quartz tube",
+              "pressure": {
+                "value": 0.0003,
+                "unit": "bar"
+              }
+            },
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.93,
+              "reasoning": "The paper describes synthesis steps including weighing, milling, pressing into pellets, and explicitly states the pellets were \"sealed in an evacuated quartz tube at 30 Pa\" before heating. However, it does not describe a synthesis operation simply as \"seal\" in a standalone or generalized way; sealing is only mentioned as part of “sealed in an evacuated quartz tube”. Thus the extracted operation term \"seal\" is not explicitly stated in the text as such (only the phrase “sealed …”).",
+              "suggested_fix": "sealed in an evacuated quartz tube (at 30 Pa)"
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": [
+          "Experimental Section"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat treatment to synthesize Li10GeP2S12",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 823,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 480,
+                "unit": "min"
+              }
+            },
+            "_llm_flag": {
+              "is_supported": true,
+              "confidence": 0.92,
+              "reasoning": "The Experimental Section explicitly states the synthesis includes a heating step: the pressed pellets were “sealed in an evacuated quartz tube… and heated at 550 °C for 8 h in a furnace.” This supports the extracted synthesis operation “heat.”",
+              "suggested_fix": ""
+            }
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "method": "natural cooling",
+              "to_temperature": {
+                "value": 298,
+                "unit": "K"
+              }
+            },
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.95,
+              "reasoning": "The paper’s Experimental Section describes synthesis steps such as mixing, pressing into pellets, sealing, heating at 550 °C for 8 h, and then “naturally cooled down to the ambient temperature.” Nowhere does it explicitly state a synthesis operation described as “cool” (as a discrete step/operation name). The closest matching operation is “naturally cooled down,” which is not explicitly the word “cool.”",
+              "suggested_fix": "naturally cooled down to the ambient temperature"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "sealed vacuum quartz tube",
+          "_llm_flag": {
+            "is_supported": false,
+            "confidence": 0.86,
+            "reasoning": "The paper describes the synthesis step as: “sealed in an evacuated quartz tube at 30 Pa” (Experimental Section, Synthesis). This supports an evacuated/low-pressure quartz tube, but it does not explicitly state a “sealed vacuum quartz tube” (i.e., full vacuum).",
+            "suggested_fix": "sealed in an evacuated quartz tube at 30 Pa"
+          }
+        },
+        "prov": [
+          "Experimental Section"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Preparation of precursor mixture by ball-milling",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.74,
+          "reasoning": "The paper explicitly describes preparing an LGPS–carbon composite electrode by ball-milling: “The LGPS and carbon was ball-milled for 20 h to achieve a uniform distribution of the carbon in the composite electrode” (Page 6). This supports the workflow step of preparing a precursor/composite mixture by ball-milling.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Compaction of precursor into pellets",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.9,
+          "reasoning": "The paper’s Experimental Section (Synthesis) explicitly states that after mixing the starting materials, “The powder obtained was then pressed into pellets…,” which corresponds to compaction of the precursor powder into pellets as a workflow step.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Vacuum sealing of pellets in quartz tube",
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper’s Experimental Section states that the powder was “pressed into pellets, sealed in an evacuated quartz tube at 30 Pa, and heated at 550 °C for 8 h.” This supports sealing pellets in an evacuated quartz tube, but it does not mention “vacuum sealing” explicitly (nor a vacuum-sealing procedure), only evacuation to 30 Pa and sealing. Therefore the extracted wording is not explicitly supported as written.",
+          "suggested_fix": "Pressed pellets were sealed in an evacuated quartz tube (30 Pa) and heated at 550 °C for 8 h."
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Annealing at 823 K for 8 h and natural cooling to obtain LGPS",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The Experimental Section explicitly states the synthesis workflow: the pressed pellets were “sealed in an evacuated quartz tube at 30 Pa, and heated at 550 °C for 8 h… The sample was then naturally cooled down to the ambient temperature.” 550 °C corresponds to 823 K, matching “annealing at 823 K for 8 h and natural cooling” to obtain LGPS.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Precursor ratio notation includes 'P2S2' which is likely a typographical error for 'P2S5'.",
+        "excerpt": "These materials were weighed in the molar ratio of Li2S/P2S2/GeS2 = 5/1/1",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.92,
+          "reasoning": "The Experimental Section explicitly states: “These materials were weighed in the molar ratio of Li2S/P2S2/GeS2 = 5/1/1…”. Thus, the document does contain the unusual precursor notation “P2S2,” creating a genuine workflow ambiguity/likely typo (given P2S5 is also listed as a starting material and P2S2 is not). The extracted issue and excerpt match the text exactly.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {
+        "radiation": "Cu Kα"
+      },
+      "results": [
+        {
+          "metric": "space group",
+          "value": "P42/nmc",
+          "unit": ""
+        },
+        {
+          "metric": "cell parameter a",
+          "value": 8.6995,
+          "unit": "Å"
+        },
+        {
+          "metric": "cell parameter c",
+          "value": 12.669,
+          "unit": "Å"
+        },
+        {
+          "metric": "cell volume",
+          "value": 954.1,
+          "unit": "Å^3"
+        }
+      ],
+      "interpretation": "Structure in good agreement with literature",
+      "prov": [
+        "Figure 2a"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly reports the Rietveld refinement results for the XRD pattern (referenced as Figure 2a): space group P42/nmc and lattice parameters a = 8.6995(3) Å, c = 12.669(6) Å, and cell volume V = 954.1 Å^3. These match the extracted values (ignoring uncertainty notation). Although the provenance points to Figure 2a, the numerical values appear in the main text describing Figure 2a, which still supports the extraction.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Scanning electron microscopy (SEM)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "particle size",
+          "value": "2–5",
+          "unit": "µm"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Figure 2b"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly states: “The SEM image (Figure 2b) reveals that the particle size of the sample is about 2–5 µm.” This directly supports the extracted SEM metric (particle size = 2–5 µm) and matches the alleged provenance (Figure 2b).",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Inductively coupled plasma spectroscopy (ICP-OES)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "P/Ge atomic ratio",
+          "value": 2.06,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Close to stoichiometric value of 2",
+      "prov": [
+        "Main text"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The main text explicitly states: “The atomic ratio of P to Ge in the sample was determined to be 2.06 by inductively coupled plasma (ICP) spectroscopy…”. This directly supports the extracted metric/value (P/Ge atomic ratio = 2.06) from ICP-OES/ICP spectroscopy.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy (EIS)",
+      "parameters": {
+        "temperature": {
+          "value": 300,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity",
+          "value": 7.4,
+          "unit": "mS cm-1"
+        },
+        {
+          "metric": "activation energy",
+          "value": 0.26,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "High ionic conductivity for cold-pressed LGPS",
+      "prov": [
+        "Figure 2c"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports both EIS-derived metrics in the text describing Figure 2c (Arrhenius plot from impedance spectroscopy): “At 27 °C, the ionic conductivity of the cold-pressed LGPS is 7.4 mS cm−1 … The activation energy for the ionic transport was calculated to be 0.26 eV.” These match the extracted values and units. Provenance “Figure 2c” is consistent with the surrounding description.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Cyclic voltammetry (CV)",
+      "parameters": {
+        "scan_rate": "0.05 mV s-1"
+      },
+      "results": [
+        {
+          "metric": "electrochemical stability window",
+          "value": 5.0,
+          "unit": "V"
+        }
+      ],
+      "interpretation": "LGPS stable up to 5 V under low electronic conductivity",
+      "prov": [
+        "Figure 2d"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.95,
+        "reasoning": "The paper explicitly states that the electrochemical window of LGPS obtained from cyclic voltammetry (Li/LGPS/Pt, scan rate 0.05 mV s−1) is stable up to 5.0 V. This appears in the discussion of Figure 2d (“stable at a high potential up to 5.0 V”) and the Figure 2 caption notes the CV voltage range up to 5.0 V.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "X-ray photoelectron spectroscopy (XPS)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "S 2p low/high peak area ratio (fresh)",
+          "value": "4.9:1",
+          "unit": ""
+        },
+        {
+          "metric": "S 2p low/high peak area ratio (charged)",
+          "value": "1.8:1",
+          "unit": ""
+        },
+        {
+          "metric": "S 2p low/high peak area ratio (discharged)",
+          "value": "4.2:1",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Demonstrates reversible Li–S redox in LGPS cathode",
+      "prov": [
+        "Figure 4a",
+        "Table 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "The paper explicitly reports the S 2p low/high binding energy peak area ratios for LGPS cathodes in the fresh, charged (to 3.5 V), and discharged (to 1.0 V) states. In the XPS discussion (page 5) it states the ratio decreased from 4.9:1 (fresh) to 1.8:1 (charged) and increased to 4.2:1 (discharged). Table 1 on page 5 also lists these area ratios (Fresh 4.9:1; Charged 1.8:1; Discharged 4.2:1). Figure 4a is the corresponding S 2p spectra plot. Extracted values match exactly.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Battery performance testing",
+        "results": [
+          {
+            "description": "Single-LGPS ASSLIB reversible capacity at 10 mA g-1",
+            "value": 104,
+            "unit": "mAh g-1"
+          },
+          {
+            "description": "Capacity at 100 mA g-1",
+            "value": 37,
+            "unit": "mAh g-1"
+          },
+          {
+            "description": "Capacity at 50 mA g-1 and 323 K (50 °C)",
+            "value": 96,
+            "unit": "mAh g-1"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.9,
+          "reasoning": "The paper describes multiple analysis/characterization methods (e.g., XRD with Rietveld refinement, SEM, EIS, cyclic voltammetry, ICP-OES, XPS), but the extracted value for “Analysis Method” is blank. Since the document clearly specifies analysis methods, a blank extracted value is not supported.",
+          "suggested_fix": "Specify the analysis methods mentioned in the text, e.g., powder X-ray diffraction (with Rietveld refinement), SEM, electrochemical impedance spectroscopy (EIS), cyclic voltammetry (CV), X-ray photoelectron spectroscopy (XPS), and inductively coupled plasma spectroscopy (ICP-OES)."
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 104,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null,
+    "_llm_flag": {
+      "is_supported": true,
+      "confidence": 0.97,
+      "reasoning": "Page 7 (Figure 6d discussion) explicitly states that the single-LGPS ASSLIB “is able to deliver a reversible capacity of 104 mAh g(LGPS)−1” at 10 mA g−1 between 0.0 and 2.5 V. This supports the extracted final capacity value of 104 mAh g−1.",
+      "suggested_fix": ""
+    }
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-19T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

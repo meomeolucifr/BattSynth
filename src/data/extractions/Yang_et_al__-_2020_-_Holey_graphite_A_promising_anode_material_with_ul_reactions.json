@@ -1,0 +1,298 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Holey graphite: A promising anode material with ultrahigh storage for lithium-ion battery",
+    "doi": "10.1016/j.electacta.2020.136244",
+    "authors": ["Chen Yang", "Xiuying Zhang", "Jingzhen Li", "Jiachen Ma", "Linqiang Xu", "Jie Yang", "Shiqi Liu", "Shibo Fang", "Ying Li", "Xiaotian Sun", "Xiaoyu Yang", "Feng Pan", "Jing Lu", "Dapeng Yu"],
+    "journal": "Electrochimica Acta",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["lithium-ion battery", "graphite anode", "holey graphite", "first-principles calculation"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Holey graphite anode 35% hole density (HGA35)",
+      "molecular_formula": "C26H6",
+      "intended_role": "anode material",
+      "prov": ["Page 4-5"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Holey graphite anode 46% hole density (HGA46)",
+      "molecular_formula": "C18H6",
+      "intended_role": "anode material",
+      "prov": ["Page 4-5"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Holey graphite anode 61% hole density (HGA61)",
+      "molecular_formula": "C12H6",
+      "intended_role": "anode material",
+      "prov": ["Page 4-5"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Intrinsic graphite anode (IGA)",
+      "molecular_formula": "C6",
+      "intended_role": "reference material",
+      "prov": ["Throughout"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "intercalant",
+        "category": "alkali metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Modeled as adsorbed/intercalated ion in computational study",
+      "prov": ["Throughout"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Hydrogen (passivation)",
+      "molecular_formula": "H",
+      "ontology": {
+        "role": "surface_passivator",
+        "category": "elemental"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used to passivate dangling bonds at hole edges in models",
+      "prov": ["Page 4"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Graphite",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "substrate",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Reference intrinsic graphite anode (IGA)",
+      "prov": ["Throughout"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "calc_1",
+        "description": "DFT geometry optimization of holey graphite models (HGA35, HGA46, HGA61)"
+      },
+      {
+        "step_ref": "calc_2",
+        "description": "Ab-initio MD simulations at 300 K for 1500 fs to test thermal stability"
+      },
+      {
+        "step_ref": "calc_3",
+        "description": "CI-NEB calculations for Li diffusion pathways (in-plane and out-of-plane) to obtain energy barriers"
+      },
+      {
+        "step_ref": "calc_4",
+        "description": "Adsorption energy calculations for increasing Li concentrations to determine maximum storage capacity"
+      },
+      {
+        "step_ref": "calc_5",
+        "description": "Open-circuit voltage profiles computed from total energy differences"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Density Functional Theory (VASP, CASTEP)",
+      "parameters": {
+        "cutoff_energy": "600 eV",
+        "functional": "GGA-PBE",
+        "van_der_Waals": "DFT-D3",
+        "k_point_spacing": "0.02 Å-1"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Computational details section"]
+    },
+    {
+      "method": "Ab initio Molecular Dynamics (ATK)",
+      "parameters": {
+        "ensemble": "NVT",
+        "temperature": "300 K",
+        "time": "1500 fs"
+      },
+      "results": [
+        {
+          "metric": "structural integrity",
+          "value": "Stable with minor deformation (HGA61 slight z-shift)",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Thermodynamically stable at room temperature",
+      "prov": ["Fig. 1b,c"]
+    },
+    {
+      "method": "CI-NEB",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "in-plane Li diffusion barrier (IGA)",
+          "value": 0.57,
+          "unit": "eV"
+        },
+        {
+          "metric": "in-plane Li diffusion barrier (HGA35)",
+          "value": 0.42,
+          "unit": "eV"
+        },
+        {
+          "metric": "in-plane Li diffusion barrier (HGA46)",
+          "value": 0.38,
+          "unit": "eV"
+        },
+        {
+          "metric": "in-plane Li diffusion barrier (HGA61)",
+          "value": 0.35,
+          "unit": "eV"
+        },
+        {
+          "metric": "out-of-plane Li diffusion barrier (HGA, through hole)",
+          "value": 1.64,
+          "unit": "eV"
+        },
+        {
+          "metric": "out-of-plane Li diffusion barrier (IGA layer)",
+          "value": 8.23,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Holey structure lowers diffusion barriers and adds fast out-of-plane path",
+      "prov": ["Fig. 5", "Fig. 6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Capacity calculation",
+        "results": [
+          {
+            "material": "HGA35",
+            "value": 1516,
+            "unit": "mAh g-1",
+            "context": "theoretical maximum"
+          },
+          {
+            "material": "HGA46",
+            "value": 1689,
+            "unit": "mAh g-1",
+            "context": "theoretical maximum"
+          },
+          {
+            "material": "HGA61",
+            "value": 714,
+            "unit": "mAh g-1",
+            "context": "theoretical maximum"
+          },
+          {
+            "material": "HGA35",
+            "value": 1010,
+            "unit": "mAh g-1",
+            "context": "reversible capacity from OCV curve"
+          },
+          {
+            "material": "HGA46",
+            "value": 1205,
+            "unit": "mAh g-1",
+            "context": "reversible capacity from OCV curve"
+          }
+        ]
+      },
+      {
+        "method_name": "Open-circuit voltage calculation",
+        "results": [
+          {
+            "material": "HGA35",
+            "value": 0.64,
+            "unit": "V"
+          },
+          {
+            "material": "HGA46",
+            "value": 0.86,
+            "unit": "V"
+          },
+          {
+            "material": "HGA61",
+            "value": 1.11,
+            "unit": "V"
+          }
+        ]
+      },
+      {
+        "method_name": "Surface area change ratio",
+        "results": [
+          {
+            "material": "HGA35",
+            "value": 7.87,
+            "unit": "%"
+          },
+          {
+            "material": "HGA46",
+            "value": 13.90,
+            "unit": "%"
+          },
+          {
+            "material": "HGA61",
+            "value": 2.77,
+            "unit": "%"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 1689,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

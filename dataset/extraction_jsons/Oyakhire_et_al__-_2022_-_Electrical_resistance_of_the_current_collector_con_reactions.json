@@ -1,0 +1,711 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Electrical resistance of the current collector controls lithium morphology",
+    "doi": "10.1038/s41467-022-31507-w",
+    "authors": [
+      "Solomon T. Oyakhire",
+      "Wenbo Zhang",
+      "Andrew Shin",
+      "Rong Xu",
+      "David T. Boyle",
+      "Zhiao Yu",
+      "Yusheng Ye",
+      "Yufei Yang",
+      "James A. Raiford",
+      "William Huang",
+      "Joel R. Schneider",
+      "Yi Cui",
+      "Stacey F. Bent"
+    ],
+    "journal": "Nature Communications",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": [
+      "ALD",
+      "thin films",
+      "lithium metal batteries",
+      "current collector modification"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Al2O3 thin film on Cu foil",
+      "molecular_formula": "Al2O3",
+      "intended_role": "modified current collector",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "SnO2 thin film on Cu foil",
+      "molecular_formula": "SnO2",
+      "intended_role": "modified current collector",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "ZnO thin film on Cu foil",
+      "molecular_formula": "ZnO",
+      "intended_role": "modified current collector",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "HfEG hybrid thin film on Cu foil",
+      "molecular_formula": "HfEG",
+      "intended_role": "modified current collector",
+      "prov": [
+        "Methods"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "trimethylaluminum",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "TMA used for Al2O3 ALD",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "counter reactant",
+        "category": "solvent/reagent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Counter reactant for Al2O3, SnO2, ZnO ALD",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "tetrakis(dimethylamino)tin(IV)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "TDMASn heated to 60 °C for SnO2 ALD",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "diethyl zinc",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "DEZ for ZnO ALD",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "tetrakis(dimethylamido) hafnium (TDMAH)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "organometallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "TDMAH heated to 60 °C for HfEG deposition",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "ethylene glycol",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "counter reactant",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Counter reactant for HfEG deposition",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "copper foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Current collector substrate",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "silicon wafer",
+      "molecular_formula": "Si",
+      "ontology": {
+        "role": "reference substrate",
+        "category": "semiconductor"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for thickness calibration",
+      "prov": [
+        "Methods"
+      ]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "hydrofluoric acid (1 vol%)",
+      "molecular_formula": "HF",
+      "ontology": {
+        "role": "etchant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.1,
+        "unit": "mL"
+      },
+      "notes": "Used 100 µL for 90 s etch of patterned Al2O3",
+      "prov": [
+        "Film patterning"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Atomic layer deposition of Al2O3 thin film on Cu foil",
+        "operations": [
+          {
+            "action": "ALD",
+            "parameters": {
+              "precursor": "chem_1",
+              "counter_reactant": "chem_2",
+              "pulse_time_precursor": {
+                "value": 1,
+                "unit": "s"
+              },
+              "purge_time_after_precursor": {
+                "value": 30,
+                "unit": "s"
+              },
+              "pulse_time_counter": {
+                "value": 1,
+                "unit": "s"
+              },
+              "purge_time_after_counter": {
+                "value": 30,
+                "unit": "s"
+              },
+              "temperature": {
+                "value": 393,
+                "unit": "K"
+              }
+            },
+            "notes": "Growth rate 1.1 Å per cycle; thicknesses used include 1–8 nm and 50 nm",
+            "prov": [
+              "Methods"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2 (carrier gas, implicit)",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Atomic layer deposition of SnO2 thin film on Cu foil",
+        "operations": [
+          {
+            "action": "ALD",
+            "parameters": {
+              "precursor": "chem_3",
+              "counter_reactant": "chem_2",
+              "pulse_time_precursor": {
+                "value": 1.5,
+                "unit": "s"
+              },
+              "purge_time_after_precursor": {
+                "value": 5,
+                "unit": "s"
+              },
+              "pulse_time_counter": {
+                "value": 1.5,
+                "unit": "s"
+              },
+              "purge_time_after_counter": {
+                "value": 5,
+                "unit": "s"
+              },
+              "temperature": {
+                "value": 373,
+                "unit": "K"
+              }
+            },
+            "notes": "Precursor heated to 60 °C; growth rate 1.8 Å per cycle; ~7 nm films prepared",
+            "prov": [
+              "Methods"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Atomic layer deposition of ZnO thin film on Cu foil",
+        "operations": [
+          {
+            "action": "ALD_cycle",
+            "parameters": {
+              "precursor": "chem_4",
+              "counter_reactant": "chem_2",
+              "pulse_time_precursor": {
+                "value": 0.1,
+                "unit": "s"
+              },
+              "purge_time_after_precursor": {
+                "value": 5,
+                "unit": "s"
+              },
+              "pulse_time_counter": {
+                "value": 1,
+                "unit": "s"
+              },
+              "purge_time_after_counter": {
+                "value": 5,
+                "unit": "s"
+              },
+              "temperature": {
+                "value": 393,
+                "unit": "K"
+              }
+            },
+            "notes": "Growth rate 1.4 Å per cycle; ~7 nm films prepared",
+            "prov": [
+              "Methods"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "ALD-like deposition of Hf–ethylene glycol (HfEG) hybrid film on Cu foil",
+        "operations": [
+          {
+            "action": "ALD",
+            "parameters": {
+              "precursor": "chem_5",
+              "counter_reactant": "chem_6",
+              "pulse_time_precursor": {
+                "value": 1,
+                "unit": "s"
+              },
+              "soak_time_precursor": {
+                "value": 20,
+                "unit": "s"
+              },
+              "purge_time_after_precursor": {
+                "value": 120,
+                "unit": "s"
+              },
+              "pulse_time_counter": {
+                "value": 1,
+                "unit": "s"
+              },
+              "soak_time_counter": {
+                "value": 20,
+                "unit": "s"
+              },
+              "purge_time_after_counter": {
+                "value": 120,
+                "unit": "s"
+              },
+              "temperature": {
+                "value": 393,
+                "unit": "K"
+              }
+            },
+            "notes": "Growth rate 1.9 Å per cycle; film thickness 6 nm reported",
+            "prov": [
+              "Methods"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "N2",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Methods"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Patterning and etching of 50 nm Al2O3 film to create 25 µm holes",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "material": "SPR 3612 positive resist",
+              "thickness": {
+                "value": 1.6,
+                "unit": "µm"
+              }
+            },
+            "notes": "Coated using SVG coater",
+            "prov": [
+              "Film patterning"
+            ]
+          },
+          {
+            "action": "soft_bake",
+            "parameters": {
+              "temperature": {
+                "value": 398,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 1,
+                "unit": "min"
+              }
+            },
+            "notes": "",
+            "prov": [
+              "Film patterning"
+            ]
+          },
+          {
+            "action": "lithography_expose",
+            "parameters": {
+              "method": "direct write",
+              "wavelength": {
+                "value": 375,
+                "unit": "nm"
+              }
+            },
+            "notes": "Heidelberg MLA 150",
+            "prov": [
+              "Film patterning"
+            ]
+          },
+          {
+            "action": "develop",
+            "parameters": {},
+            "notes": "SVG developer, MF-26A",
+            "prov": [
+              "Film patterning"
+            ]
+          },
+          {
+            "action": "hard_bake",
+            "parameters": {
+              "temperature": {
+                "value": 383,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 2,
+                "unit": "min"
+              }
+            },
+            "notes": "",
+            "prov": [
+              "Film patterning"
+            ]
+          },
+          {
+            "action": "etch",
+            "parameters": {
+              "etchant": "chem_9",
+              "volume": {
+                "value": 0.1,
+                "unit": "mL"
+              },
+              "duration": {
+                "value": 1.5,
+                "unit": "min"
+              }
+            },
+            "notes": "1 vol % HF applied to each patterned spot",
+            "prov": [
+              "Film patterning"
+            ]
+          },
+          {
+            "action": "rinse",
+            "parameters": {
+              "solvent": "deionized water"
+            },
+            "notes": "",
+            "prov": [
+              "Film patterning"
+            ]
+          },
+          {
+            "action": "remove_resist",
+            "parameters": {
+              "solvent_sequence": [
+                "acetone",
+                "isopropyl alcohol"
+              ]
+            },
+            "notes": "",
+            "prov": [
+              "Film patterning"
+            ]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "ambient laboratory",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": [
+          "Film patterning"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Deposition of Al2O3 thin films of varying thickness (1–8 nm, 50 nm) on Cu"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Deposition of ~7 nm SnO2 thin films on Cu"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Deposition of ~7 nm ZnO thin films on Cu"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Deposition of 6 nm HfEG hybrid film on Cu"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Photolithographic patterning and HF etching to create hole arrays in 50 nm Al2O3 film"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact number of ALD cycles not stated; only growth rates and final thicknesses mentioned.",
+        "excerpt": "Growth rate 1.1 per cycle; thicknesses used include 1–8 nm and 50 nm"
+      },
+      {
+        "issue": "Carrier gas and chamber pressure for ALD runs not provided.",
+        "excerpt": "All depositions were conducted directly on Cu foil in a Gemstar 6 ALD reactor (Arradiance)."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Four-point probe",
+      "parameters": {
+        "film_thickness": {
+          "value": 50,
+          "unit": "nm"
+        }
+      },
+      "results": [
+        {
+          "metric": "sheet resistivity",
+          "value": 22650,
+          "unit": "Ω sq^-1",
+          "sample": "Al2O3 film"
+        },
+        {
+          "metric": "sheet resistivity",
+          "value": 95.13,
+          "unit": "Ω sq^-1",
+          "sample": "ZnO film"
+        },
+        {
+          "metric": "sheet resistivity",
+          "value": 72.48,
+          "unit": "Ω sq^-1",
+          "sample": "SnO2 film"
+        }
+      ],
+      "interpretation": "Al2O3 film is several orders of magnitude more resistive than ZnO and SnO2",
+      "prov": [
+        "Figure 5a"
+      ]
+    },
+    {
+      "method": "Electrochemical measurement",
+      "parameters": {
+        "current_density": {
+          "value": 1,
+          "unit": "mA cm^-2"
+        },
+        "capacity": {
+          "value": 1,
+          "unit": "mAh cm^-2"
+        }
+      },
+      "results": [
+        {
+          "metric": "nucleation overpotential",
+          "value": 870,
+          "unit": "mV",
+          "sample": "Al2O3-modified Cu"
+        },
+        {
+          "metric": "nucleation overpotential",
+          "value": 96,
+          "unit": "mV",
+          "sample": "bare Cu"
+        },
+        {
+          "metric": "nucleation overpotential",
+          "value": 54,
+          "unit": "mV",
+          "sample": "SnO2-modified Cu"
+        },
+        {
+          "metric": "nucleation overpotential",
+          "value": 33,
+          "unit": "mV",
+          "sample": "ZnO-modified Cu"
+        }
+      ],
+      "interpretation": "Higher resistivity correlates with higher nucleation overpotential",
+      "prov": [
+        "Figure 5b",
+        "Figure 5c"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Correlation analysis",
+        "results": [
+          {
+            "equation": "High sheet resistivity -> sparse Li nucleation -> planar deposits",
+            "value": null,
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 390
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

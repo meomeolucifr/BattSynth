@@ -1,0 +1,512 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Liquid metals at room temperature",
+    "doi": "10.1063/PT.3.4723",
+    "authors": ["Michael D. Dickey"],
+    "journal": "Physics Today",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["liquid metals", "gallium", "EGaIn", "stretchable electronics"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "EGaIn/PDMS composite",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Figure 5"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Al2O3 surface layer on Ga",
+      "molecular_formula": "Al2O3",
+      "intended_role": "product",
+      "prov": ["Page 35", "Figure 4b"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Ga2O3 oxide film",
+      "molecular_formula": "Ga2O3",
+      "intended_role": "product",
+      "prov": ["Page 35", "Figure 4a"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Gallium",
+      "molecular_formula": "Ga",
+      "ontology": {
+        "role": "reactant",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Eutectic gallium indium",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "alloy"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 31", "Figure 5"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Indium",
+      "molecular_formula": "In",
+      "ontology": {
+        "role": "alloying element",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 31"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Tin",
+      "molecular_formula": "Sn",
+      "ontology": {
+        "role": "alloying element",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 31"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Galinstan",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "alloy"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 31"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Aluminum",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "dopant",
+        "category": "metal"
+      },
+      "amount": {
+        "value": 0.4,
+        "unit": "%"
+      },
+      "notes": "Doping level explicitly stated as 0.4%",
+      "prov": ["Figure 4b"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Sodium hydroxide",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "electrolyte",
+        "category": "base"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "",
+      "prov": ["Figure 3 caption"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Polydimethylsiloxane",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "matrix",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 5"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Cerium",
+      "molecular_formula": "Ce",
+      "ontology": {
+        "role": "dopant",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Trace amounts; exact value not provided",
+      "prov": ["Page 35"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "Gallium(III) oxide",
+      "molecular_formula": "Ga2O3",
+      "ontology": {
+        "role": "product",
+        "category": "oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 4a"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "Aluminum oxide",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "product",
+        "category": "oxide"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Figure 4b"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Formation of a soft composite by mixing EGaIn with PDMS and curing the silicone",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_2", "chem_8"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Exact ratios and curing conditions not provided"
+          },
+          {
+            "action": "cure",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 5"],
+        "outputs": ["target_1"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Doping liquid gallium with aluminum to create an Al2O3 surface layer",
+        "operations": [
+          {
+            "action": "dope",
+            "parameters": {
+              "inputs": ["chem_1", "chem_6"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Al added at 0.4% to Ga"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 4b"],
+        "outputs": ["target_2"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Exfoliation of native Ga2O3 from liquid gallium to create thin oxide films at room temperature",
+        "operations": [
+          {
+            "action": "exfoliate",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Room temperature; exact mechanical details not provided"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 4a"],
+        "outputs": ["target_3"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Electrochemical reduction of Ga surface oxide",
+        "operations": [
+          {
+            "action": "electrochemical reduction",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "potential": {
+              "value": -1,
+              "unit": "V"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Relative to a counter electrode; electrolyte not specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 34"],
+        "outputs": []
+      },
+      {
+        "step_id": "step_5",
+        "description": "Electrochemical oxidation of Ga droplet in 1 M NaOH leading to fractal spreading",
+        "operations": [
+          {
+            "action": "electrochemical oxidation",
+            "parameters": {
+              "inputs": ["chem_1", "chem_7"]
+            },
+            "potential": {
+              "value": 1,
+              "unit": "V"
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Positive potential applied; observed surface tension reduction"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Figure 3 caption"],
+        "outputs": []
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Create EGaIn-PDMS composite"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Dope Ga with Al to form Al2O3 surface"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Exfoliate Ga2O3 thin films from Ga"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Electrochemically reduce Ga oxide layer"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Electrochemically oxidize Ga droplet in NaOH"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified curing conditions and ratios for EGaIn–PDMS composite",
+        "excerpt": "Mixing liquid metal (eutectic gallium indium; EGaIn) into silicone (polydimethylsiloxane; PDMS) creates a soft composite upon curing the silicone."
+      },
+      {
+        "issue": "Exact unit basis for 0.4% aluminum doping not stated",
+        "excerpt": "adding 0.4% aluminum causes the surface to become Al2O3."
+      },
+      {
+        "issue": "No electrolyte specified for −1 V electrochemical reduction step",
+        "excerpt": "Applying a modest reducing potential of, say, −1 V to the metal relative to a counter electrode can convert the Ga+3 on the oxidized surface back to metallic Ga"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Surface tension measurement",
+      "parameters": {
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "surface tension",
+          "value": 500,
+          "unit": "mN/m"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 32"]
+    },
+    {
+      "method": "Freezing test",
+      "parameters": {
+        "temperature": {
+          "value": 258.15,
+          "unit": "K"
+        },
+        "duration": {
+          "value": null,
+          "unit": ""
+        }
+      },
+      "results": [
+        {
+          "metric": "phase state",
+          "value": "remained liquid",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Demonstrates supercooling of EGaIn",
+      "prov": ["Page 31"]
+    },
+    {
+      "method": "Electrochemical observation (optical imaging)",
+      "parameters": {
+        "potential": {
+          "value": 1,
+          "unit": "V"
+        },
+        "electrolyte": "1 M NaOH"
+      },
+      "results": [
+        {
+          "metric": "surface tension (effective)",
+          "value": "near zero",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Electrochemical oxidation lowers surface tension enabling fractal spreading",
+      "prov": ["Figure 3"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T00:00:00Z",
+    "source_file": "Liquid_metals_Physics_Today_2021.pdf",
+    "processing_time": null
+  }
+}

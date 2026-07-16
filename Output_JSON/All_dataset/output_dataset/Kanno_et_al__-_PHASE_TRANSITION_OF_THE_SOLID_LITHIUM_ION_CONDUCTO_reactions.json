@@ -1,0 +1,420 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "PHASE TRANSITION OF THE SOLID LITHIUM ION CONDUCTOR WITH THE SPINEL STRUCTURE: Li2−2xM1+xCl4 (M = Mg, Mn)",
+    "doi": "",
+    "authors": [
+      "R. Kanno",
+      "Y. Takeda",
+      "O. Yamamoto",
+      "C. Cros",
+      "Wang Gang",
+      "P. Hagenmuller"
+    ],
+    "journal": "Solid State Ionics",
+    "year": 1986
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": [
+      "spinel",
+      "solid lithium ion conductor",
+      "phase transition",
+      "chloride spinel"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2-2xMg1+xCl4 spinel",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Page 100 Experimental"
+      ]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li2-2xMn1+xCl4 spinel",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Page 100 Experimental"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "reagent grade, dried under vacuum at elevated temperatures",
+      "prov": [
+        "Page 100 Experimental"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Magnesium chloride",
+      "molecular_formula": "MgCl2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "reagent grade, dried under vacuum at elevated temperatures",
+      "prov": [
+        "Page 100 Experimental"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Manganese(II) chloride",
+      "molecular_formula": "MnCl2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "reagent grade, dried under vacuum at elevated temperatures",
+      "prov": [
+        "Page 100 Experimental"
+      ]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used to fill glove box during pellet pressing",
+      "prov": [
+        "Page 100 Experimental"
+      ]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "α-Al2O3",
+      "molecular_formula": "Al2O3",
+      "ontology": {
+        "role": "reference",
+        "category": "standard"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "used as DSC standard",
+      "prov": [
+        "Page 100 Experimental"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Dry starting chlorides under vacuum at elevated temperature",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "elevated temperature not specified"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 100 Experimental"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Grind LiCl with corresponding MCl2 in stoichiometric or non-stoichiometric ratios",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "notes": "appropriate quantities, compositions vary with x"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 100 Experimental"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Press ground mixture into pellets",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "pressure": {
+              "value": 300,
+              "unit": "bar"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": 300,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 100 Experimental"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat pellets in evacuated Pyrex tube for solid-state reaction",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": [
+                "target_1",
+                "target_2"
+              ]
+            },
+            "temperature": {
+              "value": 673,
+              "unit": "K"
+            },
+            "duration": {
+              "value": 10080,
+              "unit": "min"
+            },
+            "notes": "one week"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Page 100 Experimental"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Dry LiCl, MgCl2 or MnCl2 under vacuum"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Grind dried salts together in appropriate stoichiometry"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Press mixture into pellets at 30 MPa in Ar-filled glove box"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Anneal pellets at 673 K for 1 week in evacuated Pyrex tube to form spinel phase"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified drying temperature and time",
+        "excerpt": "Reagent grade LiC1, MgC12 and MnC12 dried under vacuum at elevated temperatures"
+      },
+      {
+        "issue": "Exact reactant quantities not provided",
+        "excerpt": "The appropriate quantities of LiC1 and MC12 were ground together"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Powder X-ray diffraction",
+      "parameters": {
+        "radiation": "Cu Kα (monochromated)",
+        "detector": "scintillation"
+      },
+      "results": [
+        {
+          "metric": "structure",
+          "value": "cubic spinel confirmed 300–790 K; odd lines (111, 311) disappear above 790 K indicating transition to defect NaCl-type",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Pages 100-101 Results"
+      ]
+    },
+    {
+      "method": "High-temperature X-ray diffraction",
+      "parameters": {
+        "camera": "Guinier-Simon",
+        "radiation": "Cu Kα1 (monochromated)",
+        "temperature_range": "300–870 K",
+        "heating_rate": "10 K h-1"
+      },
+      "results": [
+        {
+          "metric": "lattice parameter slope changes Li2MgCl4",
+          "value": "changes near 523 K and 673 K",
+          "unit": "K"
+        },
+        {
+          "metric": "lattice parameter slope change Li2MnCl4",
+          "value": "changes near 480 K and 620 K",
+          "unit": "K"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Pages 100-102 Results"
+      ]
+    },
+    {
+      "method": "Differential scanning calorimetry",
+      "parameters": {
+        "container": "silica glass sealed under vacuum",
+        "standard": "α-Al2O3",
+        "instrument": "Thermoanalyse Model Triflux",
+        "heating_rate": "15 K min-1",
+        "cooling_rate": "15 K min-1"
+      },
+      "results": [
+        {
+          "metric": "DSC peaks Li2MgCl4",
+          "value": "Endothermic peaks 490–640 K (max 540 K, ΔH≈2.3 kJ mol-1) and 640–820 K",
+          "unit": ""
+        },
+        {
+          "metric": "DSC peaks Li1.8Mg1.1Cl4 (x=0.1)",
+          "value": "Single broad peak 490–640 K, ΔH≈0.7 kJ mol-1",
+          "unit": ""
+        },
+        {
+          "metric": "DSC peaks Li2MnCl4",
+          "value": "Three peaks 450–620 K (ΔH≈1.6 kJ mol-1), 620–710 K, 710–750 K",
+          "unit": ""
+        },
+        {
+          "metric": "DSC peaks Li1.8Mn1.1Cl4 (x=0.1)",
+          "value": "Peak 450–620 K, ΔH≈1.0 kJ mol-1",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Pages 101-103 Results"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius conductivity plot",
+        "results": [
+          {
+            "equation": "",
+            "value": "Break in slope at 550 K for Li2MgCl4; conductivity 2.4×10-7 S cm-1 at 298 K (E=63 kJ mol-1). Li1.6Mg1.2Cl4 conductivity 3.4×10-5 S cm-1 at 298 K (E=48 kJ mol-1).",
+            "unit": ""
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "Solid State Ionics 20 (1986) 99-103",
+    "processing_time": null
+  }
+}

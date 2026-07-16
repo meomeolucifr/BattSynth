@@ -1,0 +1,385 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Data-driven assessment of electrode calendering process by combining experimental results, in silico mesostructures generation and machine learning",
+    "doi": "10.1016/j.jpowsour.2020.229103",
+    "authors": [
+      "Marc Duquesnoy",
+      "Teo Lombardo",
+      "Mehdi Chouchane",
+      "Emiliano N. Primo",
+      "Alejandro A. Franco"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["Li-ion battery", "electrode manufacturing", "calendering", "machine learning", "NMC cathode"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNi1/3Mn1/3Co1/3O2-based cathode electrode",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Experimental methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi1/3Mn1/3Co1/3O2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Carbon black (Super C65)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mass ratio CB:PVdF = 1",
+      "prov": ["Experimental methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Polyvinylidene fluoride (PVdF)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mass ratio CB:PVdF = 1",
+      "prov": ["Experimental methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "N-methyl-2-pyrrolidone",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Added until desired solids/solvent ratio (not specified)",
+      "prov": ["Experimental methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Aluminium foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "22 µm thick current collector",
+      "prov": ["Experimental methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Premixing of solid components",
+        "operations": [
+          {
+            "action": "blend",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Premixed overnight with a soft blender"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Addition of solvent and slurry formation",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "NMP added to reach desired solid/solvent ratio (not specified)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "High-shear mixing of slurry",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298.15,
+              "unit": "K"
+            },
+            "notes": "Dispermat CV3-PLUS mixer, water-bath cooled"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Coating slurry onto aluminium current collector",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": ["step_3_output", "chem_5"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Comma-coater, gap 0.3 mm, coating speed 0.3 m/s"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental methods"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Drying of coated electrodes",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["step_4_output"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 353.15,
+              "unit": "K"
+            },
+            "notes": "First oven zone"
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": ["step_4_output"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 368.15,
+              "unit": "K"
+            },
+            "notes": "Second oven zone"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental methods"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Calendering of dried electrodes",
+        "operations": [
+          {
+            "action": "calender",
+            "parameters": {
+              "inputs": ["step_5_output"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 333.15,
+              "unit": "K"
+            },
+            "pressure": {
+              "value": null,
+              "unit": "bar",
+              "notes": "Applied pressure varied between 200 and 1700 bar; line speed 0.54 m/min"
+            },
+            "notes": "Two-roll press, roll diameter 25 cm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Premix NMC, carbon black, and PVdF overnight."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Add NMP to solids to obtain workable slurry."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "High-shear mix slurry for 120 min at 25 °C."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Coat slurry onto 22 µm aluminium foil (gap 0.3 mm, speed 0.3 m s-1)."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Dry coated electrodes: 80 °C zone then 95 °C zone."
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Calender electrodes at 60 °C with pressures 200–1700 bar, line speed 0.54 m min-1."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Undefined duration for 'overnight' premixing.",
+        "excerpt": "\"The slurry solid components ... were premixed with a soft blender overnight.\""
+      },
+      {
+        "issue": "Exact solids/solvent ratio after NMP addition not provided.",
+        "excerpt": "\"NMP was added until reaching the desired ratio between the solid components and the solvent (check Supporting Information, section S1a for further details).\""
+      },
+      {
+        "issue": "Drying times for the two oven zones not specified.",
+        "excerpt": "\"The electrodes were dried in a built-in two-parts oven (1 m long each) at 80 and 95 °C.\""
+      },
+      {
+        "issue": "Exact calendering pressures for each experiment not explicitly listed in main text.",
+        "excerpt": "\"The calendering was performed at various applied pressures\""
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Analysis of the defect clusters in congruent lithium tantalate",
+    "doi": "10.1103/PhysRevMaterials.2.013804",
+    "authors": [
+      "Anastasia Vyalikh",
+      "Matthias Zschornak",
+      "Thomas Köhler",
+      "Melanie Nentwich",
+      "Tina Weigel",
+      "Juliane Hanzig",
+      "Ruslan Zaripov",
+      "Evgenia Vavilova",
+      "Sibylle Gemming",
+      "Erica Brendler",
+      "Dirk C. Meyer"
+    ],
+    "journal": "Physical Review Materials",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["defect chemistry", "lithium tantalate", "solid-state NMR", "DFT", "annealing"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Lithium tantalate crystal (LT-A)",
+      "molecular_formula": "LiTaO3",
+      "intended_role": "sample",
+      "prov": ["Page 3"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Annealed lithium tantalate crystal (LT-A-t)",
+      "molecular_formula": "LiTaO3",
+      "intended_role": "product",
+      "prov": ["Page 3"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Polished lithium tantalate crystal (LT-B)",
+      "molecular_formula": "LiTaO3",
+      "intended_role": "sample",
+      "prov": ["Page 3"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Annealed lithium tantalate crystal (LT-B-t)",
+      "molecular_formula": "LiTaO3",
+      "intended_role": "product",
+      "prov": ["Page 3"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium tantalate",
+      "molecular_formula": "LiTaO3",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Commercial thin plates obtained from CrysTec (LT-A) and EPCOS (LT-B)",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ethanol",
+      "molecular_formula": "C2H6O",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for cleaning crystal surfaces before measurements",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Silicon carbide sandpaper",
+      "molecular_formula": "SiC",
+      "ontology": {
+        "role": "abrasive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for mechanical polishing",
+      "prov": ["Page 3"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Diamond suspension",
+      "molecular_formula": "C",
+      "ontology": {
+        "role": "abrasive",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used for final polishing",
+      "prov": ["Page 3"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Cutting and polishing of LiTaO3 wafer pieces to prepare LT-B sample",
+        "operations": [
+          {
+            "action": "cut",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Cut crystals of 30×10 mm² from an EPCOS wafer"
+          },
+          {
+            "action": "polish",
+            "parameters": {
+              "inputs": ["chem_3", "chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Polished to thickness 0.5 mm using SiC sandpaper followed by diamond suspension"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 3"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Vacuum annealing to produce LT-A-t and LT-B-t",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "temperature": {
+                "value": 823.15,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": 1920,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 823.15,
+              "unit": "K"
+            },
+            "notes": "Heating in a vacuum oven"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 3"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Surface cleaning prior to measurements",
+        "operations": [
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["chem_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Crystal surfaces cleaned in ethanol"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Page 3"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Mechanical preparation of LT-B sample"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Vacuum annealing of selected crystals to yield LT-A-t and LT-B-t"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Ethanol cleaning of all samples before characterization"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "No explicit pressure value during vacuum annealing",
+        "excerpt": "heating in a vacuum oven at 550 °C for 32 hours"
+      },
+      {
+        "issue": "Amounts of polishing abrasives not given",
+        "excerpt": "polishing with diamond suspension on both sides"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "7Li solid-state NMR",
+      "parameters": {
+        "spectrometer_frequency": "155.5 MHz",
+        "pulse_sequence": "solid echo",
+        "pulse_duration": "3.3 µs",
+        "pulse_delay": "96 µs",
+        "temperature": "room temperature",
+        "orientation": "c-axis parallel to magnetic field"
+      },
+      "results": [
+        {"sample": "LT-B", "metric": "CQ", "value": 77.5, "unit": "kHz"},
+        {"sample": "LT-B-t", "metric": "CQ", "value": 77.5, "unit": "kHz"},
+        {"sample": "LT-A", "metric": "CQ", "value": 78.5, "unit": "kHz"},
+        {"sample": "LT-A-t", "metric": "CQ", "value": 76.3, "unit": "kHz"}
+      ],
+      "interpretation": "Variation in quadrupolar coupling constants indicates differing defect structures",
+      "prov": ["Pages 5-6"]
+    },
+    {
+      "method": "Electron Spin Resonance (ESR)",
+      "parameters": {
+        "frequency": "9.4 GHz",
+        "microwave_power": "20 mW",
+        "temperature": "10 K",
+        "orientation": "c-axis parallel to magnetic field"
+      },
+      "results": [
+        {"sample": "LT-A-t", "metric": "relative ESR intensity", "value": "lowest", "unit": ""},
+        {"sample": "LT-B-t", "metric": "relative ESR intensity", "value": "highest", "unit": ""}
+      ],
+      "interpretation": "Annealing alters concentration and distribution of paramagnetic centers",
+      "prov": ["Page 7", "Figure 5"]
+    },
+    {
+      "method": "FT-IR spectroscopy",
+      "parameters": {
+        "wavenumber_range": "1250–4000 cm-1",
+        "resolution": "3 cm-1",
+        "polarization": "parallel to c-axis"
+      },
+      "results": [
+        {"sample": "all", "metric": "OH- stretching peaks", "value": "3462 & 3483", "unit": "cm-1"},
+        {"sample": "LT-A", "metric": "Li/Ta ratio", "value": 48.7, "unit": ""},
+        {"sample": "LT-B", "metric": "Li/Ta ratio", "value": 48.7, "unit": ""}
+      ],
+      "interpretation": "Decrease of OH- band after annealing indicates hydrogen out-diffusion",
+      "prov": ["Page 7", "Figure 5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Density Functional Theory (DFT)",
+        "results": [
+          {"model": "M1", "defect_formation_energy": 1.94, "unit": "eV"},
+          {"model": "M2", "defect_formation_energy": 10.90, "unit": "eV"},
+          {"model": "M3", "defect_formation_energy": 1.61, "unit": "eV"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

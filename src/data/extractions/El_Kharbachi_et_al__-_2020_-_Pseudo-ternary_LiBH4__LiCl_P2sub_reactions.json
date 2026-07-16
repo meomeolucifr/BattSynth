@@ -1,0 +1,600 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Pseudo-ternary LiBH4·LiCl·P2S5 system as structurally disordered bulk electrolyte for all-solid-state lithium batteries",
+    "doi": "10.1039/d0cp01334j",
+    "authors": [
+      "Abdelouahab El Kharbachi",
+      "Magnus H. Sørby",
+      "Julia Wind",
+      "Amund Ruud",
+      "Astrid B. Høgset",
+      "Magnus M. Nygård",
+      "Junxian Zhang",
+      "Sangryun Kim",
+      "Fermin Cuevas",
+      "Shin-ichi Orimo",
+      "Maximilian Fichtner",
+      "Michel Latroche",
+      "Helmer Fjellvåg",
+      "Bjørn C. Hauback"
+    ],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials_synthesis",
+    "tags": ["solid-state electrolyte", "ball milling", "borohydride", "battery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LCPS10",
+      "molecular_formula": "",
+      "intended_role": "solid_state_electrolyte",
+      "prov": ["Materials synthesis and characterization section"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "LCPS20",
+      "molecular_formula": "",
+      "intended_role": "solid_state_electrolyte",
+      "prov": ["Materials synthesis and characterization section"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium borohydride",
+      "molecular_formula": "LiBH4",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "95% purity",
+      "prov": ["Experimental - Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "99.9% purity",
+      "prov": ["Experimental - Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "99% purity",
+      "prov": ["Experimental - Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "inert_atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "<1 ppm O2, H2O in glovebox",
+      "prov": ["Experimental - Materials synthesis"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Hydrogen",
+      "molecular_formula": "H2",
+      "ontology": {
+        "role": "reducing_agent",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "2 MPa used for powder homogenization",
+      "prov": ["Electrochemical analysis and battery tests"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Lithium metal foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Electrochemical analysis and battery tests"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Titanium disulfide",
+      "molecular_formula": "TiS2",
+      "ontology": {
+        "role": "cathode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "99.9% purity",
+      "prov": ["Electrochemical analysis and battery tests"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "Carbon black",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive_additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "mixed with SSE for CV measurement",
+      "prov": ["Electrochemical characterization section"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "Aluminium foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "current_collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Operando SR-PXD section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Ball milling LiBH4 and LiCl (3:1 molar ratio)",
+        "operations": [
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"],
+              "duration": {
+                "value": 300,
+                "unit": "min"
+              },
+              "speed": {
+                "value": 370,
+                "unit": "rpm"
+              },
+              "ball_to_powder_ratio": "40:1",
+              "atmosphere": "Ar"
+            },
+            "notes": "Fritsch Pulverisette 6 planetary mill, stainless steel vials and balls"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": "Ar"
+        },
+        "prov": ["Materials synthesis and characterization"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Addition of P2S5 and second ball milling",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_3"]
+            },
+            "notes": ""
+          },
+          {
+            "action": "ball_mill",
+            "parameters": {
+              "duration": {
+                "value": 180,
+                "unit": "min"
+              },
+              "ball_to_powder_ratio": "40:1",
+              "atmosphere": "Ar"
+            },
+            "notes": "Spex mill; conditions same as first milling"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": 298,
+            "unit": "K"
+          },
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": "Ar"
+        },
+        "prov": ["Materials synthesis and characterization"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Heat treatment of milled powder",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "duration": {
+                "value": 480,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 423,
+                "unit": "K"
+              },
+              "atmosphere": "H2"
+            },
+            "notes": "Closed vessel"
+          }
+        ],
+        "conditions": {
+          "pressure": {
+            "value": null,
+            "unit": ""
+          },
+          "atmosphere": "H2"
+        },
+        "prov": ["Results and discussion – TGA/DSC analysis"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Homogenization prior to battery tests",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "duration": {
+                "value": 1440,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 423,
+                "unit": "K"
+              },
+              "pressure": {
+                "value": 20,
+                "unit": "bar"
+              },
+              "atmosphere": "H2"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "H2"
+        },
+        "prov": ["Electrochemical analysis and battery tests"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Pellet formation for impedance testing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 240,
+                "unit": "MPa"
+              },
+              "die_diameter": {
+                "value": 8,
+                "unit": "mm"
+              },
+              "thickness": {
+                "value": 2,
+                "unit": "mm"
+              }
+            },
+            "notes": "Performed inside glovebox"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar"
+        },
+        "prov": ["Electrochemical analysis – Ionic conductivities"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Preparation of cathode composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_7", "target_1"],
+              "mass_ratio": "2:3"
+            },
+            "notes": "Hand mixed in agate mortar"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar"
+        },
+        "prov": ["Electrochemical analysis and battery tests"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Cell assembly and pressing",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 240,
+                "unit": "MPa"
+              },
+              "die_diameter": {
+                "value": 10,
+                "unit": "mm"
+              },
+              "mass_electrode_composite": {
+                "value": 6,
+                "unit": "mg"
+              },
+              "mass_electrolyte": {
+                "value": 30,
+                "unit": "mg"
+              }
+            },
+            "notes": "Li foil placed opposite to electrode composite"
+          },
+          {
+            "action": "anneal",
+            "parameters": {
+              "duration": {
+                "value": 300,
+                "unit": "min"
+              },
+              "temperature": {
+                "value": 333,
+                "unit": "K"
+              }
+            },
+            "notes": "Post-assembly annealing"
+          }
+        ],
+        "conditions": {
+          "atmosphere": ""
+        },
+        "prov": ["Electrochemical analysis and battery tests"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Planetary ball milling of LiBH4 and LiCl"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Second milling after P2S5 addition to create LCPS powders"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Initial annealing of powders at 150 °C for 8 h"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Extended homogenization at 150 °C, 2 MPa H2 for 24 h"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Pellet pressing for impedance characterization"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Hand mixing TiS2 with electrolyte for cathode composite"
+      },
+      {
+        "step_ref": "step_7",
+        "description": "Cell pressing and low-temperature annealing before cycling"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Ionic conductivity notation",
+        "excerpt": "\"B10/C03Sc m/C01 at room temperature\""
+      },
+      {
+        "issue": "Spex mill speed unspecified",
+        "excerpt": "\"ball-milled with Spex-mill for 3 hours with the same conditions\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SR-PXD",
+      "parameters": {
+        "wavelength": "0.3123–0.4943 Å",
+        "exposure_time": "30 s",
+        "capillary_diameter": "0.5 mm",
+        "rotation": "90°",
+        "temperature_range": "298–423 K"
+      },
+      "results": [
+        {
+          "metric": "phase_identification",
+          "value": "LiBH4, LiCl, LiCl0.6(BH4)0.4; complete amorphization above 80 °C",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Structural transformation leading to amorphous conducting phase",
+      "prov": ["Figures 1 and 4"]
+    },
+    {
+      "method": "TGA/DSC",
+      "parameters": {
+        "heating_rate": "10 K min-1",
+        "temperature_range": "298–673 K",
+        "gas_flow": "50 mL min-1 Ar"
+      },
+      "results": [
+        {
+          "metric": "mass_loss",
+          "value": 2.5,
+          "unit": "%",
+          "notes": "at 378 K for ball-milled sample"
+        },
+        {
+          "metric": "thermal_events",
+          "value": "endotherm at 333 K, exotherm at 378 K",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Annealed sample stable up to 473 K",
+      "prov": ["Figure 3"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "functional_groups",
+          "value": "BH4 and PS4 modes detected",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Indicates coexistence of BH4 and PS4 in same structural unit",
+      "prov": ["Figure 5"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {
+        "frequency_range": "1 MHz–4 Hz",
+        "temperature_range": "298–423 K"
+      },
+      "results": [
+        {
+          "metric": "ionic_conductivity",
+          "value": 1e-3,
+          "unit": "S cm-1",
+          "notes": "LCPS10 at 298 K after heat treatment"
+        },
+        {
+          "metric": "activation_energy",
+          "value": 0.40,
+          "unit": "eV",
+          "notes": "LCPS10"
+        },
+        {
+          "metric": "activation_energy",
+          "value": 0.49,
+          "unit": "eV",
+          "notes": "LCPS20"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2"]
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "electrochemical_window",
+          "value": 5,
+          "unit": "V",
+          "notes": "Au vs Li+/Li"
+        }
+      ],
+      "interpretation": "Stable up to 5 V; Li plating/stripping observed near 0 V",
+      "prov": ["Figure 6d"]
+    },
+    {
+      "method": "Operando SR-PXD",
+      "parameters": {
+        "cell_temperature": "333 K",
+        "current_rate": "C/10"
+      },
+      "results": [
+        {
+          "metric": "c-axis_expansion",
+          "value": "observed for TiS2 during lithiation",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Confirms solid-solution LiyTiS2 formation; no change in SSE peaks",
+      "prov": ["Figure 7"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 10
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-04T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

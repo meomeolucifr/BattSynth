@@ -1,0 +1,213 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Metal–organic frameworks and zeolite materials as active fillers for lithium-ion battery solid-polymer electrolytes",
+    "doi": "10.1039/d1ma00244a",
+    "authors": [
+      "João C. Barbosa",
+      "Renato Gonçalves",
+      "Carlos M. Costa",
+      "Verónica de Zea Bermudez",
+      "Arkaitz Fidalgo-Marijuan",
+      "Qi Zhang",
+      "Senentxu Lanceros-Méndez"
+    ],
+    "journal": "Materials Advances",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": [
+      "solid polymer electrolyte",
+      "MOF",
+      "zeolite",
+      "lithium-ion battery"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "PEO/HKUST-1/LiTFSI composite SPE",
+      "molecular_formula": "",
+      "intended_role": "solid polymer electrolyte",
+      "prov": [
+        "Table 1 (HKUST-1 row)",
+        "Page 3798"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "HKUST-1",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "filler",
+        "category": "MOF"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Poly(ethylene oxide)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "polymer matrix",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Table 1"
+      ]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "lithium salt",
+        "category": "salt"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "LiTFSI",
+      "prov": [
+        "Table 1"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Preparation of PEO/HKUST-1/LiTFSI composite solid electrolyte by solvent casting (as reported in literature table).",
+        "operations": [
+          {
+            "action": "solvent_casting",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Exact solvent, concentrations and casting conditions not provided in text."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Table 1 (method column)"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Composite SPE fabricated via solvent casting."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing quantitative synthesis details (amounts, temperatures, solvents).",
+        "excerpt": "Table 1 only lists 'Solvent casting' without further experimental parameters."
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Ionic conductivity measurement",
+        "results": [
+          {
+            "metric": "ionic conductivity",
+            "value": 3.5,
+            "unit": "mS cm-1",
+            "temperature": {
+              "value": 323,
+              "unit": "K"
+            },
+            "notes": "Value reported as 3.5×10^-4 S cm^-1 at 50 °C; converted to mS cm^-1.",
+            "prov": [
+              "Table 1, HKUST-1 row"
+            ]
+          }
+        ]
+      },
+      {
+        "method_name": "Battery discharge capacity",
+        "results": [
+          {
+            "metric": "discharge capacity",
+            "value": 160,
+            "unit": "mAh g-1",
+            "notes": "LiFePO4 cathode at 0.1 C",
+            "prov": [
+              "Table 1, HKUST-1 row"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 160,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-17T14:22:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

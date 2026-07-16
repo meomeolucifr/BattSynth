@@ -1,0 +1,286 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A review of processes and technologies for the recycling of lithium-ion secondary batteries",
+    "doi": "10.1016/j.jpowsour.2007.11.074",
+    "authors": ["Jinqiu Xu", "H.R. Thomas", "Rob W. Francis", "Ken R. Lum", "Jingwei Wang", "Bo Liang"],
+    "journal": "Journal of Power Sources",
+    "year": 2008
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["lithium-ion batteries", "recycling", "hydrometallurgy"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Cobalt(II) hydroxide",
+      "molecular_formula": "Co(OH)2",
+      "intended_role": "product",
+      "prov": ["Page 518, Fig. 5"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Renovated LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "intended_role": "product",
+      "prov": ["Page 520, Section 4"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium cobalt oxide",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "feedstock",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Page 516", "Page 518"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Nitric acid",
+      "molecular_formula": "HNO3",
+      "ontology": {
+        "role": "leaching agent",
+        "category": "acid"
+      },
+      "amount": {
+        "value": 1.0,
+        "unit": "M"
+      },
+      "notes": "Leaching concentration",
+      "prov": ["Page 516"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Hydrogen peroxide",
+      "molecular_formula": "H2O2",
+      "ontology": {
+        "role": "reducing agent",
+        "category": "oxidizer"
+      },
+      "amount": {
+        "value": 1.7,
+        "unit": "%",
+        "material_basis": "v/v"
+      },
+      "notes": "",
+      "prov": ["Page 516"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Sodium hydroxide",
+      "molecular_formula": "NaOH",
+      "ontology": {
+        "role": "precipitation agent",
+        "category": "base"
+      },
+      "amount": {
+        "value": 4,
+        "unit": "M"
+      },
+      "notes": "",
+      "prov": ["Page 518, Fig. 5"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Reductive acid leaching of LiCoO2 scrap",
+        "operations": [
+          {
+            "action": "leach",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "solid_liquid_ratio": {
+                "value": 15,
+                "unit": "g L-1",
+                "notes": "range 10–20 g L-1 reported"
+              }
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 348,
+              "unit": "K"
+            },
+            "notes": "1 M HNO3 with 1.7 % (v/v) H2O2"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 516"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Thermal treatment of solid residue to remove organics",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {
+              "inputs": [],
+              "temperature": {
+                "value": 773,
+                "unit": "K"
+              },
+              "duration": {
+                "value": 120,
+                "unit": "min"
+              }
+            },
+            "notes": "Muffle furnace"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 515–516"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Precipitation of Co(OH)2 from leachate",
+        "operations": [
+          {
+            "action": "precipitate",
+            "parameters": {
+              "inputs": ["chem_4"],
+              "pH_range": "6–8"
+            },
+            "notes": "Co(OH)2 begins forming at pH 6 and completes at pH 8"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 518, Fig. 5"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Leaching of LiCoO2 with HNO3/H2O2"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Thermal removal of carbon and organics from residue"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Chemical precipitation of cobalt hydroxide product"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact amounts of LiCoO2 feedstock not provided",
+        "excerpt": "The leaching efficiency increased with ... 10–20 g L−1 initial S/L ratio"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "first discharge capacity",
+          "value": 144.0,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention",
+          "value": 92.2,
+          "unit": "%"
+        },
+        {
+          "metric": "cycle number",
+          "value": 40,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Renovated LiCoO2 shows good capacity retention",
+      "prov": ["Page 520"]
+    },
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "initial discharge capacity",
+          "value": 134.8,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "capacity retention",
+          "value": 95.9,
+          "unit": "%"
+        },
+        {
+          "metric": "cycle number",
+          "value": 50,
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 523"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 144.0,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 40
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-02T00:00:00Z",
+    "source_file": "Journal_of_Power_Sources_177_2008_512-527.pdf",
+    "processing_time": null
+  }
+}

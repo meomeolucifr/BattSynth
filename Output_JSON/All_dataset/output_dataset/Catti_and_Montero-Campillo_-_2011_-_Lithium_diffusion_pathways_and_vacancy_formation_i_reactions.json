@@ -1,0 +1,261 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithium diffusion pathways and vacancy formation in the Pmmn-Li1−xFeO2 electrode material",
+    "doi": "10.1039/c1cp20551j",
+    "authors": ["Michele Catti", "Merced Montero-Campillo"],
+    "journal": "Physical Chemistry Chemical Physics",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "lithium ion diffusion", "electrode material", "LiFeO2"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiFeO2",
+      "molecular_formula": "LiFeO2",
+      "intended_role": "studied material",
+      "prov": ["Page 11156-11164"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li0.75FeO2",
+      "molecular_formula": "Li0.75FeO2",
+      "intended_role": "studied material",
+      "prov": ["Page 11160-11163"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiFeO2",
+      "molecular_formula": "LiFeO2",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 11156"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li0.75FeO2",
+      "molecular_formula": "Li0.75FeO2",
+      "ontology": {
+        "role": "material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 11160"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "element/reference electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Referenced as bulk BCC metal in vacancy formation reaction",
+      "prov": ["Page 11160"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Iron",
+      "molecular_formula": "Fe",
+      "ontology": {
+        "role": "element (in compound)",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 11157"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Oxygen",
+      "molecular_formula": "O2",
+      "ontology": {
+        "role": "element (in compound)",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Page 11157"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": [
+      {
+        "issue": "Conductivity values use shorthand notation (/C210/C06 etc.) in text; interpreted as scientific notation",
+        "excerpt": "Table 4: 1.5 /C210/C06 ohm/C01cm/C01"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "DFT (B3LYP) periodic calculations",
+      "parameters": {
+        "basis_sets": "Gaussian-type, Fe 8(s)64111(sp)411(d)G; O 8(s)411(sp)1(d)G; Li 5(s)11(sp)G",
+        "k-point_grid": "Monkhorst 4×6×3 for primitive cell",
+        "energy_convergence": "1×10^-9 hartree",
+        "temperature": "0 K (ground-state)"
+      },
+      "results": [],
+      "interpretation": "",
+      "prov": ["Page 11157-11158"]
+    },
+    {
+      "method": "Activation energy calculations",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Activation energy (LiFeO2, L-type)",
+          "value": 0.468,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy (LiFeO2, T-type)",
+          "value": 0.410,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy (Li0.75FeO2, II-L1)",
+          "value": 0.304,
+          "unit": "eV"
+        },
+        {
+          "metric": "Activation energy (Li0.75FeO2, II-L2)",
+          "value": 0.292,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Lower barriers in Li-deficient material indicate improved ionic conductivity",
+      "prov": ["Tables 1 & 3"]
+    },
+    {
+      "method": "Density of States (DOS) analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Band gap LiFeO2",
+          "value": 2.60,
+          "unit": "eV"
+        },
+        {
+          "metric": "Band gap Li0.75FeO2",
+          "value": 2.10,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Vacancy formation introduces acceptor defect band, narrowing the gap",
+      "prov": ["Figure 5"]
+    },
+    {
+      "method": "Mulliken population analysis",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Average Fe charge (x=0)",
+          "value": 1.893,
+          "unit": "e"
+        },
+        {
+          "metric": "Average Fe charge (x=0.25)",
+          "value": 1.881,
+          "unit": "e"
+        },
+        {
+          "metric": "Average O charge (x=0)",
+          "value": -1.422,
+          "unit": "e"
+        },
+        {
+          "metric": "Average O charge (x=0.25)",
+          "value": -1.296,
+          "unit": "e"
+        }
+      ],
+      "interpretation": "Oxidation during Li extraction mainly accommodated on oxygen",
+      "prov": ["Table 2"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Nernst–Einstein conductivity estimation",
+        "results": [
+          {
+            "equation": "s+ = n+ e^2 D / (k_B T)",
+            "value": 1.5e-6,
+            "unit": "ohm^-1 cm^-1",
+            "notes": "LiFeO2 L(/22c0) at 300 K",
+            "prov": ["Table 4"]
+          },
+          {
+            "equation": "s+ = n+ e^2 D / (k_B T)",
+            "value": 4.6e-4,
+            "unit": "ohm^-1 cm^-1",
+            "notes": "Li0.75FeO2 II-L1 at 300 K",
+            "prov": ["Table 4"]
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

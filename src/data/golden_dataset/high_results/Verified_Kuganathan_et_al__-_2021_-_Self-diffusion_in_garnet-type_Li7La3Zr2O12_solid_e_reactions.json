@@ -1,0 +1,314 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Self-diffusion in garnet-type Li7La3Zr2O12 solid electrolytes",
+    "doi": "10.1038/s41598-020-79919-2",
+    "authors": [
+      "Navaratnarajah Kuganathan",
+      "Michael J. D. Rushton",
+      "Robin W. Grimes",
+      "John A. Kilner",
+      "Evangelos I. Gkanas",
+      "Alexander Chroneos"
+    ],
+    "journal": "Scientific Reports",
+    "year": 2021
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": [
+      "solid electrolyte",
+      "garnet",
+      "defect chemistry",
+      "DFT",
+      "ionic conductivity"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "intended_role": "product",
+      "prov": [
+        "Page 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.99,
+        "reasoning": "The paper explicitly identifies the material as garnet-type Li7La3Zr2O12 multiple times on Page 1 (title and abstract/intro text). Therefore the extracted Target Formula (Li7La3Zr2O12) is directly supported by the source text.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li7La3Zr2O12",
+      "molecular_formula": "Li7La3Zr2O12",
+      "ontology": {
+        "role": "product",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": [
+        "Page 1"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The document explicitly identifies the material as garnet-type Li7La3Zr2O12 (e.g., title and multiple occurrences on Page 1 and throughout). However, the paper is a computational study and does not specify a chemical amount (no mass, molarity, loading, or composition amount for a prepared sample is given). Therefore, the statement 'Amount: Not specified in text' is supported by the absence of any amount information in the provided full text.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li2O",
+      "molecular_formula": "Li2O",
+      "ontology": {
+        "role": "byproduct",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "formed via Schottky-like process",
+      "prov": [
+        "Page 4"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly mentions Li2O multiple times only as a chemical species involved in defect reactions/volatilisation (e.g., \u201closs of Li via formation of volatile Li compounds (e.g. Li2O)\u201d on Page 1 and the \u201cLi2O Schottky\u201d reaction producing Li2O on Page 2, Eq. (6)). However, the text does not provide any specific amount, concentration, mass, or molar quantity of Li2O added/removed/used\u2014only qualitative discussion and reaction stoichiometries. Therefore the extraction \u201cLi2O | Amount: Not specified in text\u201d is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "Classical pair potential simulation (GULP)",
+      "parameters": {
+        "supercell": "2\u00d72\u00d72 (1536 atoms)",
+        "potential": "Buckingham"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameter_a_b",
+          "value": 12.907,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "lattice_parameter_c",
+          "value": 12.624,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "Li_migration_activation_energy",
+          "value": 0.45,
+          "unit": "eV"
+        },
+        {
+          "metric": "O_migration_activation_energy",
+          "value": 1.65,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1",
+        "Page 5"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.97,
+        "reasoning": "All extracted metrics are explicitly stated in the paper text/tables. Table 1 (shown on Page 2, not Page 5) reports the classical pair-potential (GULP) lattice parameters a=b=12.907 \u00c5 and c=12.624 \u00c5 for tetragonal Li7La3Zr2O12. The Li migration activation energy of 0.45 eV is stated in the abstract (Page 1) and again in the self-diffusion discussion (Page 4) as the overall activation energy for 3D Li transport pathways. The oxygen migration activation energy of 1.65 eV is stated in the abstract (Page 1), in the self-diffusion discussion (Page 5) for one long-range O pathway, and is consistent with Table 3 listing hop X as 1.65 eV (Page 6). Provenance page number for Table 1 is incorrect, but the values themselves match exactly.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "method": "Density Functional Theory (VASP, PBE)",
+      "parameters": {
+        "cutoff_energy": "500 eV",
+        "kpoint_mesh": "2\u00d72\u00d72 (geometry), 4\u00d74\u00d74 (DOS)"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameter_a_b",
+          "value": 13.113,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "lattice_parameter_c",
+          "value": 12.556,
+          "unit": "\u00c5"
+        },
+        {
+          "metric": "band_gap",
+          "value": 4.5,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": [
+        "Table 1",
+        "Figure 7"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.98,
+        "reasoning": "Table 1 explicitly reports the DFT lattice parameters for tetragonal Li7La3Zr2O12 as a=b=13.113 \u00c5 and c=12.556 \u00c5. The text in the \u201cDensities of states\u201d section explicitly states a DFT-predicted band gap of 4.50 eV (refer to Fig. 7). These match the extracted values (13.113 \u00c5, 12.556 \u00c5, 4.5 eV).",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Intrinsic defect energetics (classical simulation)",
+        "results": [
+          {
+            "equation": "Li2O Schottky-like defect enthalpy",
+            "value": 0.87,
+            "unit": "eV per defect"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.78,
+          "reasoning": "The paper explicitly states the analysis methods used (atomistic simulations): (1) static atomistic simulation based on classical pair potentials (GULP/Buckingham potential, Mott\u2013Littleton framework) for defect energetics and migration barriers, and (2) density functional theory (DFT) electronic-structure calculations (VASP, PAW, PBE-GGA, k-point meshes) for DOS of defects. However, the extracted value for 'Analysis Method' is blank, so it is not a correct/complete extraction of the methods described in the text.",
+          "suggested_fix": "Atomistic simulation methods: classical pair-potential calculations (GULP; Buckingham potentials; Mott\u2013Littleton; BFGS) for defect energetics and Li/O migration barriers, and DFT calculations (VASP; PAW; PBE-GGA; Monkhorst\u2013Pack k-points) for electronic densities of states of defect-free/defective LLZO."
+        }
+      },
+      {
+        "method_name": "Li vacancy migration paths (A\u2013D)",
+        "results": [
+          {
+            "path": "A",
+            "value": 0.44,
+            "unit": "eV"
+          },
+          {
+            "path": "B",
+            "value": 0.35,
+            "unit": "eV"
+          },
+          {
+            "path": "C",
+            "value": 0.26,
+            "unit": "eV"
+          },
+          {
+            "path": "D",
+            "value": 0.45,
+            "unit": "eV"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.3,
+          "reasoning": "The paper explicitly describes multiple analysis/simulation methods (classical atomistic simulations with pair potentials using GULP; Mott\u2013Littleton method for defects/migration; DFT electronic structure calculations using VASP with PAW/PBE; DOS calculations, etc.). However, the extracted value for \"Analysis Method\" is blank, so it does not capture the stated methods and is not supported as a correct extraction.",
+          "suggested_fix": "Atomistic simulation methods: (1) classical pair-potential static atomistic simulations using GULP (Born model) with Mott\u2013Littleton method to calculate defect energies and migration barriers; (2) DFT electronic-structure/DOS calculations using VASP (PAW, PBE-GGA, plane-wave cutoff 500 eV, Monkhorst\u2013Pack k-point meshes)."
+        }
+      },
+      {
+        "method_name": "O vacancy migration paths (P\u2013Y)",
+        "results": [
+          {
+            "path": "P",
+            "value": 0.84,
+            "unit": "eV"
+          },
+          {
+            "path": "Q",
+            "value": 0.83,
+            "unit": "eV"
+          },
+          {
+            "path": "R",
+            "value": 0.85,
+            "unit": "eV"
+          },
+          {
+            "path": "S",
+            "value": 1.73,
+            "unit": "eV"
+          },
+          {
+            "path": "T",
+            "value": 1.7,
+            "unit": "eV"
+          },
+          {
+            "path": "U",
+            "value": 0.93,
+            "unit": "eV"
+          },
+          {
+            "path": "V",
+            "value": 1.04,
+            "unit": "eV"
+          },
+          {
+            "path": "X",
+            "value": 1.65,
+            "unit": "eV"
+          },
+          {
+            "path": "Y",
+            "value": 1.35,
+            "unit": "eV"
+          }
+        ],
+        "_llm_flag": {
+          "is_supported": false,
+          "confidence": 0.3,
+          "reasoning": "The field 'Analysis Method' has an empty extracted value. The paper explicitly describes the analysis/simulation methods used: (1) static atomistic simulations based on classical pair potentials using GULP, employing the Mott\u2013Littleton method and BFGS relaxation; and (2) electronic structure calculations based on density functional theory (DFT) using VASP with PAW potentials and PBE-GGA. Since methods are clearly specified in the source text, an empty value is not supported.",
+          "suggested_fix": "Atomistic simulation methods: classical pair-potential calculations (GULP; Mott\u2013Littleton method/BFGS) and DFT electronic-structure calculations (VASP; PAW; PBE-GGA)"
+        }
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-19T14:25:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

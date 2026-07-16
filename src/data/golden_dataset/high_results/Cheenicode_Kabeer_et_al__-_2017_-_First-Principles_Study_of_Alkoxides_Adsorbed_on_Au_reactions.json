@@ -1,0 +1,289 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "First-Principles Study of Alkoxides Adsorbed on Au(111) and Au(110) Surfaces: Assessing the Roles of Noncovalent Interactions and Molecular Structures in Catalysis",
+    "doi": "10.1021/acs.jpcc.7b06641",
+    "authors": [
+      "Fairoja Cheenicode Kabeer",
+      "Wei Chen",
+      "Robert J. Madix",
+      "Cynthia M. Friend",
+      "Alexandre Tkatchenko"
+    ],
+    "journal": "Journal of Physical Chemistry C",
+    "year": 2017
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "computational study",
+    "tags": ["DFT", "adsorption", "van der Waals", "gold surfaces", "alkoxides"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "methoxy",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Tables 1, 4, 5"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "ethoxy",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Tables 4, 5"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "1-propoxy",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Tables 4, 5"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "2-propoxy",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Tables 3, 4, 5"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "allyloxy",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Tables 4, 5", "Figures 3, 4"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "methallyloxy",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Tables 4, 5", "Figures 3, 4"]
+    },
+    {
+      "target_id": "target_7",
+      "compound_name": "acetate",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Tables 4, 5", "Figures 5, 6"]
+    },
+    {
+      "target_id": "target_8",
+      "compound_name": "trifluoroethoxy",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Tables 4, 5"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Au(111) surface",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods Section"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Au(110) surface",
+      "molecular_formula": "Au",
+      "ontology": {
+        "role": "substrate",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Methods Section"]
+    }
+  ],
+  "synthesis": {
+    "steps": []
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "",
+        "description": ""
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "DFT (PBE)",
+      "parameters": {
+        "codes": ["FHI-aims", "VASP"],
+        "k_point_grids": "e.g., 3×3×1 for Au(111) 5×5 supercell; various for Au(110)",
+        "energy_cutoff": "400 eV (VASP)",
+        "basis_settings": "tight (FHI-aims)",
+        "vdW_correction": "none"
+      },
+      "results": [
+        {
+          "metric": "adsorption energy methoxy on Au(111) (FHI-aims)",
+          "value": -0.133,
+          "unit": "eV"
+        },
+        {
+          "metric": "adsorption energy methoxy on Au(111) (VASP)",
+          "value": -0.136,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Baseline PBE calculations without dispersion give weaker and similar binding across adsorbates.",
+      "prov": ["Table 1"]
+    },
+    {
+      "method": "DFT (PBE+vdWsurf)",
+      "parameters": {
+        "codes": ["FHI-aims", "VASP"],
+        "vdW_scheme": "Tkatchenko–Scheffler with surface screening (vdWsurf)"
+      },
+      "results": [
+        {
+          "metric": "adsorption energy methoxy on Au(111) (FHI-aims)",
+          "value": -0.277,
+          "unit": "eV"
+        },
+        {
+          "metric": "adsorption energy methoxy on Au(111) (VASP)",
+          "value": -0.283,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "Inclusion of vdW significantly strengthens adsorption.",
+      "prov": ["Table 1"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Coverage study (DFT+vdWsurf)",
+        "results": [
+          {
+            "supercell": "3×3",
+            "binding_energy": -0.48,
+            "unit": "eV"
+          },
+          {
+            "supercell": "4×4",
+            "binding_energy": -0.56,
+            "unit": "eV"
+          },
+          {
+            "supercell": "5×5",
+            "binding_energy": -0.53,
+            "unit": "eV"
+          },
+          {
+            "supercell": "6×6",
+            "binding_energy": -0.55,
+            "unit": "eV"
+          },
+          {
+            "supercell": "7×7",
+            "binding_energy": -0.56,
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Table 3"]
+      },
+      {
+        "method_name": "Relative adsorption energies (PBE+vdWsurf)",
+        "results": [
+          {
+            "adsorbate": "methoxy",
+            "surface": "Au(111)",
+            "value": -0.28,
+            "unit": "eV"
+          },
+          {
+            "adsorbate": "trifluoroethoxy",
+            "surface": "Au(111)",
+            "value": -0.34,
+            "unit": "eV"
+          },
+          {
+            "adsorbate": "ethoxy",
+            "surface": "Au(111)",
+            "value": -0.44,
+            "unit": "eV"
+          },
+          {
+            "adsorbate": "1-propoxy",
+            "surface": "Au(111)",
+            "value": -0.55,
+            "unit": "eV"
+          },
+          {
+            "adsorbate": "2-propoxy",
+            "surface": "Au(111)",
+            "value": -0.59,
+            "unit": "eV"
+          },
+          {
+            "adsorbate": "allyloxy",
+            "surface": "Au(111)",
+            "value": -0.66,
+            "unit": "eV"
+          },
+          {
+            "adsorbate": "methallyloxy",
+            "surface": "Au(111)",
+            "value": -0.73,
+            "unit": "eV"
+          },
+          {
+            "adsorbate": "acetate",
+            "surface": "Au(111)",
+            "value": -0.79,
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Table 4", "Figure 2a"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-26T00:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

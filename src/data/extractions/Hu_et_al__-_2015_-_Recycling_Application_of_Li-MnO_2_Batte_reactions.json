@@ -1,0 +1,679 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Recycling Application of Li–MnO2 Batteries as Rechargeable Lithium–Air Batteries",
+    "doi": "10.1002/anie.201411626",
+    "authors": ["Yuxiang Hu", "Tianran Zhang", "Fangyi Cheng", "Qing Zhao", "Xiaopeng Han", "Jun Chen"],
+    "journal": "Angewandte Chemie International Edition",
+    "year": 2015
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["battery recycling", "Li–MnO2", "lithium–air", "electrocatalysis"]
+  },
+  "targets": [
+    {
+      "target_id": "t1",
+      "compound_name": "Mesoporous MnO2",
+      "molecular_formula": "MnO2",
+      "intended_role": "cathode material",
+      "prov": ["Page 4414, Experimental Section"]
+    },
+    {
+      "target_id": "t2",
+      "compound_name": "Li0.25MnO2",
+      "molecular_formula": "Li0.25MnO2",
+      "intended_role": "lithiated cathode",
+      "prov": ["Figure 2a"]
+    },
+    {
+      "target_id": "t3",
+      "compound_name": "Li0.50MnO2",
+      "molecular_formula": "Li0.50MnO2",
+      "intended_role": "catalyst/electrode",
+      "prov": ["Figure 2a", "Figure 3"]
+    },
+    {
+      "target_id": "t4",
+      "compound_name": "Li0.75MnO2",
+      "molecular_formula": "Li0.75MnO2",
+      "intended_role": "lithiated cathode",
+      "prov": ["Figure 2a"]
+    },
+    {
+      "target_id": "t5",
+      "compound_name": "Li0.92MnO2",
+      "molecular_formula": "Li0.92MnO2",
+      "intended_role": "lithiated cathode",
+      "prov": ["Figure 2a"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "c1",
+      "name": "KIT-6 mesoporous silica",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "template",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 0.5,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "c2",
+      "name": "Manganese(II) nitrate",
+      "molecular_formula": "Mn(NO3)2",
+      "ontology": {
+        "role": "precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 6.0,
+        "unit": "g"
+      },
+      "notes": "50 wt% aqueous solution",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "c3",
+      "name": "Potassium hydroxide solution",
+      "molecular_formula": "KOH",
+      "ontology": {
+        "role": "etchant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 2,
+        "unit": "M"
+      },
+      "notes": "aqueous, used at 60 °C",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "c4",
+      "name": "Water",
+      "molecular_formula": "H2O",
+      "ontology": {
+        "role": "solvent",
+        "category": "solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "distilled water for washing",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "c5",
+      "name": "Super P carbon",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "used in 6 parts by weight relative to MnO2 (3 parts) and PVdF (1 part)",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "c6",
+      "name": "Poly(vinylidene fluoride)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "1 part by weight",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "c7",
+      "name": "N-Methyl-2-pyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "c8",
+      "name": "Lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiTFSI",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 1,
+        "unit": "M"
+      },
+      "notes": "in TEGDME",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "c9",
+      "name": "Tetraethylene glycol dimethyl ether",
+      "molecular_formula": "C10H22O5",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    },
+    {
+      "chemical_id": "c10",
+      "name": "Lithium foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "anode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "",
+      "prov": ["Experimental Section"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "s1",
+        "description": "Template impregnation",
+        "operations": [
+          {
+            "action": "disperse",
+            "parameters": {
+              "inputs": ["c1", "c2", "c4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "KIT-6 dispersed in aqueous Mn(NO3)2 solution"
+          },
+          {
+            "action": "stir",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "overnight"
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "s2",
+        "description": "Calcination to form MnO2",
+        "operations": [
+          {
+            "action": "calcine",
+            "parameters": {},
+            "duration": {
+              "value": 180,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 673,
+              "unit": "K"
+            },
+            "notes": "in air"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "s3",
+        "description": "Silica template removal",
+        "operations": [
+          {
+            "action": "treat",
+            "parameters": {
+              "inputs": ["c3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "notes": "2 M aqueous KOH"
+          },
+          {
+            "action": "filter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          },
+          {
+            "action": "wash",
+            "parameters": {
+              "inputs": ["c4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "repeatedly with distilled water"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "s4",
+        "description": "Final drying to obtain mesoporous MnO2",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": 240,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 353,
+              "unit": "K"
+            },
+            "notes": "under vacuum"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "s5",
+        "description": "Electrode fabrication",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["t1", "c5", "c6", "c7"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "weight ratio 3:6:1 (MnO2:Super P:PVdF)"
+          },
+          {
+            "action": "coat",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "pasted on nickel-foam current collector"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 383,
+              "unit": "K"
+            },
+            "notes": "under vacuum"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "s6",
+        "description": "Assembly of coin cells",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["electrode from s5", "c10", "separator (glass fiber)", "electrolyte (c8+c9)"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "CR2032 coin-type cell in argon-filled glove box"
+          },
+          {
+            "action": "predrill",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "seven holes on cathode cap"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "argon",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section"]
+      },
+      {
+        "step_id": "s7",
+        "description": "Electrochemical lithiation to obtain LixMnO2",
+        "operations": [
+          {
+            "action": "discharge",
+            "parameters": {
+              "inputs": ["cell from s6"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "current density 154 mA g(MnO2)^-1 to capacities 0–283 mAh g(MnO2)^-1 to yield x = 0, 0.25, 0.50, 0.75, 0.92"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section", "Figure 2a"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "s1",
+        "description": "Impregnation of silica template with Mn precursor"
+      },
+      {
+        "step_ref": "s2",
+        "description": "Calcination to convert precursor to MnO2"
+      },
+      {
+        "step_ref": "s3",
+        "description": "Chemical etching to remove silica and create mesopores"
+      },
+      {
+        "step_ref": "s4",
+        "description": "Vacuum drying to obtain mesoporous MnO2 powder"
+      },
+      {
+        "step_ref": "s5",
+        "description": "Fabrication of MnO2/Super P/PVdF composite electrode"
+      },
+      {
+        "step_ref": "s6",
+        "description": "Assembly of Li–MnO2 coin cell with electrolyte and Li foil"
+      },
+      {
+        "step_ref": "s7",
+        "description": "Electrochemical lithiation to generate LixMnO2 electrodes"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Unspecified solvent volume for Mn(NO3)2 impregnation",
+        "excerpt": "Mn(NO3)2(6.0g,50wt%;Aladdin). The mixture was stirred overnight"
+      },
+      {
+        "issue": "Duration of KOH treatment not given",
+        "excerpt": "then treated with 2m aqueous KOH at 60 °C to remove the KIT-6 silica template"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "(101) peak shift",
+          "value": "",
+          "unit": "",
+          "notes": "Shift to lower angle indicates Li insertion"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2b"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Mn 2p3/2 binding energy shift",
+          "value": "",
+          "unit": "",
+          "notes": "Shift towards lower energy upon lithiation, Mn valence from ~4 to ~3"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2c"]
+    },
+    {
+      "method": "SEM/TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Morphology",
+          "value": "Nanoporous structure preserved after lithiation",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 2d-g"]
+    },
+    {
+      "method": "Electrochemical testing",
+      "parameters": {
+        "current_density": "100 mA g-1 (carbon basis)"
+      },
+      "results": [
+        {
+          "metric": "Discharge capacity (Li0.50MnO2)",
+          "value": 10823,
+          "unit": "mAh g-1"
+        },
+        {
+          "metric": "Round-trip efficiency (Li0.50MnO2)",
+          "value": 76,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3a-c"]
+    },
+    {
+      "method": "EIS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Charge-transfer resistance recovery",
+          "value": "",
+          "unit": "",
+          "notes": "Good recovery after recharge"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure S11"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculations",
+        "results": [
+          {
+            "equation": "",
+            "value": "",
+            "unit": "",
+            "notes": "Calculated O2 adsorption energies: 0.079 eV (MnO2), 1.171 eV (Li0.50MnO2), 3.279 eV (LiMnO2)"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 10823,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 190
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-24T10:25:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

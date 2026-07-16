@@ -1,0 +1,456 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "X-ray photoelectron spectroscopy study of lithium thio-germanate thin films",
+    "doi": "10.1039/c1ra00165e",
+    "authors": ["Inseok Seo", "Steve W. Martin"],
+    "journal": "RSC Advances",
+    "year": 2011
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["RF magnetron sputtering", "lithium thio-germanate", "thin films", "XPS"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "GeS2 glass",
+      "molecular_formula": "GeS2",
+      "intended_role": "intermediate",
+      "prov": ["Experimental – GeS2 starting material preparation"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li2GeS3 target",
+      "molecular_formula": "Li2GeS3",
+      "intended_role": "sputtering target",
+      "prov": ["Preparation of the target materials"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "Li4GeS4 target",
+      "molecular_formula": "Li4GeS4",
+      "intended_role": "sputtering target",
+      "prov": ["Preparation of the target materials"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "Li6GeS5 target",
+      "molecular_formula": "Li6GeS5",
+      "intended_role": "sputtering target",
+      "prov": ["Preparation of the target materials"]
+    },
+    {
+      "target_id": "target_5",
+      "compound_name": "Li2GeS3 thin film",
+      "molecular_formula": "Li2GeS3",
+      "intended_role": "product",
+      "prov": ["Thin-film depositions"]
+    },
+    {
+      "target_id": "target_6",
+      "compound_name": "Li4GeS4 thin film",
+      "molecular_formula": "Li4GeS4",
+      "intended_role": "product",
+      "prov": ["Thin-film depositions"]
+    },
+    {
+      "target_id": "target_7",
+      "compound_name": "Li6GeS5 thin film",
+      "molecular_formula": "Li6GeS5",
+      "intended_role": "product",
+      "prov": ["Thin-film depositions"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "germanium",
+      "molecular_formula": "Ge",
+      "ontology": {"role": "reactant", "category": "element"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "99.999% purity",
+      "prov": ["Experimental – GeS2 starting material preparation"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "sulfur",
+      "molecular_formula": "S",
+      "ontology": {"role": "reactant", "category": "element"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "99.999% purity",
+      "prov": ["Experimental – GeS2 starting material preparation"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "99.9% purity, commercial",
+      "prov": ["Target material preparation"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "GeS2",
+      "molecular_formula": "GeS2",
+      "ontology": {"role": "reactant", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "prepared in-house",
+      "prov": ["Target material preparation"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "NH4HF2 solution (2%)",
+      "molecular_formula": "NH4HF2",
+      "ontology": {"role": "cleaning agent", "category": "inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Experimental – GeS2 starting material preparation"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {"role": "sputtering gas", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "99.9999% purity",
+      "prov": ["Thin-film depositions"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "silicon wafer",
+      "molecular_formula": "Si",
+      "ontology": {"role": "substrate", "category": "solid"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "[111] orientation, 1 × 1 cm, 360 µm thick",
+      "prov": ["Substrate preparation"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "nickel",
+      "molecular_formula": "Ni",
+      "ontology": {"role": "adhesion layer", "category": "metal"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "≈120 nm film",
+      "prov": ["Substrate preparation"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "silver paste",
+      "molecular_formula": "",
+      "ontology": {"role": "adhesive", "category": "organic/inorganic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "used to bond target to Cu backing plate",
+      "prov": ["Target material preparation"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "nitrogen",
+      "molecular_formula": "N2",
+      "ontology": {"role": "glovebox atmosphere", "category": "gas"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Multiple experimental sections"]
+    },
+    {
+      "chemical_id": "chem_11",
+      "name": "sulfuric acid",
+      "molecular_formula": "H2SO4",
+      "ontology": {"role": "cleaning agent", "category": "acid"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "part of piranha solution",
+      "prov": ["Substrate preparation"]
+    },
+    {
+      "chemical_id": "chem_12",
+      "name": "hydrogen peroxide",
+      "molecular_formula": "H2O2",
+      "ontology": {"role": "cleaning agent", "category": "oxidizer"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "part of piranha solution",
+      "prov": ["Substrate preparation"]
+    },
+    {
+      "chemical_id": "chem_13",
+      "name": "acetone",
+      "molecular_formula": "C3H6O",
+      "ontology": {"role": "solvent", "category": "organic"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "ultrasonic cleaning",
+      "prov": ["Substrate preparation"]
+    },
+    {
+      "chemical_id": "chem_14",
+      "name": "deionized water",
+      "molecular_formula": "H2O",
+      "ontology": {"role": "rinse", "category": "solvent"},
+      "amount": {"value": null, "unit": ""},
+      "notes": "",
+      "prov": ["Substrate preparation"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Synthesis of GeS2 glass",
+        "operations": [
+          {
+            "action": "clean",
+            "parameters": {"inputs": ["chem_5"], "duration": {"value": 60, "unit": "min"}},
+            "notes": "Silica tube cleaned with 2% NH4HF2 solution"
+          },
+          {
+            "action": "dry",
+            "parameters": {},
+            "notes": "Flame-dried silica tube to remove moisture"
+          },
+          {
+            "action": "load",
+            "parameters": {"inputs": ["chem_1", "chem_2"]},
+            "notes": "Stoichiometric Ge and S loaded in glovebox"
+          },
+          {
+            "action": "evacuate",
+            "parameters": {"pressure": {"value": 0.0004, "unit": "bar"}},
+            "notes": "Tube evacuated and sealed"
+          },
+          {
+            "action": "heat",
+            "parameters": {"temperature": {"value": 1173, "unit": "K"}, "ramp_rate": "1 K min-1", "duration": {"value": 960, "unit": "min"}},
+            "notes": "Rotated at ~7 rpm"
+          },
+          {
+            "action": "quench",
+            "parameters": {"temperature": {"value": 298, "unit": "K"}},
+            "notes": "Air quench to room temperature"
+          }
+        ],
+        "conditions": {"atmosphere": "sealed evacuated silica tube", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Experimental – GeS2 starting material preparation"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Initial mixing of Li2S and GeS2 powders",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {"inputs": ["chem_3", "chem_4"], "duration": {"value": 15, "unit": "min"}},
+            "notes": "Vibratory Spex mill inside glovebox"
+          }
+        ],
+        "conditions": {"atmosphere": "N2 glovebox", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Target material preparation"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Melting of mixed powders",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {"temperature": {"value": 1223, "unit": "K"}, "duration": {"value": 15, "unit": "min"}},
+            "notes": "Covered vitreous carbon crucible in furnace"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Target material preparation"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Casting and cooling",
+        "operations": [
+          {
+            "action": "cast",
+            "parameters": {},
+            "notes": "Melt poured onto brass plate and cooled to room temperature"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Target material preparation"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Post-milling of solidified material",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {"duration": {"value": 15, "unit": "min"}},
+            "notes": "Vibratory Spex mill to fine powder"
+          }
+        ],
+        "conditions": {"atmosphere": "N2 glovebox", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Target material preparation"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Pressing powders into sputtering targets",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {"mass": {"value": 15, "unit": "g"}, "pressure": {"value": 600, "unit": "bar"}, "duration": {"value": 1440, "unit": "min"}},
+            "notes": "2-inch die set, held overnight"
+          },
+          {
+            "action": "attach",
+            "parameters": {"inputs": ["chem_9"]},
+            "notes": "Target bonded to Cu backing plate with silver paste"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Target material preparation"]
+      },
+      {
+        "step_id": "step_7",
+        "description": "Cleaning silicon substrates",
+        "operations": [
+          {
+            "action": "immersion",
+            "parameters": {"inputs": ["chem_11", "chem_12"], "duration": {"value": 60, "unit": "min"}},
+            "notes": "Piranha solution (H2SO4:H2O2 = 3:1)"
+          },
+          {
+            "action": "ultrasonic_clean",
+            "parameters": {"inputs": ["chem_13"], "duration": {"value": 20, "unit": "min"}},
+            "notes": ""
+          },
+          {
+            "action": "rinse",
+            "parameters": {"inputs": ["chem_14"], "duration": {"value": 20, "unit": "min"}},
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {"inputs": ["chem_10"]},
+            "notes": "N2 blow-dry and oven at 120 °C overnight"
+          }
+        ],
+        "conditions": {"atmosphere": "", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Substrate preparation"]
+      },
+      {
+        "step_id": "step_8",
+        "description": "Deposition of Ni adhesion layer",
+        "operations": [
+          {
+            "action": "sputter_deposit",
+            "parameters": {"inputs": ["chem_8"], "duration": {"value": 40, "unit": "min"}, "rate": "3 nm min-1", "thickness": "120 nm"},
+            "notes": "DC sputtering onto Si substrates"
+          }
+        ],
+        "conditions": {"atmosphere": "vacuum chamber", "pressure": {"value": null, "unit": ""}},
+        "prov": ["Substrate preparation"]
+      },
+      {
+        "step_id": "step_9",
+        "description": "RF magnetron sputtering of lithium thio-germanate thin films",
+        "operations": [
+          {
+            "action": "pre_sputter",
+            "parameters": {"duration": {"value": 30, "unit": "min"}, "pressure": {"value": 0.13, "unit": "bar"}},
+            "notes": "Target cleaned with substrate shielded"
+          },
+          {
+            "action": "sputter_deposit",
+            "parameters": {"power": "50 W", "pressure": {"value": 0.033, "unit": "bar"}, "atmosphere": "Ar (chem_6)"},
+            "notes": "Sputtering-up geometry; film thickness ≈1 µm"
+          }
+        ],
+        "conditions": {"atmosphere": "Ar", "pressure": {"value": 0.033, "unit": "bar"}},
+        "prov": ["Thin-film depositions"]
+      },
+      {
+        "step_id": "step_10",
+        "description": "Post-deposition Ar ion etching for compositional analysis",
+        "operations": [
+          {
+            "action": "etch",
+            "parameters": {"duration": {"value": 1, "unit": "min"}, "rate": "1 nm min-1"},
+            "notes": "Optional depth profiling before XPS"
+          }
+        ],
+        "conditions": {"atmosphere": "Ar plasma", "pressure": {"value": null, "unit": ""}},
+        "prov": ["XPS analysis section"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {"step_ref": "step_1", "description": "Preparation of GeS2 glass starting material"},
+      {"step_ref": "step_2", "description": "Mixing Li2S and GeS2 powders"},
+      {"step_ref": "step_3", "description": "Melting mixed powders"},
+      {"step_ref": "step_4", "description": "Casting melt and cooling"},
+      {"step_ref": "step_5", "description": "Post-milling to fine powder"},
+      {"step_ref": "step_6", "description": "Pressing powders into sputtering targets"},
+      {"step_ref": "step_7", "description": "Silicon substrate cleaning"},
+      {"step_ref": "step_8", "description": "Nickel adhesion layer deposition"},
+      {"step_ref": "step_9", "description": "RF sputtering to grow Li–Ge–S thin films"},
+      {"step_ref": "step_10", "description": "Surface Ar etching prior to XPS"}
+    ],
+    "ambiguities": [
+      {
+        "issue": "Film thickness unit ambiguous",
+        "excerpt": "Thin films of y1mm thickness were grown",
+        "notes": "Likely 1 µm; unit 'mm' conflicts with context"
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XPS",
+      "parameters": {"radiation": "Al-Kα 1486.6 eV", "take_off_angle": "45°"},
+      "results": [
+        {"metric": "S2p binding energy in Li2S", "value": 160.7, "unit": "eV"},
+        {"metric": "S2p binding energy in GeS2", "value": 163.2, "unit": "eV"}
+      ],
+      "interpretation": "Higher binding energy corresponds to covalent bridging sulfur in GeS2; lower in ionic Li2S",
+      "prov": ["Results and discussion – Analysis of starting materials", "Fig. 1"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {"metric": "Li2GeS3 thin-film composition after 1 min etch (at%)", "value": {"Li": 32.6, "Ge": 15.9, "S": 47.8, "O": 3.7}, "unit": "at%"},
+        {"metric": "NBS fraction in Li2GeS3 thin film", "value": 65.4, "unit": "%"},
+        {"metric": "BS fraction in Li2GeS3 thin film", "value": 34.6, "unit": "%"}
+      ],
+      "interpretation": "Film composition closely matches target; expected structural units confirmed",
+      "prov": ["Table 4", "Table 5", "Fig. 5"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "XPS peak deconvolution",
+        "results": [
+          {"equation": "Fraction NBS vs BS from S2p doublets", "value": {"Li4GeS4": "100% NBS", "Li6GeS5": "100% NBS"}, "unit": "%"}
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {"value": null, "unit": "%"},
+    "capacity": {"value": null, "unit": "mAh g-1"},
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-11-19T10:30:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,536 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Lithiophilicity chemistry of heteroatom-doped carbon to guide uniform lithium nucleation in lithium metal anodes",
+    "doi": "10.1126/sciadv.aau7728",
+    "authors": ["Xiang Chen", "Xiao-Ru Chen", "Ting-Zheng Hou", "Bo-Quan Li", "Xin-Bing Cheng", "Rui Zhang", "Qiang Zhang"],
+    "journal": "Science Advances",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "materials synthesis and electrochemistry",
+    "tags": ["graphene", "heteroatom doping", "lithium metal anode", "lithiophilicity"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "graphene (G)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "oxygen-containing graphene (OG)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "nitrogen-doped graphene (NG)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Materials and Methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "graphene oxide",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "precursor",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "prepared by modified Hummers method",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "ammonia",
+      "molecular_formula": "NH3",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "NH3 flow in quartz tube for N-doping",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "polyvinylidene fluoride",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "mass ratio G/NG/OG:PVDF = 5:1",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "N-methylpyrrolidone",
+      "molecular_formula": "C5H9NO",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "used to make slurry",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "copper foil",
+      "molecular_formula": "Cu",
+      "ontology": {
+        "role": "current collector",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "13 mm diameter disks",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "lithium metal foil",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "counter electrode",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "0.5 mm thick, 16 mm diameter",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "1,3-dioxolane",
+      "molecular_formula": "C3H6O2",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "mixed 1:1 v/v with DME",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_8",
+      "name": "1,2-dimethoxyethane",
+      "molecular_formula": "C4H10O2",
+      "ontology": {
+        "role": "electrolyte solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "mixed 1:1 v/v with DOL",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_9",
+      "name": "lithium bis(trifluoromethanesulfonyl)imide",
+      "molecular_formula": "LiC2F6NO4S2",
+      "ontology": {
+        "role": "electrolyte salt",
+        "category": "inorganic salt"
+      },
+      "amount": {
+        "value": 1.0,
+        "unit": "M"
+      },
+      "notes": "concentration in electrolyte",
+      "prov": ["Materials and Methods"]
+    },
+    {
+      "chemical_id": "chem_10",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "inert gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "glovebox atmosphere O2 and H2O <1 ppm",
+      "prov": ["Materials and Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Thermal reduction of graphene oxide to obtain graphene (G).",
+        "operations": [
+          {
+            "action": "thermal_reduction",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "temperature": {
+                "value": 1273,
+                "unit": "K",
+                "notes": "stated as 1000°C"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "produces graphene (G)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Partial thermal reduction of graphene oxide to obtain oxygen-containing graphene (OG).",
+        "operations": [
+          {
+            "action": "thermal_reduction",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "temperature": {
+                "value": 523,
+                "unit": "K",
+                "notes": "stated as 250°C"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "produces OG"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Nitrogen doping of graphene to obtain NG.",
+        "operations": [
+          {
+            "action": "gas_treatment",
+            "parameters": {
+              "inputs": ["target_1", "chem_2"],
+              "temperature": {
+                "value": null,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "NH3 flow in quartz tube"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "NH3",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of electrode slurry and coating on Cu foil.",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["target_1/target_2/target_3", "chem_3", "chem_4"],
+              "ratio": "5:1 (active material:PVDF)"
+            },
+            "duration": {
+              "value": 1440,
+              "unit": "min",
+              "notes": "24 h stirring"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "coat",
+            "parameters": {
+              "substrate": "chem_5"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "temperature": {
+                "value": 333,
+                "unit": "K",
+                "notes": "60°C"
+              },
+              "pressure": {
+                "value": null,
+                "unit": "",
+                "notes": "vacuum"
+              }
+            },
+            "duration": {
+              "value": 360,
+              "unit": "min",
+              "notes": "6 h"
+            },
+            "notes": ""
+          },
+          {
+            "action": "punch",
+            "parameters": {
+              "diameter": "13 mm"
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "notes": "electrode disks"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Coin cell assembly with lithium foil counter electrode and electrolyte.",
+        "operations": [
+          {
+            "action": "assemble_cell",
+            "parameters": {
+              "cell_type": "CR2025",
+              "working_electrode": "coated Cu disks",
+              "counter_electrode": "chem_6",
+              "electrolyte": ["chem_7", "chem_8", "chem_9"],
+              "electrolyte_ratio": "DOL:DME 1:1 v/v, 1.0 M LiTFSI"
+            },
+            "notes": "assembly in Ar glovebox O2/H2O <1 ppm"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Materials and Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Thermal reduction of GO at 1000°C to obtain graphene."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Thermal reduction of GO at 250°C to obtain oxygen-containing graphene."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Ammonia treatment of graphene to introduce nitrogen doping."
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Preparation of slurry, coating, drying, and punching of electrodes."
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Assembly of CR2025 coin cells for electrochemical testing."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Missing duration of thermal reduction steps",
+        "excerpt": "The graphene (G) and oxygen-containing graphene (OG) were obtained by thermal reduction of GO ... at 1000° and 250°C, respectively."
+      },
+      {
+        "issue": "Missing temperature and duration for NH3 doping step",
+        "excerpt": "The N-doped graphene (NG) here was obtained by treating the as-obtained graphene (G) with NH3 flowing in a quartz tube."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Li nucleation overpotential measurement",
+      "parameters": {
+        "current_density": "0.50 mA cm^-2",
+        "cell_configuration": "Li||G/NG/OG"
+      },
+      "results": [
+        {
+          "metric": "nucleation overpotential",
+          "value": 22.5,
+          "unit": "mV",
+          "conditions": "G electrode"
+        },
+        {
+          "metric": "nucleation overpotential",
+          "value": 19.4,
+          "unit": "mV",
+          "conditions": "NG electrode"
+        },
+        {
+          "metric": "nucleation overpotential",
+          "value": 15.0,
+          "unit": "mV",
+          "conditions": "OG electrode"
+        }
+      ],
+      "interpretation": "OG exhibits lowest nucleation barrier, indicating highest lithiophilicity.",
+      "prov": ["Figure 6A"]
+    },
+    {
+      "method": "TEM",
+      "parameters": {
+        "voltage": "120 kV",
+        "sample": "Li deposited on OG at 0.5 mA cm^-2"
+      },
+      "results": [
+        {
+          "metric": "Li nucleus size",
+          "value": 6,
+          "unit": "nm",
+          "conditions": "after 1 min plating"
+        },
+        {
+          "metric": "Li nucleus size",
+          "value": 30,
+          "unit": "nm",
+          "conditions": "after 30 min plating"
+        }
+      ],
+      "interpretation": "Uniform Li deposition maintained over time on OG.",
+      "prov": ["Figure 6C", "Figure 6D"]
+    },
+    {
+      "method": "BET surface area",
+      "parameters": {
+        "temperature": "77 K",
+        "gas": "N2"
+      },
+      "results": [
+        {
+          "metric": "specific surface area",
+          "value": 758,
+          "unit": "m^2 g^-1",
+          "conditions": "OG"
+        },
+        {
+          "metric": "specific surface area",
+          "value": 1166,
+          "unit": "m^2 g^-1",
+          "conditions": "NG"
+        },
+        {
+          "metric": "specific surface area",
+          "value": 604,
+          "unit": "m^2 g^-1",
+          "conditions": "G"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure S19"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

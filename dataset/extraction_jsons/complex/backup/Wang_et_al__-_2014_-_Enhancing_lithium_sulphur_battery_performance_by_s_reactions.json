@@ -1,0 +1,480 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Enhancing lithium–sulphur battery performance by strongly binding the discharge products on amino-functionalized reduced graphene oxide",
+    "doi": "10.1038/ncomms6002",
+    "authors": ["Zhiyu Wang", "Yanfeng Dong", "Hongjiang Li", "Zongbin Zhao", "Hao Bin Wu", "Ce Hao", "Shaohong Liu", "Jieshan Qiu", "Xiong Wen (David) Lou"],
+    "journal": "Nature Communications",
+    "year": 2014
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research-article",
+    "tags": ["lithium–sulfur battery", "graphene oxide", "functionalization", "nanocomposite"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "EDA-functionalized reduced graphene oxide (EFG)",
+      "molecular_formula": "",
+      "intended_role": "intermediate",
+      "prov": ["Methods"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "EFG–S nanocomposite (60 wt % S)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Methods", "Results"]
+    },
+    {
+      "target_id": "target_3",
+      "compound_name": "EFG–S nanocomposite (69 wt % S)",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": ["Methods", "Results"]
+    },
+    {
+      "target_id": "target_4",
+      "compound_name": "rGO–S nanocomposite (47 wt % S)",
+      "molecular_formula": "",
+      "intended_role": "control",
+      "prov": ["Methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Graphene oxide suspension",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "reactant",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": 90,
+        "unit": "mL"
+      },
+      "notes": "1 mg mL-1 GO in water",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Ethylenediamine",
+      "molecular_formula": "C2H8N2",
+      "ontology": {
+        "role": "functionalizing agent",
+        "category": "organic"
+      },
+      "amount": {
+        "value": 120,
+        "unit": "mL"
+      },
+      "notes": "",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Sodium thiosulfate",
+      "molecular_formula": "Na2S2O3",
+      "ontology": {
+        "role": "sulfur precursor",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": 260,
+        "unit": "mL"
+      },
+      "notes": "19 mM aqueous solution",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Hydrochloric acid",
+      "molecular_formula": "HCl",
+      "ontology": {
+        "role": "acid",
+        "category": "inorganic acid"
+      },
+      "amount": {
+        "value": 40,
+        "unit": "mL"
+      },
+      "notes": "0.18 M dilute HCl",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "protective gas",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "annealing atmosphere, amount: Ar-filled glovebox (H2O and O2 < 1.0 ppm)",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Amination and reduction of GO to obtain EFG",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2"]
+            },
+            "notes": "GO suspension and ethylenediamine mixed in sealed glass vessel"
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "duration": {
+              "value": 360,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 348.15,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Ultrasonication of EFG with sodium thiosulfate solution",
+        "operations": [
+          {
+            "action": "ultrasonicate",
+            "parameters": {
+              "inputs": ["target_1", "chem_3"]
+            },
+            "duration": {
+              "value": 90,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "40 mL EFG suspension with 260 mL Na2S2O3 solution"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Disproportionation reaction initiated by HCl addition",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": ["chem_3","chem_4"]
+            },
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "40 mL 0.18 M HCl added slowly under stirring"
+          },
+          {
+            "action": "stir",
+            "parameters": {},
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Filtration and rinsing until neutral pH",
+        "operations": [
+          {
+            "action": "filter",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": null,
+              "unit": ""
+            },
+            "notes": "Repeated rinse cycles"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Drying of product",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": ""
+            },
+            "temperature": {
+              "value": 333,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "air",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Annealing in argon to yield EFG–S nanocomposite",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {
+              "inputs": ["chem_5"]
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 428,
+              "unit": "K"
+            },
+            "notes": "Sealed container, Ar atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "GO functionalized with EDA to form EFG"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "EFG dispersed with Na2S2O3 under ultrasonication"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Dilute HCl added to initiate sulfur deposition"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Product filtered and rinsed"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Drying at 60 °C"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Annealing at 155 °C in Ar to obtain EFG–S"
+      }
+    ],
+    "ambiguities": []
+  },
+  "characterization": [
+    {
+      "method": "SEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "morphology",
+          "value": "wrinkled nanosheets uniformly coated with sulfur",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 1a", "Figure 1b"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {
+        "radiation": "Cu Kα (λ = 1.5406 Å)"
+      },
+      "results": [
+        {
+          "metric": "phase",
+          "value": "orthorhombic sulfur peaks observed; no GO peaks",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Supplementary Fig. 2a"]
+    },
+    {
+      "method": "TGA",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "sulfur content",
+          "value": 60,
+          "unit": "wt%"
+        },
+        {
+          "metric": "sulfur content",
+          "value": 69,
+          "unit": "wt%"
+        },
+        {
+          "metric": "EDA content",
+          "value": 11,
+          "unit": "wt%"
+        },
+        {
+          "metric": "EDA content",
+          "value": 14,
+          "unit": "wt%"
+        }
+      ],
+      "interpretation": "Composite contains 60–69 wt% S and 11–14 wt% EDA",
+      "prov": ["Supplementary Fig. 1", "Supplementary Table 1"]
+    },
+    {
+      "method": "CV",
+      "parameters": {
+        "scan_rate": "0.1 mV s−1",
+        "voltage_window": "1.5–3.0 V"
+      },
+      "results": [
+        {
+          "metric": "cathodic peaks",
+          "value": "2.35 V and 2.04 V",
+          "unit": "V"
+        },
+        {
+          "metric": "anodic peaks",
+          "value": "2.35 V and 2.4 V",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "High reversibility of multistep redox reactions",
+      "prov": ["Supplementary Fig. 4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT calculation",
+        "results": [
+          {
+            "equation": "",
+            "value": 1.13,
+            "unit": "eV",
+            "metric": "binding energy Li2S–EDA (single N)"
+          },
+          {
+            "equation": "",
+            "value": 1.38,
+            "unit": "eV",
+            "metric": "binding energy Li2S–EDA (dual N)"
+          },
+          {
+            "equation": "",
+            "value": 0.34,
+            "unit": "eV",
+            "metric": "binding energy Li2S–graphene"
+          }
+        ],
+        "prov": ["Figure 4i–k"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 650,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 350
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "",
+    "processing_time": null
+  }
+}

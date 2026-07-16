@@ -1,0 +1,573 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Data-driven assessment of electrode calendering process by combining experimental results, in silico mesostructures generation and machine learning",
+    "doi": "10.1016/j.jpowsour.2020.229103",
+    "authors": [
+      "Marc Duquesnoy",
+      "Teo Lombardo",
+      "Mehdi Chouchane",
+      "Emiliano N. Primo",
+      "Alejandro A. Franco"
+    ],
+    "journal": "Journal of Power Sources",
+    "year": 2020
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": [
+      "Li-ion battery",
+      "electrode manufacturing",
+      "calendering",
+      "machine learning",
+      "NMC cathode"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "LiNi1/3Mn1/3Co1/3O2-based cathode electrode",
+      "molecular_formula": "",
+      "intended_role": "product",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.72,
+        "reasoning": "The paper explicitly states the studied cathode chemistry is LiNi1/3Mn1/3Co1/3O2 (NMC) (e.g., Abstract and Introduction). However, the extracted value for \u201cTarget Formula\u201d is blank/empty, which is not an explicit value supported by the text. The document does specify a target formula, so leaving it empty is incorrect.",
+        "suggested_fix": "LiNi1/3Mn1/3Co1/3O2"
+      }
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiNi1/3Mn1/3Co1/3O2",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "active material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.9,
+        "reasoning": "The paper explicitly identifies the cathode active material as LiNi1/3Mn1/3Co1/3O2 (NMC) (e.g., Abstract: \u201cLiNi1/3Mn1/3Co1/3O2-based cathodes\u201d; Experimental methods: \u201cLiNi1/3Mn1/3Co1/3O2 (NMC) was supplied by Umicore.\u201d). However, no explicit *amount* (e.g., grams, moles, concentration, loading) for the NMC itself is stated in the provided full text\u2014only ranges for composition such as \u201cAM amount between 93% and 96%\u201d and statements about mass ratios (e.g., CB:binder = 1) and solvent ratios referenced to Supporting Information. Therefore, the extracted value \u2018Amount: Not specified in text\u2019 is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Carbon black (Super C65)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mass ratio CB:PVdF = 1",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.92,
+        "reasoning": "The paper explicitly identifies the carbon additive as \u201cC-NERGY\u2122 super C65 carbon black (CB)\u201d in the Experimental methods (Section 2.2). However, the document text provided does not state a specific *amount* of carbon black (e.g., wt%, mass, or ratio relative to NMC) beyond noting that \u201cThe mass ratio between CB and binder was maintained equal to one\u201d and that AM mass fraction ranges are discussed elsewhere. Therefore, the extractor\u2019s statement that the chemical identity is Carbon black (Super C65) and the amount is not specified in the text is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Polyvinylidene fluoride (PVdF)",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "binder",
+        "category": "polymer"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Mass ratio CB:PVdF = 1",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": false,
+        "confidence": 0.82,
+        "reasoning": "The paper explicitly identifies PVdF as a component: \u201cSolef\u2122 Polyvinylidene fluoride (PVdF) was purchased from Solvay\u201d (Experimental methods, Section 2.2). However, the extracted claim that the amount is \u201cNot specified in text\u201d is not supported because the text does specify a quantitative compositional constraint involving the binder: \u201cThe mass ratio between CB and binder was maintained equal to one.\u201d Since PVdF is the binder named in the same paragraph, its amount is at least specified relative to carbon black (PVdF:CB = 1:1 by mass). Absolute PVdF wt% is not given in the provided main text, but a relative amount is given, so \u2018not specified\u2019 is inaccurate as written.",
+        "suggested_fix": "Polyvinylidene fluoride (PVdF) | Amount: Binder mass equals carbon black mass (CB:PVdF = 1:1 by mass); absolute PVdF wt% not specified in main text (see Supporting Information for further details)."
+      }
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "N-methyl-2-pyrrolidone",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "solvent",
+        "category": "organic solvent"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mL"
+      },
+      "notes": "Added until desired solids/solvent ratio (not specified)",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly lists N-methylpyrrolidone (NMP) as a solvent in the Experimental methods section: \u201c...N-methylpyrrolidone (NMP) from BASF.\u201d It then states \u201cNMP was added until reaching the desired ratio between the solid components and the solvent (check Supporting Information, section S1a for further details)\u201d but provides no explicit NMP amount (mass/volume/ratio value) in the provided full text. Therefore, identifying NMP and marking its amount as not specified in the text is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Aluminium foil",
+      "molecular_formula": "Al",
+      "ontology": {
+        "role": "substrate",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "22 \u00b5m thick current collector",
+      "prov": [
+        "Experimental methods"
+      ],
+      "_llm_flag": {
+        "is_supported": true,
+        "confidence": 0.93,
+        "reasoning": "The paper explicitly identifies the current collector as aluminium and provides its thickness: \u201cThe slurry was coated over a 22 \u03bcm thick Aluminium CC\u2026\u201d (Experimental methods, Page 5). However, no amount (e.g., mass, area, length, volume) of aluminium foil/current collector used is stated anywhere in the provided full text. Therefore, the extractor\u2019s claim that the chemical identity is aluminium foil (aluminium CC) and the amount is not specified is supported under the null-handling rule.",
+        "suggested_fix": ""
+      }
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Premixing of solid components",
+        "operations": [
+          {
+            "action": "blend",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Premixed overnight with a soft blender",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.72,
+              "reasoning": "The paper does not explicitly describe a synthesis operation as \u201cblend.\u201d It does mention \u201cpremixed with a soft blender overnight\u201d (Experimental methods, Page 4), which indicates a mixing/blending step for slurry preparation, but \u201cSynthesis Operation: blend\u201d is not stated as a defined synthesis operation nor used as a categorical operation name in the text.",
+              "suggested_fix": "If this field is intended to capture an explicit operation term from the methods, use: \u201cpremixed (with a soft blender overnight)\u201d or more generally \u201cmixing/premixing (slurry preparation)\u201d."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Addition of solvent and slurry formation",
+        "operations": [
+          {
+            "action": "add",
+            "parameters": {
+              "inputs": [
+                "chem_4"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "NMP added to reach desired solid/solvent ratio (not specified)",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.77,
+              "reasoning": "The paper describes several synthesis/manufacturing steps using verbs like \u201cadded\u201d (e.g., \u201cAfterwards, NMP was added\u2026\u201d) but the field value is just the isolated operation \u201cadd\u201d with no specified context (what is added/when/where). Since the document does not explicitly present a standalone synthesis operation labeled simply as \u201cadd,\u201d the extracted value is not explicitly supported as given.",
+              "suggested_fix": "If the intent is the slurry preparation step, a supported operation would be: \u201cNMP was added (to the premixed NMC/CB/PVdF solids) until reaching the desired solid/solvent ratio.\u201d"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      },
+      {
+        "step_id": "step_3",
+        "description": "High-shear mixing of slurry",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2",
+                "chem_3",
+                "chem_4"
+              ]
+            },
+            "duration": {
+              "value": 120,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298.15,
+              "unit": "K"
+            },
+            "notes": "Dispermat CV3-PLUS mixer, water-bath cooled",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.73,
+              "reasoning": "The paper\u2019s experimental/synthesis description uses terms like \u201cpremixed,\u201d \u201cNMP was added,\u201d and \u201cThe mixing was performed in a Dispermat\u2026 mixer for 2 h,\u201d but it does not explicitly state the synthesis operation as the single word/operation \u201cmix.\u201d The extracted value is an oversimplification not directly appearing in the text as a named operation.",
+              "suggested_fix": "mixing (premix solid components overnight; then high-shear mixing for 2 h)"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Coating slurry onto aluminium current collector",
+        "operations": [
+          {
+            "action": "coat",
+            "parameters": {
+              "inputs": [
+                "step_3_output",
+                "chem_5"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Comma-coater, gap 0.3 mm, coating speed 0.3 m/s",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.87,
+              "reasoning": "The paper discusses electrode manufacturing steps such as slurry mixing, coating (\"The slurry was coated over a 22 \u03bcm thick Aluminium CC\"), drying, and calendering. However, it does not use the term \"coat\" as a standalone named synthesis operation, nor does it explicitly define a \"Synthesis Operation\" field with value \"coat\". Therefore the extracted value is not explicitly supported as presented.",
+              "suggested_fix": "If the field is meant to capture a manufacturing step mentioned in the text, use \"coating\" (slurry coated over Al current collector) or list the operations explicitly stated: \"mixing; coating; drying; calendering\"."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Drying of coated electrodes",
+        "operations": [
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [
+                "step_4_output"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 353.15,
+              "unit": "K"
+            },
+            "notes": "First oven zone",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.88,
+              "reasoning": "The paper describes multiple manufacturing steps (mixing, coating, drying in an oven at 80/95 \u00b0C, and calendering). However, it does not use the term \u201cdry\u201d as a named/standalone synthesis operation, nor does it explicitly label the synthesis operation field as \u201cdry.\u201d While drying is mentioned as part of electrode processing (\u201cThe electrodes were dried\u2026\u201d), the extracted value implies the operation is simply \u201cdry,\u201d which is not explicitly stated as the synthesis operation in the document.",
+              "suggested_fix": "If the field is intended to capture a process step, the text supports: \"dried in a built-in two-parts oven at 80 and 95 \u00b0C\" (electrode drying step). If the field must be a single-word operation, \"dried\" would be closer than \"dry\"."
+            }
+          },
+          {
+            "action": "dry",
+            "parameters": {
+              "inputs": [
+                "step_4_output"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 368.15,
+              "unit": "K"
+            },
+            "notes": "Second oven zone",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.88,
+              "reasoning": "Across the full provided paper text, electrode processing steps include \u201cdried\u201d in an oven and then \u201ccalendered,\u201d but there is no synthesis-step/operation explicitly labeled as \u201cSynthesis Operation: dry\u201d (nor a standalone operation field/value). The term appears only as part of electrode drying description, not as an explicitly stated synthesis operation value.",
+              "suggested_fix": "If the field is meant to capture an operation mentioned in the procedure, use \u201cdried\u201d (electrodes were dried in an oven at 80 and 95 \u00b0C). Otherwise, if the schema requires an explicit \u2018Synthesis Operation\u2019 label, the correct value is \u201cNot specified\u201d."
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Calendering of dried electrodes",
+        "operations": [
+          {
+            "action": "calender",
+            "parameters": {
+              "inputs": [
+                "step_5_output"
+              ]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 333.15,
+              "unit": "K"
+            },
+            "pressure": {
+              "value": null,
+              "unit": "bar",
+              "notes": "Applied pressure varied between 200 and 1700 bar; line speed 0.54 m/min"
+            },
+            "notes": "Two-roll press, roll diameter 25 cm",
+            "_llm_flag": {
+              "is_supported": false,
+              "confidence": 0.72,
+              "reasoning": "The paper repeatedly refers to the manufacturing step as \u201ccalendering\u201d and uses the noun \u201ccalender\u201d (e.g., \u201cprototype-grade lap press calendar\u201d), but it does not use the verb/noun \u201ccalender\u201d as a standalone synthesis/manufacturing operation label. The extracted value \u201ccalender\u201d (missing \u201c-ing\u201d) is not explicitly stated as an operation name in the text; the explicit operation described is \u201ccalendering\u201d (and \u201ccalendered\u201d).",
+              "suggested_fix": "calendering"
+            }
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental methods"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Premix NMC, carbon black, and PVdF overnight.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly states in Experimental methods (Page 4) that the slurry solid components \u201cNMC, CB and PVdF were premixed with a soft blender overnight.\u201d This directly supports the extracted workflow timeline statement about premixing NMC, carbon black, and PVdF overnight.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Add NMP to solids to obtain workable slurry.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.82,
+          "reasoning": "The paper explicitly describes the workflow step in the experimental methods: after premixing the solid components, \u201cNMP was added until reaching the desired ratio between the solid components and the solvent.\u201d This supports the idea of adding NMP to the solids to make a processable/workable slurry, even though the exact phrase \u201cworkable slurry\u201d is not used verbatim.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_3",
+        "description": "High-shear mix slurry for 120 min at 25 \u00b0C.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The paper explicitly states in Experimental methods: \u201cThe mixing was performed in a Dispermat CV3-PLUS high-shear mixer for 2 h in a water-bath cooled recipient at 25 \u25e6C.\u201d This matches \u201cHigh-shear mix slurry for 120 min at 25 \u00b0C.\u201d (2 h = 120 min).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Coat slurry onto 22 \u00b5m aluminium foil (gap 0.3 mm, speed 0.3 m s-1).",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The source text explicitly states in Experimental methods: \u201cThe slurry was coated over a 22 \u03bcm thick Aluminium CC \u2026 fixing the gap at 300 \u03bcm and the coating speed at 0.3 m/s.\u201d This matches the extracted workflow step (22 \u00b5m aluminium foil, gap 0.3 mm, speed 0.3 m s\u22121).",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Dry coated electrodes: 80 \u00b0C zone then 95 \u00b0C zone.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper explicitly states in Experimental methods (Page 5) that the coated electrodes were dried in a built-in two-parts oven \u201cat 80 and 95 \u00b0C,\u201d which corresponds to two drying zones/parts. This supports the extracted timeline \u201880 \u00b0C zone then 95 \u00b0C zone.\u2019",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Calender electrodes at 60 \u00b0C with pressures 200\u20131700 bar, line speed 0.54 m min-1.",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.95,
+          "reasoning": "The paper explicitly states in Experimental methods (page 5) that calendering was performed at constant line speed (0.54 m/min) and roll temperature (60 \u00b0C), and that calendering pressure was varied; elsewhere (page 4) it states the calender pressure was varied between 20 and 170 MPa. Converting 20\u2013170 MPa gives 200\u20131700 bar, matching the extracted pressure range.",
+          "suggested_fix": ""
+        }
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Undefined duration for 'overnight' premixing.",
+        "excerpt": "\"The slurry solid components ... were premixed with a soft blender overnight.\"",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.98,
+          "reasoning": "The paper states in the Experimental methods section: \u201cThe slurry solid components NMC, CB and PVdF were premixed with a soft blender overnight.\u201d No explicit duration (hours) for \u201covernight\u201d is given anywhere else in the provided full text, so flagging this as an undefined/ambiguous duration is justified.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Exact solids/solvent ratio after NMP addition not provided.",
+        "excerpt": "\"NMP was added until reaching the desired ratio between the solid components and the solvent (check Supporting Information, section S1a for further details).\"",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The paper states: \u201cNMP was added until reaching the desired ratio between the solid components and the solvent (check Supporting Information, section S1a for further details).\u201d Nowhere in the provided full text is the actual target solids-to-NMP (solvent) ratio numerically specified. Therefore the extracted ambiguity claim\u2014exact solids/solvent ratio after NMP addition is not provided in the main text\u2014is supported.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Drying times for the two oven zones not specified.",
+        "excerpt": "\"The electrodes were dried in a built-in two-parts oven (1 m long each) at 80 and 95 \u00b0C.\"",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The source text describes a two-part oven with zones at 80 and 95 \u00b0C but does not provide any drying time or residence time for each zone (or total oven dwell time). The only related quantitative detail is each oven part length (1 m long each), which is not a time. Therefore, the extracted issue that drying times are not specified is supported by the document\u2019s omission.",
+          "suggested_fix": ""
+        }
+      },
+      {
+        "issue": "Exact calendering pressures for each experiment not explicitly listed in main text.",
+        "excerpt": "\"The calendering was performed at various applied pressures\"",
+        "_llm_flag": {
+          "is_supported": true,
+          "confidence": 0.93,
+          "reasoning": "The main text states only that \u201cThe calendering was performed at various applied pressures\u201d (Experimental methods, page 5) and elsewhere gives only a range of pressures used (20\u2013170 MPa) without mapping exact pressures to each experiment/condition. No explicit table/list of the specific calendering pressure for each individual experiment is provided in the supplied full text; details may exist only in the Supporting Information. Thus the noted workflow ambiguity (exact pressures per experiment not explicitly listed in main text) is supported by the document.",
+          "suggested_fix": ""
+        }
+      }
+    ]
+  },
+  "characterization": [],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-03T12:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,550 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "High-Conductivity Argyrodite Li6PS5Cl Solid Electrolytes Prepared via Optimized Sintering Processes for All-Solid-State Lithium−Sulfur Batteries",
+    "doi": "10.1021/acsami.8b15121",
+    "authors": ["Shuo Wang", "Yibo Zhang", "Xue Zhang", "Ting Liu", "Yuan-Hua Lin", "Yang Shen", "Liangliang Li", "Ce-Wen Nan"],
+    "journal": "ACS Applied Materials & Interfaces",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state electrolyte", "argyrodite", "lithium–sulfur battery"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "intended_role": "solid-state electrolyte",
+      "prov": ["Experimental Section: Synthesis of Li6PS5Cl"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "nano-sulfur/MWCNT composite",
+      "molecular_formula": "",
+      "intended_role": "cathode active material",
+      "prov": ["Experimental Section: ASSLSB fabrication"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Li2S",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in molar ratio 5 with respect to LiCl and P2S5",
+      "prov": ["Experimental Section: Synthesis of Li6PS5Cl"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LiCl",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in molar ratio 2 with respect to Li2S and P2S5",
+      "prov": ["Experimental Section: Synthesis of Li6PS5Cl"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "P2S5",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in molar ratio 1 with respect to Li2S and LiCl",
+      "prov": ["Experimental Section: Synthesis of Li6PS5Cl"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Dry glovebox atmosphere (O2 <0.1 ppm, H2O <0.1 ppm)",
+      "prov": ["Experimental Section: Synthesis of Li6PS5Cl"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "sulfur (nano-sulfur)",
+      "molecular_formula": "S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Weight ratio 6 in 6:4 nano-sulfur:MWCNT composite",
+      "prov": ["Experimental Section: ASSLSB fabrication"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "multi-wall carbon nanotube",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "conductive additive",
+        "category": "carbon material"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Weight ratio 4 in 6:4 nano-sulfur:MWCNT composite",
+      "prov": ["Experimental Section: ASSLSB fabrication"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Li–In alloy",
+      "molecular_formula": "",
+      "ontology": {
+        "role": "anode",
+        "category": "alloy"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Used as anode foil",
+      "prov": ["Experimental Section: ASSLSB fabrication"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Weighing and mixing of precursors",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3"],
+              "ratio": "Li2S/LiCl/P2S5 = 5:2:1 (molar)"
+            },
+            "notes": "Total mixture mass about 1 g"
+          },
+          {
+            "action": "mix",
+            "parameters": {
+              "method": "planetary ball milling",
+              "rotation_speed": {
+                "value": 100,
+                "unit": "rpm"
+              },
+              "duration": {
+                "value": 60,
+                "unit": "min"
+              }
+            },
+            "notes": "Fritsch Pulverisette 7; Ar atmosphere"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section: Synthesis of Li6PS5Cl"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Solid-state sintering to form Li6PS5Cl",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 823,
+                "unit": "K",
+                "original": "550 °C"
+              },
+              "heating_rate": {
+                "value": 1.5,
+                "unit": "K min-1",
+                "original": "1.5 °C min−1"
+              },
+              "duration": {
+                "value": 10,
+                "unit": "min"
+              }
+            },
+            "notes": "Optimized fast route; mixture placed in sealed quartz tube"
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "rate": "slow cool to RT"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar (sealed quartz tube)",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Experimental Section: Synthesis of Li6PS5Cl"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Alternative extended sintering (high conductivity sample)",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "temperature": {
+                "value": 823,
+                "unit": "K",
+                "original": "550 °C"
+              },
+              "duration": {
+                "value": 900,
+                "unit": "min",
+                "original": "15 h"
+              }
+            },
+            "notes": "Produces pure Li6PS5Cl with highest measured ionic conductivity"
+          },
+          {
+            "action": "cool",
+            "parameters": {
+              "rate": "slow cool to RT"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Results and Discussion"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Preparation of nano-sulfur/MWCNT composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6"],
+              "weight_ratio": "6:4 nano-sulfur:MWCNT",
+              "method": "ball milling",
+              "rotation_speed": {
+                "value": 300,
+                "unit": "rpm"
+              },
+              "duration": {
+                "value": 60,
+                "unit": "min"
+              }
+            },
+            "notes": "Procedure follows Chen et al."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section: ASSLSB fabrication"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Formation of cathode composite",
+        "operations": [
+          {
+            "action": "mix",
+            "parameters": {
+              "inputs": ["target_2", "target_1"],
+              "weight_ratio": "4:6 (nano-sulfur/MWCNT : Li6PS5Cl)"
+            },
+            "method": "ball milling",
+            "rotation_speed": {
+              "value": 300,
+              "unit": "rpm"
+            },
+            "duration": {
+              "value": 60,
+              "unit": "min"
+            }
+          }
+        ],
+        "conditions": {},
+        "prov": ["Experimental Section: ASSLSB fabrication"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Cell assembly (electrolyte pellet pressing and layer stacking)",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "input": "Li6PS5Cl powder",
+              "mass": {
+                "value": 0.13,
+                "unit": "g",
+                "original": "130 mg"
+              },
+              "pressure": {
+                "value": 150,
+                "unit": "MPa"
+              },
+              "diameter": {
+                "value": 12,
+                "unit": "mm"
+              }
+            },
+            "notes": "Forms solid electrolyte pellet"
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "input": "cathode composite powder (~5 mg)",
+              "pressure": {
+                "value": 150,
+                "unit": "MPa"
+              }
+            },
+            "notes": "Pressed on one side of pellet"
+          },
+          {
+            "action": "attach",
+            "parameters": {
+              "input": "Li–In foil",
+              "pressure": {
+                "value": 100,
+                "unit": "MPa"
+              }
+            },
+            "notes": "As anode"
+          },
+          {
+            "action": "press",
+            "parameters": {
+              "pressure": {
+                "value": 150,
+                "unit": "MPa"
+              }
+            },
+            "notes": "Cold-press three-layer pellet"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar glovebox",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Experimental Section: ASSLSB fabrication"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Precursor weighing and low-energy ball milling"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Fast sintering at 550 °C for 10 min to form Li6PS5Cl"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Optional extended sintering for higher crystallinity"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Preparation of nano-sulfur/MWCNT composite"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Blending cathode composite with Li6PS5Cl"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Pellet pressing and cell assembly"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact atmospheric pressure during sintering not specified",
+        "excerpt": "The mixture was placed in a quartz tube for sintering."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "XRD",
+      "parameters": {
+        "instrument": "Rigaku D/max-2500",
+        "radiation": "Cu Kα",
+        "temperature": {
+          "value": 298,
+          "unit": "K",
+          "original": "RT"
+        }
+      },
+      "results": [
+        {
+          "metric": "phase identification",
+          "value": "Pure Li6PS5Cl obtained at ≥480 °C; minor Li2S impurity for 550 °C 10 min sample",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results and Discussion: Figure 2a & 5a"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "instrument": "LabRAM HR Evolution",
+        "excitation_wavelength": "532 nm"
+      },
+      "results": [
+        {
+          "metric": "PS4^3− peak position",
+          "value": 484,
+          "unit": "cm-1"
+        },
+        {
+          "metric": "P2S6^4− peak disappearance temperature",
+          "value": 733,
+          "unit": "K",
+          "original": "460 °C"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Results and Discussion: Figure 2b & 5b"]
+    },
+    {
+      "method": "Electrochemical impedance spectroscopy",
+      "parameters": {
+        "frequency_range": "1 Hz – 1 MHz",
+        "voltage": {
+          "value": 50,
+          "unit": "mV"
+        }
+      },
+      "results": [
+        {
+          "metric": "ionic conductivity (550 °C 10 min sample)",
+          "value": 3.15e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "ionic conductivity (550 °C 15 h sample)",
+          "value": 3.38e-3,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation energy (≥440 °C samples)",
+          "value": 0.29,
+          "unit": "eV"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3, Figure 4"]
+    },
+    {
+      "method": "Cyclic voltammetry",
+      "parameters": {
+        "scan_rate": {
+          "value": 0.2,
+          "unit": "mV s-1"
+        },
+        "voltage_window": "-0.5 – 5 V vs Li/Li+"
+      },
+      "results": [
+        {
+          "metric": "electrochemical window of Li6PS5Cl",
+          "value": ">5",
+          "unit": "V"
+        }
+      ],
+      "interpretation": "Stable against Li metal",
+      "prov": ["Figure 6"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "σ = A·exp(-Ea/kT)",
+            "value": 0.29,
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Figure 4"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 1850,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 50
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-02-14T00:00:00Z",
+    "source_file": "Provided text chunk",
+    "processing_time": null
+  }
+}

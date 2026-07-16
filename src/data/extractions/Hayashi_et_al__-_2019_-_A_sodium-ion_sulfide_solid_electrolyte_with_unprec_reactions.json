@@ -1,0 +1,512 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A sodium-ion sulfide solid electrolyte with unprecedented conductivity at room temperature",
+    "doi": "10.1038/s41467-019-13178-2",
+    "authors": ["A. Hayashi", "N. Masuzawa", "S. Yubuchi", "F. Tsuji", "C. Hotehama", "A. Sakuda", "M. Tatsumisago"],
+    "journal": "Nature Communications",
+    "year": 2019
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid electrolyte", "sodium-ion conductor", "sulfide"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Na2.88Sb0.88W0.12S4",
+      "molecular_formula": "Na2.88Sb0.88W0.12S4",
+      "intended_role": "product",
+      "prov": ["Page 2–4, Results"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Na3SbS4",
+      "molecular_formula": "Na3SbS4",
+      "intended_role": "comparative_product",
+      "prov": ["Page 2–3, Results"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Sodium sulfide",
+      "molecular_formula": "Na2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Molar ratio 48.0 (for Na2.88Sb0.88W0.12S4); 50.0 (for Na3SbS4) relative units",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Antimony trisulfide",
+      "molecular_formula": "Sb2S3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Molar ratio 14.7 (W-substituted) or 16.7 (undoped)",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Elemental sulfur",
+      "molecular_formula": "S8",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Molar ratio 33.3",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Tungsten disulfide",
+      "molecular_formula": "WS2",
+      "ontology": {
+        "role": "dopant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "mmol"
+      },
+      "notes": "Molar ratio 4 (only for Na2.88Sb0.88W0.12S4)",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Argon",
+      "molecular_formula": "Ar",
+      "ontology": {
+        "role": "atmosphere",
+        "category": "gas"
+      },
+      "amount": {
+        "value": null,
+        "unit": ""
+      },
+      "notes": "Dry Ar atmosphere used throughout synthesis and handling",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Stoichiometric weighing of starting powders",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "notes": "Total batch size 0.6 g; molar ratios Na2S:Sb2S3:S:WS2 = 48.0:14.7:33.3:4 for Na2.88Sb0.88W0.12S4"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "dry Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Manual grinding with mortar and pestle",
+        "operations": [
+          {
+            "action": "grind",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_3", "chem_4"]
+            },
+            "duration": {
+              "value": 10,
+              "unit": "min"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "atmosphere": "dry Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "High-energy ball milling",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["step_2"],
+              "equipment": "planetary ball mill, 45 mL ZrO2 pot, 250 ZrO2 balls (4 mm)",
+              "rotation_speed": "510 rpm"
+            },
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "notes": "Duration varied between 300–1800 min (5–30 h) depending on experiment"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "atmosphere": "dry Ar",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_4",
+        "description": "Heat treatment to form crystalline electrolyte powder",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["step_3"],
+              "container": "porcelain crucible",
+              "temperature": {
+                "value": 548,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": 90,
+              "unit": "min"
+            },
+            "notes": "Time range 90–1080 min (1.5–18 h); best sample heated 720 min (12 h)"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Methods", "Results"]
+      },
+      {
+        "step_id": "step_5",
+        "description": "Cold pressing of powder into pellets",
+        "operations": [
+          {
+            "action": "press",
+            "parameters": {
+              "inputs": ["step_4"],
+              "pressure": {
+                "value": 3600,
+                "unit": "bar"
+              },
+              "die_diameter": "10 mm"
+            },
+            "notes": "For highest conductivity, pressure of 10800 bar was also used"
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "dry Ar"
+        },
+        "prov": ["Methods", "Results"]
+      },
+      {
+        "step_id": "step_6",
+        "description": "Post-press heat treatment (densification)",
+        "operations": [
+          {
+            "action": "heat",
+            "parameters": {
+              "inputs": ["step_5"],
+              "temperature": {
+                "value": 548,
+                "unit": "K"
+              }
+            },
+            "duration": {
+              "value": 720,
+              "unit": "min"
+            },
+            "notes": "Yielded relative density 95 %"
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Results"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Weighing of starting reagents under Ar"
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Manual pre-grinding"
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Planetary ball milling 5–30 h"
+      },
+      {
+        "step_ref": "step_4",
+        "description": "Heat treatment at 548 K to obtain crystalline powder"
+      },
+      {
+        "step_ref": "step_5",
+        "description": "Cold-pressing into pellets at 3600–10800 bar"
+      },
+      {
+        "step_ref": "step_6",
+        "description": "Densification heat treatment at 548 K"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Exact milling duration varied (5 h or 30 h)",
+        "excerpt": "starting materials were milled at a rotation speed of 510 rpm for 5 or 30 h"
+      },
+      {
+        "issue": "Exact pressure used for best sample not explicitly linked to conductivity data",
+        "excerpt": "Pellets were prepared by cold-pressing the electrolyte powder at 1080 MPa, followed by heat treatment at 275 °C."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray diffraction (XRD)",
+      "parameters": {
+        "radiation": "Cu-Kα",
+        "step_size": "0.02°",
+        "scan_range": "10–60° 2θ",
+        "scan_rate": "10° min-1"
+      },
+      "results": [
+        {
+          "metric": "lattice_parameter a",
+          "value": 7.1920,
+          "unit": "Å"
+        },
+        {
+          "metric": "space_group",
+          "value": "I-43m",
+          "unit": ""
+        },
+        {
+          "metric": "W site occupancy",
+          "value": 0.078,
+          "unit": ""
+        },
+        {
+          "metric": "Na site occupancy",
+          "value": 0.974,
+          "unit": ""
+        }
+      ],
+      "interpretation": "Cubic structure with expected Na vacancies enabling 3D conduction",
+      "prov": ["Figure 2a", "Methods"]
+    },
+    {
+      "method": "Raman spectroscopy",
+      "parameters": {
+        "laser_wavelength": "532 nm"
+      },
+      "results": [
+        {
+          "metric": "SbS4 bands",
+          "value": "360, 380, 410",
+          "unit": "cm-1"
+        },
+        {
+          "metric": "WS4 band",
+          "value": 470,
+          "unit": "cm-1"
+        }
+      ],
+      "interpretation": "Presence of SbS4^3− and WS4^2− units confirmed",
+      "prov": ["Figure 1b"]
+    },
+    {
+      "method": "FE-SEM with EDX",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "elemental homogeneity",
+          "value": "uniform W distribution",
+          "unit": ""
+        }
+      ],
+      "interpretation": "No composition-dependent contrast observed",
+      "prov": ["Figure 1c", "Supplementary Fig. 2"]
+    },
+    {
+      "method": "Rutherford Backscattering Spectrometry (RBS)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "composition",
+          "value": "Na2.88Sb0.86W0.11S4",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Composition close to nominal formula",
+      "prov": ["Results"]
+    },
+    {
+      "method": "AC impedance spectroscopy",
+      "parameters": {
+        "temperature": 298,
+        "electrode": "Au",
+        "frequency_range": "10 Hz – 1 MHz"
+      },
+      "results": [
+        {
+          "metric": "ionic_conductivity",
+          "value": 3.2e-2,
+          "unit": "S cm-1"
+        },
+        {
+          "metric": "activation_energy",
+          "value": 17,
+          "unit": "kJ mol-1"
+        },
+        {
+          "metric": "relative_density",
+          "value": 95,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Highest reported conductivity for Na-ion conductors",
+      "prov": ["Figure 3a", "Figure 3b"]
+    },
+    {
+      "method": "DC polarization",
+      "parameters": {
+        "temperature": 298,
+        "voltage_range": "0.07–0.98 V"
+      },
+      "results": [
+        {
+          "metric": "electronic_conductivity",
+          "value": 7.9e-8,
+          "unit": "S cm-1"
+        }
+      ],
+      "interpretation": "Na-ion transport number ~1",
+      "prov": ["Supplementary Fig. 5"]
+    },
+    {
+      "method": "H2S generation test",
+      "parameters": {
+        "relative_humidity": 70,
+        "temperature": 297
+      },
+      "results": [
+        {
+          "metric": "H2S evolution after 30 min",
+          "value": "<0.6",
+          "unit": "cm3 g-1 S"
+        }
+      ],
+      "interpretation": "Negligible H2S formation compared with Na3PS4",
+      "prov": ["Figure 4"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "Arrhenius analysis",
+        "results": [
+          {
+            "equation": "σ = σ0 exp(−Ea/RT)",
+            "value": 17,
+            "unit": "kJ mol-1"
+          }
+        ]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-18T00:00:00Z",
+    "source_file": "article_text_chunk_provided",
+    "processing_time": null
+  }
+}

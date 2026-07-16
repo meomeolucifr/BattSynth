@@ -1,0 +1,187 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Electrode–electrolyte interfaces in lithium-based batteries",
+    "doi": "10.1039/c7ee02555f",
+    "authors": ["Xingwen Yu", "Arumugam Manthiram"],
+    "journal": "Energy & Environmental Science",
+    "year": 2018
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "review",
+    "tags": ["lithium batteries", "electrode–electrolyte interface", "solid-state electrolytes"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "all-solid-state thin-film Li-ion cell stack",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": ["Page 535, lines describing \"2 mm LiCoO2 cathode, a 1.5 mm LIPON electrolyte, and an 80 nm amorphous silicon anode\""]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiCoO2",
+      "molecular_formula": "LiCoO2",
+      "ontology": {
+        "role": "cathode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Reported as a 2 mm thick layer in thin-film cell",
+      "prov": ["Page 535"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "LIPON",
+      "molecular_formula": "LiPON",
+      "ontology": {
+        "role": "solid electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Reported as a 1.5 mm thick layer in thin-film cell",
+      "prov": ["Page 535"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Amorphous silicon",
+      "molecular_formula": "Si",
+      "ontology": {
+        "role": "anode material",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Reported as an 80 nm thick layer in thin-film cell",
+      "prov": ["Page 535"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Fabrication of a thin-film all-solid-state Li-ion cell comprising sequential layers of LiCoO2 cathode, LIPON electrolyte, and amorphous Si anode with specified thicknesses.",
+        "operations": [
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_1"],
+              "thickness": {
+                "value": 2,
+                "unit": "mm"
+              }
+            },
+            "notes": "Exact deposition method not specified."
+          },
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_2"],
+              "thickness": {
+                "value": 1.5,
+                "unit": "mm"
+              }
+            },
+            "notes": ""
+          },
+          {
+            "action": "deposit",
+            "parameters": {
+              "inputs": ["chem_3"],
+              "thickness": {
+                "value": 80,
+                "unit": "nm"
+              }
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 535"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Sequential deposition of cathode, electrolyte, and anode thin films to build a nano-battery stack for TEM studies."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Thickness units possibly misprinted as mm instead of μm.",
+        "excerpt": "\"2 mm LiCoO2 cathode, a 1.5 mm LIPON electrolyte\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "STEM-EELS",
+      "parameters": {
+        "mode": "in situ",
+        "biasing": "galvanostatic"
+      },
+      "results": [
+        {
+          "metric": "interphase observation",
+          "value": "disordered layer accumulating Li and evolving rock-salt CoO",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Page 535"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-24T05:35:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

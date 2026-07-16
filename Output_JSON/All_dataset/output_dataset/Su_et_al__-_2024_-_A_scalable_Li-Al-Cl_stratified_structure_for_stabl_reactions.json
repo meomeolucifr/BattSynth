@@ -1,0 +1,562 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "A scalable Li-Al-Cl stratified structure for stable all-solid-state lithium metal batteries",
+    "doi": "10.1038/s41467-024-48585-7",
+    "authors": ["Han Su", "Jingru Li", "Yu Zhong", "Yu Liu", "Xuhong Gao", "Juner Kuang", "Minkang Wang", "Chunxi Lin", "Xiuli Wang", "Jiangping Tu"],
+    "journal": "Nature Communications",
+    "year": 2024
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "research article",
+    "tags": ["solid-state electrolyte", "lithium metal batteries", "interface engineering"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li-Al-Cl stratified structure (LACSS)",
+      "molecular_formula": "",
+      "intended_role": "anode/SEI integrated structure",
+      "prov": ["Fig. 1", "Methods"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li5.5PS4.5Cl1.5 (LPSC)",
+      "molecular_formula": "Li5.5PS4.5Cl1.5",
+      "intended_role": "solid electrolyte",
+      "prov": ["Methods"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "reactant",
+        "category": "metal"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Foil, polished prior to reaction",
+      "prov": ["Methods", "Fig. 1"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Aluminum trichloride",
+      "molecular_formula": "AlCl3",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Vapor concentration 3.6 g L−1",
+      "prov": ["Methods", "Fig. 1"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li9Al4",
+      "molecular_formula": "Li9Al4",
+      "ontology": {
+        "role": "SEI component",
+        "category": "intermetallic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Formed in situ during LACSS preparation",
+      "prov": ["Fig. 1", "Fig. 2"]
+    },
+    {
+      "chemical_id": "chem_4",
+      "name": "Lithium chloride",
+      "molecular_formula": "LiCl",
+      "ontology": {
+        "role": "SEI component / reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Generated from AlCl3 reduction and also used in LPSC synthesis",
+      "prov": ["Fig. 1", "Methods"]
+    },
+    {
+      "chemical_id": "chem_5",
+      "name": "Lithium sulfide",
+      "molecular_formula": "Li2S",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used for LPSC synthesis",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_6",
+      "name": "Phosphorus pentasulfide",
+      "molecular_formula": "P2S5",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used for LPSC synthesis",
+      "prov": ["Methods"]
+    },
+    {
+      "chemical_id": "chem_7",
+      "name": "Zr/F–doped LiNi0.83Co0.12Mn0.05O2 (NCM83125)",
+      "molecular_formula": "LiNi0.83Co0.12Mn0.05O2",
+      "ontology": {
+        "role": "cathode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "Used in full‐cell assembly",
+      "prov": ["Methods"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_LACSS_1",
+        "description": "Polish Li foil to remove native oxide layer",
+        "operations": [
+          {
+            "action": "polish",
+            "parameters": {
+              "inputs": ["chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "Plastic scraper",
+            "prov": ["Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_LACSS_2",
+        "description": "Sublimation–deposition of AlCl3 onto Li foil",
+        "operations": [
+          {
+            "action": "sublime_deposit",
+            "parameters": {
+              "inputs": ["chem_2", "chem_1"],
+              "concentration": {
+                "value": 3.6,
+                "unit": "g L-1"
+              }
+            },
+            "duration": {
+              "value": 0.67,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 451,
+              "unit": "K"
+            },
+            "notes": "Generates a nanosized AlCl3 layer",
+            "prov": ["Methods", "Fig. 1"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_LACSS_3",
+        "description": "Winding of AlCl3-deposited Li foil to encapsulate precursors",
+        "operations": [
+          {
+            "action": "wind",
+            "parameters": {
+              "inputs": []
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "",
+            "prov": ["Fig. 1", "Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_LACSS_4",
+        "description": "Rolling process to complete reaction and form LACSS",
+        "operations": [
+          {
+            "action": "roll",
+            "parameters": {},
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 298,
+              "unit": "K"
+            },
+            "notes": "High strain rate induces phase separation",
+            "prov": ["Fig. 1", "Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "Ar",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_LPSC_1",
+        "description": "Ball milling of Li2S, P2S5 and LiCl for LPSC precursor",
+        "operations": [
+          {
+            "action": "mill",
+            "parameters": {
+              "inputs": ["chem_5", "chem_6", "chem_4"],
+              "rotation_speed": {
+                "value": 550,
+                "unit": "rpm"
+              }
+            },
+            "duration": {
+              "value": 1200,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Stoichiometric ratios, 20 h",
+            "prov": ["Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      },
+      {
+        "step_id": "step_LPSC_2",
+        "description": "Annealing the milled precursor to form LPSC",
+        "operations": [
+          {
+            "action": "anneal",
+            "parameters": {},
+            "duration": {
+              "value": 300,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": 723,
+              "unit": "K"
+            },
+            "notes": "5 h at 450 °C",
+            "prov": ["Methods"]
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": ""
+          }
+        },
+        "prov": ["Methods"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_LACSS_1",
+        "description": "Li foil surface preparation"
+      },
+      {
+        "step_ref": "step_LACSS_2",
+        "description": "AlCl3 vapor deposition on Li"
+      },
+      {
+        "step_ref": "step_LACSS_3",
+        "description": "Winding to encapsulate powders"
+      },
+      {
+        "step_ref": "step_LACSS_4",
+        "description": "Rolling to create stratified Li-Al-Cl structure"
+      },
+      {
+        "step_ref": "step_LPSC_1",
+        "description": "Ball milling of sulfide precursors"
+      },
+      {
+        "step_ref": "step_LPSC_2",
+        "description": "High-temperature annealing to form LPSC electrolyte"
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Amounts of Li foil and AlCl3 not specified",
+        "excerpt": "Lithium (Li) foil ... Then, the polished Li foil was exposed to the gas-state AlCl3 ... the amount of deposited AlCl3 was adjusted by controlling the exposure time."
+      },
+      {
+        "issue": "Rolling pressure unspecified for standard LACSS",
+        "excerpt": "LACSS with different thicknesses can be prepared by adjusting rolling pressure (Supplementary Fig. 6)."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "SEM/EDS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface enrichment of Al and Cl",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Demonstrates differential surface/bulk distribution in LACSS",
+      "prov": ["Fig. 1c–d"]
+    },
+    {
+      "method": "TOF-SIMS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "Li5Al2O+ signal decrease depth",
+          "value": 600,
+          "unit": "s"
+        },
+        {
+          "metric": "surface enrichment confirmed",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 1f–g"]
+    },
+    {
+      "method": "XPS",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "presence of Li-Al alloys and LiCl on surface",
+          "value": "",
+          "unit": ""
+        }
+      ],
+      "interpretation": "Surface concentrated in Li9Al4 and LiCl",
+      "prov": ["Fig. 1h"]
+    },
+    {
+      "method": "XRD",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "phases identified",
+          "value": "Li, LiCl, Li9Al4",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Supplementary Fig. 8"]
+    },
+    {
+      "method": "Cryo-FIB-SEM/TEM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "surface layer thickness (Al/Cl enriched)",
+          "value": 300,
+          "unit": "nm"
+        }
+      ],
+      "interpretation": "Confirms stratified phase distribution",
+      "prov": ["Fig. 2b–c"]
+    },
+    {
+      "method": "AFM",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "average Young's modulus of LACSS surface",
+          "value": 64,
+          "unit": "GPa"
+        }
+      ],
+      "interpretation": "High mechanical strength SEI",
+      "prov": ["Fig. 5c–d"]
+    },
+    {
+      "method": "Electrochemical (CCD test)",
+      "parameters": {"electrolyte": "LPSC"},
+      "results": [
+        {
+          "metric": "critical current density (symmetric cell)",
+          "value": 2.5,
+          "unit": "mA cm-2"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Fig. 4d"]
+    },
+    {
+      "method": "Electrochemical cycling",
+      "parameters": {"current_density": "1.0 mA cm-2", "capacity": "0.5 mAh cm-2"},
+      "results": [
+        {
+          "metric": "stable cycling time",
+          "value": 400,
+          "unit": "h"
+        }
+      ],
+      "interpretation": "Demonstrates interface stability",
+      "prov": ["Fig. 4h"]
+    },
+    {
+      "method": "Ionic conductivity measurement",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "ionic conductivity of synthesized LPSC",
+          "value": 7.9,
+          "unit": "mS cm-1"
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Supplementary Fig. 28b"]
+    },
+    {
+      "method": "Full-cell cycling",
+      "parameters": {"current_density": "0.89 mA cm-2", "temperature": "303 K"},
+      "results": [
+        {
+          "metric": "capacity retention after 300 cycles",
+          "value": 92.3,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "LACSS improves long-term stability",
+      "prov": ["Fig. 6a"]
+    }
+  ],
+  "analysis": {
+    "methods": [
+      {
+        "method_name": "DFT surface/interface energy calculation",
+        "results": [
+          {
+            "equation": "γ_LiCl – γ_LiCl/Li = –0.42 J m−2",
+            "value": -0.42,
+            "unit": "J m-2"
+          },
+          {
+            "equation": "Li adsorption energy on Li9Al4",
+            "value": -1.97,
+            "unit": "eV"
+          }
+        ],
+        "prov": ["Supplementary Table 1", "Supplementary Fig. 27"]
+      },
+      {
+        "method_name": "AIMD simulation",
+        "results": [
+          {
+            "metric": "reduced PS4^3− decomposition at Li9Al4/LPSC interface vs Li/LPSC",
+            "value": "",
+            "unit": ""
+          }
+        ],
+        "prov": ["Fig. 5e–f"]
+      }
+    ]
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": 162.8,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": 300
+  },
+  "extraction_metadata": {
+    "timestamp": "2024-06-08T12:00:00Z",
+    "source_file": "provided_text_chunk",
+    "processing_time": null
+  }
+}

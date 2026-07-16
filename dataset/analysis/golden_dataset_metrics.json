@@ -1,0 +1,640 @@
+{
+  "generated_at": "2026-07-16T16:41:19.370541",
+  "dataset": {
+    "total_papers": 30,
+    "total_entities": 828,
+    "tiers": {
+      "simple": 157,
+      "moderate": 307,
+      "complex": 364
+    },
+    "entity_types": {
+      "target": 75,
+      "chemical": 222,
+      "operation": 184,
+      "step_description": 113,
+      "characterization": 155,
+      "final_outcome": 79
+    }
+  },
+  "extraction_quality": {
+    "overall": {
+      "n": 828,
+      "tp": 736.0,
+      "fp": 50.0,
+      "fn": 42.0,
+      "partial": 6.0,
+      "precision": 0.9364,
+      "recall": 0.946,
+      "f1": 0.9412,
+      "accuracy": 0.9364
+    },
+    "by_entity_type": {
+      "target": {
+        "n": 75,
+        "tp": 41.0,
+        "fp": 9.0,
+        "fn": 25.0,
+        "partial": 0.0,
+        "precision": 0.82,
+        "recall": 0.6212,
+        "f1": 0.7069,
+        "accuracy": 0.82
+      },
+      "chemical": {
+        "n": 222,
+        "tp": 206.5,
+        "fp": 12.5,
+        "fn": 3.0,
+        "partial": 1.0,
+        "precision": 0.9429,
+        "recall": 0.9857,
+        "f1": 0.9638,
+        "accuracy": 0.9429
+      },
+      "operation": {
+        "n": 184,
+        "tp": 163.0,
+        "fp": 18.0,
+        "fn": 3.0,
+        "partial": 2.0,
+        "precision": 0.9006,
+        "recall": 0.9819,
+        "f1": 0.9395,
+        "accuracy": 0.9006
+      },
+      "step_description": {
+        "n": 113,
+        "tp": 112.0,
+        "fp": 1.0,
+        "fn": 0.0,
+        "partial": 2.0,
+        "precision": 0.9912,
+        "recall": 1.0,
+        "f1": 0.9956,
+        "accuracy": 0.9912
+      },
+      "characterization": {
+        "n": 155,
+        "tp": 136.5,
+        "fp": 7.5,
+        "fn": 11.0,
+        "partial": 1.0,
+        "precision": 0.9479,
+        "recall": 0.9254,
+        "f1": 0.9365,
+        "accuracy": 0.9479
+      },
+      "final_outcome": {
+        "n": 79,
+        "tp": 77.0,
+        "fp": 2.0,
+        "fn": 0.0,
+        "partial": 0.0,
+        "precision": 0.9747,
+        "recall": 1.0,
+        "f1": 0.9872,
+        "accuracy": 0.9747
+      }
+    },
+    "by_tier": {
+      "simple": {
+        "n": 157,
+        "tp": 141.0,
+        "fp": 6.0,
+        "fn": 10.0,
+        "partial": 0.0,
+        "precision": 0.9592,
+        "recall": 0.9338,
+        "f1": 0.9463,
+        "accuracy": 0.9592
+      },
+      "moderate": {
+        "n": 307,
+        "tp": 270.0,
+        "fp": 22.0,
+        "fn": 15.0,
+        "partial": 0.0,
+        "precision": 0.9247,
+        "recall": 0.9474,
+        "f1": 0.9359,
+        "accuracy": 0.9247
+      },
+      "complex": {
+        "n": 364,
+        "tp": 325.0,
+        "fp": 22.0,
+        "fn": 17.0,
+        "partial": 6.0,
+        "precision": 0.9366,
+        "recall": 0.9503,
+        "f1": 0.9434,
+        "accuracy": 0.9366
+      }
+    }
+  },
+  "llm_vs_human": {
+    "confusion": {
+      "matrix": {
+        "not_verified_by_llm": {
+          "correct": 125,
+          "partially_correct": 2
+        },
+        "supported": {
+          "correct": 494,
+          "missing_data": 2,
+          "incorrect": 1
+        },
+        "unsupported": {
+          "correct": 114,
+          "missing_data": 40,
+          "incorrect": 46,
+          "partially_correct": 4
+        }
+      },
+      "total_entities": 828,
+      "llm_verified_entities": 701,
+      "agree_supported": 494,
+      "agree_unsupported": 86,
+      "total_agreement": 580,
+      "agreement_rate": 0.8274,
+      "false_negative_llm": 3,
+      "false_positive_llm": 114,
+      "false_neg_rate": 0.006,
+      "false_pos_rate": 0.5588
+    },
+    "cohens_kappa": 0.4983,
+    "kappa_interpretation": "moderate",
+    "confidence_calibration": [
+      {
+        "bin": "0.5-0.60",
+        "n": 1,
+        "agreement_rate": 0.0
+      },
+      {
+        "bin": "0.6-0.70",
+        "n": 18,
+        "agreement_rate": 0.3889
+      },
+      {
+        "bin": "0.7-0.80",
+        "n": 70,
+        "agreement_rate": 0.5857
+      },
+      {
+        "bin": "0.8-0.90",
+        "n": 100,
+        "agreement_rate": 0.79
+      },
+      {
+        "bin": "0.9-1.01",
+        "n": 511,
+        "agreement_rate": 0.8865
+      }
+    ]
+  },
+  "error_taxonomy": {
+    "total_errors": 95,
+    "by_category": {
+      "other": 65,
+      "hallucination": 21,
+      "wrong_amount": 1,
+      "unspecified": 7,
+      "semantic_mismatch": 1
+    },
+    "by_entity_type": {
+      "target": {
+        "missing_data": 25,
+        "incorrect": 9
+      },
+      "characterization": {
+        "incorrect": 7,
+        "missing_data": 11,
+        "partially_correct": 1
+      },
+      "chemical": {
+        "incorrect": 12,
+        "missing_data": 3,
+        "partially_correct": 1
+      },
+      "operation": {
+        "incorrect": 17,
+        "missing_data": 3,
+        "partially_correct": 2
+      },
+      "final_outcome": {
+        "incorrect": 2
+      },
+      "step_description": {
+        "partially_correct": 2
+      }
+    },
+    "by_tier": {
+      "simple": {
+        "missing_data": 10,
+        "incorrect": 6
+      },
+      "moderate": {
+        "incorrect": 22,
+        "missing_data": 15
+      },
+      "complex": {
+        "missing_data": 17,
+        "incorrect": 19,
+        "partially_correct": 6
+      }
+    }
+  },
+  "per_paper": [
+    {
+      "paper_id": "Byeon_et_al__-_2017_-_Two-Dimensional_Titanium_Carbide_MXene",
+      "tier": "moderate",
+      "n_entities": 26,
+      "correct": 25,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 0,
+      "precision": 0.9615,
+      "recall": 1.0,
+      "f1": 0.9804,
+      "llm_agreement_rate": 0.9565
+    },
+    {
+      "paper_id": "Chen_et_al__-_Staging_Phase_Transitions_in_LixCoO2",
+      "tier": "complex",
+      "n_entities": 38,
+      "correct": 36,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 1,
+      "precision": 0.973,
+      "recall": 0.973,
+      "f1": 0.973,
+      "llm_agreement_rate": 0.7188
+    },
+    {
+      "paper_id": "Cheng_et_al__-_2020_-_Unveiling_the_Stable_Nature_of_the_Sol",
+      "tier": "moderate",
+      "n_entities": 29,
+      "correct": 26,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 2,
+      "precision": 0.963,
+      "recall": 0.9286,
+      "f1": 0.9455,
+      "llm_agreement_rate": 0.75
+    },
+    {
+      "paper_id": "Chu_et_al__-_2020_-_A_multi-functional_binder_for_high_loadi",
+      "tier": "complex",
+      "n_entities": 33,
+      "correct": 28,
+      "incorrect": 3,
+      "partially_correct": 0,
+      "missing_data": 2,
+      "precision": 0.9032,
+      "recall": 0.9333,
+      "f1": 0.918,
+      "llm_agreement_rate": 0.8929
+    },
+    {
+      "paper_id": "Cui_et_al__-_2021_-_Zinc-Doped_High-Nickel__Low-Cobalt_Layer",
+      "tier": "complex",
+      "n_entities": 40,
+      "correct": 39,
+      "incorrect": 0,
+      "partially_correct": 0,
+      "missing_data": 1,
+      "precision": 1.0,
+      "recall": 0.975,
+      "f1": 0.9873,
+      "llm_agreement_rate": 0.6
+    },
+    {
+      "paper_id": "Gao_et_al__-_2018_-_Na_3_MnZr_PO_4___3sub",
+      "tier": "simple",
+      "n_entities": 16,
+      "correct": 16,
+      "incorrect": 0,
+      "partially_correct": 0,
+      "missing_data": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "llm_agreement_rate": 0.9333
+    },
+    {
+      "paper_id": "Han_et_al__-_2015_-_A_Battery_Made_from_a_Single_Material",
+      "tier": "moderate",
+      "n_entities": 30,
+      "correct": 26,
+      "incorrect": 3,
+      "partially_correct": 0,
+      "missing_data": 1,
+      "precision": 0.8966,
+      "recall": 0.963,
+      "f1": 0.9286,
+      "llm_agreement_rate": 0.8462
+    },
+    {
+      "paper_id": "Hong_et_al__-_2022_-_All-Solid-State_Lithium_Batteries_Li__",
+      "tier": "simple",
+      "n_entities": 20,
+      "correct": 18,
+      "incorrect": 0,
+      "partially_correct": 0,
+      "missing_data": 2,
+      "precision": 1.0,
+      "recall": 0.9,
+      "f1": 0.9474,
+      "llm_agreement_rate": 0.8333
+    },
+    {
+      "paper_id": "Kanno_-_2000_-_Synthesis_of_a_new_lithium_ionic_conductor__t",
+      "tier": "moderate",
+      "n_entities": 26,
+      "correct": 20,
+      "incorrect": 6,
+      "partially_correct": 0,
+      "missing_data": 0,
+      "precision": 0.7692,
+      "recall": 1.0,
+      "f1": 0.8696,
+      "llm_agreement_rate": 0.9524
+    },
+    {
+      "paper_id": "Kim_et_al__-_2017_-_Electrochemical_lithium_intercalation_be",
+      "tier": "complex",
+      "n_entities": 33,
+      "correct": 29,
+      "incorrect": 2,
+      "partially_correct": 0,
+      "missing_data": 2,
+      "precision": 0.9355,
+      "recall": 0.9355,
+      "f1": 0.9355,
+      "llm_agreement_rate": 0.8519
+    },
+    {
+      "paper_id": "Kim_et_al__-_2017_-_Reduced_Graphene_OxideLiI_Composite_Lith",
+      "tier": "complex",
+      "n_entities": 44,
+      "correct": 39,
+      "incorrect": 3,
+      "partially_correct": 0,
+      "missing_data": 2,
+      "precision": 0.9286,
+      "recall": 0.9512,
+      "f1": 0.9398,
+      "llm_agreement_rate": 0.7632
+    },
+    {
+      "paper_id": "L_pez-Aranguren_et_al__-_2021_-_Crystalline_LiPON_as_a_Bulk-",
+      "tier": "simple",
+      "n_entities": 20,
+      "correct": 19,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 0,
+      "precision": 0.95,
+      "recall": 1.0,
+      "f1": 0.9744,
+      "llm_agreement_rate": 0.7778
+    },
+    {
+      "paper_id": "Lamsayah_et_al__-_2016_-_High_liquid_liquid_extraction_selec",
+      "tier": "simple",
+      "n_entities": 19,
+      "correct": 15,
+      "incorrect": 0,
+      "partially_correct": 0,
+      "missing_data": 4,
+      "precision": 1.0,
+      "recall": 0.7895,
+      "f1": 0.8824,
+      "llm_agreement_rate": 0.6875
+    },
+    {
+      "paper_id": "Lee_et_al__-_2001_-_Synthesis_and_characterization_of_lithiu",
+      "tier": "simple",
+      "n_entities": 7,
+      "correct": 5,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 1,
+      "precision": 0.8333,
+      "recall": 0.8333,
+      "f1": 0.8333,
+      "llm_agreement_rate": 0.75
+    },
+    {
+      "paper_id": "Li_and_Monroe_-_2019_-_Dendrite_nucleation_in_lithium-conduc",
+      "tier": "simple",
+      "n_entities": 12,
+      "correct": 11,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 0,
+      "precision": 0.9167,
+      "recall": 1.0,
+      "f1": 0.9565,
+      "llm_agreement_rate": 1.0
+    },
+    {
+      "paper_id": "Li_et_al__-_2018_-_Co-modification_by_LiAlO2-coating_and_Al-",
+      "tier": "complex",
+      "n_entities": 31,
+      "correct": 26,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 4,
+      "precision": 0.963,
+      "recall": 0.8667,
+      "f1": 0.9123,
+      "llm_agreement_rate": 0.9167
+    },
+    {
+      "paper_id": "Li_et_al__-_2023_-_One_step_in-situ_synthesis_of_Na3V2_PO4_3",
+      "tier": "simple",
+      "n_entities": 21,
+      "correct": 20,
+      "incorrect": 0,
+      "partially_correct": 0,
+      "missing_data": 1,
+      "precision": 1.0,
+      "recall": 0.9524,
+      "f1": 0.9756,
+      "llm_agreement_rate": 0.8421
+    },
+    {
+      "paper_id": "Lin_et_al__-_2016_-_Layered_reduced_graphene_oxide_with_nano",
+      "tier": "complex",
+      "n_entities": 27,
+      "correct": 26,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 0,
+      "precision": 0.963,
+      "recall": 1.0,
+      "f1": 0.9811,
+      "llm_agreement_rate": 0.6667
+    },
+    {
+      "paper_id": "Liu_et_al__-_2021_-_Impedance_Modeling_of_Solid-State_Electr",
+      "tier": "simple",
+      "n_entities": 9,
+      "correct": 7,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 1,
+      "precision": 0.875,
+      "recall": 0.875,
+      "f1": 0.875,
+      "llm_agreement_rate": 1.0
+    },
+    {
+      "paper_id": "Liu_et_al__-_2021_-_Understanding_Co_roles_towards_developin",
+      "tier": "complex",
+      "n_entities": 44,
+      "correct": 34,
+      "incorrect": 5,
+      "partially_correct": 0,
+      "missing_data": 5,
+      "precision": 0.8718,
+      "recall": 0.8718,
+      "f1": 0.8718,
+      "llm_agreement_rate": 0.8462
+    },
+    {
+      "paper_id": "Lv_et_al__-_2022_-_Two-dimensional_V2C_Se__MXene__composite_",
+      "tier": "simple",
+      "n_entities": 18,
+      "correct": 17,
+      "incorrect": 0,
+      "partially_correct": 0,
+      "missing_data": 1,
+      "precision": 1.0,
+      "recall": 0.9444,
+      "f1": 0.9714,
+      "llm_agreement_rate": 1.0
+    },
+    {
+      "paper_id": "Maekawa_et_al__-_2008_-_Enhanced_lithium_ion_conduction_and_",
+      "tier": "moderate",
+      "n_entities": 33,
+      "correct": 31,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 1,
+      "precision": 0.9688,
+      "recall": 0.9688,
+      "f1": 0.9688,
+      "llm_agreement_rate": 1.0
+    },
+    {
+      "paper_id": "Oyakhire_et_al__-_2022_-_Electrical_resistance_of_the_curren",
+      "tier": "moderate",
+      "n_entities": 35,
+      "correct": 29,
+      "incorrect": 5,
+      "partially_correct": 0,
+      "missing_data": 1,
+      "precision": 0.8529,
+      "recall": 0.9667,
+      "f1": 0.9062,
+      "llm_agreement_rate": 0.8333
+    },
+    {
+      "paper_id": "Qian_et_al__-_2018_-_Electrochemical_surface_passivation_of_",
+      "tier": "moderate",
+      "n_entities": 26,
+      "correct": 23,
+      "incorrect": 1,
+      "partially_correct": 0,
+      "missing_data": 2,
+      "precision": 0.9583,
+      "recall": 0.92,
+      "f1": 0.9388,
+      "llm_agreement_rate": 0.9524
+    },
+    {
+      "paper_id": "Rana_et_al__-_2020_-_Oriented_nanoporous_MOFs_to_mitigate_po",
+      "tier": "complex",
+      "n_entities": 44,
+      "correct": 40,
+      "incorrect": 3,
+      "partially_correct": 1,
+      "missing_data": 0,
+      "precision": 0.9205,
+      "recall": 1.0,
+      "f1": 0.9586,
+      "llm_agreement_rate": 0.6842
+    },
+    {
+      "paper_id": "Riaz_et_al__-_2014_-_Carbon-__Binder-__and_Precious_Metal-Fr",
+      "tier": "moderate",
+      "n_entities": 35,
+      "correct": 29,
+      "incorrect": 4,
+      "partially_correct": 0,
+      "missing_data": 2,
+      "precision": 0.8788,
+      "recall": 0.9355,
+      "f1": 0.9062,
+      "llm_agreement_rate": 0.9375
+    },
+    {
+      "paper_id": "Trease_et_al__-_2016_-_Identifying_the_Distribution_of_Al_3_",
+      "tier": "simple",
+      "n_entities": 15,
+      "correct": 13,
+      "incorrect": 2,
+      "partially_correct": 0,
+      "missing_data": 0,
+      "precision": 0.8667,
+      "recall": 1.0,
+      "f1": 0.9286,
+      "llm_agreement_rate": 0.8333
+    },
+    {
+      "paper_id": "Wang_et_al__-_2014_-_Enhancing_lithium_sulphur_battery_perfo",
+      "tier": "complex",
+      "n_entities": 30,
+      "correct": 25,
+      "incorrect": 0,
+      "partially_correct": 5,
+      "missing_data": 0,
+      "precision": 0.9167,
+      "recall": 1.0,
+      "f1": 0.9565,
+      "llm_agreement_rate": 0.5417
+    },
+    {
+      "paper_id": "Xu_et_al__-_2019_-_Li_metal-free_rechargeable_all-solid-stat",
+      "tier": "moderate",
+      "n_entities": 38,
+      "correct": 34,
+      "incorrect": 0,
+      "partially_correct": 0,
+      "missing_data": 4,
+      "precision": 1.0,
+      "recall": 0.8947,
+      "f1": 0.9444,
+      "llm_agreement_rate": 0.9118
+    },
+    {
+      "paper_id": "Yi_et_al__-_2015_-_Facile_in_Situ_Preparation_of_Graphitic-C",
+      "tier": "moderate",
+      "n_entities": 29,
+      "correct": 27,
+      "incorrect": 0,
+      "partially_correct": 0,
+      "missing_data": 2,
+      "precision": 1.0,
+      "recall": 0.931,
+      "f1": 0.9643,
+      "llm_agreement_rate": 0.9167
+    }
+  ]
+}

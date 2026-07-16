@@ -1,0 +1,255 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Li2ZnI4: A Neutron Powder Study",
+    "doi": "",
+    "authors": [
+      "A. Pfitzner",
+      "H. D. Lutz",
+      "J. K. Cockcroft"
+    ],
+    "journal": "Journal of Solid State Chemistry",
+    "year": 1990
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "brief communication",
+    "tags": [
+      "neutron powder diffraction",
+      "olivine-type structure",
+      "lithium iodide",
+      "ionic conductor"
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li2ZnI4",
+      "molecular_formula": "Li2ZnI4",
+      "intended_role": "product",
+      "prov": [
+        "Experimental"
+      ]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "LiI",
+      "molecular_formula": "LiI",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "anhydrous",
+      "prov": [
+        "Experimental"
+      ]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "ZnI2",
+      "molecular_formula": "ZnI2",
+      "ontology": {
+        "role": "reactant",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": [
+        "Experimental"
+      ]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Fusion of stoichiometric amounts of LiI and ZnI2 in an evacuated, sealed borosilicate glass ampoule to form Li2ZnI4.",
+        "operations": [
+          {
+            "action": "weigh",
+            "parameters": {
+              "inputs": [
+                "chem_1",
+                "chem_2"
+              ]
+            },
+            "notes": "Stoichiometric amounts; exact masses not stated."
+          },
+          {
+            "action": "load",
+            "parameters": {
+              "container": "borosilicate glass ampoule"
+            },
+            "notes": ""
+          },
+          {
+            "action": "evacuate",
+            "parameters": {
+              "pressure": {
+                "value": null,
+                "unit": "bar"
+              }
+            },
+            "notes": ""
+          },
+          {
+            "action": "seal",
+            "parameters": {},
+            "notes": ""
+          },
+          {
+            "action": "heat",
+            "parameters": {},
+            "notes": "Described as \"fusing\"; temperature and time not specified."
+          }
+        ],
+        "conditions": {
+          "temperature": {
+            "value": null,
+            "unit": "K"
+          },
+          "time": {
+            "value": null,
+            "unit": "min"
+          },
+          "atmosphere": "vacuum",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": [
+          "Experimental"
+        ]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Synthesis of Li2ZnI4 by fusion of LiI and ZnI2 in evacuated sealed ampoule."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Space group text appears corrupted (\"Pilf?ZCl\").",
+        "excerpt": "Space group: Pilf?ZCl"
+      },
+      {
+        "issue": "No quantitative amounts or fusion temperature/time provided.",
+        "excerpt": "Li2ZnI4 was obtained by fusing stoichiometric amounts of anhydrous LiI and ZnI2 in evacuated sealed borosilicate glass ampoules."
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "Neutron powder diffraction",
+      "parameters": {
+        "instrument": "D2B diffractometer",
+        "collimation": "twofold 5°",
+        "wavelength": {
+          "value": 159.4,
+          "unit": "pm"
+        },
+        "theta_range": "5–140° (2θ)",
+        "step_width": "0.025°",
+        "sample_container": "thin-walled vanadium can, 16 mm diameter",
+        "temperature": {
+          "value": 298,
+          "unit": "K"
+        }
+      },
+      "results": [
+        {
+          "metric": "lattice_parameter_a",
+          "value": 1480.3,
+          "unit": "pm"
+        },
+        {
+          "metric": "lattice_parameter_b",
+          "value": 856.0,
+          "unit": "pm"
+        },
+        {
+          "metric": "lattice_parameter_c",
+          "value": 701.2,
+          "unit": "pm"
+        },
+        {
+          "metric": "space_group",
+          "value": "Pnmn",
+          "unit": ""
+        },
+        {
+          "metric": "R_wp",
+          "value": 5.48,
+          "unit": "%"
+        },
+        {
+          "metric": "R_p",
+          "value": 13.25,
+          "unit": "%"
+        }
+      ],
+      "interpretation": "Olivine-type structure; Li in octahedral sites, Zn in tetrahedral sites.",
+      "prov": [
+        "Figure 1",
+        "Table I"
+      ]
+    },
+    {
+      "method": "X-ray Guinier photography",
+      "parameters": {
+        "instrument": "Huber Guinier 600 system"
+      },
+      "results": [],
+      "interpretation": "Phase identification prior to neutron study.",
+      "prov": [
+        "Experimental"
+      ]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "",
+    "source_file": "provided_text",
+    "processing_time": null
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "schema": {
+    "name": "Universal Chemistry Extraction Schema",
+    "version": "2.1"
+  },
+  "units_policy": {
+    "temperature": "K",
+    "pressure": "bar",
+    "time": "min",
+    "mass": "g",
+    "volume": "mL",
+    "amount": "mmol",
+    "concentration": "M",
+    "capacity": "mAh g-1",
+    "strict": true
+  },
+  "source": {
+    "title": "Mapping and Modeling Physicochemical Fields in Solid-State Batteries",
+    "doi": "10.1021/acs.jpclett.2c02800",
+    "authors": [
+      "Zhe-Tao Sun",
+      "Jingying Zhou",
+      "Yifan Wu",
+      "Shou-Hang Bo"
+    ],
+    "journal": "The Journal of Physical Chemistry Letters",
+    "year": 2022
+  },
+  "metadata": {
+    "discipline": "chemistry",
+    "type": "perspective_article",
+    "tags": ["solid-state batteries", "multiphysics coupling", "X-ray tomography"]
+  },
+  "targets": [
+    {
+      "target_id": "target_1",
+      "compound_name": "Li/Li10GeP2S12/Li solid-state battery cell",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": ["Figure 3b", "Page 10818"]
+    },
+    {
+      "target_id": "target_2",
+      "compound_name": "Li6PS5Cl/Li10GeP2S12/Li6PS5Cl solid-state battery cell",
+      "molecular_formula": "",
+      "intended_role": "device",
+      "prov": ["Figure 3c", "Page 10818"]
+    }
+  ],
+  "chemicals": [
+    {
+      "chemical_id": "chem_1",
+      "name": "Lithium metal",
+      "molecular_formula": "Li",
+      "ontology": {
+        "role": "electrode",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Throughout text"]
+    },
+    {
+      "chemical_id": "chem_2",
+      "name": "Li10GeP2S12",
+      "molecular_formula": "Li10GeP2S12",
+      "ontology": {
+        "role": "solid_state_electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Figure 3b", "Figure 3c"]
+    },
+    {
+      "chemical_id": "chem_3",
+      "name": "Li6PS5Cl",
+      "molecular_formula": "Li6PS5Cl",
+      "ontology": {
+        "role": "solid_state_electrolyte",
+        "category": "inorganic"
+      },
+      "amount": {
+        "value": null,
+        "unit": "g"
+      },
+      "notes": "",
+      "prov": ["Figure 3c"]
+    }
+  ],
+  "synthesis": {
+    "steps": [
+      {
+        "step_id": "step_1",
+        "description": "Assembly of Li/Li10GeP2S12/Li solid-state cell for in situ X-ray tomography.",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["chem_1", "chem_2", "chem_1"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 3b", "Page 10818"]
+      },
+      {
+        "step_id": "step_2",
+        "description": "Preparation and cold pressing of Li6PS5Cl/Li10GeP2S12/Li6PS5Cl sandwich electrolyte cell.",
+        "operations": [
+          {
+            "action": "assemble",
+            "parameters": {
+              "inputs": ["chem_3", "chem_2", "chem_3"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          },
+          {
+            "action": "cold_press",
+            "parameters": {
+              "inputs": ["target_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": ""
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Figure 3c", "Page 10818"]
+      },
+      {
+        "step_id": "step_3",
+        "description": "Electrochemical cycling of assembled solid-state cells.",
+        "operations": [
+          {
+            "action": "electrochemical_cycle",
+            "parameters": {
+              "inputs": ["target_1", "target_2"]
+            },
+            "duration": {
+              "value": null,
+              "unit": "min"
+            },
+            "temperature": {
+              "value": null,
+              "unit": "K"
+            },
+            "notes": "Used to study crack evolution."
+          }
+        ],
+        "conditions": {
+          "atmosphere": "",
+          "pressure": {
+            "value": null,
+            "unit": "bar"
+          }
+        },
+        "prov": ["Page 10818"]
+      }
+    ]
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "step_ref": "step_1",
+        "description": "Constructed Li/Li10GeP2S12/Li cell for XCT imaging."
+      },
+      {
+        "step_ref": "step_2",
+        "description": "Prepared sandwich electrolyte cell and applied cold pressing."
+      },
+      {
+        "step_ref": "step_3",
+        "description": "Performed cycling to observe crack patterns."
+      }
+    ],
+    "ambiguities": [
+      {
+        "issue": "Cold pressing parameters (pressure, time) not specified.",
+        "excerpt": "\"more transverse interface cracks were generated after cold pressing\""
+      },
+      {
+        "issue": "Electrochemical cycling conditions (current density, cycle number, temperature) not provided.",
+        "excerpt": "\"After cycling, we observed a crack pattern of the solid-state electrolyte\""
+      }
+    ]
+  },
+  "characterization": [
+    {
+      "method": "X-ray computed tomography (XCT)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "crack morphology",
+          "value": "longitudinal cracks present in pristine electrolyte pellet",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3b", "Page 10818"]
+    },
+    {
+      "method": "X-ray computed tomography (XCT)",
+      "parameters": {},
+      "results": [
+        {
+          "metric": "crack morphology",
+          "value": "more transverse interface cracks generated after cold pressing and cycling compared with single-layer electrolyte",
+          "unit": ""
+        }
+      ],
+      "interpretation": "",
+      "prov": ["Figure 3c", "Page 10818"]
+    }
+  ],
+  "analysis": {
+    "methods": []
+  },
+  "final_outcomes": {
+    "yield": {
+      "value": null,
+      "unit": "%"
+    },
+    "capacity": {
+      "value": null,
+      "unit": "mAh g-1"
+    },
+    "cycle_life": null
+  },
+  "extraction_metadata": {
+    "timestamp": "2023-10-05T00:00:00Z",
+    "source_file": "",
+    "processing_time": null
+  }
+}
