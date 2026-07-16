@@ -1,0 +1,75 @@
+{
+  "_instructions": {
+    "purpose": "Template for human expert review of LLM-verified extraction JSONs. The Verified_*.json files serve as a triage tool — review items flagged as unsupported first, then spot-check supported items.",
+    "workflow": [
+      "1. Open the Verified_*.json file and the corresponding source PDF side by side",
+      "2. Review all items where _llm_flag.is_supported = false (these are the ones most likely to need correction)",
+      "3. For each flagged item, check the source PDF and record your judgment",
+      "4. Spot-check 3-5 items where _llm_flag.is_supported = true (to catch false positives)",
+      "5. Record any extraction errors the LLM verifier missed entirely",
+      "6. Fill in the summary fields at the bottom"
+    ],
+    "time_tracking": "Record start and end times to measure time savings from LLM triage"
+  },
+  "paper_id": "",
+  "reviewer_name": "",
+  "review_date": "",
+  "review_start_time": "",
+  "review_end_time": "",
+  "source_pdf_filename": "",
+  "verified_json_filename": "",
+  "group": "high|low",
+
+  "entity_reviews": [
+    {
+      "_comment": "Copy one entry per reviewed entity. Focus on _llm_flag.is_supported=false items first.",
+      "entity_path": "e.g., targets[0], chemicals[2], synthesis.steps[0].operations[0]",
+      "entity_id": "e.g., target_1, chem_3, step_1",
+      "extracted_value": "The value from the extraction JSON",
+      "llm_verdict": "supported|unsupported",
+      "llm_confidence": 0.0,
+
+      "human_verdict": "correct|incorrect|partially_correct|missing_data",
+      "human_notes": "Brief explanation of your assessment",
+      "correction": "If incorrect, what should the value be?",
+      "page_reference": "Page/Table/Figure in the PDF where you found the evidence",
+
+      "agrees_with_llm": true,
+      "error_category": "null|hallucination|missing_formula|wrong_amount|term_normalization|provenance_error|semantic_mismatch|other"
+    }
+  ],
+
+  "missed_errors": [
+    {
+      "_comment": "Extraction errors NOT caught by the LLM verifier (items marked supported that are actually wrong)",
+      "entity_path": "",
+      "entity_id": "",
+      "issue": "",
+      "correct_value": "",
+      "page_reference": ""
+    }
+  ],
+
+  "missing_extractions": [
+    {
+      "_comment": "Important information in the paper that was NOT extracted at all",
+      "what_is_missing": "",
+      "page_reference": "",
+      "section": "targets|chemicals|synthesis|characterization|final_outcomes"
+    }
+  ],
+
+  "summary": {
+    "total_entities_reviewed": 0,
+    "total_llm_flags_reviewed": 0,
+    "agreements_with_llm": 0,
+    "disagreements_with_llm": 0,
+    "false_negatives_by_llm": 0,
+    "false_positives_by_llm": 0,
+    "missed_errors_count": 0,
+    "missing_extractions_count": 0,
+    "overall_extraction_quality": "excellent|good|acceptable|poor",
+    "overall_verification_quality": "excellent|good|acceptable|poor",
+    "reviewer_comments": ""
+  }
+}
