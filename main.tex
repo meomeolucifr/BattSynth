@@ -1,0 +1,566 @@
+% ============================================================================
+% BattSynth: JCIM Data Descriptor Manuscript
+% ============================================================================
+\documentclass[12pt,a4paper]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}           % Times Roman font (JCIM standard)
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage[numbers,super]{natbib}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{authblk}
+\usepackage{makecell}
+
+% --- Configuration ---
+\doublespacing
+\sisetup{
+  per-mode=symbol,
+  detect-all
+}
+
+% Custom column type for tables
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+% ============================================================================
+% TITLE AND AUTHORS
+% ============================================================================
+\title{BattSynth: A Verified LLM-Extracted Dataset of Battery Synthesis Procedures}
+
+\author[1]{Nhan T. Nguyen%
+\thanks{These authors contributed equally to this work.}}
+% \thanks{Corresponding author: nhan.nguyen2452879@hcmut.edu.vn}}
+\author[1]{Vinh Q. Vo%
+\protect\footnotemark[1]}
+% \thanks{Corresponding author:vinh.vo1205@hcmut.edu.vn}}
+\author[2]{Truyen Tran}
+\author[2]{Tri Minh Nguyen}
+\author[2]{Sherif Abdulkader Tawfik\thanks{Corresponding author:s.abbas@deakin.edu.au}}
+\author[1]{Tho Quan
+\thanks{Corresponding author: qttho@hcmut.edu.vn}}
+\affil[1]{URA Research Group, Ho Chi Minh City University of Technology (HCMUT), Vietnam National University Ho Chi Minh City (VNU-HCM), Vietnam}
+\affil[2]{Applied Artificial Intelligence Initiative, Deakin University, Victoria 3216, Australia}
+\affil[3]{Smart Green Transformation Center, VinUniversity, Hanoi, Vietnam}
+\date{}
+
+% ============================================================================
+\begin{document}
+\maketitle
+
+% ============================================================================
+% ABSTRACT
+% ============================================================================
+\begin{abstract}
+Battery materials research has produced a vast and rapidly growing body of literature reporting novel electrodes, solid-state electrolytes, and electrochemical systems, with applications spanning electric mobility, grid-scale storage, and portable electronics. However, the synthesis procedures, processing conditions, and characterization results that drive these advances are locked within unstructured narrative text, figures, and tables, making them difficult to query, compare, or reuse for data-driven materials discovery. The emergence of large language models (LLMs) offers a new pathway to convert this unstructured knowledge into machine-readable form, but their extractions can suffer from hallucinations, inconsistent units, and missing provenance, and their quality has not been rigorously benchmarked against human experts in the battery materials domain. To address this, we present BattSynth, a large-scale dataset of structured synthesis information extracted from 605 battery material research papers (1976--2024) through zero-shot prompting of OpenAI-o3 under the Universal Chemistry Extraction Schema v2.1. Each record captures target compounds, chemicals with roles and quantities, ordered synthesis steps with conditions, characterization methods with quantitative results, and final performance outcomes with full provenance tracking. Automated quality evaluation across four metrics---provenance validity, units policy compliance, hallucination detection, and overall field completeness---yields a mean score of 93.4\%, with 72.2\% of papers achieving ``Excellent'' ratings ($\geq$90\%). A per-metric re-evaluation on a golden dataset of 30 papers identifies field completeness (98.7\%) and units compliance (93.3\%) as strengths, whereas provenance validity (72.0\%) and hallucination detection (63.3\% pass rate) are the primary areas for improvement. To rigorously assess extraction accuracy, we further constructed a complexity-stratified golden dataset of 30 papers (828 entities) verified by a domain expert, achieving an entity-level F1 score of 94.1\% (precision = 93.6\%, recall = 94.6\%). In addition, we systematically evaluated LLM-based verification as a triage tool for human review, obtaining moderate agreement with human experts (Cohen's $\kappa$ = 0.498) and a high false-positive rate (55.9\%), which indicates that LLM verification is useful for prioritizing review effort but cannot replace expert judgment. BattSynth is publicly available at \url{[REPOSITORY_URL]} and provides a reusable foundation for data-driven battery materials discovery.
+\end{abstract}
+
+\textbf{Keywords:} battery materials, synthesis extraction, large language models, dataset, natural language processing, materials informatics
+
+% ============================================================================
+% 1. INTRODUCTION
+% ============================================================================
+\section{Introduction}
+\label{sec:introduction}
+
+Rechargeable batteries lie at the heart of many pressing global challenges, from the electrification of transport to large-scale renewable energy storage and the proliferation of portable electronics.\cite{janek2016solid,manthiram2017outlook} Over the past few decades, researchers have explored a vast landscape of novel electrode materials, solid-state electrolytes, and electrochemical systems, producing an enormous and continually expanding body of scientific literature. Each publication typically reports detailed synthesis procedures, processing conditions, characterization measurements, and performance metrics. This knowledge, however, is recorded in unstructured natural language, tables, and figures, which makes it difficult to query, compare, or reuse computationally and thereby constrains the pace of data-driven materials discovery.\cite{kononova2019text,olivetti2020data}
+
+Materials informatics has repeatedly demonstrated that data-driven methods can accelerate discovery by uncovering synthesis--structure--property relationships,\cite{raccuglia2016machine,kim2017virtual} predicting optimal synthesis conditions,\cite{huo2019semi} and guiding experimental design.\cite{szymanski2023autonomous} The effectiveness of these approaches is nevertheless bounded by the availability of structured, machine-readable synthesis data. Manual curation of synthesis procedures is prohibitively expensive, as domain experts typically require 30--60 minutes per paper to extract, verify, and structure the relevant information.\cite{kononova2019text} Scalable methods for automatically building high-quality structured synthesis datasets are therefore essential to the intelligent research and development of battery materials.
+
+Natural language processing (NLP) has opened new pathways for automated extraction from the scientific literature, and its application to chemical synthesis has a rich history. Early systems relied on rule-based parsers and named entity recognition (NER) models trained on domain-specific corpora: ChemDataExtractor pioneered the rule-based extraction of chemical properties from text,\cite{swain2016chemdataextractor} and subsequent work extended this line to materials-science NER,\cite{kim2017materials} synthesis actions and procedural text corpora,\cite{mysore2019materials} reaction conditions,\cite{vaucher2020automated} and inorganic material recipes.\cite{kononova2019text} Huo et al.\ further demonstrated semi-supervised extraction of synthesis parameters,\cite{huo2019semi} while later efforts leveraged transformer-based language models for sequence labeling and relation extraction, including domain-adapted pretraining.\cite{trewartha2022quantifying,gupta2022matscibert} These approaches are typically tailored to a specific entity type or reaction format, however, and offer limited coverage of the end-to-end workflow that links precursors, processing conditions, characterization, and performance within a single record.
+
+More recently, the emergence of instruction-following large language models (LLMs) with strong zero-shot capabilities, exemplified by GPT-4 and its successors, has enabled a new paradigm in which structured extraction is performed without task-specific fine-tuning, using carefully designed prompts and output schemas. Dagdelen et al.\ showed that GPT-4 attains competitive performance on materials property extraction,\cite{dagdelen2024structured} and Zheng et al.\ applied an LLM assistant to mine metal--organic framework synthesis conditions from more than 40,000 articles, reporting strong performance on common entity types but persistent difficulty with domain-specific terminology.\cite{zheng2023chatgpt} At still larger scale, Song et al.\ introduced MatSyn25, a dataset of 163{,}240 synthesis procedures extracted from 85{,}160 articles on two-dimensional materials by coupling LLM extraction with a retrieval-augmented knowledge base.\cite{song2023matsyn25} Collectively, these studies establish the feasibility of LLM-driven extraction at scale, yet they rarely pair the resulting dataset with a complexity-stratified, entity-level human benchmark.
+
+Within the battery domain specifically, existing resources capture electrochemical performance,\cite{dahn2024battery} while first-principles studies have mapped candidate battery chemistries.\cite{ceder2010opportunities} Large-scale computational repositories such as the Materials Project\cite{jain2013commentary} and AFLOW\cite{curtarolo2012aflow} tabulate computed structures and properties for millions of candidate compounds but contain no experimentally reported synthesis routes. As a consequence, comprehensive datasets of \textit{synthesis procedures}---capturing the full workflow from precursors through processing conditions to characterization and final performance within a single record---remain scarce for battery materials, whereas most existing chemistry NLP datasets instead target narrow tasks such as named entity recognition or single-reaction extraction.\cite{lowe2012extraction,mysore2019materials}
+
+These observations expose three challenges that must be met to construct a high-quality structured synthesis dataset for battery materials. First, extraction must move beyond isolated entities toward comprehensive procedure capture that links precursors, ordered steps, conditions, characterization, and performance within a single record. Second, extraction quality is typically assessed with automated metrics that measure format compliance rather than semantic accuracy against human judgment.\cite{kononova2019text} Third, the use of LLMs as automated verifiers, a promising route to scaling quality assurance, has not been rigorously benchmarked against human expert judgment in the materials chemistry domain. Constructing such a dataset, together with a transparent human-verified evaluation framework, is therefore both an essential infrastructure-building task and a pressing methodological need.
+
+In this paper, we introduce BattSynth, a large-scale battery material synthesis dataset accompanied by a quality assurance framework that integrates automated scoring, LLM-based verification, and human expert review (Figure~\ref{fig:pipeline}). BattSynth contains structured synthesis information extracted from 605 battery-materials documents spanning nearly five decades (1976--2024) and seven battery subfields, comprising 1,537 target compounds, 1,663 unique chemicals, 1,872 synthesis steps, and 2,048 characterization entries, all captured under the Universal Chemistry Extraction Schema v2.1 with per-entity provenance tracking. To rigorously assess extraction reliability, we further constructed a complexity-stratified golden dataset of 30 papers (828 entities) with entity-level human expert annotations, reporting precision, recall, and F1 scores broken down by entity type and paper complexity. We additionally evaluated an LLM-as-judge verification layer as a triage tool for human review, quantifying agreement rates, false-positive rates, and confidence calibration against the human ground truth. The dataset, schema, prompts, and evaluation code are openly released (\url{[REPOSITORY_URL]}) in the hope that this resource will accelerate the development of data-driven methods for battery materials discovery and establish a transparent benchmark for future LLM-based extraction systems.
+
+% ============================================================================
+% 2. DATASET CONSTRUCTION
+% ============================================================================
+\section{Dataset Construction}
+\label{sec:construction}
+
+The overall construction of BattSynth follows a three-stage pipeline (Figure~\ref{fig:pipeline}). First, peer-reviewed papers on battery materials are collected and converted to plain text with preserved table and figure captions. Second, each paper is passed through a zero-shot GPT-o3 extraction prompt built on the Universal Chemistry Extraction Schema v2.1, a hierarchical JSON schema that standardizes how each paper's synthesis information is represented (Section~\ref{sec:schema}), producing a structured JSON record with per-entity provenance. Finally, the extractions are subjected to a two-tier quality assurance process, combining automated metrics with LLM-based verification and a complexity-stratified human expert review.
+
+\subsection{Corpus Assembly}
+\label{sec:corpus}
+
+The BattSynth corpus comprises 605 battery-materials documents spanning battery materials research from 1976 to 2024. Papers were collected from major materials science and chemistry journals, with the five most represented sources being \textit{Chemistry of Materials} (34 papers), \textit{ACS Applied Materials \& Interfaces} (27), \textit{Solid State Ionics} (26), \textit{Nature Communications} (26), and \textit{Journal of Power Sources} (22). The corpus covers seven primary battery subfields: solid-state electrolytes (35.7\%), cathode materials (20.5\%), other/general topics (11.2\%), anode materials (7.8\%), liquid and polymer electrolytes (7.1\%), computational and machine-learning studies (6.3\%), and additional specialized topics including ion transport, recycling, and interfaces (Figure~\ref{fig:subfield}).
+
+The publication year distribution (Figure~\ref{fig:years}) reflects the rapid growth of battery materials research, with the majority of papers published between 2014 and 2022 and a peak of 89 papers in 2020. This temporal breadth ensures the coverage of both foundational solid-state electrolyte work from the 1980s and recent advances in high-nickel cathodes and sulfide electrolytes, enabling retrospective analysis of established synthesis methods as well as the capture of emerging approaches.
+
+\subsection{Extraction Schema}
+\label{sec:schema}
+
+To capture the diverse information contained in battery synthesis papers in a consistent and machine-readable form, all extractions follow the Universal Chemistry Extraction Schema v2.1, a hierarchical JSON structure that decomposes each paper into nine complementary sections. Source metadata records title, DOI, authors, journal, and publication year. Target compounds are represented with molecular formulas and intended roles, while chemicals cover reagents, solvents, catalysts, and other inputs together with their roles, categories, amounts, and units. The synthesis section is organized as ordered steps, each containing one or more operations (e.g., mixing, heating, sintering) with explicit parameters such as temperature, duration, atmosphere, and pressure. Characterization entries list methods (e.g., XRD, SEM, EIS) with instrument parameters and quantitative results, while the analysis section records computational or analytical methods applied to the raw measurements. Final outcomes summarize yield, electrochemical capacity, and cycle life, and a workflow section links the steps into a timeline and flags ambiguities. Finally, a dedicated provenance section stores per-entity source locators, pointing to specific pages, tables, or figures in the original paper.
+
+To ensure comparability across heterogeneous publications, the schema enforces a strict units policy in which all temperatures are reported in Kelvin (K), pressures in bar, durations in minutes (min), masses in grams (g), volumes in milliliters (mL), amounts in millimoles (mmol), concentrations in molarity (M), and electrochemical capacities in \si{mAh.g^{-1}}. Values originally reported in other units are converted automatically, with the original expression retained in a \texttt{notes} field to preserve traceability.
+
+\subsection{LLM Extraction Pipeline}
+\label{sec:pipeline}
+
+Extraction was performed using OpenAI's GPT-o3 model in a zero-shot setting with a structured prompt (see Supporting Information). To guide the model toward reliable and consistent extraction of battery synthesis information, the prompt integrates four complementary design elements. First, it imposes explicit anti-hallucination constraints, instructing the model to extract only information that is directly present in the source text and to use \texttt{null} for missing values rather than to infer or fabricate data. Second, it incorporates a structured nine-step extraction checklist that leads the model through section identification, entity extraction, relationship linking, and validation. Third, the complete JSON schema is provided in the prompt so that the output structure is enforced at generation time. Finally, units standardization rules are built into the prompt, together with instructions to preserve the original units in a \texttt{notes} field.
+
+Each released record represents a paper-level extraction produced from the available paper text. The released prompt and schema document the requested output structure; however, the historical batch runner, exact model configuration, source PDFs, and retry logs are not included in the current release, so generation-time retry behavior cannot be independently reproduced from these artifacts alone. The overall extraction and quality-assurance pipeline is summarized in Figure~\ref{fig:pipeline}.
+
+\subsection{Automated Quality Evaluation}
+\label{sec:evaluation}
+
+To systematically assess the quality of the extracted synthesis records, we designed a multi-metric automated evaluation that targets four complementary dimensions of reliability. Provenance validity verifies that each extracted entity includes a source locator (\texttt{prov} field) pointing to a specific page, table, or figure in the source paper. Units policy compliance checks that all numerical values conform to the standardized units defined in the schema, for example enforcing that temperatures are reported in K rather than \textdegree C. Hallucination detection cross-references extracted entities against the source text to identify potentially fabricated information, flagging papers with more than three ungrounded entities. Finally, the overall score aggregates field-level completeness with entity-level validity checks (provenance, molecular formula validity, and ontology consistency), computed as the ratio of passed checks to total checks and expressed as a percentage.
+
+Applying this framework to all 605 papers yields a mean overall score of 93.4\%. The score distribution (Figure~\ref{fig:scores}) shows that 437 papers (72.2\%) achieve ``Excellent'' ratings ($\geq$90\%), 166 papers (27.4\%) receive ``Good'' ratings ($\geq$75\%), only 2 papers (0.3\%) fall into the ``Acceptable'' range ($\geq$60\%), and no paper is rated ``Poor'' (Table~\ref{tab:score_dist}). To better understand the contribution of each metric to this composite score, we performed a per-metric re-evaluation on the 30-paper golden dataset (Table~\ref{tab:metric_breakdown}). Field-level completeness passes at 98.7\%, formula validity at 92.1\%, and units policy compliance at 93.3\% (28 of 30 papers). In contrast, provenance validity passes at 72.0\% and hallucination detection at 63.3\% (19 of 30 papers). The analysis identifies provenance validity as the primary driver of score reductions, since many entities lack explicit page, table, or figure locators in the \texttt{prov} field despite containing factually correct information.
+
+% ============================================================================
+% 3. GOLDEN DATASET AND HUMAN VERIFICATION
+% ============================================================================
+\section{Golden Dataset Construction and Human Verification}
+\label{sec:golden}
+
+\subsection{Complexity-Stratified Paper Selection}
+\label{sec:selection}
+
+To rigorously assess the extraction accuracy beyond automated format compliance, we constructed a golden dataset of 30 papers selected to represent the full range of synthesis complexity encountered in battery materials research. Papers were stratified into three tiers according to the number of synthesis steps, chemical entities, and characterization methods, with ten papers assigned to each tier. The \textit{simple} tier comprises papers with one to two synthesis steps, three to five chemicals, and limited characterization, which typically describe single-step solid-state reactions or straightforward electrochemical measurements. The \textit{moderate} tier contains papers with three to five synthesis steps, five to ten chemicals, and multi-technique characterization, representative of standard materials synthesis workflows that involve ball milling, sintering, and electrode fabrication. Finally, the \textit{complex} tier contains papers with six or more synthesis steps, ten or more chemicals, and extensive multi-technique characterization, describing elaborate multi-step procedures based on sol--gel, co-precipitation, or thin-film deposition, combined with comprehensive structural and electrochemical analysis. This stratification ensures that extraction performance is evaluated across varying levels of difficulty and prevents any bias toward trivially simple papers that would otherwise inflate the accuracy metrics.
+
+\subsection{Entity-Level Human Review}
+\label{sec:review}
+
+To establish a high-quality reference, a domain expert with experience in battery materials research conducted an entity-level review of all 30 golden dataset papers. Review templates could be pre-populated by the repository's heuristic review utility, but such draft labels are not equivalent to human judgments and require entity-by-entity expert approval before inclusion in the reported ground truth. For each paper, the reviewer first read the source PDF to establish ground truth, and then consulted the LLM-generated extraction JSON together with the available LLM verification annotations (\texttt{Verified\_*.json} files with \texttt{\_llm\_flag} fields) as a triage tool. Each extracted entity was subsequently classified into one of four categories: \textit{correct}, when the entity matches the source paper in name, value, and context; \textit{incorrect}, when the entity contains factual errors such as a wrong value, a hallucinated name, or a misattributed property; \textit{partially correct}, when the entity captures the underlying concept but contains minor inaccuracies such as rounded values or incomplete descriptions; and \textit{missing data}, when an entity is present in the source paper but absent from the extraction. For each incorrect entity, the reviewer further recorded the error category (hallucination, wrong amount, semantic mismatch, or other). This process produced annotations for 828 entities across the 30 papers, with 157 entities in the simple tier, 307 in the moderate tier, and 364 in the complex tier, reflecting the underlying paper complexity.
+
+\subsection{Correction Workflow}
+\label{sec:corrections}
+
+Based on the human review, 48 corrections were applied to the extraction JSONs across all three complexity tiers. The corrections addressed hallucinated values, incorrect unit conversions, misattributed chemical roles, and missing provenance fields. All corrections were applied programmatically, and the original pre-correction extractions were preserved as backups to enable a direct before-and-after comparison of the automated evaluation scores.
+
+% ============================================================================
+% 4. RESULTS AND ANALYSIS
+% ============================================================================
+\section{Results and Analysis}
+\label{sec:results}
+
+\subsection{Overall Extraction Accuracy}
+\label{sec:accuracy}
+
+Entity-level evaluation on the 30 golden dataset papers yields an overall F1 score of 94.1\%, with a precision of 93.6\% and a recall of 94.6\% (Table~\ref{tab:prf_entity_type}). These metrics are computed by treating correct entities as true positives (TP = 736), incorrect entities as false positives (FP = 50), and missing entities as false negatives (FN = 42), while partially correct entities contribute 0.5 to both TP and FP counts. The high recall demonstrates that GPT-o3 successfully identifies the vast majority of synthesis-relevant entities in the source papers, whereas the slightly lower precision reflects a tendency to occasionally extract entities that are not actually present or that contain minor factual errors. Considering that the evaluation spans target compounds, chemicals, operations, step descriptions, characterization methods, and final outcomes simultaneously, this result indicates that zero-shot LLM extraction can produce extractions of near-expert quality for battery synthesis papers without any domain-specific fine-tuning. To quantify the uncertainty introduced by evaluating on a finite, 30-paper sample, we additionally computed 95\% confidence intervals via paper-clustered bootstrap resampling ($N$ = 10,000 resamples, resampling the 30 papers with replacement rather than the 828 entities directly, to respect within-paper correlation); these intervals are reported alongside the point estimates in Tables~\ref{tab:prf_entity_type} and~\ref{tab:prf_tier}.
+
+\subsection{Accuracy by Entity Type}
+\label{sec:by_entity}
+
+Beyond the overall F1 score, extraction performance varies substantially across entity types (Figure~\ref{fig:prf_entity}, Table~\ref{tab:prf_entity_type}). Step descriptions achieve near-perfect extraction (F1 = 99.6\%), followed by final outcomes (F1 = 98.7\%) and chemicals (F1 = 96.4\%). These high scores reflect the relatively unambiguous nature of these entities: step descriptions are explicitly stated in the methods section, final outcomes are clearly reported in the results, and chemical names and amounts are typically presented in structured formats such as reagent tables. Operations also show strong performance (F1 = 94.0\%), although their precision (90.1\%) is slightly lower than their recall (98.2\%), suggesting that the model occasionally extracts operations that are implied but not explicitly described in the text. Characterization methods reach an F1 of 93.7\%, with a slightly lower recall (92.5\%) indicating that a small fraction of techniques mentioned only briefly are missed.
+
+Target materials are the most challenging entity type, with the lowest F1 score of 70.7\%. This is driven primarily by substantially lower recall (62.1\%), which indicates that GPT-o3 frequently misses target compounds when they are described using complex compositional notation (e.g., Li$_{7-x}$La$_3$Zr$_{2-x}$Ta$_x$O$_{12}$), referenced indirectly by abbreviation, or defined as a device component rather than a single compound. The comparatively high precision on targets (82.0\%) shows that, when the model does identify a target, it is usually correct. This entity type therefore represents a clear target for future improvement, for example through hybrid pipelines that combine zero-shot LLM extraction with fine-tuned NER for compositional formulas.
+
+\subsection{Accuracy by Paper Complexity}
+\label{sec:by_tier}
+
+A particularly notable finding is that extraction accuracy remains remarkably stable across complexity tiers (Figure~\ref{fig:prf_tier}, Table~\ref{tab:prf_tier}): simple papers achieve an F1 of 94.6\%, moderate papers an F1 of 93.6\%, and complex papers an F1 of 94.3\%. Although complex papers contain two to three times more entities than simple ones, and include multi-step procedures with branching workflows, characterization results spanning multiple tables and figures, and compositional variation studies with many closely related target compounds, the model does not exhibit any significant performance degradation. This result suggests that GPT-o3's extraction capability scales well with both document length and procedural complexity, which is essential for applying the pipeline to high-value but highly detailed publications on advanced battery materials.
+
+\subsection{LLM Verifier Reliability}
+\label{sec:verifier}
+
+To quantitatively evaluate the LLM-as-judge verification layer, we compared its verdicts with the human expert annotations on the golden dataset. The verification layer uses a second LLM pass in which each extracted entity is assigned a verdict (``supported'' or ``unsupported'') together with a confidence score in the range 0.5--1.0. Out of the 828 entities in the golden dataset, 701 received an LLM verification assessment. The overall agreement rate between LLM verdicts and human expert judgments is 82.7\%, corresponding to a Cohen's $\kappa$ of 0.498, which indicates moderate agreement (Table~\ref{tab:confusion}).
+
+The confusion matrix (Figure~\ref{fig:confusion}) reveals a strongly asymmetric error pattern. On the one hand, the verifier exhibits a very low false-negative rate of 0.6\%, since three ``supported'' verdicts disagreed with the human ground truth. On the other hand, it shows a high false-positive rate of 55.9\%, since 114 of the 204 ``unsupported'' verdicts corresponded to entities that human experts confirmed as correct. This error profile makes the LLM verifier suitable as a \textit{conservative triage tool}: entities flagged as ``unsupported'' warrant human review, but reviewers can expect that approximately half of the flagged entities will actually be correct. At the same time, the low false-negative rate means that unflagged entities can be trusted with high confidence, which substantially reduces the human effort required for quality assurance.
+
+\subsection{Confidence Calibration}
+\label{sec:calibration}
+
+The LLM verifier's confidence scores show a positive but imperfect calibration with the actual agreement rates (Figure~\ref{fig:calibration}). Entities assigned confidence scores in the range 0.9--1.0 ($n$ = 511) agree with human judgments 88.6\% of the time, whereas those with scores in the range 0.6--0.7 ($n$ = 18) show only 38.9\% agreement. The monotonic trend indicates that the confidence scores carry meaningful signal and can be used for risk-based prioritization of review effort. The overall calibration is nevertheless imperfect: high-confidence predictions are slightly overconfident, while low-confidence predictions are more unreliable than their scores suggest. Taken together, these results provide quantitative guidance for researchers who wish to deploy LLM-based verification in their own extraction pipelines.
+
+\subsection{Error Taxonomy}
+\label{sec:errors}
+
+To better understand the nature of the remaining extraction errors, we analyzed the 95 errors identified during the human review and examined their distribution across categories (Figure~\ref{fig:errors}). The majority of errors (65 errors, 68.4\%) fall into the \textit{other} category, which covers miscellaneous extraction errors such as misattributed properties, incorrect cross-references between entities, and formatting issues that do not align with the more specific categories. Explicit \textit{hallucinations}, in which the model fabricates entities or values that are not present in the source paper, account for 21 errors (22.1\%), including invented numerical values, non-existent chemical species, and characterization results attributed to techniques that are not reported. A further 7 errors (7.4\%) are \textit{unspecified}, while \textit{wrong amount} errors, corresponding to incorrect numerical values for quantities that are present in the source, and \textit{semantic mismatch} errors, corresponding to correct values assigned to the wrong entity or context, each account for a single error (1.1\%).
+
+The dominance of the ``other'' category suggests that a more granular error taxonomy would be beneficial for guiding future pipeline improvements. Conversely, the relatively low rate of outright hallucination, which affects only 22.1\% of all errors and 2.5\% of all entities, indicates that the anti-hallucination constraints embedded in the extraction prompt are effective in practice, and that the dominant remaining challenge is refining structural and relational extraction rather than preventing fabrications.
+
+\subsection{Impact of Human-Guided Corrections}
+\label{sec:corrections_impact}
+
+The 48 corrections applied during the human review improve the mean automated evaluation score from 89.0\% to 90.6\%, an increase of 1.6 percentage points. Out of the 30 golden dataset papers, 15 showed improvement after correction, 14 remained unchanged because they were already at a high baseline quality, and only 1 showed a marginal decrease of 1.0 percentage points. The largest improvements, on the order of +6.0 percentage points, occurred in papers where hallucinated values or incorrect molecular formulas were corrected. After correction, the automated scores remain consistent across complexity tiers (Table~\ref{tab:eval_by_tier}), with simple papers averaging 91.6\%, moderate papers 90.4\%, and complex papers 89.7\%, which mirrors the stability observed in the entity-level F1 scores (Section~\ref{sec:by_tier}) and reinforces the scalability of the extraction pipeline.
+
+\subsection{Downstream Extrinsic Validation: Process--Property Case Studies}
+\label{sec:downstream}
+
+Beyond the entity-level and automated evaluation metrics reported above, we conducted an exploratory exercise to check whether the extracted records support the kind of cross-field, process--property analysis that motivates data-driven materials discovery. Synthesis-condition entities (extracted from the \texttt{synthesis} section) and characterization or outcome entities (extracted from separate \texttt{characterization} or \texttt{final\_outcomes} sections of the same paper) were programmatically joined for two example material families -- garnet-type (LLZO) solid electrolytes and cathode materials -- linking, for instance, a paper's reported sintering or calcination temperature to its later-reported ionic conductivity or discharge capacity.
+
+This join was straightforward to construct because the relevant fields are captured under a common paper-level record with consistent units (Section~\ref{sec:schema}), even though the source values originate in different sections of the paper (and, in practice, different pages, tables, or figures of the original PDF). We view this as a useful demonstration that the schema supports assembling analysis-ready, cross-field datasets without manual re-reading of each source paper.
+
+We do not report quantitative correlation results from this exercise. The per-family joined samples available in the current corpus were small (single digits to a few dozen papers), and battery capacity in particular is reported under materially different normalization conventions across chemistries (e.g., per gram of active material for intercalation cathodes vs. per gram of a carbon support in some conversion-type and Li--air/Li--O2 systems) that are not currently captured as a distinct, queryable field in the schema. Without that normalization metadata, a pooled or naively stratified correlation analysis risks conflating genuine trends with artifacts of comparing incommensurate quantities, so we do not present one here. We flag both the small per-family sample sizes and the lack of an explicit mass-basis/normalization field as concrete targets for future dataset releases (Section~\ref{sec:limitations}), alongside a larger corpus that would be needed to reach adequate per-family statistical power for any future quantitative process--property modeling.
+
+% ============================================================================
+% 5. DATASET DESCRIPTION AND ACCESS
+% ============================================================================
+\section{Dataset Description and Access}
+\label{sec:dataset}
+
+\subsection{Dataset Contents}
+
+The BattSynth dataset is publicly available at \url{[REPOSITORY_URL]} and is organized so that the extractions, the schema, and the evaluation artifacts can be reused independently. The core of the release consists of 605 extraction JSONs (one per paper) stored in \texttt{data/extractions/}, all following the Universal Chemistry Extraction Schema v2.1. A dedicated golden dataset directory (\texttt{data/golden\_dataset/}) contains 60 papers---the top 30 and bottom 30 by automated evaluation score---with the available LLM verification annotations (\texttt{Verified\_*.json}). The complexity-stratified 30-paper human-review corpus used for the entity-level F1 and verifier-agreement analyses is provided in \texttt{dataset/} at the repository root. The schema itself, the GPT-o3 extraction prompt, and the improved verification prompt (v2.0) are provided in a separate \texttt{schema/} directory, while per-paper scores, golden-dataset scores, and analysis scripts are collected in \texttt{evaluation/}. Finally, an \texttt{analysis/} directory contains a master index, publication-quality figures, and aggregate statistics, so that the aggregate corpus statistics and automated-score distribution can be reproduced from the released artifacts. The human reviews, source PDFs, original and corrected extraction JSONs, LLM-verification files, and generated analysis outputs required to reproduce the entity-level benchmark are included in that directory.
+
+\subsection{Aggregate Statistics}
+
+Table~\ref{tab:dataset_stats} summarizes the aggregate contents of the dataset. On average, the extraction pipeline identifies 2.5 target compounds, 6.1 chemicals, 3.1 synthesis steps, and 3.4 characterization entries per paper. Across the entire corpus, this corresponds to 1,537 target compounds, 3,692 total chemicals (with 1,663 unique names), 1,872 synthesis steps encompassing 2,880 operations, 2,048 characterization entries producing 4,086 quantitative results, and 596 analysis methods, together with 764 ambiguities flagged by the schema for downstream review.
+
+\begin{table}[htbp]
+\centering
+\caption{BattSynth dataset aggregate statistics.}
+\label{tab:dataset_stats}
+\begin{tabular}{lr}
+\toprule
+Metric & Count \\
+\midrule
+Total papers & 605 \\
+Target compounds & 1,537 \\
+Unique chemical names & 1,663 \\
+Total chemicals (with duplicates) & 3,692 \\
+Synthesis steps & 1,872 \\
+Synthesis operations & 2,880 \\
+Characterization entries & 2,048 \\
+Characterization results & 4,086 \\
+Analysis methods & 596 \\
+Ambiguities flagged & 764 \\
+\midrule
+Papers with capacity data & 183 (30.2\%) \\
+Papers with cycle life data & 156 (25.8\%) \\
+Papers with yield data & 11 (1.8\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The five most frequently extracted characterization methods are XRD (146 papers), SEM (119), XPS (68), EIS (61), and Raman spectroscopy (44), reflecting the standard analytical toolkit for battery materials research (Figure~\ref{fig:characterization}). The most common chemical roles are reactant (582), solvent (436), atmosphere (98), substrate (97), and dopant (95).
+
+\subsection{Subfield and Temporal Coverage}
+
+The dataset provides broad coverage across battery subfields (Figure~\ref{fig:subfield}), with the largest representation in solid-state electrolytes (35.7\%) and cathode materials (20.5\%), reflecting the intensity of research activity in these areas. Anode materials (7.8\%), liquid/polymer electrolytes (7.1\%), and computational/ML studies (6.3\%) are also well represented.
+
+The temporal distribution (Figure~\ref{fig:years}) spans nearly five decades, with accelerating publication rates from 2010 onward. This enables both retrospective analysis of established synthesis methods and capture of emerging approaches. The journal distribution (Figure~\ref{fig:journals}) demonstrates coverage of high-impact venues: \textit{Nature Energy} (16), \textit{Advanced Materials} (12), \textit{Energy \& Environmental Science} (12), and \textit{Nature} (8) are all represented alongside domain-specific journals.
+
+% ============================================================================
+% 6. DISCUSSION
+% ============================================================================
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Comparison with Prior Work}
+
+BattSynth extends prior synthesis extraction efforts in both scale and evaluation rigor. Compared with MatSyn25,\cite{song2023matsyn25} which addresses two-dimensional materials, BattSynth specifically targets the battery materials domain and integrates comparable schema detail with a more granular, complexity-stratified human expert benchmark. Earlier work by Kononova et al.\cite{kononova2019text} extracted inorganic synthesis recipes from approximately 12,000 paragraphs, but focused on reaction-level extraction rather than full procedure capture, and reported accuracy only on a small validation set. To the best of our knowledge, the entity-level F1 of 94.1\% obtained on our complexity-stratified golden dataset provides the most comprehensive accuracy assessment of LLM-based synthesis extraction in the battery materials domain to date.
+
+\subsection{Zero-Shot vs.\ Fine-Tuned Extraction}
+
+A notable aspect of our approach is the use of zero-shot prompting rather than domain-specific fine-tuning. This design choice has several practical advantages: it avoids the cost of collecting large-scale training data, allows immediate applicability to new chemistry subfields, and improves reproducibility. At the same time, it imposes clear limitations. In particular, fine-tuned models may achieve higher accuracy on specific entity types, especially target compound extraction, where the zero-shot F1 remains at 70.7\%. Future work could therefore explore hybrid approaches that combine zero-shot LLM extraction with fine-tuned NER models specialized for challenging entity types such as compositional formulas, while retaining the schema and the evaluation framework introduced here.
+
+\subsection{LLM-as-Judge: Capabilities and Limitations}
+
+Our analysis of the LLM verification layer provides practical guidance for researchers who are considering automated quality assurance in their own extraction pipelines. The moderate Cohen's $\kappa$ (0.498) and the high false-positive rate (55.9\%) indicate that LLM-based verification should not be used as a standalone quality gate for battery synthesis data. On the other hand, the near-zero false-negative rate (0.6\%) makes it an effective triage tool: entities flagged as ``unsupported'' should be reviewed by a human, whereas ``supported'' entities can be accepted with high confidence. This asymmetric reliability profile, which is reliable for positive predictions but over-conservative for negative ones, is consistent with findings reported in other LLM-as-judge studies.\cite{zheng2024judging} The confidence calibration analysis further supports this interpretation: high-confidence LLM assessments ($\geq$0.9) represent 72.9\% of all assessments and agree with human judgments 88.6\% of the time, suggesting that confidence-weighted triage could further improve review efficiency without sacrificing reliability.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+Despite the encouraging results, several limitations should be recognized. First, the corpus includes computational studies (6.3\%) and review articles that contain no original synthesis data; these papers achieve high automated scores through trivially empty extractions, so future releases should include explicit paper-type classifications to enable filtering. Second, characterization method names are not yet normalized (e.g., ``EIS'' and ``Electrochemical Impedance Spectroscopy'' appear as separate entries), which inflates uniqueness counts and complicates downstream querying. Third, although the golden dataset of 30 papers is complexity-stratified, it represents only 5\% of the corpus, and extending human verification to a larger sample would further strengthen the statistical conclusions. Fourth, target material extraction (F1 = 70.7\%) remains a significant challenge, particularly for papers that use non-standard nomenclature or compositional series notation. Finally, the per-metric breakdown reveals that provenance validity (72.0\%) and hallucination detection (63.3\% pass rate) are the weakest components of the automated evaluation. Provenance gaps arise because the LLM frequently omits explicit page or figure references even when the extracted content is factually correct, whereas the hallucination detector flags entities whose names do not appear verbatim in the PDF text---a conservative heuristic that penalizes paraphrased or abbreviated entity names. Improving provenance generation and refining the hallucination detection heuristic therefore represent clear targets for future pipeline development.
+
+Relatedly, the exploratory downstream exercise described in Section~\ref{sec:downstream} highlighted a schema-level gap rather than a process-property finding: numerical outcome values such as capacity are not currently paired with an explicit, queryable mass-normalization basis (e.g., per gram of active material vs.\ per gram of a carbon support), even though this basis varies by chemistry and is essential for comparing values across papers. The exercise also relied on manual, text-based inference of chemical family and role from the \texttt{targets}, \texttt{tags}, and \texttt{title} fields rather than a structured chemistry-family label. Adding both a structured normalization-basis field and a structured chemistry-family label, together with a substantially larger corpus (on the order of 10,000+ papers) to reach adequate per-family sample sizes, are prerequisites we identify for any future quantitative process--property analysis built on this dataset.
+
+% ============================================================================
+% 7. CONCLUSION
+% ============================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+BattSynth is an open-access, large-scale dataset dedicated to the systematic integration of structured synthesis information for battery materials. It provides detailed records for 605 battery-materials documents spanning nearly five decades and seven battery subfields, and will be dynamically updated as new literature becomes available. Based on the Universal Chemistry Extraction Schema v2.1, each record captures target compounds, chemicals with roles and quantities, ordered synthesis steps with conditions, characterization methods with quantitative results, and final performance outcomes, all anchored to per-entity provenance. A multi-metric automated evaluation on the full corpus, complemented by a complexity-stratified human expert benchmark of 30 papers (828 entities), demonstrates an entity-level F1 score of 94.1\% and consistent performance across simple, moderate, and complex papers, together with a per-metric diagnosis that clearly identifies provenance generation and hallucination detection as the most impactful targets for future improvement. Our systematic evaluation of the LLM-as-judge verification layer further reveals its utility as a conservative triage tool (false-negative rate = 0.6\%) despite moderate overall agreement ($\kappa$ = 0.498), providing practical guidance for scaling quality assurance in automated extraction pipelines.
+
+By jointly releasing the dataset, the extraction schema and prompts, the automated evaluation scripts, and the golden-dataset annotations, BattSynth fills a long-standing gap in the availability of structured, experimentally grounded battery synthesis data and establishes a transparent benchmark for future LLM-based extraction systems. Its combination of dataset, evaluation framework, and human-verified reference provides essential infrastructure for accelerating data-driven battery materials discovery, ranging from retrosynthesis planning and process-parameter optimization to structure--synthesis--property modeling. Looking ahead, future work will focus on extending the corpus to additional battery chemistries and paper types with explicit paper-type classification, normalizing characterization and role ontologies, exploring hybrid zero-shot and fine-tuned extraction pipelines to close the remaining gap on compositional target compounds, and strengthening provenance generation so that automated scores more faithfully reflect the underlying semantic accuracy. We hope that BattSynth can serve as a foundation upon which the community builds richer tools and models for AI-assisted battery materials research.
+
+% ============================================================================
+% ASSOCIATED CONTENT
+% ============================================================================
+\section*{Associated Content}
+
+\subsection*{Supporting Information}
+The Supporting Information is available free of charge at \url{[DOI_LINK]}.
+
+Complete GPT-o3 extraction prompt; Universal Chemistry Extraction Schema v2.1 (JSON); improved LLM verification prompt (v2.0); per-paper evaluation scores for all 605 papers; human review guidelines; full error taxonomy for golden dataset papers.
+
+\subsection*{Data Availability}
+The BattSynth dataset, including all 605 extraction JSONs, golden dataset annotations, evaluation scripts, and analysis code, is available at \url{[REPOSITORY_URL]}.
+
+% ============================================================================
+% AUTHOR INFORMATION
+% ============================================================================
+\section*{Author Information}
+
+\subsection*{Corresponding Author}
+{[Author 1]} --- [Department, University, City, Country]; Email: [CORRESPONDING\_EMAIL]
+
+\subsection*{Author Contributions}
+[Author contributions to be added.]
+
+\subsection*{Notes}
+The authors declare no competing financial interest.
+
+% ============================================================================
+% ACKNOWLEDGMENTS
+% ============================================================================
+\section*{Acknowledgments}
+[Acknowledgments to be added.]
+
+% ============================================================================
+% FIGURES
+% ============================================================================
+
+% --- Figure 1: Pipeline Overview ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_pipeline_overview.png}
+\caption{Overview of the BattSynth extraction and quality assurance pipeline. Papers are processed through zero-shot GPT-o3 extraction, validated against the Universal Chemistry Extraction Schema v2.1, scored using four automated quality metrics, and verified through LLM-based and human expert review.}
+\label{fig:pipeline}
+\end{figure}
+
+% --- Figure 2: P/R/F1 by Entity Type ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig1_prf_by_entity_type.pdf}
+\caption{Precision, recall, and F1 scores by entity type on the 30-paper golden dataset. Step descriptions achieve near-perfect extraction (F1 = 99.6\%), while target materials are the most challenging (F1 = 70.7\%), primarily due to low recall in identifying complex compositional formulas.}
+\label{fig:prf_entity}
+\end{figure}
+
+% --- Figure 3: P/R/F1 by Tier ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig2_prf_by_tier.pdf}
+\caption{Extraction accuracy by paper complexity tier. Performance remains stable across tiers (F1 range: 93.6\%--94.6\%), indicating that GPT-o3 scales well with increasing procedural complexity.}
+\label{fig:prf_tier}
+\end{figure}
+
+% --- Figure 4: Confusion Matrix ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig3_confusion_matrix.pdf}
+\caption{Confusion matrix of LLM verifier verdicts vs.\ human expert judgments ($n$ = 701 verified entities). The verifier achieves a low false-negative rate (3/497 ``supported'' entities disagreed with human judgments) but a high false-positive rate (114/204 ``unsupported'' entities were actually correct).}
+\label{fig:confusion}
+\end{figure}
+
+% --- Figure 5: Confidence Calibration ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/fig4_confidence_calibration.pdf}
+\caption{Confidence calibration curve for the LLM verifier. Agreement with human experts increases monotonically with confidence score, from 38.9\% (confidence 0.6--0.7) to 88.7\% (confidence 0.9--1.0). The dashed line represents perfect calibration.}
+\label{fig:calibration}
+\end{figure}
+
+% --- Figure 6: Verdict Distribution ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig5_verdict_distribution.pdf}
+\caption{Distribution of human review verdicts (correct, incorrect, partially correct, missing data) across complexity tiers. The proportion of correct entities is consistent across tiers, with complex papers showing slightly more missing data entries.}
+\label{fig:verdicts}
+\end{figure}
+
+% --- Figure 7: Error Categories ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{figures/fig6_error_categories.pdf}
+\caption{Distribution of error categories among the 95 errors identified during human review. Hallucination accounts for 22.1\% of errors (2.5\% of all entities), while the majority fall into the ``other'' category encompassing miscellaneous extraction and formatting issues.}
+\label{fig:errors}
+\end{figure}
+
+% --- Figure 8: Per-Paper F1 ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig7_per_paper_f1.pdf}
+\caption{Per-paper F1 scores for all 30 golden dataset papers, colored by complexity tier. Most papers achieve F1 $>$ 90\%, with a few outliers in the 60\%--80\% range corresponding to papers with complex compositional series or unconventional synthesis descriptions.}
+\label{fig:per_paper}
+\end{figure}
+
+% --- Figure 9: Score Distribution (Full Dataset) ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig_score_distribution.pdf}
+\caption{Distribution of automated evaluation scores across all 605 papers. The mean score is 93.4\%, with 72.2\% of papers achieving ``Excellent'' ratings ($\geq$90\%).}
+\label{fig:scores}
+\end{figure}
+
+% --- Figure 10: Subfield Distribution ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig_subfield_distribution.pdf}
+\caption{Distribution of papers across battery subfields. Solid-state electrolytes represent the largest category (35.7\%), followed by cathode materials (20.5\%) and anode materials (7.8\%).}
+\label{fig:subfield}
+\end{figure}
+
+% --- Figure 11: Year Distribution ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig_year_distribution.pdf}
+\caption{Temporal distribution of papers in the BattSynth corpus (1976--2024). Publication rates accelerate from 2010 onward, peaking at 89 papers in 2020.}
+\label{fig:years}
+\end{figure}
+
+% --- Figure 12: Characterization Methods ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig_characterization_methods.pdf}
+\caption{Top 20 characterization methods extracted across the dataset. XRD (146 papers) and SEM (119 papers) are the most common, reflecting standard battery materials characterization practice.}
+\label{fig:characterization}
+\end{figure}
+
+% --- Figure 13: Journal Distribution ---
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fig_journal_distribution.pdf}
+\caption{Distribution of papers across the top 20 journals. The corpus spans high-impact general science journals (\textit{Nature}, \textit{Nature Energy}) and specialized materials/chemistry venues.}
+\label{fig:journals}
+\end{figure}
+
+% ============================================================================
+% TABLES (from generated LaTeX files)
+% ============================================================================
+
+% Table 1: P/R/F1 by Entity Type
+\begin{table}[htbp]
+\centering
+\caption{Extraction accuracy by entity type on the 30-paper golden dataset, evaluated against human expert annotations.}
+\label{tab:prf_entity_type}
+\begin{tabular}{lrrrr}
+\toprule
+Entity Type & $n$ & Precision & Recall & F1 \\
+\midrule
+  Target & 75 & \makecell{82.0\%\\\footnotesize{[60.9, 96.9]}} & \makecell{62.1\%\\\footnotesize{[43.5, 77.2]}} & \makecell{70.7\%\\\footnotesize{[53.6, 82.9]}} \\
+  Chemical & 222 & \makecell{94.3\%\\\footnotesize{[90.1, 97.9]}} & \makecell{98.6\%\\\footnotesize{[97.1, 100.0]}} & \makecell{96.4\%\\\footnotesize{[93.9, 98.4]}} \\
+  Operation & 184 & \makecell{90.1\%\\\footnotesize{[84.2, 95.4]}} & \makecell{98.2\%\\\footnotesize{[95.2, 100.0]}} & \makecell{94.0\%\\\footnotesize{[90.5, 97.0]}} \\
+  Step Description & 113 & \makecell{99.1\%\\\footnotesize{[97.2, 100.0]}} & \makecell{100.0\%\\\footnotesize{[100.0, 100.0]}} & \makecell{99.6\%\\\footnotesize{[98.6, 100.0]}} \\
+  Characterization & 155 & \makecell{94.8\%\\\footnotesize{[90.9, 98.1]}} & \makecell{92.5\%\\\footnotesize{[84.4, 98.2]}} & \makecell{93.7\%\\\footnotesize{[89.0, 96.9]}} \\
+  Final Outcome & 79 & \makecell{97.5\%\\\footnotesize{[92.1, 100.0]}} & \makecell{100.0\%\\\footnotesize{[100.0, 100.0]}} & \makecell{98.7\%\\\footnotesize{[95.9, 100.0]}} \\
+\midrule
+  \textbf{Overall} & \textbf{828} & \makecell{\textbf{93.6\%}\\\footnotesize{[91.5, 95.6]}} & \makecell{\textbf{94.6\%}\\\footnotesize{[92.8, 96.2]}} & \makecell{\textbf{94.1\%}\\\footnotesize{[92.7, 95.4]}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Table 2: P/R/F1 by Tier
+\begin{table}[htbp]
+\centering
+\caption{Extraction accuracy by paper complexity tier.}
+\label{tab:prf_tier}
+\begin{tabular}{lrrrr}
+\toprule
+Tier & $n$ & Precision & Recall & F1 \\
+\midrule
+  Simple & 157 & \makecell{95.9\%\\\footnotesize{[92.2, 98.8]}} & \makecell{93.4\%\\\footnotesize{[88.4, 97.5]}} & \makecell{94.6\%\\\footnotesize{[91.7, 96.9]}} \\
+  Moderate & 307 & \makecell{92.5\%\\\footnotesize{[88.0, 96.5]}} & \makecell{94.7\%\\\footnotesize{[92.7, 96.8]}} & \makecell{93.6\%\\\footnotesize{[91.7, 95.4]}} \\
+  Complex & 364 & \makecell{93.7\%\\\footnotesize{[91.4, 96.0]}} & \makecell{95.0\%\\\footnotesize{[92.0, 97.8]}} & \makecell{94.3\%\\\footnotesize{[92.0, 96.4]}} \\
+\midrule
+  \textbf{Overall} & \textbf{828} & \makecell{\textbf{93.6\%}\\\footnotesize{[91.5, 95.6]}} & \makecell{\textbf{94.6\%}\\\footnotesize{[92.8, 96.2]}} & \makecell{\textbf{94.1\%}\\\footnotesize{[92.7, 95.4]}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Table 3: Confusion Matrix
+\begin{table}[htbp]
+\centering
+\caption{LLM verifier vs.\ human expert confusion matrix. Cohen's $\kappa$ = 0.498.}
+\label{tab:confusion}
+\begin{tabular}{lrrrr|r}
+\toprule
+ & \multicolumn{4}{c|}{Human Verdict} & \\
+LLM Verdict & Correct & Incorrect & Partial & Missing & Total \\
+\midrule
+  Supported & 494 & 1 & 0 & 2 & 497 \\
+  Unsupported & 114 & 46 & 4 & 40 & 204 \\
+  Not Verified & 125 & 0 & 2 & 0 & 127 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Table 5: Evaluation Score Distribution
+\begin{table}[htbp]
+\centering
+\caption{Distribution of automated evaluation scores across all 605 papers in the BattSynth dataset.}
+\label{tab:score_dist}
+\begin{tabular}{llrr}
+\toprule
+Verdict & Score Range & Papers & Percentage \\
+\midrule
+Excellent & $\geq$90\% & 437 & 72.2\% \\
+Good & 75\%--89\% & 166 & 27.4\% \\
+Acceptable & 60\%--74\% & 2 & 0.3\% \\
+Poor & $<$60\% & 0 & 0.0\% \\
+\midrule
+\textbf{Total} & & \textbf{605} & \textbf{100.0\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Table 6: Per-Metric Breakdown (Golden Dataset)
+\begin{table}[htbp]
+\centering
+\caption{Per-metric breakdown of the automated evaluation score on the 30-paper golden dataset (after corrections). The composite score aggregates all individual checks; provenance validity and hallucination detection are the primary drivers of score reduction.}
+\label{tab:metric_breakdown}
+\begin{tabular}{lrrr}
+\toprule
+Metric & Passed & Total & Rate (\%) \\
+\midrule
+Field completeness & 1,667 & 1,689 & 98.7 \\
+Formula validity & 221 & 240 & 92.1 \\
+Provenance validity & 541 & 751 & 72.0 \\
+Units policy compliance & 28 & 30 papers & 93.3 \\
+Hallucination detection & 19 & 30 papers & 63.3 \\
+\midrule
+\textbf{Composite (all checks)} & & & \textbf{90.6} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Table 7: Automated Evaluation Scores by Tier
+\begin{table}[htbp]
+\centering
+\caption{Automated evaluation scores by complexity tier on the golden dataset, before and after human-guided corrections.}
+\label{tab:eval_by_tier}
+\begin{tabular}{lrrrr}
+\toprule
+Tier & $n$ & Before (\%) & After (\%) & $\Delta$ (pp) \\
+\midrule
+Simple & 10 & 89.2 & 91.6 & +2.4 \\
+Moderate & 10 & 88.6 & 90.4 & +1.8 \\
+Complex & 10 & 89.0 & 89.7 & +0.7 \\
+\midrule
+\textbf{Overall} & \textbf{30} & \textbf{89.0} & \textbf{90.6} & \textbf{+1.6} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================================
+% REFERENCES
+% ============================================================================
+\bibliographystyle{achemso}
+\bibliography{references}
+
+% ============================================================================
+% TABLE OF CONTENTS / SYNOPSIS GRAPHIC
+% ============================================================================
+\clearpage
+\section*{For Table of Contents Only}
+
+\begin{center}
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{1.5cm}
+\textbf{[PLACEHOLDER: TOC Graphic]}\\
+\small BattSynth: 605 papers $\rightarrow$ Structured JSON $\rightarrow$ F1 = 94.1\%
+\vspace{1.5cm}}}
+\end{center}
+
+\end{document}
